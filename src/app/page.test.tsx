@@ -25,7 +25,7 @@ describe("Home landing page", () => {
     expect(heroPreviewCards).toHaveLength(2);
     expect(heroScope.getByText(/^summary$/i)).toBeInTheDocument();
     expect(heroScope.getAllByText(/^autonomous research$/i)).toHaveLength(2);
-    expect(heroScope.getAllByText(/^methodology$/i)).toHaveLength(2);
+    expect(heroScope.getAllByText(/^method$/i)).toHaveLength(2);
     expect(heroScope.getAllByText(/^conclusion$/i)).toHaveLength(2);
     expect(heroScope.getByText(/^data$/i)).toBeInTheDocument();
     expect(heroScope.getAllByText(/^evidence$/i)).toHaveLength(2);
@@ -161,13 +161,20 @@ describe("Home landing page", () => {
   it("opens the landing settings dock menu with first-level theme and language entries", () => {
     render(<Home />);
 
-    fireEvent.click(screen.getByRole("button", { name: /settings/i }));
+    const settingsTrigger = screen.getByRole("button", { name: /settings/i });
+    settingsTrigger.focus();
+    fireEvent.keyDown(settingsTrigger, { key: "ArrowDown" });
 
     const settingsMenu = screen.getByRole("menu", { name: /settings/i });
     expect(settingsMenu).toBeInTheDocument();
     expect(within(settingsMenu).getByRole("menuitem", { name: /theme/i })).toBeInTheDocument();
     expect(within(settingsMenu).getByRole("menuitem", { name: /language/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
+    expect(settingsTrigger).toHaveAttribute("aria-expanded", "true");
+
+    fireEvent.keyDown(settingsMenu, { key: "Escape" });
+
+    expect(settingsTrigger).toHaveFocus();
+    expect(settingsTrigger).toHaveAttribute("aria-expanded", "false");
   });
 
   it("keeps the utility triggers subtle while preserving the settings menu contract and sharpens the hero cluster spacing and micro-label readability", () => {
@@ -181,11 +188,11 @@ describe("Home landing page", () => {
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("h-[2.8rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.8rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.032),inset_0_1px_0_rgba(255,255,255,0.998)]");
-    expect(triggerRow).toHaveClass("gap-[0.34rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.42rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.84rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.84rem]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.034),inset_0_1px_0_rgba(255,255,255,0.998)]");
+    expect(triggerRow).toHaveClass("gap-[0.3rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.37rem]");
     expect(primaryNav).toHaveClass("gap-[0.28rem]");
     expect(primaryNav).toHaveClass("sm:gap-[0.38rem]");
 
@@ -200,33 +207,33 @@ describe("Home landing page", () => {
     expect(featureNetwork).toHaveClass("min-h-[358px]");
     expect(featureNetwork).toHaveClass("sm:min-h-[418px]");
     expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_48.7%_49.1%,_rgba(255,255,255,0.82),_rgba(255,255,255,0)_59%)]");
-    expect(literatureNode).toHaveClass("left-[10.2%]");
-    expect(literatureNode).toHaveClass("top-[5.4%]");
+    expect(literatureNode).toHaveClass("left-[12.4%]");
+    expect(literatureNode).toHaveClass("top-[6.8%]");
     expect(literatureNode.firstElementChild).toHaveClass("h-[3.24rem]");
     expect(literatureNode.firstElementChild).toHaveClass("w-[3.24rem]");
     expect(literatureNode.firstElementChild).toHaveClass("border-[#df9458]");
     expect(literatureNode.firstElementChild).toHaveClass("text-[#b25017]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.026),0_7px_10px_rgba(232,124,55,0.046)]");
+    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.028),0_7px_10px_rgba(232,124,55,0.048)]");
     expect(literatureNode.lastElementChild).toHaveClass("text-[#8f4417]");
-    expect(dataMiningNode).toHaveClass("left-[10.9%]");
-    expect(dataMiningNode).toHaveClass("top-[76.5%]");
+    expect(dataMiningNode).toHaveClass("left-[13.2%]");
+    expect(dataMiningNode).toHaveClass("top-[73.8%]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.18rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.18rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#abb7c3]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#60707d]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#556674]/92");
-    expect(outcomeNode).toHaveClass("right-[3.1%]");
-    expect(outcomeNode).toHaveClass("top-[6.8%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#a4b1be]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#566674]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#4c5f71]");
+    expect(outcomeNode).toHaveClass("right-[5.6%]");
+    expect(outcomeNode).toHaveClass("top-[7.6%]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[3.18rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("w-[3.18rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#abb7c3]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#60707d]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#556674]/92");
-    const chartLabels = screen.getAllByText(/^(methodology|conclusion|data|evidence)$/i).slice(-4);
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#a4b1be]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#566674]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#4c5f71]");
+    const chartLabels = screen.getAllByText(/^(method|conclusion|data|evidence)$/i).slice(-4);
     chartLabels.forEach((label) => {
-      expect(label).toHaveClass("text-[8.35px]");
-      expect(label).toHaveClass("tracking-[0.215em]");
-      expect(label).toHaveClass("text-[#445569]");
+      expect(label).toHaveClass("text-[9.1px]");
+      expect(label).toHaveClass("tracking-[0.22em]");
+      expect(label).toHaveClass("text-[#2f4153]");
     });
   });
 
