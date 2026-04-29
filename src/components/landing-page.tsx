@@ -492,7 +492,7 @@ function AuthCard() {
 }
 
 function BestCases() {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(0);
   const activeCase = bestCases[activeIndex];
   const carouselFrames = [
     {

@@ -53,7 +53,8 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();
     expect(screen.getAllByRole("link", { name: /get started/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
+    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -153,17 +154,19 @@ describe("Home landing page", () => {
   it("cycles the best-cases carousel with arrow controls", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
-    expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getAllByText(
-      /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
-    ).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /automatically retrieves relevant data, prior task records, and manuscript context to speed up evidence-backed reviewer responses/i,
+      ),
+    ).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /previous/i }));
 
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
   });
 });
