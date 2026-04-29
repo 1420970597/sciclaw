@@ -62,7 +62,7 @@ describe("Home landing page", () => {
 
     const hero = screen.getByTestId("landing-hero");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_318px]");
-    expect(hero).toHaveClass("lg:gap-[4.58rem]");
+    expect(hero).toHaveClass("lg:gap-[4.36rem]");
     expect(screen.getByRole("complementary")).toHaveClass("max-w-[314px]");
   });
 
@@ -170,7 +170,7 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("keeps the utility triggers slightly more present while preserving the settings menu contract and nudges the hero cluster closer to the live-site composition", () => {
+  it("keeps the utility triggers small-but-present while preserving the settings menu contract and further refines the hero cluster spacing", () => {
     render(<Home />);
 
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
@@ -181,12 +181,12 @@ describe("Home landing page", () => {
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("h-[2.48rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.48rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.062),inset_0_1px_0_rgba(255,255,255,0.998)]");
-    expect(triggerRow).toHaveClass("gap-[0.16rem]");
-    expect(primaryNav).toHaveClass("gap-[0.06rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.12rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.5rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.5rem]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_7px_15px_rgba(15,23,42,0.048),inset_0_1px_0_rgba(255,255,255,0.998)]");
+    expect(triggerRow).toHaveClass("gap-[0.17rem]");
+    expect(primaryNav).toHaveClass("gap-[0.07rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.14rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -197,30 +197,30 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
     expect(featureNetwork).toHaveClass("min-h-[334px]");
-    expect(featureNetwork).toHaveClass("sm:min-h-[388px]");
+    expect(featureNetwork).toHaveClass("sm:min-h-[390px]");
     expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_48%_49%,_rgba(255,255,255,0.93),_rgba(255,255,255,0)_56%)]");
-    expect(literatureNode).toHaveClass("left-[14.2%]");
-    expect(literatureNode).toHaveClass("top-[0.1%]");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[3.9rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[3.9rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("border-[#e79a61]");
+    expect(literatureNode).toHaveClass("left-[13.7%]");
+    expect(literatureNode).toHaveClass("top-[-0.2%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[3.84rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[3.84rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("border-[#e8a169]");
     expect(literatureNode.firstElementChild).toHaveClass("text-[#bc5b1c]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_5px_rgba(240,142,79,0.082),0_13px_22px_rgba(232,124,55,0.112)]");
+    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_5px_rgba(240,142,79,0.074),0_12px_20px_rgba(232,124,55,0.098)]");
     expect(literatureNode.lastElementChild).toHaveClass("text-[#a24f1b]");
-    expect(dataMiningNode).toHaveClass("left-[14.1%]");
-    expect(dataMiningNode).toHaveClass("top-[76.2%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.62rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.62rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#adb9c5]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#5c6876]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#617082]");
-    expect(outcomeNode).toHaveClass("right-[4.2%]");
-    expect(outcomeNode).toHaveClass("top-[6.6%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.62rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.62rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#adb9c5]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#5c6876]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#617082]");
+    expect(dataMiningNode).toHaveClass("left-[13.6%]");
+    expect(dataMiningNode).toHaveClass("top-[77.7%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.56rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.56rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#b2bdc8]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#5f6a76]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#667383]");
+    expect(outcomeNode).toHaveClass("right-[2.5%]");
+    expect(outcomeNode).toHaveClass("top-[5.9%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.56rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.56rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#b2bdc8]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#5f6a76]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#667383]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
