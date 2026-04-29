@@ -55,6 +55,10 @@ describe("Home landing page", () => {
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+
+    const hero = screen.getByTestId("landing-hero");
+    expect(hero).toHaveClass("lg:grid-cols-[1fr_368px]");
+    expect(screen.getByRole("complementary")).toHaveClass("max-w-[382px]");
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -188,7 +192,6 @@ describe("Home landing page", () => {
 
     expect(footer).toHaveTextContent(/sciclaw - ai co-worker for scientific research\./i);
     expect(footer).toHaveTextContent(/2026 all rights reserved/i);
-    expect(footer.firstElementChild).toHaveClass("items-center");
     expect(footer.firstElementChild).toHaveClass("text-center");
   });
 

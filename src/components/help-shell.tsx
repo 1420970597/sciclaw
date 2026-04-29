@@ -197,7 +197,7 @@ function ArticleBody({ article }: { article: HelpArticle }) {
         <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b8b8b8]">
           <span>{article.index}</span>
         </div>
-        <h1 className="mt-3 text-[2rem] font-semibold uppercase tracking-[0.18em] text-[#222] sm:text-[2.25rem]">
+        <h1 className="mt-3 text-[2rem] font-semibold tracking-[-0.035em] text-[#222] sm:text-[2.25rem]">
           {article.title}
         </h1>
       </div>
@@ -219,25 +219,27 @@ function ArticleBody({ article }: { article: HelpArticle }) {
                 <h2 className="text-[1.15rem] font-semibold text-[#1f1f1f]">{section.title}</h2>
               </div>
               <div className="mt-4 space-y-4">
-                {sectionBlocks.map((block, blockIndex) =>
-                  block.type === "paragraph" ? (
-                    <p key={`${section.id}-paragraph-${blockIndex}`} className="text-[16px] leading-8 text-[#4a4a4a]">
-                      {block.content}
-                    </p>
-                  ) : (
-                    <ul
-                      key={`${section.id}-list-${blockIndex}`}
-                      className="space-y-3 text-[15px] leading-7 text-[#4f4f4f]"
-                    >
-                      {block.items.map((item) => (
-                        <li key={item} className="flex gap-3">
-                          <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#f0a05c]" aria-hidden />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ),
-                )}
+                {sectionBlocks.length > 0 ? (
+                  sectionBlocks.map((block, blockIndex) =>
+                    block.type === "paragraph" ? (
+                      <p key={`${section.id}-paragraph-${blockIndex}`} className="text-[16px] leading-8 text-[#4a4a4a]">
+                        {block.content}
+                      </p>
+                    ) : (
+                      <ul
+                        key={`${section.id}-list-${blockIndex}`}
+                        className="space-y-3 text-[15px] leading-7 text-[#4f4f4f]"
+                      >
+                        {block.items.map((item) => (
+                          <li key={item} className="flex gap-3">
+                            <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#f0a05c]" aria-hidden />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ),
+                  )
+                ) : null}
               </div>
             </section>
           );

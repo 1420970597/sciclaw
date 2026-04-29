@@ -77,11 +77,11 @@ function Header() {
 
   return (
     <header className="pt-8 sm:pt-10">
-      <div className="mx-auto flex w-full max-w-[1200px] items-center justify-end px-6 sm:px-8 lg:px-10">
-        <nav aria-label="Primary" className="flex items-center gap-2.5 sm:gap-3">
+      <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-6 sm:px-8 lg:px-10">
+        <nav aria-label="Primary" className="flex items-center gap-3 sm:gap-3.5">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-black/7 bg-white/96 text-[#5a6069] shadow-[0_12px_28px_rgba(15,23,42,0.06)] hover:-translate-y-0.5 hover:border-black/10 hover:text-[#1e2229] sm:h-10.5 sm:w-10.5"
+            buttonClassName="border-[#f0e7dc]/92 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(250,246,241,0.96)_100%)] text-[#656b74] shadow-[0_18px_36px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.95)] hover:-translate-y-0.5 hover:border-[#eadccf] hover:text-[#1e2229] sm:h-[2.85rem] sm:w-[2.85rem]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,8 +98,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[17%] top-[8%] sm:left-[18%] sm:top-[6%]",
-        lineClass: "left-[47.8%] top-[26.2%] h-px w-[18%] origin-left rotate-[206deg]",
+        position: "left-[22%] top-[8%] sm:left-[22%] sm:top-[8%]",
+        lineClass: "left-[45.4%] top-[26.2%] h-px w-[15.5%] origin-left rotate-[206deg]",
         ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
         activeRingClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
         labelClass: "max-w-[110px] text-[#c7ccd4]",
@@ -109,8 +109,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[19%] top-[61%] sm:left-[20%] sm:top-[60%]",
-        lineClass: "left-[47.2%] top-[54.5%] h-px w-[18%] origin-left rotate-[150deg]",
+        position: "left-[23%] top-[58%] sm:left-[23%] sm:top-[57%]",
+        lineClass: "left-[45.2%] top-[53.3%] h-px w-[15.3%] origin-left rotate-[150deg]",
         ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
         activeRingClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
         labelClass: "max-w-[110px] text-[#c7ccd4]",
@@ -120,8 +120,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[6%] top-[35%] sm:right-[7%] sm:top-[35%]",
-        lineClass: "left-[52.8%] top-[39.4%] h-px w-[24%] origin-left rotate-[9deg]",
+        position: "right-[12%] top-[35%] sm:right-[12%] sm:top-[35%]",
+        lineClass: "left-[52.2%] top-[39.4%] h-px w-[18.5%] origin-left rotate-[9deg]",
         ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
         activeRingClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
         labelClass: "max-w-[116px] text-[#c7ccd4]",
@@ -132,16 +132,16 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
   );
 
   return (
-    <div className="relative min-h-[290px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.76),_rgba(255,255,255,0)_62%)] sm:min-h-[360px]">
-      <div className="absolute inset-0">
-        <div className="absolute left-[20%] top-[18%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
+    <div className="relative min-h-[276px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_48%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_64%)] sm:min-h-[334px]">
+      <div className="absolute inset-0 opacity-[0.98]">
+        <div className="absolute left-[22%] top-[15%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
         <div className="absolute left-[31%] top-[39%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
-        <div className="absolute left-[68%] top-[27%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
-        <div className="absolute left-[74%] top-[53%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
-        <div className="absolute left-[45.8%] top-[18.5%] h-[116px] w-px bg-gradient-to-b from-[#f3bf99] via-[#ef9350] to-transparent opacity-95" />
-        <div className="absolute left-[47%] top-[18.5%] h-[116px] w-px bg-gradient-to-b from-[#f8d7c0] via-transparent to-transparent opacity-90" />
-        <div className="absolute left-[48.8%] top-[47.5%] h-[222px] w-[222px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.16)_0%,_rgba(244,177,132,0.08)_34%,_rgba(255,255,255,0)_72%)]" />
-        <div className="absolute left-[48.8%] top-[47.5%] h-[144px] w-[144px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f8cfb6]/60" />
+        <div className="absolute left-[63%] top-[26%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
+        <div className="absolute left-[69%] top-[50%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
+        <div className="absolute left-[46.1%] top-[20.2%] h-[100px] w-px bg-gradient-to-b from-[#f3bf99] via-[#ef9350] to-transparent opacity-95" />
+        <div className="absolute left-[47.2%] top-[20.2%] h-[100px] w-px bg-gradient-to-b from-[#f8d7c0] via-transparent to-transparent opacity-90" />
+        <div className="absolute left-[47.4%] top-[47.8%] h-[196px] w-[196px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.17)_0%,_rgba(244,177,132,0.085)_34%,_rgba(255,255,255,0)_72%)]" />
+        <div className="absolute left-[47.4%] top-[47.8%] h-[132px] w-[132px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f8cfb6]/60" />
         {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
@@ -175,14 +175,14 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         <button
           type="button"
           onClick={() => onSelect(0)}
-          className="group relative flex h-28 w-28 items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_18px_rgba(249,159,120,0.14),0_0_0_44px_rgba(249,159,120,0.065),0_28px_60px_rgba(236,132,73,0.12)] transition hover:scale-[1.02] sm:h-32 sm:w-32"
+          className="group relative flex h-[6.55rem] w-[6.55rem] items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_16px_rgba(249,159,120,0.12),0_0_0_38px_rgba(249,159,120,0.055),0_26px_56px_rgba(236,132,73,0.11)] transition hover:scale-[1.02] sm:h-[7.35rem] sm:w-[7.35rem]"
           aria-label="Literature Analysis"
         >
-          <span className="absolute inset-[14px] rounded-full border border-[#f8c4a3]/70" />
-          <span className="absolute inset-[26px] rounded-full border border-[#f6d7c1]/75" />
-          <span className="text-[22px] font-semibold sm:text-[24px]">文</span>
+          <span className="absolute inset-[13px] rounded-full border border-[#f8c4a3]/70" />
+          <span className="absolute inset-[24px] rounded-full border border-[#f6d7c1]/75" />
+          <span className="text-[22px] font-semibold sm:text-[23px]">文</span>
         </button>
-        <p className="mt-4 text-sm font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-base">Literature Analysis</p>
+        <p className="mt-3 text-sm font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-[0.95rem]">Literature Analysis</p>
       </div>
     </div>
   );
@@ -234,7 +234,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="rounded-[2rem] border border-white/70 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:p-6">
+      <div className="rounded-[2rem] border border-white/70 bg-white p-[1.15rem] shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:p-5">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-16 rounded-full bg-[#e3e6eb]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -244,7 +244,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
           </div>
         </div>
 
-        <div className="mt-8 rounded-[1.6rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-5 pb-5 pt-6 sm:px-6">
+        <div className="mt-7 rounded-[1.55rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-4 pb-4 pt-5 sm:px-5">
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
             <div>
               <p className="text-sm font-semibold text-[#272a30]">{previewContent.heading}</p>
@@ -255,7 +255,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
             </span>
           </div>
 
-          <div className="mt-5 grid gap-4 lg:grid-cols-[1.06fr_0.94fr]">
+          <div className="mt-4 grid gap-3 lg:grid-cols-[1.02fr_0.98fr]">
             <div className="space-y-3">
               <div className="rounded-[1.25rem] border border-[#f3e8dc] bg-white/88 p-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
                 <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c2a48a]">
@@ -313,12 +313,12 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
         </div>
       </div>
 
-      <div className="space-y-4 px-1 pt-1">
+      <div className="space-y-4 px-1 pt-0.5">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ed8a43]">{previewContent.bodyLabel}</p>
-        <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2rem] md:text-[2.18rem]">
+        <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.92rem] md:text-[2.06rem]">
           {previewContent.heading}
         </h2>
-        <p className="max-w-xl text-base leading-8 text-[#6a7079] sm:text-[1.05rem]">{previewContent.description}</p>
+        <p className="max-w-[35rem] text-base leading-[1.95] text-[#6a7079] sm:text-[1.02rem]">{previewContent.description}</p>
         <Link
           href="/help/getting-started"
           className="inline-flex items-center gap-2 pt-1 text-sm font-medium text-[#70757f] transition hover:text-[#1f232a]"
@@ -340,9 +340,9 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-5 lg:grid-cols-[minmax(0,304px)_minmax(0,1fr)] lg:items-center lg:gap-5 xl:grid-cols-[minmax(0,304px)_minmax(0,1fr)]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,278px)_minmax(0,1fr)] lg:items-center lg:gap-4 xl:grid-cols-[minmax(0,286px)_minmax(0,1fr)]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.52),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-2 lg:px-0 xl:px-1">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.48),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-1 lg:px-0 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
@@ -356,10 +356,10 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[396px] rounded-[2.05rem] border border-[#edf0f4] bg-white/98 px-5 py-5 shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.35rem] sm:py-[1.35rem]"
+      className="mx-auto w-full max-w-[382px] rounded-[1.95rem] border border-[#edf0f4] bg-white/98 px-[1.1rem] py-[1.1rem] shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.2rem] sm:py-[1.2rem]"
     >
-      <div className="mx-auto w-full max-w-[332px]">
-        <div className="rounded-[1.5rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
+      <div className="mx-auto w-full max-w-[318px]">
+        <div className="rounded-[1.42rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
           <div role="tablist" aria-label="Authentication mode" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f6f7fa] p-1 text-sm text-[#8a909a]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
@@ -389,13 +389,13 @@ function AuthCard() {
           </div>
         </div>
 
-        <div className="mt-4 space-y-4">
+        <div className="mt-3.5 space-y-4">
           <div
             role="tabpanel"
             id={activeTab === "onboard" ? "auth-panel-onboard" : "auth-panel-login"}
             aria-labelledby={activeTab === "onboard" ? "auth-tab-onboard" : "auth-tab-login"}
             aria-label={activeTab === "onboard" ? "Onboard" : "Login"}
-            className="rounded-[1.62rem] border border-[#eef1f5] bg-[#fbfcfd] p-4 sm:p-[1.1rem]"
+            className="rounded-[1.5rem] border border-[#eef1f5] bg-[#fbfcfd] p-[0.95rem] sm:p-[1rem]"
           >
             {activeTab === "onboard" ? (
               <div className="space-y-4">
@@ -559,13 +559,13 @@ function BestCases() {
       </div>
 
       <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(180deg,#f7efe5_0%,#fbf7f1_12%,#ffffff_36%)] shadow-[0_26px_80px_rgba(15,23,42,0.08)]">
-        <div className="grid lg:grid-cols-[1.02fr_0.98fr]">
-          <div className="relative min-h-[300px] bg-[radial-gradient(circle_at_20%_20%,rgba(244,162,95,0.14),transparent_28%),linear-gradient(180deg,#12161d_0%,#0d1016_100%)] p-6 sm:p-8">
-            <div className="absolute inset-x-8 top-8 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#6a7180]">
+        <div className="grid lg:grid-cols-[1.06fr_0.94fr]">
+          <div className="relative min-h-[276px] bg-[radial-gradient(circle_at_20%_20%,rgba(244,162,95,0.14),transparent_28%),linear-gradient(180deg,#12161d_0%,#0d1016_100%)] p-5 sm:p-6">
+            <div className="absolute inset-x-7 top-7 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#6a7180]">
               <span>{activeFrame.eyebrow}</span>
               <span>Preview</span>
             </div>
-            <div className="mx-auto mt-12 max-w-[520px] rounded-[1.8rem] border border-white/10 bg-[#161a22]/92 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-6">
+            <div className="mx-auto mt-11 max-w-[498px] rounded-[1.72rem] border border-white/10 bg-[#161a22]/92 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-5">
               <div className="flex items-center justify-between border-b border-white/8 pb-3">
                 <div>
                     <p className="text-sm font-semibold text-white">{activeFrame.summaryTitle}</p>
@@ -575,7 +575,7 @@ function BestCases() {
                   {activeFrame.tag}
                 </span>
               </div>
-              <div className="mt-5 grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
+              <div className="mt-4 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
                 <div className="space-y-3">
                   <div className="rounded-[1.25rem] border border-white/6 bg-white/4 p-4">
                     <p className="text-xs uppercase tracking-[0.2em] text-[#778090]">Summary</p>
@@ -609,7 +609,7 @@ function BestCases() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden bg-[#fbf8f2] p-8 sm:p-9">
+          <div className="relative overflow-hidden bg-[#fbf8f2] px-7 py-7 sm:px-8 sm:py-8">
             <div
               className="absolute inset-0 opacity-45"
               style={{
@@ -619,13 +619,13 @@ function BestCases() {
               }}
               aria-hidden
             />
-            <div className="relative z-10 flex h-full flex-col justify-between gap-10">
+            <div className="relative z-10 flex h-full flex-col justify-between gap-8">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ec8a44]" aria-label={`Slide ${String(activeIndex + 1).padStart(2, "0")} of ${String(bestCases.length).padStart(2, "0")}`}>
                   {String(activeIndex + 1).padStart(2, "0")} / {String(bestCases.length).padStart(2, "0")}
                 </p>
-                <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.3rem]">{activeCase.title}</h3>
-                <p className="mt-5 max-w-[420px] text-base leading-8 text-[#6c727b] sm:text-lg">{activeCase.description}</p>
+                <h3 className="mt-4 text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.1rem]">{activeCase.title}</h3>
+                <p className="mt-4 max-w-[390px] text-[0.98rem] leading-7 text-[#6c727b] sm:text-[1.02rem]">{activeCase.description}</p>
               </div>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -688,7 +688,7 @@ export function LandingPage() {
       <Header />
 
       <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-7 sm:px-8 sm:pt-8 lg:px-10 lg:pt-10">
-        <div className="space-y-10 text-center sm:space-y-12">
+        <div className="space-y-8 text-center sm:space-y-9">
           <div className="space-y-4 sm:space-y-[1.125rem]">
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
@@ -701,7 +701,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1fr_382px] lg:items-start lg:gap-7 xl:grid-cols-[1.01fr_388px] xl:gap-8" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[1fr_368px] lg:items-start lg:gap-5 xl:grid-cols-[1.005fr_376px] xl:gap-6" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>

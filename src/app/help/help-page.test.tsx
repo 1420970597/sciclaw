@@ -36,6 +36,8 @@ describe("Help article page", () => {
     );
     expect(within(docsNav).getByRole("link", { name: /08 ai persona/i })).toBeInTheDocument();
     expect(screen.getByText(/true closed loop/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^what is sciclaw$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /what is sciclaw/i })).toHaveAttribute("href", "#what-is-sciclaw");
   });
 
   it("matches the public chat documentation sections more closely", async () => {
