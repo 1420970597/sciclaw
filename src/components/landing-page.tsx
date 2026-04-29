@@ -98,58 +98,59 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[23.3%] top-[1.4%] sm:left-[23.3%] sm:top-[1.4%]",
-        lineClass: "left-[46.7%] top-[24.8%] h-px w-[23.7%] origin-left rotate-[224deg]",
-        ringClass: "h-[4.16rem] w-[4.16rem] border-[#d8e0ea] bg-white text-[#aeb8c4] shadow-[0_20px_42px_rgba(15,23,42,0.078)]",
-        activeRingClass: "h-[4.46rem] w-[4.46rem] border-[#f6ba90] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe1c9_100%)] text-[#eb7f32] shadow-[0_0_0_12px_rgba(240,142,79,0.136),0_24px_44px_rgba(240,142,79,0.188)]",
-        labelClass: "max-w-[112px] text-[#8f99a7]",
-        activeLabelClass: "max-w-[116px] text-[#d97224]",
+        position: "left-[23.1%] top-[0.7%] sm:left-[23.1%] sm:top-[0.7%]",
+        lineClass: "left-[46.5%] top-[24.1%] h-[1.5px] w-[23.2%] origin-left rotate-[224deg]",
+        ringClass: "h-[4.12rem] w-[4.12rem] border-[#c7d1dc] bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] text-[#7f8c9a] shadow-[0_24px_48px_rgba(15,23,42,0.108)]",
+        activeRingClass: "h-[4.48rem] w-[4.48rem] border-[#ee9b60] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd4b4_100%)] text-[#cb5f16] shadow-[0_0_0_14px_rgba(240,142,79,0.18),0_30px_54px_rgba(232,124,55,0.26)]",
+        labelClass: "max-w-[112px] text-[#667281] drop-shadow-[0_1px_1px_rgba(255,255,255,0.82)]",
+        activeLabelClass: "max-w-[116px] text-[#bc5411] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[22.8%] top-[54.9%] sm:left-[22.8%] sm:top-[54.9%]",
-        lineClass: "left-[46.2%] top-[47.7%] h-px w-[23.8%] origin-left rotate-[143deg]",
-        ringClass: "h-[4.16rem] w-[4.16rem] border-[#d8e0ea] bg-white text-[#aeb8c4] shadow-[0_20px_42px_rgba(15,23,42,0.078)]",
-        activeRingClass: "h-[4.46rem] w-[4.46rem] border-[#f6ba90] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe1c9_100%)] text-[#eb7f32] shadow-[0_0_0_12px_rgba(240,142,79,0.136),0_24px_44px_rgba(240,142,79,0.188)]",
-        labelClass: "max-w-[112px] text-[#8f99a7]",
-        activeLabelClass: "max-w-[116px] text-[#d97224]",
+        position: "left-[22.4%] top-[54.3%] sm:left-[22.4%] sm:top-[54.3%]",
+        lineClass: "left-[45.9%] top-[47.4%] h-[1.5px] w-[23.5%] origin-left rotate-[143deg]",
+        ringClass: "h-[4.12rem] w-[4.12rem] border-[#c7d1dc] bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] text-[#7f8c9a] shadow-[0_24px_48px_rgba(15,23,42,0.108)]",
+        activeRingClass: "h-[4.48rem] w-[4.48rem] border-[#ee9b60] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd4b4_100%)] text-[#cb5f16] shadow-[0_0_0_14px_rgba(240,142,79,0.18),0_30px_54px_rgba(232,124,55,0.26)]",
+        labelClass: "max-w-[112px] text-[#667281] drop-shadow-[0_1px_1px_rgba(255,255,255,0.82)]",
+        activeLabelClass: "max-w-[116px] text-[#bc5411] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[16.4%] top-[15.5%] sm:right-[16.4%] sm:top-[15.5%]",
-        lineClass: "left-[55.3%] top-[32.1%] h-px w-[20.8%] origin-left rotate-[0deg]",
-        ringClass: "h-[4.16rem] w-[4.16rem] border-[#d8e0ea] bg-white text-[#aeb8c4] shadow-[0_20px_42px_rgba(15,23,42,0.078)]",
-        activeRingClass: "h-[4.46rem] w-[4.46rem] border-[#f6ba90] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe1c9_100%)] text-[#eb7f32] shadow-[0_0_0_12px_rgba(240,142,79,0.136),0_24px_44px_rgba(240,142,79,0.188)]",
-        labelClass: "max-w-[116px] text-[#8f99a7]",
-        activeLabelClass: "max-w-[122px] text-[#d97224]",
+        position: "right-[15.7%] top-[14.9%] sm:right-[15.7%] sm:top-[14.9%]",
+        lineClass: "left-[55.1%] top-[31.7%] h-[1.5px] w-[20.5%] origin-left rotate-[0deg]",
+        ringClass: "h-[4.12rem] w-[4.12rem] border-[#c7d1dc] bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] text-[#7f8c9a] shadow-[0_24px_48px_rgba(15,23,42,0.108)]",
+        activeRingClass: "h-[4.48rem] w-[4.48rem] border-[#ee9b60] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd4b4_100%)] text-[#cb5f16] shadow-[0_0_0_14px_rgba(240,142,79,0.18),0_30px_54px_rgba(232,124,55,0.26)]",
+        labelClass: "max-w-[116px] text-[#667281] drop-shadow-[0_1px_1px_rgba(255,255,255,0.82)]",
+        activeLabelClass: "max-w-[122px] text-[#bc5411] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
     ],
     [],
   );
 
   return (
-      <div className="relative min-h-[320px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_49%,_rgba(255,255,255,0.92),_rgba(255,255,255,0)_58%)] sm:min-h-[368px]">
+      <div className="relative min-h-[320px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_49%,_rgba(255,255,255,0.94),_rgba(255,255,255,0)_58%)] sm:min-h-[368px]">
         <div className="absolute inset-0 opacity-[0.99]">
-          <div className="absolute left-[24.4%] top-[13.1%] h-1.5 w-1.5 rounded-full bg-[#cad2dc]" />
-          <div className="absolute left-[31.3%] top-[43.4%] h-1.5 w-1.5 rounded-full bg-[#cad2dc]" />
-          <div className="absolute left-[61.6%] top-[24.2%] h-1.5 w-1.5 rounded-full bg-[#ced6e1]" />
-          <div className="absolute left-[64.8%] top-[46.2%] h-1.5 w-1.5 rounded-full bg-[#ced6e1]" />
-          <div className="absolute left-[49.1%] top-[22.8%] h-[112px] w-px bg-gradient-to-b from-[#f1ab79] via-[#ea8140] to-transparent opacity-[0.98]" />
-          <div className="absolute left-[50.02%] top-[22.8%] h-[112px] w-px bg-gradient-to-b from-[#f8dcc5] via-transparent to-transparent opacity-[0.98]" />
-          <div className="absolute left-[49.7%] top-[21.6%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#f5ab78] bg-[#eb8745] shadow-[0_0_0_8px_rgba(242,154,98,0.19),0_12px_24px_rgba(242,154,98,0.3)]" />
-          <div className="absolute left-[49.7%] top-[48.2%] h-[156px] w-[156px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.17)_0%,_rgba(244,177,132,0.082)_34%,_rgba(255,255,255,0)_72%)]" />
-          <div className="absolute left-[49.7%] top-[48.2%] h-[122px] w-[122px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efbe9a]/82" />
+          <div className="absolute left-[24.2%] top-[12.4%] h-1.5 w-1.5 rounded-full bg-[#c3ccd8]" />
+          <div className="absolute left-[30.9%] top-[42.9%] h-1.5 w-1.5 rounded-full bg-[#c3ccd8]" />
+          <div className="absolute left-[61.3%] top-[23.6%] h-1.5 w-1.5 rounded-full bg-[#c9d2dd]" />
+          <div className="absolute left-[64.6%] top-[45.8%] h-1.5 w-1.5 rounded-full bg-[#c9d2dd]" />
+          <div className="absolute left-[49.05%] top-[22.2%] h-[118px] w-px bg-gradient-to-b from-[#f2b280] via-[#eb7c37] to-transparent opacity-[0.99]" />
+          <div className="absolute left-[49.96%] top-[22.2%] h-[118px] w-px bg-gradient-to-b from-[#fee2cf] via-transparent to-transparent opacity-[0.98]" />
+          <div className="absolute left-[49.7%] top-[21.1%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#f2a268] bg-[#e97f36] shadow-[0_0_0_9px_rgba(242,154,98,0.22),0_14px_28px_rgba(232,124,55,0.34)]" />
+          <div className="absolute left-[49.7%] top-[48.2%] h-[168px] w-[168px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.23)_0%,_rgba(244,177,132,0.11)_33%,_rgba(255,255,255,0)_72%)]" />
+          <div className="absolute left-[49.7%] top-[48.2%] h-[130px] w-[130px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#e7b791]/88 shadow-[0_0_44px_rgba(239,146,86,0.12)]" />
+          <div className="absolute left-[49.7%] top-[48.2%] h-[94px] w-[94px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f2c39f]/82 shadow-[0_0_24px_rgba(239,146,86,0.14)]" />
           {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
 
           return (
           <div key={node.id}>
-            <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#cfd6e1] via-[#dbe2eb] to-transparent opacity-[0.98]`} aria-hidden />
+            <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#c7d0dc] via-[#d5dde7] to-transparent opacity-[0.99]`} aria-hidden />
             <button
               type="button"
               onClick={() => {
@@ -170,20 +171,20 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       </div>
 
       <div className="absolute left-1/2 top-1/2 flex -translate-x-[44%] -translate-y-[34%] flex-col items-center">
-        <span className="mb-3.5 flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#f29a62] text-[11px] font-semibold text-white shadow-[0_10px_25px_rgba(242,154,98,0.36)]">
+        <span className="mb-3.5 flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-[11px] font-semibold text-white shadow-[0_12px_28px_rgba(232,124,55,0.38)]">
           AI
         </span>
         <button
           type="button"
           onClick={() => onSelect(0)}
-          className="group relative flex h-[6.12rem] w-[6.12rem] items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_11px_rgba(249,159,120,0.088),0_0_0_26px_rgba(249,159,120,0.038),0_20px_40px_rgba(236,132,73,0.086)] transition hover:scale-[1.02] sm:h-[6.58rem] sm:w-[6.58rem]"
+          className="group relative flex h-[6.12rem] w-[6.12rem] items-center justify-center rounded-full bg-[linear-gradient(180deg,#ffffff_0%,#fff6ee_100%)] text-[#e97a2f] shadow-[0_0_0_12px_rgba(249,159,120,0.104),0_0_0_28px_rgba(249,159,120,0.05),0_24px_44px_rgba(232,124,55,0.118)] transition hover:scale-[1.02] sm:h-[6.58rem] sm:w-[6.58rem]"
           aria-label="Literature Analysis"
         >
-          <span className="absolute inset-[12px] rounded-full border border-[#f8c4a3]/68" />
-          <span className="absolute inset-[22px] rounded-full border border-[#f6d7c1]/72" />
+          <span className="absolute inset-[11px] rounded-full border border-[#f4bf99]/74" />
+          <span className="absolute inset-[21px] rounded-full border border-[#f3d2bc]/78" />
           <span className="text-[20px] font-semibold sm:text-[22px]">文</span>
         </button>
-        <p className="mt-2.5 text-[0.84rem] font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-[0.92rem]">Literature Analysis</p>
+        <p className="mt-2.5 text-[0.84rem] font-semibold tracking-[-0.01em] text-[#dc7024] drop-shadow-[0_2px_8px_rgba(240,142,79,0.16)] sm:text-[0.92rem]">Literature Analysis</p>
       </div>
     </div>
   );
