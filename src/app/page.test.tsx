@@ -109,9 +109,13 @@ describe("Home landing page", () => {
 
     fireEvent.click(within(primaryNav).getByRole("button", { name: /contact us/i }));
     const contactMenu = screen.getByRole("menu", { name: /contact us/i });
-    expect(within(contactMenu).getByRole("menuitem", { name: /privacy policy/i })).toHaveAttribute(
+    expect(within(contactMenu).getByRole("menuitem", { name: /discord/i })).toHaveAttribute(
       "href",
-      "/privacy",
+      "https://discord.gg/6KRR6svTGu",
+    );
+    expect(within(contactMenu).getByRole("menuitem", { name: /email/i })).toHaveAttribute(
+      "href",
+      "mailto:service@sciclaw.ai",
     );
 
     fireEvent.click(within(primaryNav).getByRole("button", { name: /settings/i }));
@@ -135,8 +139,14 @@ describe("Home landing page", () => {
 
     const contactMenu = screen.getByRole("menu", { name: /contact us/i });
     expect(contactTrigger).toHaveAttribute("aria-expanded", "true");
-    expect(within(contactMenu).getByRole("menuitem", { name: /privacy policy/i })).toHaveAttribute("href", "/privacy");
-    expect(within(contactMenu).getByRole("menuitem", { name: /beta access/i })).toHaveAttribute("href", "/privacy");
+    expect(within(contactMenu).getByRole("menuitem", { name: /discord/i })).toHaveAttribute(
+      "href",
+      "https://discord.gg/6KRR6svTGu",
+    );
+    expect(within(contactMenu).getByRole("menuitem", { name: /email/i })).toHaveAttribute(
+      "href",
+      "mailto:service@sciclaw.ai",
+    );
   });
 
   it("opens the landing settings dock menu with first-level theme and language entries", () => {

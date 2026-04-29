@@ -58,8 +58,8 @@ function Header() {
       triggerAriaLabel: "Contact Us",
       icon: <ContactIcon />,
       items: [
-        { id: "privacy-policy", label: "Privacy Policy", description: "Legal and data handling", href: "/privacy" },
-        { id: "beta-access", label: "Beta access", description: "Request onboarding support", href: "/privacy" },
+        { id: "discord", label: "Discord", description: "discord.gg/6KRR6svTGu", href: "https://discord.gg/6KRR6svTGu" },
+        { id: "email", label: "Email", description: "service@sciclaw.ai", href: "mailto:service@sciclaw.ai" },
       ],
     },
     {
