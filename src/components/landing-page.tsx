@@ -77,11 +77,11 @@ function Header() {
 
   return (
     <header className="pt-8 sm:pt-10">
-      <div className="mx-auto flex w-full max-w-[1240px] items-center justify-end px-6 sm:px-8 lg:px-10">
-        <nav aria-label="Primary" className="flex items-center gap-3 sm:gap-3.5">
+      <div className="mx-auto flex w-full max-w-[1200px] items-center justify-end px-6 sm:px-8 lg:px-10">
+        <nav aria-label="Primary" className="flex items-center gap-2.5 sm:gap-3">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-black/7 bg-white/96 text-[#5a6069] shadow-[0_12px_28px_rgba(15,23,42,0.06)] hover:-translate-y-0.5 hover:border-black/10 hover:text-[#1e2229] sm:h-11 sm:w-11"
+            buttonClassName="border-black/7 bg-white/96 text-[#5a6069] shadow-[0_12px_28px_rgba(15,23,42,0.06)] hover:-translate-y-0.5 hover:border-black/10 hover:text-[#1e2229] sm:h-10.5 sm:w-10.5"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -340,9 +340,9 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-6 lg:grid-cols-[minmax(0,330px)_minmax(0,1fr)] lg:items-center lg:gap-6 xl:grid-cols-[minmax(0,320px)_minmax(0,1fr)]"
+      className="grid gap-5 lg:grid-cols-[minmax(0,304px)_minmax(0,1fr)] lg:items-center lg:gap-5 xl:grid-cols-[minmax(0,304px)_minmax(0,1fr)]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.52),_rgba(255,255,255,0)_68%)] px-1 py-2 sm:px-3 lg:px-0 xl:px-2">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.52),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-2 lg:px-0 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
@@ -559,7 +559,7 @@ function BestCases() {
       </div>
 
       <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(180deg,#f7efe5_0%,#fbf7f1_12%,#ffffff_36%)] shadow-[0_26px_80px_rgba(15,23,42,0.08)]">
-        <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="grid lg:grid-cols-[1.02fr_0.98fr]">
           <div className="relative min-h-[300px] bg-[radial-gradient(circle_at_20%_20%,rgba(244,162,95,0.14),transparent_28%),linear-gradient(180deg,#12161d_0%,#0d1016_100%)] p-6 sm:p-8">
             <div className="absolute inset-x-8 top-8 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#6a7180]">
               <span>{activeFrame.eyebrow}</span>
@@ -609,7 +609,7 @@ function BestCases() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden bg-[#fbf8f2] p-8 sm:p-10">
+          <div className="relative overflow-hidden bg-[#fbf8f2] p-8 sm:p-9">
             <div
               className="absolute inset-0 opacity-45"
               style={{
@@ -701,7 +701,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-7 lg:grid-cols-[1fr_388px] lg:items-start lg:gap-8 xl:grid-cols-[1.02fr_392px] xl:gap-10" data-testid="landing-hero">
+          <div className="grid gap-6 lg:grid-cols-[1fr_382px] lg:items-start lg:gap-7 xl:grid-cols-[1.01fr_388px] xl:gap-8" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
