@@ -183,6 +183,9 @@ describe("Home landing page", () => {
     expect(triggerRow).toHaveClass("gap-3");
     expect(navRow).toHaveClass("gap-[0.58rem]");
     expect(navRow).toHaveClass("sm:gap-[0.42rem]");
+    expect(screen.getByRole("button", { name: /^文 literature analysis$/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^数 data mining$/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^果 outcome present$/i })).toBeInTheDocument();
 
     fireEvent.click(settingsTrigger);
 
