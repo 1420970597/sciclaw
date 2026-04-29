@@ -48,13 +48,13 @@ function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
                 >
                   {section.index}
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-medium text-current">{section.label}</p>
-                  <p className="text-xs text-[#aca496]">{section.subtitle}</p>
+                  <p className="text-xs leading-5 text-[#aca496]">{section.subtitle}</p>
                 </div>
               </div>
               {section.badge ? (
-                <span className="rounded-full border border-[#f0e5d6] bg-white px-2 py-1 text-[11px] text-[#9b8f80]">
+                <span className="shrink-0 rounded-full border border-[#f0e5d6] bg-white px-2 py-1 text-[11px] text-[#9b8f80]">
                   {section.badge}
                 </span>
               ) : null}
@@ -144,7 +144,7 @@ function SessionTimeline() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-4 xl:grid-cols-[1.12fr_0.88fr]">
+      <div className="mt-6 grid gap-4 xl:grid-cols-[1.07fr_0.93fr]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
           <div className="grid gap-4 md:grid-cols-3">
             {appShellCards.map((card) => (
@@ -182,7 +182,7 @@ function SessionTimeline() {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid gap-4 2xl:grid-cols-[minmax(0,1fr)_minmax(272px,0.92fr)]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -214,24 +214,53 @@ function SessionTimeline() {
             </div>
           </section>
 
-          <section className="rounded-[1.85rem] border border-[#efe6da] bg-[linear-gradient(180deg,#fff8f1_0%,#ffffff_100%)] p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Foundry handoff</p>
-            <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Convert validated findings into presentation-ready output.</h3>
-            <div className="mt-4 space-y-3 rounded-[1.35rem] border border-[#f3e7d9] bg-white/80 p-4">
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-medium text-[#222]">Automated report generation</p>
-                <span className="rounded-full border border-[#eadaca] bg-[#fff6ee] px-2 py-1 text-[11px] text-[#d97a31]">Draft 01</span>
+          <div className="space-y-4">
+            <section className="rounded-[1.85rem] border border-[#efe6da] bg-[#fffdfa] p-5 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+              <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-4">
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
+                  <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Shape a product-like narrative before the Foundry export starts.</h3>
+                </div>
+                <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">Live draft</span>
               </div>
-              <p className="text-sm leading-6 text-[#6c6459]">
-                Bundle project memory, selected sessions, and verified charts into one concise output stream for downstream review.
-              </p>
-              <div className="grid gap-2 text-xs text-[#8f8578] sm:grid-cols-3">
-                <div className="rounded-2xl border border-[#f4ebdf] bg-[#fdfaf6] px-3 py-2">Brief outline</div>
-                <div className="rounded-2xl border border-[#f4ebdf] bg-[#fdfaf6] px-3 py-2">Evidence appendix</div>
-                <div className="rounded-2xl border border-[#f4ebdf] bg-[#fdfaf6] px-3 py-2">Slides handoff</div>
+              <div className="mt-4 space-y-4">
+                <article className="rounded-[1.45rem] border border-[#f3e8dc] bg-white px-4 py-4 shadow-[0_10px_22px_rgba(15,23,42,0.03)]">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-sm font-semibold text-[#242424]">Regulatory memo · current answer</p>
+                    <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-[#9c8e7d]">
+                      Session 07
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-[#686154]">
+                    The current shell preview now reads like an active working answer: source-backed bullets, surfaced risks, and an explicit handoff path instead of a docs-only explainer block.
+                  </p>
+                  <ul className="mt-4 space-y-2 text-xs leading-5 text-[#887f72]">
+                    <li className="rounded-2xl border border-[#f4ece2] bg-[#fcfaf7] px-3 py-2">• Summarize the strongest evidence chain before export.</li>
+                    <li className="rounded-2xl border border-[#f4ece2] bg-[#fcfaf7] px-3 py-2">• Flag one unresolved risk so the reviewer knows what still needs judgment.</li>
+                    <li className="rounded-2xl border border-[#f4ece2] bg-[#fcfaf7] px-3 py-2">• Keep the source route visible back to sessions, tasks, and project memory.</li>
+                  </ul>
+                </article>
+
+                <article className="rounded-[1.45rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-sm font-semibold text-[#242424]">Foundry handoff</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#c08d62]">High-visibility export rail</p>
+                    </div>
+                    <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">Ready</span>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-[#6c6459]">
+                    Bundle project memory, selected sessions, and verified charts into one concise output stream for downstream review.
+                  </p>
+                  <div className="mt-4 grid gap-2 text-xs text-[#8f8578]">
+                    <div className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">Brief outline</div>
+                    <div className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">Evidence appendix</div>
+                    <div className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">Slides handoff</div>
+                  </div>
+                </article>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </div>
     </section>

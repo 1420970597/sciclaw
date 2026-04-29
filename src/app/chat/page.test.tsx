@@ -18,7 +18,7 @@ describe("Chat app shell placeholder", () => {
     ).toBeInTheDocument();
     expect(screen.getByText(/project & session flow mirrored from the public docs ia/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
-    expect(screen.getByText(/convert validated findings into presentation-ready output/i)).toBeInTheDocument();
+    expect(screen.getByText(/shape a product-like narrative before the foundry export starts/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -58,5 +58,33 @@ describe("Chat app shell placeholder", () => {
     expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch into the project library/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/generate a fresh comparative-analysis session/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline to foundry/i)).toBeInTheDocument();
+  });
+
+  it("elevates the center panel into a session-output preview and gives the right rail stronger product weight", () => {
+    render(<ChatPage />);
+
+    const rightRailGrid = screen.getByTestId("chat-right-rail-grid");
+    expect(rightRailGrid).toHaveClass("2xl:grid-cols-[minmax(0,1fr)_minmax(272px,0.92fr)]");
+
+    const outputPanel = screen.getByText(/session output/i).closest("section");
+    expect(outputPanel).not.toBeNull();
+    const outputScope = within(outputPanel as HTMLElement);
+
+    expect(outputScope.getByRole("heading", { name: /shape a product-like narrative before the foundry export starts/i })).toBeInTheDocument();
+    expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/the current shell preview now reads like an active working answer/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/summarize the strongest evidence chain before export/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/flag one unresolved risk so the reviewer knows what still needs judgment/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/keep the source route visible back to sessions, tasks, and project memory/i)).toBeInTheDocument();
+
+    const foundryCard = outputScope.getByText(/^foundry handoff$/i).closest("article");
+    expect(foundryCard).not.toBeNull();
+    const foundryScope = within(foundryCard as HTMLElement);
+    expect(foundryScope.getByText(/high-visibility export rail/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/^ready$/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/brief outline/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/evidence appendix/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/slides handoff/i)).toBeInTheDocument();
   });
 });
