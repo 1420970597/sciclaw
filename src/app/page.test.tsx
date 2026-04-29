@@ -16,7 +16,6 @@ describe("Home landing page", () => {
     ).toBeInTheDocument();
 
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: /onboard/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /get started/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/best cases/i)).toBeInTheDocument();
@@ -29,7 +28,12 @@ describe("Home landing page", () => {
     fireEvent.click(screen.getByRole("tab", { name: /login/i }));
 
     expect(screen.getByRole("tabpanel", { name: /login/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /login to workspace/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /send code/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /privacy policy/i })).toHaveAttribute("href", "/privacy");
     expect(screen.queryByDisplayValue(/sc-xxxxxxxx/i)).not.toBeInTheDocument();
   });
 
@@ -76,5 +80,15 @@ describe("Home landing page", () => {
 
     expect(screen.getByText(/02 \/ 04/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments/i,
+      ),
+    ).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /previous/i }));
+
+    expect(screen.getByText(/01 \/ 04/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
   });
 });

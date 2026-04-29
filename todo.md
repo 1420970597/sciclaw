@@ -12,7 +12,7 @@
 
 ## Phase B — Landing 高保真复刻（P0）
 - [x] 完成 dark hero、feature rotator、嵌入式 auth card、best-cases 区块、footer 首版
-- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态（本轮已对齐 Contact Us 顶部图标命名、4 张 best-cases 公开案例顺序与 3001 端口编排，下一轮继续压缩 hero/auth 布局差异）
+- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态（本轮已把登录态卡片改为公开站可见的 disabled “Send code / Enter laboratory” 结构，并把 Best Cases 第二张 reviewer 回复文案对齐公开站；下一轮继续压缩 hero/auth 布局差异并补更多 settings/language 弹层细节）
 - [x] 增加更多贴近公开站点的案例轮播视觉与动画细节
 
 ## Phase C — Help shell 与公开文档（P1）
@@ -23,7 +23,7 @@
 
 ## Phase D — Privacy / 公共交互细节（P2/P3 部分）
 - [x] 完成 `/privacy` 页面公开信息摘要复刻
-- [ ] 继续补齐公共 auth 卡片的更细粒度状态、表单提示与视觉拟真
+- [~] 继续补齐公共 auth 卡片的更细粒度状态、表单提示与视觉拟真（本轮已对齐 Login 面板的 Email address / Verification code 占位、disabled CTA、Google 按钮大小写与 Privacy Policy 提示）
 - [~] 引入更多 settings / theme / language 菜单交互细节（本轮已把 docs/settings 文案与浅色 legal shell 对齐公开站信息架构）
 
 ## Phase E — App shell 占位 IA（P4）

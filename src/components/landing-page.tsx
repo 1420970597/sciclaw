@@ -321,33 +321,37 @@ function AuthCard() {
                 }}
               >
                 <label className="block space-y-2 text-sm text-[#5f646d]">
-                  <span>Email</span>
+                  <span className="sr-only">Email address</span>
                   <input
                     type="email"
-                    placeholder="researcher@lab.ai"
+                    aria-label="Email address"
+                    placeholder="Email address"
                     className="w-full rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm text-[#20242b] outline-none transition placeholder:text-[#b0b6bf] focus:border-[#ebb284]"
                   />
                 </label>
                 <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
                   <label className="block space-y-2 text-sm text-[#5f646d]">
-                    <span>Verification code</span>
+                    <span className="sr-only">Verification code</span>
                     <input
-                      placeholder="6-digit code"
+                      aria-label="Verification code"
+                      placeholder="Verification code"
                       className="w-full rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm text-[#20242b] outline-none transition placeholder:text-[#b0b6bf] focus:border-[#ebb284]"
                     />
                   </label>
                   <button
                     type="button"
-                    className="self-end rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium text-[#656b74] transition hover:border-[#e2d6c8] hover:text-[#20242b]"
+                    disabled
+                    className="self-end rounded-[1.1rem] border border-[#edf0f4] bg-[#f4f6f9] px-4 py-3 text-sm font-medium uppercase tracking-[0.12em] text-[#b4bac3]"
                   >
                     Send code
                   </button>
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-[1.2rem] bg-[#1f232a] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#323741]"
+                  disabled
+                  className="w-full rounded-[1.2rem] bg-[#1f232a] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white opacity-100 transition disabled:cursor-not-allowed disabled:bg-[#1f232a] disabled:text-white"
                 >
-                  Login to workspace
+                  Enter laboratory
                 </button>
               </form>
             )}
@@ -355,7 +359,7 @@ function AuthCard() {
 
           <button
             type="button"
-            className="w-full rounded-[1.3rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium text-[#31363d] shadow-[0_12px_24px_rgba(15,23,42,0.04)] transition hover:border-[#dce1e8]"
+            className="w-full rounded-[1.3rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium uppercase tracking-[0.12em] text-[#31363d] shadow-[0_12px_24px_rgba(15,23,42,0.04)] transition hover:border-[#dce1e8]"
           >
             Continue with Google
           </button>
@@ -366,6 +370,16 @@ function AuthCard() {
           >
             No account yet? Apply Now →
           </Link>
+
+          {activeTab === "login" ? (
+            <p className="text-center text-xs leading-5 text-[#9097a1]">
+              By continuing, you agree to SciClaw&apos;s{" "}
+              <Link href="/privacy" className="font-medium text-[#626973] underline-offset-4 hover:underline">
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          ) : null}
         </div>
       </div>
     </aside>
@@ -391,7 +405,7 @@ function BestCases() {
       tag: "Live review",
       summaryTitle: "Peer Review Response Support",
       summaryText:
-        "Automatically retrieves relevant data, prior task records, and manuscript context to speed up evidence-backed reviewer responses.",
+        "Automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments, helping researchers quickly draft evidence-based replies.",
       chipA: "Reviewer tasks",
       chipB: "Evidence retrieval",
       bars: [64, 96, 118],
