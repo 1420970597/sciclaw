@@ -14,15 +14,16 @@ describe("Home landing page", () => {
         /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
     expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
-    expect(screen.queryByText(/33%/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/33%/i)).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();
     expect(screen.getAllByRole("link", { name: /get started/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -108,21 +109,17 @@ describe("Home landing page", () => {
   it("cycles the best-cases carousel with arrow controls", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
-    expect(screen.getByText(/02 \/ 04/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        /automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments/i,
-      ),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
+    expect(screen.getAllByText(
+      /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
+    ).length).toBeGreaterThanOrEqual(2);
 
     fireEvent.click(screen.getByRole("button", { name: /previous/i }));
 
-    expect(screen.getByText(/01 \/ 04/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
   });
 });

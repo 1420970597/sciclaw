@@ -90,7 +90,7 @@ function Header() {
   );
 }
 
-function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
+function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSelect: (index: number) => void }) {
   const nodes = useMemo(
     () => [
       {
@@ -100,7 +100,9 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
         position: "left-[17%] top-[8%] sm:left-[18%] sm:top-[6%]",
         lineClass: "left-[47.8%] top-[26.2%] h-px w-[18%] origin-left rotate-[206deg]",
         ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
+        activeRingClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
         labelClass: "max-w-[110px] text-[#c7ccd4]",
+        activeLabelClass: "max-w-[120px] text-[#e88946]",
       },
       {
         id: "data-mining",
@@ -108,8 +110,10 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
         icon: "数",
         position: "left-[19%] top-[61%] sm:left-[20%] sm:top-[60%]",
         lineClass: "left-[47.2%] top-[54.5%] h-px w-[18%] origin-left rotate-[150deg]",
-        ringClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
-        labelClass: "max-w-[120px] text-[#e88946]",
+        ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
+        activeRingClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
+        labelClass: "max-w-[110px] text-[#c7ccd4]",
+        activeLabelClass: "max-w-[120px] text-[#e88946]",
       },
       {
         id: "outcome-present",
@@ -118,7 +122,9 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
         position: "right-[6%] top-[35%] sm:right-[7%] sm:top-[35%]",
         lineClass: "left-[52.8%] top-[39.4%] h-px w-[24%] origin-left rotate-[9deg]",
         ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
+        activeRingClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
         labelClass: "max-w-[116px] text-[#c7ccd4]",
+        activeLabelClass: "max-w-[120px] text-[#e88946]",
       },
     ],
     [],
@@ -135,26 +141,30 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
         <div className="absolute left-[47%] top-[18.5%] h-[116px] w-px bg-gradient-to-b from-[#f8d7c0] via-transparent to-transparent opacity-90" />
         <div className="absolute left-[48.8%] top-[47.5%] h-[222px] w-[222px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.16)_0%,_rgba(244,177,132,0.08)_34%,_rgba(255,255,255,0)_72%)]" />
         <div className="absolute left-[48.8%] top-[47.5%] h-[144px] w-[144px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f8cfb6]/60" />
-        {nodes.map((node) => (
+        {nodes.map((node) => {
+          const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
+          const isActive = nextIndex === activeIndex;
+
+          return (
           <div key={node.id}>
             <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#dfe3ea] via-[#e9edf3] to-transparent`} aria-hidden />
             <button
               type="button"
               onClick={() => {
-                const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
                 if (nextIndex >= 0) {
                   onSelect(nextIndex);
                 }
               }}
               className={`absolute ${node.position} flex flex-col items-center gap-3 text-center transition hover:scale-[1.02]`}
             >
-              <span className={`flex items-center justify-center rounded-full border text-lg font-semibold backdrop-blur ${node.ringClass}`}>
+              <span className={`flex items-center justify-center rounded-full border text-lg font-semibold backdrop-blur ${isActive ? node.activeRingClass : node.ringClass}`}>
                 {node.icon}
               </span>
-              <span className={`text-xs font-medium leading-5 sm:text-sm ${node.labelClass}`}>{node.label}</span>
+              <span className={`text-xs font-medium leading-5 sm:text-sm ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
             </button>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
@@ -373,9 +383,13 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
 }
 
 function FeatureRotator() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % featureItems.length);
     }, 5000);
@@ -386,7 +400,7 @@ function FeatureRotator() {
   return (
     <section id="feature-rotator" className="grid gap-10 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:items-center lg:gap-10">
       <div className="overflow-hidden rounded-[2.25rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.7),_rgba(255,255,255,0)_70%)] px-3 py-4 sm:px-5 lg:px-2 xl:px-4">
-        <FeatureNetwork onSelect={setActiveIndex} />
+        <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
     </section>
@@ -538,7 +552,7 @@ function AuthCard() {
 }
 
 function BestCases() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(2);
   const activeCase = bestCases[activeIndex];
   const carouselFrames = [
     {
@@ -664,7 +678,7 @@ function BestCases() {
             />
             <div className="relative z-10 flex h-full flex-col justify-between gap-10">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ec8a44]">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ec8a44]" aria-label={`Slide ${String(activeIndex + 1).padStart(2, "0")} of ${String(bestCases.length).padStart(2, "0")}`}>
                   {String(activeIndex + 1).padStart(2, "0")} / {String(bestCases.length).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.3rem]">{activeCase.title}</h3>
