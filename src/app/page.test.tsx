@@ -197,12 +197,12 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
     expect(featureNetwork).toHaveClass("min-h-[320px]");
-    expect(literatureNode).toHaveClass("left-[19.3%]");
-    expect(literatureNode).toHaveClass("top-[4.8%]");
-    expect(dataMiningNode).toHaveClass("left-[18.9%]");
-    expect(dataMiningNode).toHaveClass("top-[60.8%]");
-    expect(outcomeNode).toHaveClass("right-[11.6%]");
-    expect(outcomeNode).toHaveClass("top-[20.9%]");
+    expect(literatureNode).toHaveClass("left-[21.6%]");
+    expect(literatureNode).toHaveClass("top-[3.3%]");
+    expect(dataMiningNode).toHaveClass("left-[21.1%]");
+    expect(dataMiningNode).toHaveClass("top-[57.4%]");
+    expect(outcomeNode).toHaveClass("right-[14.1%]");
+    expect(outcomeNode).toHaveClass("top-[18.6%]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
