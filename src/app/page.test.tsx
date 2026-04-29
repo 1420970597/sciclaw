@@ -183,7 +183,7 @@ describe("Home landing page", () => {
 
     expect(settingsTrigger).toHaveClass("h-[2.52rem]");
     expect(settingsTrigger).toHaveClass("w-[2.52rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_10px_24px_rgba(15,23,42,0.085),inset_0_1px_0_rgba(255,255,255,0.998)]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_11px_26px_rgba(15,23,42,0.092),inset_0_1px_0_rgba(255,255,255,0.998)]");
     expect(triggerRow).toHaveClass("gap-[0.23rem]");
     expect(primaryNav).toHaveClass("gap-[0.1rem]");
     expect(primaryNav).toHaveClass("sm:gap-[0.14rem]");
@@ -198,28 +198,28 @@ describe("Home landing page", () => {
 
     expect(featureNetwork).toHaveClass("min-h-[330px]");
     expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_48%_49%,_rgba(255,255,255,0.93),_rgba(255,255,255,0)_54%)]");
-    expect(literatureNode).toHaveClass("left-[20.9%]");
-    expect(literatureNode).toHaveClass("top-[1.1%]");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[4.16rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[4.16rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("border-[#eb9659]");
-    expect(literatureNode.firstElementChild).toHaveClass("text-[#c45912]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_9px_rgba(240,142,79,0.13),0_20px_34px_rgba(232,124,55,0.17)]");
-    expect(literatureNode.lastElementChild).toHaveClass("text-[#a64b16]");
-    expect(dataMiningNode).toHaveClass("left-[20.1%]");
-    expect(dataMiningNode).toHaveClass("top-[67.5%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.82rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.82rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#b5c2cf]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#647181]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#5d6c7d]");
-    expect(outcomeNode).toHaveClass("right-[12.4%]");
-    expect(outcomeNode).toHaveClass("top-[12.2%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.82rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.82rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#b5c2cf]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#647181]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#5d6c7d]");
+    expect(literatureNode).toHaveClass("left-[18.8%]");
+    expect(literatureNode).toHaveClass("top-[0.4%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[4.2rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[4.2rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("border-[#ea9252]");
+    expect(literatureNode.firstElementChild).toHaveClass("text-[#bc5310]");
+    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_8px_rgba(240,142,79,0.12),0_18px_30px_rgba(232,124,55,0.16)]");
+    expect(literatureNode.lastElementChild).toHaveClass("text-[#9c4715]");
+    expect(dataMiningNode).toHaveClass("left-[18.2%]");
+    expect(dataMiningNode).toHaveClass("top-[70.2%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.9rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.9rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#aebbc8]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#5f6b79]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#536172]");
+    expect(outcomeNode).toHaveClass("right-[10.4%]");
+    expect(outcomeNode).toHaveClass("top-[11.1%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.9rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.9rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#aebbc8]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#5f6b79]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#536172]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
