@@ -37,7 +37,7 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
-    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,278px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,304px)_minmax(0,1fr)]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
@@ -213,8 +213,8 @@ describe("Home landing page", () => {
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");
 
-    expect(bestCasesSection).toHaveClass("mt-[4.7rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[5.45rem]");
+    expect(bestCasesSection).toHaveClass("mt-[3rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[3.45rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 

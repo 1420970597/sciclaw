@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[23.8%] top-[10.4%] sm:left-[23.8%] sm:top-[10.4%]",
-        lineClass: "left-[44.2%] top-[28.2%] h-px w-[14.6%] origin-left rotate-[214deg]",
+        position: "left-[18.6%] top-[6.9%] sm:left-[18.6%] sm:top-[6.9%]",
+        lineClass: "left-[42.7%] top-[27.2%] h-px w-[19.9%] origin-left rotate-[219deg]",
         ringClass: "h-[3.98rem] w-[3.98rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_17px_36px_rgba(15,23,42,0.062)]",
         activeRingClass: "h-[4.34rem] w-[4.34rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_11px_rgba(240,142,79,0.108),0_22px_42px_rgba(240,142,79,0.17)]",
-        labelClass: "max-w-[100px] text-[#a6afba]",
-        activeLabelClass: "max-w-[110px] text-[#de7b31]",
+        labelClass: "max-w-[108px] text-[#a6afba]",
+        activeLabelClass: "max-w-[114px] text-[#de7b31]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[24.5%] top-[59.2%] sm:left-[24.5%] sm:top-[59.2%]",
-        lineClass: "left-[44.35%] top-[54.2%] h-px w-[14.9%] origin-left rotate-[145deg]",
+        position: "left-[17.8%] top-[67.4%] sm:left-[17.8%] sm:top-[67.4%]",
+        lineClass: "left-[42.4%] top-[54.7%] h-px w-[20.6%] origin-left rotate-[136deg]",
         ringClass: "h-[3.98rem] w-[3.98rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_17px_36px_rgba(15,23,42,0.062)]",
         activeRingClass: "h-[4.34rem] w-[4.34rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_11px_rgba(240,142,79,0.108),0_22px_42px_rgba(240,142,79,0.17)]",
-        labelClass: "max-w-[100px] text-[#a6afba]",
-        activeLabelClass: "max-w-[110px] text-[#de7b31]",
+        labelClass: "max-w-[108px] text-[#a6afba]",
+        activeLabelClass: "max-w-[114px] text-[#de7b31]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[19.7%] top-[34.2%] sm:right-[19.7%] sm:top-[34.2%]",
-        lineClass: "left-[53.4%] top-[41.2%] h-px w-[13.2%] origin-left rotate-[7deg]",
+        position: "right-[12.5%] top-[30.8%] sm:right-[12.5%] sm:top-[30.8%]",
+        lineClass: "left-[53.1%] top-[39.8%] h-px w-[17.8%] origin-left rotate-[3deg]",
         ringClass: "h-[3.98rem] w-[3.98rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_17px_36px_rgba(15,23,42,0.062)]",
         activeRingClass: "h-[4.34rem] w-[4.34rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_11px_rgba(240,142,79,0.108),0_22px_42px_rgba(240,142,79,0.17)]",
-        labelClass: "max-w-[106px] text-[#a6afba]",
-        activeLabelClass: "max-w-[114px] text-[#de7b31]",
+        labelClass: "max-w-[112px] text-[#a6afba]",
+        activeLabelClass: "max-w-[118px] text-[#de7b31]",
       },
     ],
     [],
@@ -341,7 +341,7 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,278px)_minmax(0,1fr)] lg:items-center lg:gap-4 xl:grid-cols-[minmax(0,286px)_minmax(0,1fr)]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,304px)_minmax(0,1fr)] lg:items-center lg:gap-4 xl:grid-cols-[minmax(0,318px)_minmax(0,1fr)]"
     >
       <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.48),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-1 lg:-mr-1 lg:px-0 xl:mr-0 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
@@ -551,7 +551,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-[4.7rem] sm:mt-[5.45rem]">
+    <section className="mt-[3rem] sm:mt-[3.45rem]">
       <div className="mb-9 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
