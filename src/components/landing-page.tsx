@@ -98,21 +98,27 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
         label: "Literature Analysis",
         icon: "文",
         position: "left-[4%] top-[12%] sm:left-[7%] sm:top-[10%]",
-        lineClass: "left-[42%] top-[28%] h-px w-[23%] origin-left rotate-[8deg]",
+        lineClass: "left-[41.5%] top-[28.5%] h-px w-[22%] origin-left rotate-[8deg]",
+        ringClass: "h-[4.35rem] w-[4.35rem] border-[#eef1f5] bg-white/94 text-[#bac0ca] shadow-[0_16px_36px_rgba(15,23,42,0.08)]",
+        labelClass: "max-w-[116px] text-[#bfc5cd]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "研",
         position: "left-[16%] top-[62%] sm:left-[18%] sm:top-[60%]",
-        lineClass: "left-[44%] top-[56%] h-px w-[19%] origin-left rotate-[168deg]",
+        lineClass: "left-[44.5%] top-[56.5%] h-px w-[19%] origin-left rotate-[168deg]",
+        ringClass: "h-[4.5rem] w-[4.5rem] border-[#f7cfb5] bg-[linear-gradient(180deg,#fff8f1_0%,#ffe8d7_100%)] text-[#ea8b44] shadow-[0_0_0_10px_rgba(244,176,132,0.15),0_18px_44px_rgba(242,157,97,0.16)]",
+        labelClass: "max-w-[120px] text-[#e28b4f]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
         position: "right-[8%] top-[20%] sm:right-[10%] sm:top-[18%]",
-        lineClass: "left-[57%] top-[30%] h-px w-[22%] origin-left rotate-[166deg]",
+        lineClass: "left-[57.5%] top-[30.5%] h-px w-[21%] origin-left rotate-[166deg]",
+        ringClass: "h-[4.35rem] w-[4.35rem] border-[#eef1f5] bg-white/94 text-[#bac0ca] shadow-[0_16px_36px_rgba(15,23,42,0.08)]",
+        labelClass: "max-w-[120px] text-[#bfc5cd]",
       },
     ],
     [],
@@ -125,7 +131,9 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
         <div className="absolute left-[25%] top-[42%] h-1.5 w-1.5 rounded-full bg-[#d7dae1]" />
         <div className="absolute left-[72%] top-[36%] h-1.5 w-1.5 rounded-full bg-[#d6d9df]" />
         <div className="absolute left-[68%] top-[66%] h-1.5 w-1.5 rounded-full bg-[#d6d9df]" />
-        <div className="absolute left-[47%] top-[24%] h-[84px] w-px bg-gradient-to-b from-[#f2b28a] via-[#ed8d51] to-transparent" />
+        <div className="absolute left-[47%] top-[18%] h-[118px] w-px bg-gradient-to-b from-[#f3bc97] via-[#ed9051] to-transparent opacity-95" />
+        <div className="absolute left-1/2 top-1/2 h-[212px] w-[212px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.2)_0%,_rgba(244,177,132,0.09)_38%,_rgba(255,255,255,0)_72%)]" />
+        <div className="absolute left-1/2 top-1/2 h-[136px] w-[136px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f8cfb6]/70" />
         {nodes.map((node) => (
           <div key={node.id}>
             <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#d8dbe1] via-[#e4e6eb] to-transparent`} aria-hidden />
@@ -139,10 +147,10 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
               }}
               className={`absolute ${node.position} flex flex-col items-center gap-3 text-center transition hover:scale-[1.02]`}
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/80 bg-white/88 text-lg font-semibold text-[#b3bac4] shadow-[0_16px_36px_rgba(15,23,42,0.08)] backdrop-blur">
+              <span className={`flex items-center justify-center rounded-full border text-lg font-semibold backdrop-blur ${node.ringClass}`}>
                 {node.icon}
               </span>
-              <span className="max-w-[110px] text-xs font-medium leading-5 text-[#c1c6ce] sm:text-sm">{node.label}</span>
+              <span className={`text-xs font-medium leading-5 sm:text-sm ${node.labelClass}`}>{node.label}</span>
             </button>
           </div>
         ))}
@@ -159,6 +167,7 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
           aria-label="Data Mining"
         >
           <span className="absolute inset-[14px] rounded-full border border-[#f8c4a3]/80" />
+          <span className="absolute inset-[26px] rounded-full border border-[#f6d7c1]/80" />
           <span className="text-[22px] font-semibold sm:text-[24px]">数</span>
         </button>
         <p className="mt-4 text-sm font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-base">Data Mining</p>
@@ -215,18 +224,72 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
           </div>
         </div>
 
-        <div className="mt-8 flex h-[220px] items-end justify-between gap-3 rounded-[1.5rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-5 pb-5 pt-8 sm:h-[250px] sm:px-8">
-          {bars.map((height, index) => (
-            <div key={`${activeFeature.id}-${index}`} className="flex flex-1 flex-col items-center justify-end gap-3">
-              <div
-                className="w-full rounded-t-[1.2rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
-                style={{ height }}
-              />
-              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#b7bcc6]">
-                {previewContent.chartLabels[index] ?? `Q${index + 1}`}
-              </span>
+        <div className="mt-8 rounded-[1.6rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-5 pb-5 pt-6 sm:px-6">
+          <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
+            <div>
+              <p className="text-sm font-semibold text-[#272a30]">{previewContent.heading}</p>
+              <p className="mt-1 text-xs text-[#9da4ad]">Research workspace preview</p>
             </div>
-          ))}
+            <span className="rounded-full border border-[#f6d9c1] bg-[#fff6ef] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#e18c51]">
+              {previewContent.bodyLabel}
+            </span>
+          </div>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-[1.06fr_0.94fr]">
+            <div className="space-y-3">
+              <div className="rounded-[1.25rem] border border-[#f3e8dc] bg-white/88 p-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
+                <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c2a48a]">
+                  <span className="h-2 w-2 rounded-full bg-[#ef9c63]" />
+                  Summary
+                </div>
+                <div className="mt-4 space-y-2.5" aria-hidden>
+                  <span className="block h-2 rounded-full bg-[#eceff3]" />
+                  <span className="block h-2 w-11/12 rounded-full bg-[#eceff3]" />
+                  <span className="block h-2 w-10/12 rounded-full bg-[#eceff3]" />
+                  <span className="block h-2 w-7/12 rounded-full bg-[#f4d3bb]" />
+                </div>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {previewContent.chartLabels.slice(0, 2).map((label) => (
+                  <div
+                    key={`${activeFeature.id}-${label}`}
+                    className="rounded-[1.15rem] border border-[#f1e6da] bg-white/82 px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] text-[#a18b76] shadow-[0_8px_18px_rgba(15,23,42,0.03)]"
+                  >
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[1.35rem] border border-[#f4e8dc] bg-white/72 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#b4bbc4]">
+                  <span>Evidence</span>
+                  <span>Preview</span>
+                </div>
+                <div className="space-y-2.5" aria-hidden>
+                  <div className="h-2 rounded-full bg-[#eceff4]" />
+                  <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
+                  <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
+                </div>
+                <div className="mt-4 grid grid-cols-4 gap-2 pt-2">
+                  {bars.map((height, index) => (
+                    <div key={`${activeFeature.id}-${index}`} className="flex flex-col items-center gap-2">
+                      <div className="flex h-[150px] w-full items-end justify-center rounded-[1rem] bg-white/90 px-2 pb-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+                        <span
+                          className="w-full rounded-t-[1rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
+                          style={{ height }}
+                        />
+                      </div>
+                      <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#b7bcc6]">
+                        {previewContent.chartLabels[index] ?? `Q${index + 1}`}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -263,8 +326,10 @@ function FeatureRotator() {
   }, []);
 
   return (
-    <section id="feature-rotator" className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-12">
-      <FeatureNetwork onSelect={setActiveIndex} />
+    <section id="feature-rotator" className="grid gap-10 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:items-center lg:gap-10">
+      <div className="overflow-hidden rounded-[2.25rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.7),_rgba(255,255,255,0)_70%)] px-3 py-4 sm:px-5 lg:px-2 xl:px-4">
+        <FeatureNetwork onSelect={setActiveIndex} />
+      </div>
       <FeaturePreview activeIndex={activeIndex} />
     </section>
   );
@@ -621,7 +686,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14 xl:gap-16">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14 xl:gap-16">
             <FeatureRotator />
             <AuthCard />
           </div>

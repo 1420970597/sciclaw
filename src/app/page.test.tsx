@@ -45,6 +45,9 @@ describe("Home landing page", () => {
     expect(screen.getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
     expect(screen.getByText(/visualize patterns across uploaded evidence, filings, and datasets/i)).toBeInTheDocument();
     expect(screen.getAllByText(/data mining/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText(/research workspace preview/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/summary/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/evidence/i).length).toBeGreaterThanOrEqual(1);
   });
 
   it("keeps landing navigation targets on implemented routes", () => {
