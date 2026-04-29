@@ -57,8 +57,8 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[1fr_356px]");
-    expect(screen.getByRole("complementary")).toHaveClass("max-w-[382px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_340px]");
+    expect(screen.getByRole("complementary")).toHaveClass("max-w-[368px]");
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -171,7 +171,7 @@ describe("Home landing page", () => {
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
     const settingsTrigger = within(primaryNav).getByRole("button", { name: /settings/i });
 
-    expect(settingsTrigger).toHaveClass("rounded-[1rem]");
+    expect(settingsTrigger).toHaveClass("rounded-full");
 
     fireEvent.click(settingsTrigger);
 

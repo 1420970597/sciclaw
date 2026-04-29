@@ -81,7 +81,7 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-3 sm:gap-3.5">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[#f0e7dc]/92 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(250,246,241,0.96)_100%)] text-[#656b74] shadow-[0_18px_36px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.95)] hover:-translate-y-0.5 hover:border-[#eadccf] hover:text-[#1e2229] sm:h-[2.85rem] sm:w-[2.85rem]"
+            buttonClassName="border-[#ece3d8]/96 bg-[linear-gradient(180deg,rgba(255,255,255,0.985)_0%,rgba(247,241,233,0.97)_100%)] text-[#666c75] shadow-[0_16px_32px_rgba(15,23,42,0.075),inset_0_1px_0_rgba(255,255,255,0.96)] hover:-translate-y-0.5 hover:border-[#e5d7ca] hover:text-[#1e2229]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -356,7 +356,7 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[382px] rounded-[1.95rem] border border-[#edf0f4] bg-white/98 px-[1.1rem] py-[1.1rem] shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.2rem] sm:py-[1.2rem]"
+      className="mx-auto w-full max-w-[368px] rounded-[1.95rem] border border-[#edf0f4] bg-white/98 px-[1rem] py-[1rem] shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.08rem] sm:py-[1.08rem]"
     >
       <div className="mx-auto w-full max-w-[318px]">
         <div className="rounded-[1.42rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
@@ -550,7 +550,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-18 sm:mt-20">
+    <section className="mt-14 sm:mt-16">
       <div className="mb-10 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
@@ -701,7 +701,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[1fr_356px] lg:items-start lg:gap-4 xl:grid-cols-[0.995fr_366px] xl:gap-5" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-8 xl:grid-cols-[minmax(0,0.99fr)_350px] xl:gap-10" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
