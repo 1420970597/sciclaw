@@ -338,8 +338,11 @@ function FeatureRotator() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="feature-rotator" className="grid gap-7 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:items-center lg:gap-7">
-      <div className="overflow-hidden rounded-[2.25rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.62),_rgba(255,255,255,0)_70%)] px-2 py-3 sm:px-4 lg:px-1 xl:px-3">
+    <section
+      id="feature-rotator"
+      className="grid gap-6 lg:grid-cols-[minmax(0,330px)_minmax(0,1fr)] lg:items-center lg:gap-6 xl:grid-cols-[minmax(0,320px)_minmax(0,1fr)]"
+    >
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.52),_rgba(255,255,255,0)_68%)] px-1 py-2 sm:px-3 lg:px-0 xl:px-2">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
@@ -353,7 +356,7 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[412px] rounded-[2.15rem] border border-[#edf0f4] bg-white/98 px-5 py-5 shadow-[0_20px_56px_rgba(241,180,135,0.13),0_14px_34px_rgba(15,23,42,0.07)] sm:px-6 sm:py-6"
+      className="mx-auto w-full max-w-[396px] rounded-[2.05rem] border border-[#edf0f4] bg-white/98 px-5 py-5 shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.35rem] sm:py-[1.35rem]"
     >
       <div className="mx-auto w-full max-w-[332px]">
         <div className="rounded-[1.5rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
@@ -547,7 +550,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-24 sm:mt-26">
+    <section className="mt-18 sm:mt-20">
       <div className="mb-10 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
@@ -685,8 +688,8 @@ export function LandingPage() {
       <Header />
 
       <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-7 sm:px-8 sm:pt-8 lg:px-10 lg:pt-10">
-        <div className="space-y-14 text-center sm:space-y-16">
-          <div className="space-y-5">
+        <div className="space-y-10 text-center sm:space-y-12">
+          <div className="space-y-4 sm:space-y-[1.125rem]">
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
             </h1>
@@ -698,7 +701,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:gap-10 xl:gap-12" data-testid="landing-hero">
+          <div className="grid gap-7 lg:grid-cols-[1fr_388px] lg:items-start lg:gap-8 xl:grid-cols-[1.02fr_392px] xl:gap-10" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
