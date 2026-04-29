@@ -172,11 +172,13 @@ describe("Home landing page", () => {
     const settingsTrigger = within(primaryNav).getByRole("button", { name: /settings/i });
 
     const triggerRow = settingsTrigger.parentElement?.parentElement;
+    const navRow = primaryNav;
 
     expect(settingsTrigger).toHaveClass("rounded-full");
-    expect(settingsTrigger).toHaveClass("h-[2.28rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.28rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.16rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.16rem]");
     expect(triggerRow).toHaveClass("gap-3");
+    expect(navRow).toHaveClass("sm:gap-2");
 
     fireEvent.click(settingsTrigger);
 
@@ -207,8 +209,8 @@ describe("Home landing page", () => {
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");
 
-    expect(bestCasesSection).toHaveClass("mt-16");
-    expect(bestCasesSection).toHaveClass("sm:mt-[4.6rem]");
+    expect(bestCasesSection).toHaveClass("mt-[4.8rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[5.6rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 

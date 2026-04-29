@@ -78,7 +78,7 @@ function Header() {
   return (
     <header className="pt-8 sm:pt-10">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-6 sm:px-8 lg:px-10">
-        <nav aria-label="Primary" className="flex items-center gap-2.5 sm:gap-3">
+        <nav aria-label="Primary" className="flex items-center gap-1.5 sm:gap-2">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             buttonClassName="border-[#ece3d8]/96 bg-[linear-gradient(180deg,rgba(255,255,255,0.985)_0%,rgba(247,241,233,0.97)_100%)] text-[#666c75] shadow-[0_16px_32px_rgba(15,23,42,0.075),inset_0_1px_0_rgba(255,255,255,0.96)] hover:-translate-y-0.5 hover:border-[#e5d7ca] hover:text-[#1e2229]"
@@ -132,7 +132,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
   );
 
   return (
-    <div className="relative min-h-[276px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_48%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_64%)] sm:min-h-[334px]">
+    <div className="relative min-h-[292px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_48%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_64%)] sm:min-h-[348px]">
       <div className="absolute inset-0 opacity-[0.98]">
         <div className="absolute left-[22%] top-[15%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
         <div className="absolute left-[31%] top-[39%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
@@ -313,7 +313,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
         </div>
       </div>
 
-      <div className="space-y-4 px-1 pt-0.5">
+      <div className="space-y-4 px-1 pt-1.5">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ed8a43]">{previewContent.bodyLabel}</p>
         <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.92rem] md:text-[2.06rem]">
           {previewContent.heading}
@@ -340,9 +340,9 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,268px)_minmax(0,1fr)] lg:items-center lg:gap-3 xl:grid-cols-[minmax(0,274px)_minmax(0,1fr)]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,294px)_minmax(0,1fr)] lg:items-center lg:gap-4 xl:grid-cols-[minmax(0,300px)_minmax(0,1fr)]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.48),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-1 lg:-mr-2 lg:px-0 xl:-mr-3 xl:px-1">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.48),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-1 lg:-mr-1 lg:px-0 xl:mr-0 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
@@ -550,7 +550,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-16 sm:mt-[4.6rem]">
+    <section className="mt-[4.8rem] sm:mt-[5.6rem]">
       <div className="mb-9 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
