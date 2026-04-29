@@ -37,9 +37,9 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
-    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,326px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("lg:gap-[1.75rem]");
-    expect(featureRotator).toHaveClass("xl:gap-[1.95rem]");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,334px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:gap-[1.35rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[1.55rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
@@ -63,7 +63,7 @@ describe("Home landing page", () => {
     const hero = screen.getByTestId("landing-hero");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_332px]");
     expect(hero).toHaveClass("lg:gap-[3.4rem]");
-    expect(screen.getByRole("complementary")).toHaveClass("max-w-[362px]");
+    expect(screen.getByRole("complementary")).toHaveClass("max-w-[350px]");
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -180,13 +180,11 @@ describe("Home landing page", () => {
     const navRow = primaryNav;
 
     expect(settingsTrigger).toHaveClass("rounded-full");
-    expect(settingsTrigger).toHaveClass("h-[2.16rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.16rem]");
-    expect(settingsTrigger).toHaveClass("h-9");
-    expect(settingsTrigger).toHaveClass("w-9");
+    expect(settingsTrigger).toHaveClass("h-[2.02rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.02rem]");
     expect(triggerRow).toHaveClass("gap-3");
-    expect(navRow).toHaveClass("gap-[0.35rem]");
-    expect(navRow).toHaveClass("sm:gap-[0.32rem]");
+    expect(navRow).toHaveClass("gap-[0.28rem]");
+    expect(navRow).toHaveClass("sm:gap-[0.26rem]");
     expect(screen.getByRole("button", { name: /^文 literature analysis$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^数 data mining$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^果 outcome present$/i })).toBeInTheDocument();
@@ -220,8 +218,8 @@ describe("Home landing page", () => {
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");
 
-    expect(bestCasesSection).toHaveClass("mt-[2.2rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[2.65rem]");
+    expect(bestCasesSection).toHaveClass("mt-[1.55rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[1.95rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
