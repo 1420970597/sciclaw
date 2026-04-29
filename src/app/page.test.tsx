@@ -5,7 +5,11 @@ describe("Home landing page", () => {
   it("shows the public homepage default hero state on fresh load", () => {
     render(<Home />);
 
-    expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
+    const landingHero = screen.getByTestId("landing-hero");
+    const defaultHeroSection = within(landingHero).getByRole("heading", { name: /deep literature analysis/i }).closest("section");
+
+    expect(defaultHeroSection).not.toBeNull();
+    expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
     expect(
       screen.getByText(
         /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
@@ -13,8 +17,20 @@ describe("Home landing page", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
-    expect(screen.getByText(/33%/i)).toBeInTheDocument();
-    expect(screen.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
+
+    const heroScope = within(defaultHeroSection as HTMLElement);
+    expect(heroScope.getByText(/research workspace preview/i)).toBeInTheDocument();
+    const heroPreviewCards = heroScope.getAllByText(/^deep literature analysis$/i);
+
+    expect(heroPreviewCards).toHaveLength(2);
+    expect(heroScope.getByText(/^summary$/i)).toBeInTheDocument();
+    expect(heroScope.getAllByText(/^autonomous research$/i)).toHaveLength(2);
+    expect(heroScope.getAllByText(/^methodology$/i)).toHaveLength(2);
+    expect(heroScope.getAllByText(/^conclusion$/i)).toHaveLength(2);
+    expect(heroScope.getByText(/^data$/i)).toBeInTheDocument();
+    expect(heroScope.getAllByText(/^evidence$/i)).toHaveLength(2);
+    expect(heroScope.queryByText(/33%/i)).not.toBeInTheDocument();
+    expect(heroScope.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
   });
 
   it("renders the public-inspired landing structure", () => {

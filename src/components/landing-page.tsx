@@ -223,8 +223,6 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
       ctaLabel: "Get started",
     },
   } as const;
-  const heroDefaultContent = previewMap["literature-analysis"];
-  const isDefaultLandingState = activeIndex === 0;
   const previewContent = previewMap[activeFeature.id as keyof typeof previewMap] ?? previewMap["literature-analysis"];
   const bars =
     activeIndex === 0
@@ -246,115 +244,71 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
         </div>
 
         <div className="mt-8 rounded-[1.6rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-5 pb-5 pt-6 sm:px-6">
-          {isDefaultLandingState ? (
-            <div className="rounded-[1.55rem] border border-[#f3e6d8] bg-[linear-gradient(180deg,#fffdfa_0%,#fff7ef_100%)] px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] sm:px-5">
-              <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-[#c7ccd4]">
-                <span className="rounded-full bg-white/90 px-3 py-1 text-[#d0b59c] shadow-[0_4px_12px_rgba(15,23,42,0.03)]">
-                  {heroDefaultContent.bodyLabel}
-                </span>
-                <span className="text-[#ee934f]">33%</span>
+          <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
+            <div>
+              <p className="text-sm font-semibold text-[#272a30]">{previewContent.heading}</p>
+              <p className="mt-1 text-xs text-[#9da4ad]">Research workspace preview</p>
+            </div>
+            <span className="rounded-full border border-[#f6d9c1] bg-[#fff6ef] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#e18c51]">
+              {previewContent.bodyLabel}
+            </span>
+          </div>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-[1.06fr_0.94fr]">
+            <div className="space-y-3">
+              <div className="rounded-[1.25rem] border border-[#f3e8dc] bg-white/88 p-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
+                <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c2a48a]">
+                  <span className="h-2 w-2 rounded-full bg-[#ef9c63]" />
+                  Summary
+                </div>
+                <div className="mt-4 space-y-2.5" aria-hidden>
+                  <span className="block h-2 rounded-full bg-[#eceff3]" />
+                  <span className="block h-2 w-11/12 rounded-full bg-[#eceff3]" />
+                  <span className="block h-2 w-10/12 rounded-full bg-[#eceff3]" />
+                  <span className="block h-2 w-7/12 rounded-full bg-[#f4d3bb]" />
+                </div>
               </div>
-              <div className="mt-5 space-y-3.5">
-                {[
-                  { width: "w-[72%]", active: true },
-                  { width: "w-[56%]", active: true },
-                  { width: "w-[88%]" },
-                  { width: "w-[78%]" },
-                  { width: "w-[93%]" },
-                ].map((row, index) => (
-                  <div key={`hero-default-row-${index}`} className="flex items-center gap-3" aria-hidden>
-                    <span
-                      className={`h-2.5 w-2.5 rounded-full border ${
-                        row.active ? "border-[#ed9552] bg-[#ed9552] shadow-[0_0_0_4px_rgba(237,149,82,0.14)]" : "border-[#e4e8ee] bg-white"
-                      }`}
-                    />
-                    <div className="h-9 flex-1 rounded-[1rem] bg-white/94 px-4 py-3 shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
-                      <span
-                        className={`block h-2 rounded-full ${row.width} ${row.active ? "bg-[#f1b686]" : "bg-[#e8ecf2]"}`}
-                      />
-                    </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {previewContent.chartLabels.slice(0, 2).map((label) => (
+                  <div
+                    key={`${activeFeature.id}-${label}`}
+                    className="rounded-[1.15rem] border border-[#f1e6da] bg-white/82 px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] text-[#a18b76] shadow-[0_8px_18px_rgba(15,23,42,0.03)]"
+                  >
+                    {label}
                   </div>
                 ))}
-                <div className="flex items-center gap-3 pt-2" aria-hidden>
-                  <span className="h-2.5 w-2.5 rounded-full border border-[#e4e8ee] bg-white" />
-                  <div className="h-8 flex-1 rounded-[1rem] bg-white/94 px-4 py-3 shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
-                    <div className="flex items-center gap-2">
-                      <span className="block h-2 w-[28%] rounded-full bg-[#f1b686]" />
-                      <span className="block h-2 w-[54%] rounded-full bg-[#e8ecf2]" />
+              </div>
+            </div>
+
+            <div className="rounded-[1.35rem] border border-[#f4e8dc] bg-white/72 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#b4bbc4]">
+                  <span>Evidence</span>
+                  <span>Preview</span>
+                </div>
+                <div className="space-y-2.5" aria-hidden>
+                  <div className="h-2 rounded-full bg-[#eceff4]" />
+                  <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
+                  <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
+                </div>
+                <div className="mt-4 grid grid-cols-4 gap-2 pt-2">
+                  {bars.map((height, index) => (
+                    <div key={`${activeFeature.id}-${index}`} className="flex flex-col items-center gap-2">
+                      <div className="flex h-[150px] w-full items-end justify-center rounded-[1rem] bg-white/90 px-2 pb-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+                        <span
+                          className="w-full rounded-t-[1rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
+                          style={{ height }}
+                        />
+                      </div>
+                      <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#b7bcc6]">
+                        {previewContent.chartLabels[index] ?? `Q${index + 1}`}
+                      </span>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
-          ) : (
-            <>
-              <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
-                <div>
-                  <p className="text-sm font-semibold text-[#272a30]">{previewContent.heading}</p>
-                  <p className="mt-1 text-xs text-[#9da4ad]">Research workspace preview</p>
-                </div>
-                <span className="rounded-full border border-[#f6d9c1] bg-[#fff6ef] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#e18c51]">
-                  {previewContent.bodyLabel}
-                </span>
-              </div>
-
-              <div className="mt-5 grid gap-4 lg:grid-cols-[1.06fr_0.94fr]">
-                <div className="space-y-3">
-                  <div className="rounded-[1.25rem] border border-[#f3e8dc] bg-white/88 p-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                    <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c2a48a]">
-                      <span className="h-2 w-2 rounded-full bg-[#ef9c63]" />
-                      Summary
-                    </div>
-                    <div className="mt-4 space-y-2.5" aria-hidden>
-                      <span className="block h-2 rounded-full bg-[#eceff3]" />
-                      <span className="block h-2 w-11/12 rounded-full bg-[#eceff3]" />
-                      <span className="block h-2 w-10/12 rounded-full bg-[#eceff3]" />
-                      <span className="block h-2 w-7/12 rounded-full bg-[#f4d3bb]" />
-                    </div>
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {previewContent.chartLabels.slice(0, 2).map((label) => (
-                      <div
-                        key={`${activeFeature.id}-${label}`}
-                        className="rounded-[1.15rem] border border-[#f1e6da] bg-white/82 px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] text-[#a18b76] shadow-[0_8px_18px_rgba(15,23,42,0.03)]"
-                      >
-                        {label}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-[1.35rem] border border-[#f4e8dc] bg-white/72 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#b4bbc4]">
-                      <span>Evidence</span>
-                      <span>Preview</span>
-                    </div>
-                    <div className="space-y-2.5" aria-hidden>
-                      <div className="h-2 rounded-full bg-[#eceff4]" />
-                      <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
-                      <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
-                    </div>
-                    <div className="mt-4 grid grid-cols-4 gap-2 pt-2">
-                      {bars.map((height, index) => (
-                        <div key={`${activeFeature.id}-${index}`} className="flex flex-col items-center gap-2">
-                          <div className="flex h-[150px] w-full items-end justify-center rounded-[1rem] bg-white/90 px-2 pb-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-                            <span
-                              className="w-full rounded-t-[1rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
-                              style={{ height }}
-                            />
-                          </div>
-                          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#b7bcc6]">
-                            {previewContent.chartLabels[index] ?? `Q${index + 1}`}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
+          </div>
         </div>
       </div>
 
@@ -755,7 +709,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14 xl:gap-16">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14 xl:gap-16" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
