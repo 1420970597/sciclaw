@@ -57,7 +57,7 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[1fr_368px]");
+    expect(hero).toHaveClass("lg:grid-cols-[1fr_356px]");
     expect(screen.getByRole("complementary")).toHaveClass("max-w-[382px]");
   });
 
@@ -165,24 +165,21 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("shows the public contact dock menu entries with live-site external destinations", () => {
+  it("renders rounded-square top utility triggers and first-level menu labels", () => {
     render(<Home />);
 
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
+    const settingsTrigger = within(primaryNav).getByRole("button", { name: /settings/i });
 
-    fireEvent.click(within(primaryNav).getByRole("button", { name: /contact us/i }));
+    expect(settingsTrigger).toHaveClass("rounded-[1rem]");
 
-    const contactMenu = screen.getByRole("menu", { name: /contact us/i });
-    expect(within(contactMenu).getByRole("menuitem", { name: /discord/i })).toHaveAttribute(
-      "href",
-      "https://discord.gg/6KRR6svTGu",
-    );
-    expect(within(contactMenu).getByRole("menuitem", { name: /email/i })).toHaveAttribute(
-      "href",
-      "mailto:service@sciclaw.ai",
-    );
-    expect(contactMenu).toHaveTextContent(/discord\.gg\/6KRR6svTGu/i);
-    expect(contactMenu).toHaveTextContent(/service@sciclaw\.ai/i);
+    fireEvent.click(settingsTrigger);
+
+    const settingsMenu = screen.getByRole("menu", { name: /settings/i });
+    expect(within(settingsMenu).getByRole("menuitem", { name: /theme/i })).toBeInTheDocument();
+    expect(within(settingsMenu).getByRole("menuitem", { name: /language/i })).toBeInTheDocument();
+    expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
+    expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
   });
 
   it("renders the footer copy centered to match the public landing page", () => {

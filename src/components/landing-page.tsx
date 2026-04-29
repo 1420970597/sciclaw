@@ -9,7 +9,7 @@ import {
   type AuthTab,
 } from "@/app/landing-data";
 
-function GuideIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
+function GuideIcon({ className = "h-[1.1rem] w-[1.1rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
       <path d="M5.5 6.5A2.5 2.5 0 0 1 8 4h9v14H8a2.5 2.5 0 0 0-2.5 2.5V6.5Z" />
@@ -19,7 +19,7 @@ function GuideIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
   );
 }
 
-function ContactIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
+function ContactIcon({ className = "h-[1.1rem] w-[1.1rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
       <path d="M6.75 11.75a4.75 4.75 0 0 1 9.5 0" />
@@ -31,7 +31,7 @@ function ContactIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
   );
 }
 
-function SettingsIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
+function SettingsIcon({ className = "h-[1.1rem] w-[1.1rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
       <circle cx="12" cy="12" r="3" />
@@ -340,9 +340,9 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,278px)_minmax(0,1fr)] lg:items-center lg:gap-4 xl:grid-cols-[minmax(0,286px)_minmax(0,1fr)]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,268px)_minmax(0,1fr)] lg:items-center lg:gap-3 xl:grid-cols-[minmax(0,274px)_minmax(0,1fr)]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.48),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-1 lg:px-0 xl:px-1">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.48),_rgba(255,255,255,0)_68%)] px-0 py-1 sm:px-1 lg:-mr-2 lg:px-0 xl:-mr-3 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
@@ -701,7 +701,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[1fr_368px] lg:items-start lg:gap-5 xl:grid-cols-[1.005fr_376px] xl:gap-6" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[1fr_356px] lg:items-start lg:gap-4 xl:grid-cols-[0.995fr_366px] xl:gap-5" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
