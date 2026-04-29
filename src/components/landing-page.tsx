@@ -671,7 +671,7 @@ function BestCases() {
 function Footer() {
   return (
     <footer className="mt-24 border-t border-black/6">
-      <div className="mx-auto grid max-w-[1240px] gap-3 px-6 py-10 text-sm text-[#8a9098] sm:px-8 lg:px-10">
+      <div className="mx-auto grid max-w-[1240px] items-center gap-3 px-6 py-10 text-center text-sm text-[#8a9098] sm:px-8 lg:px-10">
         <p>SciClaw - AI co-worker for scientific research.</p>
         <p>2026 All rights reserved</p>
       </div>

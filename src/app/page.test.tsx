@@ -161,6 +161,37 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
   });
 
+  it("shows the public contact dock menu entries with live-site external destinations", () => {
+    render(<Home />);
+
+    const primaryNav = screen.getByRole("navigation", { name: /primary/i });
+
+    fireEvent.click(within(primaryNav).getByRole("button", { name: /contact us/i }));
+
+    const contactMenu = screen.getByRole("menu", { name: /contact us/i });
+    expect(within(contactMenu).getByRole("menuitem", { name: /discord/i })).toHaveAttribute(
+      "href",
+      "https://discord.gg/6KRR6svTGu",
+    );
+    expect(within(contactMenu).getByRole("menuitem", { name: /email/i })).toHaveAttribute(
+      "href",
+      "mailto:service@sciclaw.ai",
+    );
+    expect(contactMenu).toHaveTextContent(/discord\.gg\/6KRR6svTGu/i);
+    expect(contactMenu).toHaveTextContent(/service@sciclaw\.ai/i);
+  });
+
+  it("renders the footer copy centered to match the public landing page", () => {
+    render(<Home />);
+
+    const footer = screen.getByRole("contentinfo");
+
+    expect(footer).toHaveTextContent(/sciclaw - ai co-worker for scientific research\./i);
+    expect(footer).toHaveTextContent(/2026 all rights reserved/i);
+    expect(footer.firstElementChild).toHaveClass("items-center");
+    expect(footer.firstElementChild).toHaveClass("text-center");
+  });
+
   it("matches the live site best-cases default slide and keeps next/previous order aligned", () => {
     render(<Home />);
 
