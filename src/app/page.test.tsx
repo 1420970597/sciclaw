@@ -36,6 +36,9 @@ describe("Home landing page", () => {
   it("renders the public-inspired landing structure", () => {
     render(<Home />);
 
+    const landingHero = screen.getByTestId("landing-hero");
+    const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,278px)_minmax(0,1fr)]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
