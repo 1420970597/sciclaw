@@ -52,23 +52,47 @@ describe("Home landing page", () => {
 
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
     const footer = screen.getByRole("contentinfo");
-    const headerLinks = within(primaryNav).getAllByRole("link");
+    const headerButtons = within(primaryNav).getAllByRole("button");
 
-    expect(within(primaryNav).getByRole("link", { name: /user guide/i })).toHaveAttribute(
+    expect(within(primaryNav).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
+    expect(within(primaryNav).getByRole("button", { name: /contact us/i })).toBeInTheDocument();
+    expect(within(primaryNav).getByRole("button", { name: /settings/i })).toBeInTheDocument();
+
+    fireEvent.click(within(primaryNav).getByRole("button", { name: /user guide/i }));
+    const guideMenu = screen.getByRole("menu", { name: /user guide/i });
+    expect(within(guideMenu).getByRole("menuitem", { name: /workspace basics/i })).toHaveAttribute(
       "href",
       "/help/getting-started",
     );
-    expect(within(primaryNav).getByRole("link", { name: /contact us/i })).toHaveAttribute(
+
+    fireEvent.click(within(primaryNav).getByRole("button", { name: /contact us/i }));
+    const contactMenu = screen.getByRole("menu", { name: /contact us/i });
+    expect(within(contactMenu).getByRole("menuitem", { name: /privacy policy/i })).toHaveAttribute(
       "href",
       "/privacy",
     );
-    expect(within(primaryNav).getByRole("link", { name: /settings/i })).toHaveAttribute(
+
+    fireEvent.click(within(primaryNav).getByRole("button", { name: /settings/i }));
+    const settingsMenu = screen.getByRole("menu", { name: /settings/i });
+    expect(within(settingsMenu).getByRole("menuitem", { name: /theme/i })).toHaveAttribute(
       "href",
       "/help/settings",
     );
 
     expect(footer).toHaveTextContent(/2026 all rights reserved/i);
-    expect(headerLinks).toHaveLength(3);
+    expect(headerButtons).toHaveLength(3);
+  });
+
+  it("opens the landing settings dock menu with first-level theme and language entries", () => {
+    render(<Home />);
+
+    fireEvent.click(screen.getByRole("button", { name: /settings/i }));
+
+    const settingsMenu = screen.getByRole("menu", { name: /settings/i });
+    expect(settingsMenu).toBeInTheDocument();
+    expect(within(settingsMenu).getByRole("menuitem", { name: /theme/i })).toBeInTheDocument();
+    expect(within(settingsMenu).getByRole("menuitem", { name: /language/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
   });
 
   it("cycles the best-cases carousel with arrow controls", () => {

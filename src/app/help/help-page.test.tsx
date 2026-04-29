@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import HelpArticlePage, { generateStaticParams } from "@/app/help/[slug]/page";
 
 describe("Help article page", () => {
@@ -66,5 +66,20 @@ describe("Help article page", () => {
       "href",
       "/help/im",
     );
+  });
+
+  it("opens the docs appearance menu with theme and language entries", async () => {
+    const page = await HelpArticlePage({
+      params: Promise.resolve({ slug: "getting-started" }),
+    });
+
+    render(page);
+
+    fireEvent.click(screen.getByRole("button", { name: /appearance and language/i }));
+
+    const utilityMenu = screen.getByRole("menu", { name: /appearance and language/i });
+    expect(utilityMenu).toBeInTheDocument();
+    expect(within(utilityMenu).getByRole("menuitem", { name: /theme/i })).toBeInTheDocument();
+    expect(within(utilityMenu).getByRole("menuitem", { name: /language/i })).toBeInTheDocument();
   });
 });

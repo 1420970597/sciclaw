@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DockMenuBar } from "@/components/dock-menu-bar";
 import { helpArticles, helpArticleMap, type HelpArticle, type HelpIcon } from "@/app/landing-data";
 
 type HelpShellProps = {
@@ -120,6 +121,31 @@ function DocsSidebar({ currentSlug }: { currentSlug: string }) {
 }
 
 function DocsTopBar() {
+  const utilityGroups = [
+    {
+      id: "appearance-language",
+      triggerLabel: "Appearance and language",
+      triggerAriaLabel: "Appearance and language",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-4 w-4" aria-hidden>
+          <path d="M12 3v2.5" />
+          <path d="M12 18.5V21" />
+          <path d="m5.6 5.6 1.8 1.8" />
+          <path d="m16.6 16.6 1.8 1.8" />
+          <path d="M3 12h2.5" />
+          <path d="M18.5 12H21" />
+          <path d="m5.6 18.4 1.8-1.8" />
+          <path d="m16.6 7.4 1.8-1.8" />
+          <circle cx="12" cy="12" r="3.5" />
+        </svg>
+      ),
+      items: [
+        { id: "theme", label: "Theme", description: "Light docs shell" },
+        { id: "language", label: "Language", description: "English" },
+      ],
+    },
+  ] as const;
+
   return (
     <header className="border-b border-black/8 pb-4">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -149,23 +175,13 @@ function DocsTopBar() {
               ⌘K
             </span>
           </button>
-          <button
-            type="button"
-            aria-label="Appearance and language"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-black/8 bg-white text-[#8b8b8b] transition hover:border-black/15 hover:text-[#333]"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-4 w-4" aria-hidden>
-              <path d="M12 3v2.5" />
-              <path d="M12 18.5V21" />
-              <path d="m5.6 5.6 1.8 1.8" />
-              <path d="m16.6 16.6 1.8 1.8" />
-              <path d="M3 12h2.5" />
-              <path d="M18.5 12H21" />
-              <path d="m5.6 18.4 1.8-1.8" />
-              <path d="m16.6 7.4 1.8-1.8" />
-              <circle cx="12" cy="12" r="3.5" />
-            </svg>
-          </button>
+          <DockMenuBar
+            groups={utilityGroups.map((group) => ({ ...group, items: [...group.items] }))}
+            className="gap-0"
+            buttonClassName="h-9 w-9 rounded-xl border-black/8 bg-white text-[#8b8b8b] hover:border-black/15 hover:text-[#333]"
+            panelClassName="right-0 min-w-[154px] rounded-[1rem] border-black/8 bg-white text-[#4b4b4b]"
+            itemClassName="hover:bg-[#f6f6f6]"
+          />
         </div>
       </div>
     </header>

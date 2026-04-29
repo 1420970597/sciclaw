@@ -2,61 +2,92 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { DockMenuBar } from "@/components/dock-menu-bar";
 import {
   bestCases,
   featureItems,
-  navLinks,
   type AuthTab,
 } from "@/app/landing-data";
 
+function GuideIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
+      <path d="M5.5 6.5A2.5 2.5 0 0 1 8 4h9v14H8a2.5 2.5 0 0 0-2.5 2.5V6.5Z" />
+      <path d="M17 18H8a2.5 2.5 0 0 0 0 5h9" />
+      <path d="M9.5 8.5h4.5" />
+    </svg>
+  );
+}
+
+function ContactIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
+      <path d="M5 4.5h9A4.5 4.5 0 0 1 18.5 9v10H8a3 3 0 0 0-3 3V4.5Z" />
+      <path d="M18.5 19H8a3 3 0 0 0 0 6h10.5" />
+      <path d="M9.5 8.5h5" />
+      <path d="M9.5 12h4" />
+    </svg>
+  );
+}
+
+function SettingsIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19 12a7 7 0 0 0-.12-1.25l1.74-1.35-1.7-2.94-2.08.84a7.15 7.15 0 0 0-2.16-1.25L14.4 3h-3l-.28 2.05a7.15 7.15 0 0 0-2.16 1.25l-2.08-.84-1.7 2.94 1.74 1.35A7 7 0 0 0 5 12c0 .43.04.85.12 1.25L3.38 14.6l1.7 2.94 2.08-.84c.64.53 1.37.95 2.16 1.25L11.4 21h3l.28-2.05a7.15 7.15 0 0 0 2.16-1.25l2.08.84 1.7-2.94-1.74-1.35c.08-.4.12-.82.12-1.25Z" />
+    </svg>
+  );
+}
+
 function Header() {
+  const settingsGroups = [
+    {
+      id: "guide",
+      triggerLabel: "User Guide",
+      triggerAriaLabel: "User Guide",
+      icon: <GuideIcon />,
+      items: [
+        { id: "workspace-basics", label: "Workspace basics", description: "Projects, sessions, and flow", href: "/help/getting-started" },
+        { id: "skills-reference", label: "Skills reference", description: "Enable the right research tools", href: "/help/skills" },
+      ],
+    },
+    {
+      id: "contact",
+      triggerLabel: "Contact Us",
+      triggerAriaLabel: "Contact Us",
+      icon: <ContactIcon />,
+      items: [
+        { id: "privacy-policy", label: "Privacy Policy", description: "Legal and data handling", href: "/privacy" },
+        { id: "beta-access", label: "Beta access", description: "Request onboarding support", href: "/privacy" },
+      ],
+    },
+    {
+      id: "settings",
+      triggerId: "landing-settings-trigger",
+      triggerLabel: "Settings",
+      triggerAriaLabel: "Settings",
+      icon: <SettingsIcon />,
+      items: [
+        { id: "theme", label: "Theme", description: "Light workspace previews", href: "/help/settings" },
+        { id: "language", label: "Language", description: "English-first public shell", href: "/help/settings" },
+      ],
+    },
+  ] as const;
+
   return (
     <header className="pt-8 sm:pt-10">
       <div className="mx-auto flex w-full max-w-[1240px] items-center justify-end px-6 sm:px-8 lg:px-10">
         <nav aria-label="Primary" className="flex items-center gap-3 sm:gap-3.5">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              aria-label={link.label}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/7 bg-white/96 text-[#5a6069] shadow-[0_12px_28px_rgba(15,23,42,0.06)] transition hover:-translate-y-0.5 hover:border-black/10 hover:text-[#1e2229] sm:h-11 sm:w-11"
-            >
-              <HeaderIcon label={link.label} />
-            </Link>
-          ))}
+          <DockMenuBar
+            groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
+            buttonClassName="border-black/7 bg-white/96 text-[#5a6069] shadow-[0_12px_28px_rgba(15,23,42,0.06)] hover:-translate-y-0.5 hover:border-black/10 hover:text-[#1e2229] sm:h-11 sm:w-11"
+            panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
+            itemClassName="hover:bg-[#f5f7fa]"
+          />
         </nav>
       </div>
     </header>
   );
-}
-
-function HeaderIcon({ label }: { label: string }) {
-  switch (label) {
-    case "User Guide":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4.5 w-4.5" aria-hidden>
-          <path d="M5.5 6.5A2.5 2.5 0 0 1 8 4h9v14H8a2.5 2.5 0 0 0-2.5 2.5V6.5Z" />
-          <path d="M17 18H8a2.5 2.5 0 0 0 0 5h9" />
-          <path d="M9.5 8.5h4.5" />
-        </svg>
-      );
-    case "Privacy":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4.5 w-4.5" aria-hidden>
-          <path d="M5 4.5h9A4.5 4.5 0 0 1 18.5 9v10H8a3 3 0 0 0-3 3V4.5Z" />
-          <path d="M18.5 19H8a3 3 0 0 0 0 6h10.5" />
-          <path d="M9.5 8.5h5" />
-          <path d="M9.5 12h4" />
-        </svg>
-      );
-    default:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4.5 w-4.5" aria-hidden>
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19 12a7 7 0 0 0-.12-1.25l1.74-1.35-1.7-2.94-2.08.84a7.15 7.15 0 0 0-2.16-1.25L14.4 3h-3l-.28 2.05a7.15 7.15 0 0 0-2.16 1.25l-2.08-.84-1.7 2.94 1.74 1.35A7 7 0 0 0 5 12c0 .43.04.85.12 1.25L3.38 14.6l1.7 2.94 2.08-.84c.64.53 1.37.95 2.16 1.25L11.4 21h3l.28-2.05a7.15 7.15 0 0 0 2.16-1.25l2.08.84 1.7-2.94-1.74-1.35c.08-.4.12-.82.12-1.25Z" />
-        </svg>
-      );
-  }
 }
 
 function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
