@@ -11,19 +11,15 @@ import {
 
 function Header() {
   return (
-    <header className="border-b border-black/6 bg-[#f4f5f8]/95 backdrop-blur-sm">
-      <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
-        <a href="#top" className="text-base font-semibold tracking-[-0.02em] text-[#1f2024]">
-          Sci<span className="text-[#eb8a3c]">Claw</span>
-        </a>
-
-        <nav aria-label="Primary" className="flex items-center gap-3">
+    <header className="pt-8 sm:pt-10">
+      <div className="mx-auto flex w-full max-w-[1240px] items-center justify-end px-6 sm:px-8 lg:px-10">
+        <nav aria-label="Primary" className="flex items-center gap-3 sm:gap-3.5">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               aria-label={link.label}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/8 bg-white text-[#44484f] shadow-[0_10px_25px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5 hover:border-black/12 hover:text-[#181a1f]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/7 bg-white/96 text-[#5a6069] shadow-[0_12px_28px_rgba(15,23,42,0.06)] transition hover:-translate-y-0.5 hover:border-black/10 hover:text-[#1e2229] sm:h-11 sm:w-11"
             >
               <HeaderIcon label={link.label} />
             </Link>
@@ -249,49 +245,46 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="rounded-[2rem] border border-[#ebeef3] bg-white px-6 py-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-7 sm:py-7"
+      className="mx-auto w-full max-w-[430px] rounded-[2.2rem] border border-[#eceff4] bg-white/98 px-6 py-6 shadow-[0_24px_90px_rgba(241,180,135,0.16),0_18px_50px_rgba(15,23,42,0.08)] sm:px-7 sm:py-7"
     >
-      <div className="mx-auto w-full max-w-[320px]">
-        <div role="tablist" aria-label="Authentication mode" className="inline-flex rounded-full bg-[#f4f6f9] p-1 text-sm text-[#8a909a]">
-          {[
-            { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
-            { key: "login", label: "Login", panelId: "auth-panel-login" },
-          ].map((tab) => {
-            const selected = activeTab === tab.key;
+      <div className="mx-auto w-full max-w-[332px]">
+        <div className="rounded-[1.5rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
+          <div role="tablist" aria-label="Authentication mode" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f6f7fa] p-1 text-sm text-[#8a909a]">
+            {[
+              { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
+              { key: "login", label: "Login", panelId: "auth-panel-login" },
+            ].map((tab) => {
+              const selected = activeTab === tab.key;
 
-            return (
-              <button
-                key={tab.key}
-                type="button"
-                role="tab"
-                id={`auth-tab-${tab.key}`}
-                aria-selected={selected}
-                aria-controls={tab.panelId}
-                onClick={() => setActiveTab(tab.key as AuthTab)}
-                className={`rounded-full px-5 py-2.5 font-medium transition ${
-                  selected ? "bg-[#1f232a] text-white shadow-[0_12px_24px_rgba(31,35,42,0.16)]" : "text-[#8a909a] hover:text-[#2a2e35]"
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
+              return (
+                <button
+                  key={tab.key}
+                  type="button"
+                  role="tab"
+                  id={`auth-tab-${tab.key}`}
+                  aria-selected={selected}
+                  aria-controls={tab.panelId}
+                  onClick={() => setActiveTab(tab.key as AuthTab)}
+                  className={`rounded-[1rem] px-5 py-2.5 font-medium transition ${
+                    selected
+                      ? "bg-[#f5d1b6] text-[#6b4b35] shadow-[0_10px_24px_rgba(241,176,126,0.22)]"
+                      : "text-[#8a909a] hover:text-[#2a2e35]"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="mt-6 space-y-5">
-          <Link
-            href="/help/getting-started"
-            className="inline-flex w-full items-center justify-center rounded-[1.3rem] bg-[#f4a25f] px-4 py-3.5 text-sm font-semibold text-white shadow-[0_18px_28px_rgba(244,162,95,0.22)] transition hover:brightness-105"
-          >
-            Get started
-          </Link>
-
+        <div className="mt-5 space-y-5">
           <div
             role="tabpanel"
             id={activeTab === "onboard" ? "auth-panel-onboard" : "auth-panel-login"}
             aria-labelledby={activeTab === "onboard" ? "auth-tab-onboard" : "auth-tab-login"}
             aria-label={activeTab === "onboard" ? "Onboard" : "Login"}
-            className="rounded-[1.5rem] border border-[#eef1f5] bg-[#fbfcfd] p-4 sm:p-5"
+            className="rounded-[1.7rem] border border-[#eef1f5] bg-[#fbfcfd] p-4 sm:p-5"
           >
             {activeTab === "onboard" ? (
               <div className="space-y-4">
@@ -349,24 +342,28 @@ function AuthCard() {
                 <button
                   type="submit"
                   disabled
-                  className="w-full rounded-[1.2rem] bg-[#1f232a] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white opacity-100 transition disabled:cursor-not-allowed disabled:bg-[#1f232a] disabled:text-white"
+                  className="w-full rounded-[1.2rem] bg-[#f2a467] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_16px_32px_rgba(242,164,103,0.3)] transition disabled:cursor-not-allowed disabled:bg-[#f2a467] disabled:text-white"
                 >
                   Enter laboratory
+                </button>
+                <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] text-[#a1a7b0]">
+                  <span className="h-px flex-1 bg-[#e6e9ee]" />
+                  OR
+                  <span className="h-px flex-1 bg-[#e6e9ee]" />
+                </div>
+                <button
+                  type="button"
+                  className="w-full rounded-[1.2rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium uppercase tracking-[0.12em] text-[#31363d] shadow-[0_12px_24px_rgba(15,23,42,0.04)] transition hover:border-[#dce1e8]"
+                >
+                  Continue with Google
                 </button>
               </form>
             )}
           </div>
 
-          <button
-            type="button"
-            className="w-full rounded-[1.3rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium uppercase tracking-[0.12em] text-[#31363d] shadow-[0_12px_24px_rgba(15,23,42,0.04)] transition hover:border-[#dce1e8]"
-          >
-            Continue with Google
-          </button>
-
           <Link
             href="/privacy"
-            className="inline-flex w-full items-center justify-center text-sm font-medium text-[#818892] transition hover:text-[#23272e]"
+            className="inline-flex w-full items-center justify-center rounded-[1.2rem] border border-[#f4d9c3] bg-[#fdf4ec] px-4 py-3 text-sm font-medium text-[#87522e] transition hover:border-[#efcaa9] hover:bg-[#fcedde]"
           >
             No account yet? Apply Now →
           </Link>
@@ -442,9 +439,11 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-20">
-      <div className="mb-8 flex flex-col gap-3">
-        <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">Best Cases</h2>
+    <section className="mt-24">
+      <div className="mb-10 flex flex-col items-center gap-3 text-center">
+        <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
+          Best <span className="text-[#ec8a44]">Cases</span>
+        </h2>
         <p className="text-base text-[#747a83] sm:text-lg">Real research results powered by SciClaw</p>
       </div>
 
@@ -577,21 +576,21 @@ export function LandingPage() {
     >
       <Header />
 
-      <section className="mx-auto max-w-[1240px] px-6 pb-14 pt-12 sm:px-8 lg:px-10 lg:pt-16">
-        <div className="space-y-12 text-center">
-          <div className="space-y-5">
-            <h1 className="text-5xl font-semibold tracking-[-0.05em] text-[#1f232a] sm:text-6xl lg:text-[5.3rem]">
+      <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-7 sm:px-8 sm:pt-8 lg:px-10 lg:pt-10">
+        <div className="space-y-16 text-center sm:space-y-18">
+          <div className="space-y-6">
+            <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
             </h1>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#878c95] sm:text-sm">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.34em] text-[#8c919a] sm:text-xs">
               AI co-worker for scientific research.
             </p>
-            <p className="mx-auto max-w-[900px] text-lg leading-8 tracking-[-0.01em] text-[#50555e] sm:text-[1.35rem] sm:leading-9">
+            <p className="mx-auto max-w-[980px] text-base leading-8 tracking-[0.005em] text-[#60656f] sm:text-[1.3rem] sm:leading-9 lg:max-w-[1060px]">
               SciClaw connects inspiration generation, experimental execution, and iterative optimization, ushering in a new paradigm of scientific discovery
             </p>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[1.06fr_0.94fr] lg:items-center lg:gap-12">
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14 xl:gap-16">
             <FeatureRotator />
             <AuthCard />
           </div>

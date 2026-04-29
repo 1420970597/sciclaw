@@ -12,7 +12,7 @@
 
 ## Phase B — Landing 高保真复刻（P0）
 - [x] 完成 dark hero、feature rotator、嵌入式 auth card、best-cases 区块、footer 首版
-- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态（本轮已把登录态卡片改为公开站可见的 disabled “Send code / Enter laboratory” 结构，并把 Best Cases 第二张 reviewer 回复文案对齐公开站；下一轮继续压缩 hero/auth 布局差异并补更多 settings/language 弹层细节）
+- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态（本轮已进一步对齐公开站：移除本地化 header wordmark、将右上角入口压缩为悬浮圆形图标组、重排 hero 与 auth card 的纵向节奏、把 Login 卡片改为橙色主按钮 + Google/Apply Now 分层结构，并把 Best Cases 标题切成官方的黑橙组合；下一轮继续补 hero 左侧网络图与 feature preview 的图形细节，以及 settings/language 弹层态）
 - [x] 增加更多贴近公开站点的案例轮播视觉与动画细节
 
 ## Phase C — Help shell 与公开文档（P1）
@@ -33,5 +33,5 @@
 
 ## Validation / review cadence
 - [x] 本地参考资料保留在 `docs/reference-local/` 并通过 `.git/info/exclude` 忽略
-- [ ] 每个里程碑后执行 docker compose config / tests / build / compose up -d --build
-- [ ] 每个里程碑后执行 3 轮评审并提交中文 commit + push
+- [x] 每个里程碑后执行 docker compose config / tests / build / compose up -d --build
+- [x] 每个里程碑后执行 3 轮评审并提交中文 commit + push

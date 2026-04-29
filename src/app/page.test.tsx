@@ -17,9 +17,9 @@ describe("Home landing page", () => {
 
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();
     expect(screen.getAllByRole("link", { name: /get started/i }).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByText(/best cases/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
   });
 
   it("switches auth tabs and updates the visible panel", () => {
