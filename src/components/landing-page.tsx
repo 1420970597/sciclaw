@@ -76,9 +76,9 @@ function Header() {
   ] as const;
 
   return (
-    <header className="pt-[0.55rem] sm:pt-[0.68rem]">
+    <header className="pt-[0.62rem] sm:pt-[0.76rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-9">
-        <nav aria-label="Primary" className="flex items-center gap-[0.03rem] sm:gap-[0.06rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.12rem] sm:gap-[0.18rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             buttonClassName="border-[#d8cdbc] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(247,241,234,0.992)_100%)] text-[#59616c] shadow-[0_7px_18px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,0.996)] hover:-translate-y-0.5 hover:border-[#cfbfa9] hover:text-[#171b22]"
@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[23.9%] top-[3.4%] sm:left-[23.9%] sm:top-[3.4%]",
-        lineClass: "left-[46.7%] top-[25.7%] h-[1.8px] w-[18.9%] origin-left rotate-[220deg]",
-        ringClass: "h-[4rem] w-[4rem] border-[#b9c5d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#6f7d8c] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.36rem] w-[4.36rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
-        labelClass: "max-w-[92px] text-[#576574] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
-        activeLabelClass: "max-w-[96px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
+        position: "left-[21.8%] top-[1.8%] sm:left-[21.8%] sm:top-[1.8%]",
+        lineClass: "left-[45.7%] top-[24.6%] h-[2.1px] w-[18.2%] origin-left rotate-[222deg]",
+        ringClass: "h-[3.92rem] w-[3.92rem] border-[#b4c1cf] bg-[linear-gradient(180deg,#ffffff_0%,#f3f7fb_100%)] text-[#667485] shadow-[0_22px_40px_rgba(15,23,42,0.08)]",
+        activeRingClass: "h-[4.28rem] w-[4.28rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.17),0_28px_46px_rgba(232,124,55,0.23)]",
+        labelClass: "max-w-[84px] text-[#617082] drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]",
+        activeLabelClass: "max-w-[90px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[23.5%] top-[61.4%] sm:left-[23.5%] sm:top-[61.4%]",
-        lineClass: "left-[46.4%] top-[51.1%] h-[1.8px] w-[18.8%] origin-left rotate-[137deg]",
-        ringClass: "h-[4rem] w-[4rem] border-[#b9c5d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#6f7d8c] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.36rem] w-[4.36rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
-        labelClass: "max-w-[92px] text-[#576574] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
-        activeLabelClass: "max-w-[96px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
+        position: "left-[20.7%] top-[64.2%] sm:left-[20.7%] sm:top-[64.2%]",
+        lineClass: "left-[45.3%] top-[52.4%] h-[2.1px] w-[18.3%] origin-left rotate-[139deg]",
+        ringClass: "h-[3.92rem] w-[3.92rem] border-[#b4c1cf] bg-[linear-gradient(180deg,#ffffff_0%,#f3f7fb_100%)] text-[#667485] shadow-[0_22px_40px_rgba(15,23,42,0.08)]",
+        activeRingClass: "h-[4.28rem] w-[4.28rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.17),0_28px_46px_rgba(232,124,55,0.23)]",
+        labelClass: "max-w-[82px] text-[#617082] drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]",
+        activeLabelClass: "max-w-[90px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[16.9%] top-[16.7%] sm:right-[16.9%] sm:top-[16.7%]",
-        lineClass: "left-[54.1%] top-[33.5%] h-[1.8px] w-[15.3%] origin-left rotate-[0deg]",
-        ringClass: "h-[4rem] w-[4rem] border-[#b9c5d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#6f7d8c] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.36rem] w-[4.36rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
-        labelClass: "max-w-[96px] text-[#576574] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
-        activeLabelClass: "max-w-[102px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
+        position: "right-[14.8%] top-[14.2%] sm:right-[14.8%] sm:top-[14.2%]",
+        lineClass: "left-[53.6%] top-[31.9%] h-[2.1px] w-[16.3%] origin-left rotate-[0deg]",
+        ringClass: "h-[3.92rem] w-[3.92rem] border-[#b4c1cf] bg-[linear-gradient(180deg,#ffffff_0%,#f3f7fb_100%)] text-[#667485] shadow-[0_22px_40px_rgba(15,23,42,0.08)]",
+        activeRingClass: "h-[4.28rem] w-[4.28rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.17),0_28px_46px_rgba(232,124,55,0.23)]",
+        labelClass: "max-w-[88px] text-[#617082] drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]",
+        activeLabelClass: "max-w-[94px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
     ],
     [],
@@ -134,23 +134,23 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
   return (
     <div className="relative min-h-[336px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_49%,_rgba(255,255,255,0.93),_rgba(255,255,255,0)_55%)] sm:min-h-[378px]">
       <div className="absolute inset-0 opacity-[0.995]">
-        <div className="absolute left-[24.7%] top-[14.7%] h-1.5 w-1.5 rounded-full bg-[#b9c5d2]" />
-        <div className="absolute left-[31.4%] top-[45.5%] h-1.5 w-1.5 rounded-full bg-[#b9c5d2]" />
-        <div className="absolute left-[58.7%] top-[25.4%] h-1.5 w-1.5 rounded-full bg-[#c0cad7]" />
-        <div className="absolute left-[60.9%] top-[45.5%] h-1.5 w-1.5 rounded-full bg-[#c0cad7]" />
-        <div className="absolute left-[49.05%] top-[23.2%] h-[118px] w-px bg-gradient-to-b from-[#efb07b] via-[#e6762f] to-transparent opacity-[0.99]" />
-        <div className="absolute left-[49.96%] top-[23.2%] h-[118px] w-px bg-gradient-to-b from-[#fee4d4] via-transparent to-transparent opacity-[0.98]" />
-        <div className="absolute left-[49.7%] top-[22.1%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#ed995e] bg-[#e97d35] shadow-[0_0_0_8px_rgba(242,154,98,0.2),0_12px_24px_rgba(232,124,55,0.28)]" />
-        <div className="absolute left-[49.7%] top-[48.6%] h-[154px] w-[154px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.16)_0%,_rgba(244,177,132,0.075)_34%,_rgba(255,255,255,0)_72%)]" />
-        <div className="absolute left-[49.7%] top-[48.6%] h-[122px] w-[122px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/95 shadow-[0_0_38px_rgba(239,146,86,0.1)]" />
-        <div className="absolute left-[49.7%] top-[48.6%] h-[88px] w-[88px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/88 shadow-[0_0_20px_rgba(239,146,86,0.1)]" />
+        <div className="absolute left-[24.1%] top-[12.6%] h-1.5 w-1.5 rounded-full bg-[#b7c4d1]" />
+        <div className="absolute left-[29.8%] top-[44.8%] h-1.5 w-1.5 rounded-full bg-[#b7c4d1]" />
+        <div className="absolute left-[57.3%] top-[23.8%] h-1.5 w-1.5 rounded-full bg-[#bdc8d5]" />
+        <div className="absolute left-[59.7%] top-[43.7%] h-1.5 w-1.5 rounded-full bg-[#bdc8d5]" />
+        <div className="absolute left-[48.95%] top-[21.4%] h-[116px] w-[1.4px] bg-gradient-to-b from-[#efb07b] via-[#e6762f] to-transparent opacity-[0.99]" />
+        <div className="absolute left-[49.9%] top-[21.4%] h-[116px] w-px bg-gradient-to-b from-[#fee4d4] via-transparent to-transparent opacity-[0.98]" />
+        <div className="absolute left-[49.5%] top-[20.3%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#ed995e] bg-[#e97d35] shadow-[0_0_0_8px_rgba(242,154,98,0.18),0_12px_24px_rgba(232,124,55,0.27)]" />
+        <div className="absolute left-[49.5%] top-[47.3%] h-[148px] w-[148px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.14)_0%,_rgba(244,177,132,0.065)_34%,_rgba(255,255,255,0)_72%)]" />
+        <div className="absolute left-[49.5%] top-[47.3%] h-[116px] w-[116px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/92 shadow-[0_0_34px_rgba(239,146,86,0.085)]" />
+        <div className="absolute left-[49.5%] top-[47.3%] h-[84px] w-[84px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/82 shadow-[0_0_18px_rgba(239,146,86,0.08)]" />
         {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
 
           return (
             <div key={node.id}>
-              <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#b8c4d1] via-[#d4dce6] to-transparent opacity-[0.985]`} aria-hidden />
+              <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#b7c3d0] via-[#d1dae4] to-transparent opacity-[0.94]`} aria-hidden />
               <button
                 type="button"
                 onClick={() => {
@@ -158,26 +158,26 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
                     onSelect(nextIndex);
                   }
                 }}
-                className={`absolute ${node.position} flex flex-col items-center gap-2 text-center transition hover:scale-[1.02]`}
+                className={`absolute ${node.position} flex flex-col items-center gap-2.5 text-center transition hover:scale-[1.02]`}
               >
                 <span className={`flex items-center justify-center rounded-full border text-[1.02rem] font-semibold backdrop-blur ${isActive ? node.activeRingClass : node.ringClass}`}>
                   {node.icon}
                 </span>
-                <span className={`text-[10px] font-medium leading-[1.28] sm:text-[0.78rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
+                <span className={`text-[10px] font-medium leading-[1.36] sm:text-[0.765rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
               </button>
             </div>
           );
         })}
       </div>
 
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-[44%] -translate-y-[34%] flex-col items-center">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-[44%] -translate-y-[32%] flex-col items-center">
         <span className="mb-3.5 flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-[11px] font-semibold text-white shadow-[0_12px_28px_rgba(232,124,55,0.38)]">
           AI
         </span>
         <button
           type="button"
           onClick={() => onSelect(0)}
-          className="group relative flex h-[5.9rem] w-[5.9rem] items-center justify-center rounded-full bg-[linear-gradient(180deg,#ffffff_0%,#fff6ef_100%)] text-[#e97930] shadow-[0_0_0_10px_rgba(249,159,120,0.09),0_0_0_22px_rgba(249,159,120,0.04),0_20px_36px_rgba(232,124,55,0.11)] transition hover:scale-[1.02] sm:h-[6.28rem] sm:w-[6.28rem]"
+          className="group relative flex h-[5.62rem] w-[5.62rem] items-center justify-center rounded-full bg-[linear-gradient(180deg,#ffffff_0%,#fff6ef_100%)] text-[#e97930] shadow-[0_0_0_10px_rgba(249,159,120,0.08),0_0_0_22px_rgba(249,159,120,0.035),0_20px_36px_rgba(232,124,55,0.1)] transition hover:scale-[1.02] sm:h-[6rem] sm:w-[6rem]"
           aria-label="Literature Analysis"
         >
           <span className="absolute inset-[12px] rounded-full border border-[#efc09d]/72" />
@@ -358,9 +358,9 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[328px] rounded-[1.95rem] border border-[#eef1f4] bg-white/98 px-[1rem] py-[0.98rem] shadow-[0_18px_48px_rgba(241,180,135,0.11),0_12px_30px_rgba(15,23,42,0.06)] sm:px-[1.04rem] sm:py-[1.05rem]"
+      className="mx-auto w-full max-w-[332px] rounded-[1.95rem] border border-[#eef1f4] bg-white/98 px-[1rem] py-[0.98rem] shadow-[0_18px_48px_rgba(241,180,135,0.11),0_12px_30px_rgba(15,23,42,0.06)] sm:px-[1.04rem] sm:py-[1.05rem]"
     >
-      <div className="mx-auto w-full max-w-[318px]">
+      <div className="mx-auto w-full max-w-[320px]">
         <div className="rounded-[1.42rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
           <div role="tablist" aria-label="Authentication mode" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f6f7fa] p-1 text-sm text-[#8a909a]">
             {[
@@ -552,7 +552,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-[1.35rem] sm:mt-[1.7rem]">
+    <section className="mt-[1.75rem] sm:mt-[2.15rem]">
       <div className="mb-7 flex flex-col items-center gap-2.5 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
@@ -703,7 +703,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_324px] lg:items-start lg:gap-[3.9rem] xl:grid-cols-[minmax(0,0.985fr)_328px] xl:gap-[4.25rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_332px] lg:items-start lg:gap-[4.35rem] xl:grid-cols-[minmax(0,0.98fr)_332px] xl:gap-[4.7rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
