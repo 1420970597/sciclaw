@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SciClaw | Scientific AI Workspace",
+  title: "SciClaw - AI co-worker for scientific research.",
   description:
-    "High-fidelity landing page prototype for SciClaw-style scientific research, data mining, and outcome presentation workflows.",
+    "High-fidelity public replica of the SciClaw scientific research workspace, docs shell, and legal pages.",
 };
 
 export default function RootLayout({

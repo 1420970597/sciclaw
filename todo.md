@@ -19,15 +19,15 @@
 - [x] 建立 `/help/[slug]` 文档路由与 docs shell 三栏结构
 - [x] 完成已知 help 路由：getting-started / projects / chat / skills / library / tasks / foundry / persona / im / settings
 - [x] 加入顶部 search / appearance / language 控件占位与右侧 TOC
-- [ ] 继续根据公开文案与页面细节补全文档内容、排版层次、滚动状态与交互微调
+- [~] 继续根据公开文案与页面细节补全文档内容、排版层次、滚动状态与交互微调（本轮已对齐接近公开站的浅色 docs shell、图标化侧栏、Chat/Settings 文案与 `/chat` 回流）
 
 ## Phase D — Privacy / 公共交互细节（P2/P3 部分）
 - [x] 完成 `/privacy` 页面公开信息摘要复刻
 - [ ] 继续补齐公共 auth 卡片的更细粒度状态、表单提示与视觉拟真
-- [ ] 引入更多 settings / theme / language 菜单交互细节
+- [~] 引入更多 settings / theme / language 菜单交互细节（本轮已把 docs/settings 文案与浅色 legal shell 对齐公开站信息架构）
 
 ## Phase E — App shell 占位 IA（P4）
-- [ ] 建立 `/chat` 公共 app shell 占位页
+- [x] 建立 `/chat` 公共 app shell 占位页（当前先无缝跳转至 `/help/chat`，避免空白路由）
 - [ ] 建立 project / session / library / tasks / foundry / persona / im / settings 的应用内 IA 占位
 - [ ] 让 landing 与 docs 导航正确串联到 app shell 占位
 

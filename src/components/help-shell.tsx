@@ -1,29 +1,91 @@
 import Link from "next/link";
-import { helpArticles, helpArticleMap, type HelpArticle } from "@/app/landing-data";
+import { helpArticles, helpArticleMap, type HelpArticle, type HelpIcon } from "@/app/landing-data";
 
 type HelpShellProps = {
   article: HelpArticle;
 };
 
+function HelpGlyph({ icon, className = "h-4 w-4" }: { icon: HelpIcon; className?: string }) {
+  switch (icon) {
+    case "rocket":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="M14 4c3.5.5 5.5 2.5 6 6-2.5 3.5-5.5 5.5-9 6l-3 3-.5-4.5L3 14l3-3c.5-3.5 2.5-6.5 6-9Z" />
+          <circle cx="14.5" cy="9.5" r="1.5" />
+        </svg>
+      );
+    case "folder":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="M3.5 7.5A2.5 2.5 0 0 1 6 5h4l2 2h6A2.5 2.5 0 0 1 20.5 9.5v7A2.5 2.5 0 0 1 18 19H6a2.5 2.5 0 0 1-2.5-2.5v-9Z" />
+        </svg>
+      );
+    case "chat":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6A2.5 2.5 0 0 1 16.5 15H11l-4 3v-3H7.5A2.5 2.5 0 0 1 5 12.5v-6Z" />
+        </svg>
+      );
+    case "bolt":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="M13.5 2.5 5.5 13h5L9.5 21.5 18.5 11h-5l.5-8.5Z" />
+        </svg>
+      );
+    case "book":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="M5.5 4.5h9A3.5 3.5 0 0 1 18 8v11H8a2.5 2.5 0 0 0-2.5 2.5V4.5Z" />
+          <path d="M18 19H8a2.5 2.5 0 0 0 0 5h10" />
+        </svg>
+      );
+    case "clock":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <circle cx="12" cy="12" r="8.5" />
+          <path d="M12 7.5v5l3 1.5" />
+        </svg>
+      );
+    case "hammer":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="m13.5 5.5 5 5-2 2-5-5 2-2Z" />
+          <path d="m10.5 8.5-7 7 4 4 7-7" />
+          <path d="m14.5 4.5 2-2 5 5-2 2" />
+        </svg>
+      );
+    case "persona":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <circle cx="12" cy="8" r="3.25" />
+          <path d="M5 18.5c1.5-2.8 4.1-4.2 7-4.2s5.5 1.4 7 4.2" />
+        </svg>
+      );
+    case "send":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="M20 4 4 11l6 2 2 6 8-15Z" />
+        </svg>
+      );
+    case "sliders":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className} aria-hidden>
+          <path d="M5 6.5h14" />
+          <path d="M5 17.5h14" />
+          <circle cx="9" cy="6.5" r="2" />
+          <circle cx="15" cy="17.5" r="2" />
+        </svg>
+      );
+  }
+}
+
 function DocsSidebar({ currentSlug }: { currentSlug: string }) {
   return (
-    <nav
-      aria-label="User Guide navigation"
-      className="rounded-[1.75rem] border border-white/10 bg-white/5 p-4 backdrop-blur-xl"
-    >
-      <div className="mb-4 flex items-center justify-between border-b border-white/8 pb-4">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
-            SciClaw
-          </p>
-          <p className="mt-1 text-sm text-slate-400">USER GUIDE</p>
-        </div>
-        <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-slate-300">
-          Docs
-        </div>
-      </div>
-
-      <ol className="space-y-2">
+    <nav aria-label="User Guide navigation" className="space-y-4">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b9b9b9]">
+        Contents
+      </p>
+      <ol className="space-y-1.5">
         {helpArticles.map((entry) => {
           const isActive = entry.slug === currentSlug;
 
@@ -31,28 +93,23 @@ function DocsSidebar({ currentSlug }: { currentSlug: string }) {
             <li key={entry.slug}>
               <Link
                 href={`/help/${entry.slug}`}
-                className={`group flex items-start gap-3 rounded-2xl px-3 py-3 transition ${
+                className={`relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${
                   isActive
-                    ? "border border-cyan-300/30 bg-cyan-300/12 text-white shadow-[0_10px_30px_rgba(34,211,238,0.08)]"
-                    : "border border-transparent text-slate-300 hover:border-white/10 hover:bg-white/5 hover:text-white"
+                    ? "bg-[#fff4ec] text-[#e98532]"
+                    : "text-[#787878] hover:bg-[#f6f6f6] hover:text-[#343434]"
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
-                <span
-                  className={`mt-0.5 inline-flex h-7 min-w-7 items-center justify-center rounded-full text-[11px] font-semibold tracking-[0.2em] ${
-                    isActive
-                      ? "bg-white text-slate-950"
-                      : "border border-white/10 bg-slate-950/70 text-slate-400"
-                  }`}
-                >
+                {isActive ? (
+                  <span className="absolute inset-y-2 left-0 w-0.5 rounded-full bg-[#ed8a3a]" />
+                ) : null}
+                <span className="w-6 shrink-0 text-[11px] font-medium tracking-[0.2em] text-[#bfbfbf]">
                   {entry.index}
                 </span>
-                <span className="min-w-0">
-                  <span className="block text-sm font-medium">{entry.title}</span>
-                  <span className="mt-1 block text-xs leading-5 text-slate-500 group-hover:text-slate-400">
-                    {entry.description}
-                  </span>
+                <span className={isActive ? "text-[#e98532]" : "text-[#b2b2b2]"}>
+                  <HelpGlyph icon={entry.icon} />
                 </span>
+                <span className="truncate font-medium text-current">{entry.navTitle ?? entry.title}</span>
               </Link>
             </li>
           );
@@ -64,126 +121,155 @@ function DocsSidebar({ currentSlug }: { currentSlug: string }) {
 
 function DocsTopBar() {
   return (
-    <div className="mb-6 flex flex-col gap-3 rounded-[1.75rem] border border-white/10 bg-white/5 p-4 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
-      <button
-        type="button"
-        className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-left text-sm text-slate-400 sm:max-w-md"
-      >
-        <span>Search documentation</span>
-        <span className="rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-[11px] uppercase tracking-[0.24em] text-slate-500">
-          ⌘K
-        </span>
-      </button>
+    <header className="border-b border-black/8 pb-4">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <Link href="/chat" className="inline-flex items-center gap-2 text-sm text-[#737373] transition hover:text-[#2f2f2f]">
+          <span aria-hidden>←</span>
+          <span>Back to SciClaw</span>
+        </Link>
 
-      <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300">
-        <button
-          type="button"
-          className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-cyan-300/30 hover:text-white"
-        >
-          Appearance · Dark
-        </button>
-        <button
-          type="button"
-          className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-cyan-300/30 hover:text-white"
-        >
-          Language · EN
-        </button>
+        <div className="flex items-center gap-2 text-sm font-medium text-[#1f1f1f] lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+          <span>
+            Sci<span className="text-[#eb8b3b]">Claw</span>
+          </span>
+          <span className="text-[11px] uppercase tracking-[0.24em] text-[#b0b0b0]">User Guide</span>
+        </div>
+
+        <div className="flex items-center gap-3 self-end lg:self-auto">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-3 py-2 text-sm text-[#7a7a7a] shadow-[0_1px_1px_rgba(17,24,39,0.02)] transition hover:border-black/15 hover:text-[#333]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-4 w-4" aria-hidden>
+              <circle cx="11" cy="11" r="6" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+            <span>Search…</span>
+            <span className="rounded-lg border border-black/10 bg-[#f7f7f7] px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-[#9a9a9a]">
+              ⌘K
+            </span>
+          </button>
+          <button
+            type="button"
+            aria-label="Appearance and language"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-black/8 bg-white text-[#8b8b8b] transition hover:border-black/15 hover:text-[#333]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-4 w-4" aria-hidden>
+              <path d="M12 3v2.5" />
+              <path d="M12 18.5V21" />
+              <path d="m5.6 5.6 1.8 1.8" />
+              <path d="m16.6 16.6 1.8 1.8" />
+              <path d="M3 12h2.5" />
+              <path d="M18.5 12H21" />
+              <path d="m5.6 18.4 1.8-1.8" />
+              <path d="m16.6 7.4 1.8-1.8" />
+              <circle cx="12" cy="12" r="3.5" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
 
 function ArticleBody({ article }: { article: HelpArticle }) {
-  return (
-    <article className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-[0_20px_80px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-8 lg:p-10">
-      <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
-        <span>{article.index}</span>
-        <span className="h-px flex-1 bg-white/10" />
-      </div>
+  const paragraphs = article.heroParagraphs?.length ? article.heroParagraphs : [article.description];
 
-      <header className="mt-6 border-b border-white/8 pb-6">
-        <h1 className="text-4xl font-semibold tracking-[-0.03em] text-white sm:text-5xl">
+  return (
+    <article className="min-w-0">
+      <div className="border-b border-black/8 pb-6">
+        <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b8b8b8]">
+          <span>{article.index}</span>
+        </div>
+        <h1 className="mt-3 text-[2rem] font-semibold uppercase tracking-[0.18em] text-[#222] sm:text-[2.25rem]">
           {article.title}
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
-          {article.description}
-        </p>
-      </header>
+      </div>
 
-      <div className="mt-8 space-y-8">
-        {article.sections.map((section, index) => {
-          const block = article.body[index];
+      <div className="mt-7 space-y-4 text-[16px] leading-8 text-[#4a4a4a]">
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+
+      <div className="mt-10 space-y-10">
+        {article.sections.map((section) => {
+          const sectionBlocks = article.body.filter((block) => block.sectionId === section.id);
 
           return (
-            <section key={section.id} id={section.id} className="scroll-mt-24 space-y-4">
-              <h2 className="text-2xl font-semibold text-white">{section.title}</h2>
-              {block?.type === "paragraph" ? (
-                <p className="text-base leading-8 text-slate-300">{block.content}</p>
-              ) : null}
+            <section key={section.id} id={section.id} className="scroll-mt-24">
+              <div className="flex items-center gap-3">
+                <span className="h-5 w-0.5 rounded-full bg-[#ef9b52]" aria-hidden />
+                <h2 className="text-[1.15rem] font-semibold text-[#1f1f1f]">{section.title}</h2>
+              </div>
+              <div className="mt-4 space-y-4">
+                {sectionBlocks.map((block, blockIndex) =>
+                  block.type === "paragraph" ? (
+                    <p key={`${section.id}-paragraph-${blockIndex}`} className="text-[16px] leading-8 text-[#4a4a4a]">
+                      {block.content}
+                    </p>
+                  ) : (
+                    <ul
+                      key={`${section.id}-list-${blockIndex}`}
+                      className="space-y-3 text-[15px] leading-7 text-[#4f4f4f]"
+                    >
+                      {block.items.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#f0a05c]" aria-hidden />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ),
+                )}
+              </div>
             </section>
           );
         })}
-
-        {article.body
-          .filter((block) => block.type === "paragraph")
-          .slice(article.sections.length)
-          .map((block, index) => (
-            <p key={`paragraph-${index}`} className="text-base leading-8 text-slate-300">
-              {block.content}
-            </p>
-          ))}
-
-        {article.body
-          .filter((block) => block.type === "list")
-          .map((block, index) => (
-            <ol
-              key={`list-${index}`}
-              className="grid gap-3 rounded-[1.75rem] border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-200"
-            >
-              {block.items.map((item, itemIndex) => (
-                <li key={item} className="flex gap-4">
-                  <span className="mt-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-slate-950/80 text-xs font-semibold text-cyan-200">
-                    {itemIndex + 1}
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ol>
-          ))}
       </div>
 
       {article.nextHref && article.nextLabel ? (
-        <div className="mt-10 border-t border-white/8 pt-6">
-          <Link
-            href={article.nextHref}
-            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-100 transition hover:border-cyan-300/30 hover:text-white"
-          >
+        <div className="mt-12 border-t border-black/8 pt-6">
+          <Link href={article.nextHref} className="inline-flex items-center gap-2 text-sm text-[#6b6b6b] transition hover:text-[#e98532]">
             <span>{article.nextLabel}</span>
             <span aria-hidden>→</span>
           </Link>
         </div>
       ) : null}
+
+      <p className="mt-10 text-[11px] uppercase tracking-[0.24em] text-[#b4b4b4]">SciClaw · User Guide</p>
     </article>
   );
 }
 
 function Toc({ article }: { article: HelpArticle }) {
+  const activeId = article.sections[0]?.id;
+
   return (
-    <aside className="rounded-[1.75rem] border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
+    <aside className="lg:sticky lg:top-8 lg:self-start">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b9b9b9]">
         On this page
       </p>
       <ol className="mt-4 space-y-2 text-sm">
-        {article.sections.map((section) => (
-          <li key={section.id}>
-            <a
-              href={`#${section.id}`}
-              className="block rounded-xl px-3 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white"
-            >
-              {section.title}
-            </a>
-          </li>
-        ))}
+        {article.sections.map((section) => {
+          const isActive = section.id === activeId;
+
+          return (
+            <li key={section.id}>
+              <a
+                href={`#${section.id}`}
+                className={`relative block pl-4 transition ${
+                  isActive ? "text-[#e98532]" : "text-[#949494] hover:text-[#343434]"
+                }`}
+              >
+                {isActive ? (
+                  <span className="absolute inset-y-1 left-0 w-0.5 rounded-full bg-[#ed8a3a]" aria-hidden />
+                ) : null}
+                {section.title}
+              </a>
+            </li>
+          );
+        })}
       </ol>
     </aside>
   );
@@ -191,16 +277,14 @@ function Toc({ article }: { article: HelpArticle }) {
 
 export function HelpShell({ article }: HelpShellProps) {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_24%),radial-gradient(circle_at_85%_10%,_rgba(168,85,247,0.18),_transparent_20%),linear-gradient(180deg,_#020617_0%,_#07101f_42%,_#020617_100%)] text-slate-50">
-      <div className="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <main className="min-h-screen bg-[#fcfcfb] text-[#1f1f1f]">
+      <div className="mx-auto max-w-[1440px] px-6 py-6 sm:px-8 lg:px-10">
         <DocsTopBar />
 
-        <div className="grid gap-6 xl:grid-cols-[280px_minmax(0,1fr)_240px]">
+        <div className="grid gap-10 pt-8 xl:grid-cols-[260px_minmax(0,720px)_200px] xl:gap-12">
           <DocsSidebar currentSlug={article.slug} />
           <ArticleBody article={article} />
-          <div className="xl:sticky xl:top-6 xl:self-start">
-            <Toc article={article} />
-          </div>
+          <Toc article={article} />
         </div>
       </div>
     </main>

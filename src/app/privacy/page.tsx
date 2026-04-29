@@ -1,101 +1,102 @@
 import Link from "next/link";
-import { privacySections } from "@/app/privacy-data";
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.14),_transparent_22%),radial-gradient(circle_at_85%_10%,_rgba(129,140,248,0.12),_transparent_20%),linear-gradient(180deg,_#020617_0%,_#07101f_42%,_#020617_100%)] text-slate-50">
-      <div className="mx-auto max-w-5xl px-6 py-10 sm:px-8 lg:px-10 lg:py-14">
-        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
-          <Link
-            href="/"
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-cyan-300/30 hover:text-white"
-          >
-            ← Back to home
-          </Link>
-          <Link
-            href="/help/getting-started"
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-cyan-300/30 hover:text-white"
-          >
-            User Guide
-          </Link>
-        </div>
-
-        <section className="mt-8 rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-[0_20px_80px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-8 lg:p-10">
-          <div className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/90">
-            Privacy policy summary
+    <main className="min-h-screen bg-[#fcfcfb] text-[#1f1f1f]">
+      <div className="mx-auto max-w-[840px] px-6 py-6 sm:px-8 lg:px-10">
+        <header className="border-b border-black/8 pb-4">
+          <div className="flex items-center justify-between gap-4">
+            <Link href="/" className="text-base font-medium text-[#1f1f1f] transition hover:text-[#eb8b3b]">
+              Sci<span className="text-[#eb8b3b]">Claw</span>
+            </Link>
+            <Link
+              href="/"
+              className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#a0a0a0] transition hover:text-[#3d3d3d]"
+            >
+              ← Back
+            </Link>
           </div>
-          <h1 className="mt-6 text-4xl font-semibold tracking-[-0.03em] text-white sm:text-5xl">
-            SciClaw privacy and data handling overview
-          </h1>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
-            A public-facing reconstruction of SciClaw&apos;s privacy page, based on the
-            openly accessible policy summary and structured for fast scanning.
+        </header>
+
+        <article className="pt-10">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#eb8b3b]">
+            SciClaw · Legal
           </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {[
-              ["Entity", "Hangzhou Deep Principle Technology Co.,Ltd."],
-              ["Status", "Beta / test basis"],
-              ["Train on user content", "No"],
-              ["Self-service deletion", "Not currently provided"],
-            ].map(([label, value]) => (
-              <div
-                key={label}
-                className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
-                  {label}
-                </p>
-                <p className="mt-3 text-sm font-medium leading-6 text-white">{value}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_220px]">
-          <div className="space-y-6">
-            {privacySections.map((section) => (
-              <section
-                key={section.id}
-                id={section.id}
-                className="scroll-mt-24 rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
-              >
-                <h2 className="text-2xl font-semibold text-white">{section.title}</h2>
-                <div className="mt-4 space-y-4 text-base leading-8 text-slate-300">
-                  {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-                <ul className="mt-5 space-y-3 rounded-[1.4rem] border border-white/8 bg-slate-950/60 p-5 text-sm leading-7 text-slate-200">
-                  {section.bullets.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
-
-          <aside className="h-fit rounded-[1.75rem] border border-white/10 bg-white/5 p-4 backdrop-blur-xl lg:sticky lg:top-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
-              On this page
+          <h1 className="mt-4 text-4xl font-semibold tracking-[-0.03em] text-[#181818] sm:text-5xl">
+            Privacy Policy
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-8 text-[#6b6b6b]">
+            Please read this policy carefully to understand how we collect, use, and protect your information.
+          </p>
+          <div className="mt-8 border-t border-black/8 pt-8">
+            <p className="text-base leading-8 text-[#4b4b4b]">
+              <strong>SciClaw Privacy Policy</strong> explains how personal data is collected, used,
+              disclosed, and otherwise processed when you use <strong>SciClaw</strong>, an AI research
+              assistant service, or any product, service, or application that links to this policy.
             </p>
-            <ol className="mt-4 space-y-2 text-sm text-slate-300">
-              {privacySections.map((section) => (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    className="block rounded-xl px-3 py-2 transition hover:bg-white/5 hover:text-white"
-                  >
-                    {section.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </aside>
-        </div>
+            <p className="mt-4 text-sm italic text-[#8a8a8a]">Last updated: March 30, 2026</p>
+          </div>
+
+          <div className="mt-8 rounded-sm border border-black/10 bg-white px-5 py-4 text-base leading-8 text-[#4b4b4b] shadow-[0_1px_1px_rgba(17,24,39,0.02)]">
+            This Privacy Policy explains how Hangzhou Deep Principle Technology Co.,Ltd. (&quot;we&quot;,
+            &quot;us&quot;, or &quot;our&quot;) processes personal data in connection with SciClaw.
+          </div>
+
+          <div className="mt-10 space-y-10 text-base leading-8 text-[#4b4b4b]">
+            <section id="who-we-are">
+              <h2 className="text-xl font-semibold text-[#1f1f1f]">1. Who We Are</h2>
+              <p className="mt-4">
+                SciClaw is currently offered on a test/beta basis by the SciClaw team at Hangzhou Deep
+                Principle Technology Co.,Ltd. We are responsible for operating the service and for the
+                processing of personal data described in this Policy.
+              </p>
+              <p className="mt-4">
+                If the service structure changes as part of a formal commercial launch, we may update this
+                Policy and provide additional notice where required by applicable law.
+              </p>
+            </section>
+
+            <section id="personal-data">
+              <h2 className="text-xl font-semibold text-[#1f1f1f]">2. Personal Data We Collect</h2>
+              <p className="mt-4">
+                We collect personal data in three main ways: data you provide to us, data we collect
+                automatically, and data we receive from third parties where permitted by law.
+              </p>
+              <ul className="mt-4 space-y-3 pl-5 text-[#4f4f4f]">
+                <li className="list-disc">Account data such as your email address, mobile phone number, verification codes, and settings.</li>
+                <li className="list-disc">Service content such as prompts, chat history, uploaded files, notes, datasets, and generated outputs.</li>
+                <li className="list-disc">Device, browser, usage, and diagnostic data collected for operations and security.</li>
+              </ul>
+            </section>
+
+            <section id="use-of-content">
+              <h2 className="text-xl font-semibold text-[#1f1f1f]">3. How SciClaw Uses Your Content</h2>
+              <p className="mt-4">
+                SciClaw processes Your Content to provide AI-assisted features and service functionality.
+                The public policy states that prompts, uploaded files, chat history, and generated outputs
+                are not used to train or improve the company&apos;s AI models.
+              </p>
+              <ul className="mt-4 space-y-3 pl-5 text-[#4f4f4f]">
+                <li className="list-disc">Content is used to generate answers, analyze uploaded materials, and maintain conversation continuity.</li>
+                <li className="list-disc">Support, abuse prevention, and legal compliance may still require limited review or processing.</li>
+                <li className="list-disc">Aggregated or de-identified usage information may be used to improve product quality and safety.</li>
+              </ul>
+            </section>
+
+            <section id="sharing-retention-security">
+              <h2 className="text-xl font-semibold text-[#1f1f1f]">4. Sharing, Retention, and Security</h2>
+              <p className="mt-4">
+                The public summary indicates that SciClaw may process data in China and other countries
+                where it or its service providers operate, and that it may share information with vendors,
+                affiliates, and legally required recipients.
+              </p>
+              <p className="mt-4">
+                The policy also notes that no system can guarantee absolute security, and that breach
+                notifications will be made without undue delay when required by applicable law.
+              </p>
+            </section>
+          </div>
+        </article>
       </div>
     </main>
   );

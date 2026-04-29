@@ -28,11 +28,43 @@ describe("Help article page", () => {
 
     expect(screen.getByRole("heading", { name: /getting started/i })).toBeInTheDocument();
     expect(docsNav).toBeInTheDocument();
-    expect(screen.getByText(/search documentation/i)).toBeInTheDocument();
+    expect(screen.getByText(/search…/i)).toBeInTheDocument();
     expect(screen.getByText(/on this page/i)).toBeInTheDocument();
-    expect(within(docsNav).getByRole("link", { name: /project & session/i })).toHaveAttribute(
+    expect(within(docsNav).getByRole("link", { name: /02 project & session/i })).toHaveAttribute(
       "href",
       "/help/projects",
+    );
+    expect(within(docsNav).getByRole("link", { name: /08 ai persona/i })).toBeInTheDocument();
+    expect(screen.getByText(/true closed loop/i)).toBeInTheDocument();
+  });
+
+  it("matches the public chat documentation sections more closely", async () => {
+    const page = await HelpArticlePage({
+      params: Promise.resolve({ slug: "chat" }),
+    });
+
+    render(page);
+
+    expect(screen.getByRole("heading", { name: /^chat$/i })).toBeInTheDocument();
+    expect(screen.getByText(/the chat panel is the main workspace/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /command bar/i })).toBeInTheDocument();
+    expect(screen.getByText(/new chat — start a new conversation session/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/inline skill invocation/i).length).toBeGreaterThan(0);
+  });
+
+  it("matches the public settings page title and toc labels", async () => {
+    const page = await HelpArticlePage({
+      params: Promise.resolve({ slug: "settings" }),
+    });
+
+    render(page);
+
+    expect(screen.getByRole("heading", { name: /system settings/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^theme$/i })).toBeInTheDocument();
+    expect(screen.getByText(/settings centralize workspace appearance/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /09 im connection/i })).toHaveAttribute(
+      "href",
+      "/help/im",
     );
   });
 });

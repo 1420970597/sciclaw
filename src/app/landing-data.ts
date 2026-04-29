@@ -22,29 +22,47 @@ export type BestCase = {
   statValue: string;
 };
 
+export type HelpIcon =
+  | "rocket"
+  | "folder"
+  | "chat"
+  | "bolt"
+  | "book"
+  | "clock"
+  | "hammer"
+  | "persona"
+  | "send"
+  | "sliders";
+
 export type HelpSection = {
   id: string;
   title: string;
 };
 
+type HelpBodyBlock =
+  | {
+      type: "paragraph";
+      content: string;
+      sectionId?: string;
+    }
+  | {
+      type: "list";
+      items: string[];
+      sectionId?: string;
+    };
+
 export type HelpArticle = {
   slug: string;
   index: string;
   title: string;
+  navTitle?: string;
   description: string;
+  icon: HelpIcon;
+  heroParagraphs?: string[];
   sections: HelpSection[];
   nextHref?: string;
   nextLabel?: string;
-  body: Array<
-    | {
-        type: "paragraph";
-        content: string;
-      }
-    | {
-        type: "list";
-        items: string[];
-      }
-  >;
+  body: HelpBodyBlock[];
 };
 
 export const navLinks: NavLink[] = [
@@ -129,6 +147,12 @@ export const helpArticles: HelpArticle[] = [
     title: "Getting Started",
     description:
       "SciClaw is an AI co-worker built for scientific research. It helps researchers manage knowledge capture, task execution, output generation, and workflow improvement in one closed loop.",
+    icon: "rocket",
+    heroParagraphs: [
+      "SciClaw is an AI co-worker built for scientific research. It helps researchers continuously manage the full research cycle around a project, including knowledge capture, task execution, output generation, and workflow improvement, so research can operate as a true closed loop.",
+      "Powered by a proactive agent framework, SciClaw continuously connects literature search, data analysis, deep research, long-running computation, result organization, and experimental execution. This allows research workflows to move beyond manually advancing one step at a time and toward a system that can actively coordinate and push work forward.",
+      "Scientific discovery is not a discipline that can be run well by stacking conversations alone with AI, nor is it a field where breakthroughs reliably come from pure model reasoning. Serious research demands project-based orchestration of stage-appropriate tasks, scientific computing and simulation engines that yield high-precision, trustworthy data, and long-horizon cycles of reflection and iteration to refine methods and workflows. These are capabilities that today’s large language models, and general-purpose frameworks such as OpenClaw by themselves, do not provide end-to-end.",
+    ],
     sections: [
       { id: "what-is-sciclaw", title: "What is SciClaw" },
       { id: "onboarding", title: "Onboarding" },
@@ -170,6 +194,7 @@ export const helpArticles: HelpArticle[] = [
     title: "Project & Session",
     description:
       "Projects provide the durable context for a research initiative, while sessions capture each discrete line of investigation, execution, and review inside that project.",
+    icon: "folder",
     sections: [
       { id: "projects", title: "Projects" },
       { id: "sessions", title: "Sessions" },
@@ -204,31 +229,73 @@ export const helpArticles: HelpArticle[] = [
     title: "Chat",
     description:
       "Chat is the main command surface for guiding SciClaw, requesting analysis, reviewing evidence, and steering autonomous work as outputs accumulate.",
+    icon: "chat",
+    heroParagraphs: [
+      "The chat panel is the main workspace for interacting with SciClaw. Here, you can ask questions, attach files, enable knowledge base search, or use the command bar to access specific features.",
+    ],
     sections: [
-      { id: "prompting", title: "Prompting" },
-      { id: "execution-loop", title: "Execution loop" },
-      { id: "artifacts", title: "Artifacts & review" },
+      { id: "command-bar", title: "Command bar" },
+      { id: "sending-messages", title: "Sending messages" },
+      { id: "attaching-files", title: "Attaching files" },
+      { id: "library", title: "Library" },
+      { id: "guiding-the-agent-mid-task", title: "Guiding the agent mid-task" },
+      { id: "interactive-prompts", title: "Interactive prompts" },
+      { id: "inline-skill-invocation", title: "Inline skill invocation" },
     ],
     nextHref: "/help/skills",
     nextLabel: "Skills",
     body: [
       {
         type: "paragraph",
+        sectionId: "command-bar",
         content:
-          "The public help copy suggests a chat surface that is deeply integrated with files, tools, and task execution. Prompts are not isolated messages; they sit inside a project context enriched by uploaded literature, prior outputs, and enabled skills.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Use chat to ask questions, request synthesis, launch analysis jobs, and inspect intermediate outputs. As the system runs, the session view exposes tool activity and generated files so researchers can verify each step.",
+          "The command bar above the input box provides four quick actions:",
       },
       {
         type: "list",
+        sectionId: "command-bar",
         items: [
-          "Start broad with a research objective or question.",
-          "Narrow the execution with explicit sources, constraints, or deliverables.",
-          "Review artifacts inline and iterate until the result is publication- or stakeholder-ready.",
+          "➕ New Chat — Start a new conversation session",
+          "⏹ Stop — Interrupt the current response or background task",
+          "⚡ Skills — Open the Skills list and select the skills you want to use in the current chat",
+          "🔨 Foundry — Open the document generation workspace",
         ],
+      },
+      {
+        type: "paragraph",
+        sectionId: "sending-messages",
+        content:
+          "Type your message in the input box and press Enter to send. Press Shift + Enter to start a new line. SciClaw's responses are streamed in real time, so you can follow its reasoning, tool usage, and results as they appear.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "attaching-files",
+        content:
+          "To upload a file, click the 📎 paperclip icon in the lower-right corner of the input box, or simply drag and drop a file into the chat area. Uploaded files are automatically added to the current project, and their paths are passed to SciClaw for use in the conversation.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "library",
+        content:
+          "Click the Library toggle in the lower-right corner of the input box to enable RAG mode. When enabled, SciClaw searches the current project's knowledge base before answering and retrieves relevant documents.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "guiding-the-agent-mid-task",
+        content:
+          "While SciClaw is generating a response, you can type a new message in the input box and press Enter to inject it directly into the active agent workflow. This allows you to guide the next step in real time without interrupting the current task.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "interactive-prompts",
+        content:
+          "When SciClaw needs confirmation, clarification, or a selection from you during task execution, it displays an interactive prompt above the input box. Click an option or type a reply to continue.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "inline-skill-invocation",
+        content:
+          "Type / in the input box to open the skill list. Press Enter or click a skill to select it. The selected skill name is automatically inserted as a prefix to your message.",
       },
     ],
   },
@@ -238,6 +305,7 @@ export const helpArticles: HelpArticle[] = [
     title: "Skills",
     description:
       "Skills package reusable workflows, tool access, and domain-specific execution patterns that can be activated per project or session.",
+    icon: "bolt",
     sections: [
       { id: "skill-library", title: "Skill library" },
       { id: "activation", title: "Activation" },
@@ -272,6 +340,7 @@ export const helpArticles: HelpArticle[] = [
     title: "Library",
     description:
       "The library stores papers, notes, datasets, and reference materials so sessions can ground reasoning in persistent project knowledge.",
+    icon: "book",
     sections: [
       { id: "knowledge-base", title: "Knowledge base" },
       { id: "uploading", title: "Uploading content" },
@@ -306,6 +375,7 @@ export const helpArticles: HelpArticle[] = [
     title: "Tasks",
     description:
       "Tasks represent queued, active, and completed units of work that let SciClaw push research forward beyond the visible chat thread.",
+    icon: "clock",
     sections: [
       { id: "task-types", title: "Task types" },
       { id: "automation", title: "Automation" },
@@ -340,6 +410,7 @@ export const helpArticles: HelpArticle[] = [
     title: "Foundry",
     description:
       "Foundry is the output layer where SciClaw turns sessions and tasks into polished reports, briefs, and presentation-ready deliverables.",
+    icon: "hammer",
     sections: [
       { id: "deliverables", title: "Deliverables" },
       { id: "editing", title: "Editing outputs" },
@@ -372,8 +443,10 @@ export const helpArticles: HelpArticle[] = [
     slug: "persona",
     index: "08",
     title: "Persona",
+    navTitle: "AI Persona",
     description:
       "Persona settings let teams steer SciClaw's tone, assumptions, and role-specific behavior for different research contexts.",
+    icon: "persona",
     sections: [
       { id: "role-framing", title: "Role framing" },
       { id: "tone-controls", title: "Tone & style" },
@@ -406,8 +479,10 @@ export const helpArticles: HelpArticle[] = [
     slug: "im",
     index: "09",
     title: "IM",
+    navTitle: "IM Connection",
     description:
       "IM covers messaging integrations that bring notifications, updates, and lightweight workflow control into external communication channels.",
+    icon: "send",
     sections: [
       { id: "integrations", title: "Integrations" },
       { id: "alerts", title: "Alerts & notifications" },
@@ -439,32 +514,31 @@ export const helpArticles: HelpArticle[] = [
   {
     slug: "settings",
     index: "10",
-    title: "Settings",
+    title: "System Settings",
+    navTitle: "Settings",
     description:
       "Settings centralize workspace appearance, language, account preferences, usage controls, and other product-level configuration.",
+    icon: "sliders",
     sections: [
-      { id: "workspace-preferences", title: "Workspace preferences" },
-      { id: "account-controls", title: "Account controls" },
-      { id: "usage-and-access", title: "Usage & access" },
+      { id: "theme", title: "Theme" },
+      { id: "language", title: "Language" },
+      { id: "usage", title: "Usage" },
     ],
     body: [
       {
         type: "paragraph",
         content:
-          "The public help navigation exposes Settings alongside workflow concepts like Chat, Tasks, and Foundry, suggesting that account and environment preferences are treated as part of the broader operating system rather than isolated profile settings.",
+          "To change the appearance of the interface, click your avatar in the upper-right corner and choose Theme. You can switch between Dark, Light, and Follow System.",
       },
       {
         type: "paragraph",
         content:
-          "Typical settings likely include appearance themes, language preferences, notification controls, account access details, and usage settings that influence how the workspace behaves across projects.",
+          "To change the interface language, click your avatar and choose Language. SciClaw currently supports English and Simplified Chinese. The page refreshes automatically after you switch languages.",
       },
       {
-        type: "list",
-        items: [
-          "Adjust theme and language for your daily workflow.",
-          "Review account and access configuration.",
-          "Tune defaults for notifications, usage, and workspace behavior.",
-        ],
+        type: "paragraph",
+        content:
+          "To view account usage details, click your avatar and select Usage. This page shows your current token usage, document credits, and storage consumption.",
       },
     ],
   },
