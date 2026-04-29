@@ -124,6 +124,20 @@ describe("Home landing page", () => {
     expect(headerButtons).toHaveLength(3);
   });
 
+  it("renders the contact icon menu as a support-style control without changing route reachability", () => {
+    render(<Home />);
+
+    const primaryNav = screen.getByRole("navigation", { name: /primary/i });
+    const contactTrigger = within(primaryNav).getByRole("button", { name: /contact us/i });
+
+    fireEvent.click(contactTrigger);
+
+    const contactMenu = screen.getByRole("menu", { name: /contact us/i });
+    expect(contactTrigger).toHaveAttribute("aria-expanded", "true");
+    expect(within(contactMenu).getByRole("menuitem", { name: /privacy policy/i })).toHaveAttribute("href", "/privacy");
+    expect(within(contactMenu).getByRole("menuitem", { name: /beta access/i })).toHaveAttribute("href", "/privacy");
+  });
+
   it("opens the landing settings dock menu with first-level theme and language entries", () => {
     render(<Home />);
 

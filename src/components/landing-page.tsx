@@ -22,10 +22,11 @@ function GuideIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
 function ContactIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
-      <path d="M4.75 12.25a2.25 2.25 0 0 1 2.25-2.25h1.25a2 2 0 0 1 2 2v4.5a2 2 0 0 1-2 2H7a2.25 2.25 0 0 1-2.25-2.25v-4Z" />
-      <path d="M13.75 10h1.25a2.25 2.25 0 0 1 2.25 2.25v4A2.25 2.25 0 0 1 15 18.5h-1.25a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2Z" />
-      <path d="M7.5 10.25a4.5 4.5 0 0 1 9 0" />
-      <path d="M16.5 18.25h1.25a1.5 1.5 0 0 0 1.5-1.5v-2" />
+      <path d="M6.75 11.75a4.75 4.75 0 0 1 9.5 0" />
+      <path d="M5.25 12.5a2.25 2.25 0 0 1 2.25-2.25h.75a1.75 1.75 0 0 1 1.75 1.75v4.25A1.75 1.75 0 0 1 8.25 18H7.5a2.25 2.25 0 0 1-2.25-2.25V12.5Z" />
+      <path d="M14 12a1.75 1.75 0 0 1 1.75-1.75h.75a2.25 2.25 0 0 1 2.25 2.25v3.25A2.25 2.25 0 0 1 16.5 18h-.75A1.75 1.75 0 0 1 14 16.25V12Z" />
+      <path d="M16.5 18h.5a1.75 1.75 0 0 0 1.75-1.75V15.5" />
+      <path d="M12 18.75v.25" />
     </svg>
   );
 }
