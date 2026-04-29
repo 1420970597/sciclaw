@@ -13,7 +13,7 @@
 ## Phase B — Landing 高保真复刻（P0）
 - [x] 完成 dark hero、feature rotator、嵌入式 auth card、best-cases 区块、footer 首版
 - [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态
-- [ ] 增加更多贴近公开站点的案例轮播视觉与动画细节
+- [x] 增加更多贴近公开站点的案例轮播视觉与动画细节
 
 ## Phase C — Help shell 与公开文档（P1）
 - [x] 建立 `/help/[slug]` 文档路由与 docs shell 三栏结构

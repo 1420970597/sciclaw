@@ -2,46 +2,45 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import Home from "@/app/page";
 
 describe("Home landing page", () => {
-  it("renders the high-fidelity landing structure", () => {
+  it("renders the public-inspired landing structure", () => {
     render(<Home />);
 
+    expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", {
-        name: /research, reason, and present outcomes from one evidence-backed workflow/i,
-      }),
+      screen.getAllByText(/ai co-worker for scientific research\./i).length,
+    ).toBeGreaterThanOrEqual(1);
+    expect(
+      screen.getByText(
+        /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
+      ),
     ).toBeInTheDocument();
 
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /onboard/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /onboard/i })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: /get started/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/best cases/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
   });
 
-  it("switches auth tabs and updates CTA copy", () => {
+  it("switches auth tabs and updates the visible panel", () => {
     render(<Home />);
 
-    fireEvent.click(screen.getByRole("button", { name: /login/i }));
+    fireEvent.click(screen.getByRole("tab", { name: /login/i }));
 
-    expect(screen.getByRole("heading", { name: /welcome back/i })).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /login to workspace/i }),
-    ).toBeInTheDocument();
-    expect(screen.queryByDisplayValue(/gl-0g1ipalu/i)).not.toBeInTheDocument();
+    expect(screen.getByRole("tabpanel", { name: /login/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /login to workspace/i })).toBeInTheDocument();
+    expect(screen.queryByDisplayValue(/sc-xxxxxxxx/i)).not.toBeInTheDocument();
   });
 
-  it("switches feature panels when a rotator tab is selected", () => {
+  it("switches feature panels when a network node is selected", () => {
     render(<Home />);
 
-    fireEvent.click(screen.getByRole("button", { name: /data mining/i }));
+    fireEvent.click(screen.getAllByRole("button", { name: /data mining/i })[0]);
 
-    expect(
-      screen.getByRole("heading", {
-        name: /mine datasets, filings, and transcripts for the patterns that matter/i,
-      }),
-    ).toBeInTheDocument();
-
-    expect(screen.getByText(/multi-source ingestion/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
+    expect(screen.getByText(/visualize patterns across uploaded evidence, filings, and datasets/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/data mining/i).length).toBeGreaterThanOrEqual(1);
   });
 
   it("keeps landing navigation targets on implemented routes", () => {
@@ -50,7 +49,6 @@ describe("Home landing page", () => {
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
     const footer = screen.getByRole("contentinfo");
     const headerLinks = within(primaryNav).getAllByRole("link");
-    const footerLinks = within(footer).getAllByRole("link");
 
     expect(within(primaryNav).getByRole("link", { name: /user guide/i })).toHaveAttribute(
       "href",
@@ -64,29 +62,19 @@ describe("Home landing page", () => {
       "href",
       "/help/settings",
     );
-    expect(within(footer).getByRole("link", { name: /user guide/i })).toHaveAttribute(
-      "href",
-      "/help/getting-started",
-    );
-    expect(within(footer).getByRole("link", { name: /privacy/i })).toHaveAttribute(
-      "href",
-      "/privacy",
-    );
+
+    expect(footer).toHaveTextContent(/2026 all rights reserved/i);
     expect(headerLinks).toHaveLength(3);
-    expect(footerLinks).toHaveLength(3);
   });
 
-  it("prevents auth form submission from causing default navigation", () => {
+  it("cycles the best-cases carousel with arrow controls", () => {
     render(<Home />);
 
-    const submitButton = screen.getByRole("button", { name: /start with invite/i });
-    const form = submitButton.closest("form");
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
 
-    expect(form).not.toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
-    const submitEvent = new Event("submit", { bubbles: true, cancelable: true });
-    form!.dispatchEvent(submitEvent);
-
-    expect(submitEvent.defaultPrevented).toBe(true);
+    expect(screen.getByText(/02 \/ 03/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /scientific diligence/i })).toBeInTheDocument();
   });
 });

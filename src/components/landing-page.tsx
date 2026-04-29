@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   bestCases,
   featureItems,
@@ -11,25 +11,22 @@ import {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-white/8 bg-slate-950/70 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 sm:px-8 lg:px-10">
-        <a href="#top" className="flex items-center gap-3 text-sm font-medium text-slate-100">
-          <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-base font-semibold text-cyan-200">
-            S
-          </span>
-          <span className="text-base font-semibold tracking-[0.08em] text-white">
-            SciClaw
-          </span>
+    <header className="border-b border-black/6 bg-[#f4f5f8]/95 backdrop-blur-sm">
+      <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
+        <a href="#top" className="text-base font-semibold tracking-[-0.02em] text-[#1f2024]">
+          Sci<span className="text-[#eb8a3c]">Claw</span>
         </a>
-        <nav aria-label="Primary" className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+
+        <nav aria-label="Primary" className="flex items-center gap-3">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
-              className="transition hover:text-white"
+              aria-label={link.label}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/8 bg-white text-[#44484f] shadow-[0_10px_25px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5 hover:border-black/12 hover:text-[#181a1f]"
             >
-              {link.label}
-            </a>
+              <HeaderIcon label={link.label} />
+            </Link>
           ))}
         </nav>
       </div>
@@ -37,8 +34,173 @@ function Header() {
   );
 }
 
+function HeaderIcon({ label }: { label: string }) {
+  switch (label) {
+    case "User Guide":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4.5 w-4.5" aria-hidden>
+          <path d="M5.5 6.5A2.5 2.5 0 0 1 8 4h9v14H8a2.5 2.5 0 0 0-2.5 2.5V6.5Z" />
+          <path d="M17 18H8a2.5 2.5 0 0 0 0 5h9" />
+          <path d="M9.5 8.5h4.5" />
+        </svg>
+      );
+    case "Privacy":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4.5 w-4.5" aria-hidden>
+          <path d="M5 4.5h9A4.5 4.5 0 0 1 18.5 9v10H8a3 3 0 0 0-3 3V4.5Z" />
+          <path d="M18.5 19H8a3 3 0 0 0 0 6h10.5" />
+          <path d="M9.5 8.5h5" />
+          <path d="M9.5 12h4" />
+        </svg>
+      );
+    default:
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4.5 w-4.5" aria-hidden>
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19 12a7 7 0 0 0-.12-1.25l1.74-1.35-1.7-2.94-2.08.84a7.15 7.15 0 0 0-2.16-1.25L14.4 3h-3l-.28 2.05a7.15 7.15 0 0 0-2.16 1.25l-2.08-.84-1.7 2.94 1.74 1.35A7 7 0 0 0 5 12c0 .43.04.85.12 1.25L3.38 14.6l1.7 2.94 2.08-.84c.64.53 1.37.95 2.16 1.25L11.4 21h3l.28-2.05a7.15 7.15 0 0 0 2.16-1.25l2.08.84 1.7-2.94-1.74-1.35c.08-.4.12-.82.12-1.25Z" />
+        </svg>
+      );
+  }
+}
+
+function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
+  const nodes = useMemo(
+    () => [
+      {
+        id: "literature-analysis",
+        label: "Literature Analysis",
+        icon: "文",
+        position: "left-[4%] top-[12%] sm:left-[7%] sm:top-[10%]",
+        lineClass: "left-[42%] top-[28%] h-px w-[23%] origin-left rotate-[8deg]",
+      },
+      {
+        id: "data-mining",
+        label: "Data Mining",
+        icon: "研",
+        position: "left-[16%] top-[62%] sm:left-[18%] sm:top-[60%]",
+        lineClass: "left-[44%] top-[56%] h-px w-[19%] origin-left rotate-[168deg]",
+      },
+      {
+        id: "outcome-present",
+        label: "Outcome Present",
+        icon: "果",
+        position: "right-[8%] top-[20%] sm:right-[10%] sm:top-[18%]",
+        lineClass: "left-[57%] top-[30%] h-px w-[22%] origin-left rotate-[166deg]",
+      },
+    ],
+    [],
+  );
+
+  return (
+    <div className="relative min-h-[290px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.75),_rgba(255,255,255,0)_62%)] sm:min-h-[360px]">
+      <div className="absolute inset-0">
+        <div className="absolute left-[16%] top-[18%] h-1.5 w-1.5 rounded-full bg-[#d5d8df]" />
+        <div className="absolute left-[25%] top-[42%] h-1.5 w-1.5 rounded-full bg-[#d7dae1]" />
+        <div className="absolute left-[72%] top-[36%] h-1.5 w-1.5 rounded-full bg-[#d6d9df]" />
+        <div className="absolute left-[68%] top-[66%] h-1.5 w-1.5 rounded-full bg-[#d6d9df]" />
+        <div className="absolute left-[47%] top-[24%] h-[84px] w-px bg-gradient-to-b from-[#f2b28a] via-[#ed8d51] to-transparent" />
+        {nodes.map((node) => (
+          <div key={node.id}>
+            <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#d8dbe1] via-[#e4e6eb] to-transparent`} aria-hidden />
+            <button
+              type="button"
+              onClick={() => {
+                const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
+                if (nextIndex >= 0) {
+                  onSelect(nextIndex);
+                }
+              }}
+              className={`absolute ${node.position} flex flex-col items-center gap-3 text-center transition hover:scale-[1.02]`}
+            >
+              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/80 bg-white/88 text-lg font-semibold text-[#b3bac4] shadow-[0_16px_36px_rgba(15,23,42,0.08)] backdrop-blur">
+                {node.icon}
+              </span>
+              <span className="max-w-[110px] text-xs font-medium leading-5 text-[#c1c6ce] sm:text-sm">{node.label}</span>
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
+        <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#f29a62] text-[11px] font-semibold text-white shadow-[0_10px_25px_rgba(242,154,98,0.4)]">
+          AI
+        </span>
+        <button
+          type="button"
+          onClick={() => onSelect(1)}
+          className="group relative flex h-28 w-28 items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_18px_rgba(249,159,120,0.16),0_0_0_42px_rgba(249,159,120,0.08),0_28px_60px_rgba(236,132,73,0.14)] transition hover:scale-[1.02] sm:h-32 sm:w-32"
+          aria-label="Data Mining"
+        >
+          <span className="absolute inset-[14px] rounded-full border border-[#f8c4a3]/80" />
+          <span className="text-[22px] font-semibold sm:text-[24px]">数</span>
+        </button>
+        <p className="mt-4 text-sm font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-base">Data Mining</p>
+      </div>
+    </div>
+  );
+}
+
+function FeaturePreview({ activeIndex }: { activeIndex: number }) {
+  const activeFeature = featureItems[activeIndex];
+  const bars =
+    activeIndex === 0
+      ? [56, 84, 104, 88]
+      : activeIndex === 1
+        ? [74, 112, 146, 126]
+        : [52, 76, 96, 118];
+
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="rounded-[2rem] border border-white/70 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:p-6">
+        <div className="flex items-center justify-between">
+          <span className="h-1.5 w-16 rounded-full bg-[#e3e6eb]" aria-hidden />
+          <div className="flex items-center gap-1.5" aria-hidden>
+            <span className="h-2.5 w-2.5 rounded-full bg-[#f3bf95]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ef9c63]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ea8543]" />
+          </div>
+        </div>
+
+        <div className="mt-8 flex h-[220px] items-end justify-between gap-3 rounded-[1.5rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-5 pb-5 pt-8 sm:h-[250px] sm:px-8">
+          {bars.map((height, index) => (
+            <div key={`${activeFeature.id}-${index}`} className="flex flex-1 flex-col items-center justify-end gap-3">
+              <div
+                className="w-full rounded-t-[1.2rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
+                style={{ height }}
+              />
+              <span className="text-xs font-medium uppercase tracking-[0.22em] text-[#b7bcc6]">Q{index + 1}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-4 px-1">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ed8a43]">{activeFeature.eyebrow}</p>
+        <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2rem] md:text-[2.3rem]">
+          {activeIndex === 1 ? "Intelligent Data Visualization" : activeFeature.title}
+        </h2>
+        <p className="max-w-xl text-base leading-8 text-[#6a7079] sm:text-lg">
+          {activeIndex === 1
+            ? "Visualize patterns across uploaded evidence, filings, and datasets with clean, presentation-ready charts that remain connected to the underlying scientific context."
+            : activeFeature.description}
+        </p>
+        <button
+          type="button"
+          className="inline-flex items-center gap-2 text-sm font-medium text-[#70757f] transition hover:text-[#1f232a]"
+          aria-label="Get started preview"
+        >
+          Get started
+          <span aria-hidden className="text-base leading-none">
+            ↓
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function FeatureRotator() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -48,68 +210,10 @@ function FeatureRotator() {
     return () => window.clearInterval(timer);
   }, []);
 
-  const activeFeature = featureItems[activeIndex];
-
   return (
-    <section
-      id="feature-rotator"
-      className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-8"
-    >
-      <div className="flex flex-wrap gap-3">
-        {featureItems.map((feature, index) => {
-          const isActive = index === activeIndex;
-
-          return (
-            <button
-              key={feature.id}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                isActive
-                  ? "bg-white text-slate-950 shadow-lg shadow-cyan-500/20"
-                  : "border border-white/10 bg-slate-900/70 text-slate-300 hover:border-cyan-300/40 hover:text-white"
-              }`}
-              aria-pressed={isActive}
-            >
-              {feature.eyebrow}
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-        <div className="space-y-5">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
-            {activeFeature.eyebrow}
-          </p>
-          <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            {activeFeature.title}
-          </h2>
-          <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-            {activeFeature.description}
-          </p>
-        </div>
-
-        <div
-          className={`relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br ${activeFeature.accent} p-5`}
-        >
-          <div className="absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-          <div className="rounded-[1.4rem] border border-white/10 bg-slate-950/80 p-5 shadow-inner shadow-slate-950/80">
-            <div className="flex items-center justify-between text-xs uppercase tracking-[0.22em] text-slate-400">
-              <span>Workspace signal</span>
-              <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-            </div>
-            <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-200">
-              {activeFeature.metrics.map((metric) => (
-                <li key={metric} className="flex items-start gap-3">
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.75)]" />
-                  <span>{metric}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+    <section id="feature-rotator" className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-12">
+      <FeatureNetwork onSelect={setActiveIndex} />
+      <FeaturePreview activeIndex={activeIndex} />
     </section>
   );
 }
@@ -120,163 +224,292 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="rounded-[2rem] border border-white/10 bg-slate-950/85 p-6 shadow-[0_24px_80px_rgba(8,15,32,0.65)] backdrop-blur-xl sm:p-7"
+      className="rounded-[2rem] border border-[#ebeef3] bg-white px-6 py-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-7 sm:py-7"
     >
-      <div className="inline-flex rounded-full border border-white/10 bg-white/5 p-1 text-sm">
-        {[
-          { key: "onboard", label: "Onboard" },
-          { key: "login", label: "Login" },
-        ].map((tab) => {
-          const selected = activeTab === tab.key;
+      <div className="mx-auto w-full max-w-[320px]">
+        <div role="tablist" aria-label="Authentication mode" className="inline-flex rounded-full bg-[#f4f6f9] p-1 text-sm text-[#8a909a]">
+          {[
+            { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
+            { key: "login", label: "Login", panelId: "auth-panel-login" },
+          ].map((tab) => {
+            const selected = activeTab === tab.key;
 
-          return (
-            <button
-              key={tab.key}
-              type="button"
-              aria-pressed={selected}
-              onClick={() => setActiveTab(tab.key as AuthTab)}
-              className={`rounded-full px-4 py-2 font-medium transition ${
-                selected
-                  ? "bg-white text-slate-950"
-                  : "text-slate-300 hover:text-white"
-              }`}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="mt-6 space-y-5">
-        <div>
-          <h3 className="text-2xl font-semibold text-white">
-            {activeTab === "onboard" ? "Get started with your invite" : "Welcome back"}
-          </h3>
-          <p className="mt-2 text-sm leading-6 text-slate-400">
-            {activeTab === "onboard"
-              ? "Create a scientific productivity workspace with invite code onboarding and email verification."
-              : "Log in with your email verification code or continue with Google."}
-          </p>
+            return (
+              <button
+                key={tab.key}
+                type="button"
+                role="tab"
+                id={`auth-tab-${tab.key}`}
+                aria-selected={selected}
+                aria-controls={tab.panelId}
+                onClick={() => setActiveTab(tab.key as AuthTab)}
+                className={`rounded-full px-5 py-2.5 font-medium transition ${
+                  selected ? "bg-[#1f232a] text-white shadow-[0_12px_24px_rgba(31,35,42,0.16)]" : "text-[#8a909a] hover:text-[#2a2e35]"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
         </div>
 
-        <form
-          className="space-y-4"
-          onSubmit={(event) => {
-            event.preventDefault();
-          }}
-        >
-          {activeTab === "onboard" ? (
-            <label className="block space-y-2 text-sm text-slate-300">
-              <span>Invite code</span>
-              <input
-                readOnly
-                value="GL-0G1IPALU"
-                className="w-full rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-sm text-cyan-50 outline-none"
-              />
-            </label>
-          ) : null}
+        <div className="mt-6 space-y-5">
+          <Link
+            href="/help/getting-started"
+            className="inline-flex w-full items-center justify-center rounded-[1.3rem] bg-[#f4a25f] px-4 py-3.5 text-sm font-semibold text-white shadow-[0_18px_28px_rgba(244,162,95,0.22)] transition hover:brightness-105"
+          >
+            Get started
+          </Link>
 
-          <label className="block space-y-2 text-sm text-slate-300">
-            <span>Email</span>
-            <input
-              type="email"
-              placeholder="researcher@lab.ai"
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/50"
-            />
-          </label>
-
-          <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
-            <label className="block space-y-2 text-sm text-slate-300">
-              <span>Verification code</span>
-              <input
-                placeholder="6-digit code"
-                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/50"
-              />
-            </label>
-            <button
-              type="button"
-              className="self-end rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100 transition hover:border-cyan-300/40 hover:text-white"
-            >
-              Send code
-            </button>
+          <div
+            role="tabpanel"
+            id={activeTab === "onboard" ? "auth-panel-onboard" : "auth-panel-login"}
+            aria-labelledby={activeTab === "onboard" ? "auth-tab-onboard" : "auth-tab-login"}
+            aria-label={activeTab === "onboard" ? "Onboard" : "Login"}
+            className="rounded-[1.5rem] border border-[#eef1f5] bg-[#fbfcfd] p-4 sm:p-5"
+          >
+            {activeTab === "onboard" ? (
+              <div className="space-y-4">
+                <p className="text-center text-sm text-[#7a8088]">Enter your access code to begin</p>
+                <label className="block text-sm text-[#5e646d]">
+                  <span className="sr-only">Access code</span>
+                  <input
+                    readOnly
+                    value="SC-XXXXXXXX"
+                    placeholder="SC-XXXXXXXX"
+                    className="w-full rounded-[1.2rem] border border-[#ebeef3] bg-white px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.28em] text-[#a6acb5] outline-none"
+                  />
+                </label>
+                <button
+                  type="button"
+                  disabled
+                  className="w-full rounded-[1.2rem] border border-[#eef1f4] bg-[#f3f5f8] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#b7bcc5]"
+                >
+                  Verify access code
+                </button>
+              </div>
+            ) : (
+              <form
+                className="space-y-4"
+                onSubmit={(event) => {
+                  event.preventDefault();
+                }}
+              >
+                <label className="block space-y-2 text-sm text-[#5f646d]">
+                  <span>Email</span>
+                  <input
+                    type="email"
+                    placeholder="researcher@lab.ai"
+                    className="w-full rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm text-[#20242b] outline-none transition placeholder:text-[#b0b6bf] focus:border-[#ebb284]"
+                  />
+                </label>
+                <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+                  <label className="block space-y-2 text-sm text-[#5f646d]">
+                    <span>Verification code</span>
+                    <input
+                      placeholder="6-digit code"
+                      className="w-full rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm text-[#20242b] outline-none transition placeholder:text-[#b0b6bf] focus:border-[#ebb284]"
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    className="self-end rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium text-[#656b74] transition hover:border-[#e2d6c8] hover:text-[#20242b]"
+                  >
+                    Send code
+                  </button>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full rounded-[1.2rem] bg-[#1f232a] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#323741]"
+                >
+                  Login to workspace
+                </button>
+              </form>
+            )}
           </div>
 
           <button
-            type="submit"
-            className="w-full rounded-2xl bg-gradient-to-r from-cyan-300 via-sky-300 to-violet-300 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-105"
+            type="button"
+            className="w-full rounded-[1.3rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium text-[#31363d] shadow-[0_12px_24px_rgba(15,23,42,0.04)] transition hover:border-[#dce1e8]"
           >
-            {activeTab === "onboard" ? "Start with invite" : "Login to workspace"}
+            Continue with Google
           </button>
-        </form>
 
-        <div className="relative py-1 text-center text-xs uppercase tracking-[0.28em] text-slate-500">
-          <span className="relative z-10 bg-slate-950 px-3">or</span>
-          <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-white/10" />
+          <Link
+            href="/privacy"
+            className="inline-flex w-full items-center justify-center text-sm font-medium text-[#818892] transition hover:text-[#23272e]"
+          >
+            No account yet? Apply Now →
+          </Link>
         </div>
-
-        <button
-          type="button"
-          className="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition hover:border-white/20"
-        >
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-slate-950">
-            G
-          </span>
-          Continue with Google
-        </button>
       </div>
     </aside>
   );
 }
 
 function BestCases() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeCase = bestCases[activeIndex];
+  const carouselFrames = [
+    {
+      eyebrow: "Foundry",
+      tag: "Draft 01",
+      summaryTitle: "Automated report",
+      summaryText:
+        "Convert validated findings, historical tasks, and uploaded evidence into one concise, presentation-ready narrative.",
+      chipA: "Evidence appendix",
+      chipB: "Slides handoff",
+      bars: [56, 78, 68],
+    },
+    {
+      eyebrow: "Diligence",
+      tag: "Live review",
+      summaryTitle: "Cross-source diligence",
+      summaryText:
+        "Consolidate competitor data, trial notes, and uploaded citations into one research-ready diligence board.",
+      chipA: "Study matrix",
+      chipB: "Risk notes",
+      bars: [64, 92, 84],
+    },
+    {
+      eyebrow: "Policy",
+      tag: "Ready",
+      summaryTitle: "Regulatory pack",
+      summaryText:
+        "Package source-backed timelines, quotes, and claims into a synchronized policy or regulatory evidence packet.",
+      chipA: "Timeline",
+      chipB: "Decision memo",
+      bars: [48, 70, 98],
+    },
+  ] as const;
+  const activeFrame = carouselFrames[activeIndex] ?? carouselFrames[0];
+
+  const nextSlide = () => {
+    setActiveIndex((current) => (current + 1) % bestCases.length);
+  };
+
+  const previousSlide = () => {
+    setActiveIndex((current) => (current - 1 + bestCases.length) % bestCases.length);
+  };
+
   return (
-    <section className="mt-10 rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div className="space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
-            Best Cases
-          </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Built for teams navigating scientific complexity.
-          </h2>
-        </div>
-        <p className="max-w-xl text-sm leading-6 text-slate-400 sm:text-right">
-          A first landing slice inspired by SciClaw&apos;s public narrative: cross-source research, evidence-backed reasoning, and fast stakeholder communication.
-        </p>
+    <section className="mt-20">
+      <div className="mb-8 flex flex-col gap-3">
+        <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">Best Cases</h2>
+        <p className="text-base text-[#747a83] sm:text-lg">Real research results powered by SciClaw</p>
       </div>
 
-      <div className="mt-8 grid gap-4 lg:grid-cols-3">
-        {bestCases.map((item) => (
-          <article
-            key={item.title}
-            className="rounded-[1.6rem] border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/30 hover:bg-slate-950"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-right">
-                <p className="text-[10px] uppercase tracking-[0.24em] text-slate-500">
-                  {item.statLabel}
-                </p>
-                <p className="mt-1 text-sm font-semibold text-cyan-200">
-                  {item.statValue}
-                </p>
+      <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_26px_80px_rgba(15,23,42,0.08)]">
+        <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="relative min-h-[300px] bg-[radial-gradient(circle_at_20%_20%,rgba(244,162,95,0.14),transparent_28%),linear-gradient(180deg,#12161d_0%,#0d1016_100%)] p-6 sm:p-8">
+            <div className="absolute inset-x-8 top-8 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#6a7180]">
+              <span>{activeFrame.eyebrow}</span>
+              <span>Preview</span>
+            </div>
+            <div className="mx-auto mt-12 max-w-[520px] rounded-[1.8rem] border border-white/10 bg-[#161a22]/92 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-6">
+              <div className="flex items-center justify-between border-b border-white/8 pb-3">
+                <div>
+                    <p className="text-sm font-semibold text-white">{activeFrame.summaryTitle}</p>
+                  <p className="mt-1 text-xs text-[#8e95a2]">Stakeholder-ready synthesis</p>
+                </div>
+                <span className="rounded-full border border-[#f0a467]/25 bg-[#f0a467]/12 px-3 py-1 text-[11px] text-[#f4b17b]">
+                  {activeFrame.tag}
+                </span>
+              </div>
+              <div className="mt-5 grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
+                <div className="space-y-3">
+                  <div className="rounded-[1.25rem] border border-white/6 bg-white/4 p-4">
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#778090]">Summary</p>
+                    <p className="mt-3 text-sm leading-6 text-[#e5e8ef]">
+                      {activeFrame.summaryText}
+                    </p>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-[1.1rem] border border-white/6 bg-white/4 p-4 text-xs text-[#c7ccd6]">{activeFrame.chipA}</div>
+                    <div className="rounded-[1.1rem] border border-white/6 bg-white/4 p-4 text-xs text-[#c7ccd6]">{activeFrame.chipB}</div>
+                  </div>
+                </div>
+                <div className="rounded-[1.35rem] border border-white/6 bg-[linear-gradient(180deg,#232935_0%,#1b202a_100%)] p-4">
+                  <div className="space-y-3">
+                    <div className="h-2 w-16 rounded-full bg-[#f29a62]" />
+                    <div className="space-y-2">
+                      <div className="h-2 rounded-full bg-white/10" />
+                      <div className="h-2 w-5/6 rounded-full bg-white/10" />
+                      <div className="h-2 w-4/6 rounded-full bg-white/10" />
+                    </div>
+                    <div className="mt-4 grid grid-cols-3 gap-2">
+                      {activeFrame.bars.map((height) => (
+                        <div key={height} className="flex items-end justify-center rounded-xl bg-white/5 p-2">
+                          <span className="w-6 rounded-t-xl bg-[linear-gradient(180deg,#f4b282_0%,#eb8745_100%)]" style={{ height }} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <p className="mt-4 text-sm leading-6 text-slate-300">
-              {item.description}
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {item.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300"
+          </div>
+
+          <div className="relative overflow-hidden bg-[#fbf8f2] p-8 sm:p-10">
+            <div
+              className="absolute inset-0 opacity-45"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, rgba(224, 194, 164, 0.75) 1px, transparent 0)",
+                backgroundSize: "18px 18px",
+              }}
+              aria-hidden
+            />
+            <div className="relative z-10 flex h-full flex-col justify-between gap-10">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ec8a44]">
+                  {String(activeIndex + 1).padStart(2, "0")} / {String(bestCases.length).padStart(2, "0")}
+                </p>
+                <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.3rem]">
+                  {activeIndex === 0 ? "Automated Report Generation" : activeCase.title}
+                </h3>
+                <p className="mt-5 max-w-[420px] text-base leading-8 text-[#6c727b] sm:text-lg">
+                  {activeIndex === 0
+                    ? "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting."
+                    : activeCase.description}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={previousSlide}
+                  aria-label="Previous"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-[#42474f] shadow-[0_10px_25px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5 hover:text-[#1f232a]"
                 >
-                  {tag}
-                </span>
-              ))}
+                  ←
+                </button>
+                <div className="flex items-center gap-2">
+                  {bestCases.map((item, index) => {
+                    const isActive = index === activeIndex;
+                    return (
+                      <button
+                        key={item.title}
+                        type="button"
+                        onClick={() => setActiveIndex(index)}
+                        aria-label={`Go to slide ${index + 1}`}
+                        className={`h-2 rounded-full transition ${isActive ? "w-10 bg-[#ec8a44]" : "w-6 bg-[#d9dde3] hover:bg-[#c9cfd7]"}`}
+                      />
+                    );
+                  })}
+                </div>
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  aria-label="Next"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-[#42474f] shadow-[0_10px_25px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5 hover:text-[#1f232a]"
+                >
+                  →
+                </button>
+              </div>
             </div>
-          </article>
-        ))}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -284,25 +517,10 @@ function BestCases() {
 
 function Footer() {
   return (
-    <footer className="mt-16 border-t border-white/8 bg-slate-950/90">
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 text-sm text-slate-400 sm:px-8 lg:grid-cols-[1.4fr_0.6fr] lg:px-10">
-        <div>
-          <p className="text-base font-semibold text-white">SciClaw</p>
-          <p className="mt-3 max-w-2xl leading-6">
-            Scientific productivity for literature analysis, data mining, and outcome presentation — reinterpreted here as a polished public landing prototype.
-          </p>
-        </div>
-        <div className="grid gap-2 sm:justify-items-end">
-          <Link href="/help/getting-started" className="transition hover:text-white">
-            User Guide
-          </Link>
-          <a href="mailto:hello@sciclaw.ai" className="transition hover:text-white">
-            Contact Us
-          </a>
-          <Link href="/privacy" className="transition hover:text-white">
-            Privacy
-          </Link>
-        </div>
+    <footer className="mt-24 border-t border-black/6">
+      <div className="mx-auto grid max-w-[1240px] gap-3 px-6 py-10 text-sm text-[#8a9098] sm:px-8 lg:px-10">
+        <p>SciClaw - AI co-worker for scientific research.</p>
+        <p>2026 All rights reserved</p>
       </div>
     </footer>
   );
@@ -312,48 +530,28 @@ export function LandingPage() {
   return (
     <main
       id="top"
-      className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_26%),radial-gradient(circle_at_80%_20%,_rgba(129,140,248,0.18),_transparent_24%),linear-gradient(180deg,_#020617_0%,_#07101f_42%,_#020617_100%)] text-slate-50"
+      className="min-h-screen bg-[linear-gradient(180deg,#f4f5f8_0%,#f1f3f7_100%)] text-[#1f232a]"
     >
       <Header />
 
-      <section className="mx-auto max-w-7xl px-6 pb-14 pt-10 sm:px-8 lg:px-10 lg:pt-16">
-        <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-          <div className="space-y-8">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/90">
-              Scientific AI Workspace
-            </div>
-
-            <div className="space-y-6">
-              <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
-                Research, reason, and present outcomes from one evidence-backed workflow.
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-                SciClaw brings literature review, data mining, and stakeholder-ready outputs into a unified workspace for scientific and legal productivity.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                ["Workstreams", "Literature analysis, structured mining, polished briefs"],
-                ["Grounding", "Keep every summary tethered to source material"],
-                ["Handoff", "Move from investigation to presentation without context loss"],
-              ].map(([label, copy]) => (
-                <div
-                  key={label}
-                  className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm"
-                >
-                  <p className="text-sm font-semibold text-white">{label}</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">{copy}</p>
-                </div>
-              ))}
-            </div>
+      <section className="mx-auto max-w-[1240px] px-6 pb-14 pt-12 sm:px-8 lg:px-10 lg:pt-16">
+        <div className="space-y-12 text-center">
+          <div className="space-y-5">
+            <h1 className="text-5xl font-semibold tracking-[-0.05em] text-[#1f232a] sm:text-6xl lg:text-[5.3rem]">
+              Sci<span className="text-[#eb8a3c]">Claw</span>
+            </h1>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#878c95] sm:text-sm">
+              AI co-worker for scientific research.
+            </p>
+            <p className="mx-auto max-w-[900px] text-lg leading-8 tracking-[-0.01em] text-[#50555e] sm:text-[1.35rem] sm:leading-9">
+              SciClaw connects inspiration generation, experimental execution, and iterative optimization, ushering in a new paradigm of scientific discovery
+            </p>
           </div>
 
-          <AuthCard />
-        </div>
-
-        <div className="mt-10">
-          <FeatureRotator />
+          <div className="grid gap-10 lg:grid-cols-[1.06fr_0.94fr] lg:items-center lg:gap-12">
+            <FeatureRotator />
+            <AuthCard />
+          </div>
         </div>
 
         <BestCases />
