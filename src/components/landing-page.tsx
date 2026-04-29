@@ -78,10 +78,10 @@ function Header() {
   return (
     <header className="pt-[0.72rem] sm:pt-[0.92rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-[2.05rem] xl:px-[2.3rem]">
-        <nav aria-label="Primary" className="flex items-center gap-[0.24rem] pr-[0.04rem] sm:gap-[0.36rem] sm:pr-[0.12rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.28rem] pr-[0.08rem] sm:gap-[0.38rem] sm:pr-[0.14rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[rgba(0,0,0,0.1)] bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(249,246,241,0.992)_100%)] text-[#74808d] shadow-[0_1px_3px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.14)] hover:text-[#1d222a]"
+            buttonClassName="border-[rgba(0,0,0,0.092)] bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(249,246,241,0.992)_100%)] text-[#74808d] shadow-[0_1px_2px_rgba(15,23,42,0.032),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.13)] hover:text-[#1d222a]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,54 +98,54 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[11.1%] top-[6.2%] sm:left-[11.1%] sm:top-[6.2%]",
-        lineClass: "left-[42.2%] top-[24.8%] h-[1px] w-[21.1%] origin-left rotate-[214deg]",
-        ringClass: "h-[3.22rem] w-[3.22rem] border-[#aeb8c4] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#63717d] shadow-[0_2px_5px_rgba(15,23,42,0.015)]",
-        activeRingClass: "h-[3.3rem] w-[3.3rem] border-[#e39a62] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd9bf_100%)] text-[#b7561b] shadow-[0_0_0_3px_rgba(240,142,79,0.032),0_7px_11px_rgba(232,124,55,0.055)]",
-        labelClass: "max-w-[54px] text-[#5f707e]/88 drop-shadow-[0_1px_0_rgba(255,255,255,0.94)]",
-        activeLabelClass: "max-w-[60px] text-[#974819] drop-shadow-[0_2px_4px_rgba(240,142,79,0.032)]",
+        position: "left-[10.2%] top-[5.4%] sm:left-[10.2%] sm:top-[5.4%]",
+        lineClass: "left-[41.8%] top-[24.2%] h-[1px] w-[21.8%] origin-left rotate-[214deg]",
+        ringClass: "h-[3.18rem] w-[3.18rem] border-[#abb7c3] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#60707d] shadow-[0_2px_5px_rgba(15,23,42,0.014)]",
+        activeRingClass: "h-[3.24rem] w-[3.24rem] border-[#df9458] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd9bf_100%)] text-[#b25017] shadow-[0_0_0_3px_rgba(240,142,79,0.026),0_7px_10px_rgba(232,124,55,0.046)]",
+        labelClass: "max-w-[52px] text-[#556674]/92 drop-shadow-[0_1px_0_rgba(255,255,255,0.94)]",
+        activeLabelClass: "max-w-[58px] text-[#8f4417] drop-shadow-[0_2px_4px_rgba(240,142,79,0.026)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[11.8%] top-[74.6%] sm:left-[11.8%] sm:top-[74.6%]",
-        lineClass: "left-[41.9%] top-[49.1%] h-[1px] w-[22.2%] origin-left rotate-[148deg]",
-        ringClass: "h-[3.22rem] w-[3.22rem] border-[#aeb8c4] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#63717d] shadow-[0_2px_5px_rgba(15,23,42,0.015)]",
-        activeRingClass: "h-[3.3rem] w-[3.3rem] border-[#e39a62] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd9bf_100%)] text-[#b7561b] shadow-[0_0_0_3px_rgba(240,142,79,0.032),0_7px_11px_rgba(232,124,55,0.055)]",
-        labelClass: "max-w-[54px] text-[#5f707e]/88 drop-shadow-[0_1px_0_rgba(255,255,255,0.94)]",
-        activeLabelClass: "max-w-[60px] text-[#974819] drop-shadow-[0_2px_4px_rgba(240,142,79,0.032)]",
+        position: "left-[10.9%] top-[76.5%] sm:left-[10.9%] sm:top-[76.5%]",
+        lineClass: "left-[41.7%] top-[48.6%] h-[1px] w-[22.8%] origin-left rotate-[149deg]",
+        ringClass: "h-[3.18rem] w-[3.18rem] border-[#abb7c3] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#60707d] shadow-[0_2px_5px_rgba(15,23,42,0.014)]",
+        activeRingClass: "h-[3.24rem] w-[3.24rem] border-[#df9458] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd9bf_100%)] text-[#b25017] shadow-[0_0_0_3px_rgba(240,142,79,0.026),0_7px_10px_rgba(232,124,55,0.046)]",
+        labelClass: "max-w-[52px] text-[#556674]/92 drop-shadow-[0_1px_0_rgba(255,255,255,0.94)]",
+        activeLabelClass: "max-w-[58px] text-[#8f4417] drop-shadow-[0_2px_4px_rgba(240,142,79,0.026)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[4.2%] top-[7.6%] sm:right-[4.2%] sm:top-[7.6%]",
-        lineClass: "left-[49.6%] top-[27.2%] h-[1px] w-[21.1%] origin-left rotate-[8deg]",
-        ringClass: "h-[3.22rem] w-[3.22rem] border-[#aeb8c4] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#63717d] shadow-[0_2px_5px_rgba(15,23,42,0.015)]",
-        activeRingClass: "h-[3.3rem] w-[3.3rem] border-[#e39a62] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd9bf_100%)] text-[#b7561b] shadow-[0_0_0_3px_rgba(240,142,79,0.032),0_7px_11px_rgba(232,124,55,0.055)]",
-        labelClass: "max-w-[56px] text-[#5f707e]/88 drop-shadow-[0_1px_0_rgba(255,255,255,0.94)]",
-        activeLabelClass: "max-w-[62px] text-[#974819] drop-shadow-[0_2px_4px_rgba(240,142,79,0.032)]",
+        position: "right-[3.1%] top-[6.8%] sm:right-[3.1%] sm:top-[6.8%]",
+        lineClass: "left-[49.5%] top-[26.5%] h-[1px] w-[21.8%] origin-left rotate-[8deg]",
+        ringClass: "h-[3.18rem] w-[3.18rem] border-[#abb7c3] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#60707d] shadow-[0_2px_5px_rgba(15,23,42,0.014)]",
+        activeRingClass: "h-[3.24rem] w-[3.24rem] border-[#df9458] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd9bf_100%)] text-[#b25017] shadow-[0_0_0_3px_rgba(240,142,79,0.026),0_7px_10px_rgba(232,124,55,0.046)]",
+        labelClass: "max-w-[54px] text-[#556674]/92 drop-shadow-[0_1px_0_rgba(255,255,255,0.94)]",
+        activeLabelClass: "max-w-[60px] text-[#8f4417] drop-shadow-[0_2px_4px_rgba(240,142,79,0.026)]",
       },
     ],
     [],
   );
 
   return (
-    <div className="relative min-h-[352px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_48.6%_49.4%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_58%)] sm:min-h-[410px]">
+    <div className="relative min-h-[358px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_48.7%_49.1%,_rgba(255,255,255,0.82),_rgba(255,255,255,0)_59%)] sm:min-h-[418px]">
       <div className="absolute inset-0 opacity-[0.998]">
         <div className="absolute left-[23.2%] top-[11.7%] h-[1.5px] w-[1.5px] rounded-full bg-[#a9b7c5]" />
         <div className="absolute left-[28.7%] top-[45.2%] h-[1.5px] w-[1.5px] rounded-full bg-[#aebdcb]" />
         <div className="absolute left-[57.4%] top-[22.9%] h-[1.5px] w-[1.5px] rounded-full bg-[#b5c2cf]" />
         <div className="absolute left-[59.6%] top-[43.6%] h-[1.5px] w-[1.5px] rounded-full bg-[#b8c4d0]" />
-        <div className="absolute left-[48.95%] top-[21.5%] h-[116px] w-[0.8px] bg-gradient-to-b from-[#e89c62] via-[#d9732f] to-transparent opacity-[0.76]" />
-        <div className="absolute left-[49.87%] top-[21.5%] h-[116px] w-px bg-gradient-to-b from-[#fff1e5] via-[#fff6ef]/14 to-transparent opacity-[0.24]" />
-        <div className="absolute left-[49.5%] top-[20.45%] h-[1.22rem] w-[1.22rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.008)_0%,_rgba(244,177,132,0.0016)_34%,_rgba(255,255,255,0)_66%)]" />
-        <div className="absolute left-[49.5%] top-[20.45%] h-[1.6rem] w-[1.6rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,242,231,0.1)_0%,_rgba(255,242,231,0)_74%)]" />
-        <div className="absolute left-[49.5%] top-[20.45%] h-[3.2px] w-[3.2px] -translate-x-1/2 rounded-full border border-[#e69e68] bg-[#df792f] shadow-[0_0_0_1.5px_rgba(242,154,98,0.014),0_3px_5px_rgba(232,124,55,0.03)]" />
-        <div className="absolute left-[49.5%] top-[47.3%] h-[52px] w-[52px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.003)_0%,_rgba(244,177,132,0.001)_28%,_rgba(255,255,255,0)_68%)]" />
-        <div className="absolute left-[49.5%] top-[47.3%] h-[51px] w-[51px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/10 shadow-[0_0_1px_rgba(239,146,86,0.003)]" />
-        <div className="absolute left-[49.5%] top-[47.3%] h-[36px] w-[36px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/3 shadow-[0_0_1px_rgba(239,146,86,0.001)]" />
+        <div className="absolute left-[48.98%] top-[21.3%] h-[116px] w-[0.75px] bg-gradient-to-b from-[#e89c62] via-[#d9732f] to-transparent opacity-[0.72]" />
+        <div className="absolute left-[49.84%] top-[21.3%] h-[116px] w-px bg-gradient-to-b from-[#fff1e5] via-[#fff6ef]/12 to-transparent opacity-[0.2]" />
+        <div className="absolute left-[49.5%] top-[20.35%] h-[1.1rem] w-[1.1rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.006)_0%,_rgba(244,177,132,0.0014)_34%,_rgba(255,255,255,0)_66%)]" />
+        <div className="absolute left-[49.5%] top-[20.35%] h-[1.48rem] w-[1.48rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,242,231,0.082)_0%,_rgba(255,242,231,0)_74%)]" />
+        <div className="absolute left-[49.5%] top-[20.35%] h-[3px] w-[3px] -translate-x-1/2 rounded-full border border-[#e69e68] bg-[#df792f] shadow-[0_0_0_1.4px_rgba(242,154,98,0.012),0_3px_4px_rgba(232,124,55,0.024)]" />
+        <div className="absolute left-[49.5%] top-[47.1%] h-[48px] w-[48px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.0026)_0%,_rgba(244,177,132,0.0009)_28%,_rgba(255,255,255,0)_68%)]" />
+        <div className="absolute left-[49.5%] top-[47.1%] h-[47px] w-[47px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/8 shadow-[0_0_1px_rgba(239,146,86,0.002)]" />
+        <div className="absolute left-[49.5%] top-[47.1%] h-[34px] w-[34px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/2 shadow-[0_0_1px_rgba(239,146,86,0.001)]" />
         {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
@@ -298,14 +298,14 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                 </div>
                 <div className="mt-[1.98rem] grid grid-cols-4 gap-[1.48rem] pt-[1.48rem]">
                   {bars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-0 flex-col items-center gap-[1.12rem]">
-                      <div className="flex h-[154px] w-full items-end justify-center rounded-[1rem] bg-white/94 px-[0.52rem] pb-[0.74rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.78)]">
+                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.62rem] text-center">
+                      <div className="flex h-[168px] w-full items-end gap-[0.55rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.78rem] pb-[0.88rem] pt-4">
                         <span
-                          className="w-full rounded-t-[1rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
+                          className="flex-1 rounded-full bg-[linear-gradient(180deg,#f6bf93_0%,#eb8753_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="w-full text-center text-[8.45px] font-medium uppercase leading-[1.58] tracking-[0.19em] text-[#506173] sm:text-[8.6px] sm:tracking-[0.205em]">
+                      <span className="w-full text-center text-[8.35px] font-medium uppercase leading-[1.62] tracking-[0.215em] text-[#445569] sm:text-[8.5px] sm:tracking-[0.225em]">
                         {previewContent.chartLabels[index] ?? `Q${index + 1}`}
                       </span>
                     </div>
