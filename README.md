@@ -29,7 +29,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3001.
 
 ## Test and build verification
 
@@ -49,7 +49,7 @@ Build and run with Docker Compose:
 docker compose up --build
 ```
 
-App will be exposed on `http://localhost:3000`.
+App will be exposed on `http://localhost:3001`.
 
 ## Project structure
 

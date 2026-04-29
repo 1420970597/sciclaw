@@ -142,6 +142,33 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
 
 function FeaturePreview({ activeIndex }: { activeIndex: number }) {
   const activeFeature = featureItems[activeIndex];
+  const previewMap = {
+    "literature-analysis": {
+      bodyLabel: "Autonomous Research",
+      chartLabels: ["Methodology", "Conclusion", "Data", "Evidence"],
+      heading: "Deep Literature Analysis",
+      description:
+        "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
+      ctaLabel: "Get started",
+    },
+    "data-mining": {
+      bodyLabel: "Autonomous Research",
+      chartLabels: ["Methodology", "Conclusion", "Data", "Evidence"],
+      heading: "Intelligent Data Visualization",
+      description:
+        "Visualize patterns across uploaded evidence, filings, and datasets with clean, presentation-ready charts that remain connected to the underlying scientific context.",
+      ctaLabel: "Get started",
+    },
+    "outcome-present": {
+      bodyLabel: "Autonomous Research",
+      chartLabels: ["PPT", "PDF", "CSV", "DOCX"],
+      heading: "Multi-Format Research Output",
+      description:
+        "Automatically consolidate your research process and conclusions into professional, content-rich outputs such as presentation slides, academic posters, and documents.",
+      ctaLabel: "Get started",
+    },
+  } as const;
+  const previewContent = previewMap[activeFeature.id as keyof typeof previewMap] ?? previewMap["data-mining"];
   const bars =
     activeIndex === 0
       ? [56, 84, 104, 88]
@@ -168,32 +195,30 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                 className="w-full rounded-t-[1.2rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
                 style={{ height }}
               />
-              <span className="text-xs font-medium uppercase tracking-[0.22em] text-[#b7bcc6]">Q{index + 1}</span>
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#b7bcc6]">
+                {previewContent.chartLabels[index] ?? `Q${index + 1}`}
+              </span>
             </div>
           ))}
         </div>
       </div>
 
       <div className="space-y-4 px-1">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ed8a43]">{activeFeature.eyebrow}</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ed8a43]">{previewContent.bodyLabel}</p>
         <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2rem] md:text-[2.3rem]">
-          {activeIndex === 1 ? "Intelligent Data Visualization" : activeFeature.title}
+          {previewContent.heading}
         </h2>
-        <p className="max-w-xl text-base leading-8 text-[#6a7079] sm:text-lg">
-          {activeIndex === 1
-            ? "Visualize patterns across uploaded evidence, filings, and datasets with clean, presentation-ready charts that remain connected to the underlying scientific context."
-            : activeFeature.description}
-        </p>
-        <button
-          type="button"
+        <p className="max-w-xl text-base leading-8 text-[#6a7079] sm:text-lg">{previewContent.description}</p>
+        <Link
+          href="/help/getting-started"
           className="inline-flex items-center gap-2 text-sm font-medium text-[#70757f] transition hover:text-[#1f232a]"
           aria-label="Get started preview"
         >
-          Get started
+          {previewContent.ctaLabel}
           <span aria-hidden className="text-base leading-none">
             ↓
           </span>
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -352,34 +377,44 @@ function BestCases() {
   const activeCase = bestCases[activeIndex];
   const carouselFrames = [
     {
+      eyebrow: "Reproduction",
+      tag: "Live workflow",
+      summaryTitle: "Accelerated Paper Reproduction",
+      summaryText:
+        "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
+      chipA: "Environment setup",
+      chipB: "Workflow construction",
+      bars: [72, 106, 82],
+    },
+    {
+      eyebrow: "Peer Review",
+      tag: "Live review",
+      summaryTitle: "Peer Review Response Support",
+      summaryText:
+        "Automatically retrieves relevant data, prior task records, and manuscript context to speed up evidence-backed reviewer responses.",
+      chipA: "Reviewer tasks",
+      chipB: "Evidence retrieval",
+      bars: [64, 96, 118],
+    },
+    {
       eyebrow: "Foundry",
       tag: "Draft 01",
-      summaryTitle: "Automated report",
+      summaryTitle: "Automated Report Generation",
       summaryText:
-        "Convert validated findings, historical tasks, and uploaded evidence into one concise, presentation-ready narrative.",
-      chipA: "Evidence appendix",
-      chipB: "Slides handoff",
-      bars: [56, 78, 68],
-    },
-    {
-      eyebrow: "Diligence",
-      tag: "Live review",
-      summaryTitle: "Cross-source diligence",
-      summaryText:
-        "Consolidate competitor data, trial notes, and uploaded citations into one research-ready diligence board.",
-      chipA: "Study matrix",
-      chipB: "Risk notes",
-      bars: [64, 92, 84],
-    },
-    {
-      eyebrow: "Policy",
-      tag: "Ready",
-      summaryTitle: "Regulatory pack",
-      summaryText:
-        "Package source-backed timelines, quotes, and claims into a synchronized policy or regulatory evidence packet.",
-      chipA: "Timeline",
-      chipB: "Decision memo",
+        "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
+      chipA: "Slides handoff",
+      chipB: "Evidence appendix",
       bars: [48, 70, 98],
+    },
+    {
+      eyebrow: "Literature",
+      tag: "Autonomous",
+      summaryTitle: "Deep Literature Analysis",
+      summaryText:
+        "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
+      chipA: "Core arguments",
+      chipB: "Key data",
+      bars: [58, 78, 108],
     },
   ] as const;
   const activeFrame = carouselFrames[activeIndex] ?? carouselFrames[0];
@@ -399,7 +434,7 @@ function BestCases() {
         <p className="text-base text-[#747a83] sm:text-lg">Real research results powered by SciClaw</p>
       </div>
 
-      <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_26px_80px_rgba(15,23,42,0.08)]">
+      <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(180deg,#f7efe5_0%,#fbf7f1_12%,#ffffff_36%)] shadow-[0_26px_80px_rgba(15,23,42,0.08)]">
         <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
           <div className="relative min-h-[300px] bg-[radial-gradient(circle_at_20%_20%,rgba(244,162,95,0.14),transparent_28%),linear-gradient(180deg,#12161d_0%,#0d1016_100%)] p-6 sm:p-8">
             <div className="absolute inset-x-8 top-8 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#6a7180]">
@@ -465,14 +500,8 @@ function BestCases() {
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ec8a44]">
                   {String(activeIndex + 1).padStart(2, "0")} / {String(bestCases.length).padStart(2, "0")}
                 </p>
-                <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.3rem]">
-                  {activeIndex === 0 ? "Automated Report Generation" : activeCase.title}
-                </h3>
-                <p className="mt-5 max-w-[420px] text-base leading-8 text-[#6c727b] sm:text-lg">
-                  {activeIndex === 0
-                    ? "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting."
-                    : activeCase.description}
-                </p>
+                <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.3rem]">{activeCase.title}</h3>
+                <p className="mt-5 max-w-[420px] text-base leading-8 text-[#6c727b] sm:text-lg">{activeCase.description}</p>
               </div>
 
               <div className="flex flex-wrap items-center gap-3">

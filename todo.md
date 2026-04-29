@@ -12,7 +12,7 @@
 
 ## Phase B — Landing 高保真复刻（P0）
 - [x] 完成 dark hero、feature rotator、嵌入式 auth card、best-cases 区块、footer 首版
-- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态
+- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态（本轮已对齐 Contact Us 顶部图标命名、4 张 best-cases 公开案例顺序与 3001 端口编排，下一轮继续压缩 hero/auth 布局差异）
 - [x] 增加更多贴近公开站点的案例轮播视觉与动画细节
 
 ## Phase C — Help shell 与公开文档（P1）

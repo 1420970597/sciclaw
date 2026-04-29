@@ -54,7 +54,7 @@ describe("Home landing page", () => {
       "href",
       "/help/getting-started",
     );
-    expect(within(primaryNav).getByRole("link", { name: /privacy/i })).toHaveAttribute(
+    expect(within(primaryNav).getByRole("link", { name: /contact us/i })).toHaveAttribute(
       "href",
       "/privacy",
     );
@@ -70,11 +70,11 @@ describe("Home landing page", () => {
   it("cycles the best-cases carousel with arrow controls", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
-    expect(screen.getByText(/02 \/ 03/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /scientific diligence/i })).toBeInTheDocument();
+    expect(screen.getByText(/02 \/ 04/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
   });
 });

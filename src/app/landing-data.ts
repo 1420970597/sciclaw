@@ -100,7 +100,7 @@ export type AppShellResource = {
 
 export const navLinks: NavLink[] = [
   { label: "User Guide", href: "/help/getting-started" },
-  { label: "Privacy", href: "/privacy" },
+  { label: "Contact Us", href: "/privacy" },
   { label: "Settings", href: "/help/settings" },
 ];
 
@@ -148,28 +148,36 @@ export const featureItems: FeatureItem[] = [
 
 export const bestCases: BestCase[] = [
   {
-    title: "IP & prior-art review",
+    title: "Accelerated Paper Reproduction",
     description:
-      "Rapidly compare patents, papers, and prosecution history to build a defensible novelty or invalidation position.",
-    tags: ["Prior art", "Patent claims", "Research memo"],
-    statLabel: "Review acceleration",
-    statValue: "3.2×",
+      "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
+    tags: ["Paper reproduction", "Workflow setup", "Error handling"],
+    statLabel: "Reproduction support",
+    statValue: "End-to-end",
   },
   {
-    title: "Scientific diligence",
+    title: "Peer Review Response Support",
     description:
-      "Consolidate trial literature, competitive data, and expert commentary into one diligence trail for biotech and medtech teams.",
-    tags: ["Clinical studies", "Competitor watch", "Diligence"],
-    statLabel: "Sources connected",
-    statValue: "120+",
+      "Automatically retrieves relevant data, prior task records, and manuscript context to speed up evidence-backed reviewer responses.",
+    tags: ["Peer review", "Task records", "Evidence-backed response"],
+    statLabel: "Response turnaround",
+    statValue: "Faster",
   },
   {
-    title: "Regulatory evidence packs",
+    title: "Automated Report Generation",
     description:
-      "Assemble source-backed summaries and timelines that legal, policy, and compliance stakeholders can actually review together.",
-    tags: ["Timeline", "Policy brief", "Evidence pack"],
-    statLabel: "Stakeholder handoff",
-    statValue: "Same day",
+      "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
+    tags: ["Slides", "Documents", "Research reporting"],
+    statLabel: "Reporting efficiency",
+    statValue: "Presentation-ready",
+  },
+  {
+    title: "Deep Literature Analysis",
+    description:
+      "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
+    tags: ["PDF analysis", "Methods", "Data extraction"],
+    statLabel: "Core insight",
+    statValue: "Autonomous",
   },
 ];
 
