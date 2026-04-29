@@ -14,7 +14,10 @@ describe("Home landing page", () => {
         /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
       ),
     ).toBeInTheDocument();
-
+    expect(screen.getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
+    expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
+    expect(screen.getByText(/33%/i)).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();
@@ -40,12 +43,16 @@ describe("Home landing page", () => {
   it("switches feature panels when a network node is selected", () => {
     render(<Home />);
 
-    fireEvent.click(screen.getAllByRole("button", { name: /data mining/i })[0]);
+    fireEvent.click(screen.getAllByRole("button", { name: /outcome present/i })[0]);
 
-    expect(screen.getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
-    expect(screen.getByText(/visualize patterns across uploaded evidence, filings, and datasets/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/data mining/i).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByText(/research workspace preview/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /automatically consolidate your research process and conclusions into professional, content-rich outputs/i,
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getAllByText(/outcome present/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/preview/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(/summary/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(/evidence/i).length).toBeGreaterThanOrEqual(1);
   });

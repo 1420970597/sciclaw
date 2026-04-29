@@ -12,7 +12,7 @@
 
 ## Phase B — Landing 高保真复刻（P0）
 - [x] 完成 dark hero、feature rotator、嵌入式 auth card、best-cases 区块、footer 首版
-- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态（本轮已进一步对齐公开站：移除本地化 header wordmark、将右上角入口压缩为悬浮圆形图标组、重排 hero 与 auth card 的纵向节奏、把 Login 卡片改为橙色主按钮 + Google/Apply Now 分层结构，并把 Best Cases 标题切成官方的黑橙组合；后续又补强 hero 左侧网络图的同心光晕、连接线、节点高亮与右侧 feature preview 的分层 mockup，使左侧 cluster 收敛在独立列内、视觉更接近公开站；本轮继续补齐 landing 顶部圆形入口与 docs 顶部 Appearance/Language 的首层弹层态，并保留原有帮助/隐私/设置入口的可达性；下一轮继续微调 hero 左侧 cluster 文案裁切/重叠与 CTA 细节）
+- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态（本轮已进一步对齐公开站：移除本地化 header wordmark、将右上角入口压缩为悬浮圆形图标组、重排 hero 与 auth card 的纵向节奏、把 Login 卡片改为橙色主按钮 + Google/Apply Now 分层结构，并把 Best Cases 标题切成官方的黑橙组合；后续又补强 hero 左侧网络图的同心光晕、连接线、节点高亮与右侧 feature preview 的分层 mockup，使左侧 cluster 收敛在独立列内、视觉更接近公开站；本轮继续补齐 landing 顶部圆形入口与 docs 顶部 Appearance/Language 的首层弹层态，并保留原有帮助/隐私/设置入口的可达性；本轮进一步将顶部 Contact Us 图标改为更接近公开站的耳机/支持语义，且把 hero 默认右侧 preview 切换为公开站可见的 Autonomous Experiment Execution 任务列表卡片，补齐 33% 进度与橙色首行高亮；下一轮继续微调 hero 左侧 cluster 文案裁切/重叠与 CTA 细节）
 - [x] 增加更多贴近公开站点的案例轮播视觉与动画细节
 
 ## Phase C — Help shell 与公开文档（P1）
