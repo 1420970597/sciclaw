@@ -73,10 +73,19 @@ describe("Chat app shell placeholder", () => {
     expect(outputScope.getByRole("heading", { name: /shape a product-like narrative before the foundry export starts/i })).toBeInTheDocument();
     expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
     expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/the current shell preview now reads like an active working answer/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/summarize the strongest evidence chain before export/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/flag one unresolved risk so the reviewer knows what still needs judgment/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/keep the source route visible back to sessions, tasks, and project memory/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/the center workspace now reads like an active review thread/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/live sessions/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/^3$/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/open tasks/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/^5$/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/foundry exports/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/^12$/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/evidence chain/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/source citations, highlighted claims, and session checkpoints stay attached to the answer draft/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/open risk/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/flag one unresolved judgment call before the reviewer receives the foundry package/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/handoff route/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/jump back to project memory, active tasks, or the originating session thread without losing context/i)).toBeInTheDocument();
 
     const foundryCard = outputScope.getByText(/^foundry handoff$/i).closest("article");
     expect(foundryCard).not.toBeNull();
@@ -84,7 +93,10 @@ describe("Chat app shell placeholder", () => {
     expect(foundryScope.getByText(/high-visibility export rail/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/^ready$/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/brief outline/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/one-page narrative frame for the current answer/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/evidence appendix/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/linked citations, figures, and extracted notes bundled for review/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/slides handoff/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/presentation-ready talking points routed into foundry/i)).toBeInTheDocument();
   });
 });

@@ -1,10 +1,13 @@
 import Link from "next/link";
 import {
   appShellCards,
+  appShellExportAssets,
+  appShellOutputSignals,
   appShellResources,
   appShellSections,
   appShellTimeline,
   appShellTodos,
+  appShellWorkspaceMetrics,
   type AppShellSection,
 } from "@/app/landing-data";
 
@@ -92,10 +95,10 @@ function ShellHeader() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b2aa9d]">SciClaw · User Guide · Session Preview</p>
-          <h1 className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-[#202020] sm:text-[2rem]">
+          <h1 className="mt-2 max-w-[24ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
             Coordinate project context, sessions, tasks, and outputs from one app shell.
           </h1>
-          <p className="mt-2 max-w-[42rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
+          <p className="mt-2 max-w-[38rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
             Mirror the public docs shell with a product-facing workspace preview that keeps navigation, memory, tasks, and foundry handoff visible at a glance.
           </p>
         </div>
@@ -232,13 +235,24 @@ function SessionTimeline() {
                     </span>
                   </div>
                   <p className="mt-3 text-sm leading-6 text-[#686154]">
-                    The current shell preview now reads like an active working answer: source-backed bullets, surfaced risks, and an explicit handoff path instead of a docs-only explainer block.
+                    The center workspace now reads like an active review thread with surfaced evidence, explicit risk framing, and a direct path into Foundry instead of a docs-only explainer.
                   </p>
-                  <ul className="mt-4 space-y-2 text-xs leading-5 text-[#887f72]">
-                    <li className="rounded-2xl border border-[#f4ece2] bg-[#fcfaf7] px-3 py-2">• Summarize the strongest evidence chain before export.</li>
-                    <li className="rounded-2xl border border-[#f4ece2] bg-[#fcfaf7] px-3 py-2">• Flag one unresolved risk so the reviewer knows what still needs judgment.</li>
-                    <li className="rounded-2xl border border-[#f4ece2] bg-[#fcfaf7] px-3 py-2">• Keep the source route visible back to sessions, tasks, and project memory.</li>
-                  </ul>
+                  <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                    {appShellWorkspaceMetrics.map((metric) => (
+                      <div key={metric.label} className="rounded-[1.2rem] border border-[#f3e9dd] bg-[#fcfaf7] px-3 py-3">
+                        <p className="text-[10px] uppercase tracking-[0.18em] text-[#b29f88]">{metric.label}</p>
+                        <p className="mt-2 text-lg font-semibold text-[#242424]">{metric.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 space-y-2">
+                    {appShellOutputSignals.map((signal) => (
+                      <div key={signal.label} className="rounded-[1.15rem] border border-[#f4ece2] bg-[#fcfaf7] px-3 py-3">
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]">{signal.label}</p>
+                        <p className="mt-1 text-xs leading-5 text-[#7f776c]">{signal.description}</p>
+                      </div>
+                    ))}
+                  </div>
                 </article>
 
                 <article className="rounded-[1.45rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
@@ -253,9 +267,12 @@ function SessionTimeline() {
                     Bundle project memory, selected sessions, and verified charts into one concise output stream for downstream review.
                   </p>
                   <div className="mt-4 grid gap-2 text-xs text-[#8f8578]">
-                    <div className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">Brief outline</div>
-                    <div className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">Evidence appendix</div>
-                    <div className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">Slides handoff</div>
+                    {appShellExportAssets.map((asset) => (
+                      <div key={asset.label} className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">
+                        <p className="font-medium text-[#5e564c]">{asset.label}</p>
+                        <p className="mt-1 leading-5 text-[#8f8578]">{asset.description}</p>
+                      </div>
+                    ))}
                   </div>
                 </article>
               </div>

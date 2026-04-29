@@ -80,6 +80,16 @@ export type AppShellCard = {
   description: string;
 };
 
+export type AppShellOutputSignal = {
+  label: string;
+  description: string;
+};
+
+export type AppShellExportAsset = {
+  label: string;
+  description: string;
+};
+
 export type AppShellTimelineItem = {
   title: string;
   description: string;
@@ -96,6 +106,11 @@ export type AppShellResource = {
   label: string;
   description: string;
   meta: string;
+};
+
+export type AppShellWorkspaceMetric = {
+  label: string;
+  value: string;
 };
 
 export const navLinks: NavLink[] = [
@@ -300,6 +315,42 @@ export const appShellTodos: AppShellTodo[] = [
     label: "Push the verified outline to Foundry",
     note: "Promote the winning narrative after session review closes.",
     state: "pending",
+  },
+];
+
+export const appShellWorkspaceMetrics: AppShellWorkspaceMetric[] = [
+  { label: "Live sessions", value: "3" },
+  { label: "Open tasks", value: "5" },
+  { label: "Foundry exports", value: "12" },
+];
+
+export const appShellOutputSignals: AppShellOutputSignal[] = [
+  {
+    label: "Evidence chain",
+    description: "Source citations, highlighted claims, and session checkpoints stay attached to the answer draft.",
+  },
+  {
+    label: "Open risk",
+    description: "Flag one unresolved judgment call before the reviewer receives the Foundry package.",
+  },
+  {
+    label: "Handoff route",
+    description: "Jump back to project memory, active tasks, or the originating session thread without losing context.",
+  },
+];
+
+export const appShellExportAssets: AppShellExportAsset[] = [
+  {
+    label: "Brief outline",
+    description: "One-page narrative frame for the current answer.",
+  },
+  {
+    label: "Evidence appendix",
+    description: "Linked citations, figures, and extracted notes bundled for review.",
+  },
+  {
+    label: "Slides handoff",
+    description: "Presentation-ready talking points routed into Foundry.",
   },
 ];
 
