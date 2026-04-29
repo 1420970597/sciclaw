@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { DockMenuBar } from "@/components/dock-menu-bar";
 import {
   bestCases,
@@ -336,18 +336,6 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
 
 function FeatureRotator() {
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % featureItems.length);
-    }, 5000);
-
-    return () => window.clearInterval(timer);
-  }, []);
 
   return (
     <section id="feature-rotator" className="grid gap-10 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:items-center lg:gap-10">
