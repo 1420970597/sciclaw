@@ -58,7 +58,7 @@ describe("Home landing page", () => {
 
     const hero = screen.getByTestId("landing-hero");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_338px]");
-    expect(hero).toHaveClass("lg:gap-[3.55rem]");
+    expect(hero).toHaveClass("lg:gap-[3.15rem]");
     expect(screen.getByRole("complementary")).toHaveClass("max-w-[372px]");
   });
 
@@ -176,11 +176,11 @@ describe("Home landing page", () => {
     const navRow = primaryNav;
 
     expect(settingsTrigger).toHaveClass("rounded-full");
-    expect(settingsTrigger).toHaveClass("h-[2.06rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.06rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.16rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.16rem]");
     expect(triggerRow).toHaveClass("gap-3");
-    expect(navRow).toHaveClass("gap-[0.7rem]");
-    expect(navRow).toHaveClass("sm:gap-[0.5rem]");
+    expect(navRow).toHaveClass("gap-[0.58rem]");
+    expect(navRow).toHaveClass("sm:gap-[0.42rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -211,8 +211,8 @@ describe("Home landing page", () => {
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");
 
-    expect(bestCasesSection).toHaveClass("mt-[5.35rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[6.2rem]");
+    expect(bestCasesSection).toHaveClass("mt-[4.7rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[5.45rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
