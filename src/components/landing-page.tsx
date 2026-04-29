@@ -338,8 +338,8 @@ function FeatureRotator() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="feature-rotator" className="grid gap-10 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:items-center lg:gap-10">
-      <div className="overflow-hidden rounded-[2.25rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.7),_rgba(255,255,255,0)_70%)] px-3 py-4 sm:px-5 lg:px-2 xl:px-4">
+    <section id="feature-rotator" className="grid gap-7 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:items-center lg:gap-7">
+      <div className="overflow-hidden rounded-[2.25rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.62),_rgba(255,255,255,0)_70%)] px-2 py-3 sm:px-4 lg:px-1 xl:px-3">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
@@ -353,7 +353,7 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[430px] rounded-[2.2rem] border border-[#eceff4] bg-white/98 px-6 py-6 shadow-[0_24px_90px_rgba(241,180,135,0.16),0_18px_50px_rgba(15,23,42,0.08)] sm:px-7 sm:py-7"
+      className="mx-auto w-full max-w-[412px] rounded-[2.15rem] border border-[#edf0f4] bg-white/98 px-5 py-5 shadow-[0_20px_56px_rgba(241,180,135,0.13),0_14px_34px_rgba(15,23,42,0.07)] sm:px-6 sm:py-6"
     >
       <div className="mx-auto w-full max-w-[332px]">
         <div className="rounded-[1.5rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
@@ -386,13 +386,13 @@ function AuthCard() {
           </div>
         </div>
 
-        <div className="mt-5 space-y-5">
+        <div className="mt-4 space-y-4">
           <div
             role="tabpanel"
             id={activeTab === "onboard" ? "auth-panel-onboard" : "auth-panel-login"}
             aria-labelledby={activeTab === "onboard" ? "auth-tab-onboard" : "auth-tab-login"}
             aria-label={activeTab === "onboard" ? "Onboard" : "Login"}
-            className="rounded-[1.7rem] border border-[#eef1f5] bg-[#fbfcfd] p-4 sm:p-5"
+            className="rounded-[1.62rem] border border-[#eef1f5] bg-[#fbfcfd] p-4 sm:p-[1.1rem]"
           >
             {activeTab === "onboard" ? (
               <div className="space-y-4">
@@ -547,7 +547,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-30 sm:mt-32">
+    <section className="mt-24 sm:mt-26">
       <div className="mb-10 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
@@ -685,20 +685,20 @@ export function LandingPage() {
       <Header />
 
       <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-7 sm:px-8 sm:pt-8 lg:px-10 lg:pt-10">
-        <div className="space-y-16 text-center sm:space-y-18">
-          <div className="space-y-6">
+        <div className="space-y-14 text-center sm:space-y-16">
+          <div className="space-y-5">
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
             </h1>
             <p className="text-[11px] font-semibold uppercase tracking-[0.34em] text-[#8c919a] sm:text-xs">
               AI co-worker for scientific research.
             </p>
-            <p className="mx-auto max-w-[980px] text-base leading-8 tracking-[0.005em] text-[#60656f] sm:text-[1.3rem] sm:leading-9 lg:max-w-[1060px]">
+            <p className="mx-auto max-w-[920px] text-base leading-8 tracking-[0.005em] text-[#60656f] sm:text-[1.22rem] sm:leading-9 lg:max-w-[980px]">
               SciClaw connects inspiration generation, experimental execution, and iterative optimization, ushering in a new paradigm of scientific discovery
             </p>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14 xl:gap-16" data-testid="landing-hero">
+          <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:gap-10 xl:gap-12" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
