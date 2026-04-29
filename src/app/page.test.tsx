@@ -181,12 +181,12 @@ describe("Home landing page", () => {
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("h-[2.75rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.75rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.62rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.62rem]");
     expect(settingsTrigger).toHaveClass("shadow-[0_6px_14px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.985)]");
-    expect(triggerRow).toHaveClass("gap-[0.42rem]");
-    expect(primaryNav).toHaveClass("gap-[0.22rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.24rem]");
+    expect(triggerRow).toHaveClass("gap-[0.32rem]");
+    expect(primaryNav).toHaveClass("gap-[0.16rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.18rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -197,12 +197,12 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
     expect(featureNetwork).toHaveClass("min-h-[320px]");
-    expect(literatureNode).toHaveClass("left-[16.8%]");
-    expect(literatureNode).toHaveClass("top-[6.6%]");
-    expect(dataMiningNode).toHaveClass("left-[16.1%]");
-    expect(dataMiningNode).toHaveClass("top-[65.2%]");
-    expect(outcomeNode).toHaveClass("right-[9.1%]");
-    expect(outcomeNode).toHaveClass("top-[23.4%]");
+    expect(literatureNode).toHaveClass("left-[19.3%]");
+    expect(literatureNode).toHaveClass("top-[4.8%]");
+    expect(dataMiningNode).toHaveClass("left-[18.9%]");
+    expect(dataMiningNode).toHaveClass("top-[60.8%]");
+    expect(outcomeNode).toHaveClass("right-[11.6%]");
+    expect(outcomeNode).toHaveClass("top-[20.9%]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
@@ -225,8 +225,8 @@ describe("Home landing page", () => {
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");
 
-    expect(bestCasesSection).toHaveClass("mt-[1.55rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[1.95rem]");
+    expect(bestCasesSection).toHaveClass("mt-[1.35rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[1.7rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
