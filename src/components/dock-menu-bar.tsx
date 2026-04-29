@@ -111,7 +111,7 @@ export function DockMenuBar({
               onClick={() => setOpenGroupId((current) => (current === group.id ? null : group.id))}
               onKeyDown={handleTriggerKeyDown}
               className={mergeClasses(
-                "inline-flex h-[2.84rem] w-[2.84rem] items-center justify-center rounded-full border transition sm:h-[2.96rem] sm:w-[2.96rem]",
+                "inline-flex h-[2.9rem] w-[2.9rem] items-center justify-center rounded-full border transition sm:h-[3rem] sm:w-[3rem]",
                 buttonClassName,
                 isOpen && "shadow-[0_10px_24px_rgba(15,23,42,0.08)]",
               )}
