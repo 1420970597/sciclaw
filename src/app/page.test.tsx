@@ -37,9 +37,9 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
-    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,326px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("lg:gap-[1.16rem]");
-    expect(featureRotator).toHaveClass("xl:gap-[1.34rem]");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,322px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:gap-[1.3rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[1.46rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
@@ -181,13 +181,13 @@ describe("Home landing page", () => {
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("h-[2.76rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.76rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_4px_8px_rgba(15,23,42,0.026),inset_0_1px_0_rgba(255,255,255,0.998)]");
-    expect(triggerRow).toHaveClass("gap-[0.28rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.35rem]");
-    expect(primaryNav).toHaveClass("gap-[0.16rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.26rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.94rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.94rem]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_6px_12px_rgba(15,23,42,0.034),inset_0_1px_0_rgba(255,255,255,0.998)]");
+    expect(triggerRow).toHaveClass("gap-[0.34rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.42rem]");
+    expect(primaryNav).toHaveClass("gap-[0.2rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.3rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -197,35 +197,35 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
-    expect(featureNetwork).toHaveClass("min-h-[340px]");
-    expect(featureNetwork).toHaveClass("sm:min-h-[398px]");
-    expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_48%_49%,_rgba(255,255,255,0.88),_rgba(255,255,255,0)_58%)]");
-    expect(literatureNode).toHaveClass("left-[11.9%]");
-    expect(literatureNode).toHaveClass("top-[-1.4%]");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[3.86rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[3.86rem]");
+    expect(featureNetwork).toHaveClass("min-h-[348px]");
+    expect(featureNetwork).toHaveClass("sm:min-h-[406px]");
+    expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_48%_49%,_rgba(255,255,255,0.9),_rgba(255,255,255,0)_59%)]");
+    expect(literatureNode).toHaveClass("left-[10.6%]");
+    expect(literatureNode).toHaveClass("top-[-2.1%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[3.92rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[3.92rem]");
     expect(literatureNode.firstElementChild).toHaveClass("border-[#e6a06b]");
     expect(literatureNode.firstElementChild).toHaveClass("text-[#bb581c]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_4px_rgba(240,142,79,0.048),0_9px_14px_rgba(232,124,55,0.072)]");
+    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_4px_rgba(240,142,79,0.048),0_10px_16px_rgba(232,124,55,0.078)]");
     expect(literatureNode.lastElementChild).toHaveClass("text-[#9a4b1d]");
-    expect(dataMiningNode).toHaveClass("left-[12.1%]");
-    expect(dataMiningNode).toHaveClass("top-[80.1%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.56rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.56rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#adb8c3]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#5b6672]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#687584]");
-    expect(outcomeNode).toHaveClass("right-[1.2%]");
-    expect(outcomeNode).toHaveClass("top-[4.2%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.56rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.56rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#adb8c3]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#5b6672]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#687584]");
+    expect(dataMiningNode).toHaveClass("left-[10.8%]");
+    expect(dataMiningNode).toHaveClass("top-[81.3%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.62rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.62rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#a7b4c0]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#61707d]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#607181]");
+    expect(outcomeNode).toHaveClass("right-[0.4%]");
+    expect(outcomeNode).toHaveClass("top-[3.5%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.62rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.62rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#a7b4c0]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#61707d]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#607181]");
     const chartLabels = screen.getAllByText(/^(methodology|conclusion|data|evidence)$/i).slice(-4);
     chartLabels.forEach((label) => {
-      expect(label).toHaveClass("text-[8.3px]");
-      expect(label).toHaveClass("tracking-[0.09em]");
+      expect(label).toHaveClass("text-[8.8px]");
+      expect(label).toHaveClass("tracking-[0.14em]");
     });
   });
 
