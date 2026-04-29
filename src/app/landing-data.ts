@@ -148,12 +148,12 @@ export const featureItems: FeatureItem[] = [
 
 export const bestCases: BestCase[] = [
   {
-    title: "Accelerated Paper Reproduction",
+    title: "Automated Report Generation",
     description:
-      "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
-    tags: ["Paper reproduction", "Workflow setup", "Error handling"],
-    statLabel: "Reproduction support",
-    statValue: "End-to-end",
+      "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
+    tags: ["Slides", "Documents", "Research reporting"],
+    statLabel: "Reporting efficiency",
+    statValue: "Presentation-ready",
   },
   {
     title: "Peer Review Response Support",
@@ -164,12 +164,12 @@ export const bestCases: BestCase[] = [
     statValue: "Faster",
   },
   {
-    title: "Automated Report Generation",
+    title: "Accelerated Paper Reproduction",
     description:
-      "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
-    tags: ["Slides", "Documents", "Research reporting"],
-    statLabel: "Reporting efficiency",
-    statValue: "Presentation-ready",
+      "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
+    tags: ["Paper reproduction", "Workflow setup", "Error handling"],
+    statLabel: "Reproduction support",
+    statValue: "End-to-end",
   },
   {
     title: "Deep Literature Analysis",

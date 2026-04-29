@@ -499,14 +499,14 @@ function BestCases() {
   const activeCase = bestCases[activeIndex];
   const carouselFrames = [
     {
-      eyebrow: "Reproduction",
-      tag: "Live workflow",
-      summaryTitle: "Accelerated Paper Reproduction",
+      eyebrow: "Foundry",
+      tag: "Draft 01",
+      summaryTitle: "Automated Report Generation",
       summaryText:
-        "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
-      chipA: "Environment setup",
-      chipB: "Workflow construction",
-      bars: [72, 106, 82],
+        "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
+      chipA: "Slides handoff",
+      chipB: "Evidence appendix",
+      bars: [48, 70, 98],
     },
     {
       eyebrow: "Peer Review",
@@ -519,14 +519,14 @@ function BestCases() {
       bars: [64, 96, 118],
     },
     {
-      eyebrow: "Foundry",
-      tag: "Draft 01",
-      summaryTitle: "Automated Report Generation",
+      eyebrow: "Reproduction",
+      tag: "Live workflow",
+      summaryTitle: "Accelerated Paper Reproduction",
       summaryText:
-        "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
-      chipA: "Slides handoff",
-      chipB: "Evidence appendix",
-      bars: [48, 70, 98],
+        "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
+      chipA: "Environment setup",
+      chipB: "Workflow construction",
+      bars: [72, 106, 82],
     },
     {
       eyebrow: "Literature",

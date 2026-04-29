@@ -53,7 +53,7 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();
     expect(screen.getAllByRole("link", { name: /get started/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });
 
@@ -151,10 +151,12 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("cycles the best-cases carousel with arrow controls", () => {
+  it("matches the live site best-cases default slide and keeps next/previous order aligned", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getAllByText(/automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
@@ -164,9 +166,11 @@ describe("Home landing page", () => {
         /automatically retrieves relevant data, prior task records, and manuscript context to speed up evidence-backed reviewer responses/i,
       ),
     ).toBeInTheDocument();
+    expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /previous/i }));
 
-    expect(screen.getByRole("heading", { name: /accelerated paper reproduction/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });
 });
