@@ -76,12 +76,12 @@ function Header() {
   ] as const;
 
   return (
-    <header className="pt-7 sm:pt-8.5">
+    <header className="pt-3 sm:pt-[0.95rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-9">
-        <nav aria-label="Primary" className="flex items-center gap-[0.16rem] sm:gap-[0.18rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.1rem] sm:gap-[0.12rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[#e2d7c8] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(245,239,231,0.985)_100%)] text-[#606872] shadow-[0_6px_14px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.985)] hover:-translate-y-0.5 hover:border-[#d9cdbc] hover:text-[#171b22]"
+            buttonClassName="border-[#dfd5c7] bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(246,240,233,0.988)_100%)] text-[#606872] shadow-[0_5px_12px_rgba(15,23,42,0.032),inset_0_1px_0_rgba(255,255,255,0.992)] hover:-translate-y-0.5 hover:border-[#d8ccbc] hover:text-[#171b22]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,8 +98,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[21.6%] top-[3.3%] sm:left-[21.6%] sm:top-[3.3%]",
-        lineClass: "left-[45.8%] top-[25.9%] h-px w-[24.8%] origin-left rotate-[224deg]",
+        position: "left-[23.3%] top-[1.4%] sm:left-[23.3%] sm:top-[1.4%]",
+        lineClass: "left-[46.7%] top-[24.8%] h-px w-[23.7%] origin-left rotate-[224deg]",
         ringClass: "h-[4.08rem] w-[4.08rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_18px_38px_rgba(15,23,42,0.064)]",
         activeRingClass: "h-[4.42rem] w-[4.42rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_12px_rgba(240,142,79,0.112),0_22px_42px_rgba(240,142,79,0.17)]",
         labelClass: "max-w-[112px] text-[#98a2ae]",
@@ -109,8 +109,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[21.1%] top-[57.4%] sm:left-[21.1%] sm:top-[57.4%]",
-        lineClass: "left-[45.3%] top-[49.1%] h-px w-[24.9%] origin-left rotate-[143deg]",
+        position: "left-[22.8%] top-[54.9%] sm:left-[22.8%] sm:top-[54.9%]",
+        lineClass: "left-[46.2%] top-[47.7%] h-px w-[23.8%] origin-left rotate-[143deg]",
         ringClass: "h-[4.08rem] w-[4.08rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_18px_38px_rgba(15,23,42,0.064)]",
         activeRingClass: "h-[4.42rem] w-[4.42rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_12px_rgba(240,142,79,0.112),0_22px_42px_rgba(240,142,79,0.17)]",
         labelClass: "max-w-[112px] text-[#98a2ae]",
@@ -120,8 +120,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[14.1%] top-[18.6%] sm:right-[14.1%] sm:top-[18.6%]",
-        lineClass: "left-[55.1%] top-[33.8%] h-px w-[22.7%] origin-left rotate-[0deg]",
+        position: "right-[16.4%] top-[15.5%] sm:right-[16.4%] sm:top-[15.5%]",
+        lineClass: "left-[55.3%] top-[32.1%] h-px w-[20.8%] origin-left rotate-[0deg]",
         ringClass: "h-[4.08rem] w-[4.08rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_18px_38px_rgba(15,23,42,0.064)]",
         activeRingClass: "h-[4.42rem] w-[4.42rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_12px_rgba(240,142,79,0.112),0_22px_42px_rgba(240,142,79,0.17)]",
         labelClass: "max-w-[116px] text-[#98a2ae]",
@@ -357,7 +357,7 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[350px] rounded-[1.95rem] border border-[#edf0f4] bg-white/98 px-[1rem] py-[0.98rem] shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.04rem] sm:py-[1.05rem]"
+      className="mx-auto w-full max-w-[342px] rounded-[1.95rem] border border-[#edf0f4] bg-white/98 px-[1rem] py-[0.98rem] shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.04rem] sm:py-[1.05rem]"
     >
       <div className="mx-auto w-full max-w-[318px]">
         <div className="rounded-[1.42rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
@@ -702,7 +702,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_332px] lg:items-start lg:gap-[3.4rem] xl:grid-cols-[minmax(0,0.99fr)_340px] xl:gap-[3.8rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_330px] lg:items-start lg:gap-[3.45rem] xl:grid-cols-[minmax(0,0.99fr)_340px] xl:gap-[3.8rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>

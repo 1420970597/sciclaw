@@ -61,9 +61,9 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_332px]");
-    expect(hero).toHaveClass("lg:gap-[3.4rem]");
-    expect(screen.getByRole("complementary")).toHaveClass("max-w-[350px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_330px]");
+    expect(hero).toHaveClass("lg:gap-[3.45rem]");
+    expect(screen.getByRole("complementary")).toHaveClass("max-w-[342px]");
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -181,12 +181,12 @@ describe("Home landing page", () => {
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("h-[2.62rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.62rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_6px_14px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.985)]");
-    expect(triggerRow).toHaveClass("gap-[0.32rem]");
-    expect(primaryNav).toHaveClass("gap-[0.16rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.18rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.5rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.5rem]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_5px_12px_rgba(15,23,42,0.032),inset_0_1px_0_rgba(255,255,255,0.992)]");
+    expect(triggerRow).toHaveClass("gap-[0.28rem]");
+    expect(primaryNav).toHaveClass("gap-[0.1rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.12rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -197,12 +197,12 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
     expect(featureNetwork).toHaveClass("min-h-[320px]");
-    expect(literatureNode).toHaveClass("left-[21.6%]");
-    expect(literatureNode).toHaveClass("top-[3.3%]");
-    expect(dataMiningNode).toHaveClass("left-[21.1%]");
-    expect(dataMiningNode).toHaveClass("top-[57.4%]");
-    expect(outcomeNode).toHaveClass("right-[14.1%]");
-    expect(outcomeNode).toHaveClass("top-[18.6%]");
+    expect(literatureNode).toHaveClass("left-[23.3%]");
+    expect(literatureNode).toHaveClass("top-[1.4%]");
+    expect(dataMiningNode).toHaveClass("left-[22.8%]");
+    expect(dataMiningNode).toHaveClass("top-[54.9%]");
+    expect(outcomeNode).toHaveClass("right-[16.4%]");
+    expect(outcomeNode).toHaveClass("top-[15.5%]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
