@@ -78,10 +78,10 @@ function Header() {
   return (
     <header className="pt-8 sm:pt-10">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-6 sm:px-8 lg:px-10">
-        <nav aria-label="Primary" className="flex items-center gap-1 sm:gap-[0.42rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.7rem] sm:gap-[0.5rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[#ece3d8]/96 bg-[linear-gradient(180deg,rgba(255,255,255,0.985)_0%,rgba(247,241,233,0.97)_100%)] text-[#666c75] shadow-[0_16px_32px_rgba(15,23,42,0.075),inset_0_1px_0_rgba(255,255,255,0.96)] hover:-translate-y-0.5 hover:border-[#e5d7ca] hover:text-[#1e2229]"
+            buttonClassName="border-[#e5dccf] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(246,240,232,0.982)_100%)] text-[#5f6670] shadow-[0_12px_24px_rgba(15,23,42,0.06),inset_0_1px_0_rgba(255,255,255,0.98)] hover:-translate-y-0.5 hover:border-[#ddd1c1] hover:text-[#171b22]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -132,16 +132,17 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
   );
 
   return (
-    <div className="relative min-h-[292px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_48%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_64%)] sm:min-h-[348px]">
-      <div className="absolute inset-0 opacity-[0.98]">
-        <div className="absolute left-[22%] top-[15%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
-        <div className="absolute left-[31%] top-[39%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
-        <div className="absolute left-[63%] top-[26%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
-        <div className="absolute left-[69%] top-[50%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
-        <div className="absolute left-[46.1%] top-[20.2%] h-[100px] w-px bg-gradient-to-b from-[#f3bf99] via-[#ef9350] to-transparent opacity-95" />
-        <div className="absolute left-[47.2%] top-[20.2%] h-[100px] w-px bg-gradient-to-b from-[#f8d7c0] via-transparent to-transparent opacity-90" />
-        <div className="absolute left-[47.4%] top-[47.8%] h-[196px] w-[196px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.17)_0%,_rgba(244,177,132,0.085)_34%,_rgba(255,255,255,0)_72%)]" />
-        <div className="absolute left-[47.4%] top-[47.8%] h-[132px] w-[132px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f8cfb6]/60" />
+      <div className="relative min-h-[300px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_48%,_rgba(255,255,255,0.86),_rgba(255,255,255,0)_62%)] sm:min-h-[356px]">
+        <div className="absolute inset-0 opacity-[0.99]">
+          <div className="absolute left-[24%] top-[14%] h-1.5 w-1.5 rounded-full bg-[#dde2e9]" />
+          <div className="absolute left-[32%] top-[39%] h-1.5 w-1.5 rounded-full bg-[#dee3ea]" />
+          <div className="absolute left-[62%] top-[27%] h-1.5 w-1.5 rounded-full bg-[#dfe4ea]" />
+          <div className="absolute left-[68%] top-[49%] h-1.5 w-1.5 rounded-full bg-[#dee3ea]" />
+          <div className="absolute left-[47.1%] top-[20.4%] h-[108px] w-px bg-gradient-to-b from-[#f4b488] via-[#ee8f4e] to-transparent opacity-95" />
+          <div className="absolute left-[48.15%] top-[20.4%] h-[108px] w-px bg-gradient-to-b from-[#f7d6bf] via-transparent to-transparent opacity-95" />
+          <div className="absolute left-[48.1%] top-[19.1%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#f7b786] bg-[#f29a62] shadow-[0_0_0_8px_rgba(242,154,98,0.14),0_10px_24px_rgba(242,154,98,0.24)]" />
+          <div className="absolute left-[48%] top-[48.8%] h-[174px] w-[174px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.14)_0%,_rgba(244,177,132,0.08)_34%,_rgba(255,255,255,0)_72%)]" />
+          <div className="absolute left-[48%] top-[48.8%] h-[126px] w-[126px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f5ceb3]/65" />
         {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
@@ -168,18 +169,18 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         })}
       </div>
 
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-[48%] -translate-y-[46%] flex-col items-center">
         <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#f29a62] text-[11px] font-semibold text-white shadow-[0_10px_25px_rgba(242,154,98,0.36)]">
           AI
         </span>
         <button
           type="button"
           onClick={() => onSelect(0)}
-          className="group relative flex h-[6.55rem] w-[6.55rem] items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_16px_rgba(249,159,120,0.12),0_0_0_38px_rgba(249,159,120,0.055),0_26px_56px_rgba(236,132,73,0.11)] transition hover:scale-[1.02] sm:h-[7.35rem] sm:w-[7.35rem]"
+          className="group relative flex h-[6.15rem] w-[6.15rem] items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_14px_rgba(249,159,120,0.1),0_0_0_32px_rgba(249,159,120,0.045),0_24px_48px_rgba(236,132,73,0.1)] transition hover:scale-[1.02] sm:h-[6.95rem] sm:w-[6.95rem]"
           aria-label="Literature Analysis"
         >
-          <span className="absolute inset-[13px] rounded-full border border-[#f8c4a3]/70" />
-          <span className="absolute inset-[24px] rounded-full border border-[#f6d7c1]/75" />
+          <span className="absolute inset-[13px] rounded-full border border-[#f8c4a3]/72" />
+          <span className="absolute inset-[23px] rounded-full border border-[#f6d7c1]/78" />
           <span className="text-[22px] font-semibold sm:text-[23px]">文</span>
         </button>
         <p className="mt-3 text-sm font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-[0.95rem]">Literature Analysis</p>
@@ -701,7 +702,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-[4.35rem] xl:grid-cols-[minmax(0,0.99fr)_350px] xl:gap-[4.7rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_338px] lg:items-start lg:gap-[3.55rem] xl:grid-cols-[minmax(0,0.99fr)_348px] xl:gap-[3.95rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>

@@ -57,8 +57,8 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_340px]");
-    expect(hero).toHaveClass("lg:gap-[4.35rem]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_338px]");
+    expect(hero).toHaveClass("lg:gap-[3.55rem]");
     expect(screen.getByRole("complementary")).toHaveClass("max-w-[372px]");
   });
 
@@ -179,8 +179,8 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveClass("h-[2.06rem]");
     expect(settingsTrigger).toHaveClass("w-[2.06rem]");
     expect(triggerRow).toHaveClass("gap-3");
-    expect(navRow).toHaveClass("gap-1");
-    expect(navRow).toHaveClass("sm:gap-[0.42rem]");
+    expect(navRow).toHaveClass("gap-[0.7rem]");
+    expect(navRow).toHaveClass("sm:gap-[0.5rem]");
 
     fireEvent.click(settingsTrigger);
 
