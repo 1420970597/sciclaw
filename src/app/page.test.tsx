@@ -14,10 +14,10 @@ describe("Home landing page", () => {
         /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
     expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
-    expect(screen.getByText(/33%/i)).toBeInTheDocument();
+    expect(screen.queryByText(/33%/i)).not.toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();

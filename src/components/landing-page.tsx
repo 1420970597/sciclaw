@@ -22,11 +22,10 @@ function GuideIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
 function ContactIcon({ className = "h-4.5 w-4.5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
-      <path d="M4.5 14.5V9.75a2.25 2.25 0 0 1 2.25-2.25h10.5a2.25 2.25 0 0 1 2.25 2.25v4.75" />
-      <path d="M7.75 16.5 4.5 13.75" />
-      <path d="M16.25 16.5 19.5 13.75" />
-      <path d="M7.75 8.25 12 12l4.25-3.75" />
-      <path d="M5.5 17.5h13" />
+      <path d="M4.75 12.25a2.25 2.25 0 0 1 2.25-2.25h1.25a2 2 0 0 1 2 2v4.5a2 2 0 0 1-2 2H7a2.25 2.25 0 0 1-2.25-2.25v-4Z" />
+      <path d="M13.75 10h1.25a2.25 2.25 0 0 1 2.25 2.25v4A2.25 2.25 0 0 1 15 18.5h-1.25a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2Z" />
+      <path d="M7.5 10.25a4.5 4.5 0 0 1 9 0" />
+      <path d="M16.5 18.25h1.25a1.5 1.5 0 0 0 1.5-1.5v-2" />
     </svg>
   );
 }
@@ -98,46 +97,47 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[4%] top-[12%] sm:left-[7%] sm:top-[10%]",
-        lineClass: "left-[41.5%] top-[28.5%] h-px w-[22%] origin-left rotate-[8deg]",
-        ringClass: "h-[4.35rem] w-[4.35rem] border-[#eef1f5] bg-white/94 text-[#bac0ca] shadow-[0_16px_36px_rgba(15,23,42,0.08)]",
-        labelClass: "max-w-[116px] text-[#bfc5cd]",
+        position: "left-[17%] top-[8%] sm:left-[18%] sm:top-[6%]",
+        lineClass: "left-[47.8%] top-[26.2%] h-px w-[18%] origin-left rotate-[206deg]",
+        ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
+        labelClass: "max-w-[110px] text-[#c7ccd4]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
-        icon: "研",
-        position: "left-[16%] top-[62%] sm:left-[18%] sm:top-[60%]",
-        lineClass: "left-[44.5%] top-[56.5%] h-px w-[19%] origin-left rotate-[168deg]",
-        ringClass: "h-[4.5rem] w-[4.5rem] border-[#f7cfb5] bg-[linear-gradient(180deg,#fff8f1_0%,#ffe8d7_100%)] text-[#ea8b44] shadow-[0_0_0_10px_rgba(244,176,132,0.15),0_18px_44px_rgba(242,157,97,0.16)]",
-        labelClass: "max-w-[120px] text-[#e28b4f]",
+        icon: "数",
+        position: "left-[19%] top-[61%] sm:left-[20%] sm:top-[60%]",
+        lineClass: "left-[47.2%] top-[54.5%] h-px w-[18%] origin-left rotate-[150deg]",
+        ringClass: "h-[4.55rem] w-[4.55rem] border-[#f8cdaa] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe8d7_100%)] text-[#ef8c48] shadow-[0_0_0_14px_rgba(240,142,79,0.11),0_22px_46px_rgba(240,142,79,0.16)]",
+        labelClass: "max-w-[120px] text-[#e88946]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[8%] top-[20%] sm:right-[10%] sm:top-[18%]",
-        lineClass: "left-[57.5%] top-[30.5%] h-px w-[21%] origin-left rotate-[166deg]",
-        ringClass: "h-[4.35rem] w-[4.35rem] border-[#eef1f5] bg-white/94 text-[#bac0ca] shadow-[0_16px_36px_rgba(15,23,42,0.08)]",
-        labelClass: "max-w-[120px] text-[#bfc5cd]",
+        position: "right-[6%] top-[35%] sm:right-[7%] sm:top-[35%]",
+        lineClass: "left-[52.8%] top-[39.4%] h-px w-[24%] origin-left rotate-[9deg]",
+        ringClass: "h-[4.1rem] w-[4.1rem] border-[#eef1f5] bg-white/96 text-[#c6ccd4] shadow-[0_14px_32px_rgba(15,23,42,0.07)]",
+        labelClass: "max-w-[116px] text-[#c7ccd4]",
       },
     ],
     [],
   );
 
   return (
-    <div className="relative min-h-[290px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.75),_rgba(255,255,255,0)_62%)] sm:min-h-[360px]">
+    <div className="relative min-h-[290px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.76),_rgba(255,255,255,0)_62%)] sm:min-h-[360px]">
       <div className="absolute inset-0">
-        <div className="absolute left-[16%] top-[18%] h-1.5 w-1.5 rounded-full bg-[#d5d8df]" />
-        <div className="absolute left-[25%] top-[42%] h-1.5 w-1.5 rounded-full bg-[#d7dae1]" />
-        <div className="absolute left-[72%] top-[36%] h-1.5 w-1.5 rounded-full bg-[#d6d9df]" />
-        <div className="absolute left-[68%] top-[66%] h-1.5 w-1.5 rounded-full bg-[#d6d9df]" />
-        <div className="absolute left-[47%] top-[18%] h-[118px] w-px bg-gradient-to-b from-[#f3bc97] via-[#ed9051] to-transparent opacity-95" />
-        <div className="absolute left-1/2 top-1/2 h-[212px] w-[212px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.2)_0%,_rgba(244,177,132,0.09)_38%,_rgba(255,255,255,0)_72%)]" />
-        <div className="absolute left-1/2 top-1/2 h-[136px] w-[136px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f8cfb6]/70" />
+        <div className="absolute left-[20%] top-[18%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
+        <div className="absolute left-[31%] top-[39%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
+        <div className="absolute left-[68%] top-[27%] h-1.5 w-1.5 rounded-full bg-[#dfe3ea]" />
+        <div className="absolute left-[74%] top-[53%] h-1.5 w-1.5 rounded-full bg-[#e0e4ea]" />
+        <div className="absolute left-[45.8%] top-[18.5%] h-[116px] w-px bg-gradient-to-b from-[#f3bf99] via-[#ef9350] to-transparent opacity-95" />
+        <div className="absolute left-[47%] top-[18.5%] h-[116px] w-px bg-gradient-to-b from-[#f8d7c0] via-transparent to-transparent opacity-90" />
+        <div className="absolute left-[48.8%] top-[47.5%] h-[222px] w-[222px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.16)_0%,_rgba(244,177,132,0.08)_34%,_rgba(255,255,255,0)_72%)]" />
+        <div className="absolute left-[48.8%] top-[47.5%] h-[144px] w-[144px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#f8cfb6]/60" />
         {nodes.map((node) => (
           <div key={node.id}>
-            <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#d8dbe1] via-[#e4e6eb] to-transparent`} aria-hidden />
+            <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#dfe3ea] via-[#e9edf3] to-transparent`} aria-hidden />
             <button
               type="button"
               onClick={() => {
@@ -158,20 +158,20 @@ function FeatureNetwork({ onSelect }: { onSelect: (index: number) => void }) {
       </div>
 
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
-        <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#f29a62] text-[11px] font-semibold text-white shadow-[0_10px_25px_rgba(242,154,98,0.4)]">
+        <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#f29a62] text-[11px] font-semibold text-white shadow-[0_10px_25px_rgba(242,154,98,0.36)]">
           AI
         </span>
         <button
           type="button"
-          onClick={() => onSelect(1)}
-          className="group relative flex h-28 w-28 items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_18px_rgba(249,159,120,0.16),0_0_0_42px_rgba(249,159,120,0.08),0_28px_60px_rgba(236,132,73,0.14)] transition hover:scale-[1.02] sm:h-32 sm:w-32"
-          aria-label="Data Mining"
+          onClick={() => onSelect(0)}
+          className="group relative flex h-28 w-28 items-center justify-center rounded-full bg-white text-[#ef8c4b] shadow-[0_0_0_18px_rgba(249,159,120,0.14),0_0_0_44px_rgba(249,159,120,0.065),0_28px_60px_rgba(236,132,73,0.12)] transition hover:scale-[1.02] sm:h-32 sm:w-32"
+          aria-label="Literature Analysis"
         >
-          <span className="absolute inset-[14px] rounded-full border border-[#f8c4a3]/80" />
-          <span className="absolute inset-[26px] rounded-full border border-[#f6d7c1]/80" />
-          <span className="text-[22px] font-semibold sm:text-[24px]">数</span>
+          <span className="absolute inset-[14px] rounded-full border border-[#f8c4a3]/70" />
+          <span className="absolute inset-[26px] rounded-full border border-[#f6d7c1]/75" />
+          <span className="text-[22px] font-semibold sm:text-[24px]">文</span>
         </button>
-        <p className="mt-4 text-sm font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-base">Data Mining</p>
+        <p className="mt-4 text-sm font-semibold tracking-[-0.01em] text-[#eb8841] sm:text-base">Literature Analysis</p>
       </div>
     </div>
   );
@@ -351,15 +351,15 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
         </div>
       </div>
 
-      <div className="space-y-4 px-1">
+      <div className="space-y-4 px-1 pt-1">
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ed8a43]">{previewContent.bodyLabel}</p>
-        <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2rem] md:text-[2.3rem]">
+        <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2rem] md:text-[2.18rem]">
           {previewContent.heading}
         </h2>
-        <p className="max-w-xl text-base leading-8 text-[#6a7079] sm:text-lg">{previewContent.description}</p>
+        <p className="max-w-xl text-base leading-8 text-[#6a7079] sm:text-[1.05rem]">{previewContent.description}</p>
         <Link
           href="/help/getting-started"
-          className="inline-flex items-center gap-2 text-sm font-medium text-[#70757f] transition hover:text-[#1f232a]"
+          className="inline-flex items-center gap-2 pt-1 text-sm font-medium text-[#70757f] transition hover:text-[#1f232a]"
           aria-label="Get started preview"
         >
           {previewContent.ctaLabel}
@@ -373,7 +373,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
 }
 
 function FeatureRotator() {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -593,7 +593,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-24">
+    <section className="mt-30 sm:mt-32">
       <div className="mb-10 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
