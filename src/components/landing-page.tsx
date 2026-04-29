@@ -78,10 +78,10 @@ function Header() {
   return (
     <header className="pt-[0.52rem] sm:pt-[0.66rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-9">
-        <nav aria-label="Primary" className="flex items-center gap-[0.07rem] sm:gap-[0.14rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.08rem] sm:gap-[0.15rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[#cec1ad] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,243,236,0.996)_100%)] text-[#505b68] shadow-[0_7px_15px_rgba(15,23,42,0.048),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[#c1b094] hover:text-[#171b22]"
+            buttonClassName="border-[#d4c6b1] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,244,238,0.996)_100%)] text-[#56616d] shadow-[0_5px_10px_rgba(15,23,42,0.034),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[#c7b79e] hover:text-[#171b22]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[13.7%] top-[-0.2%] sm:left-[13.7%] sm:top-[-0.2%]",
-        lineClass: "left-[42.9%] top-[21.8%] h-[1.35px] w-[22.4%] origin-left rotate-[220deg]",
-        ringClass: "h-[3.56rem] w-[3.56rem] border-[#b2bdc8] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fb_100%)] text-[#5f6a76] shadow-[0_9px_18px_rgba(15,23,42,0.034)]",
-        activeRingClass: "h-[3.84rem] w-[3.84rem] border-[#e8a169] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#bc5b1c] shadow-[0_0_0_5px_rgba(240,142,79,0.074),0_12px_20px_rgba(232,124,55,0.098)]",
-        labelClass: "max-w-[66px] text-[#667383] drop-shadow-[0_1px_0_rgba(255,255,255,0.92)]",
-        activeLabelClass: "max-w-[74px] text-[#a24f1b] drop-shadow-[0_2px_6px_rgba(240,142,79,0.075)]",
+        position: "left-[15.1%] top-[1.2%] sm:left-[15.1%] sm:top-[1.2%]",
+        lineClass: "left-[43.35%] top-[22.6%] h-[1.48px] w-[20.9%] origin-left rotate-[221deg]",
+        ringClass: "h-[3.62rem] w-[3.62rem] border-[#adb8c3] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fb_100%)] text-[#5b6672] shadow-[0_8px_16px_rgba(15,23,42,0.03)]",
+        activeRingClass: "h-[3.92rem] w-[3.92rem] border-[#e7a068] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#bb581c] shadow-[0_0_0_5px_rgba(240,142,79,0.068),0_11px_18px_rgba(232,124,55,0.094)]",
+        labelClass: "max-w-[64px] text-[#6c7886] drop-shadow-[0_1px_0_rgba(255,255,255,0.9)]",
+        activeLabelClass: "max-w-[72px] text-[#a04d1b] drop-shadow-[0_2px_6px_rgba(240,142,79,0.07)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[13.6%] top-[77.7%] sm:left-[13.6%] sm:top-[77.7%]",
-        lineClass: "left-[42.55%] top-[51.85%] h-[1.35px] w-[24.1%] origin-left rotate-[142deg]",
-        ringClass: "h-[3.56rem] w-[3.56rem] border-[#b2bdc8] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fb_100%)] text-[#5f6a76] shadow-[0_9px_18px_rgba(15,23,42,0.034)]",
-        activeRingClass: "h-[3.84rem] w-[3.84rem] border-[#e8a169] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#bc5b1c] shadow-[0_0_0_5px_rgba(240,142,79,0.074),0_12px_20px_rgba(232,124,55,0.098)]",
-        labelClass: "max-w-[66px] text-[#667383] drop-shadow-[0_1px_0_rgba(255,255,255,0.92)]",
-        activeLabelClass: "max-w-[74px] text-[#a24f1b] drop-shadow-[0_2px_6px_rgba(240,142,79,0.075)]",
+        position: "left-[15%] top-[74.9%] sm:left-[15%] sm:top-[74.9%]",
+        lineClass: "left-[43.1%] top-[51.2%] h-[1.48px] w-[22.6%] origin-left rotate-[143deg]",
+        ringClass: "h-[3.62rem] w-[3.62rem] border-[#adb8c3] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fb_100%)] text-[#5b6672] shadow-[0_8px_16px_rgba(15,23,42,0.03)]",
+        activeRingClass: "h-[3.92rem] w-[3.92rem] border-[#e7a068] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#bb581c] shadow-[0_0_0_5px_rgba(240,142,79,0.068),0_11px_18px_rgba(232,124,55,0.094)]",
+        labelClass: "max-w-[64px] text-[#6c7886] drop-shadow-[0_1px_0_rgba(255,255,255,0.9)]",
+        activeLabelClass: "max-w-[72px] text-[#a04d1b] drop-shadow-[0_2px_6px_rgba(240,142,79,0.07)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[2.5%] top-[5.9%] sm:right-[2.5%] sm:top-[5.9%]",
-        lineClass: "left-[51.1%] top-[27.85%] h-[1.35px] w-[23.5%] origin-left rotate-[-8deg]",
-        ringClass: "h-[3.56rem] w-[3.56rem] border-[#b2bdc8] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fb_100%)] text-[#5f6a76] shadow-[0_9px_18px_rgba(15,23,42,0.034)]",
-        activeRingClass: "h-[3.84rem] w-[3.84rem] border-[#e8a169] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#bc5b1c] shadow-[0_0_0_5px_rgba(240,142,79,0.074),0_12px_20px_rgba(232,124,55,0.098)]",
-        labelClass: "max-w-[69px] text-[#667383] drop-shadow-[0_1px_0_rgba(255,255,255,0.92)]",
-        activeLabelClass: "max-w-[77px] text-[#a24f1b] drop-shadow-[0_2px_6px_rgba(240,142,79,0.075)]",
+        position: "right-[5.2%] top-[8.2%] sm:right-[5.2%] sm:top-[8.2%]",
+        lineClass: "left-[51.05%] top-[28.5%] h-[1.48px] w-[21.7%] origin-left rotate-[-8deg]",
+        ringClass: "h-[3.62rem] w-[3.62rem] border-[#adb8c3] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fb_100%)] text-[#5b6672] shadow-[0_8px_16px_rgba(15,23,42,0.03)]",
+        activeRingClass: "h-[3.92rem] w-[3.92rem] border-[#e7a068] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#bb581c] shadow-[0_0_0_5px_rgba(240,142,79,0.068),0_11px_18px_rgba(232,124,55,0.094)]",
+        labelClass: "max-w-[67px] text-[#6c7886] drop-shadow-[0_1px_0_rgba(255,255,255,0.9)]",
+        activeLabelClass: "max-w-[75px] text-[#a04d1b] drop-shadow-[0_2px_6px_rgba(240,142,79,0.07)]",
       },
     ],
     [],
@@ -138,21 +138,21 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         <div className="absolute left-[28.7%] top-[45.2%] h-[1.5px] w-[1.5px] rounded-full bg-[#aebdcb]" />
         <div className="absolute left-[57.4%] top-[22.9%] h-[1.5px] w-[1.5px] rounded-full bg-[#b5c2cf]" />
         <div className="absolute left-[59.6%] top-[43.6%] h-[1.5px] w-[1.5px] rounded-full bg-[#b8c4d0]" />
-        <div className="absolute left-[48.95%] top-[21.5%] h-[114px] w-[1.05px] bg-gradient-to-b from-[#efac73] via-[#db7c36] to-transparent opacity-[0.94]" />
-        <div className="absolute left-[49.87%] top-[21.5%] h-[114px] w-px bg-gradient-to-b from-[#fff0e3] via-[#fff6ef]/30 to-transparent opacity-[0.72]" />
-        <div className="absolute left-[49.5%] top-[20.45%] h-[2.95rem] w-[2.95rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.044)_0%,_rgba(244,177,132,0.016)_34%,_rgba(255,255,255,0)_66%)]" />
-        <div className="absolute left-[49.5%] top-[20.45%] h-[3.4rem] w-[3.4rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,242,231,0.68)_0%,_rgba(255,242,231,0)_72%)]" />
-        <div className="absolute left-[49.5%] top-[20.45%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#eba16a] bg-[#e37b33] shadow-[0_0_0_3px_rgba(242,154,98,0.072),0_6px_12px_rgba(232,124,55,0.112)]" />
-        <div className="absolute left-[49.5%] top-[47.3%] h-[104px] w-[104px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.026)_0%,_rgba(244,177,132,0.008)_30%,_rgba(255,255,255,0)_69%)]" />
-        <div className="absolute left-[49.5%] top-[47.3%] h-[92px] w-[92px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/64 shadow-[0_0_10px_rgba(239,146,86,0.018)]" />
-        <div className="absolute left-[49.5%] top-[47.3%] h-[67px] w-[67px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/54 shadow-[0_0_4px_rgba(239,146,86,0.012)]" />
+        <div className="absolute left-[48.95%] top-[21.5%] h-[114px] w-[1.16px] bg-gradient-to-b from-[#efac73] via-[#db7c36] to-transparent opacity-[0.92]" />
+        <div className="absolute left-[49.87%] top-[21.5%] h-[114px] w-px bg-gradient-to-b from-[#fff0e3] via-[#fff6ef]/34 to-transparent opacity-[0.68]" />
+        <div className="absolute left-[49.5%] top-[20.45%] h-[2.8rem] w-[2.8rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.038)_0%,_rgba(244,177,132,0.014)_34%,_rgba(255,255,255,0)_66%)]" />
+        <div className="absolute left-[49.5%] top-[20.45%] h-[3.24rem] w-[3.24rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,242,231,0.62)_0%,_rgba(255,242,231,0)_72%)]" />
+        <div className="absolute left-[49.5%] top-[20.45%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#eba16a] bg-[#e37b33] shadow-[0_0_0_3px_rgba(242,154,98,0.064),0_6px_12px_rgba(232,124,55,0.102)]" />
+        <div className="absolute left-[49.5%] top-[47.3%] h-[96px] w-[96px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.022)_0%,_rgba(244,177,132,0.006)_30%,_rgba(255,255,255,0)_69%)]" />
+        <div className="absolute left-[49.5%] top-[47.3%] h-[88px] w-[88px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/58 shadow-[0_0_9px_rgba(239,146,86,0.016)]" />
+        <div className="absolute left-[49.5%] top-[47.3%] h-[64px] w-[64px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/5 shadow-[0_0_4px_rgba(239,146,86,0.01)]" />
         {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
 
           return (
             <div key={node.id}>
-              <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#a8bac8] via-[#d4dee5] to-transparent opacity-[0.94]`} aria-hidden />
+              <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#9fb3c2] via-[#d0dbe3] to-transparent opacity-[0.96]`} aria-hidden />
               <button
                 type="button"
                 onClick={() => {
@@ -160,33 +160,33 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
                     onSelect(nextIndex);
                   }
                 }}
-                className={`absolute ${node.position} flex flex-col items-center gap-[1.08rem] text-center transition hover:scale-[1.02]`}
+                className={`absolute ${node.position} flex flex-col items-center gap-[0.98rem] text-center transition hover:scale-[1.02]`}
               >
                 <span className={`flex items-center justify-center rounded-full border text-[1.02rem] font-semibold backdrop-blur ${isActive ? node.activeRingClass : node.ringClass}`}>
                   {node.icon}
                 </span>
-                <span className={`text-[10.7px] font-medium leading-[1.72] tracking-[0.052em] sm:text-[0.765rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
+                <span className={`text-[10.95px] font-medium leading-[1.76] tracking-[0.066em] sm:text-[0.775rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
               </button>
             </div>
           );
         })}
       </div>
 
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-[41.6%] -translate-y-[28.7%] flex-col items-center">
-        <span className="mb-[0.98rem] flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-[11px] font-semibold text-white shadow-[0_9px_18px_rgba(232,124,55,0.26)]">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-[42%] -translate-y-[28.1%] flex-col items-center">
+        <span className="mb-[0.82rem] flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-[11px] font-semibold text-white shadow-[0_8px_16px_rgba(232,124,55,0.22)]">
           AI
         </span>
         <button
           type="button"
           onClick={() => onSelect(0)}
-          className="group relative flex h-[5.22rem] w-[5.22rem] items-center justify-center rounded-full bg-[linear-gradient(180deg,#ffffff_0%,#fff8f2_100%)] text-[#e37f36] shadow-[0_0_0_5px_rgba(249,159,120,0.042),0_0_0_12px_rgba(249,159,120,0.016),0_12px_18px_rgba(232,124,55,0.046)] transition hover:scale-[1.02] sm:h-[5.46rem] sm:w-[5.46rem]"
+          className="group relative flex h-[5.34rem] w-[5.34rem] items-center justify-center rounded-full bg-[linear-gradient(180deg,#ffffff_0%,#fff8f2_100%)] text-[#e37f36] shadow-[0_0_0_5px_rgba(249,159,120,0.038),0_0_0_12px_rgba(249,159,120,0.014),0_11px_16px_rgba(232,124,55,0.04)] transition hover:scale-[1.02] sm:h-[5.56rem] sm:w-[5.56rem]"
           aria-label="Literature Analysis"
         >
           <span className="absolute inset-[13px] rounded-full border border-[#efc8aa]/6" />
           <span className="absolute inset-[24px] rounded-full border border-[#efd8c8]/58" />
           <span className="text-[19px] font-semibold sm:text-[21px]">文</span>
         </button>
-        <p className="mt-[0.82rem] text-[0.835rem] font-semibold tracking-[0.016em] text-[#dc7429] drop-shadow-[0_2px_4px_rgba(240,142,79,0.082)] sm:text-[0.9rem]">Literature Analysis</p>
+        <p className="mt-[0.72rem] text-[0.845rem] font-semibold tracking-[0.02em] text-[#dc7429] drop-shadow-[0_2px_4px_rgba(240,142,79,0.076)] sm:text-[0.91rem]">Literature Analysis</p>
       </div>
     </div>
   );
@@ -259,21 +259,21 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
             </span>
           </div>
 
-          <div className="mt-[1.22rem] grid gap-[1.24rem] lg:grid-cols-[1fr_1.01fr]">
+          <div className="mt-[1.28rem] grid gap-[1.34rem] lg:grid-cols-[1fr_1.03fr]">
             <div className="space-y-[1.22rem]">
-              <div className="rounded-[1.25rem] border border-[#efe4d8] bg-white/92 p-[1.14rem] shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
+              <div className="rounded-[1.25rem] border border-[#efe4d8] bg-white/92 p-[1.18rem] shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
                 <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#bc9d82]">
                   <span className="h-2 w-2 rounded-full bg-[#ef9c63]" />
                   Summary
                 </div>
-                <div className="mt-[1.32rem] space-y-[1.08rem]" aria-hidden>
+                <div className="mt-[1.38rem] space-y-[1.14rem]" aria-hidden>
                   <span className="block h-2 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-11/12 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-10/12 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-7/12 rounded-full bg-[#f4d3bb]" />
                 </div>
               </div>
-              <div className="grid gap-[1.04rem] sm:grid-cols-2">
+              <div className="grid gap-[1.08rem] sm:grid-cols-2">
                 {previewContent.chartLabels.slice(0, 2).map((label) => (
                   <div
                     key={`${activeFeature.id}-${label}`}
@@ -285,27 +285,27 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
               </div>
             </div>
 
-            <div className="rounded-[1.35rem] border border-[#f0e4d8] bg-white/78 p-[1.16rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.62)]">
-              <div className="space-y-[1.22rem]">
+            <div className="rounded-[1.35rem] border border-[#f0e4d8] bg-white/78 p-[1.22rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.62)]">
+              <div className="space-y-[1.28rem]">
                 <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#8e9bab]">
                   <span>Evidence</span>
                   <span>Preview</span>
                 </div>
-                <div className="space-y-[1.02rem]" aria-hidden>
+                <div className="space-y-[1.08rem]" aria-hidden>
                   <div className="h-2 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[1.46rem] grid grid-cols-4 gap-[1.12rem] pt-[0.82rem]">
+                <div className="mt-[1.58rem] grid grid-cols-4 gap-[1.18rem] pt-[0.9rem]">
                   {bars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex flex-col items-center gap-[0.86rem]">
+                    <div key={`${activeFeature.id}-${index}`} className="flex flex-col items-center gap-[0.94rem]">
                       <div className="flex h-[150px] w-full items-end justify-center rounded-[1rem] bg-white/94 px-2 pb-[0.48rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.78)]">
                         <span
                           className="w-full rounded-t-[1rem] bg-[linear-gradient(180deg,#f3c098_0%,#eb8e49_100%)] shadow-[0_10px_24px_rgba(235,142,73,0.12)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="text-center text-[8.55px] font-medium uppercase tracking-[0.3em] text-[#5f6d7e] sm:text-[9.2px] sm:tracking-[0.34em]">
+                      <span className="text-center text-[8.7px] font-medium uppercase tracking-[0.34em] text-[#566576] sm:text-[9.35px] sm:tracking-[0.38em]">
                         {previewContent.chartLabels[index] ?? `Q${index + 1}`}
                       </span>
                     </div>
@@ -344,9 +344,9 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:items-center lg:gap-[0.82rem] xl:grid-cols-[minmax(0,334px)_minmax(0,1fr)] xl:gap-[1.02rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,326px)_minmax(0,1fr)] lg:items-center lg:gap-[0.98rem] xl:grid-cols-[minmax(0,338px)_minmax(0,1fr)] xl:gap-[1.18rem]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-2 lg:px-0 xl:mr-0 xl:px-1">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-1 lg:px-0 xl:mr-0 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
@@ -360,11 +360,11 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[314px] rounded-[1.95rem] border border-[#e7ecf1] bg-white px-[0.94rem] py-[0.98rem] shadow-[0_16px_34px_rgba(15,23,42,0.048),0_10px_24px_rgba(241,180,135,0.07)] sm:px-[0.98rem] sm:py-[1rem]"
+      className="mx-auto w-full max-w-[322px] rounded-[1.95rem] border border-[#e7ecf1] bg-white px-[1.02rem] py-[1.02rem] shadow-[0_16px_34px_rgba(15,23,42,0.048),0_10px_24px_rgba(241,180,135,0.07)] sm:px-[1.06rem] sm:py-[1.04rem]"
     >
-      <div className="mx-auto w-full max-w-[318px]">
+      <div className="mx-auto w-full max-w-[322px]">
         <div className="rounded-[1.42rem] border border-[#e9eef3] bg-white p-1 shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
-          <div role="tablist" aria-label="Authentication mode" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f5f7fa] p-[0.92rem] text-sm text-[#828893]">
+          <div role="tablist" aria-label="Authentication mode" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f5f7fa] p-[0.98rem] text-sm text-[#828893]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -393,16 +393,16 @@ function AuthCard() {
           </div>
         </div>
 
-        <div className="mt-3.5 space-y-4">
+        <div className="mt-3.5 space-y-[1.08rem]">
           <div
             role="tabpanel"
             id={activeTab === "onboard" ? "auth-panel-onboard" : "auth-panel-login"}
             aria-labelledby={activeTab === "onboard" ? "auth-tab-onboard" : "auth-tab-login"}
             aria-label={activeTab === "onboard" ? "Onboard" : "Login"}
-            className="rounded-[1.46rem] border border-[#eaedf2] bg-[#fcfdff] p-[0.92rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.84)] sm:p-[0.96rem]"
+            className="rounded-[1.46rem] border border-[#eaedf2] bg-[#fcfdff] p-[1rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.84)] sm:p-[1.04rem]"
           >
             {activeTab === "onboard" ? (
-              <div className="space-y-4">
+              <div className="space-y-[1.08rem]">
                 <p className="text-center text-sm text-[#7a8088]">Enter your access code to begin</p>
                 <label className="block text-sm text-[#5e646d]">
                   <span className="sr-only">Access code</span>
@@ -705,7 +705,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_318px] lg:items-start lg:gap-[4.36rem] xl:grid-cols-[minmax(0,0.985fr)_318px] xl:gap-[4.72rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_322px] lg:items-start lg:gap-[4.12rem] xl:grid-cols-[minmax(0,0.99fr)_322px] xl:gap-[4.48rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>

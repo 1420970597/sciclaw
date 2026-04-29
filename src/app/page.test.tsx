@@ -37,9 +37,9 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
-    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("lg:gap-[0.82rem]");
-    expect(featureRotator).toHaveClass("xl:gap-[1.02rem]");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,326px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:gap-[0.98rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[1.18rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
@@ -61,9 +61,9 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_318px]");
-    expect(hero).toHaveClass("lg:gap-[4.36rem]");
-    expect(screen.getByRole("complementary")).toHaveClass("max-w-[314px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_322px]");
+    expect(hero).toHaveClass("lg:gap-[4.12rem]");
+    expect(screen.getByRole("complementary")).toHaveClass("max-w-[322px]");
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -181,12 +181,12 @@ describe("Home landing page", () => {
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("h-[2.5rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.5rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_7px_15px_rgba(15,23,42,0.048),inset_0_1px_0_rgba(255,255,255,0.998)]");
-    expect(triggerRow).toHaveClass("gap-[0.17rem]");
-    expect(primaryNav).toHaveClass("gap-[0.07rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.14rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.58rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.58rem]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_5px_10px_rgba(15,23,42,0.034),inset_0_1px_0_rgba(255,255,255,0.998)]");
+    expect(triggerRow).toHaveClass("gap-[0.19rem]");
+    expect(primaryNav).toHaveClass("gap-[0.08rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.15rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -199,28 +199,28 @@ describe("Home landing page", () => {
     expect(featureNetwork).toHaveClass("min-h-[334px]");
     expect(featureNetwork).toHaveClass("sm:min-h-[390px]");
     expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_48%_49%,_rgba(255,255,255,0.93),_rgba(255,255,255,0)_56%)]");
-    expect(literatureNode).toHaveClass("left-[13.7%]");
-    expect(literatureNode).toHaveClass("top-[-0.2%]");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[3.84rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[3.84rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("border-[#e8a169]");
-    expect(literatureNode.firstElementChild).toHaveClass("text-[#bc5b1c]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_5px_rgba(240,142,79,0.074),0_12px_20px_rgba(232,124,55,0.098)]");
-    expect(literatureNode.lastElementChild).toHaveClass("text-[#a24f1b]");
-    expect(dataMiningNode).toHaveClass("left-[13.6%]");
-    expect(dataMiningNode).toHaveClass("top-[77.7%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.56rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.56rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#b2bdc8]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#5f6a76]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#667383]");
-    expect(outcomeNode).toHaveClass("right-[2.5%]");
-    expect(outcomeNode).toHaveClass("top-[5.9%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.56rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.56rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#b2bdc8]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#5f6a76]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#667383]");
+    expect(literatureNode).toHaveClass("left-[15.1%]");
+    expect(literatureNode).toHaveClass("top-[1.2%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[3.92rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[3.92rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("border-[#e7a068]");
+    expect(literatureNode.firstElementChild).toHaveClass("text-[#bb581c]");
+    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_5px_rgba(240,142,79,0.068),0_11px_18px_rgba(232,124,55,0.094)]");
+    expect(literatureNode.lastElementChild).toHaveClass("text-[#a04d1b]");
+    expect(dataMiningNode).toHaveClass("left-[15%]");
+    expect(dataMiningNode).toHaveClass("top-[74.9%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.62rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.62rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#adb8c3]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#5b6672]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#6c7886]");
+    expect(outcomeNode).toHaveClass("right-[5.2%]");
+    expect(outcomeNode).toHaveClass("top-[8.2%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.62rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.62rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#adb8c3]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#5b6672]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#6c7886]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
