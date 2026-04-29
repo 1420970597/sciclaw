@@ -20,7 +20,7 @@
 - [x] 建立 `/help/[slug]` 文档路由与 docs shell 三栏结构
 - [x] 完成已知 help 路由：getting-started / projects / chat / skills / library / tasks / foundry / persona / im / settings
 - [x] 加入顶部 search / appearance / language 控件占位与右侧 TOC
-- [~] 继续根据公开文案与页面细节补全文档内容、排版层次、滚动状态与交互微调（本轮已对齐接近公开站的浅色 docs shell、图标化侧栏、Chat/Settings 文案与 `/chat` 回流；本轮继续把 getting-started 正文首段与 live site 一致地保留为导语段，同时新增独立的 `What is SciClaw` 目录锚点，避免 TOC 出现无正文锚点）
+- [~] 继续根据公开文案与页面细节补全文档内容、排版层次、滚动状态与交互微调（本轮已对齐接近公开站的浅色 docs shell、图标化侧栏、Chat/Settings 文案与 `/chat` 回流；本轮继续把 getting-started 正文首段与 live site 一致地保留为导语段，同时新增独立的 `What is SciClaw` 目录锚点，避免 TOC 出现无正文锚点。）
 
 ## Phase D — Privacy / 公共交互细节（P2/P3 部分）
 - [x] 完成 `/privacy` 页面公开信息摘要复刻
@@ -30,7 +30,7 @@
 ## Phase E — App shell 占位 IA（P4）
 - [x] 建立 `/chat` 公共 app shell 占位页（当前先无缝跳转至 `/help/chat`，避免空白路由）
 - [x] 建立 project / session / library / tasks / foundry / persona / im / settings 的应用内 IA 占位
-- [~] 让 landing 与 docs 导航正确串联到 app shell 占位（本轮已把 `/chat` 从简单回流升级为浅色 app shell 占位，下一轮继续补齐更多内部入口与 role-specific 细节）
+- [~] 让 landing 与 docs 导航正确串联到 app shell 占位（本轮已把 `/chat` 从简单回流升级为浅色 app shell 占位；本轮继续把顶部 shell 文案改为 docs→workspace bridge、补充解释性 subcopy、为头部与左侧导航引入 sticky/sticky-like 结构、为 Project memory 增加更明确的 rail 标识，并补齐按钮 aria-label 与对应测试。所有改动已通过 `pnpm test -- src/app/chat/page.test.tsx`（实际仍复跑 4 个 Vitest 文件）、ESLint、Next build、docker compose config、docker compose up -d --build、`curl -I` 对 `/` `/chat` `/help/getting-started` 的 200 校验、静态安全扫描、独立 reviewer 与本地 `/chat` browser QA。当前 `/chat` 作为 docs shell 向 app shell 的过渡页更连贯，但仍存在中心列说明卡偏文档化、右侧输出列相对中心列略轻、部分 sidebar subtitle 与 badge 在窄宽度下略紧的问题；下一轮优先继续把中心内容从“说明文字”收敛到更产品态的 session/task/output 实例，并提升右侧 Foundry handoff 的视觉权重。）
 
 ## Validation / review cadence
 - [x] 本地参考资料保留在 `docs/reference-local/` 并通过 `.git/info/exclude` 忽略

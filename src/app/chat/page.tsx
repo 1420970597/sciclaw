@@ -10,7 +10,7 @@ import {
 
 function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
   return (
-    <aside className="rounded-[2rem] border border-[#ece7de] bg-white/92 p-5 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+    <aside className="xl:sticky xl:top-8 xl:self-start rounded-[2rem] border border-[#ece7de] bg-white/92 p-5 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
       <div className="flex items-center justify-between border-b border-[#f2eee7] pb-4">
         <div>
           <p className="text-sm font-semibold text-[#2d2d2d]">
@@ -23,7 +23,7 @@ function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
         </span>
       </div>
 
-      <div className="mt-5 space-y-1">
+      <div className="mt-5 space-y-1 border-t border-[#f3ede3] pt-4">
         {appShellSections.map((section) => {
           const isActive = section.view === activeView;
 
@@ -64,7 +64,12 @@ function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
       </div>
 
       <div className="mt-6 rounded-[1.75rem] border border-[#f1e7d9] bg-[#fbf8f3] p-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b1a793]">Project memory</p>
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b1a793]">Project memory</p>
+          <span className="rounded-full border border-[#efe2d4] bg-white px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#af8e71]">
+            Memory rail
+          </span>
+        </div>
         <ul className="mt-3 space-y-3 text-sm text-[#5c564d]">
           {appShellResources.map((resource) => (
             <li key={resource.label} className="flex items-start justify-between gap-3">
@@ -83,19 +88,23 @@ function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
 
 function ShellHeader() {
   return (
-    <header className="rounded-[2rem] border border-[#efe7dc] bg-white/94 px-5 py-4 shadow-[0_14px_34px_rgba(15,23,42,0.05)] sm:px-6">
+    <header className="sticky top-0 z-20 rounded-[2rem] border border-[#efe7dc] bg-[rgba(255,252,247,0.92)] px-5 py-4 shadow-[0_14px_34px_rgba(15,23,42,0.05)] backdrop-blur sm:px-6">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b2aa9d]">Project · Materials Diligence</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b2aa9d]">SciClaw · User Guide · Session Preview</p>
           <h1 className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-[#202020] sm:text-[2rem]">
             Coordinate project context, sessions, tasks, and outputs from one app shell.
           </h1>
+          <p className="mt-2 max-w-[42rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
+            Mirror the public docs shell with a product-facing workspace preview that keeps navigation, memory, tasks, and foundry handoff visible at a glance.
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3 text-sm text-[#6f685e]">
           <button
             type="button"
             className="inline-flex items-center gap-2 rounded-2xl border border-[#ece4d9] bg-[#fbfaf8] px-4 py-2.5 transition hover:border-[#e4d7c6] hover:text-[#2b2b2b]"
+            aria-label="Search sessions"
           >
             Search sessions
             <span className="rounded-lg border border-[#ebe2d6] bg-white px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-[#a19484]">
@@ -105,12 +114,14 @@ function ShellHeader() {
           <button
             type="button"
             className="rounded-2xl border border-[#ece4d9] bg-white px-4 py-2.5 transition hover:border-[#e4d7c6] hover:text-[#2b2b2b]"
+            aria-label="Appearance light"
           >
             Appearance · Light
           </button>
           <button
             type="button"
             className="rounded-2xl bg-[#1d1d1d] px-4 py-2.5 font-medium text-white transition hover:bg-[#2f2f2f]"
+            aria-label="Create new session"
           >
             New session
           </button>
@@ -233,7 +244,7 @@ export default function ChatPage() {
       <div className="mx-auto max-w-[1440px] px-5 py-6 sm:px-8 lg:px-10 lg:py-8">
         <ShellHeader />
 
-        <div className="mt-6 grid gap-6 xl:grid-cols-[290px_minmax(0,1fr)]">
+        <div className="mt-6 grid gap-6 xl:grid-cols-[290px_minmax(0,1fr)] xl:items-start">
           <AppSidebar activeView="session" />
           <SessionTimeline />
         </div>

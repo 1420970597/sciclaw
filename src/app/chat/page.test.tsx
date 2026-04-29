@@ -10,7 +10,12 @@ describe("Chat app shell placeholder", () => {
         name: /coordinate project context, sessions, tasks, and outputs from one app shell/i,
       }),
     ).toBeInTheDocument();
-    expect(screen.getByText(/project · materials diligence/i)).toBeInTheDocument();
+    expect(screen.getByText(/sciclaw · user guide · session preview/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /mirror the public docs shell with a product-facing workspace preview that keeps navigation, memory, tasks, and foundry handoff visible at a glance/i,
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByText(/project & session flow mirrored from the public docs ia/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/convert validated findings into presentation-ready output/i)).toBeInTheDocument();
