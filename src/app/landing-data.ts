@@ -65,6 +65,39 @@ export type HelpArticle = {
   body: HelpBodyBlock[];
 };
 
+export type AppShellSection = {
+  index: string;
+  label: string;
+  subtitle: string;
+  href: string;
+  badge?: string;
+  view: "project" | "session" | "library" | "tasks" | "foundry" | "persona" | "im" | "settings";
+};
+
+export type AppShellCard = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
+export type AppShellTimelineItem = {
+  title: string;
+  description: string;
+  meta: string;
+};
+
+export type AppShellTodo = {
+  label: string;
+  note: string;
+  state: "done" | "active" | "pending";
+};
+
+export type AppShellResource = {
+  label: string;
+  description: string;
+  meta: string;
+};
+
 export const navLinks: NavLink[] = [
   { label: "User Guide", href: "/help/getting-started" },
   { label: "Privacy", href: "/privacy" },
@@ -137,6 +170,146 @@ export const bestCases: BestCase[] = [
     tags: ["Timeline", "Policy brief", "Evidence pack"],
     statLabel: "Stakeholder handoff",
     statValue: "Same day",
+  },
+];
+
+export const appShellSections: AppShellSection[] = [
+  {
+    index: "01",
+    label: "Projects",
+    subtitle: "Shared workspace overview",
+    href: "/help/projects",
+    view: "project",
+  },
+  {
+    index: "02",
+    label: "Sessions",
+    subtitle: "Active investigation threads",
+    href: "/chat",
+    badge: "3",
+    view: "session",
+  },
+  {
+    index: "03",
+    label: "Library",
+    subtitle: "Grounded papers & notes",
+    href: "/help/library",
+    badge: "RAG",
+    view: "library",
+  },
+  {
+    index: "04",
+    label: "Tasks",
+    subtitle: "Queued autonomous work",
+    href: "/help/tasks",
+    badge: "Today",
+    view: "tasks",
+  },
+  {
+    index: "05",
+    label: "Foundry",
+    subtitle: "Polished output layer",
+    href: "/help/foundry",
+    view: "foundry",
+  },
+  {
+    index: "06",
+    label: "Persona",
+    subtitle: "Research behavior controls",
+    href: "/help/persona",
+    view: "persona",
+  },
+  {
+    index: "07",
+    label: "IM",
+    subtitle: "External workflow delivery",
+    href: "/help/im",
+    view: "im",
+  },
+  {
+    index: "08",
+    label: "Settings",
+    subtitle: "Appearance and usage",
+    href: "/help/settings",
+    view: "settings",
+  },
+];
+
+export const appShellCards: AppShellCard[] = [
+  {
+    eyebrow: "Project context",
+    title: "Keep uploaded evidence and generated outputs attached to one durable workspace.",
+    description:
+      "Mirror the public docs mental model: every research initiative owns its own files, skills, outputs, and long-horizon execution history.",
+  },
+  {
+    eyebrow: "Session selector",
+    title: "Split each investigation into named sessions without losing project memory.",
+    description:
+      "Use the top bar to search prior sessions, spin up a fresh thread, or return to a report-building sequence after another task completes.",
+  },
+  {
+    eyebrow: "Foundry handoff",
+    title: "Promote validated threads into presentation-ready briefs and evidence packs.",
+    description:
+      "The app shell makes it clear how work moves from active chat and tasks into outward-facing deliverables for stakeholders.",
+  },
+];
+
+export const appShellTimeline: AppShellTimelineItem[] = [
+  {
+    title: "Patent landscaping · comparative thread",
+    description:
+      "Tracks literature clustering, prior-art notes, and follow-up prompts for claim overlap analysis across uploaded filings.",
+    meta: "12 min ago",
+  },
+  {
+    title: "Clinical diligence · session replay",
+    description:
+      "Reopens the evidence chain for trial endpoints, competitor snapshots, and generated briefing sections before Foundry export.",
+    meta: "Yesterday",
+  },
+  {
+    title: "Regulatory memo · final synthesis",
+    description:
+      "Bundles verified source quotes, task outcomes, and charts into one executive-ready narrative with minimal handoff friction.",
+    meta: "Ready for review",
+  },
+];
+
+export const appShellTodos: AppShellTodo[] = [
+  {
+    label: "Import the next PDF batch into the project library",
+    note: "Ground retrieval before the next autonomous session starts.",
+    state: "done",
+  },
+  {
+    label: "Generate a fresh comparative-analysis session",
+    note: "Keep the current workstream isolated so experiment notes do not pollute the diligence thread.",
+    state: "active",
+  },
+  {
+    label: "Push the verified outline to Foundry",
+    note: "Promote the winning narrative after session review closes.",
+    state: "pending",
+  },
+];
+
+export const appShellResources: AppShellResource[] = [
+  {
+    label: "Library · 128 assets",
+    description: "Uploaded papers, notes, and evidence tables available for grounded retrieval.",
+    meta: "Synced",
+  },
+  {
+    label: "Activity · 14 day streak",
+    description: "Heatmap-ready task history to pivot from daily execution into specific session reviews.",
+    meta: "Live",
+  },
+  {
+    label: "Skills · 6 enabled",
+    description: "Focused tool access for literature analysis, task execution, and report packaging.",
+    meta: "Scoped",
   },
 ];
 

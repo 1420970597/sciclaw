@@ -1,5 +1,243 @@
-import { redirect } from "next/navigation";
+import Link from "next/link";
+import {
+  appShellCards,
+  appShellResources,
+  appShellSections,
+  appShellTimeline,
+  appShellTodos,
+  type AppShellSection,
+} from "@/app/landing-data";
+
+function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
+  return (
+    <aside className="rounded-[2rem] border border-[#ece7de] bg-white/92 p-5 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+      <div className="flex items-center justify-between border-b border-[#f2eee7] pb-4">
+        <div>
+          <p className="text-sm font-semibold text-[#2d2d2d]">
+            Sci<span className="text-[#eb8b3b]">Claw</span>
+          </p>
+          <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-[#b0a99b]">Workspace</p>
+        </div>
+        <span className="rounded-full border border-[#f1d9c2] bg-[#fff5ec] px-3 py-1 text-[11px] font-medium text-[#de7d30]">
+          Beta
+        </span>
+      </div>
+
+      <div className="mt-5 space-y-1">
+        {appShellSections.map((section) => {
+          const isActive = section.view === activeView;
+
+          return (
+            <Link
+              key={section.href}
+              href={section.href}
+              aria-current={isActive ? "page" : undefined}
+              className={`group flex items-center justify-between rounded-2xl px-3 py-3 transition ${
+                isActive
+                  ? "bg-[#fff4ec] text-[#de7d30]"
+                  : "text-[#666257] hover:bg-[#f7f4ef] hover:text-[#232323]"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <span
+                  className={`flex h-9 w-9 items-center justify-center rounded-2xl border text-sm font-semibold transition ${
+                    isActive
+                      ? "border-[#f3d5bc] bg-white text-[#de7d30]"
+                      : "border-[#efebe4] bg-[#fbfaf8] text-[#9f978a] group-hover:border-[#e5dfd3] group-hover:text-[#6d675d]"
+                  }`}
+                >
+                  {section.index}
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-current">{section.label}</p>
+                  <p className="text-xs text-[#aca496]">{section.subtitle}</p>
+                </div>
+              </div>
+              {section.badge ? (
+                <span className="rounded-full border border-[#f0e5d6] bg-white px-2 py-1 text-[11px] text-[#9b8f80]">
+                  {section.badge}
+                </span>
+              ) : null}
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="mt-6 rounded-[1.75rem] border border-[#f1e7d9] bg-[#fbf8f3] p-4">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b1a793]">Project memory</p>
+        <ul className="mt-3 space-y-3 text-sm text-[#5c564d]">
+          {appShellResources.map((resource) => (
+            <li key={resource.label} className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-medium text-[#2a2a2a]">{resource.label}</p>
+                <p className="mt-1 text-xs leading-5 text-[#8f8779]">{resource.description}</p>
+              </div>
+              <span className="rounded-full bg-white px-2 py-1 text-[11px] text-[#b18a68]">{resource.meta}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+  );
+}
+
+function ShellHeader() {
+  return (
+    <header className="rounded-[2rem] border border-[#efe7dc] bg-white/94 px-5 py-4 shadow-[0_14px_34px_rgba(15,23,42,0.05)] sm:px-6">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b2aa9d]">Project · Materials Diligence</p>
+          <h1 className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-[#202020] sm:text-[2rem]">
+            Coordinate project context, sessions, tasks, and outputs from one app shell.
+          </h1>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 text-sm text-[#6f685e]">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-2xl border border-[#ece4d9] bg-[#fbfaf8] px-4 py-2.5 transition hover:border-[#e4d7c6] hover:text-[#2b2b2b]"
+          >
+            Search sessions
+            <span className="rounded-lg border border-[#ebe2d6] bg-white px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-[#a19484]">
+              ⌘K
+            </span>
+          </button>
+          <button
+            type="button"
+            className="rounded-2xl border border-[#ece4d9] bg-white px-4 py-2.5 transition hover:border-[#e4d7c6] hover:text-[#2b2b2b]"
+          >
+            Appearance · Light
+          </button>
+          <button
+            type="button"
+            className="rounded-2xl bg-[#1d1d1d] px-4 py-2.5 font-medium text-white transition hover:bg-[#2f2f2f]"
+          >
+            New session
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function SessionTimeline() {
+  return (
+    <section className="rounded-[2rem] border border-[#efe6da] bg-white/94 p-5 shadow-[0_18px_48px_rgba(15,23,42,0.05)] sm:p-6">
+      <div className="flex flex-col gap-3 border-b border-[#f2ece3] pb-5 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session timeline</p>
+          <h2 className="mt-2 text-xl font-semibold text-[#212121]">Project & Session flow mirrored from the public docs IA.</h2>
+        </div>
+        <p className="max-w-xl text-sm leading-6 text-[#7a7267]">
+          Each session captures one investigation thread, keeps tool traces visible, and rolls polished outputs into Foundry without losing project memory.
+        </p>
+      </div>
+
+      <div className="mt-6 grid gap-4 xl:grid-cols-[1.12fr_0.88fr]">
+        <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
+          <div className="grid gap-4 md:grid-cols-3">
+            {appShellCards.map((card) => (
+              <article key={card.title} className="rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
+                <h3 className="mt-2 text-base font-semibold text-[#1f1f1f]">{card.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#6c6459]">{card.description}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.03)]">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#f3eee7] pb-3">
+              <div>
+                <p className="text-sm font-semibold text-[#222]">Active sessions</p>
+                <p className="mt-1 text-xs text-[#9b9183]">New session threads are grouped under the project and searchable from the top bar.</p>
+              </div>
+              <span className="rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
+            </div>
+
+            <div className="mt-4 space-y-3">
+              {appShellTimeline.map((item) => (
+                <div key={item.title} className="flex gap-4 rounded-[1.35rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3">
+                  <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="text-sm font-medium text-[#222]">{item.title}</p>
+                      <span className="text-[11px] uppercase tracking-[0.18em] text-[#a89d8f]">{item.meta}</span>
+                    </div>
+                    <p className="mt-1 text-sm leading-6 text-[#6e665b]">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Tasks</p>
+                <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Queue the next research slice</h3>
+              </div>
+              <span className="rounded-full border border-[#f0e2d2] bg-[#fff7ef] px-3 py-1 text-[11px] text-[#de7d30]">Heatmap-ready</span>
+            </div>
+            <div className="mt-4 space-y-3">
+              {appShellTodos.map((todo) => (
+                <div key={todo.label} className="flex items-start gap-3 rounded-[1.25rem] border border-[#f4eee5] bg-[#fcfaf7] px-4 py-3">
+                  <span
+                    className={`mt-0.5 flex h-5 w-5 items-center justify-center rounded-full text-[11px] font-semibold ${
+                      todo.state === "done"
+                        ? "bg-[#1f1f1f] text-white"
+                        : todo.state === "active"
+                          ? "bg-[#fff0e4] text-[#de7d30]"
+                          : "bg-white text-[#9d9386]"
+                    }`}
+                  >
+                    {todo.state === "done" ? "✓" : todo.state === "active" ? "•" : "○"}
+                  </span>
+                  <div>
+                    <p className="text-sm font-medium text-[#232323]">{todo.label}</p>
+                    <p className="mt-1 text-xs leading-5 text-[#8a8175]">{todo.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="rounded-[1.85rem] border border-[#efe6da] bg-[linear-gradient(180deg,#fff8f1_0%,#ffffff_100%)] p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Foundry handoff</p>
+            <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Convert validated findings into presentation-ready output.</h3>
+            <div className="mt-4 space-y-3 rounded-[1.35rem] border border-[#f3e7d9] bg-white/80 p-4">
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-sm font-medium text-[#222]">Automated report generation</p>
+                <span className="rounded-full border border-[#eadaca] bg-[#fff6ee] px-2 py-1 text-[11px] text-[#d97a31]">Draft 01</span>
+              </div>
+              <p className="text-sm leading-6 text-[#6c6459]">
+                Bundle project memory, selected sessions, and verified charts into one concise output stream for downstream review.
+              </p>
+              <div className="grid gap-2 text-xs text-[#8f8578] sm:grid-cols-3">
+                <div className="rounded-2xl border border-[#f4ebdf] bg-[#fdfaf6] px-3 py-2">Brief outline</div>
+                <div className="rounded-2xl border border-[#f4ebdf] bg-[#fdfaf6] px-3 py-2">Evidence appendix</div>
+                <div className="rounded-2xl border border-[#f4ebdf] bg-[#fdfaf6] px-3 py-2">Slides handoff</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function ChatPage() {
-  redirect("/help/chat");
+  return (
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(255,210,170,0.2),_transparent_22%),linear-gradient(180deg,#fcfbf8_0%,#f6f2ea_100%)] text-[#1f1f1f]">
+      <div className="mx-auto max-w-[1440px] px-5 py-6 sm:px-8 lg:px-10 lg:py-8">
+        <ShellHeader />
+
+        <div className="mt-6 grid gap-6 xl:grid-cols-[290px_minmax(0,1fr)]">
+          <AppSidebar activeView="session" />
+          <SessionTimeline />
+        </div>
+      </div>
+    </main>
+  );
 }

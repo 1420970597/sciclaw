@@ -28,8 +28,8 @@
 
 ## Phase E — App shell 占位 IA（P4）
 - [x] 建立 `/chat` 公共 app shell 占位页（当前先无缝跳转至 `/help/chat`，避免空白路由）
-- [ ] 建立 project / session / library / tasks / foundry / persona / im / settings 的应用内 IA 占位
-- [ ] 让 landing 与 docs 导航正确串联到 app shell 占位
+- [x] 建立 project / session / library / tasks / foundry / persona / im / settings 的应用内 IA 占位
+- [~] 让 landing 与 docs 导航正确串联到 app shell 占位（本轮已把 `/chat` 从简单回流升级为浅色 app shell 占位，下一轮继续补齐更多内部入口与 role-specific 细节）
 
 ## Validation / review cadence
 - [x] 本地参考资料保留在 `docs/reference-local/` 并通过 `.git/info/exclude` 忽略
