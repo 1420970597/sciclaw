@@ -57,8 +57,9 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_332px]");
-    expect(screen.getByRole("complementary")).toHaveClass("max-w-[368px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_340px]");
+    expect(hero).toHaveClass("lg:gap-[4.35rem]");
+    expect(screen.getByRole("complementary")).toHaveClass("max-w-[372px]");
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -175,10 +176,11 @@ describe("Home landing page", () => {
     const navRow = primaryNav;
 
     expect(settingsTrigger).toHaveClass("rounded-full");
-    expect(settingsTrigger).toHaveClass("h-[2.16rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.16rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.06rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.06rem]");
     expect(triggerRow).toHaveClass("gap-3");
-    expect(navRow).toHaveClass("sm:gap-2");
+    expect(navRow).toHaveClass("gap-1");
+    expect(navRow).toHaveClass("sm:gap-[0.42rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -209,8 +211,8 @@ describe("Home landing page", () => {
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");
 
-    expect(bestCasesSection).toHaveClass("mt-[4.8rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[5.6rem]");
+    expect(bestCasesSection).toHaveClass("mt-[5.35rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[6.2rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 

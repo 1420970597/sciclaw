@@ -78,7 +78,7 @@ function Header() {
   return (
     <header className="pt-8 sm:pt-10">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-6 sm:px-8 lg:px-10">
-        <nav aria-label="Primary" className="flex items-center gap-1.5 sm:gap-2">
+        <nav aria-label="Primary" className="flex items-center gap-1 sm:gap-[0.42rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             buttonClassName="border-[#ece3d8]/96 bg-[linear-gradient(180deg,rgba(255,255,255,0.985)_0%,rgba(247,241,233,0.97)_100%)] text-[#666c75] shadow-[0_16px_32px_rgba(15,23,42,0.075),inset_0_1px_0_rgba(255,255,255,0.96)] hover:-translate-y-0.5 hover:border-[#e5d7ca] hover:text-[#1e2229]"
@@ -356,7 +356,7 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[368px] rounded-[1.95rem] border border-[#edf0f4] bg-white/98 px-[1rem] py-[1rem] shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.08rem] sm:py-[1.08rem]"
+      className="mx-auto w-full max-w-[372px] rounded-[1.95rem] border border-[#edf0f4] bg-white/98 px-[1.1rem] py-[1.08rem] shadow-[0_18px_48px_rgba(241,180,135,0.12),0_12px_30px_rgba(15,23,42,0.065)] sm:px-[1.16rem] sm:py-[1.16rem]"
     >
       <div className="mx-auto w-full max-w-[318px]">
         <div className="rounded-[1.42rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
@@ -550,7 +550,7 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-[4.8rem] sm:mt-[5.6rem]">
+    <section className="mt-[5.35rem] sm:mt-[6.2rem]">
       <div className="mb-9 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
@@ -701,7 +701,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_332px] lg:items-start lg:gap-10 xl:grid-cols-[minmax(0,0.99fr)_342px] xl:gap-[3.15rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-[4.35rem] xl:grid-cols-[minmax(0,0.99fr)_350px] xl:gap-[4.7rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
