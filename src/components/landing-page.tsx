@@ -76,9 +76,9 @@ function Header() {
   ] as const;
 
   return (
-    <header className="pt-[0.7rem] sm:pt-[0.8rem]">
+    <header className="pt-[0.55rem] sm:pt-[0.68rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-9">
-        <nav aria-label="Primary" className="flex items-center gap-[0.04rem] sm:gap-[0.08rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.03rem] sm:gap-[0.06rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             buttonClassName="border-[#d8cdbc] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(247,241,234,0.992)_100%)] text-[#59616c] shadow-[0_7px_18px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,0.996)] hover:-translate-y-0.5 hover:border-[#cfbfa9] hover:text-[#171b22]"
@@ -98,74 +98,74 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[25.6%] top-[4.2%] sm:left-[25.6%] sm:top-[4.2%]",
-        lineClass: "left-[47.2%] top-[26.8%] h-[1.6px] w-[20.5%] origin-left rotate-[220deg]",
-        ringClass: "h-[4.08rem] w-[4.08rem] border-[#bcc6d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#7a8795] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.44rem] w-[4.44rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
-        labelClass: "max-w-[104px] text-[#5f6b79] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
-        activeLabelClass: "max-w-[108px] text-[#b95010] drop-shadow-[0_3px_10px_rgba(240,142,79,0.2)]",
+        position: "left-[23.9%] top-[3.4%] sm:left-[23.9%] sm:top-[3.4%]",
+        lineClass: "left-[46.7%] top-[25.7%] h-[1.8px] w-[18.9%] origin-left rotate-[220deg]",
+        ringClass: "h-[4rem] w-[4rem] border-[#b9c5d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#6f7d8c] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
+        activeRingClass: "h-[4.36rem] w-[4.36rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
+        labelClass: "max-w-[92px] text-[#576574] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
+        activeLabelClass: "max-w-[96px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[24.8%] top-[58.3%] sm:left-[24.8%] sm:top-[58.3%]",
-        lineClass: "left-[46.7%] top-[50.2%] h-[1.6px] w-[20.8%] origin-left rotate-[138deg]",
-        ringClass: "h-[4.08rem] w-[4.08rem] border-[#bcc6d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#7a8795] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.44rem] w-[4.44rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
-        labelClass: "max-w-[104px] text-[#5f6b79] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
-        activeLabelClass: "max-w-[108px] text-[#b95010] drop-shadow-[0_3px_10px_rgba(240,142,79,0.2)]",
+        position: "left-[23.5%] top-[61.4%] sm:left-[23.5%] sm:top-[61.4%]",
+        lineClass: "left-[46.4%] top-[51.1%] h-[1.8px] w-[18.8%] origin-left rotate-[137deg]",
+        ringClass: "h-[4rem] w-[4rem] border-[#b9c5d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#6f7d8c] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
+        activeRingClass: "h-[4.36rem] w-[4.36rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
+        labelClass: "max-w-[92px] text-[#576574] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
+        activeLabelClass: "max-w-[96px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[18.9%] top-[19.3%] sm:right-[18.9%] sm:top-[19.3%]",
-        lineClass: "left-[54.4%] top-[34.7%] h-[1.6px] w-[17.2%] origin-left rotate-[0deg]",
-        ringClass: "h-[4.08rem] w-[4.08rem] border-[#bcc6d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#7a8795] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.44rem] w-[4.44rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
-        labelClass: "max-w-[106px] text-[#5f6b79] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
-        activeLabelClass: "max-w-[112px] text-[#b95010] drop-shadow-[0_3px_10px_rgba(240,142,79,0.2)]",
+        position: "right-[16.9%] top-[16.7%] sm:right-[16.9%] sm:top-[16.7%]",
+        lineClass: "left-[54.1%] top-[33.5%] h-[1.8px] w-[15.3%] origin-left rotate-[0deg]",
+        ringClass: "h-[4rem] w-[4rem] border-[#b9c5d2] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] text-[#6f7d8c] shadow-[0_20px_38px_rgba(15,23,42,0.09)]",
+        activeRingClass: "h-[4.36rem] w-[4.36rem] border-[#ec985f] bg-[linear-gradient(180deg,#fffaf5_0%,#ffd1b0_100%)] text-[#c55a14] shadow-[0_0_0_12px_rgba(240,142,79,0.18),0_28px_46px_rgba(232,124,55,0.24)]",
+        labelClass: "max-w-[96px] text-[#576574] drop-shadow-[0_1px_1px_rgba(255,255,255,0.88)]",
+        activeLabelClass: "max-w-[102px] text-[#ab4f18] drop-shadow-[0_3px_10px_rgba(240,142,79,0.18)]",
       },
     ],
     [],
   );
 
   return (
-      <div className="relative min-h-[320px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_49%,_rgba(255,255,255,0.92),_rgba(255,255,255,0)_56%)] sm:min-h-[368px]">
-        <div className="absolute inset-0 opacity-[0.995]">
-          <div className="absolute left-[25.8%] top-[16.2%] h-1.5 w-1.5 rounded-full bg-[#bdc7d4]" />
-          <div className="absolute left-[32.4%] top-[45.8%] h-1.5 w-1.5 rounded-full bg-[#bdc7d4]" />
-          <div className="absolute left-[59.8%] top-[26.6%] h-1.5 w-1.5 rounded-full bg-[#c4cedb]" />
-          <div className="absolute left-[61.6%] top-[46.1%] h-1.5 w-1.5 rounded-full bg-[#c4cedb]" />
-          <div className="absolute left-[49.05%] top-[23.8%] h-[112px] w-px bg-gradient-to-b from-[#efb07b] via-[#e6762f] to-transparent opacity-[0.99]" />
-          <div className="absolute left-[49.96%] top-[23.8%] h-[112px] w-px bg-gradient-to-b from-[#fee4d4] via-transparent to-transparent opacity-[0.98]" />
-          <div className="absolute left-[49.7%] top-[22.8%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#ed995e] bg-[#e97d35] shadow-[0_0_0_8px_rgba(242,154,98,0.2),0_12px_24px_rgba(232,124,55,0.28)]" />
-          <div className="absolute left-[49.7%] top-[48.8%] h-[154px] w-[154px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.18)_0%,_rgba(244,177,132,0.08)_34%,_rgba(255,255,255,0)_72%)]" />
-          <div className="absolute left-[49.7%] top-[48.8%] h-[122px] w-[122px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#e2b086]/92 shadow-[0_0_38px_rgba(239,146,86,0.1)]" />
-          <div className="absolute left-[49.7%] top-[48.8%] h-[88px] w-[88px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/88 shadow-[0_0_20px_rgba(239,146,86,0.1)]" />
-          {nodes.map((node) => {
+    <div className="relative min-h-[336px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_49%,_rgba(255,255,255,0.93),_rgba(255,255,255,0)_55%)] sm:min-h-[378px]">
+      <div className="absolute inset-0 opacity-[0.995]">
+        <div className="absolute left-[24.7%] top-[14.7%] h-1.5 w-1.5 rounded-full bg-[#b9c5d2]" />
+        <div className="absolute left-[31.4%] top-[45.5%] h-1.5 w-1.5 rounded-full bg-[#b9c5d2]" />
+        <div className="absolute left-[58.7%] top-[25.4%] h-1.5 w-1.5 rounded-full bg-[#c0cad7]" />
+        <div className="absolute left-[60.9%] top-[45.5%] h-1.5 w-1.5 rounded-full bg-[#c0cad7]" />
+        <div className="absolute left-[49.05%] top-[23.2%] h-[118px] w-px bg-gradient-to-b from-[#efb07b] via-[#e6762f] to-transparent opacity-[0.99]" />
+        <div className="absolute left-[49.96%] top-[23.2%] h-[118px] w-px bg-gradient-to-b from-[#fee4d4] via-transparent to-transparent opacity-[0.98]" />
+        <div className="absolute left-[49.7%] top-[22.1%] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#ed995e] bg-[#e97d35] shadow-[0_0_0_8px_rgba(242,154,98,0.2),0_12px_24px_rgba(232,124,55,0.28)]" />
+        <div className="absolute left-[49.7%] top-[48.6%] h-[154px] w-[154px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.16)_0%,_rgba(244,177,132,0.075)_34%,_rgba(255,255,255,0)_72%)]" />
+        <div className="absolute left-[49.7%] top-[48.6%] h-[122px] w-[122px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/95 shadow-[0_0_38px_rgba(239,146,86,0.1)]" />
+        <div className="absolute left-[49.7%] top-[48.6%] h-[88px] w-[88px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efc7aa]/88 shadow-[0_0_20px_rgba(239,146,86,0.1)]" />
+        {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
 
           return (
-          <div key={node.id}>
-            <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#bbc6d3] via-[#d6dee8] to-transparent opacity-[0.985]`} aria-hidden />
-            <button
-              type="button"
-              onClick={() => {
-                if (nextIndex >= 0) {
-                  onSelect(nextIndex);
-                }
-              }}
-              className={`absolute ${node.position} flex flex-col items-center gap-2.5 text-center transition hover:scale-[1.02]`}
-            >
-              <span className={`flex items-center justify-center rounded-full border text-[1.02rem] font-semibold backdrop-blur ${isActive ? node.activeRingClass : node.ringClass}`}>
-                {node.icon}
-              </span>
-              <span className={`text-[11px] font-medium leading-[1.35] sm:text-[0.82rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
-            </button>
-          </div>
+            <div key={node.id}>
+              <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#b8c4d1] via-[#d4dce6] to-transparent opacity-[0.985]`} aria-hidden />
+              <button
+                type="button"
+                onClick={() => {
+                  if (nextIndex >= 0) {
+                    onSelect(nextIndex);
+                  }
+                }}
+                className={`absolute ${node.position} flex flex-col items-center gap-2 text-center transition hover:scale-[1.02]`}
+              >
+                <span className={`flex items-center justify-center rounded-full border text-[1.02rem] font-semibold backdrop-blur ${isActive ? node.activeRingClass : node.ringClass}`}>
+                  {node.icon}
+                </span>
+                <span className={`text-[10px] font-medium leading-[1.28] sm:text-[0.78rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
+              </button>
+            </div>
           );
         })}
       </div>
@@ -303,7 +303,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="text-center text-[9px] font-medium uppercase tracking-[0.14em] text-[#b7bcc6] sm:text-[10px] sm:tracking-[0.16em]">
+                      <span className="text-center text-[8px] font-medium uppercase tracking-[0.1em] text-[#9aa3ae] sm:text-[9px] sm:tracking-[0.12em]">
                         {previewContent.chartLabels[index] ?? `Q${index + 1}`}
                       </span>
                     </div>
@@ -358,7 +358,7 @@ function AuthCard() {
   return (
     <aside
       id="auth-card"
-      className="mx-auto w-full max-w-[334px] rounded-[1.95rem] border border-[#eef1f4] bg-white/98 px-[1rem] py-[0.98rem] shadow-[0_18px_48px_rgba(241,180,135,0.11),0_12px_30px_rgba(15,23,42,0.06)] sm:px-[1.04rem] sm:py-[1.05rem]"
+      className="mx-auto w-full max-w-[328px] rounded-[1.95rem] border border-[#eef1f4] bg-white/98 px-[1rem] py-[0.98rem] shadow-[0_18px_48px_rgba(241,180,135,0.11),0_12px_30px_rgba(15,23,42,0.06)] sm:px-[1.04rem] sm:py-[1.05rem]"
     >
       <div className="mx-auto w-full max-w-[318px]">
         <div className="rounded-[1.42rem] border border-[#eceff4] bg-white/96 p-1 shadow-[0_10px_25px_rgba(15,23,42,0.04)]">
@@ -570,7 +570,7 @@ function BestCases() {
             <div className="mx-auto mt-11 max-w-[498px] rounded-[1.72rem] border border-white/10 bg-[#161a22]/92 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-5">
               <div className="flex items-center justify-between border-b border-white/8 pb-3">
                 <div>
-                    <p className="text-sm font-semibold text-white">{activeFrame.summaryTitle}</p>
+                  <p className="text-sm font-semibold text-white">{activeFrame.summaryTitle}</p>
                   <p className="mt-1 text-xs text-[#8e95a2]">Stakeholder-ready synthesis</p>
                 </div>
                 <span className="rounded-full border border-[#f0a467]/25 bg-[#f0a467]/12 px-3 py-1 text-[11px] text-[#f4b17b]">
@@ -703,7 +703,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_324px] lg:items-start lg:gap-[3.7rem] xl:grid-cols-[minmax(0,0.99fr)_334px] xl:gap-[4.05rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_324px] lg:items-start lg:gap-[3.9rem] xl:grid-cols-[minmax(0,0.985fr)_328px] xl:gap-[4.25rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
