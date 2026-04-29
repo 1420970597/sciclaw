@@ -78,10 +78,10 @@ function Header() {
   return (
     <header className="pt-7 sm:pt-8.5">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-9">
-        <nav aria-label="Primary" className="flex items-center gap-[0.28rem] sm:gap-[0.26rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.22rem] sm:gap-[0.24rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="h-[2.02rem] w-[2.02rem] border-[#e2d7c8] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(245,239,231,0.985)_100%)] text-[#606872] shadow-[0_7px_16px_rgba(15,23,42,0.042),inset_0_1px_0_rgba(255,255,255,0.985)] hover:-translate-y-0.5 hover:border-[#d9cdbc] hover:text-[#171b22]"
+            buttonClassName="border-[#e2d7c8] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(245,239,231,0.985)_100%)] text-[#606872] shadow-[0_6px_14px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.985)] hover:-translate-y-0.5 hover:border-[#d9cdbc] hover:text-[#171b22]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,8 +98,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[15.6%] top-[7.1%] sm:left-[15.6%] sm:top-[7.1%]",
-        lineClass: "left-[42.65%] top-[29.2%] h-px w-[26.6%] origin-left rotate-[223deg]",
+        position: "left-[16.8%] top-[6.6%] sm:left-[16.8%] sm:top-[6.6%]",
+        lineClass: "left-[43.1%] top-[28.8%] h-px w-[27.8%] origin-left rotate-[223deg]",
         ringClass: "h-[4.08rem] w-[4.08rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_18px_38px_rgba(15,23,42,0.064)]",
         activeRingClass: "h-[4.42rem] w-[4.42rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_12px_rgba(240,142,79,0.112),0_22px_42px_rgba(240,142,79,0.17)]",
         labelClass: "max-w-[112px] text-[#98a2ae]",
@@ -109,8 +109,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[14.6%] top-[64.8%] sm:left-[14.6%] sm:top-[64.8%]",
-        lineClass: "left-[41.95%] top-[52.4%] h-px w-[27.2%] origin-left rotate-[142deg]",
+        position: "left-[16.1%] top-[65.2%] sm:left-[16.1%] sm:top-[65.2%]",
+        lineClass: "left-[42.5%] top-[52.7%] h-px w-[28.1%] origin-left rotate-[142deg]",
         ringClass: "h-[4.08rem] w-[4.08rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_18px_38px_rgba(15,23,42,0.064)]",
         activeRingClass: "h-[4.42rem] w-[4.42rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_12px_rgba(240,142,79,0.112),0_22px_42px_rgba(240,142,79,0.17)]",
         labelClass: "max-w-[112px] text-[#98a2ae]",
@@ -120,8 +120,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[7.9%] top-[24.2%] sm:right-[7.9%] sm:top-[24.2%]",
-        lineClass: "left-[52.9%] top-[37.6%] h-px w-[25.6%] origin-left rotate-[0deg]",
+        position: "right-[9.1%] top-[23.4%] sm:right-[9.1%] sm:top-[23.4%]",
+        lineClass: "left-[53.3%] top-[36.8%] h-px w-[26.9%] origin-left rotate-[0deg]",
         ringClass: "h-[4.08rem] w-[4.08rem] border-[#e6ecf3] bg-white/98 text-[#b8c0ca] shadow-[0_18px_38px_rgba(15,23,42,0.064)]",
         activeRingClass: "h-[4.42rem] w-[4.42rem] border-[#f8c7a0] bg-[linear-gradient(180deg,#fffaf5_0%,#ffe4cf_100%)] text-[#ec853b] shadow-[0_0_0_12px_rgba(240,142,79,0.112),0_22px_42px_rgba(240,142,79,0.17)]",
         labelClass: "max-w-[116px] text-[#98a2ae]",
@@ -132,7 +132,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
   );
 
   return (
-      <div className="relative min-h-[312px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_49%,_rgba(255,255,255,0.92),_rgba(255,255,255,0)_58%)] sm:min-h-[362px]">
+      <div className="relative min-h-[320px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_47%_49%,_rgba(255,255,255,0.92),_rgba(255,255,255,0)_58%)] sm:min-h-[368px]">
         <div className="absolute inset-0 opacity-[0.99]">
           <div className="absolute left-[24.4%] top-[13.1%] h-1.5 w-1.5 rounded-full bg-[#d4dae2]" />
           <div className="absolute left-[31.3%] top-[43.4%] h-1.5 w-1.5 rounded-full bg-[#d4dae2]" />

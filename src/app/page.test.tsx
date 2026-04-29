@@ -170,24 +170,23 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("renders circular top utility triggers with tighter spacing and first-level menu labels", () => {
+  it("keeps the utility triggers compact while preserving the settings menu contract and nudges the hero cluster closer to the live-site composition", () => {
     render(<Home />);
 
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
     const settingsTrigger = within(primaryNav).getByRole("button", { name: /settings/i });
-
     const triggerRow = settingsTrigger.parentElement?.parentElement;
-    const navRow = primaryNav;
+    const literatureNode = screen.getByRole("button", { name: /^文 literature analysis$/i });
+    const dataMiningNode = screen.getByRole("button", { name: /^数 data mining$/i });
+    const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
+    const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("rounded-full");
-    expect(settingsTrigger).toHaveClass("h-[2.02rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.02rem]");
-    expect(triggerRow).toHaveClass("gap-3");
-    expect(navRow).toHaveClass("gap-[0.28rem]");
-    expect(navRow).toHaveClass("sm:gap-[0.26rem]");
-    expect(screen.getByRole("button", { name: /^文 literature analysis$/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^数 data mining$/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^果 outcome present$/i })).toBeInTheDocument();
+    expect(settingsTrigger).toHaveClass("h-[2.75rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.75rem]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_6px_14px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.985)]");
+    expect(triggerRow).toHaveClass("gap-[0.42rem]");
+    expect(primaryNav).toHaveClass("gap-[0.22rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.24rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -196,6 +195,14 @@ describe("Home landing page", () => {
     expect(within(settingsMenu).getByRole("menuitem", { name: /language/i })).toBeInTheDocument();
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
+
+    expect(featureNetwork).toHaveClass("min-h-[320px]");
+    expect(literatureNode).toHaveClass("left-[16.8%]");
+    expect(literatureNode).toHaveClass("top-[6.6%]");
+    expect(dataMiningNode).toHaveClass("left-[16.1%]");
+    expect(dataMiningNode).toHaveClass("top-[65.2%]");
+    expect(outcomeNode).toHaveClass("right-[9.1%]");
+    expect(outcomeNode).toHaveClass("top-[23.4%]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
