@@ -199,10 +199,22 @@ describe("Home landing page", () => {
     expect(featureNetwork).toHaveClass("min-h-[320px]");
     expect(literatureNode).toHaveClass("left-[23.3%]");
     expect(literatureNode).toHaveClass("top-[1.4%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[4.46rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[4.46rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("border-[#f6ba90]");
+    expect(literatureNode.firstElementChild).toHaveClass("text-[#eb7f32]");
     expect(dataMiningNode).toHaveClass("left-[22.8%]");
     expect(dataMiningNode).toHaveClass("top-[54.9%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.16rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[4.16rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#d8e0ea]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#aeb8c4]");
     expect(outcomeNode).toHaveClass("right-[16.4%]");
     expect(outcomeNode).toHaveClass("top-[15.5%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[4.16rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[4.16rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#d8e0ea]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#aeb8c4]");
   });
 
   it("renders the footer copy centered to match the public landing page", () => {
