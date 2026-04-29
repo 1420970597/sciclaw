@@ -57,7 +57,7 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_340px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_332px]");
     expect(screen.getByRole("complementary")).toHaveClass("max-w-[368px]");
   });
 
@@ -165,13 +165,18 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /settings/i })).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("renders rounded-square top utility triggers and first-level menu labels", () => {
+  it("renders circular top utility triggers with tighter spacing and first-level menu labels", () => {
     render(<Home />);
 
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
     const settingsTrigger = within(primaryNav).getByRole("button", { name: /settings/i });
 
+    const triggerRow = settingsTrigger.parentElement?.parentElement;
+
     expect(settingsTrigger).toHaveClass("rounded-full");
+    expect(settingsTrigger).toHaveClass("h-[2.28rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.28rem]");
+    expect(triggerRow).toHaveClass("gap-3");
 
     fireEvent.click(settingsTrigger);
 
@@ -192,12 +197,18 @@ describe("Home landing page", () => {
     expect(footer.firstElementChild).toHaveClass("text-center");
   });
 
-  it("matches the live site best-cases default slide and keeps next/previous order aligned", () => {
+  it("matches the live site best-cases default slide and keeps the section vertically airy", () => {
     render(<Home />);
 
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getAllByText(/automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+
+    const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
+    const bestCasesSection = bestCasesHeading.closest("section");
+
+    expect(bestCasesSection).toHaveClass("mt-16");
+    expect(bestCasesSection).toHaveClass("sm:mt-[4.6rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 

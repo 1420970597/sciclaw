@@ -78,7 +78,7 @@ function Header() {
   return (
     <header className="pt-8 sm:pt-10">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-6 sm:px-8 lg:px-10">
-        <nav aria-label="Primary" className="flex items-center gap-3 sm:gap-3.5">
+        <nav aria-label="Primary" className="flex items-center gap-2.5 sm:gap-3">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             buttonClassName="border-[#ece3d8]/96 bg-[linear-gradient(180deg,rgba(255,255,255,0.985)_0%,rgba(247,241,233,0.97)_100%)] text-[#666c75] shadow-[0_16px_32px_rgba(15,23,42,0.075),inset_0_1px_0_rgba(255,255,255,0.96)] hover:-translate-y-0.5 hover:border-[#e5d7ca] hover:text-[#1e2229]"
@@ -550,8 +550,8 @@ function BestCases() {
   };
 
   return (
-    <section className="mt-14 sm:mt-16">
-      <div className="mb-10 flex flex-col items-center gap-3 text-center">
+    <section className="mt-16 sm:mt-[4.6rem]">
+      <div className="mb-9 flex flex-col items-center gap-3 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
         </h2>
@@ -701,7 +701,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-8 xl:grid-cols-[minmax(0,0.99fr)_350px] xl:gap-10" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_332px] lg:items-start lg:gap-10 xl:grid-cols-[minmax(0,0.99fr)_342px] xl:gap-[3.15rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
