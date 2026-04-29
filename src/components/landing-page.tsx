@@ -223,12 +223,9 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
       ctaLabel: "Get started",
     },
   } as const;
-  const heroDefaultContent = previewMap["autonomous-execution"];
-  const isDefaultLandingState = activeIndex === 1;
-  const previewContent =
-    activeFeature.id === "data-mining"
-      ? heroDefaultContent
-      : previewMap[activeFeature.id as keyof typeof previewMap] ?? previewMap["data-mining"];
+  const heroDefaultContent = previewMap["literature-analysis"];
+  const isDefaultLandingState = activeIndex === 0;
+  const previewContent = previewMap[activeFeature.id as keyof typeof previewMap] ?? previewMap["literature-analysis"];
   const bars =
     activeIndex === 0
       ? [56, 84, 104, 88]
@@ -383,7 +380,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
 }
 
 function FeatureRotator() {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     if (typeof window === "undefined") {

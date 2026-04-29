@@ -2,6 +2,21 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import Home from "@/app/page";
 
 describe("Home landing page", () => {
+  it("shows the public homepage default hero state on fresh load", () => {
+    render(<Home />);
+
+    expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
+    expect(
+      screen.getByText(
+        /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
+    expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
+    expect(screen.getByText(/33%/i)).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
+  });
+
   it("renders the public-inspired landing structure", () => {
     render(<Home />);
 
@@ -14,10 +29,9 @@ describe("Home landing page", () => {
         /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
-    expect(screen.getByText(/33%/i)).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();
@@ -113,7 +127,7 @@ describe("Home landing page", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
-    expect(screen.getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
     ).length).toBeGreaterThanOrEqual(2);
