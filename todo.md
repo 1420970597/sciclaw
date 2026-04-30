@@ -11,6 +11,8 @@
 - [x] 建立 landing 页面首版与基础测试
 
 ## Phase B — Landing 高保真复刻（P0）
+- [x] 本轮继续做一次 hero 耦合与 subtle-control 收敛：轻微减薄顶部 utility circles 的阴影/厚重感但略增边框与图标存在感，避免 fresh-load browser QA 中“太虚”观感；同时将左侧 radial cluster 三枚外围节点整体向中部回收、缩短 connector 路径并提高非激活标签对比度，再同步收紧 hero 与 auth card 的大屏 gap，减少 cluster 相对中部 preview 的 detached 感。该里程碑已通过 `pnpm test -- src/app/page.test.tsx`（实际仍复跑 4 个 Vitest 文件）、`pnpm lint`、`pnpm build`、`docker compose config`、`docker compose up -d --build`、Python HTTP 200 校验 `/` `/chat` `/help/getting-started`、静态安全扫描、独立 reviewer 与 fresh-load browser QA。最新 QA 认为 utility circles 已不再过于 subtle、整体无 clipping/overlap，左侧 cluster 与中部 preview 的关系更自然；剩余最明显差距已收敛为 cluster 相对 live site 仍略偏轻、略偏左，下一轮继续优先做 cluster 权重与横向构图的更小步对齐。
+
 - [x] 本轮继续完成一轮 hero 微排版/耦合收敛：轻微放松顶部 utility circles 与 shared dock gap、减轻按钮边框/阴影厚重感；同时把左侧 radial cluster 三枚外围节点小幅回收并重算 connector 角度/长度、提升非激活标签对比度；再将 preview 右下微型柱状图标签从较长词缩写为 `Meth. / Result / Data / Evid.`，收窄字距并限制单列宽度，消除 browser QA 中最明显的底部 tiny-label 碰撞。该里程碑已通过 `pnpm test -- src/app/page.test.tsx`（实际仍复跑 4 个 Vitest 文件）、`pnpm lint`、`pnpm build`、`docker compose config`、`docker compose up -d --build`、Python HTTP 200 校验 `/` `/chat` `/help/getting-started`、静态安全扫描、独立 reviewer，以及 fresh-load browser QA；最新 QA 认为 tiny labels 已不再明显碰撞，整体无 clipping/overlap 阻塞项，剩余差距主要转为 live site 相比下的微字锐度与 hero 精修问题，可在下一轮继续小步收敛。
 
 - [x] 完成 dark hero、feature rotator、嵌入式 auth card、best-cases 区块、footer 首版

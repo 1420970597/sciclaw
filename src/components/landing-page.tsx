@@ -81,7 +81,7 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.38rem] pr-[0.12rem] sm:gap-[0.52rem] sm:pr-[0.16rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[rgba(0,0,0,0.098)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,246,241,0.994)_100%)] text-[#556270] shadow-[0_1px_2px_rgba(15,23,42,0.038),0_3px_7px_rgba(15,23,42,0.02),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.138)] hover:text-[#1d222a]"
+            buttonClassName="border-[rgba(0,0,0,0.11)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,246,241,0.994)_100%)] text-[#4f5d6a] shadow-[0_1px_2px_rgba(15,23,42,0.03),0_2px_5px_rgba(15,23,42,0.014),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.148)] hover:text-[#1d222a]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,33 +98,33 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[19.2%] top-[14.8%] sm:left-[19.2%] sm:top-[14.8%]",
-        lineClass: "left-[43.8%] top-[29.8%] h-[1px] w-[15.6%] origin-left rotate-[205deg]",
+        position: "left-[22.2%] top-[15.2%] sm:left-[22.2%] sm:top-[15.2%]",
+        lineClass: "left-[44.8%] top-[30.1%] h-[1px] w-[14.3%] origin-left rotate-[206deg]",
         ringClass: "h-[3.14rem] w-[3.14rem] border-[#8ca0b1] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
         activeRingClass: "h-[3.21rem] w-[3.21rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
-        labelClass: "max-w-[60px] text-[#415565] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
+        labelClass: "max-w-[60px] text-[#3d5262] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
         activeLabelClass: "max-w-[60px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[19.4%] top-[63.5%] sm:left-[19.4%] sm:top-[63.5%]",
-        lineClass: "left-[43.6%] top-[46.7%] h-[1px] w-[15.9%] origin-left rotate-[149deg]",
+        position: "left-[22.6%] top-[61.8%] sm:left-[22.6%] sm:top-[61.8%]",
+        lineClass: "left-[44.5%] top-[46.5%] h-[1px] w-[14.5%] origin-left rotate-[150deg]",
         ringClass: "h-[3.14rem] w-[3.14rem] border-[#8ca0b1] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
         activeRingClass: "h-[3.21rem] w-[3.21rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
-        labelClass: "max-w-[60px] text-[#415565] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
+        labelClass: "max-w-[60px] text-[#3d5262] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
         activeLabelClass: "max-w-[60px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[13.4%] top-[14.4%] sm:right-[13.4%] sm:top-[14.4%]",
-        lineClass: "left-[50.2%] top-[30.8%] h-[1px] w-[15.5%] origin-left rotate-[18deg]",
+        position: "right-[16.2%] top-[15.1%] sm:right-[16.2%] sm:top-[15.1%]",
+        lineClass: "left-[50.1%] top-[30.9%] h-[1px] w-[14.2%] origin-left rotate-[19deg]",
         ringClass: "h-[3.14rem] w-[3.14rem] border-[#8ca0b1] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
         activeRingClass: "h-[3.21rem] w-[3.21rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
-        labelClass: "max-w-[60px] text-[#415565] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
+        labelClass: "max-w-[60px] text-[#3d5262] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
         activeLabelClass: "max-w-[60px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
       },
     ],
@@ -705,7 +705,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-[3.1rem] xl:grid-cols-[minmax(0,0.99fr)_320px] xl:gap-[3.38rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-[2.68rem] xl:grid-cols-[minmax(0,0.99fr)_320px] xl:gap-[3.02rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
