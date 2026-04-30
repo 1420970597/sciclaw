@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   appShellCards,
   appShellExportAssets,
@@ -12,6 +11,7 @@ import {
   type AppShellSection,
   type AppShellStatusPill,
 } from "@/app/landing-data";
+import Link from "next/link";
 
 function StatusPill({ pill }: { pill: AppShellStatusPill }) {
   const toneClass =
@@ -30,7 +30,7 @@ function StatusPill({ pill }: { pill: AppShellStatusPill }) {
 
 function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
   return (
-    <aside className="xl:sticky xl:top-8 xl:self-start rounded-[2rem] border border-[#ece7de] bg-white/92 p-5 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+    <aside className="rounded-[2rem] border border-[#ece7de] bg-white/92 p-5 shadow-[0_24px_60px_rgba(15,23,42,0.08)] xl:sticky xl:top-8 xl:self-start">
       <div className="flex items-center justify-between border-b border-[#f2eee7] pb-4">
         <div>
           <p className="text-sm font-semibold text-[#2d2d2d]">
