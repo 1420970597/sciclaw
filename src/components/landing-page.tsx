@@ -81,7 +81,7 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.62rem] pr-[0.08rem] sm:gap-[0.78rem] sm:pr-[0.12rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[rgba(0,0,0,0.178)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,246,241,0.993)_100%)] text-[#2d4356] shadow-[0_1px_2px_rgba(15,23,42,0.016),0_4px_8px_rgba(15,23,42,0.016),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.198)] hover:text-[#14202c]"
+            buttonClassName="border-[rgba(0,0,0,0.19)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.994)_100%)] text-[#31495d] shadow-[0_1px_2px_rgba(15,23,42,0.012),0_3px_6px_rgba(15,23,42,0.012),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.21)] hover:text-[#182633]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[57.2%] top-[18.4%] sm:left-[57.2%] sm:top-[18.4%]",
-        lineClass: "left-[51.18%] top-[33.66%] h-[2.02px] w-[7.08%] origin-left rotate-[186deg]",
-        ringClass: "h-[4.56rem] w-[4.56rem] border-[#476379] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#173245] shadow-[0_20px_34px_rgba(15,23,42,0.138)]",
-        activeRingClass: "h-[4.64rem] w-[4.64rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_20px_35px_rgba(232,124,55,0.114)]",
-        labelClass: "max-w-[134px] text-[#1b4054] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[112px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.044)]",
+        position: "left-[56.15%] top-[17.3%] sm:left-[56.15%] sm:top-[17.3%]",
+        lineClass: "left-[50.88%] top-[32.68%] h-[1.9px] w-[6.62%] origin-left rotate-[186deg]",
+        ringClass: "h-[4.72rem] w-[4.72rem] border-[#51697d] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_18px_30px_rgba(15,23,42,0.118)]",
+        activeRingClass: "h-[4.8rem] w-[4.8rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_18px_30px_rgba(232,124,55,0.09)]",
+        labelClass: "max-w-[126px] text-[#27485f] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[106px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.038)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[57.35%] top-[46.6%] sm:left-[57.35%] sm:top-[46.6%]",
-        lineClass: "left-[51.1%] top-[43.56%] h-[2.02px] w-[7.16%] origin-left rotate-[160deg]",
-        ringClass: "h-[4.56rem] w-[4.56rem] border-[#476379] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#173245] shadow-[0_20px_34px_rgba(15,23,42,0.138)]",
-        activeRingClass: "h-[4.64rem] w-[4.64rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_20px_35px_rgba(232,124,55,0.114)]",
-        labelClass: "max-w-[134px] text-[#1b4054] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[112px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.044)]",
+        position: "left-[56.25%] top-[44.9%] sm:left-[56.25%] sm:top-[44.9%]",
+        lineClass: "left-[50.82%] top-[42.28%] h-[1.9px] w-[6.7%] origin-left rotate-[160deg]",
+        ringClass: "h-[4.72rem] w-[4.72rem] border-[#51697d] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_18px_30px_rgba(15,23,42,0.118)]",
+        activeRingClass: "h-[4.8rem] w-[4.8rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_18px_30px_rgba(232,124,55,0.09)]",
+        labelClass: "max-w-[126px] text-[#27485f] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[106px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.038)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[29.45%] top-[18.45%] sm:right-[29.45%] sm:top-[18.45%]",
-        lineClass: "left-[50.06%] top-[33.7%] h-[2.02px] w-[6.96%] origin-left rotate-[30deg]",
-        ringClass: "h-[4.56rem] w-[4.56rem] border-[#476379] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#173245] shadow-[0_20px_34px_rgba(15,23,42,0.138)]",
-        activeRingClass: "h-[4.64rem] w-[4.64rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_20px_35px_rgba(232,124,55,0.114)]",
-        labelClass: "max-w-[134px] text-[#1b4054] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[112px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.044)]",
+        position: "right-[27.9%] top-[17.25%] sm:right-[27.9%] sm:top-[17.25%]",
+        lineClass: "left-[49.92%] top-[32.82%] h-[1.9px] w-[6.38%] origin-left rotate-[30deg]",
+        ringClass: "h-[4.72rem] w-[4.72rem] border-[#51697d] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_18px_30px_rgba(15,23,42,0.118)]",
+        activeRingClass: "h-[4.8rem] w-[4.8rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_18px_30px_rgba(232,124,55,0.09)]",
+        labelClass: "max-w-[126px] text-[#27485f] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[106px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.038)]",
       },
     ],
     [],
@@ -138,21 +138,21 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         <div className="absolute left-[29.8%] top-[45.5%] h-[1.5px] w-[1.5px] rounded-full bg-[#aebdcb]" />
         <div className="absolute left-[57.2%] top-[23.8%] h-[1.5px] w-[1.5px] rounded-full bg-[#b5c2cf]" />
         <div className="absolute left-[58.8%] top-[43.2%] h-[1.5px] w-[1.5px] rounded-full bg-[#b8c4d0]" />
-        <div className="absolute left-[49.25%] top-[21.2%] h-[126px] w-[1.2px] bg-gradient-to-b from-[#e18b4d] via-[#d36925] to-transparent opacity-[0.95]" />
-        <div className="absolute left-[50.05%] top-[21.2%] h-[126px] w-[1.14px] bg-gradient-to-b from-[#fff2e6] via-[#fff6ef]/22 to-transparent opacity-[0.34]" />
-        <div className="absolute left-[49.65%] top-[20.55%] h-[0.94rem] w-[0.94rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.0043)_0%,_rgba(244,177,132,0.0014)_34%,_rgba(255,255,255,0)_68%)]" />
-        <div className="absolute left-[49.65%] top-[20.55%] h-[1.2rem] w-[1.2rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,242,231,0.049)_0%,_rgba(255,242,231,0)_75%)]" />
-        <div className="absolute left-[49.65%] top-[20.55%] h-[4.1px] w-[4.1px] -translate-x-1/2 rounded-full border border-[#de8b4e] bg-[#d7671e] shadow-[0_0_0_1.6px_rgba(242,154,98,0.016),0_4px_6px_rgba(232,124,55,0.03)]" />
-        <div className="absolute left-[49.65%] top-[46.8%] h-[40px] w-[40px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.0018)_0%,_rgba(244,177,132,0.0006)_30%,_rgba(255,255,255,0)_68%)]" />
-        <div className="absolute left-[49.65%] top-[46.8%] h-[43px] w-[43px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/10 shadow-[0_0_1px_rgba(239,146,86,0.0017)]" />
-        <div className="absolute left-[49.65%] top-[46.8%] h-[29px] w-[29px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efd8c8]/56 shadow-[0_0_1px_rgba(239,146,86,0.001)]" />
+        <div className="absolute left-[49.25%] top-[21.2%] h-[126px] w-[1px] bg-gradient-to-b from-[#df8d53] via-[#d87534] to-transparent opacity-[0.78]" />
+        <div className="absolute left-[50.02%] top-[21.2%] h-[126px] w-[0.96px] bg-gradient-to-b from-[#fff2e6] via-[#fff6ef]/18 to-transparent opacity-[0.24]" />
+        <div className="absolute left-[49.65%] top-[20.55%] h-[0.88rem] w-[0.88rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.0032)_0%,_rgba(244,177,132,0.0011)_34%,_rgba(255,255,255,0)_68%)]" />
+        <div className="absolute left-[49.65%] top-[20.55%] h-[1.08rem] w-[1.08rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,242,231,0.034)_0%,_rgba(255,242,231,0)_75%)]" />
+        <div className="absolute left-[49.65%] top-[20.55%] h-[3.7px] w-[3.7px] -translate-x-1/2 rounded-full border border-[#de8b4e] bg-[#d7671e] shadow-[0_0_0_1.2px_rgba(242,154,98,0.012),0_3px_5px_rgba(232,124,55,0.022)]" />
+        <div className="absolute left-[49.65%] top-[46.8%] h-[35px] w-[35px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(244,177,132,0.0011)_0%,_rgba(244,177,132,0.0004)_30%,_rgba(255,255,255,0)_68%)]" />
+        <div className="absolute left-[49.65%] top-[46.8%] h-[39px] w-[39px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ddb088]/8 shadow-[0_0_1px_rgba(239,146,86,0.0013)]" />
+        <div className="absolute left-[49.65%] top-[46.8%] h-[27px] w-[27px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#efd8c8]/44 shadow-[0_0_1px_rgba(239,146,86,0.0008)]" />
         {nodes.map((node) => {
           const nextIndex = featureItems.findIndex((feature) => feature.id === node.id);
           const isActive = nextIndex === activeIndex;
 
           return (
             <div key={node.id}>
-              <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#61788e] via-[#cad7e1] to-transparent opacity-[0.96]`} aria-hidden />
+              <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#6d8294] via-[#d2dde6] to-transparent opacity-[0.78]`} aria-hidden />
               <button
                 type="button"
                 onClick={() => {
