@@ -209,30 +209,30 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
     expect(settingsTrigger).toHaveAttribute("aria-expanded", "true");
 
-    expect(literatureNode).toHaveClass("left-[53.8%]");
-    expect(literatureNode).toHaveClass("top-[14.9%]");
+    expect(literatureNode).toHaveClass("left-[53.2%]");
+    expect(literatureNode).toHaveClass("top-[14.7%]");
     expect(literatureNode.firstElementChild).toHaveClass("h-[4.68rem]");
     expect(literatureNode.firstElementChild).toHaveClass("w-[4.68rem]");
     expect(literatureNode.firstElementChild).toHaveClass("border-[#dd8f53]");
     expect(literatureNode.firstElementChild).toHaveClass("text-[#ab5018]");
     expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.052),0_16px_28px_rgba(232,124,55,0.087)]");
     expect(literatureNode.lastElementChild).toHaveClass("text-[#8a4215]");
-    expect(dataMiningNode).toHaveClass("left-[54.1%]");
-    expect(dataMiningNode).toHaveClass("top-[40.2%]");
+    expect(dataMiningNode).toHaveClass("left-[53.45%]");
+    expect(dataMiningNode).toHaveClass("top-[39.95%]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.46rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("w-[4.46rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("border-[#587085]");
     expect(dataMiningNode.firstElementChild).toHaveClass("text-[#183246]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("shadow-[0_15px_24px_rgba(15,23,42,0.096)]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#3f596d]");
-    expect(outcomeNode).toHaveClass("right-[24.1%]");
-    expect(outcomeNode).toHaveClass("top-[14.5%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("shadow-[0_14px_22px_rgba(15,23,42,0.092)]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#435d70]");
+    expect(outcomeNode).toHaveClass("right-[23.2%]");
+    expect(outcomeNode).toHaveClass("top-[14.35%]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[4.46rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("w-[4.46rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("border-[#587085]");
     expect(outcomeNode.firstElementChild).toHaveClass("text-[#183246]");
-    expect(outcomeNode.firstElementChild).toHaveClass("shadow-[0_15px_24px_rgba(15,23,42,0.096)]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#3f596d]");
+    expect(outcomeNode.firstElementChild).toHaveClass("shadow-[0_14px_22px_rgba(15,23,42,0.092)]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#435d70]");
     expect(previewSection).not.toBeNull();
 
     const chartLabels = within(landingHero).getAllByText(/^(meth\.|find\.|data|evid\.)$/i).slice(-4);
@@ -240,10 +240,10 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("text-[12.8px]");
-      expect(labelWrapper).toHaveClass("tracking-[0.022em]");
-      expect(labelWrapper).toHaveClass("text-[#526a7c]");
-      expect(label).toHaveClass("max-w-[4.4rem]");
+      expect(labelWrapper).toHaveClass("text-[13px]");
+      expect(labelWrapper).toHaveClass("tracking-[0.014em]");
+      expect(labelWrapper).toHaveClass("text-[#51697b]");
+      expect(label).toHaveClass("max-w-[4.58rem]");
       expect(label).toHaveClass("text-balance");
     });
   });
