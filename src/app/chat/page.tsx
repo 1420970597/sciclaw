@@ -152,8 +152,15 @@ function SessionTimeline() {
           <div className="grid gap-4 md:grid-cols-3">
             {appShellCards.map((card) => (
               <article key={card.title} className="rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
-                <h3 className="mt-2 text-base font-semibold text-[#1f1f1f]">{card.title}</h3>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
+                    <h3 className="mt-2 text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                  </div>
+                  <span className="shrink-0 rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
+                    {card.meta}
+                  </span>
+                </div>
                 <p className="mt-3 text-sm leading-6 text-[#6c6459]">{card.description}</p>
               </article>
             ))}
@@ -217,7 +224,7 @@ function SessionTimeline() {
             </div>
           </section>
 
-          <div className="space-y-4">
+          <div className="space-y-5">
             <section className="rounded-[1.85rem] border border-[#efe6da] bg-[#fffdfa] p-5 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
               <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-4">
                 <div>
@@ -245,7 +252,7 @@ function SessionTimeline() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 space-y-2">
+                  <div className="mt-4 grid gap-2 sm:grid-cols-3 2xl:grid-cols-1">
                     {appShellOutputSignals.map((signal) => (
                       <div key={signal.label} className="rounded-[1.15rem] border border-[#f4ece2] bg-[#fcfaf7] px-3 py-3">
                         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]">{signal.label}</p>
@@ -263,16 +270,23 @@ function SessionTimeline() {
                     </div>
                     <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">Ready</span>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-[#6c6459]">
-                    Bundle project memory, selected sessions, and verified charts into one concise output stream for downstream review.
-                  </p>
-                  <div className="mt-4 grid gap-2 text-xs text-[#8f8578]">
-                    {appShellExportAssets.map((asset) => (
-                      <div key={asset.label} className="rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">
-                        <p className="font-medium text-[#5e564c]">{asset.label}</p>
-                        <p className="mt-1 leading-5 text-[#8f8578]">{asset.description}</p>
-                      </div>
-                    ))}
+                  <div className="mt-4 space-y-3 text-sm text-[#6c6459]">
+                    <p>
+                      Bundle project memory, selected sessions, and verified charts into one concise output stream for downstream review.
+                    </p>
+                    <div className="space-y-2 text-xs text-[#8f8578]">
+                      {appShellExportAssets.map((asset) => (
+                        <div key={asset.label} className="flex items-start justify-between gap-3 rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">
+                          <div>
+                            <p className="font-medium text-[#5e564c]">{asset.label}</p>
+                            <p className="mt-1 leading-5 text-[#8f8578]">{asset.description}</p>
+                          </div>
+                          <span className="mt-0.5 shrink-0 rounded-full bg-[#fcf1e4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#c27d3f]">
+                            Export
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </article>
               </div>

@@ -78,6 +78,7 @@ export type AppShellCard = {
   eyebrow: string;
   title: string;
   description: string;
+  meta: string;
 };
 
 export type AppShellOutputSignal = {
@@ -261,21 +262,24 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
-    title: "Keep uploaded evidence and generated outputs attached to one durable workspace.",
+    title: "Ground every active session in one durable project workspace.",
     description:
-      "Mirror the public docs mental model: every research initiative owns its own files, skills, outputs, and long-horizon execution history.",
+      "Keep uploads, memory, enabled skills, and downstream outputs attached to the same research track so each thread starts with the right evidence.",
+    meta: "128 assets · 6 skills",
   },
   {
     eyebrow: "Session selector",
-    title: "Split each investigation into named sessions without losing project memory.",
+    title: "Move between active threads without dropping prior reasoning.",
     description:
-      "Use the top bar to search prior sessions, spin up a fresh thread, or return to a report-building sequence after another task completes.",
+      "Search previous runs, reopen a session checkpoint, or launch a new analysis lane while the rest of the workspace stays intact.",
+    meta: "3 live threads",
   },
   {
     eyebrow: "Foundry handoff",
-    title: "Promote validated threads into presentation-ready briefs and evidence packs.",
+    title: "Ship validated work into reviewer-ready outputs with one clear handoff.",
     description:
-      "The app shell makes it clear how work moves from active chat and tasks into outward-facing deliverables for stakeholders.",
+      "Surface the active answer, open risk, and export bundle so the transition from session work to stakeholder deliverables is explicit.",
+    meta: "12 export-ready assets",
   },
 ];
 

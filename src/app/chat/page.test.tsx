@@ -19,6 +19,8 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/project & session flow mirrored from the public docs ia/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a product-like narrative before the foundry export starts/i)).toBeInTheDocument();
+    expect(screen.getByText(/ground every active session in one durable project workspace/i)).toBeInTheDocument();
+    expect(screen.getByText(/ship validated work into reviewer-ready outputs with one clear handoff/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -49,6 +51,9 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/library · 128 assets/i)).toBeInTheDocument();
     expect(screen.getByText(/activity · 14 day streak/i)).toBeInTheDocument();
     expect(screen.getByText(/skills · 6 enabled/i)).toBeInTheDocument();
+    expect(screen.getByText(/128 assets · 6 skills/i)).toBeInTheDocument();
+    expect(screen.getByText(/3 live threads/i)).toBeInTheDocument();
+    expect(screen.getByText(/12 export-ready assets/i)).toBeInTheDocument();
     expect(screen.getByText(/patent landscaping · comparative thread/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical diligence · session replay/i)).toBeInTheDocument();
     expect(screen.getByText(/regulatory memo · final synthesis/i)).toBeInTheDocument();
@@ -98,5 +103,6 @@ describe("Chat app shell placeholder", () => {
     expect(foundryScope.getByText(/linked citations, figures, and extracted notes bundled for review/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/slides handoff/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/presentation-ready talking points routed into foundry/i)).toBeInTheDocument();
+    expect(within(foundryCard as HTMLElement).getAllByText(/^export$/i)).toHaveLength(3);
   });
 });
