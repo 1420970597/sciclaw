@@ -81,7 +81,7 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.56rem] pr-[0.08rem] sm:gap-[0.72rem] sm:pr-[0.12rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[rgba(0,0,0,0.142)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,246,241,0.993)_100%)] text-[#3f4d5c] shadow-[0_1px_2px_rgba(15,23,42,0.015),0_2px_4px_rgba(15,23,42,0.006),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.16)] hover:text-[#1d242b]"
+            buttonClassName="border-[rgba(0,0,0,0.152)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,246,241,0.993)_100%)] text-[#34485b] shadow-[0_1px_2px_rgba(15,23,42,0.012),0_2px_4px_rgba(15,23,42,0.005),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.17)] hover:text-[#16212c]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[52.35%] top-[18.45%] sm:left-[52.35%] sm:top-[18.45%]",
-        lineClass: "left-[50.12%] top-[33.95%] h-[1.82px] w-[4.22%] origin-left rotate-[188deg]",
-        ringClass: "h-[4.16rem] w-[4.16rem] border-[#50677d] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#213c4d] shadow-[0_13px_26px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.24rem] w-[4.24rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.054),0_15px_28px_rgba(232,124,55,0.09)]",
-        labelClass: "max-w-[108px] text-[#2f4d63] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[102px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
+        position: "left-[53.45%] top-[18.7%] sm:left-[53.45%] sm:top-[18.7%]",
+        lineClass: "left-[50.02%] top-[34.2%] h-[1.9px] w-[5.4%] origin-left rotate-[187deg]",
+        ringClass: "h-[4.2rem] w-[4.2rem] border-[#486277] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#203949] shadow-[0_14px_26px_rgba(15,23,42,0.1)]",
+        activeRingClass: "h-[4.28rem] w-[4.28rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.056),0_15px_28px_rgba(232,124,55,0.095)]",
+        labelClass: "max-w-[112px] text-[#2a4459] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[104px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.042)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[52.6%] top-[48.55%] sm:left-[52.6%] sm:top-[48.55%]",
-        lineClass: "left-[50.02%] top-[44.28%] h-[1.82px] w-[4.34%] origin-left rotate-[162deg]",
-        ringClass: "h-[4.16rem] w-[4.16rem] border-[#50677d] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#213c4d] shadow-[0_13px_26px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.24rem] w-[4.24rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.054),0_15px_28px_rgba(232,124,55,0.09)]",
-        labelClass: "max-w-[108px] text-[#2f4d63] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[102px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
+        position: "left-[53.55%] top-[48.15%] sm:left-[53.55%] sm:top-[48.15%]",
+        lineClass: "left-[49.98%] top-[44.18%] h-[1.9px] w-[5.52%] origin-left rotate-[161deg]",
+        ringClass: "h-[4.2rem] w-[4.2rem] border-[#486277] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#203949] shadow-[0_14px_26px_rgba(15,23,42,0.1)]",
+        activeRingClass: "h-[4.28rem] w-[4.28rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.056),0_15px_28px_rgba(232,124,55,0.095)]",
+        labelClass: "max-w-[112px] text-[#2a4459] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[104px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.042)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[34.75%] top-[18.6%] sm:right-[34.75%] sm:top-[18.6%]",
-        lineClass: "left-[50.08%] top-[33.98%] h-[1.82px] w-[4.2%] origin-left rotate-[33deg]",
-        ringClass: "h-[4.16rem] w-[4.16rem] border-[#50677d] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#213c4d] shadow-[0_13px_26px_rgba(15,23,42,0.09)]",
-        activeRingClass: "h-[4.24rem] w-[4.24rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.054),0_15px_28px_rgba(232,124,55,0.09)]",
-        labelClass: "max-w-[108px] text-[#2f4d63] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[102px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
+        position: "right-[35.55%] top-[18.85%] sm:right-[35.55%] sm:top-[18.85%]",
+        lineClass: "left-[50.04%] top-[34.26%] h-[1.9px] w-[5.28%] origin-left rotate-[32deg]",
+        ringClass: "h-[4.2rem] w-[4.2rem] border-[#486277] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] text-[#203949] shadow-[0_14px_26px_rgba(15,23,42,0.1)]",
+        activeRingClass: "h-[4.28rem] w-[4.28rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd7bb_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.056),0_15px_28px_rgba(232,124,55,0.095)]",
+        labelClass: "max-w-[112px] text-[#2a4459] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[104px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.042)]",
       },
     ],
     [],
@@ -296,17 +296,17 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[2.3rem] grid grid-cols-4 gap-[1.06rem] pt-[2.62rem] sm:gap-[1.12rem]">
+                <div className="mt-[2.36rem] grid grid-cols-4 gap-[1.22rem] pt-[2.72rem] sm:gap-[1.28rem]">
                   {bars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.84rem] text-center sm:gap-[0.92rem]">
+                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.92rem] text-center sm:gap-[0.98rem]">
                       <div className="flex h-[168px] w-full items-end gap-[0.4rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.62rem] pb-[0.84rem] pt-4">
                         <span
                           className="flex-1 rounded-full bg-[linear-gradient(180deg,#f6bf93_0%,#eb8753_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[3.16rem] w-full min-w-0 items-start justify-center px-[0.08rem] text-center text-[12.5px] font-semibold uppercase leading-[1.32] tracking-[0.009em] text-[#163b52] sm:min-h-[3.12rem] sm:text-[12.65px] sm:tracking-[0.012em]">
-                        <span className="block max-w-[4.4rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[3.34rem] w-full min-w-0 items-start justify-center px-[0.12rem] text-center text-[12.9px] font-semibold uppercase leading-[1.36] tracking-[0.006em] text-[#173d56] sm:min-h-[3.28rem] sm:text-[13.05px] sm:tracking-[0.008em]">
+                        <span className="block max-w-[4.7rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
