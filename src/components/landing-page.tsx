@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[26.2%] top-[17.6%] sm:left-[26.2%] sm:top-[17.6%]",
-        lineClass: "left-[46.4%] top-[32.3%] h-[1.3px] w-[12.7%] origin-left rotate-[208deg]",
-        ringClass: "h-[3.3rem] w-[3.3rem] border-[#7f93a5] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#415360] shadow-[0_4px_10px_rgba(15,23,42,0.04)]",
-        activeRingClass: "h-[3.38rem] w-[3.38rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.034),0_9px_16px_rgba(232,124,55,0.056)]",
-        labelClass: "max-w-[66px] text-[#2f495b] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
-        activeLabelClass: "max-w-[66px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
+        position: "left-[27.3%] top-[18.5%] sm:left-[27.3%] sm:top-[18.5%]",
+        lineClass: "left-[46.9%] top-[32.8%] h-[1.34px] w-[11.7%] origin-left rotate-[207deg]",
+        ringClass: "h-[3.34rem] w-[3.34rem] border-[#72889b] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#3f5160] shadow-[0_5px_11px_rgba(15,23,42,0.046)]",
+        activeRingClass: "h-[3.42rem] w-[3.42rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.038),0_10px_18px_rgba(232,124,55,0.06)]",
+        labelClass: "max-w-[68px] text-[#29475c] drop-shadow-[0_1px_0_rgba(255,255,255,0.97)]",
+        activeLabelClass: "max-w-[68px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[26.3%] top-[57.9%] sm:left-[26.3%] sm:top-[57.9%]",
-        lineClass: "left-[46.1%] top-[45.2%] h-[1.3px] w-[12.9%] origin-left rotate-[149deg]",
-        ringClass: "h-[3.3rem] w-[3.3rem] border-[#7f93a5] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#415360] shadow-[0_4px_10px_rgba(15,23,42,0.04)]",
-        activeRingClass: "h-[3.38rem] w-[3.38rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.034),0_9px_16px_rgba(232,124,55,0.056)]",
-        labelClass: "max-w-[66px] text-[#2f495b] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
-        activeLabelClass: "max-w-[66px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
+        position: "left-[27.4%] top-[56.8%] sm:left-[27.4%] sm:top-[56.8%]",
+        lineClass: "left-[46.6%] top-[45.3%] h-[1.34px] w-[11.9%] origin-left rotate-[150deg]",
+        ringClass: "h-[3.34rem] w-[3.34rem] border-[#72889b] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#3f5160] shadow-[0_5px_11px_rgba(15,23,42,0.046)]",
+        activeRingClass: "h-[3.42rem] w-[3.42rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.038),0_10px_18px_rgba(232,124,55,0.06)]",
+        labelClass: "max-w-[68px] text-[#29475c] drop-shadow-[0_1px_0_rgba(255,255,255,0.97)]",
+        activeLabelClass: "max-w-[68px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[20.1%] top-[18.1%] sm:right-[20.1%] sm:top-[18.1%]",
-        lineClass: "left-[50.1%] top-[32.7%] h-[1.3px] w-[12.4%] origin-left rotate-[20deg]",
-        ringClass: "h-[3.3rem] w-[3.3rem] border-[#7f93a5] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#415360] shadow-[0_4px_10px_rgba(15,23,42,0.04)]",
-        activeRingClass: "h-[3.38rem] w-[3.38rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.034),0_9px_16px_rgba(232,124,55,0.056)]",
-        labelClass: "max-w-[66px] text-[#2f495b] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
-        activeLabelClass: "max-w-[66px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
+        position: "right-[21.2%] top-[18.8%] sm:right-[21.2%] sm:top-[18.8%]",
+        lineClass: "left-[50.1%] top-[32.9%] h-[1.34px] w-[11.6%] origin-left rotate-[21deg]",
+        ringClass: "h-[3.34rem] w-[3.34rem] border-[#72889b] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#3f5160] shadow-[0_5px_11px_rgba(15,23,42,0.046)]",
+        activeRingClass: "h-[3.42rem] w-[3.42rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.038),0_10px_18px_rgba(232,124,55,0.06)]",
+        labelClass: "max-w-[68px] text-[#29475c] drop-shadow-[0_1px_0_rgba(255,255,255,0.97)]",
+        activeLabelClass: "max-w-[68px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
       },
     ],
     [],
@@ -296,16 +296,16 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[2.18rem] grid grid-cols-4 gap-[1.1rem] pt-[2.04rem] sm:gap-[1.34rem]">
+                <div className="mt-[2.16rem] grid grid-cols-4 gap-[1.02rem] pt-[2.18rem] sm:gap-[1.24rem]">
                   {bars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.92rem] text-center sm:gap-[1rem]">
+                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.96rem] text-center sm:gap-[1.04rem]">
                       <div className="flex h-[168px] w-full items-end gap-[0.55rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.72rem] pb-[0.88rem] pt-4">
                         <span
                           className="flex-1 rounded-full bg-[linear-gradient(180deg,#f6bf93_0%,#eb8753_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="w-full max-w-[3.34rem] text-center text-[10.15px] font-medium uppercase leading-[1.62] tracking-[0.145em] text-[#1d3f56] sm:max-w-[3.48rem] sm:text-[10.26px] sm:tracking-[0.155em]">
+                      <span className="w-full max-w-[3.58rem] text-center text-[10.3px] font-medium uppercase leading-[1.68] tracking-[0.165em] text-[#173a52] sm:max-w-[3.76rem] sm:text-[10.42px] sm:tracking-[0.175em]">
                         {previewContent.chartLabels[index] ?? `Q${index + 1}`}
                       </span>
                     </div>
