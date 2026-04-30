@@ -189,13 +189,13 @@ describe("Home landing page", () => {
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const featureNetwork = literatureNode.closest("div.relative");
 
-    expect(settingsTrigger).toHaveClass("h-[2.96rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.96rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.98rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.98rem]");
     expect(settingsTrigger).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.038),0_3px_7px_rgba(15,23,42,0.02),inset_0_1px_0_rgba(255,255,255,0.998)]");
-    expect(triggerRow).toHaveClass("gap-[0.38rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.46rem]");
-    expect(primaryNav).toHaveClass("gap-[0.36rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.48rem]");
+    expect(triggerRow).toHaveClass("gap-[0.4rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.5rem]");
+    expect(primaryNav).toHaveClass("gap-[0.38rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.52rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -209,33 +209,33 @@ describe("Home landing page", () => {
     expect(featureNetwork).toHaveClass("sm:min-h-[424px]");
     expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_49%_48.9%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_60%)]");
     expect(featureNetwork).toHaveTextContent(/literature analysis/i);
-    expect(literatureNode).toHaveClass("left-[15.1%]");
-    expect(literatureNode).toHaveClass("top-[9.9%]");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[3.22rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[3.22rem]");
+    expect(literatureNode).toHaveClass("left-[16.3%]");
+    expect(literatureNode).toHaveClass("top-[11.2%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[3.23rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[3.23rem]");
     expect(literatureNode.firstElementChild).toHaveClass("border-[#dd9254]");
     expect(literatureNode.firstElementChild).toHaveClass("text-[#ad4d17]");
     expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]");
     expect(literatureNode.lastElementChild).toHaveClass("text-[#8b4215]");
-    expect(dataMiningNode).toHaveClass("left-[15.3%]");
-    expect(dataMiningNode).toHaveClass("top-[69.8%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.14rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.14rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#9aaab8]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#50606c]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#4b5d6e]");
-    expect(outcomeNode).toHaveClass("right-[9.1%]");
-    expect(outcomeNode).toHaveClass("top-[10.5%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.14rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.14rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#9aaab8]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#50606c]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#4b5d6e]");
+    expect(dataMiningNode).toHaveClass("left-[16.4%]");
+    expect(dataMiningNode).toHaveClass("top-[68.1%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.16rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.16rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#93a4b3]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#4d5e6a]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#445869]");
+    expect(outcomeNode).toHaveClass("right-[10.2%]");
+    expect(outcomeNode).toHaveClass("top-[11.1%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.16rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.16rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#93a4b3]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#4d5e6a]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#445869]");
     const chartLabels = screen.getAllByText(/^(meth\.|result|data|evid\.)$/i).slice(-4);
     chartLabels.forEach((label) => {
-      expect(label).toHaveClass("text-[9.25px]");
-      expect(label).toHaveClass("tracking-[0.206em]");
-      expect(label).toHaveClass("text-[#264156]");
+      expect(label).toHaveClass("text-[9.45px]");
+      expect(label).toHaveClass("tracking-[0.22em]");
+      expect(label).toHaveClass("text-[#223f54]");
     });
   });
 
