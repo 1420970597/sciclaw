@@ -78,10 +78,10 @@ function Header() {
   return (
     <header className="pt-[0.72rem] sm:pt-[0.92rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-[2.05rem] xl:px-[2.3rem]">
-        <nav aria-label="Primary" className="flex items-center gap-[0.48rem] pr-[0.08rem] sm:gap-[0.64rem] sm:pr-[0.12rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.56rem] pr-[0.08rem] sm:gap-[0.72rem] sm:pr-[0.12rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[rgba(0,0,0,0.105)] bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(249,246,241,0.99)_100%)] text-[#4b5866] shadow-[0_1px_2px_rgba(15,23,42,0.018),0_2px_4px_rgba(15,23,42,0.008),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.135)] hover:text-[#20262d]"
+            buttonClassName="border-[rgba(0,0,0,0.115)] bg-[linear-gradient(180deg,rgba(255,255,255,0.997)_0%,rgba(249,246,241,0.992)_100%)] text-[#465463] shadow-[0_1px_2px_rgba(15,23,42,0.014),0_2px_4px_rgba(15,23,42,0.006),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.145)] hover:text-[#1d242b]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,33 +98,33 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[37.1%] top-[18.1%] sm:left-[37.1%] sm:top-[18.1%]",
-        lineClass: "left-[49.05%] top-[33.1%] h-[1.72px] w-[7.4%] origin-left rotate-[205deg]",
-        ringClass: "h-[3.62rem] w-[3.62rem] border-[#5f7a90] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#29465a] shadow-[0_8px_18px_rgba(15,23,42,0.068)]",
-        activeRingClass: "h-[3.7rem] w-[3.7rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.06),0_13px_24px_rgba(232,124,55,0.08)]",
-        labelClass: "max-w-[82px] text-[#27445a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        position: "left-[38.6%] top-[19.2%] sm:left-[38.6%] sm:top-[19.2%]",
+        lineClass: "left-[49.25%] top-[33.7%] h-[1.8px] w-[6.6%] origin-left rotate-[205deg]",
+        ringClass: "h-[3.66rem] w-[3.66rem] border-[#587286] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#29465a] shadow-[0_7px_16px_rgba(15,23,42,0.056)]",
+        activeRingClass: "h-[3.74rem] w-[3.74rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.052),0_11px_21px_rgba(232,124,55,0.068)]",
+        labelClass: "max-w-[86px] text-[#35566d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
         activeLabelClass: "max-w-[82px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[37.4%] top-[51.6%] sm:left-[37.4%] sm:top-[51.6%]",
-        lineClass: "left-[48.9%] top-[44.55%] h-[1.72px] w-[7.7%] origin-left rotate-[152deg]",
-        ringClass: "h-[3.62rem] w-[3.62rem] border-[#5f7a90] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#29465a] shadow-[0_8px_18px_rgba(15,23,42,0.068)]",
-        activeRingClass: "h-[3.7rem] w-[3.7rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.06),0_13px_24px_rgba(232,124,55,0.08)]",
-        labelClass: "max-w-[82px] text-[#27445a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        position: "left-[38.9%] top-[50.3%] sm:left-[38.9%] sm:top-[50.3%]",
+        lineClass: "left-[49.15%] top-[44.7%] h-[1.8px] w-[6.8%] origin-left rotate-[154deg]",
+        ringClass: "h-[3.66rem] w-[3.66rem] border-[#587286] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#29465a] shadow-[0_7px_16px_rgba(15,23,42,0.056)]",
+        activeRingClass: "h-[3.74rem] w-[3.74rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.052),0_11px_21px_rgba(232,124,55,0.068)]",
+        labelClass: "max-w-[86px] text-[#35566d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
         activeLabelClass: "max-w-[82px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[24.9%] top-[18.7%] sm:right-[24.9%] sm:top-[18.7%]",
-        lineClass: "left-[50.35%] top-[33.02%] h-[1.72px] w-[7.6%] origin-left rotate-[20deg]",
-        ringClass: "h-[3.62rem] w-[3.62rem] border-[#5f7a90] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#29465a] shadow-[0_8px_18px_rgba(15,23,42,0.068)]",
-        activeRingClass: "h-[3.7rem] w-[3.7rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.06),0_13px_24px_rgba(232,124,55,0.08)]",
-        labelClass: "max-w-[82px] text-[#27445a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        position: "right-[26.1%] top-[19.8%] sm:right-[26.1%] sm:top-[19.8%]",
+        lineClass: "left-[50.15%] top-[33.65%] h-[1.8px] w-[6.5%] origin-left rotate-[20deg]",
+        ringClass: "h-[3.66rem] w-[3.66rem] border-[#587286] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#29465a] shadow-[0_7px_16px_rgba(15,23,42,0.056)]",
+        activeRingClass: "h-[3.74rem] w-[3.74rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.052),0_11px_21px_rgba(232,124,55,0.068)]",
+        labelClass: "max-w-[86px] text-[#35566d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
         activeLabelClass: "max-w-[82px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
       },
     ],
@@ -172,7 +172,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         })}
       </div>
 
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-[36.8%] -translate-y-[25%] flex-col items-center">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-[36.2%] -translate-y-[25%] flex-col items-center">
         <span className="mb-[0.86rem] flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-[11px] font-semibold text-white shadow-[0_8px_16px_rgba(232,124,55,0.2)]">
           AI
         </span>
@@ -296,7 +296,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[2.28rem] grid grid-cols-4 gap-[0.84rem] pt-[2.52rem] sm:gap-[1.04rem]">
+                <div className="mt-[2.32rem] grid grid-cols-4 gap-[0.92rem] pt-[2.62rem] sm:gap-[1.08rem]">
                   {bars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.9rem] text-center sm:gap-[0.98rem]">
                       <div className="flex h-[168px] w-full items-end gap-[0.5rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.68rem] pb-[0.84rem] pt-4">
@@ -305,8 +305,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[2.9rem] w-full min-w-0 items-start justify-center px-[0.12rem] text-center text-[11.6px] font-semibold uppercase leading-[1.62] tracking-[0.04em] text-[#173a52] sm:min-h-[2.95rem] sm:text-[11.7px] sm:tracking-[0.05em]">
-                        <span className="block max-w-[4.65rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[3.12rem] w-full min-w-0 items-start justify-center px-[0.14rem] text-center text-[11.9px] font-semibold uppercase leading-[1.56] tracking-[0.03em] text-[#1a405a] sm:min-h-[3.1rem] sm:text-[12px] sm:tracking-[0.04em]">
+                        <span className="block max-w-[4.92rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
@@ -344,7 +344,7 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,302px)_minmax(0,1fr)] lg:items-center lg:gap-[0.84rem] xl:grid-cols-[minmax(0,314px)_minmax(0,1fr)] xl:gap-[0.98rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,302px)_minmax(0,1fr)] lg:items-center lg:gap-[0.72rem] xl:grid-cols-[minmax(0,314px)_minmax(0,1fr)] xl:gap-[0.86rem]"
     >
       <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-0.5 lg:px-0 xl:mr-0 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
@@ -705,7 +705,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_318px] lg:items-start lg:gap-[2.32rem] xl:grid-cols-[minmax(0,0.99fr)_318px] xl:gap-[2.62rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_318px] lg:items-start lg:gap-[2.12rem] xl:grid-cols-[minmax(0,0.99fr)_318px] xl:gap-[2.42rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
