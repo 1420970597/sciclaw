@@ -63,7 +63,7 @@ describe("Home landing page", () => {
 
     const hero = screen.getByTestId("landing-hero");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_320px]");
-    expect(hero).toHaveClass("lg:gap-[2.68rem]");
+    expect(hero).toHaveClass("lg:gap-[2.54rem]");
     expect(screen.getByRole("complementary")).toHaveClass("max-w-[320px]");
   });
 
@@ -209,33 +209,33 @@ describe("Home landing page", () => {
     expect(featureNetwork).toHaveClass("sm:min-h-[404px]");
     expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_50%_49.2%,_rgba(255,255,255,0.88),_rgba(255,255,255,0)_61%)]");
     expect(featureNetwork).toHaveTextContent(/literature analysis/i);
-    expect(literatureNode).toHaveClass("left-[24.8%]");
-    expect(literatureNode).toHaveClass("top-[16.8%]");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[3.34rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[3.34rem]");
+    expect(literatureNode).toHaveClass("left-[26.2%]");
+    expect(literatureNode).toHaveClass("top-[17.6%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[3.38rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[3.38rem]");
     expect(literatureNode.firstElementChild).toHaveClass("border-[#db8b4f]");
     expect(literatureNode.firstElementChild).toHaveClass("text-[#a64814]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.032),0_8px_14px_rgba(232,124,55,0.052)]");
+    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.034),0_9px_16px_rgba(232,124,55,0.056)]");
     expect(literatureNode.lastElementChild).toHaveClass("text-[#864015]");
-    expect(dataMiningNode).toHaveClass("left-[24.9%]");
-    expect(dataMiningNode).toHaveClass("top-[59.4%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.26rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.26rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#859aac]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#445866]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#334d60]");
-    expect(outcomeNode).toHaveClass("right-[18.6%]");
-    expect(outcomeNode).toHaveClass("top-[17.2%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.26rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.26rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#859aac]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#445866]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#334d60]");
+    expect(dataMiningNode).toHaveClass("left-[26.3%]");
+    expect(dataMiningNode).toHaveClass("top-[57.9%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.3rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.3rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#7f93a5]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#415360]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#2f495b]");
+    expect(outcomeNode).toHaveClass("right-[20.1%]");
+    expect(outcomeNode).toHaveClass("top-[18.1%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.3rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.3rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#7f93a5]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#415360]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#2f495b]");
     const chartLabels = screen.getAllByText(/^(meth\.|result|data|evid\.)$/i).slice(-4);
     chartLabels.forEach((label) => {
-      expect(label).toHaveClass("text-[9.9px]");
-      expect(label).toHaveClass("tracking-[0.165em]");
-      expect(label).toHaveClass("text-[#214157]");
+      expect(label).toHaveClass("text-[10.15px]");
+      expect(label).toHaveClass("tracking-[0.145em]");
+      expect(label).toHaveClass("text-[#1d3f56]");
     });
   });
 
