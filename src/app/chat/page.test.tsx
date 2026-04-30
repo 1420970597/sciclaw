@@ -45,7 +45,7 @@ describe("Chat app shell placeholder", () => {
     expect(settingsLink).toHaveAttribute("href", "/help/settings");
   });
 
-  it("shows durable project memory and session cards that reflect the public docs concepts", () => {
+  it("shows durable project memory, focused flow cards, and session cards that reflect the public docs concepts", () => {
     render(<ChatPage />);
 
     expect(screen.getByText(/library · 128 assets/i)).toBeInTheDocument();
@@ -57,6 +57,14 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/patent landscaping · comparative thread/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical diligence · session replay/i)).toBeInTheDocument();
     expect(screen.getByText(/regulatory memo · final synthesis/i)).toBeInTheDocument();
+    expect(screen.getByText(/comparative pathway scan/i)).toBeInTheDocument();
+    expect(screen.getByText(/resolve one open judgment call/i)).toBeInTheDocument();
+    expect(screen.getByText(/package the export bundle/i)).toBeInTheDocument();
+    expect(screen.getByText(/memo live/i)).toBeInTheDocument();
+    expect(screen.getByText(/2 sources pending/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
+    expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
+    expect(screen.getByRole("link", { name: /inspect foundry assets/i })).toHaveAttribute("href", "/help/foundry");
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();

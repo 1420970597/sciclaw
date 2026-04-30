@@ -109,6 +109,21 @@ export type AppShellResource = {
   meta: string;
 };
 
+export type AppShellStatusPill = {
+  label: string;
+  tone: "neutral" | "warn" | "accent";
+};
+
+export type AppShellFlowCard = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  meta: string;
+  pills: AppShellStatusPill[];
+  ctaLabel: string;
+  ctaHref: string;
+};
+
 export type AppShellWorkspaceMetric = {
   label: string;
   value: string;
@@ -280,6 +295,45 @@ export const appShellCards: AppShellCard[] = [
     description:
       "Surface the active answer, open risk, and export bundle so the transition from session work to stakeholder deliverables is explicit.",
     meta: "12 export-ready assets",
+  },
+];
+
+export const appShellFlowCards: AppShellFlowCard[] = [
+  {
+    eyebrow: "Session focus",
+    title: "Comparative pathway scan",
+    description: "The live workspace keeps the active hypothesis, evidence lane, and reviewer framing visible without falling back to long explainer prose.",
+    meta: "12 min ago",
+    pills: [
+      { label: "Memo live", tone: "accent" },
+      { label: "2 sources pending", tone: "warn" },
+    ],
+    ctaLabel: "Open session thread",
+    ctaHref: "/chat",
+  },
+  {
+    eyebrow: "Task lane",
+    title: "Resolve one open judgment call",
+    description: "Queue the unresolved risk, pin the supporting citations, and hand the narrowed question back into the current session thread.",
+    meta: "Reviewer handoff",
+    pills: [
+      { label: "1 blocker", tone: "warn" },
+      { label: "Task owner set", tone: "neutral" },
+    ],
+    ctaLabel: "Review active tasks",
+    ctaHref: "/help/tasks",
+  },
+  {
+    eyebrow: "Foundry prep",
+    title: "Package the export bundle",
+    description: "Promote the validated outline, evidence appendix, and slide cues into one concise handoff package before the final export starts.",
+    meta: "Export rail",
+    pills: [
+      { label: "12 assets ready", tone: "accent" },
+      { label: "Outline synced", tone: "neutral" },
+    ],
+    ctaLabel: "Inspect Foundry assets",
+    ctaHref: "/help/foundry",
   },
 ];
 

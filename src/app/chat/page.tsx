@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   appShellCards,
   appShellExportAssets,
+  appShellFlowCards,
   appShellOutputSignals,
   appShellResources,
   appShellSections,
@@ -9,7 +10,23 @@ import {
   appShellTodos,
   appShellWorkspaceMetrics,
   type AppShellSection,
+  type AppShellStatusPill,
 } from "@/app/landing-data";
+
+function StatusPill({ pill }: { pill: AppShellStatusPill }) {
+  const toneClass =
+    pill.tone === "accent"
+      ? "border-[#f3d8bf] bg-[#fff3e8] text-[#d87631]"
+      : pill.tone === "warn"
+        ? "border-[#f1decb] bg-[#fffaf3] text-[#9c6f46]"
+        : "border-[#ece3d7] bg-white text-[#938779]";
+
+  return (
+    <span className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] ${toneClass}`}>
+      {pill.label}
+    </span>
+  );
+}
 
 function AppSidebar({ activeView }: { activeView: AppShellSection["view"] }) {
   return (
@@ -189,6 +206,35 @@ function SessionTimeline() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mt-5 grid gap-3 lg:grid-cols-3">
+            {appShellFlowCards.map((card) => (
+              <article key={card.title} className="rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)]">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b5ab9c]">{card.eyebrow}</p>
+                    <h3 className="mt-2 text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                  </div>
+                  <span className="shrink-0 rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
+                    {card.meta}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-[#6b6257]">{card.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {card.pills.map((pill) => (
+                    <StatusPill key={pill.label} pill={pill} />
+                  ))}
+                </div>
+                <Link
+                  href={card.ctaHref}
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#2b2b2b] transition hover:text-[#de7d30]"
+                >
+                  {card.ctaLabel}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
 
