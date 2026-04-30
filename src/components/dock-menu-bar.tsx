@@ -84,7 +84,7 @@ export function DockMenuBar({
   };
 
   return (
-    <div ref={rootRef} className={mergeClasses("flex items-center gap-[0.34rem] sm:gap-[0.4rem]", className)}>
+    <div ref={rootRef} className={mergeClasses("flex items-center gap-[0.38rem] sm:gap-[0.46rem]", className)}>
       {groups.map((group) => {
         const isOpen = openGroupId === group.id;
         const triggerId = group.triggerId ?? `dock-menu-trigger-${group.id}`;
