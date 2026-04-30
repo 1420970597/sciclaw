@@ -37,9 +37,9 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
-    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("lg:gap-[0.92rem]");
-    expect(featureRotator).toHaveClass("xl:gap-[1.08rem]");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,302px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:gap-[0.84rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[0.98rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
@@ -62,9 +62,9 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_320px]");
-    expect(hero).toHaveClass("lg:gap-[2.54rem]");
-    expect(screen.getByRole("complementary")).toHaveClass("max-w-[320px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_318px]");
+    expect(hero).toHaveClass("lg:gap-[2.32rem]");
+    expect(screen.getByRole("complementary")).toHaveClass("max-w-[318px]");
   });
 
   it("switches auth tabs and updates the visible panel", () => {
@@ -191,11 +191,11 @@ describe("Home landing page", () => {
 
     expect(settingsTrigger).toHaveClass("h-[2.98rem]");
     expect(settingsTrigger).toHaveClass("w-[2.98rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.03),0_2px_5px_rgba(15,23,42,0.014),inset_0_1px_0_rgba(255,255,255,0.998)]");
+    expect(settingsTrigger).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.026),0_2px_5px_rgba(15,23,42,0.012),inset_0_1px_0_rgba(255,255,255,0.998)]");
     expect(triggerRow).toHaveClass("gap-[0.4rem]");
     expect(triggerRow).toHaveClass("sm:gap-[0.5rem]");
-    expect(primaryNav).toHaveClass("gap-[0.38rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.52rem]");
+    expect(primaryNav).toHaveClass("gap-[0.42rem]");
+    expect(primaryNav).toHaveClass("sm:gap-[0.56rem]");
 
     fireEvent.click(settingsTrigger);
 
@@ -207,34 +207,34 @@ describe("Home landing page", () => {
 
     expect(featureNetwork).toHaveClass("min-h-[352px]");
     expect(featureNetwork).toHaveClass("sm:min-h-[404px]");
-    expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_50%_49.2%,_rgba(255,255,255,0.88),_rgba(255,255,255,0)_61%)]");
+    expect(featureNetwork).toHaveClass("bg-[radial-gradient(circle_at_50%_49.3%,_rgba(255,255,255,0.87),_rgba(255,255,255,0)_60.5%)]");
     expect(featureNetwork).toHaveTextContent(/literature analysis/i);
-    expect(literatureNode).toHaveClass("left-[27.3%]");
-    expect(literatureNode).toHaveClass("top-[18.5%]");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[3.42rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[3.42rem]");
+    expect(literatureNode).toHaveClass("left-[28.5%]");
+    expect(literatureNode).toHaveClass("top-[18.9%]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[3.46rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("w-[3.46rem]");
     expect(literatureNode.firstElementChild).toHaveClass("border-[#db8b4f]");
     expect(literatureNode.firstElementChild).toHaveClass("text-[#a64814]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.038),0_10px_18px_rgba(232,124,55,0.06)]");
+    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.04),0_10px_18px_rgba(232,124,55,0.058)]");
     expect(literatureNode.lastElementChild).toHaveClass("text-[#864015]");
-    expect(dataMiningNode).toHaveClass("left-[27.4%]");
-    expect(dataMiningNode).toHaveClass("top-[56.8%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.34rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.34rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#72889b]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#3f5160]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#29475c]");
-    expect(outcomeNode).toHaveClass("right-[21.2%]");
-    expect(outcomeNode).toHaveClass("top-[18.8%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.34rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.34rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#72889b]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#3f5160]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#29475c]");
+    expect(dataMiningNode).toHaveClass("left-[28.7%]");
+    expect(dataMiningNode).toHaveClass("top-[56.1%]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[3.38rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("w-[3.38rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#6f879a]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#3d5160]");
+    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#2c4960]");
+    expect(outcomeNode).toHaveClass("right-[22.2%]");
+    expect(outcomeNode).toHaveClass("top-[19.1%]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[3.38rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("w-[3.38rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("border-[#6f879a]");
+    expect(outcomeNode.firstElementChild).toHaveClass("text-[#3d5160]");
+    expect(outcomeNode.lastElementChild).toHaveClass("text-[#2c4960]");
     const chartLabels = screen.getAllByText(/^(meth\.|result|data|evid\.)$/i).slice(-4);
     chartLabels.forEach((label) => {
-      expect(label).toHaveClass("text-[10.3px]");
-      expect(label).toHaveClass("tracking-[0.165em]");
+      expect(label).toHaveClass("text-[10.55px]");
+      expect(label).toHaveClass("tracking-[0.18em]");
       expect(label).toHaveClass("text-[#173a52]");
     });
   });
