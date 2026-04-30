@@ -81,7 +81,7 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.56rem] pr-[0.08rem] sm:gap-[0.72rem] sm:pr-[0.12rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            buttonClassName="border-[rgba(0,0,0,0.125)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,246,241,0.993)_100%)] text-[#42505f] shadow-[0_1px_2px_rgba(15,23,42,0.018),0_2px_5px_rgba(15,23,42,0.008),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.15)] hover:text-[#1d242b]"
+            buttonClassName="border-[rgba(0,0,0,0.142)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(249,246,241,0.993)_100%)] text-[#3f4d5c] shadow-[0_1px_2px_rgba(15,23,42,0.015),0_2px_4px_rgba(15,23,42,0.006),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.16)] hover:text-[#1d242b]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[40.2%] top-[19.9%] sm:left-[40.2%] sm:top-[19.9%]",
-        lineClass: "left-[49.3%] top-[34.2%] h-[1.9px] w-[5.9%] origin-left rotate-[202deg]",
-        ringClass: "h-[3.72rem] w-[3.72rem] border-[#526d82] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#264255] shadow-[0_8px_18px_rgba(15,23,42,0.062)]",
-        activeRingClass: "h-[3.8rem] w-[3.8rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_12px_22px_rgba(232,124,55,0.074)]",
-        labelClass: "max-w-[92px] text-[#32536a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[88px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
+        position: "left-[42.1%] top-[19.1%] sm:left-[42.1%] sm:top-[19.1%]",
+        lineClass: "left-[49.45%] top-[33.7%] h-[2.08px] w-[6.45%] origin-left rotate-[201deg]",
+        ringClass: "h-[3.82rem] w-[3.82rem] border-[#4f687d] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#223f51] shadow-[0_10px_20px_rgba(15,23,42,0.072)]",
+        activeRingClass: "h-[3.9rem] w-[3.9rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_13px_24px_rgba(232,124,55,0.082)]",
+        labelClass: "max-w-[96px] text-[#2f5067] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[92px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[40.5%] top-[49.8%] sm:left-[40.5%] sm:top-[49.8%]",
-        lineClass: "left-[49.15%] top-[44.85%] h-[1.9px] w-[6.05%] origin-left rotate-[156deg]",
-        ringClass: "h-[3.72rem] w-[3.72rem] border-[#526d82] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#264255] shadow-[0_8px_18px_rgba(15,23,42,0.062)]",
-        activeRingClass: "h-[3.8rem] w-[3.8rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_12px_22px_rgba(232,124,55,0.074)]",
-        labelClass: "max-w-[92px] text-[#32536a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[88px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
+        position: "left-[42.3%] top-[49.2%] sm:left-[42.3%] sm:top-[49.2%]",
+        lineClass: "left-[49.2%] top-[44.25%] h-[2.08px] w-[6.65%] origin-left rotate-[156deg]",
+        ringClass: "h-[3.82rem] w-[3.82rem] border-[#4f687d] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#223f51] shadow-[0_10px_20px_rgba(15,23,42,0.072)]",
+        activeRingClass: "h-[3.9rem] w-[3.9rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_13px_24px_rgba(232,124,55,0.082)]",
+        labelClass: "max-w-[96px] text-[#2f5067] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[92px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[27.9%] top-[20.4%] sm:right-[27.9%] sm:top-[20.4%]",
-        lineClass: "left-[50.08%] top-[34.1%] h-[1.9px] w-[5.7%] origin-left rotate-[24deg]",
-        ringClass: "h-[3.72rem] w-[3.72rem] border-[#526d82] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#264255] shadow-[0_8px_18px_rgba(15,23,42,0.062)]",
-        activeRingClass: "h-[3.8rem] w-[3.8rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_12px_22px_rgba(232,124,55,0.074)]",
-        labelClass: "max-w-[92px] text-[#32536a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[88px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
+        position: "right-[29.4%] top-[19.6%] sm:right-[29.4%] sm:top-[19.6%]",
+        lineClass: "left-[50.02%] top-[33.55%] h-[2.08px] w-[6.28%] origin-left rotate-[24deg]",
+        ringClass: "h-[3.82rem] w-[3.82rem] border-[#4f687d] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#223f51] shadow-[0_10px_20px_rgba(15,23,42,0.072)]",
+        activeRingClass: "h-[3.9rem] w-[3.9rem] border-[#db8b4f] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd6b8_100%)] text-[#a64814] shadow-[0_0_0_3px_rgba(240,142,79,0.058),0_13px_24px_rgba(232,124,55,0.082)]",
+        labelClass: "max-w-[96px] text-[#2f5067] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[92px] text-[#864015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.04)]",
       },
     ],
     [],
@@ -296,7 +296,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[2.4rem] grid grid-cols-4 gap-[1.02rem] pt-[2.76rem] sm:gap-[1.16rem]">
+                <div className="mt-[2.46rem] grid grid-cols-4 gap-[1.08rem] pt-[2.82rem] sm:gap-[1.22rem]">
                   {bars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.94rem] text-center sm:gap-[1.02rem]">
                       <div className="flex h-[168px] w-full items-end gap-[0.5rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.68rem] pb-[0.84rem] pt-4">
@@ -305,8 +305,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[3.34rem] w-full min-w-0 items-start justify-center px-[0.08rem] text-center text-[12.25px] font-semibold uppercase leading-[1.5] tracking-[0.025em] text-[#153a54] sm:min-h-[3.28rem] sm:text-[12.35px] sm:tracking-[0.03em]">
-                        <span className="block max-w-[5.18rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[3.42rem] w-full min-w-0 items-start justify-center px-[0.08rem] text-center text-[12.5px] font-semibold uppercase leading-[1.46] tracking-[0.02em] text-[#13384f] sm:min-h-[3.34rem] sm:text-[12.6px] sm:tracking-[0.024em]">
+                        <span className="block max-w-[5.38rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
@@ -344,9 +344,9 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,302px)_minmax(0,1fr)] lg:items-center lg:gap-[0.72rem] xl:grid-cols-[minmax(0,314px)_minmax(0,1fr)] xl:gap-[0.86rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,306px)_minmax(0,1fr)] lg:items-center lg:gap-[0.48rem] xl:grid-cols-[minmax(0,320px)_minmax(0,1fr)] xl:gap-[0.64rem]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-0.5 lg:px-0 xl:mr-0 xl:px-1">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-[0.78rem] lg:px-0 xl:-mr-[0.92rem] xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
       </div>
       <FeaturePreview activeIndex={activeIndex} />
