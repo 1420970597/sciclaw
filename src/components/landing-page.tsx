@@ -98,33 +98,33 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[16.3%] top-[11.2%] sm:left-[16.3%] sm:top-[11.2%]",
-        lineClass: "left-[42.9%] top-[27.5%] h-[1px] w-[17.2%] origin-left rotate-[205deg]",
-        ringClass: "h-[3.16rem] w-[3.16rem] border-[#93a4b3] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
-        activeRingClass: "h-[3.23rem] w-[3.23rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
-        labelClass: "max-w-[58px] text-[#445869] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
-        activeLabelClass: "max-w-[58px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
+        position: "left-[19.2%] top-[14.8%] sm:left-[19.2%] sm:top-[14.8%]",
+        lineClass: "left-[43.8%] top-[29.8%] h-[1px] w-[15.6%] origin-left rotate-[205deg]",
+        ringClass: "h-[3.14rem] w-[3.14rem] border-[#8ca0b1] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
+        activeRingClass: "h-[3.21rem] w-[3.21rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
+        labelClass: "max-w-[60px] text-[#415565] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
+        activeLabelClass: "max-w-[60px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[16.4%] top-[68.1%] sm:left-[16.4%] sm:top-[68.1%]",
-        lineClass: "left-[42.8%] top-[48.2%] h-[1px] w-[17.5%] origin-left rotate-[146deg]",
-        ringClass: "h-[3.16rem] w-[3.16rem] border-[#93a4b3] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
-        activeRingClass: "h-[3.23rem] w-[3.23rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
-        labelClass: "max-w-[58px] text-[#445869] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
-        activeLabelClass: "max-w-[58px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
+        position: "left-[19.4%] top-[63.5%] sm:left-[19.4%] sm:top-[63.5%]",
+        lineClass: "left-[43.6%] top-[46.7%] h-[1px] w-[15.9%] origin-left rotate-[149deg]",
+        ringClass: "h-[3.14rem] w-[3.14rem] border-[#8ca0b1] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
+        activeRingClass: "h-[3.21rem] w-[3.21rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
+        labelClass: "max-w-[60px] text-[#415565] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
+        activeLabelClass: "max-w-[60px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[10.2%] top-[11.1%] sm:right-[10.2%] sm:top-[11.1%]",
-        lineClass: "left-[49.3%] top-[28.3%] h-[1px] w-[17.2%] origin-left rotate-[15deg]",
-        ringClass: "h-[3.16rem] w-[3.16rem] border-[#93a4b3] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
-        activeRingClass: "h-[3.23rem] w-[3.23rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
-        labelClass: "max-w-[60px] text-[#445869] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
+        position: "right-[13.4%] top-[14.4%] sm:right-[13.4%] sm:top-[14.4%]",
+        lineClass: "left-[50.2%] top-[30.8%] h-[1px] w-[15.5%] origin-left rotate-[18deg]",
+        ringClass: "h-[3.14rem] w-[3.14rem] border-[#8ca0b1] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#4d5e6a] shadow-[0_2px_6px_rgba(15,23,42,0.024)]",
+        activeRingClass: "h-[3.21rem] w-[3.21rem] border-[#dd9254] bg-[linear-gradient(180deg,#fffbf7_0%,#ffd8bc_100%)] text-[#ad4d17] shadow-[0_0_0_3px_rgba(240,142,79,0.024),0_7px_10px_rgba(232,124,55,0.04)]",
+        labelClass: "max-w-[60px] text-[#415565] drop-shadow-[0_1px_0_rgba(255,255,255,0.95)]",
         activeLabelClass: "max-w-[60px] text-[#8b4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.022)]",
       },
     ],
@@ -132,7 +132,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
   );
 
   return (
-    <div className="relative min-h-[366px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_49%_48.9%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_60%)] sm:min-h-[424px]">
+    <div className="relative min-h-[352px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_50%_49.2%,_rgba(255,255,255,0.84),_rgba(255,255,255,0)_60%)] sm:min-h-[404px]">
       <div className="absolute inset-0 opacity-[0.998]">
         <div className="absolute left-[23.2%] top-[11.7%] h-[1.5px] w-[1.5px] rounded-full bg-[#a9b7c5]" />
         <div className="absolute left-[28.7%] top-[45.2%] h-[1.5px] w-[1.5px] rounded-full bg-[#aebdcb]" />
@@ -172,7 +172,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         })}
       </div>
 
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-[40.6%] -translate-y-[27.8%] flex-col items-center">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-[37.6%] -translate-y-[25.2%] flex-col items-center">
         <span className="mb-[0.86rem] flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-[11px] font-semibold text-white shadow-[0_8px_16px_rgba(232,124,55,0.2)]">
           AI
         </span>
@@ -237,7 +237,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
         : [52, 76, 96, 118];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-[1.48rem]">
       <div className="rounded-[2rem] border border-white/72 bg-white p-[1.2rem] shadow-[0_22px_58px_rgba(15,23,42,0.068)] sm:p-[1.34rem]">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-16 rounded-full bg-[#e3e6eb]" aria-hidden />
@@ -296,7 +296,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[2.32rem] grid grid-cols-4 gap-[1.46rem] pt-[2.08rem] sm:gap-[1.72rem]">
+                <div className="mt-[2.14rem] grid grid-cols-4 gap-[1.18rem] pt-[1.82rem] sm:gap-[1.38rem]">
                   {bars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.8rem] text-center sm:gap-[0.9rem]">
                       <div className="flex h-[168px] w-full items-end gap-[0.55rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.72rem] pb-[0.88rem] pt-4">
@@ -305,7 +305,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="w-full max-w-[3.06rem] text-center text-[9.45px] font-medium uppercase leading-[1.52] tracking-[0.22em] text-[#223f54] sm:max-w-[3.24rem] sm:text-[9.6px] sm:tracking-[0.226em]">
+                      <span className="w-full max-w-[2.86rem] text-center text-[9.62px] font-medium uppercase leading-[1.44] tracking-[0.18em] text-[#223f54] sm:max-w-[3rem] sm:text-[9.72px] sm:tracking-[0.19em]">
                         {previewContent.chartLabels[index] ?? `Q${index + 1}`}
                       </span>
                     </div>
@@ -344,7 +344,7 @@ function FeatureRotator() {
   return (
     <section
       id="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,322px)_minmax(0,1fr)] lg:items-center lg:gap-[1.3rem] xl:grid-cols-[minmax(0,334px)_minmax(0,1fr)] xl:gap-[1.46rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)] lg:items-center lg:gap-[0.92rem] xl:grid-cols-[minmax(0,312px)_minmax(0,1fr)] xl:gap-[1.08rem]"
     >
       <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-0.5 lg:px-0 xl:mr-0 xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
@@ -705,7 +705,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_322px] lg:items-start lg:gap-[3.84rem] xl:grid-cols-[minmax(0,0.99fr)_322px] xl:gap-[4.22rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-[3.1rem] xl:grid-cols-[minmax(0,0.99fr)_320px] xl:gap-[3.38rem]" data-testid="landing-hero">
             <FeatureRotator />
             <AuthCard />
           </div>
