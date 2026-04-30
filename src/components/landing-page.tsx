@@ -78,7 +78,7 @@ function Header() {
   return (
     <header className="pt-[0.72rem] sm:pt-[0.92rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-[2.05rem] xl:px-[2.3rem]">
-        <nav aria-label="Primary" className="flex items-center gap-[0.68rem] pr-[0.08rem] sm:gap-[0.86rem] sm:pr-[0.12rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.56rem] pr-[0.02rem] sm:gap-[0.7rem] sm:pr-[0.04rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             buttonClassName="border-[rgba(0,0,0,0.205)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#294258] shadow-[0_1px_2px_rgba(15,23,42,0.014),0_4px_8px_rgba(15,23,42,0.014),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.23)] hover:text-[#162534]"
@@ -98,34 +98,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         id: "literature-analysis",
         label: "Literature Analysis",
         icon: "文",
-        position: "left-[57.6%] top-[16.9%] sm:left-[57.6%] sm:top-[16.9%]",
-        lineClass: "left-[50.74%] top-[31.88%] h-[1.9px] w-[7.7%] origin-left rotate-[189deg]",
-        ringClass: "h-[4.78rem] w-[4.78rem] border-[#4d6478] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#163144] shadow-[0_19px_32px_rgba(15,23,42,0.124)]",
-        activeRingClass: "h-[4.88rem] w-[4.88rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.06),0_19px_32px_rgba(232,124,55,0.094)]",
-        labelClass: "max-w-[132px] text-[#24465d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[110px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.038)]",
+        position: "left-[56.35%] top-[15.7%] sm:left-[56.35%] sm:top-[15.7%]",
+        lineClass: "left-[50.54%] top-[31.28%] h-[1.76px] w-[6.82%] origin-left rotate-[188deg]",
+        ringClass: "h-[4.62rem] w-[4.62rem] border-[#53697c] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173246] shadow-[0_17px_28px_rgba(15,23,42,0.112)]",
+        activeRingClass: "h-[4.78rem] w-[4.78rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.054),0_18px_30px_rgba(232,124,55,0.09)]",
+        labelClass: "max-w-[124px] text-[#315169] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[108px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
       },
       {
         id: "data-mining",
         label: "Data Mining",
         icon: "数",
-        position: "left-[57.65%] top-[44.4%] sm:left-[57.65%] sm:top-[44.4%]",
-        lineClass: "left-[50.74%] top-[42.08%] h-[1.9px] w-[7.76%] origin-left rotate-[164deg]",
-        ringClass: "h-[4.78rem] w-[4.78rem] border-[#4d6478] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#163144] shadow-[0_19px_32px_rgba(15,23,42,0.124)]",
-        activeRingClass: "h-[4.88rem] w-[4.88rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.06),0_19px_32px_rgba(232,124,55,0.094)]",
-        labelClass: "max-w-[132px] text-[#24465d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[110px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.038)]",
+        position: "left-[56.45%] top-[42.8%] sm:left-[56.45%] sm:top-[42.8%]",
+        lineClass: "left-[50.52%] top-[41.46%] h-[1.76px] w-[6.96%] origin-left rotate-[162deg]",
+        ringClass: "h-[4.62rem] w-[4.62rem] border-[#53697c] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173246] shadow-[0_17px_28px_rgba(15,23,42,0.112)]",
+        activeRingClass: "h-[4.78rem] w-[4.78rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.054),0_18px_30px_rgba(232,124,55,0.09)]",
+        labelClass: "max-w-[124px] text-[#315169] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[108px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
       },
       {
         id: "outcome-present",
         label: "Outcome Present",
         icon: "果",
-        position: "right-[24.8%] top-[16.95%] sm:right-[24.8%] sm:top-[16.95%]",
-        lineClass: "left-[49.94%] top-[31.98%] h-[1.9px] w-[7.22%] origin-left rotate-[27deg]",
-        ringClass: "h-[4.78rem] w-[4.78rem] border-[#4d6478] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#163144] shadow-[0_19px_32px_rgba(15,23,42,0.124)]",
-        activeRingClass: "h-[4.88rem] w-[4.88rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.06),0_19px_32px_rgba(232,124,55,0.094)]",
-        labelClass: "max-w-[132px] text-[#24465d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-        activeLabelClass: "max-w-[110px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.038)]",
+        position: "right-[23.4%] top-[15.8%] sm:right-[23.4%] sm:top-[15.8%]",
+        lineClass: "left-[49.74%] top-[31.44%] h-[1.76px] w-[6.58%] origin-left rotate-[28deg]",
+        ringClass: "h-[4.62rem] w-[4.62rem] border-[#53697c] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173246] shadow-[0_17px_28px_rgba(15,23,42,0.112)]",
+        activeRingClass: "h-[4.78rem] w-[4.78rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.054),0_18px_30px_rgba(232,124,55,0.09)]",
+        labelClass: "max-w-[124px] text-[#315169] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+        activeLabelClass: "max-w-[108px] text-[#8a4215] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
       },
     ],
     [],
@@ -296,17 +296,17 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[2.48rem] grid grid-cols-4 gap-[1.5rem] pt-[3.02rem] sm:gap-[1.62rem]">
+                <div className="mt-[2.62rem] grid grid-cols-4 gap-[1.68rem] pt-[3.08rem] sm:gap-[1.78rem]">
                   {bars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.12rem] text-center sm:gap-[1.16rem]">
+                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.16rem] text-center sm:gap-[1.2rem]">
                       <div className="flex h-[168px] w-full items-end gap-[0.46rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.68rem] pb-[1.06rem] pt-4">
                         <span
                           className="flex-1 rounded-full bg-[linear-gradient(180deg,#f6bf93_0%,#eb8753_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[4.08rem] w-full min-w-0 items-start justify-center px-[0.16rem] text-center text-[14.15px] font-semibold uppercase leading-[1.38] tracking-[0.01em] text-[#11344d] sm:min-h-[3.96rem] sm:text-[14.3px] sm:tracking-[0.012em]">
-                        <span className="block max-w-[5.52rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[3.52rem] w-full min-w-0 items-start justify-center px-[0.12rem] text-center text-[13.2px] font-medium uppercase leading-[1.34] tracking-[0.028em] text-[#35566d] sm:min-h-[3.46rem] sm:text-[13.35px] sm:tracking-[0.03em]">
+                        <span className="block max-w-[4.72rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
