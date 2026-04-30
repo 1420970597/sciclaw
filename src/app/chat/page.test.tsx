@@ -57,6 +57,9 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/patent landscaping · comparative thread/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical diligence · session replay/i)).toBeInTheDocument();
     expect(screen.getByText(/regulatory memo · final synthesis/i)).toBeInTheDocument();
+    expect(screen.getByText(/3 source clusters · 2 claim deltas/i)).toBeInTheDocument();
+    expect(screen.getByText(/1 blocker · 4 exhibits linked/i)).toBeInTheDocument();
+    expect(screen.getByText(/ready · outline locked/i)).toBeInTheDocument();
     expect(screen.getByText(/comparative pathway scan/i)).toBeInTheDocument();
     expect(screen.getByText(/resolve one open judgment call/i)).toBeInTheDocument();
     expect(screen.getByText(/package the export bundle/i)).toBeInTheDocument();
@@ -77,7 +80,7 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     const rightRailGrid = screen.getByTestId("chat-right-rail-grid");
-    expect(rightRailGrid).toHaveClass("2xl:grid-cols-[minmax(0,1fr)_minmax(272px,0.92fr)]");
+    expect(rightRailGrid).toHaveClass("xl:grid-cols-[1.1fr_0.9fr]");
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
     expect(outputPanel).not.toBeNull();
@@ -86,7 +89,7 @@ describe("Chat app shell placeholder", () => {
     expect(outputScope.getByRole("heading", { name: /shape a product-like narrative before the foundry export starts/i })).toBeInTheDocument();
     expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
     expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/the center workspace now reads like an active review thread/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/the center workspace now surfaces the live answer, evidence posture, and export path in one tighter review card/i)).toBeInTheDocument();
     expect(outputScope.getByText(/live sessions/i)).toBeInTheDocument();
     expect(outputScope.getByText(/^3$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/open tasks/i)).toBeInTheDocument();
@@ -94,11 +97,11 @@ describe("Chat app shell placeholder", () => {
     expect(outputScope.getByText(/foundry exports/i)).toBeInTheDocument();
     expect(outputScope.getByText(/^12$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/evidence chain/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/source citations, highlighted claims, and session checkpoints stay attached to the answer draft/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/keep citations and checkpoints attached to the answer draft/i)).toBeInTheDocument();
     expect(outputScope.getByText(/open risk/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/flag one unresolved judgment call before the reviewer receives the foundry package/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/hold one unresolved call before review leaves the workspace/i)).toBeInTheDocument();
     expect(outputScope.getByText(/handoff route/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/jump back to project memory, active tasks, or the originating session thread without losing context/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/jump back to memory, tasks, or the source thread without losing context/i)).toBeInTheDocument();
 
     const foundryCard = outputScope.getByText(/^foundry handoff$/i).closest("article");
     expect(foundryCard).not.toBeNull();

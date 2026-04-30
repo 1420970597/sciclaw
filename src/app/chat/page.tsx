@@ -202,6 +202,7 @@ function SessionTimeline() {
                       <span className="text-[11px] uppercase tracking-[0.18em] text-[#a89d8f]">{item.meta}</span>
                     </div>
                     <p className="mt-1 text-sm leading-6 text-[#6e665b]">{item.description}</p>
+                    {item.summary ? <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#b08a68]">{item.summary}</p> : null}
                   </div>
                 </div>
               ))}
@@ -238,7 +239,7 @@ function SessionTimeline() {
           </div>
         </div>
 
-        <div className="grid gap-4 2xl:grid-cols-[minmax(0,1fr)_minmax(272px,0.92fr)]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[1.1fr_0.9fr]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -287,8 +288,8 @@ function SessionTimeline() {
                       Session 07
                     </span>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-[#686154]">
-                    The center workspace now reads like an active review thread with surfaced evidence, explicit risk framing, and a direct path into Foundry instead of a docs-only explainer.
+                  <p className="mt-3 max-w-[34rem] text-sm leading-6 text-[#686154]">
+                    The center workspace now surfaces the live answer, evidence posture, and export path in one tighter review card.
                   </p>
                   <div className="mt-4 grid gap-2 sm:grid-cols-3">
                     {appShellWorkspaceMetrics.map((metric) => (
@@ -298,7 +299,7 @@ function SessionTimeline() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 grid gap-2 sm:grid-cols-3 2xl:grid-cols-1">
+                  <div className="mt-4 grid gap-2 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-1">
                     {appShellOutputSignals.map((signal) => (
                       <div key={signal.label} className="rounded-[1.15rem] border border-[#f4ece2] bg-[#fcfaf7] px-3 py-3">
                         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]">{signal.label}</p>

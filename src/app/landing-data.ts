@@ -95,6 +95,7 @@ export type AppShellTimelineItem = {
   title: string;
   description: string;
   meta: string;
+  summary?: string;
 };
 
 export type AppShellTodo = {
@@ -302,7 +303,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
     title: "Comparative pathway scan",
-    description: "The live workspace keeps the active hypothesis, evidence lane, and reviewer framing visible without falling back to long explainer prose.",
+    description: "Pin the live hypothesis and evidence lane so the current thread reads like an active workspace, not a docs explainer.",
     meta: "12 min ago",
     pills: [
       { label: "Memo live", tone: "accent" },
@@ -314,7 +315,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Resolve one open judgment call",
-    description: "Queue the unresolved risk, pin the supporting citations, and hand the narrowed question back into the current session thread.",
+    description: "Assign the blocker, pin the citations, and return a narrowed question to the active session.",
     meta: "Reviewer handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
@@ -326,7 +327,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Promote the validated outline, evidence appendix, and slide cues into one concise handoff package before the final export starts.",
+    description: "Promote the locked outline, evidence appendix, and slide cues into one concise handoff package.",
     meta: "Export rail",
     pills: [
       { label: "12 assets ready", tone: "accent" },
@@ -340,20 +341,20 @@ export const appShellFlowCards: AppShellFlowCard[] = [
 export const appShellTimeline: AppShellTimelineItem[] = [
   {
     title: "Patent landscaping · comparative thread",
-    description:
-      "Tracks literature clustering, prior-art notes, and follow-up prompts for claim overlap analysis across uploaded filings.",
+    description: "Prior-art overlap scan staged for the current filings set.",
+    summary: "3 source clusters · 2 claim deltas",
     meta: "12 min ago",
   },
   {
     title: "Clinical diligence · session replay",
-    description:
-      "Reopens the evidence chain for trial endpoints, competitor snapshots, and generated briefing sections before Foundry export.",
+    description: "Endpoint notes and competitor claims queued for one replay.",
+    summary: "1 blocker · 4 exhibits linked",
     meta: "Yesterday",
   },
   {
     title: "Regulatory memo · final synthesis",
-    description:
-      "Bundles verified source quotes, task outcomes, and charts into one executive-ready narrative with minimal handoff friction.",
+    description: "Reviewer-ready answer bundle now aligned with the export lane.",
+    summary: "Ready · outline locked",
     meta: "Ready for review",
   },
 ];
@@ -385,15 +386,15 @@ export const appShellWorkspaceMetrics: AppShellWorkspaceMetric[] = [
 export const appShellOutputSignals: AppShellOutputSignal[] = [
   {
     label: "Evidence chain",
-    description: "Source citations, highlighted claims, and session checkpoints stay attached to the answer draft.",
+    description: "Keep citations and checkpoints attached to the answer draft.",
   },
   {
     label: "Open risk",
-    description: "Flag one unresolved judgment call before the reviewer receives the Foundry package.",
+    description: "Hold one unresolved call before review leaves the workspace.",
   },
   {
     label: "Handoff route",
-    description: "Jump back to project memory, active tasks, or the originating session thread without losing context.",
+    description: "Jump back to memory, tasks, or the source thread without losing context.",
   },
 ];
 
