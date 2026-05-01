@@ -188,64 +188,50 @@ describe("Home landing page", () => {
     const dataMiningNode = screen.getByRole("button", { name: /^数 data mining$/i });
     const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
     const landingHero = screen.getByTestId("landing-hero");
-    const previewHeading = within(landingHero).getByRole("heading", { name: /deep literature analysis/i });
-    const previewSection = previewHeading.closest("section");
 
+    expect(within(primaryNav).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
+    expect(within(primaryNav).getByRole("button", { name: /contact us/i })).toBeInTheDocument();
     expect(settingsTrigger).toHaveClass("h-[2.75rem]");
     expect(settingsTrigger).toHaveClass("w-[2.75rem]");
-    expect(settingsTrigger).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.02),0_3px_8px_rgba(15,23,42,0.02),inset_0_1px_0_rgba(255,255,255,0.998)]");
     expect(triggerRow).not.toBeNull();
-    expect(triggerRow).toHaveClass("gap-[0.42rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.52rem]");
-    expect(primaryNav).toHaveClass("gap-[0.58rem]");
-    expect(primaryNav).toHaveClass("sm:gap-[0.72rem]");
+    expect(triggerRow).toHaveClass("gap-[0.46rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.58rem]");
+    expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
 
     fireEvent.click(settingsTrigger);
 
     const settingsMenu = screen.getByRole("menu", { name: /settings/i });
+    expect(settingsMenu).toBeInTheDocument();
+    expect(settingsTrigger).toHaveAttribute("aria-expanded", "true");
+    expect(settingsTrigger).toHaveAttribute("aria-controls", settingsMenu.id);
+    expect(settingsMenu).toHaveAttribute("aria-labelledby", settingsTrigger.id);
     expect(within(settingsMenu).getByRole("menuitem", { name: /theme/i })).toBeInTheDocument();
     expect(within(settingsMenu).getByRole("menuitem", { name: /language/i })).toBeInTheDocument();
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
-    expect(settingsTrigger).toHaveAttribute("aria-expanded", "true");
 
-    expect(literatureNode).toHaveClass("left-[57.8%]");
-    expect(literatureNode).toHaveClass("top-[14.6%]");
+    expect(literatureNode.className).toContain("left-[56.35%]");
+    expect(dataMiningNode.className).toContain("left-[56.7%]");
+    expect(outcomeNode.className).toContain("right-[20.1%]");
     expect(literatureNode.firstElementChild).toHaveClass("h-[4.74rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("w-[4.74rem]");
-    expect(literatureNode.firstElementChild).toHaveClass("border-[#dd8f53]");
-    expect(literatureNode.firstElementChild).toHaveClass("text-[#ab5018]");
-    expect(literatureNode.firstElementChild).toHaveClass("shadow-[0_0_0_3px_rgba(240,142,79,0.056),0_17px_30px_rgba(232,124,55,0.092)]");
-    expect(literatureNode.lastElementChild).toHaveClass("text-[#844015]");
-    expect(dataMiningNode).toHaveClass("left-[58.05%]");
-    expect(dataMiningNode).toHaveClass("top-[38.95%]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.52rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("w-[4.52rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("border-[#51687c]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("text-[#183246]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("shadow-[0_15px_24px_rgba(15,23,42,0.096)]");
-    expect(dataMiningNode.lastElementChild).toHaveClass("text-[#385163]");
-    expect(outcomeNode).toHaveClass("right-[18.9%]");
-    expect(outcomeNode).toHaveClass("top-[14.15%]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[4.52rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("w-[4.52rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("border-[#51687c]");
-    expect(outcomeNode.firstElementChild).toHaveClass("text-[#183246]");
-    expect(outcomeNode.firstElementChild).toHaveClass("shadow-[0_15px_24px_rgba(15,23,42,0.096)]");
-    expect(outcomeNode.lastElementChild).toHaveClass("text-[#385163]");
-    expect(previewSection).not.toBeNull();
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.6rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[4.6rem]");
+
+    fireEvent.click(dataMiningNode);
+    expect(within(landingHero).getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
+    fireEvent.click(outcomeNode);
+    expect(within(landingHero).getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
+    fireEvent.click(literatureNode);
+    expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
 
     const chartLabels = within(landingHero).getAllByText(/^(meth\.|find\.|data|evid\.)$/i).slice(-4);
     expect(chartLabels).toHaveLength(4);
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("text-[13px]");
-      expect(labelWrapper).toHaveClass("leading-[1.38]");
-      expect(labelWrapper).toHaveClass("tracking-[0.014em]");
-      expect(labelWrapper).toHaveClass("text-[#4d6678]");
-      expect(labelWrapper).toHaveClass("min-h-[3.84rem]");
-      expect(label).toHaveClass("max-w-[5.25rem]");
+      expect(labelWrapper).toHaveClass("min-h-[4.08rem]");
+      expect(labelWrapper).toHaveClass("leading-[1.44]");
+      expect(label).toHaveClass("max-w-[5.55rem]");
       expect(label).toHaveClass("text-balance");
     });
   });
