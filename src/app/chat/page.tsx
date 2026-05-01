@@ -114,10 +114,10 @@ function ShellHeader() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b2aa9d]">SciClaw · User Guide · Session Preview</p>
-          <h1 className="mt-2 max-w-[22ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
+          <h1 className="mt-2 max-w-[20ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
             Coordinate project context, sessions, tasks, and outputs from one app shell.
           </h1>
-          <p className="mt-2 max-w-[31rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
+          <p className="mt-2 max-w-[28rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
             Keep navigation, memory, tasks, and handoff visible while the public docs shell narrows into a lighter workspace preview.
           </p>
         </div>
@@ -174,13 +174,13 @@ function SessionTimeline() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 max-w-[17ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[15ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
                   </div>
                   <span className="shrink-0 rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[19ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
+                <p className="mt-3 max-w-[17ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
                 {card.detail ? <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#b08a68]">{card.detail}</p> : null}
               </article>
             ))}
@@ -218,13 +218,13 @@ function SessionTimeline() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[16ch] text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
                   </div>
                   <span className="shrink-0 rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[21ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
+                <p className="mt-3 max-w-[19ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {card.pills.map((pill) => (
                     <StatusPill key={pill.label} pill={pill} />

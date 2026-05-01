@@ -19,9 +19,9 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/project & session flow staged between docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a tighter workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
-    expect(screen.getByText(/ground every session in one durable project workspace/i)).toBeInTheDocument();
-    expect(screen.getByText(/move between live threads without dropping prior reasoning/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote one validated answer into a reviewer-ready export lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/ground every session in one project lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/move between live threads without losing the trail/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote one validated answer into one export lane/i)).toBeInTheDocument();
     expect(screen.getByText(/keep uploads, memory, skills, and outputs aligned/i)).toBeInTheDocument();
     expect(screen.getByText(/reopen checkpoints or branch a fresh lane from the current answer/i)).toBeInTheDocument();
     expect(screen.getByText(/keep the active memo and export queue visible before handoff/i)).toBeInTheDocument();
@@ -103,9 +103,9 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowSection = sessionFlowHeading.closest("section");
     expect(sessionFlowSection).not.toBeNull();
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
-    expect(sessionFlowScope.getByRole("heading", { name: /ground every session in one durable project workspace/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /move between live threads without dropping prior reasoning/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /promote one validated answer into a reviewer-ready export lane/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /ground every session in one project lane/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /move between live threads without losing the trail/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /promote one validated answer into one export lane/i })).toBeInTheDocument();
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
     expect(outputPanel).not.toBeNull();

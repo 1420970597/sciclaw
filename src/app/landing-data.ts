@@ -280,21 +280,21 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
-    title: "Ground every session in one durable project workspace.",
+    title: "Ground every session in one project lane.",
     description: "Keep uploads, memory, skills, and outputs aligned.",
     meta: "128 assets · 6 skills",
     detail: "Grounded start · memory pinned",
   },
   {
     eyebrow: "Session selector",
-    title: "Move between live threads without dropping prior reasoning.",
+    title: "Move between live threads without losing the trail.",
     description: "Reopen checkpoints or branch a fresh lane from the current answer.",
     meta: "3 live threads",
     detail: "Checkpoint recall · branch cleanly",
   },
   {
     eyebrow: "Foundry handoff",
-    title: "Promote one validated answer into a reviewer-ready export lane.",
+    title: "Promote one validated answer into one export lane.",
     description: "Keep the active memo and export queue visible before handoff.",
     meta: "12 export-ready assets",
     detail: "Answer live · export queue visible",
