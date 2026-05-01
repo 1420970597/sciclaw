@@ -174,14 +174,13 @@ function SessionTimeline() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 max-w-[15ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[12ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
                   </div>
                   <span className="shrink-0 rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[17ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
-                {card.detail ? <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#b08a68]">{card.detail}</p> : null}
+                <p className="mt-3 max-w-[14ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
               </article>
             ))}
           </div>
@@ -218,13 +217,13 @@ function SessionTimeline() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 max-w-[16ch] text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[14ch] text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
                   </div>
                   <span className="shrink-0 rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[19ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
+                <p className="mt-3 max-w-[15ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {card.pills.map((pill) => (
                     <StatusPill key={pill.label} pill={pill} />

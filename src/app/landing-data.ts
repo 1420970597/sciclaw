@@ -280,22 +280,22 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
-    title: "Ground each session in one lane.",
-    description: "Keep uploads, memory, and outputs aligned.",
+    title: "One lane per session.",
+    description: "Memory pinned · open context.",
     meta: "128 assets · 6 skills",
     detail: "Memory pinned",
   },
   {
     eyebrow: "Session selector",
-    title: "Move between live threads cleanly.",
-    description: "Reopen one checkpoint or branch from the current answer.",
+    title: "Switch live threads.",
+    description: "Checkpoint recall · resume fast.",
     meta: "3 live threads",
     detail: "Checkpoint recall",
   },
   {
     eyebrow: "Foundry handoff",
-    title: "Promote one validated answer.",
-    description: "Keep the memo and export queue visible before handoff.",
+    title: "Promote the locked answer.",
+    description: "Export queue live · review bundle.",
     meta: "12 export-ready assets",
     detail: "Export queue live",
   },
@@ -305,7 +305,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
     title: "Comparative pathway scan",
-    description: "Pin one live hypothesis and its evidence lane.",
+    description: "Pin the live hypothesis.",
     meta: "12 min ago",
     pills: [
       { label: "Memo live", tone: "accent" },
@@ -317,7 +317,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Resolve one judgment call",
-    description: "Assign the blocker and return one review question.",
+    description: "Assign the blocker.",
     meta: "Reviewer handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
@@ -329,7 +329,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Promote the locked outline and appendix together.",
+    description: "Lock outline and appendix.",
     meta: "Export rail",
     pills: [
       { label: "12 ready", tone: "accent" },

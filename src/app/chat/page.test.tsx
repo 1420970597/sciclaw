@@ -19,18 +19,15 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/project & session flow staged between docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a tighter workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
-    expect(screen.getByText(/ground each session in one lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/move between live threads cleanly/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote one validated answer/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep uploads, memory, and outputs aligned/i)).toBeInTheDocument();
-    expect(screen.getByText(/reopen one checkpoint or branch from the current answer/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the memo and export queue visible before handoff/i)).toBeInTheDocument();
-    expect(screen.getByText(/memory pinned/i)).toBeInTheDocument();
-    expect(screen.getByText(/checkpoint recall/i)).toBeInTheDocument();
-    expect(screen.getByText(/export queue live/i)).toBeInTheDocument();
-    expect(screen.getByText(/pin one live hypothesis and its evidence lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/assign the blocker and return one review question/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote the locked outline and appendix together/i)).toBeInTheDocument();
+    expect(screen.getByText(/one lane per session/i)).toBeInTheDocument();
+    expect(screen.getByText(/switch live threads/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
+    expect(screen.getByText(/memory pinned · open context/i)).toBeInTheDocument();
+    expect(screen.getByText(/checkpoint recall · resume fast/i)).toBeInTheDocument();
+    expect(screen.getByText(/export queue live · review bundle/i)).toBeInTheDocument();
+    expect(screen.getByText(/pin the live hypothesis/i)).toBeInTheDocument();
+    expect(screen.getByText(/assign the blocker/i)).toBeInTheDocument();
+    expect(screen.getByText(/lock outline and appendix/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -103,9 +100,9 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowSection = sessionFlowHeading.closest("section");
     expect(sessionFlowSection).not.toBeNull();
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
-    expect(sessionFlowScope.getByRole("heading", { name: /ground each session in one lane/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /move between live threads cleanly/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /promote one validated answer/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /one lane per session/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /switch live threads/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /promote the locked answer/i })).toBeInTheDocument();
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
     expect(outputPanel).not.toBeNull();
