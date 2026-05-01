@@ -348,17 +348,17 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   },
   {
     title: "Clinical replay",
-    description: "Notes queued.",
-    summary: "Replay queue",
+    description: "Replay queued.",
+    summary: "1 blocker",
     summaryTone: "warn",
-    meta: "1 blocker",
+    meta: "Queue",
   },
   {
     title: "Reg memo final",
     description: "Packet aligned.",
-    summary: "Outline locked",
+    summary: "Ready",
     summaryTone: "accent",
-    meta: "Ready packet",
+    meta: "Outline",
   },
 ];
 

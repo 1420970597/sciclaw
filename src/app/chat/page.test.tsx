@@ -145,7 +145,7 @@ describe("Chat app shell placeholder", () => {
     );
 
     const firstSession = activeSessionsRows[0];
-    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(5.4rem,auto)]");
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.6rem,auto)]");
     expect(
       screen.getByText(/project & session flow staged between docs and the future workspace/i).closest("section"),
     ).toHaveTextContent(/signal and next action stay on one calmer edge lane/i);
@@ -156,13 +156,15 @@ describe("Chat app shell placeholder", () => {
 
     const secondSession = activeSessionsRows[1] as HTMLElement;
     expect(within(secondSession).getByText(/Clinical replay/i)).toBeInTheDocument();
-    expect(within(secondSession).getByText(/Replay queue/i)).toBeInTheDocument();
+    expect(within(secondSession).getByText(/Replay queued\./i)).toBeInTheDocument();
     expect(within(secondSession).getByText(/^1 blocker$/i)).toBeInTheDocument();
+    expect(within(secondSession).getByText(/^Queue$/i)).toBeInTheDocument();
 
     const thirdSession = activeSessionsRows[2] as HTMLElement;
     expect(within(thirdSession).getByText(/Reg memo final/i)).toBeInTheDocument();
-    expect(within(thirdSession).getByText(/Outline locked/i)).toBeInTheDocument();
-    expect(within(thirdSession).getByText(/^Ready packet$/i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/Packet aligned\./i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/^Ready$/i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/^Outline$/i)).toBeInTheDocument();
   });
 
   it("keeps the lower checkpoint rail embedded inside the three-card center strip after the density pass", () => {
