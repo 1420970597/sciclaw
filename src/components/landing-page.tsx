@@ -99,8 +99,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: "文",
-      position: "left-[58.8%] top-[12.6%] sm:left-[58.8%] sm:top-[12.6%]",
-      lineClass: "left-[50.22%] top-[29.05%] h-[2.18px] w-[8.42%] origin-left rotate-[184deg]",
+      position: "left-[57.7%] top-[12.7%] sm:left-[57.7%] sm:top-[12.7%]",
+      lineClass: "left-[50.14%] top-[29.05%] h-[2.18px] w-[7.78%] origin-left rotate-[184deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
       labelClass: "max-w-[118px] text-[#315266] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
@@ -110,8 +110,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "data-mining",
       label: "Data Mining",
       icon: "数",
-      position: "left-[59.55%] top-[36.6%] sm:left-[59.55%] sm:top-[36.6%]",
-      lineClass: "left-[50.2%] top-[37.72%] h-[2.18px] w-[8.54%] origin-left rotate-[160deg]",
+      position: "left-[58.5%] top-[36.55%] sm:left-[58.5%] sm:top-[36.55%]",
+      lineClass: "left-[50.12%] top-[37.72%] h-[2.18px] w-[7.92%] origin-left rotate-[160deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
       labelClass: "max-w-[118px] text-[#315266] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
@@ -121,8 +121,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "outcome-present",
       label: "Outcome Present",
       icon: "果",
-      position: "right-[16.05%] top-[12.55%] sm:right-[16.05%] sm:top-[12.55%]",
-      lineClass: "left-[50.08%] top-[29.04%] h-[2.18px] w-[8.28%] origin-left rotate-[25deg]",
+      position: "right-[17.1%] top-[12.62%] sm:right-[17.1%] sm:top-[12.62%]",
+      lineClass: "left-[50.02%] top-[29.04%] h-[2.18px] w-[7.72%] origin-left rotate-[25deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
       labelClass: "max-w-[118px] text-[#315266] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
@@ -307,8 +307,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[6.8rem] w-full min-w-0 items-start justify-center px-[0.54rem] pb-[0.34rem] text-center text-[15.2px] font-medium uppercase leading-[1.28] tracking-[0.012em] text-[#29485d] sm:min-h-[6.94rem] sm:text-[15.28px] sm:tracking-[0.014em]">
-                        <span className="block max-w-[8.34rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[7.16rem] w-full min-w-0 items-start justify-center px-[0.62rem] pb-[0.42rem] text-center text-[14.86px] font-medium uppercase leading-[1.22] tracking-[0.008em] text-[#29485d] sm:min-h-[7.24rem] sm:text-[14.98px] sm:tracking-[0.01em]">
+                        <span className="block max-w-[8.68rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
