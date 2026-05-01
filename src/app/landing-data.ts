@@ -288,7 +288,7 @@ export const appShellCards: AppShellCard[] = [
     eyebrow: "Context",
     title: "One lane per session.",
     description: "Memory pinned.",
-    meta: "128 assets · 6 skills",
+    meta: "128 assets",
     detail: "Memory pinned",
   },
   {
@@ -302,7 +302,7 @@ export const appShellCards: AppShellCard[] = [
     eyebrow: "Foundry",
     title: "Promote the locked answer.",
     description: "Packet staged.",
-    meta: "12 exports ready",
+    meta: "12 ready",
     detail: "Export lane open",
   },
 ];

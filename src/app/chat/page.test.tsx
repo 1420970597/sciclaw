@@ -61,9 +61,9 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/library · 128 assets/i)).toBeInTheDocument();
     expect(screen.getByText(/activity · 14 day streak/i)).toBeInTheDocument();
     expect(screen.getByText(/skills · 6 enabled/i)).toBeInTheDocument();
-    expect(screen.getByText(/128 assets · 6 skills/i)).toBeInTheDocument();
+    expect(screen.getByText(/^128 assets$/i)).toBeInTheDocument();
     expect(within(sessionsLink).getByText(/^3$/i)).toBeInTheDocument();
-    expect(within(foundryCard as HTMLElement).getByText(/12 exports ready/i)).toBeInTheDocument();
+    expect(within(foundryCard as HTMLElement).getByText(/12 ready/i)).toBeInTheDocument();
     expect(screen.getByText(/patent landscaping · comparative thread/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical diligence · session replay/i)).toBeInTheDocument();
     expect(screen.getByText(/regulatory memo · final synthesis/i)).toBeInTheDocument();
@@ -79,7 +79,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
     expect(screen.getByRole("link", { name: /view all flow checkpoints/i })).toHaveAttribute("href", "/help/foundry");
     expect(
-      screen.getByText(/three live threads stay grouped under the same project while timing, summaries, and export hints stay readable at one glance/i),
+      screen.getByText(/three live threads stay grouped so timing, summaries, and export hints scan faster/i),
     ).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
@@ -142,7 +142,11 @@ describe("Chat app shell placeholder", () => {
 
     const timelineShell = screen.getByText(/^active sessions$/i).closest("div");
     expect(timelineShell).not.toBeNull();
-    expect(timelineShell).toHaveTextContent(/three live threads stay grouped under the same project/i);
+    expect(timelineShell).toHaveTextContent(/three live threads stay grouped so timing, summaries, and export hints scan faster/i);
+
+    const sessionGrid = sessionFlowSection?.querySelector('[data-testid="chat-flow-card-grid"]')?.parentElement?.parentElement;
+    expect(sessionGrid).not.toBeNull();
+    expect(sessionGrid).toHaveClass("xl:grid-cols-[minmax(0,0.98fr)_minmax(548px,1.02fr)]");
 
     const timelineRows = sessionFlowScope.getAllByText(/patent landscaping · comparative thread|clinical diligence · session replay|regulatory memo · final synthesis/i);
     expect(timelineRows).toHaveLength(3);

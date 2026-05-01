@@ -166,21 +166,21 @@ function SessionTimeline() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.02fr)_minmax(528px,0.98fr)] 2xl:grid-cols-[minmax(0,1fr)_minmax(556px,1fr)]">
+      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,0.98fr)_minmax(548px,1.02fr)] 2xl:grid-cols-[minmax(0,0.96fr)_minmax(584px,1.04fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
-          <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,11.2rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
+          <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,10.75rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
               <article key={card.title} className="rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 max-w-[12ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[11ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
                   </div>
                   <span className="shrink-0 self-start rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[13ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
+                <p className="mt-3 max-w-[12ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
               </article>
             ))}
           </div>
@@ -189,8 +189,8 @@ function SessionTimeline() {
             <div className="flex flex-col gap-2 border-b border-[#f3eee7] pb-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-[#222]">Active sessions</p>
-                <p className="mt-1 max-w-[22rem] text-xs leading-5 text-[#9b9183]">
-                  Three live threads stay grouped under the same project while timing, summaries, and export hints stay readable at one glance.
+                <p className="mt-1 max-w-[18rem] text-xs leading-5 text-[#9b9183]">
+                  Three live threads stay grouped so timing, summaries, and export hints scan faster.
                 </p>
               </div>
               <span className="shrink-0 rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
@@ -200,7 +200,7 @@ function SessionTimeline() {
               {appShellTimeline.map((item) => (
                 <div
                   key={item.title}
-                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-5"
+                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(9.4rem,auto)] sm:items-start sm:gap-4"
                 >
                   <div className="flex min-w-0 gap-3">
                     <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
@@ -209,7 +209,7 @@ function SessionTimeline() {
                       <p className="mt-1 text-sm leading-6 text-[#6e665b]">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap items-center gap-2 sm:max-w-[10rem] sm:flex-col sm:items-end sm:justify-start">
+                  <div className="flex flex-wrap items-center gap-2 sm:max-w-[9.4rem] sm:flex-col sm:items-end sm:justify-start">
                     <span className="text-[11px] uppercase tracking-[0.18em] text-[#a89d8f]">{item.meta}</span>
                     {item.summary ? (
                       <span className="rounded-full border border-[#efe4d7] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
@@ -251,14 +251,14 @@ function SessionTimeline() {
             ))}
           </div>
 
-          <div className="mt-4 flex items-center justify-between gap-4 rounded-[1.35rem] border border-dashed border-[#ecdcc9] bg-[#fffaf4] px-4 py-3 text-sm text-[#756b60]">
+          <div className="mt-4 grid gap-3 rounded-[1.35rem] border border-dashed border-[#ecdcc9] bg-[#fffaf4] px-4 py-3 text-sm text-[#756b60] xl:grid-cols-[minmax(0,1fr)]">
             <div>
               <p className="font-medium text-[#2b2b2b]">More flow checkpoints stay inside Tasks and Foundry.</p>
-              <p className="mt-1 text-xs leading-5 text-[#978b7d]">Collapse the lower lane cards here so the bridge preview keeps one quieter center scan path.</p>
+              <p className="mt-1 max-w-[19rem] text-xs leading-5 text-[#978b7d]">Fold lower-lane cards here so the bridge preview keeps one quieter center scan path.</p>
             </div>
             <Link
               href="/help/foundry"
-              className="shrink-0 rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
+              className="inline-flex w-fit items-center justify-center rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
             >
               View all flow checkpoints
             </Link>
