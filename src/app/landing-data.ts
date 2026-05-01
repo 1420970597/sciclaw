@@ -312,7 +312,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
     title: "Hold live hypothesis",
-    description: "Pin the open claim.",
+    description: "Pin the live claim.",
     meta: "12m",
     pills: [{ label: "Memo live", tone: "accent" }],
     ctaLabel: "Open thread",
@@ -321,7 +321,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Assign blocker",
-    description: "Clear the blocker.",
+    description: "Route the blocker.",
     meta: "Handoff",
     pills: [{ label: "1 blocker", tone: "warn" }],
     ctaLabel: "Review tasks",
@@ -330,7 +330,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Checkpoint rail",
     title: "Checkpoints fold into Tasks and Foundry.",
-    description: "Keep the center bridge on one calmer summary rail.",
+    description: "Keep the center bridge on one summary rail.",
     meta: "Folded",
     pills: [{ label: "Foundry sync", tone: "neutral" }],
     ctaLabel: "View checkpoints",
@@ -348,14 +348,14 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   },
   {
     title: "Clinical replay",
-    description: "Competitor notes queued.",
+    description: "Notes queued.",
     summary: "Replay queue",
     summaryTone: "warn",
     meta: "1 blocker",
   },
   {
     title: "Reg memo final",
-    description: "Packet export aligned.",
+    description: "Packet aligned.",
     summary: "Outline locked",
     summaryTone: "accent",
     meta: "Ready packet",
