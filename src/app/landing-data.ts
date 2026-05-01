@@ -281,21 +281,21 @@ export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
     title: "Ground every active session in one durable project workspace.",
-    description: "Keep uploads, memory, skills, and outputs tied to the same research track.",
+    description: "Keep uploads, memory, skills, and outputs pinned to the same research track.",
     meta: "128 assets · 6 skills",
     detail: "Grounded start · memory pinned",
   },
   {
     eyebrow: "Session selector",
     title: "Move between active threads without dropping prior reasoning.",
-    description: "Search prior runs, reopen checkpoints, or spin up a fresh lane without losing context.",
+    description: "Reopen checkpoints or branch a new lane without losing the active answer.",
     meta: "3 live threads",
     detail: "Checkpoint recall · branch cleanly",
   },
   {
     eyebrow: "Foundry handoff",
     title: "Ship validated work into reviewer-ready outputs with one clear handoff.",
-    description: "Keep the active answer, open risk, and export lane visible before the package leaves the workspace.",
+    description: "Keep the active answer and export lane visible before the package leaves the workspace.",
     meta: "12 export-ready assets",
     detail: "Answer live · export queue visible",
   },
@@ -305,7 +305,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
     title: "Comparative pathway scan",
-    description: "Pin the live hypothesis and evidence lane for the active thread.",
+    description: "Pin one live hypothesis and its evidence lane for the active thread.",
     meta: "12 min ago",
     pills: [
       { label: "Memo live", tone: "accent" },
@@ -317,7 +317,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Resolve one open judgment call",
-    description: "Assign the blocker, pin the citations, and send back one narrowed question.",
+    description: "Assign the blocker and return a single narrowed question for review.",
     meta: "Reviewer handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
@@ -329,7 +329,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Promote the locked outline, appendix, and slide cues into one handoff packet.",
+    description: "Promote the locked outline, appendix, and slide cues into one packet.",
     meta: "Export rail",
     pills: [
       { label: "12 assets ready", tone: "accent" },
@@ -379,6 +379,24 @@ export const appShellTodos: AppShellTodo[] = [
   },
 ];
 
+export const appShellResources: AppShellResource[] = [
+  {
+    label: "Library · 128 assets",
+    description: "Uploaded papers, notes, and evidence tables available for grounded retrieval.",
+    meta: "Synced",
+  },
+  {
+    label: "Activity · 14 day streak",
+    description: "Heatmap-ready task history to pivot from daily execution into specific session reviews.",
+    meta: "Live",
+  },
+  {
+    label: "Skills · 6 enabled",
+    description: "Focused tool access for literature analysis, task execution, and report packaging.",
+    meta: "Scoped",
+  },
+];
+
 export const appShellWorkspaceMetrics: AppShellWorkspaceMetric[] = [
   { label: "Live sessions", value: "3" },
   { label: "Open tasks", value: "5" },
@@ -418,68 +436,54 @@ export const appShellExportAssets: AppShellExportAsset[] = [
   },
 ];
 
-export const appShellResources: AppShellResource[] = [
-  {
-    label: "Library · 128 assets",
-    description: "Uploaded papers, notes, and evidence tables available for grounded retrieval.",
-    meta: "Synced",
-  },
-  {
-    label: "Activity · 14 day streak",
-    description: "Heatmap-ready task history to pivot from daily execution into specific session reviews.",
-    meta: "Live",
-  },
-  {
-    label: "Skills · 6 enabled",
-    description: "Focused tool access for literature analysis, task execution, and report packaging.",
-    meta: "Scoped",
-  },
-];
-
 export const helpArticles: HelpArticle[] = [
   {
     slug: "getting-started",
     index: "01",
     title: "Getting Started",
     description:
-      "SciClaw is an AI co-worker built for scientific research. It helps researchers manage knowledge capture, task execution, output generation, and workflow improvement in one closed loop.",
+      "SciClaw is an AI-powered scientific co-worker that links inspiration generation, experimental execution, and iterative optimization in one workspace.",
     icon: "rocket",
     heroParagraphs: [
-      "SciClaw is an AI co-worker built for scientific research. It helps researchers continuously manage the full research cycle around a project, including knowledge capture, task execution, output generation, and workflow improvement, so research can operate as a true closed loop.",
-      "Powered by a proactive agent framework, SciClaw continuously connects literature search, data analysis, deep research, long-running computation, result organization, and experimental execution. This allows research workflows to move beyond manually advancing one step at a time and toward a system that can actively coordinate and push work forward.",
-      "Scientific discovery is not a discipline that can be run well by stacking conversations alone with AI, nor is it a field where breakthroughs reliably come from pure model reasoning. Serious research demands project-based orchestration of stage-appropriate tasks, scientific computing and simulation engines that yield high-precision, trustworthy data, and long-horizon cycles of reflection and iteration to refine methods and workflows. These are capabilities that today’s large language models, and general-purpose frameworks such as OpenClaw by themselves, do not provide end-to-end.",
+      "SciClaw is an AI-powered scientific co-worker that links inspiration generation, experimental execution, and iterative optimization in one workspace.",
+      "The platform combines autonomous analysis, experiment assistance, and output packaging so every research thread can move from first question to polished result without losing context.",
     ],
     sections: [
       { id: "what-is-sciclaw", title: "What is SciClaw" },
-      { id: "onboarding", title: "Onboarding" },
-      { id: "how-it-works", title: "How SciClaw works" },
+      { id: "key-capabilities", title: "Key capabilities" },
+      { id: "core-workflow", title: "Core workflow" },
     ],
     nextHref: "/help/projects",
-    nextLabel: "Project & Session",
+    nextLabel: "Projects",
     body: [
       {
         type: "paragraph",
+        sectionId: "what-is-sciclaw",
         content:
-          "SciClaw continuously connects literature search, data analysis, deep research, long-running computation, result organization, and experimental execution, so research workflows move beyond one-off chat and into proactive project orchestration.",
+          "SciClaw acts as an AI co-worker for scientific research, helping teams coordinate literature digestion, experiment planning, data mining, and report generation from one connected environment.",
       },
       {
         type: "paragraph",
+        sectionId: "what-is-sciclaw",
         content:
-          "Scientific discovery needs project-based coordination, stage-appropriate tasks, scientific computing engines, and long-horizon iteration loops. The public product language makes clear that SciClaw positions itself as an operating system for these workflows rather than a simple chatbot.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "When you log in for the first time, SciClaw guides you through a short setup conversation about your research focus and working style so the workspace can tailor skills, plans, and execution support more precisely.",
+          "It is designed to keep evidence, task history, and generated outputs traceable, so researchers can move quickly without losing the chain between source material and final conclusions.",
       },
       {
         type: "list",
+        sectionId: "key-capabilities",
         items: [
-          "Create a project and upload your research files.",
-          "Enable the right skills for the task at hand.",
-          "Ask questions or request analysis directly in chat.",
-          "Review live outputs, tool activity, and generated files.",
-          "Export reports and documents in Foundry.",
+          "Review papers, notes, and project materials in one grounded context.",
+          "Support iterative workflows spanning ideation, execution, analysis, and presentation.",
+          "Package validated findings into briefs, decks, and other stakeholder-ready outputs.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "core-workflow",
+        items: [
+          "Start from the Projects area to organize context and materials.",
+          "Use Chat to run a focused research thread while keeping memory and tasks connected.",
+          "Send polished deliverables through Foundry when the answer is ready to share.",
         ],
       },
     ],
@@ -487,34 +491,40 @@ export const helpArticles: HelpArticle[] = [
   {
     slug: "projects",
     index: "02",
-    title: "Project & Session",
+    title: "Projects",
     description:
-      "Projects provide the durable context for a research initiative, while sessions capture each discrete line of investigation, execution, and review inside that project.",
+      "Projects provide the shared container for assets, sessions, and deliverables so SciClaw can keep a research thread grounded over time.",
     icon: "folder",
     sections: [
-      { id: "projects", title: "Projects" },
-      { id: "sessions", title: "Sessions" },
-      { id: "knowledge-memory", title: "Knowledge & memory" },
+      { id: "workspace-foundation", title: "Workspace foundation" },
+      { id: "what-projects-store", title: "What projects store" },
+      { id: "collaboration-flow", title: "Collaboration flow" },
     ],
     nextHref: "/help/chat",
     nextLabel: "Chat",
     body: [
       {
         type: "paragraph",
+        sectionId: "workspace-foundation",
         content:
-          "A project acts as the parent workspace for a scientific question, grant, paper, or diligence thread. It anchors uploaded files, configured skills, generated outputs, and long-running tasks so the full lifecycle remains grouped together.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Sessions are the execution units within a project. They preserve the conversational thread, tool traces, generated artifacts, and checkpoints for a specific phase of work such as literature review, hypothesis testing, or result packaging.",
+          "Every project in SciClaw acts as the durable container for a line of research, collecting the assets, session memory, and output history that the agent relies on when answering new questions.",
       },
       {
         type: "list",
+        sectionId: "what-projects-store",
         items: [
-          "Use projects to separate unrelated research tracks.",
-          "Open focused sessions for each workstream to reduce context noise.",
-          "Keep durable project knowledge in shared memory and library assets.",
+          "Uploaded PDFs, notes, figures, and experiment files.",
+          "Session history, checkpoints, and intermediate task results.",
+          "Generated outputs such as outlines, reports, and presentation assets.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "collaboration-flow",
+        items: [
+          "Start a new project when you need a clean research track.",
+          "Run multiple sessions under the same project without losing shared context.",
+          "Use Foundry outputs to capture the final deliverables tied back to that project.",
         ],
       },
     ],
@@ -524,74 +534,39 @@ export const helpArticles: HelpArticle[] = [
     index: "03",
     title: "Chat",
     description:
-      "Chat is the main command surface for guiding SciClaw, requesting analysis, reviewing evidence, and steering autonomous work as outputs accumulate.",
+      "Chat is the active workspace for running an investigation thread, combining memory, tools, tasks, and answer drafting in one place.",
     icon: "chat",
-    heroParagraphs: [
-      "The chat panel is the main workspace for interacting with SciClaw. Here, you can ask questions, attach files, enable knowledge base search, or use the command bar to access specific features.",
-    ],
     sections: [
-      { id: "command-bar", title: "Command bar" },
-      { id: "sending-messages", title: "Sending messages" },
-      { id: "attaching-files", title: "Attaching files" },
-      { id: "library", title: "Library" },
-      { id: "guiding-the-agent-mid-task", title: "Guiding the agent mid-task" },
-      { id: "interactive-prompts", title: "Interactive prompts" },
-      { id: "inline-skill-invocation", title: "Inline skill invocation" },
+      { id: "session-workspace", title: "Session workspace" },
+      { id: "tool-and-memory-loop", title: "Tool and memory loop" },
+      { id: "handoff-to-output", title: "Handoff to output" },
     ],
     nextHref: "/help/skills",
     nextLabel: "Skills",
     body: [
       {
         type: "paragraph",
-        sectionId: "command-bar",
+        sectionId: "session-workspace",
         content:
-          "The command bar above the input box provides four quick actions:",
+          "Chat is where a single research thread becomes actionable: a prompt, the relevant context, and the running chain of evidence all stay visible while SciClaw works through the problem.",
       },
       {
         type: "list",
-        sectionId: "command-bar",
+        sectionId: "tool-and-memory-loop",
         items: [
-          "➕ New Chat — Start a new conversation session",
-          "⏹ Stop — Interrupt the current response or background task",
-          "⚡ Skills — Open the Skills list and select the skills you want to use in the current chat",
-          "🔨 Foundry — Open the document generation workspace",
+          "Bring in project memory, prior sessions, and uploaded assets without leaving the thread.",
+          "Run tools, gather evidence, and refine the answer while keeping the output grounded.",
+          "Turn promising sub-results into tasks or export-ready material when the line of reasoning stabilizes.",
         ],
       },
       {
-        type: "paragraph",
-        sectionId: "sending-messages",
-        content:
-          "Type your message in the input box and press Enter to send. Press Shift + Enter to start a new line. SciClaw's responses are streamed in real time, so you can follow its reasoning, tool usage, and results as they appear.",
-      },
-      {
-        type: "paragraph",
-        sectionId: "attaching-files",
-        content:
-          "To upload a file, click the 📎 paperclip icon in the lower-right corner of the input box, or simply drag and drop a file into the chat area. Uploaded files are automatically added to the current project, and their paths are passed to SciClaw for use in the conversation.",
-      },
-      {
-        type: "paragraph",
-        sectionId: "library",
-        content:
-          "Click the Library toggle in the lower-right corner of the input box to enable RAG mode. When enabled, SciClaw searches the current project's knowledge base before answering and retrieves relevant documents.",
-      },
-      {
-        type: "paragraph",
-        sectionId: "guiding-the-agent-mid-task",
-        content:
-          "While SciClaw is generating a response, you can type a new message in the input box and press Enter to inject it directly into the active agent workflow. This allows you to guide the next step in real time without interrupting the current task.",
-      },
-      {
-        type: "paragraph",
-        sectionId: "interactive-prompts",
-        content:
-          "When SciClaw needs confirmation, clarification, or a selection from you during task execution, it displays an interactive prompt above the input box. Click an option or type a reply to continue.",
-      },
-      {
-        type: "paragraph",
-        sectionId: "inline-skill-invocation",
-        content:
-          "Type / in the input box to open the skill list. Press Enter or click a skill to select it. The selected skill name is automatically inserted as a prefix to your message.",
+        type: "list",
+        sectionId: "handoff-to-output",
+        items: [
+          "Keep the live answer draft and unresolved risks visible during the session.",
+          "Escalate structured outputs to Foundry once the thread is ready for review or presentation.",
+          "Return to the same session later without losing context or citations.",
+        ],
       },
     ],
   },
@@ -600,32 +575,38 @@ export const helpArticles: HelpArticle[] = [
     index: "04",
     title: "Skills",
     description:
-      "Skills package reusable workflows, tool access, and domain-specific execution patterns that can be activated per project or session.",
+      "Skills package reusable workflows so SciClaw can apply consistent methods across repeated research tasks.",
     icon: "bolt",
     sections: [
-      { id: "skill-library", title: "Skill library" },
-      { id: "activation", title: "Activation" },
-      { id: "best-practices", title: "Best practices" },
+      { id: "why-skills-matter", title: "Why skills matter" },
+      { id: "how-skills-are-used", title: "How skills are used" },
+      { id: "examples", title: "Examples" },
     ],
     nextHref: "/help/library",
     nextLabel: "Library",
     body: [
       {
         type: "paragraph",
+        sectionId: "why-skills-matter",
         content:
-          "SciClaw's public information architecture treats skills as first-class building blocks for research execution. They let users compose repeatable methods around literature analysis, computational tooling, external data collection, and reporting workflows.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Enable only the skills relevant to the current task so the agent has the right capabilities without unnecessary tool noise. This makes long-running sessions easier to inspect and keeps outputs aligned to the workstream.",
+          "Skills let SciClaw apply stable procedures instead of improvising every time, which is especially useful when the same analysis pattern or delivery flow needs to be repeated reliably.",
       },
       {
         type: "list",
+        sectionId: "how-skills-are-used",
         items: [
-          "Pair skills with project goals and data availability.",
-          "Use narrow skill sets for focused investigations.",
-          "Expand the active toolset when moving from analysis into execution or reporting.",
+          "Activate a known workflow when a task matches a saved pattern.",
+          "Keep repeated operations consistent across different sessions and projects.",
+          "Reduce setup time for complex tool chains and output packaging steps.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "examples",
+        items: [
+          "Literature review workflows.",
+          "Experiment or data-analysis routines.",
+          "Output handoff sequences for report or slide generation.",
         ],
       },
     ],
@@ -635,32 +616,38 @@ export const helpArticles: HelpArticle[] = [
     index: "05",
     title: "Library",
     description:
-      "The library stores papers, notes, datasets, and reference materials so sessions can ground reasoning in persistent project knowledge.",
+      "Library keeps the uploaded papers, notes, and evidence tables that ground each project and session.",
     icon: "book",
     sections: [
-      { id: "knowledge-base", title: "Knowledge base" },
-      { id: "uploading", title: "Uploading content" },
-      { id: "retrieval", title: "Retrieval & grounding" },
+      { id: "grounded-assets", title: "Grounded assets" },
+      { id: "retrieval-usage", title: "Retrieval usage" },
+      { id: "maintaining-signal", title: "Maintaining signal" },
     ],
     nextHref: "/help/tasks",
     nextLabel: "Tasks",
     body: [
       {
         type: "paragraph",
+        sectionId: "grounded-assets",
         content:
-          "The docs IA indicates that library assets sit beside projects and chat, giving SciClaw a structured place to retain PDFs, notes, and other research context over time.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Uploading content to the library makes it easier to ground later analysis, connect findings across sessions, and maintain a durable evidence trail as outputs evolve.",
+          "The Library stores the source material that SciClaw can pull into a session, such as PDFs, notes, figures, and structured evidence tables tied to a project.",
       },
       {
         type: "list",
+        sectionId: "retrieval-usage",
         items: [
-          "Upload source papers and supporting exhibits early.",
-          "Use clear titles and metadata to keep retrieval reliable.",
-          "Revisit library assets when verifying claims or generating final reports.",
+          "Use uploaded assets to ground citations and summaries.",
+          "Search across prior material without re-uploading context each time.",
+          "Keep source material connected to downstream reports and outputs.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "maintaining-signal",
+        items: [
+          "Group assets by project so retrieval stays focused.",
+          "Add notes or metadata when a source needs special handling.",
+          "Keep the library current so later sessions inherit the right evidence base.",
         ],
       },
     ],
@@ -670,32 +657,38 @@ export const helpArticles: HelpArticle[] = [
     index: "06",
     title: "Tasks",
     description:
-      "Tasks represent queued, active, and completed units of work that let SciClaw push research forward beyond the visible chat thread.",
+      "Tasks turn multi-step work into trackable units, making it easier to queue autonomous slices and review progress over time.",
     icon: "clock",
     sections: [
-      { id: "task-types", title: "Task types" },
-      { id: "automation", title: "Automation" },
-      { id: "monitoring", title: "Monitoring progress" },
+      { id: "task-planning", title: "Task planning" },
+      { id: "autonomous-execution", title: "Autonomous execution" },
+      { id: "review-rhythm", title: "Review rhythm" },
     ],
     nextHref: "/help/foundry",
     nextLabel: "Foundry",
     body: [
       {
         type: "paragraph",
+        sectionId: "task-planning",
         content:
-          "Long-running work is a core part of the public SciClaw story. Tasks likely capture research plans, background analysis, ingestion jobs, and report generation steps that continue executing after a single prompt is sent.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "The interface language implies that users can inspect task activity, see generated files, and understand what the system is doing over time rather than treating execution as a black box.",
+          "Tasks break larger goals into manageable steps so SciClaw can make progress without losing track of what still needs verification, refinement, or export.",
       },
       {
         type: "list",
+        sectionId: "autonomous-execution",
         items: [
-          "Create task lists for multi-step research programs.",
-          "Use automation for recurring collection or computation jobs.",
-          "Review completed outputs before exporting or sharing them.",
+          "Queue a focused slice of work instead of overloading a single session.",
+          "Track what is pending, in progress, and completed.",
+          "Keep operational work visible to the project and session that depend on it.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "review-rhythm",
+        items: [
+          "Use tasks to mark validation checkpoints.",
+          "Re-open or branch work when a session exposes a blocker.",
+          "Promote verified outputs once the task is complete.",
         ],
       },
     ],
@@ -705,32 +698,38 @@ export const helpArticles: HelpArticle[] = [
     index: "07",
     title: "Foundry",
     description:
-      "Foundry is the output layer where SciClaw turns sessions and tasks into polished reports, briefs, and presentation-ready deliverables.",
+      "Foundry is the output layer for turning validated research threads into polished deliverables.",
     icon: "hammer",
     sections: [
-      { id: "deliverables", title: "Deliverables" },
-      { id: "editing", title: "Editing outputs" },
-      { id: "export", title: "Export & handoff" },
+      { id: "output-layer", title: "Output layer" },
+      { id: "asset-types", title: "Asset types" },
+      { id: "handoff-pattern", title: "Handoff pattern" },
     ],
     nextHref: "/help/persona",
     nextLabel: "Persona",
     body: [
       {
         type: "paragraph",
+        sectionId: "output-layer",
         content:
-          "The landing page and docs both emphasize outcome presentation. Foundry appears to be the place where intermediate notes become final stakeholder-facing documents, slide material, and narrative summaries.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Researchers can likely refine outputs, align them to audience expectations, and export them once the underlying evidence chain has been reviewed inside the project workflow.",
+          "Foundry gathers the validated pieces of a research thread—notes, citations, charts, and conclusions—into a cleaner handoff surface for reports, slides, and other review-ready assets.",
       },
       {
         type: "list",
+        sectionId: "asset-types",
         items: [
-          "Compile generated notes into cohesive reports.",
-          "Edit tone and structure for scientific, legal, or executive audiences.",
-          "Export ready-to-share deliverables without leaving the workspace.",
+          "Brief outlines and narrative summaries.",
+          "Evidence appendices and supporting figures.",
+          "Presentation-ready talking points and slide inputs.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "handoff-pattern",
+        items: [
+          "Promote the active answer when a session reaches a stable draft.",
+          "Bundle supporting evidence before sharing the output.",
+          "Use Foundry as the final stop before external review or presentation.",
         ],
       },
     ],
@@ -739,34 +738,39 @@ export const helpArticles: HelpArticle[] = [
     slug: "persona",
     index: "08",
     title: "Persona",
-    navTitle: "AI Persona",
     description:
-      "Persona settings let teams steer SciClaw's tone, assumptions, and role-specific behavior for different research contexts.",
+      "Persona controls adjust how SciClaw approaches reasoning, analysis tone, and task behavior for a given project or session.",
     icon: "persona",
     sections: [
-      { id: "role-framing", title: "Role framing" },
-      { id: "tone-controls", title: "Tone & style" },
-      { id: "reuse", title: "Reusable presets" },
+      { id: "behavior-controls", title: "Behavior controls" },
+      { id: "session-fit", title: "Session fit" },
+      { id: "keeping-consistency", title: "Keeping consistency" },
     ],
     nextHref: "/help/im",
     nextLabel: "IM",
     body: [
       {
         type: "paragraph",
+        sectionId: "behavior-controls",
         content:
-          "A persona system is useful when the same workspace must serve principal investigators, diligence analysts, legal reviewers, or executive stakeholders. The public IA suggests SciClaw exposes this as a configurable surface.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "By shaping the assistant's framing and writing style, persona presets can make summaries and generated outputs more immediately usable by the target audience.",
+          "Personas help tune how SciClaw works—whether the focus is conservative evidence review, exploratory analysis, delivery-oriented packaging, or another workflow style.",
       },
       {
         type: "list",
+        sectionId: "session-fit",
         items: [
-          "Define default tone and evidence standards.",
-          "Switch personas when preparing outputs for different stakeholders.",
-          "Save reusable presets for recurring project types.",
+          "Match the reasoning style to the kind of research being done.",
+          "Keep answers aligned with the expectations of a project or stakeholder.",
+          "Reduce repeated steering when a certain tone or process should persist.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "keeping-consistency",
+        items: [
+          "Apply stable behavior across related sessions.",
+          "Document the intended mode for future reuse.",
+          "Keep persona settings visible when the project context changes.",
         ],
       },
     ],
@@ -775,34 +779,39 @@ export const helpArticles: HelpArticle[] = [
     slug: "im",
     index: "09",
     title: "IM",
-    navTitle: "IM Connection",
     description:
-      "IM covers messaging integrations that bring notifications, updates, and lightweight workflow control into external communication channels.",
+      "IM connects SciClaw outputs to external messaging or workflow channels for delivery and coordination.",
     icon: "send",
     sections: [
-      { id: "integrations", title: "Integrations" },
-      { id: "alerts", title: "Alerts & notifications" },
-      { id: "workflow-control", title: "Workflow control" },
+      { id: "delivery-surface", title: "Delivery surface" },
+      { id: "workflow-connection", title: "Workflow connection" },
+      { id: "handoff-discipline", title: "Handoff discipline" },
     ],
     nextHref: "/help/settings",
     nextLabel: "Settings",
     body: [
       {
         type: "paragraph",
+        sectionId: "delivery-surface",
         content:
-          "The docs IA includes IM as a dedicated help section, implying integration with team messaging tools for task updates, review prompts, and research progress notifications.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "External messaging can reduce the need to watch the app constantly, especially for long-running computation and background task execution.",
+          "IM provides a delivery layer for moving outputs, notifications, or handoff updates into the external channels where collaborators actually see them.",
       },
       {
         type: "list",
+        sectionId: "workflow-connection",
         items: [
-          "Connect channels used by your research team.",
-          "Route important task and review notifications externally.",
-          "Use lightweight commands or links to jump back into the relevant session.",
+          "Send updates into team communication surfaces.",
+          "Mirror the state of validated outputs outside the core workspace.",
+          "Support coordination without breaking the chain back to the source session.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "handoff-discipline",
+        items: [
+          "Deliver only after the output is review-ready.",
+          "Keep references back to the originating project and session.",
+          "Use IM as a bridge, not a replacement for the core workspace record.",
         ],
       },
     ],
@@ -810,10 +819,9 @@ export const helpArticles: HelpArticle[] = [
   {
     slug: "settings",
     index: "10",
-    title: "System Settings",
-    navTitle: "Settings",
+    title: "Settings",
     description:
-      "Settings centralize workspace appearance, language, account preferences, usage controls, and other product-level configuration.",
+      "Settings covers appearance, language, and workspace-level controls that shape how SciClaw is presented and used.",
     icon: "sliders",
     sections: [
       { id: "theme", title: "Theme" },
@@ -823,23 +831,36 @@ export const helpArticles: HelpArticle[] = [
     body: [
       {
         type: "paragraph",
+        sectionId: "theme",
         content:
-          "To change the appearance of the interface, click your avatar in the upper-right corner and choose Theme. You can switch between Dark, Light, and Follow System.",
+          "Settings centralize workspace appearance, language, account preferences, usage controls, and other product-level configuration.",
       },
       {
-        type: "paragraph",
-        content:
-          "To change the interface language, click your avatar and choose Language. SciClaw currently supports English and Simplified Chinese. The page refreshes automatically after you switch languages.",
+        type: "list",
+        sectionId: "theme",
+        items: [
+          "Adjust visual presentation such as light or dark appearance.",
+          "Keep contrast and shell clarity aligned across public docs and workspace previews.",
+        ],
       },
       {
-        type: "paragraph",
-        content:
-          "To view account usage details, click your avatar and select Usage. This page shows your current token usage, document credits, and storage consumption.",
+        type: "list",
+        sectionId: "language",
+        items: [
+          "Keep language and basic workspace defaults visible in one place.",
+          "Use translation and wording controls without losing the public-docs information architecture.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "usage",
+        items: [
+          "Use settings as the stable reference point for UI-level preferences.",
+          "Preserve a clean transition between public guidance and the working interface.",
+        ],
       },
     ],
   },
 ];
 
-export const helpArticleMap = Object.fromEntries(
-  helpArticles.map((article) => [article.slug, article]),
-) as Record<string, HelpArticle>;
+export const helpArticleMap = Object.fromEntries(helpArticles.map((article) => [article.slug, article]));

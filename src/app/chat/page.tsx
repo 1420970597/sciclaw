@@ -115,8 +115,8 @@ function ShellHeader() {
           <h1 className="mt-2 max-w-[24ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
             Coordinate project context, sessions, tasks, and outputs from one app shell.
           </h1>
-          <p className="mt-2 max-w-[38rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
-            Mirror the public docs shell with a product-facing workspace preview that keeps navigation, memory, tasks, and foundry handoff visible at a glance.
+          <p className="mt-2 max-w-[34rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
+            Keep navigation, memory, tasks, and handoff visible while the public docs shell narrows into a lighter workspace preview.
           </p>
         </div>
 
@@ -164,9 +164,9 @@ function SessionTimeline() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(350px,0.92fr)] 2xl:grid-cols-[minmax(0,1.02fr)_minmax(380px,0.98fr)]">
+      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(360px,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(390px,0.92fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
-          <div className="grid gap-4 xl:grid-cols-3 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
+          <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,1fr))] 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
               <article key={card.title} className="rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
                 <div className="flex items-start justify-between gap-3">
@@ -178,7 +178,7 @@ function SessionTimeline() {
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[30ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
+                <p className="mt-3 max-w-[24ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
                 {card.detail ? <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#b08a68]">{card.detail}</p> : null}
               </article>
             ))}
@@ -210,7 +210,7 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-3 xl:grid-cols-3 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
+          <div className="mt-5 grid gap-3 xl:grid-cols-[repeat(3,minmax(0,1fr))] 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellFlowCards.map((card) => (
               <article key={card.title} className="rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)]">
                 <div className="flex items-start justify-between gap-3">
@@ -222,7 +222,7 @@ function SessionTimeline() {
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[28ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
+                <p className="mt-3 max-w-[24ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {card.pills.map((pill) => (
                     <StatusPill key={pill.label} pill={pill} />
@@ -240,7 +240,7 @@ function SessionTimeline() {
           </div>
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[1.04fr_0.96fr] 2xl:grid-cols-[1fr_1fr]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr] 2xl:grid-cols-[0.98fr_1.02fr]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -277,7 +277,7 @@ function SessionTimeline() {
               <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-4">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
-                  <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
+                  <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Shape a tighter workspace brief before you leave the public docs shell.</h3>
                 </div>
                 <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">Live draft</span>
               </div>
@@ -289,8 +289,8 @@ function SessionTimeline() {
                       Session 07
                     </span>
                   </div>
-                  <p className="mt-3 max-w-[34rem] text-sm leading-6 text-[#686154]">
-                    The center workspace now surfaces the live answer, evidence posture, and export path in one tighter bridge card between docs and the future app shell.
+                  <p className="mt-3 max-w-[30rem] text-sm leading-6 text-[#686154]">
+                    The center workspace now keeps the live answer, evidence posture, and export lane visible in one bridge card between docs and the future app shell.
                   </p>
                   <div className="mt-4 grid gap-2 sm:grid-cols-3">
                     {appShellWorkspaceMetrics.map((metric) => (
@@ -318,15 +318,15 @@ function SessionTimeline() {
                 </article>
 
                 <article className="rounded-[1.45rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div className="max-w-[18rem]">
                       <p className="text-sm font-semibold text-[#242424]">Foundry handoff</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#c08d62]">High-visibility export rail</p>
                     </div>
                     <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">Ready</span>
                   </div>
                   <div className="mt-4 space-y-3 text-sm text-[#6c6459]">
-                    <p>Bundle project memory, selected sessions, and verified charts into one concise output stream for downstream review.</p>
+                    <p className="max-w-[28rem]">Bundle project memory, selected sessions, and verified charts into one lighter output stream for downstream review.</p>
                     <div className="space-y-2 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
                         <div key={asset.label} className="flex items-start justify-between gap-3 rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">

@@ -30,12 +30,12 @@ describe("Help article page", () => {
     expect(docsNav).toBeInTheDocument();
     expect(screen.getByText(/search…/i)).toBeInTheDocument();
     expect(screen.getByText(/on this page/i)).toBeInTheDocument();
-    expect(within(docsNav).getByRole("link", { name: /02 project & session/i })).toHaveAttribute(
+    expect(within(docsNav).getByRole("link", { name: /02 projects/i })).toHaveAttribute(
       "href",
       "/help/projects",
     );
-    expect(within(docsNav).getByRole("link", { name: /08 ai persona/i })).toBeInTheDocument();
-    expect(screen.getByText(/true closed loop/i)).toBeInTheDocument();
+    expect(within(docsNav).getByRole("link", { name: /08 persona/i })).toBeInTheDocument();
+    expect(screen.getByText(/ai-powered scientific co-worker/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^what is sciclaw$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /what is sciclaw/i })).toHaveAttribute("href", "#what-is-sciclaw");
   });
@@ -48,10 +48,10 @@ describe("Help article page", () => {
     render(page);
 
     expect(screen.getByRole("heading", { name: /^chat$/i })).toBeInTheDocument();
-    expect(screen.getByText(/the chat panel is the main workspace/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /command bar/i })).toBeInTheDocument();
-    expect(screen.getByText(/new chat — start a new conversation session/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/inline skill invocation/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/chat is where a single research thread becomes actionable/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /session workspace/i })).toBeInTheDocument();
+    expect(screen.getByText(/bring in project memory, prior sessions, and uploaded assets without leaving the thread/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/handoff to output/i).length).toBeGreaterThan(0);
   });
 
   it("matches the public settings page title and toc labels", async () => {
@@ -61,13 +61,14 @@ describe("Help article page", () => {
 
     render(page);
 
-    expect(screen.getByRole("heading", { name: /system settings/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /^theme$/i })).toBeInTheDocument();
+    expect(screen.getAllByText(/^10$/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/settings centralize workspace appearance/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /09 im connection/i })).toHaveAttribute(
+    expect(screen.getByRole("heading", { name: /^theme$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /09 im/i })).toHaveAttribute(
       "href",
       "/help/im",
     );
+    expect(screen.getByRole("link", { name: /^theme$/i })).toHaveAttribute("href", "#theme");
   });
 
   it("opens the docs appearance menu with theme and language entries", async () => {

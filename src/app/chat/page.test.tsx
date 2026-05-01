@@ -13,21 +13,24 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/sciclaw · user guide · session preview/i)).toBeInTheDocument();
     expect(
       screen.getByText(
-        /mirror the public docs shell with a product-facing workspace preview that keeps navigation, memory, tasks, and foundry handoff visible at a glance/i,
+        /keep navigation, memory, tasks, and handoff visible while the public docs shell narrows into a lighter workspace preview/i,
       ),
     ).toBeInTheDocument();
     expect(screen.getByText(/project & session flow staged between public docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
-    expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
+    expect(screen.getByText(/shape a tighter workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
     expect(screen.getByText(/ground every active session in one durable project workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/move between active threads without dropping prior reasoning/i)).toBeInTheDocument();
     expect(screen.getByText(/ship validated work into reviewer-ready outputs with one clear handoff/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep uploads, memory, skills, and outputs pinned to the same research track/i)).toBeInTheDocument();
+    expect(screen.getByText(/reopen checkpoints or branch a new lane without losing the active answer/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the active answer and export lane visible before the package leaves the workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/grounded start · memory pinned/i)).toBeInTheDocument();
     expect(screen.getByText(/checkpoint recall · branch cleanly/i)).toBeInTheDocument();
     expect(screen.getByText(/answer live · export queue visible/i)).toBeInTheDocument();
-    expect(screen.getByText(/pin the live hypothesis and evidence lane for the active thread/i)).toBeInTheDocument();
-    expect(screen.getByText(/assign the blocker, pin the citations, and send back one narrowed question/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote the locked outline, appendix, and slide cues into one handoff packet/i)).toBeInTheDocument();
+    expect(screen.getByText(/pin one live hypothesis and its evidence lane for the active thread/i)).toBeInTheDocument();
+    expect(screen.getByText(/assign the blocker and return a single narrowed question for review/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote the locked outline, appendix, and slide cues into one packet/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -108,10 +111,14 @@ describe("Chat app shell placeholder", () => {
     expect(outputPanel).not.toBeNull();
     const outputScope = within(outputPanel as HTMLElement);
 
-    expect(outputScope.getByRole("heading", { name: /shape a concise workspace brief before you leave the public docs shell/i })).toBeInTheDocument();
+    expect(outputScope.getByRole("heading", { name: /shape a tighter workspace brief before you leave the public docs shell/i })).toBeInTheDocument();
     expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
     expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/the center workspace now surfaces the live answer, evidence posture, and export path in one tighter bridge card between docs and the future app shell/i)).toBeInTheDocument();
+    expect(
+      outputScope.getByText(
+        /the center workspace now keeps the live answer, evidence posture, and export lane visible in one bridge card between docs and the future app shell/i,
+      ),
+    ).toBeInTheDocument();
     expect(outputScope.getByText(/live sessions/i)).toBeInTheDocument();
     expect(outputScope.getByText(/^3$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/open tasks/i)).toBeInTheDocument();
@@ -133,6 +140,11 @@ describe("Chat app shell placeholder", () => {
     const foundryScope = within(foundryCard as HTMLElement);
     expect(foundryScope.getByText(/high-visibility export rail/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/^ready$/i)).toBeInTheDocument();
+    expect(
+      foundryScope.getByText(
+        /bundle project memory, selected sessions, and verified charts into one lighter output stream for downstream review/i,
+      ),
+    ).toBeInTheDocument();
     expect(foundryScope.getByText(/brief outline/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/one-page narrative frame for the current answer/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/evidence appendix/i)).toBeInTheDocument();
