@@ -12,7 +12,7 @@
 
 ## Phase B — Landing 高保真复刻（P0）
 - [x] 持续推进 hero / utility controls / radial cluster / micro-label 的高保真小步收敛，保留既有执行记录与验证结论
-- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态；下一轮继续优先做 radial cluster 与 preview 的最终桥接感、tiny labels 与整体 crispness 的更小步收敛，而不是大改整体骨架
+- [~] 继续对齐头部、细节间距、轮播表现、图像/GIF 占位与 hover/active 状态；本轮已完成一个更小步的 landing hero fidelity slice：在不改动 `/root/nexus-mail` 任意服务/端口的前提下，仅于 `/root/sciclaw` 收紧 top utility triggers 的存在感与间距，轻推 radial cluster 靠近中心 preview 并增强 bridge 感，同时放松 preview 底部 micro labels 与正文下方 `Get started` 的垂直呼吸。该里程碑已通过 `pnpm --dir /root/sciclaw test -- src/app/page.test.tsx`（实际仍复跑 4 个 Vitest 文件 / 21 tests 全绿）、`pnpm --dir /root/sciclaw lint`、`pnpm --dir /root/sciclaw build`、`docker compose config`、`docker compose up -d --build`（继续仅发布到 `3001`，未碰现有业务端口）、Python HTTP 200 校验 `/` `/chat` `/help/getting-started`、`git diff --check`、静态安全扫描 0 命中、独立 reviewer 复审与 fresh-load live/local browser QA。最新 QA 认为 top utility triggers 更易感知、`Get started` 层级更干净、micro labels 比上一轮更不拥挤；当前最明显剩余差距仍是 radial cluster 与主 preview 之间的横向桥接感仍略松，底部 micro labels 也还有轻微偏紧，下一轮继续优先做 cluster→preview cohesion 与 preview 内部微密度收敛，而不是大改整体骨架。
 
 ## Phase C — Help shell 与公开文档（P1）
 - [x] 建立 `/help/[slug]` 文档路由与 docs shell 三栏结构
