@@ -22,9 +22,10 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/one lane per thread/i)).toBeInTheDocument();
     expect(screen.getByText(/live state surfaced/i)).toBeInTheDocument();
     expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
-    expect(screen.getByText(/hold live hypothesis/i)).toBeInTheDocument();
-    expect(screen.getByText(/assign blocker/i)).toBeInTheDocument();
+    expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/switch live threads/i)).toBeInTheDocument();
     expect(screen.getByText(/foundry fold/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep bridge notes calm/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -150,9 +151,6 @@ describe("Chat app shell placeholder", () => {
 
     const firstSession = activeSessionsRows[0];
     expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.8rem,auto)]");
-    expect(
-      screen.getByText(/project & session flow staged between docs and the future workspace/i).closest("section"),
-    ).toHaveTextContent(/signal and next move stay on one tighter edge lane/i);
     expect(within(firstSession).getByText(/Patent compare/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Overlap staged\./i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Cluster map/i)).toBeInTheDocument();
