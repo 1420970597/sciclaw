@@ -287,7 +287,7 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Context",
-    title: "One lane per session.",
+    title: "One lane per thread.",
     description: "Memory pinned.",
     meta: "128 assets",
     detail: "Memory pinned",
