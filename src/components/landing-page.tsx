@@ -81,8 +81,8 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.76rem] pr-[0.03rem] sm:gap-[0.88rem] sm:pr-[0.04rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            className="gap-[0.74rem] sm:gap-[0.98rem]"
-            buttonClassName="border-[rgba(0,0,0,0.5)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#092236] shadow-[0_1px_2px_rgba(15,23,42,0.02),0_5px_12px_rgba(15,23,42,0.028),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.54)] hover:text-[#071621]"
+            className="gap-[0.78rem] sm:gap-[1.02rem]"
+            buttonClassName="border-[rgba(7,25,39,0.48)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#0b2234] shadow-[0_1px_2px_rgba(15,23,42,0.018),0_4px_10px_rgba(15,23,42,0.024),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(7,25,39,0.56)] hover:text-[#06131e]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -99,34 +99,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: "文",
-      position: "left-[57.8%] top-[12.7%] sm:left-[57.8%] sm:top-[12.7%]",
-      lineClass: "left-[50.18%] top-[29.05%] h-[2.18px] w-[7.26%] origin-left rotate-[184deg]",
+      position: "left-[56.9%] top-[12.8%] sm:left-[56.9%] sm:top-[12.8%]",
+      lineClass: "left-[50.14%] top-[29.08%] h-[2.18px] w-[6.74%] origin-left rotate-[184deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
-      labelClass: "max-w-[130px] text-[#2f5164] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[116px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
+      labelClass: "max-w-[138px] text-[#345568] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[122px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
     },
     {
       id: "data-mining",
       label: "Data Mining",
       icon: "数",
-      position: "left-[58.35%] top-[36.55%] sm:left-[58.35%] sm:top-[36.55%]",
-      lineClass: "left-[50.16%] top-[37.72%] h-[2.18px] w-[7.3%] origin-left rotate-[160deg]",
+      position: "left-[57.45%] top-[36.4%] sm:left-[57.45%] sm:top-[36.4%]",
+      lineClass: "left-[50.11%] top-[37.65%] h-[2.18px] w-[6.82%] origin-left rotate-[160deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
-      labelClass: "max-w-[130px] text-[#2f5164] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[116px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
+      labelClass: "max-w-[138px] text-[#345568] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[122px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
     },
     {
       id: "outcome-present",
       label: "Outcome Present",
       icon: "果",
-      position: "right-[17.3%] top-[12.62%] sm:right-[17.3%] sm:top-[12.62%]",
-      lineClass: "left-[49.98%] top-[29.04%] h-[2.18px] w-[7.18%] origin-left rotate-[25deg]",
+      position: "right-[18.1%] top-[12.7%] sm:right-[18.1%] sm:top-[12.7%]",
+      lineClass: "left-[49.94%] top-[29.05%] h-[2.18px] w-[6.64%] origin-left rotate-[25deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
-      labelClass: "max-w-[130px] text-[#2f5164] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[116px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
+      labelClass: "max-w-[138px] text-[#345568] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[122px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.03)]",
     },
     ],
     [],
@@ -162,12 +162,12 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
                     onSelect(nextIndex);
                   }
                 }}
-                className={`absolute ${node.position} flex flex-col items-center gap-[0.74rem] text-center transition hover:scale-[1.02]`}
+                className={`absolute ${node.position} flex flex-col items-center gap-[0.8rem] text-center transition hover:scale-[1.02]`}
               >
                 <span className={`flex items-center justify-center rounded-full border text-[0.96rem] font-semibold ${isActive ? node.activeRingClass : node.ringClass}`}>
                   {node.icon}
                 </span>
-                <span className={`text-[11px] font-medium leading-[1.94] tracking-[0.124em] sm:text-[0.79rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
+                <span className={`text-[11px] font-medium leading-[1.98] tracking-[0.112em] sm:text-[0.79rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
               </button>
             </div>
           );
