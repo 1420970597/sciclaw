@@ -330,7 +330,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Checkpoint rail",
     title: "Fold into Foundry",
-    description: "Keep one calmer bridge rail.",
+    description: "Keep the bridge summary calmer.",
     meta: "Folded",
     pills: [{ label: "Foundry sync", tone: "neutral" }],
     ctaLabel: "Open rail",

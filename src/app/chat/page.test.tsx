@@ -101,13 +101,13 @@ describe("Chat app shell placeholder", () => {
 
     expect(sessionFlowSection).toHaveTextContent(/project & session flow staged between docs and the future workspace/i);
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
-      "xl:grid-cols-[repeat(3,minmax(0,13.2rem))]",
+      "xl:grid-cols-[repeat(3,minmax(0,14rem))]",
     );
     expect(sessionFlowScope.getByRole("heading", { name: /hold live hypothesis/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /assign blocker/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /fold into foundry/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByText(/foundry sync/i)).toBeInTheDocument();
-    expect(sessionFlowScope.getByText(/keep one calmer bridge rail/i)).toBeInTheDocument();
+    expect(sessionFlowScope.getByText(/keep the bridge summary calmer/i)).toBeInTheDocument();
     expect(sessionFlowScope.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
     expect(sessionFlowScope.getByRole("link", { name: /open rail/i })).toHaveAttribute(
       "href",
@@ -169,7 +169,7 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     expect(screen.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/keep one calmer bridge rail/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the bridge summary calmer/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /open rail/i })).toHaveAttribute("href", "/help/foundry");
   });
 });
