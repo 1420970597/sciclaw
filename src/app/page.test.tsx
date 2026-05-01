@@ -213,6 +213,9 @@ describe("Home landing page", () => {
     expect(literatureNode.className).toContain("left-[58.8%]");
     expect(dataMiningNode.className).toContain("left-[59.55%]");
     expect(outcomeNode.className).toContain("right-[16.05%]");
+    expect(literatureNode.parentElement?.querySelector("span[class*='w-[8.42%]']")).not.toBeNull();
+    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[8.54%]']")).not.toBeNull();
+    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[8.28%]']")).not.toBeNull();
     expect(literatureNode.firstElementChild).toHaveClass("h-[4.98rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.88rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[4.88rem]");
@@ -229,9 +232,9 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[6.48rem]");
-      expect(labelWrapper).toHaveClass("leading-[1.34]");
-      expect(label).toHaveClass("max-w-[7.86rem]");
+      expect(labelWrapper).toHaveClass("min-h-[6.8rem]");
+      expect(labelWrapper).toHaveClass("leading-[1.28]");
+      expect(label).toHaveClass("max-w-[8.34rem]");
       expect(label).toHaveClass("text-balance");
     });
 
