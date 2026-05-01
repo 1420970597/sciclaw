@@ -263,14 +263,14 @@ function SessionTimeline() {
 
           <div className="mt-4 grid gap-3 rounded-[1.35rem] border border-dashed border-[#ecdcc9] bg-[#fffaf4] px-4 py-3 text-sm text-[#756b60] xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center xl:gap-4">
             <div>
-              <p className="font-medium text-[#2b2b2b]">More flow checkpoints stay tucked under Tasks and Foundry.</p>
-              <p className="mt-1 max-w-[15rem] text-xs leading-5 text-[#978b7d]">Keep the bridge preview on one calmer path.</p>
+              <p className="font-medium text-[#2b2b2b]">All flow checkpoints stay folded into Tasks and Foundry.</p>
+              <p className="mt-1 max-w-[13rem] text-xs leading-5 text-[#978b7d]">Keep the center bridge on one calmer summary rail.</p>
             </div>
             <Link
               href="/help/foundry"
-              className="inline-flex w-fit items-center justify-center rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
+              className="inline-flex w-fit items-center justify-center rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
             >
-              View all checkpoints
+              View checkpoints
             </Link>
           </div>
         </div>
