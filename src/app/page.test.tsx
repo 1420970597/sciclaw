@@ -194,8 +194,8 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveClass("h-[2.75rem]");
     expect(settingsTrigger).toHaveClass("w-[2.75rem]");
     expect(triggerRow).not.toBeNull();
-    expect(triggerRow).toHaveClass("gap-[0.82rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[1.08rem]");
+    expect(triggerRow).toHaveClass("gap-[0.88rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[1.16rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
 
     fireEvent.click(settingsTrigger);
@@ -210,12 +210,12 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
-    expect(literatureNode.className).toContain("left-[56.15%]");
-    expect(dataMiningNode.className).toContain("left-[56.7%]");
-    expect(outcomeNode.className).toContain("right-[17.3%]");
-    expect(literatureNode.parentElement?.querySelector("span[class*='w-[7.12%]']")).not.toBeNull();
-    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[7.18%]']")).not.toBeNull();
-    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[6.98%]']")).not.toBeNull();
+    expect(literatureNode.className).toContain("left-[55.35%]");
+    expect(dataMiningNode.className).toContain("left-[55.95%]");
+    expect(outcomeNode.className).toContain("right-[18.1%]");
+    expect(literatureNode.parentElement?.querySelector("span[class*='w-[7.88%]']")).not.toBeNull();
+    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[7.94%]']")).not.toBeNull();
+    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[7.72%]']")).not.toBeNull();
     expect(literatureNode).toHaveClass("gap-[0.8rem]");
     expect(dataMiningNode).toHaveClass("gap-[0.8rem]");
     expect(outcomeNode).toHaveClass("gap-[0.8rem]");
@@ -245,9 +245,9 @@ describe("Home landing page", () => {
     });
 
     const literatureNodeLabel = within(literatureNode).getByText(/literature analysis/i);
-    expect(literatureNodeLabel).toHaveClass("text-[11.2px]");
-    expect(literatureNodeLabel).toHaveClass("leading-[2.02]");
-    expect(literatureNodeLabel).toHaveClass("tracking-[0.102em]");
+    expect(literatureNodeLabel).toHaveClass("text-[11.4px]");
+    expect(literatureNodeLabel).toHaveClass("leading-[2.08]");
+    expect(literatureNodeLabel).toHaveClass("tracking-[0.086em]");
 
     const description = within(landingHero).getByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
