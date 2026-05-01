@@ -232,27 +232,27 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(2,minmax(0,11.5rem))] xl:justify-start 2xl:grid-cols-[repeat(2,minmax(0,12.2rem))]" data-testid="chat-flow-card-grid">
+          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(2,minmax(0,13rem))] xl:justify-between 2xl:grid-cols-[repeat(2,minmax(0,13.4rem))]" data-testid="chat-flow-card-grid">
             {appShellFlowCards.slice(0, 2).map((card) => (
               <article key={card.title} className="rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)]">
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-2.5">
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 max-w-[14ch] text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[16ch] text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
                   </div>
-                  <span className="shrink-0 self-start rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
+                  <span className="shrink-0 self-start rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[16ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <p className="mt-3 max-w-[18ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
                   {card.pills.map((pill) => (
                     <StatusPill key={pill.label} pill={pill} />
                   ))}
                 </div>
                 <Link
                   href={card.ctaHref}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#2b2b2b] transition hover:text-[#de7d30]"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#2b2b2b] transition hover:text-[#de7d30]"
                 >
                   {card.ctaLabel}
                   <span aria-hidden="true">→</span>
@@ -261,14 +261,14 @@ function SessionTimeline() {
             ))}
           </div>
 
-          <div className="mt-4 grid gap-3 rounded-[1.35rem] border border-dashed border-[#ecdcc9] bg-[#fffaf4] px-4 py-3 text-sm text-[#756b60] xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center">
+          <div className="mt-4 grid gap-3 rounded-[1.35rem] border border-dashed border-[#ecdcc9] bg-[#fffaf4] px-4 py-3 text-sm text-[#756b60] xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center xl:gap-4">
             <div>
               <p className="font-medium text-[#2b2b2b]">More flow checkpoints stay tucked under Tasks and Foundry.</p>
-              <p className="mt-1 max-w-[17rem] text-xs leading-5 text-[#978b7d]">Keep the bridge preview on one calmer center scan path.</p>
+              <p className="mt-1 max-w-[15rem] text-xs leading-5 text-[#978b7d]">Keep the bridge preview on one calmer path.</p>
             </div>
             <Link
               href="/help/foundry"
-              className="inline-flex w-fit items-center justify-center rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
+              className="inline-flex w-fit items-center justify-center rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
             >
               View all checkpoints
             </Link>

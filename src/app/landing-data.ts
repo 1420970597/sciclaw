@@ -313,24 +313,22 @@ export const appShellFlowCards: AppShellFlowCard[] = [
     eyebrow: "Session focus",
     title: "Hold the live hypothesis",
     description: "Pin the open claim.",
-    meta: "12 min ago",
+    meta: "12m",
     pills: [
       { label: "Memo live", tone: "accent" },
-      { label: "2 pending", tone: "warn" },
     ],
-    ctaLabel: "Open session thread",
+    ctaLabel: "Open thread",
     ctaHref: "/chat",
   },
   {
     eyebrow: "Task lane",
     title: "Assign the blocker",
     description: "Clear the blocker.",
-    meta: "Reviewer handoff",
+    meta: "Handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
-      { label: "Owner set", tone: "neutral" },
     ],
-    ctaLabel: "Review active tasks",
+    ctaLabel: "Review tasks",
     ctaHref: "/help/tasks",
   },
   {

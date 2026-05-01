@@ -82,8 +82,8 @@ describe("Chat app shell placeholder", () => {
   it("keeps the docs-to-workspace bridge actions navigable from the preview shell", () => {
     render(<ChatPage />);
 
-    expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
-    expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
+    expect(screen.getByRole("link", { name: /open thread/i })).toHaveAttribute("href", "/chat");
+    expect(screen.getByRole("link", { name: /review tasks/i })).toHaveAttribute("href", "/help/tasks");
     expect(screen.getByRole("link", { name: /view all checkpoints/i })).toHaveAttribute("href", "/help/foundry");
   });
 
@@ -98,7 +98,7 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
 
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
-      "xl:grid-cols-[repeat(2,minmax(0,11.5rem))]",
+      "xl:grid-cols-[repeat(2,minmax(0,13rem))]",
     );
     expect(sessionFlowScope.queryByRole("heading", { name: /lock outline and appendix/i })).not.toBeInTheDocument();
     expect(sessionFlowScope.getByRole("link", { name: /view all checkpoints/i })).toHaveAttribute(
@@ -166,7 +166,7 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     expect(screen.getByText(/more flow checkpoints stay tucked under tasks and foundry/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the bridge preview on one calmer center scan path/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the bridge preview on one calmer path/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /view all checkpoints/i })).toHaveAttribute("href", "/help/foundry");
   });
 });
