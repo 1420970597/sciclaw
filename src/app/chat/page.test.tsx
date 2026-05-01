@@ -79,6 +79,9 @@ describe("Chat app shell placeholder", () => {
     expect(within(tasksPanel as HTMLElement).getByText(/keep this lane isolated/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/export lane/i)).toBeInTheDocument();
+    expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
+      "xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)]",
+    );
   });
 
   it("keeps the docs-to-workspace bridge actions navigable from the preview shell", () => {
@@ -112,6 +115,9 @@ describe("Chat app shell placeholder", () => {
     expect(sessionFlowScope.getByRole("link", { name: /open rail/i })).toHaveAttribute(
       "href",
       "/help/foundry",
+    );
+    expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
+      "xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)]",
     );
   });
 

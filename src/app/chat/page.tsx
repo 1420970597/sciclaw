@@ -274,7 +274,7 @@ function SessionTimeline() {
 
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[1fr] 2xl:grid-cols-[minmax(0,1fr)_minmax(308px,0.92fr)]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] 2xl:grid-cols-[minmax(0,0.96fr)_minmax(296px,0.9fr)]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -331,7 +331,7 @@ function SessionTimeline() {
                     </span>
                   </div>
                   <p className="mt-3 max-w-[20rem] text-sm leading-6 text-[#686154]">{appShellOutputSummary.description}</p>
-                  <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                  <div className="mt-4 grid gap-2 sm:grid-cols-3 xl:gap-2.5">
                     {appShellExportStats.map((stat) => (
                       <span
                         key={stat}
@@ -381,12 +381,12 @@ function SessionTimeline() {
                     <p className="max-w-[18rem]">{appShellExportSummary.description}</p>
                     <div className="space-y-2.5 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
-                        <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-3">
+                        <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-2.5">
                           <div className="min-w-0">
                             <p className="font-medium text-[#5e564c]">{asset.label}</p>
                             <p className="mt-1 text-[11px] leading-5 text-[#8f8578]">{asset.description}</p>
                           </div>
-                          <span className="shrink-0 rounded-full bg-[#fcf1e4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#c27d3f]">
+                          <span className="shrink-0 rounded-full bg-[#fcf1e4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c27d3f]">
                             Export
                           </span>
                         </div>
