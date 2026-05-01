@@ -192,9 +192,9 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.getByText(/citations pinned/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/1 call pending/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/return to source/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/foundry reviewer packet/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/foundry packet/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/3 exports ready/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/export summary/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/packet export/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/brief outline/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/slides handoff/i)).not.toBeInTheDocument();

@@ -440,8 +440,8 @@ export const appShellOutputSummary = {
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   badge: "Ready",
-  title: "Foundry reviewer packet",
-  description: "Bundle project memory, sessions, and verified charts into one export packet.",
+  title: "Foundry packet",
+  description: "Bundle memory, sessions, and verified charts into one review packet.",
 };
 
 export const appShellExportStats = [
@@ -452,7 +452,7 @@ export const appShellExportStats = [
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
-    label: "Export summary",
+    label: "Packet export",
     description: "Brief, appendix, and slides staged together.",
   },
 ];
