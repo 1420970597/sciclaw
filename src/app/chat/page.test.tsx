@@ -73,8 +73,10 @@ describe("Chat app shell placeholder", () => {
     expect(tasksPanel).not.toBeNull();
     expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/12 pdfs queued/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/ground retrieval before review/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/generate the compare session/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/owner · research lead/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/keep this lane isolated/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/export lane/i)).toBeInTheDocument();
   });
@@ -97,6 +99,7 @@ describe("Chat app shell placeholder", () => {
     expect(sessionFlowSection).not.toBeNull();
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
 
+    expect(sessionFlowSection).toHaveTextContent(/project & session flow staged between docs and the future workspace/i);
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
       "xl:grid-cols-[repeat(3,minmax(0,14.6rem))]",
     );
@@ -143,6 +146,9 @@ describe("Chat app shell placeholder", () => {
 
     const firstSession = activeSessionsRows[0];
     expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(5.4rem,auto)]");
+    expect(
+      screen.getByText(/project & session flow staged between docs and the future workspace/i).closest("section"),
+    ).toHaveTextContent(/signal and next action stay on one calmer edge lane/i);
     expect(within(firstSession).getByText(/Patent compare/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Overlap staged\./i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Cluster map/i)).toBeInTheDocument();

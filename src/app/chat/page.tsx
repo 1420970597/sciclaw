@@ -166,7 +166,7 @@ function SessionTimeline() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,0.92fr)_minmax(616px,1.08fr)] 2xl:grid-cols-[minmax(0,0.9fr)_minmax(648px,1.1fr)]">
+      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,0.8fr)_minmax(724px,1.2fr)] 2xl:grid-cols-[minmax(0,0.78fr)_minmax(768px,1.22fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
           <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,10.75rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (

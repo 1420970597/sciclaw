@@ -365,13 +365,13 @@ export const appShellTimeline: AppShellTimelineItem[] = [
 export const appShellTodos: AppShellTodo[] = [
   {
     label: "Import the next PDF batch",
-    note: "Ground retrieval before the next session.",
+    note: "Ground retrieval before review.",
     meta: "12 PDFs queued",
     state: "done",
   },
   {
     label: "Generate the compare session",
-    note: "Keep this workstream separate.",
+    note: "Keep this lane isolated.",
     meta: "Owner · Research lead",
     state: "active",
   },
