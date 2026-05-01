@@ -4,10 +4,10 @@ import {
   appShellExportStats,
   appShellExportSummary,
   appShellFlowCards,
-  appShellOutputSignals,
   appShellOutputSummary,
   appShellResources,
   appShellSections,
+  appShellStatusGroups,
   appShellTimeline,
   appShellTodos,
   type AppShellSection,
@@ -211,8 +211,8 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-3 xl:grid-cols-[repeat(3,minmax(0,11.2rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
-            {appShellFlowCards.map((card) => (
+          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(2,minmax(0,11.5rem))] xl:justify-start 2xl:grid-cols-[repeat(2,minmax(0,12.2rem))]" data-testid="chat-flow-card-grid">
+            {appShellFlowCards.slice(0, 2).map((card) => (
               <article key={card.title} className="rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)]">
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -239,9 +239,22 @@ function SessionTimeline() {
               </article>
             ))}
           </div>
+
+          <div className="mt-4 flex items-center justify-between gap-4 rounded-[1.35rem] border border-dashed border-[#ecdcc9] bg-[#fffaf4] px-4 py-3 text-sm text-[#756b60]">
+            <div>
+              <p className="font-medium text-[#2b2b2b]">More flow checkpoints stay inside Tasks and Foundry.</p>
+              <p className="mt-1 text-xs leading-5 text-[#978b7d]">Collapse the lower lane cards here so the bridge preview keeps one quieter center scan path.</p>
+            </div>
+            <Link
+              href="/help/foundry"
+              className="shrink-0 rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
+            >
+              View all flow checkpoints
+            </Link>
+          </div>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-[1.08fr_0.92fr] 2xl:grid-cols-[1.06fr_0.94fr]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[1fr] 2xl:grid-cols-[minmax(0,1.02fr)_minmax(292px,0.98fr)]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -310,21 +323,31 @@ function SessionTimeline() {
                   </div>
                 </article>
 
-                <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-1">
-                  {appShellOutputSignals.map((signal) => (
-                    <article key={signal.label} className="rounded-[1.15rem] border border-[#f4ece2] bg-[#fcfaf7] px-3.5 py-3.5">
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]">{signal.label}</p>
-                        {signal.summary ? (
-                          <span className="rounded-full border border-[#efe1d2] bg-white px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
-                            {signal.summary}
-                          </span>
-                        ) : null}
-                      </div>
-                      <p className="mt-1.5 max-w-[24ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
-                    </article>
-                  ))}
-                </div>
+                {appShellStatusGroups.map((group) => (
+                  <article key={group.heading} className="rounded-[1.3rem] border border-[#f1e8dc] bg-[#fcfaf7] px-4 py-4 shadow-[0_8px_18px_rgba(15,23,42,0.025)]">
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#efe4d8] pb-3">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9f8f7d]">{group.heading}</p>
+                      <span className="rounded-full border border-[#ebddce] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b18a68]">
+                        {group.items.length} signals
+                      </span>
+                    </div>
+                    <div className="mt-3 space-y-3">
+                      {group.items.map((signal) => (
+                        <div key={signal.label} className="rounded-[1.05rem] border border-[#efe4d7] bg-white px-3 py-3">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8f806f]">{signal.label}</p>
+                            {signal.summary ? (
+                              <span className="rounded-full border border-[#efe1d2] bg-[#fcf8f2] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
+                                {signal.summary}
+                              </span>
+                            ) : null}
+                          </div>
+                          <p className="mt-1.5 max-w-[32ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+                ))}
 
                 <article className="rounded-[1.45rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
                   <div className="flex flex-wrap items-start justify-between gap-3">

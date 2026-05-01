@@ -24,7 +24,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
     expect(screen.getByText(/pin the open claim/i)).toBeInTheDocument();
     expect(screen.getByText(/clear the blocker/i)).toBeInTheDocument();
-    expect(screen.getByText(/ready the export packet/i)).toBeInTheDocument();
+    expect(screen.getByText(/more flow checkpoints stay inside tasks and foundry/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -66,12 +66,12 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/ready · outline locked/i)).toBeInTheDocument();
     expect(screen.getByText(/hold the live hypothesis/i)).toBeInTheDocument();
     expect(screen.getByText(/assign the blocker/i)).toBeInTheDocument();
-    expect(screen.getByText(/lock outline and appendix/i)).toBeInTheDocument();
+    expect(screen.getByText(/more flow checkpoints stay inside tasks and foundry/i)).toBeInTheDocument();
     expect(screen.getByText(/memo live/i)).toBeInTheDocument();
     expect(screen.getByText(/2 pending/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
     expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
-    expect(screen.getByRole("link", { name: /inspect foundry assets/i })).toHaveAttribute("href", "/help/foundry");
+    expect(screen.getByRole("link", { name: /view all flow checkpoints/i })).toHaveAttribute("href", "/help/foundry");
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
@@ -88,10 +88,10 @@ describe("Chat app shell placeholder", () => {
 
     expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
     expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
-    expect(screen.getByRole("link", { name: /inspect foundry assets/i })).toHaveAttribute("href", "/help/foundry");
+    expect(screen.getByRole("link", { name: /view all flow checkpoints/i })).toHaveAttribute("href", "/help/foundry");
   });
 
-  it("elevates the center panel into a session-output preview and gives the right rail stronger product weight", () => {
+  it("tightens the chat density by collapsing lower flow cards and grouping the right-rail status signals", () => {
     render(<ChatPage />);
 
     const sessionFlowHeading = screen.getByRole("heading", {
@@ -100,43 +100,24 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowSection = sessionFlowHeading.closest("section");
     expect(sessionFlowSection).not.toBeNull();
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
-    expect(sessionFlowScope.getByRole("heading", { name: /one lane per session/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /switch live threads/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /promote the locked answer/i })).toBeInTheDocument();
 
-    const outputPanel = screen.getByText(/session output/i).closest("section");
-    expect(outputPanel).not.toBeNull();
-    const outputScope = within(outputPanel as HTMLElement);
+    expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
+      "xl:grid-cols-[repeat(2,minmax(0,11.5rem))]",
+    );
+    expect(sessionFlowScope.queryByRole("heading", { name: /lock outline and appendix/i })).not.toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("link", { name: /view all flow checkpoints/i })).toHaveAttribute(
+      "href",
+      "/help/foundry",
+    );
 
-    expect(outputScope.getByRole("heading", { name: /shape a concise workspace brief before you leave the public docs shell/i })).toBeInTheDocument();
-    expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/keep the current answer, evidence posture, and export lane visible in one bridge card/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/^3 live sessions$/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/^5 open tasks$/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/^12 foundry exports$/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/evidence chain/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/citations pinned/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/keep citations attached to the draft/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/open risk/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/1 call pending/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/hold one unresolved call before review leaves/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/handoff route/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/return to source/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/jump back to memory, tasks, or the thread/i)).toBeInTheDocument();
+    const rightRail = screen.getByTestId("chat-right-rail-grid");
+    expect(rightRail).toHaveClass("xl:grid-cols-[1fr]");
 
-    const foundryCard = outputScope.getByText(/^foundry handoff$/i).closest("article");
-    expect(foundryCard).not.toBeNull();
-    const foundryScope = within(foundryCard as HTMLElement);
-    expect(foundryScope.getByText(/foundry reviewer packet/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/^ready$/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/bundle project memory, sessions, and verified charts into one foundry export packet/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/brief outline/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/narrative frame/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/evidence appendix/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/linked figures/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/slides handoff/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/foundry talking points/i)).toBeInTheDocument();
-    expect(within(foundryCard as HTMLElement).getAllByText(/^export$/i)).toHaveLength(3);
+    const statusPanel = screen.getByText(/^status board$/i).closest("article");
+    expect(statusPanel).not.toBeNull();
+    const statusScope = within(statusPanel as HTMLElement);
+    expect(statusScope.getByText(/citations pinned/i)).toBeInTheDocument();
+    expect(statusScope.getByText(/1 call pending/i)).toBeInTheDocument();
+    expect(statusScope.getByText(/return to source/i)).toBeInTheDocument();
   });
 });

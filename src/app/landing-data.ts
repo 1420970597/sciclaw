@@ -88,6 +88,11 @@ export type AppShellOutputSignal = {
   summary?: string;
 };
 
+export type AppShellStatusGroup = {
+  heading: string;
+  items: AppShellOutputSignal[];
+};
+
 export type AppShellExportAsset = {
   label: string;
   description: string;
@@ -407,21 +412,26 @@ export const appShellWorkspaceMetrics: AppShellWorkspaceMetric[] = [
   { label: "Foundry exports", value: "12" },
 ];
 
-export const appShellOutputSignals: AppShellOutputSignal[] = [
+export const appShellStatusGroups: AppShellStatusGroup[] = [
   {
-    label: "Evidence chain",
-    summary: "Citations pinned",
-    description: "Keep citations attached to the draft.",
-  },
-  {
-    label: "Open risk",
-    summary: "1 call pending",
-    description: "Hold one unresolved call before review leaves.",
-  },
-  {
-    label: "Handoff route",
-    summary: "Return to source",
-    description: "Jump back to memory, tasks, or the thread.",
+    heading: "Status board",
+    items: [
+      {
+        label: "Evidence chain",
+        summary: "Citations pinned",
+        description: "Keep citations attached to the draft.",
+      },
+      {
+        label: "Open risk",
+        summary: "1 call pending",
+        description: "Hold one unresolved call before review leaves.",
+      },
+      {
+        label: "Handoff route",
+        summary: "Return to source",
+        description: "Jump back to memory, tasks, or the thread.",
+      },
+    ],
   },
 ];
 
