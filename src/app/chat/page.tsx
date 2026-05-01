@@ -232,18 +232,18 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,12.6rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,13rem))]" data-testid="chat-flow-card-grid">
+          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,13.2rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,13.6rem))]" data-testid="chat-flow-card-grid">
             {appShellFlowCards.map((card, index) => (
               <article
                 key={card.title}
                 className={`rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)] ${
-                  index === 2 ? "xl:px-4 xl:py-3.5" : ""
+                  index === 2 ? "xl:px-4.5 xl:py-4" : ""
                 }`}
               >
                 <div className="flex items-start justify-between gap-2.5">
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className={`mt-2 font-semibold leading-6 text-[#1f1f1f] ${index === 2 ? "max-w-[17ch] text-[0.95rem]" : "max-w-[16ch] text-sm"}`}>
+                    <h3 className={`mt-2 font-semibold leading-6 text-[#1f1f1f] ${index === 2 ? "max-w-[14ch] text-[0.92rem] leading-[1.5]" : "max-w-[16ch] text-sm"}`}>
                       {card.title}
                     </h3>
                   </div>
@@ -251,17 +251,19 @@ function SessionTimeline() {
                     {card.meta}
                   </span>
                 </div>
-                <p className={`mt-3 text-sm leading-6 text-[#6b6257] ${index === 2 ? "max-w-[19ch] text-[0.86rem] leading-[1.55]" : "max-w-[18ch]"}`}>
+                <p className={`mt-3 text-sm leading-6 text-[#6b6257] ${index === 2 ? "max-w-[17ch] text-[0.84rem] leading-[1.48]" : "max-w-[18ch]"}`}>
                   {card.description}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className={`mt-4 flex flex-wrap gap-1.5 ${index === 2 ? "items-center justify-between gap-y-2.5" : ""}`}>
                   {card.pills.map((pill) => (
                     <StatusPill key={pill.label} pill={pill} />
                   ))}
                 </div>
                 <Link
                   href={card.ctaHref}
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#2b2b2b] transition hover:text-[#de7d30]"
+                  className={`mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#2b2b2b] transition hover:text-[#de7d30] ${
+                    index === 2 ? "mt-5" : ""
+                  }`}
                 >
                   {card.ctaLabel}
                   <span aria-hidden="true">→</span>
