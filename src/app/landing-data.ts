@@ -104,6 +104,7 @@ export type AppShellTodo = {
   label: string;
   note: string;
   state: "done" | "active" | "pending";
+  meta?: string;
 };
 
 export type AppShellResource = {
@@ -365,16 +366,19 @@ export const appShellTodos: AppShellTodo[] = [
   {
     label: "Import the next PDF batch into the project library",
     note: "Ground retrieval before the next autonomous session starts.",
+    meta: "12 PDFs queued",
     state: "done",
   },
   {
     label: "Generate a fresh comparative-analysis session",
-    note: "Keep the current workstream isolated so experiment notes do not pollute the diligence thread.",
+    note: "Keep the current workstream isolated from the diligence thread.",
+    meta: "Owner · Research lead",
     state: "active",
   },
   {
     label: "Push the verified outline to Foundry",
-    note: "Promote the winning narrative after session review closes.",
+    note: "Promote the winning narrative after review closes.",
+    meta: "Export lane",
     state: "pending",
   },
 ];
@@ -407,7 +411,7 @@ export const appShellOutputSignals: AppShellOutputSignal[] = [
   {
     label: "Evidence chain",
     summary: "Citations pinned",
-    description: "Keep citations and checkpoints attached to the draft.",
+    description: "Keep citations attached to the draft.",
   },
   {
     label: "Open risk",
@@ -444,15 +448,15 @@ export const appShellExportStats = [
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
     label: "Brief outline",
-    description: "One-page narrative frame.",
+    description: "Narrative frame.",
   },
   {
     label: "Evidence appendix",
-    description: "Linked citations and figures for review.",
+    description: "Linked figures.",
   },
   {
     label: "Slides handoff",
-    description: "Presentation-ready talking points for Foundry.",
+    description: "Foundry talking points.",
   },
 ];
 

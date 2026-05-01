@@ -76,8 +76,11 @@ describe("Chat app shell placeholder", () => {
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
     expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch into the project library/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/12 pdfs queued/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/generate a fresh comparative-analysis session/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/owner · research lead/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline to foundry/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/export lane/i)).toBeInTheDocument();
   });
 
   it("keeps the docs-to-workspace bridge actions navigable from the preview shell", () => {
@@ -114,7 +117,7 @@ describe("Chat app shell placeholder", () => {
     expect(outputScope.getByText(/^12 foundry exports$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/evidence chain/i)).toBeInTheDocument();
     expect(outputScope.getByText(/citations pinned/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/keep citations and checkpoints attached to the draft/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/keep citations attached to the draft/i)).toBeInTheDocument();
     expect(outputScope.getByText(/open risk/i)).toBeInTheDocument();
     expect(outputScope.getByText(/1 call pending/i)).toBeInTheDocument();
     expect(outputScope.getByText(/hold one unresolved call before review leaves/i)).toBeInTheDocument();
@@ -129,11 +132,11 @@ describe("Chat app shell placeholder", () => {
     expect(foundryScope.getByText(/^ready$/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/bundle project memory, sessions, and verified charts into one foundry export packet/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/brief outline/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/one-page narrative frame/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/narrative frame/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/evidence appendix/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/linked citations and figures for review/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/linked figures/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/slides handoff/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/presentation-ready talking points for Foundry/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/foundry talking points/i)).toBeInTheDocument();
     expect(within(foundryCard as HTMLElement).getAllByText(/^export$/i)).toHaveLength(3);
   });
 });
