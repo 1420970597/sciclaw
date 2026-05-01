@@ -101,7 +101,7 @@ describe("Chat app shell placeholder", () => {
 
     expect(sessionFlowSection).toHaveTextContent(/project & session flow staged between docs and the future workspace/i);
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
-      "xl:grid-cols-[repeat(3,minmax(0,13.2rem))]",
+      "xl:grid-cols-[repeat(3,minmax(0,12.6rem))]",
     );
     expect(sessionFlowScope.getByRole("heading", { name: /hold live hypothesis/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /assign blocker/i })).toBeInTheDocument();
@@ -145,7 +145,7 @@ describe("Chat app shell placeholder", () => {
     );
 
     const firstSession = activeSessionsRows[0];
-    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.6rem,auto)]");
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(5.4rem,auto)]");
     expect(
       screen.getByText(/project & session flow staged between docs and the future workspace/i).closest("section"),
     ).toHaveTextContent(/signal and next action stay on one calmer edge lane/i);

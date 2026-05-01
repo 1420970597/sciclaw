@@ -200,7 +200,7 @@ function SessionTimeline() {
               {appShellTimeline.map((item) => (
                 <div
                   key={item.title}
-                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(4.6rem,auto)] sm:items-start sm:gap-2.5"
+                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(5.4rem,auto)] sm:items-start sm:gap-3"
                 >
                   <div className="flex min-w-0 gap-3">
                     <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
@@ -209,7 +209,7 @@ function SessionTimeline() {
                       <p className="mt-1 max-w-[22ch] text-sm leading-6 text-[#6e665b]">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap items-start justify-start gap-1.5 sm:max-w-[4.6rem] sm:flex-col sm:items-end sm:justify-start">
+                  <div className="flex flex-wrap items-start justify-start gap-1.5 sm:max-w-[5.4rem] sm:flex-col sm:items-end sm:justify-start">
                     <span className="rounded-full border border-[#f0dfcf] bg-[#fff6ef] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#d07b3d]">
                       {item.meta}
                     </span>
@@ -232,7 +232,7 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,13.2rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,13.6rem))]" data-testid="chat-flow-card-grid">
+          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,12.6rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,13rem))]" data-testid="chat-flow-card-grid">
             {appShellFlowCards.map((card, index) => (
               <article
                 key={card.title}
