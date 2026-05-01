@@ -194,8 +194,8 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveClass("h-[2.75rem]");
     expect(settingsTrigger).toHaveClass("w-[2.75rem]");
     expect(triggerRow).not.toBeNull();
-    expect(triggerRow).toHaveClass("gap-[0.62rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.8rem]");
+    expect(triggerRow).toHaveClass("gap-[0.68rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.9rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
 
     fireEvent.click(settingsTrigger);
@@ -210,12 +210,12 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
-    expect(literatureNode.className).toContain("left-[59.6%]");
-    expect(dataMiningNode.className).toContain("left-[60.2%]");
-    expect(outcomeNode.className).toContain("right-[15.5%]");
-    expect(literatureNode.parentElement?.querySelector("span[class*='w-[8.52%]']")).not.toBeNull();
-    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[8.58%]']")).not.toBeNull();
-    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[8.44%]']")).not.toBeNull();
+    expect(literatureNode.className).toContain("left-[58.9%]");
+    expect(dataMiningNode.className).toContain("left-[59.45%]");
+    expect(outcomeNode.className).toContain("right-[16.35%]");
+    expect(literatureNode.parentElement?.querySelector("span[class*='w-[7.94%]']")).not.toBeNull();
+    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[7.98%]']")).not.toBeNull();
+    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[7.86%]']")).not.toBeNull();
     expect(literatureNode).toHaveTextContent(/literature analysis/i);
     expect(dataMiningNode).toHaveTextContent(/data mining/i);
     expect(outcomeNode).toHaveTextContent(/outcome present/i);
@@ -235,9 +235,9 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[7.48rem]");
-      expect(labelWrapper).toHaveClass("leading-[1.22]");
-      expect(label).toHaveClass("max-w-[8.94rem]");
+      expect(labelWrapper).toHaveClass("min-h-[7.72rem]");
+      expect(labelWrapper).toHaveClass("leading-[1.18]");
+      expect(label).toHaveClass("max-w-[9.16rem]");
       expect(label).toHaveClass("text-balance");
     });
 
