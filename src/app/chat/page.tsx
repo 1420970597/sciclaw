@@ -166,7 +166,7 @@ function SessionTimeline() {
         </p>
       </div>
 
-        <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(468px,0.92fr)] 2xl:grid-cols-[minmax(0,1.02fr)_minmax(500px,0.98fr)]">
+        <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.04fr)_minmax(500px,0.96fr)] 2xl:grid-cols-[minmax(0,1fr)_minmax(528px,1fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
           <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,1fr))] 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
@@ -223,7 +223,7 @@ function SessionTimeline() {
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[15ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
+                <p className="mt-3 max-w-[16ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {card.pills.map((pill) => (
                     <StatusPill key={pill.label} pill={pill} />
@@ -241,7 +241,7 @@ function SessionTimeline() {
           </div>
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[1fr_1.04fr] 2xl:grid-cols-[0.98fr_1.02fr]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[1.06fr_0.94fr] 2xl:grid-cols-[1.04fr_0.96fr]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -290,7 +290,7 @@ function SessionTimeline() {
                       {appShellOutputSummary.meta}
                     </span>
                   </div>
-                  <p className="mt-3 max-w-[24rem] text-sm leading-6 text-[#686154]">{appShellOutputSummary.description}</p>
+                  <p className="mt-3 max-w-[22rem] text-sm leading-6 text-[#686154]">{appShellOutputSummary.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {appShellExportStats.map((stat) => (
                       <span
@@ -314,27 +314,27 @@ function SessionTimeline() {
                           </span>
                         ) : null}
                       </div>
-                      <p className="mt-1 max-w-[26ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
+                      <p className="mt-1 max-w-[22ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
                     </article>
                   ))}
                 </div>
 
                 <article className="rounded-[1.45rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
                   <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="max-w-[17rem]">
+                    <div className="max-w-[15rem]">
                       <p className="text-sm font-semibold text-[#242424]">{appShellExportSummary.eyebrow}</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#c08d62]">{appShellExportSummary.title}</p>
                     </div>
                     <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">{appShellExportSummary.badge}</span>
                   </div>
                   <div className="mt-4 space-y-3 text-sm text-[#6c6459]">
-                    <p className="max-w-[22rem]">{appShellExportSummary.description}</p>
+                    <p className="max-w-[19rem]">{appShellExportSummary.description}</p>
                     <div className="space-y-2 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
                         <div key={asset.label} className="flex items-start justify-between gap-3 rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">
                           <div>
                             <p className="font-medium text-[#5e564c]">{asset.label}</p>
-                            <p className="mt-1 max-w-[18ch] leading-5 text-[#8f8578]">{asset.description}</p>
+                            <p className="mt-1 max-w-[15ch] leading-5 text-[#8f8578]">{asset.description}</p>
                           </div>
                           <span className="mt-0.5 shrink-0 rounded-full bg-[#fcf1e4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#c27d3f]">
                             Export

@@ -407,17 +407,17 @@ export const appShellOutputSignals: AppShellOutputSignal[] = [
   {
     label: "Evidence chain",
     summary: "Citations pinned",
-    description: "Keep citations and checkpoints attached to the answer draft.",
+    description: "Keep citations and checkpoints attached to the draft.",
   },
   {
     label: "Open risk",
     summary: "1 call pending",
-    description: "Hold one unresolved call before review leaves the workspace.",
+    description: "Hold one unresolved call before review leaves.",
   },
   {
     label: "Handoff route",
     summary: "Return to source",
-    description: "Jump back to memory, tasks, or the source thread.",
+    description: "Jump back to memory, tasks, or the thread.",
   },
 ];
 
@@ -425,14 +425,14 @@ export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Regulatory memo · current answer",
   meta: "Session 07",
-  description: "Keep the active answer, evidence posture, and export lane readable in one bridge card.",
+  description: "Keep the current answer, evidence posture, and export lane visible in one bridge card.",
 };
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   badge: "Ready",
-  title: "High-visibility export rail",
-  description: "Bundle project memory, sessions, and verified charts into one reviewer packet.",
+  title: "Foundry reviewer packet",
+  description: "Bundle project memory, sessions, and verified charts into one Foundry export packet.",
 };
 
 export const appShellExportStats = [
@@ -444,15 +444,15 @@ export const appShellExportStats = [
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
     label: "Brief outline",
-    description: "One-page narrative frame for the current answer.",
+    description: "One-page narrative frame.",
   },
   {
     label: "Evidence appendix",
-    description: "Linked citations and figures bundled for review.",
+    description: "Linked citations and figures for review.",
   },
   {
     label: "Slides handoff",
-    description: "Presentation-ready talking points routed into Foundry.",
+    description: "Presentation-ready talking points for Foundry.",
   },
 ];
 

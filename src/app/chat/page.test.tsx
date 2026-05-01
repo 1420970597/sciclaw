@@ -108,34 +108,32 @@ describe("Chat app shell placeholder", () => {
     expect(outputScope.getByRole("heading", { name: /shape a concise workspace brief before you leave the public docs shell/i })).toBeInTheDocument();
     expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
     expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/keep the active answer, evidence posture, and export lane readable in one bridge card/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/keep the current answer, evidence posture, and export lane visible in one bridge card/i)).toBeInTheDocument();
     expect(outputScope.getByText(/^3 live sessions$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/^5 open tasks$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/^12 foundry exports$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/evidence chain/i)).toBeInTheDocument();
     expect(outputScope.getByText(/citations pinned/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/keep citations and checkpoints attached to the answer draft/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/keep citations and checkpoints attached to the draft/i)).toBeInTheDocument();
     expect(outputScope.getByText(/open risk/i)).toBeInTheDocument();
     expect(outputScope.getByText(/1 call pending/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/hold one unresolved call before review leaves the workspace/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/hold one unresolved call before review leaves/i)).toBeInTheDocument();
     expect(outputScope.getByText(/handoff route/i)).toBeInTheDocument();
     expect(outputScope.getByText(/return to source/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/jump back to memory, tasks, or the source thread/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/jump back to memory, tasks, or the thread/i)).toBeInTheDocument();
 
     const foundryCard = outputScope.getByText(/^foundry handoff$/i).closest("article");
     expect(foundryCard).not.toBeNull();
     const foundryScope = within(foundryCard as HTMLElement);
-    expect(foundryScope.getByText(/high-visibility export rail/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/foundry reviewer packet/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/^ready$/i)).toBeInTheDocument();
-    expect(
-      foundryScope.getByText(/bundle project memory, sessions, and verified charts into one reviewer packet/i),
-    ).toBeInTheDocument();
+    expect(foundryScope.getByText(/bundle project memory, sessions, and verified charts into one foundry export packet/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/brief outline/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/one-page narrative frame for the current answer/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/one-page narrative frame/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/evidence appendix/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/linked citations and figures bundled for review/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/linked citations and figures for review/i)).toBeInTheDocument();
     expect(foundryScope.getByText(/slides handoff/i)).toBeInTheDocument();
-    expect(foundryScope.getByText(/presentation-ready talking points routed into foundry/i)).toBeInTheDocument();
+    expect(foundryScope.getByText(/presentation-ready talking points for Foundry/i)).toBeInTheDocument();
     expect(within(foundryCard as HTMLElement).getAllByText(/^export$/i)).toHaveLength(3);
   });
 });
