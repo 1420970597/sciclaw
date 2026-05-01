@@ -78,11 +78,11 @@ function Header() {
   return (
     <header className="pt-[0.72rem] sm:pt-[0.92rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-[1.95rem] xl:px-[2.18rem]">
-        <nav aria-label="Primary" className="flex items-center gap-[0.76rem] pr-[0.03rem] sm:gap-[0.88rem] sm:pr-[0.04rem]">
+        <nav aria-label="Primary" className="flex items-center gap-[0.68rem] pr-[0.03rem] sm:gap-[0.84rem] sm:pr-[0.04rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            className="gap-[0.7rem] sm:gap-[0.9rem]"
-            buttonClassName="border-[rgba(7,25,39,0.48)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#183a4e] shadow-[0_1px_2px_rgba(15,23,42,0.005),0_2px_4px_rgba(15,23,42,0.006),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(7,25,39,0.56)] hover:text-[#071723]"
+            className="gap-[0.62rem] sm:gap-[0.82rem]"
+            buttonClassName="border-[rgba(7,25,39,0.44)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#18384a] shadow-[0_1px_2px_rgba(15,23,42,0.004),0_2px_4px_rgba(15,23,42,0.005),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(7,25,39,0.54)] hover:text-[#071723]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -99,34 +99,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: "文",
-      position: "left-[47.1%] top-[11.9%] sm:left-[47.1%] sm:top-[11.9%]",
-      lineClass: "left-[49.18%] top-[27.62%] h-[2.18px] w-[12.26%] origin-left -rotate-[26deg]",
+      position: "left-[47.85%] top-[11.9%] sm:left-[47.85%] sm:top-[11.9%]",
+      lineClass: "left-[49.18%] top-[27.62%] h-[2.18px] w-[11.42%] origin-left -rotate-[26deg]",
       ringClass: "h-[4.86rem] w-[4.86rem] border-[#466273] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_13px_21px_rgba(15,23,42,0.098)]",
       activeRingClass: "h-[4.96rem] w-[4.96rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.064),0_15px_26px_rgba(232,124,55,0.102)]",
-      labelClass: "max-w-[188px] text-[#5f7989] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[160px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
+      labelClass: "max-w-[180px] text-[#607988] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[152px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
     },
     {
       id: "data-mining",
       label: "Data Mining",
       icon: "数",
-      position: "left-[47.55%] top-[49.85%] sm:left-[47.55%] sm:top-[49.85%]",
-      lineClass: "left-[49.2%] top-[52.92%] h-[2.18px] w-[12.34%] origin-left rotate-[17deg]",
+      position: "left-[48.25%] top-[49.35%] sm:left-[48.25%] sm:top-[49.35%]",
+      lineClass: "left-[49.2%] top-[52.92%] h-[2.18px] w-[11.5%] origin-left rotate-[17deg]",
       ringClass: "h-[4.86rem] w-[4.86rem] border-[#466273] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_13px_21px_rgba(15,23,42,0.098)]",
       activeRingClass: "h-[4.96rem] w-[4.96rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.064),0_15px_26px_rgba(232,124,55,0.102)]",
-      labelClass: "max-w-[188px] text-[#5f7989] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[160px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
+      labelClass: "max-w-[180px] text-[#607988] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[152px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
     },
     {
       id: "outcome-present",
       label: "Outcome Present",
       icon: "果",
-      position: "right-[15.15%] top-[11.1%] sm:right-[15.15%] sm:top-[11.1%]",
-      lineClass: "left-[49.18%] top-[27.74%] h-[2.18px] w-[12.08%] origin-left rotate-[24deg]",
+      position: "right-[15.9%] top-[11.25%] sm:right-[15.9%] sm:top-[11.25%]",
+      lineClass: "left-[49.18%] top-[27.74%] h-[2.18px] w-[11.24%] origin-left rotate-[24deg]",
       ringClass: "h-[4.86rem] w-[4.86rem] border-[#466273] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_13px_21px_rgba(15,23,42,0.098)]",
       activeRingClass: "h-[4.96rem] w-[4.96rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.064),0_15px_26px_rgba(232,124,55,0.102)]",
-      labelClass: "max-w-[188px] text-[#5f7989] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[160px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
+      labelClass: "max-w-[180px] text-[#607988] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[152px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
     },
     ],
     [],
@@ -298,7 +298,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[3.76rem] grid grid-cols-4 gap-[4.38rem] px-[0.46rem] pt-[4.28rem] sm:gap-[4.56rem]">
+                <div className="mt-[3.76rem] grid grid-cols-4 gap-[4.52rem] px-[0.52rem] pt-[4.18rem] sm:gap-[4.68rem]">
                   {bars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.56rem] text-center sm:gap-[1.64rem]">
                       <div className="flex h-[150px] w-full items-end gap-[0.78rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[1.26rem] pb-[1.02rem] pt-4">
