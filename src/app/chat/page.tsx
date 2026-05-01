@@ -1,13 +1,15 @@
 import {
   appShellCards,
   appShellExportAssets,
+  appShellExportStats,
+  appShellExportSummary,
   appShellFlowCards,
   appShellOutputSignals,
+  appShellOutputSummary,
   appShellResources,
   appShellSections,
   appShellTimeline,
   appShellTodos,
-  appShellWorkspaceMetrics,
   type AppShellSection,
   type AppShellStatusPill,
 } from "@/app/landing-data";
@@ -164,7 +166,7 @@ function SessionTimeline() {
         </p>
       </div>
 
-        <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(448px,0.92fr)] 2xl:grid-cols-[minmax(0,1.02fr)_minmax(482px,0.98fr)]">
+        <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(468px,0.92fr)] 2xl:grid-cols-[minmax(0,1.02fr)_minmax(500px,0.98fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
           <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,1fr))] 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
@@ -172,13 +174,13 @@ function SessionTimeline() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[17ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
                   </div>
                   <span className="shrink-0 rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[21ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
+                <p className="mt-3 max-w-[19ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
                 {card.detail ? <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#b08a68]">{card.detail}</p> : null}
               </article>
             ))}
@@ -240,7 +242,7 @@ function SessionTimeline() {
           </div>
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[1fr_1fr] 2xl:grid-cols-[0.98fr_1.02fr]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[1fr_1.04fr] 2xl:grid-cols-[0.98fr_1.02fr]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -277,62 +279,63 @@ function SessionTimeline() {
               <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-4">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
-                  <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Shape a tighter workspace brief before you leave the public docs shell.</h3>
+                  <h3 className="mt-2 max-w-[18ch] text-lg font-semibold text-[#1f1f1f]">Shape a tighter workspace brief before you leave the public docs shell.</h3>
                 </div>
-                <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">Live draft</span>
+                <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">{appShellOutputSummary.eyebrow}</span>
               </div>
               <div className="mt-4 space-y-4">
                 <article className="rounded-[1.45rem] border border-[#f3e8dc] bg-white px-4 py-4 shadow-[0_10px_22px_rgba(15,23,42,0.03)]">
                   <div className="flex items-center justify-between gap-3">
-                    <p className="text-sm font-semibold text-[#242424]">Regulatory memo · current answer</p>
+                    <p className="text-sm font-semibold text-[#242424]">{appShellOutputSummary.title}</p>
                     <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-[#9c8e7d]">
-                      Session 07
+                      {appShellOutputSummary.meta}
                     </span>
                   </div>
-                  <p className="mt-3 max-w-[27rem] text-sm leading-6 text-[#686154]">
-                    Keep the live answer, evidence posture, and export lane visible in one bridge card.
-                  </p>
-                  <div className="mt-4 grid gap-2 sm:grid-cols-3">
-                    {appShellWorkspaceMetrics.map((metric) => (
-                      <div key={metric.label} className="rounded-[1.2rem] border border-[#f3e9dd] bg-[#fcfaf7] px-3 py-3">
-                        <p className="text-[10px] uppercase tracking-[0.18em] text-[#b29f88]">{metric.label}</p>
-                        <p className="mt-1 text-lg font-semibold text-[#242424]">{metric.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 grid gap-3 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-1">
-                    {appShellOutputSignals.map((signal) => (
-                      <div key={signal.label} className="rounded-[1.15rem] border border-[#f4ece2] bg-[#fcfaf7] px-3 py-3">
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]">{signal.label}</p>
-                          {signal.summary ? (
-                            <span className="rounded-full border border-[#efe1d2] bg-white px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
-                              {signal.summary}
-                            </span>
-                          ) : null}
-                        </div>
-                        <p className="mt-1 text-xs leading-5 text-[#7f776c]">{signal.description}</p>
-                      </div>
+                  <p className="mt-3 max-w-[24rem] text-sm leading-6 text-[#686154]">{appShellOutputSummary.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {appShellExportStats.map((stat) => (
+                      <span
+                        key={stat}
+                        className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9f8f7d]"
+                      >
+                        {stat}
+                      </span>
                     ))}
                   </div>
                 </article>
 
+                <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-1">
+                  {appShellOutputSignals.map((signal) => (
+                    <article key={signal.label} className="rounded-[1.15rem] border border-[#f4ece2] bg-[#fcfaf7] px-3 py-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]">{signal.label}</p>
+                        {signal.summary ? (
+                          <span className="rounded-full border border-[#efe1d2] bg-white px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
+                            {signal.summary}
+                          </span>
+                        ) : null}
+                      </div>
+                      <p className="mt-1 max-w-[26ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
+                    </article>
+                  ))}
+                </div>
+
                 <article className="rounded-[1.45rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
                   <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="max-w-[18rem]">
-                      <p className="text-sm font-semibold text-[#242424]">Foundry handoff</p>
-                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#c08d62]">High-visibility export rail</p>
+                    <div className="max-w-[17rem]">
+                      <p className="text-sm font-semibold text-[#242424]">{appShellExportSummary.eyebrow}</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#c08d62]">{appShellExportSummary.title}</p>
                     </div>
-                    <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">Ready</span>
+                    <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">{appShellExportSummary.badge}</span>
                   </div>
                   <div className="mt-4 space-y-3 text-sm text-[#6c6459]">
-                    <p className="max-w-[24rem]">Bundle project memory, sessions, and verified charts into one export lane.</p>
+                    <p className="max-w-[22rem]">{appShellExportSummary.description}</p>
                     <div className="space-y-2 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
                         <div key={asset.label} className="flex items-start justify-between gap-3 rounded-2xl border border-[#f0dfcf] bg-white px-3 py-2.5">
                           <div>
                             <p className="font-medium text-[#5e564c]">{asset.label}</p>
-                            <p className="mt-1 max-w-[20ch] leading-5 text-[#8f8578]">{asset.description}</p>
+                            <p className="mt-1 max-w-[18ch] leading-5 text-[#8f8578]">{asset.description}</p>
                           </div>
                           <span className="mt-0.5 shrink-0 rounded-full bg-[#fcf1e4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#c27d3f]">
                             Export

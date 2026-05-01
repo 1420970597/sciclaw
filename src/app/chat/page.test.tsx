@@ -19,18 +19,18 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/project & session flow staged between docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a tighter workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
-    expect(screen.getByText(/ground every active session in one durable project workspace/i)).toBeInTheDocument();
-    expect(screen.getByText(/move between active threads without dropping prior reasoning/i)).toBeInTheDocument();
+    expect(screen.getByText(/ground every session in one durable project workspace/i)).toBeInTheDocument();
+    expect(screen.getByText(/move between live threads without dropping prior reasoning/i)).toBeInTheDocument();
     expect(screen.getByText(/promote one validated answer into a reviewer-ready export lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep uploads, memory, skills, and outputs on the same track/i)).toBeInTheDocument();
-    expect(screen.getByText(/reopen checkpoints or branch a fresh lane without losing the active answer/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the active memo and asset queue visible before handoff/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep uploads, memory, skills, and outputs aligned/i)).toBeInTheDocument();
+    expect(screen.getByText(/reopen checkpoints or branch a fresh lane from the current answer/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the active memo and export queue visible before handoff/i)).toBeInTheDocument();
     expect(screen.getByText(/grounded start · memory pinned/i)).toBeInTheDocument();
     expect(screen.getByText(/checkpoint recall · branch cleanly/i)).toBeInTheDocument();
     expect(screen.getByText(/answer live · export queue visible/i)).toBeInTheDocument();
     expect(screen.getByText(/pin one live hypothesis and its evidence lane/i)).toBeInTheDocument();
     expect(screen.getByText(/assign the blocker and return one narrowed review question/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote the locked outline, appendix, and slide cues in one packet/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote the locked outline and appendix in one packet/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -103,8 +103,8 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowSection = sessionFlowHeading.closest("section");
     expect(sessionFlowSection).not.toBeNull();
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
-    expect(sessionFlowScope.getByRole("heading", { name: /ground every active session in one durable project workspace/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /move between active threads without dropping prior reasoning/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /ground every session in one durable project workspace/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /move between live threads without dropping prior reasoning/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /promote one validated answer into a reviewer-ready export lane/i })).toBeInTheDocument();
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
@@ -115,12 +115,9 @@ describe("Chat app shell placeholder", () => {
     expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
     expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
     expect(outputScope.getByText(/keep the live answer, evidence posture, and export lane visible in one bridge card/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/live sessions/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/^3$/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/open tasks/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/^5$/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/foundry exports/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/^12$/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/^3 live sessions$/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/^5 open tasks$/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/^12 foundry exports$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/evidence chain/i)).toBeInTheDocument();
     expect(outputScope.getByText(/citations pinned/i)).toBeInTheDocument();
     expect(outputScope.getByText(/keep citations and checkpoints attached to the answer draft/i)).toBeInTheDocument();

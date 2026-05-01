@@ -280,22 +280,22 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
-    title: "Ground every active session in one durable project workspace.",
-    description: "Keep uploads, memory, skills, and outputs on the same track.",
+    title: "Ground every session in one durable project workspace.",
+    description: "Keep uploads, memory, skills, and outputs aligned.",
     meta: "128 assets · 6 skills",
     detail: "Grounded start · memory pinned",
   },
   {
     eyebrow: "Session selector",
-    title: "Move between active threads without dropping prior reasoning.",
-    description: "Reopen checkpoints or branch a fresh lane without losing the active answer.",
+    title: "Move between live threads without dropping prior reasoning.",
+    description: "Reopen checkpoints or branch a fresh lane from the current answer.",
     meta: "3 live threads",
     detail: "Checkpoint recall · branch cleanly",
   },
   {
     eyebrow: "Foundry handoff",
     title: "Promote one validated answer into a reviewer-ready export lane.",
-    description: "Keep the active memo and asset queue visible before handoff.",
+    description: "Keep the active memo and export queue visible before handoff.",
     meta: "12 export-ready assets",
     detail: "Answer live · export queue visible",
   },
@@ -329,7 +329,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Promote the locked outline, appendix, and slide cues in one packet.",
+    description: "Promote the locked outline and appendix in one packet.",
     meta: "Export rail",
     pills: [
       { label: "12 assets ready", tone: "accent" },
@@ -419,6 +419,26 @@ export const appShellOutputSignals: AppShellOutputSignal[] = [
     summary: "Return to source",
     description: "Jump back to memory, tasks, or the source thread.",
   },
+];
+
+export const appShellOutputSummary = {
+  eyebrow: "Live draft",
+  title: "Regulatory memo · current answer",
+  meta: "Session 07",
+  description: "Keep the live answer, evidence posture, and export lane visible in one bridge card.",
+};
+
+export const appShellExportSummary = {
+  eyebrow: "Foundry handoff",
+  badge: "Ready",
+  title: "High-visibility export rail",
+  description: "Bundle project memory, sessions, and verified charts into one export lane.",
+};
+
+export const appShellExportStats = [
+  "3 live sessions",
+  "5 open tasks",
+  "12 Foundry exports",
 ];
 
 export const appShellExportAssets: AppShellExportAsset[] = [
