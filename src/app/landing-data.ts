@@ -329,8 +329,8 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   },
   {
     eyebrow: "Checkpoint rail",
-    title: "Fold into Foundry",
-    description: "Keep the bridge rail calm.",
+    title: "Foundry fold",
+    description: "Keep bridge notes calm.",
     meta: "Folded",
     pills: [{ label: "Foundry sync", tone: "neutral" }],
     ctaLabel: "Open rail",
@@ -356,9 +356,9 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   {
     title: "Reg memo final",
     description: "Outline locked.",
-    summary: "Ready",
+    summary: "Packet",
     summaryTone: "accent",
-    meta: "Packet",
+    meta: "Ready",
   },
 ];
 
@@ -434,7 +434,7 @@ export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Regulatory memo · current answer",
   meta: "Session 07",
-  description: "Keep the current answer and export lane visible in one bridge card.",
+  description: "Keep the answer and export lane visible in one bridge card.",
 };
 
 export const appShellExportSummary = {
@@ -453,7 +453,7 @@ export const appShellExportStats = [
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
     label: "Packet export",
-    description: "Brief, appendix, and slides staged together.",
+    description: "Brief and slides staged together.",
   },
 ];
 

@@ -24,7 +24,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
     expect(screen.getByText(/hold live hypothesis/i)).toBeInTheDocument();
     expect(screen.getByText(/assign blocker/i)).toBeInTheDocument();
-    expect(screen.getByText(/fold into foundry/i)).toBeInTheDocument();
+    expect(screen.getByText(/foundry fold/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -108,9 +108,9 @@ describe("Chat app shell placeholder", () => {
     );
     expect(sessionFlowScope.getByRole("heading", { name: /hold live hypothesis/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /assign blocker/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /fold into foundry/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /foundry fold/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByText(/foundry sync/i)).toBeInTheDocument();
-    expect(sessionFlowScope.getByText(/keep the bridge rail calm/i)).toBeInTheDocument();
+    expect(sessionFlowScope.getByText(/keep bridge notes calm/i)).toBeInTheDocument();
     expect(sessionFlowScope.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
     expect(sessionFlowScope.getByRole("link", { name: /open rail/i })).toHaveAttribute(
       "href",
@@ -195,6 +195,8 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.getByText(/foundry packet/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/3 exports ready/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/packet export/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/keep the answer and export lane visible in one bridge card/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/brief and slides staged together/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/brief outline/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/slides handoff/i)).not.toBeInTheDocument();
