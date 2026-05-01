@@ -81,8 +81,8 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.76rem] pr-[0.03rem] sm:gap-[0.88rem] sm:pr-[0.04rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            className="gap-[0.58rem] sm:gap-[0.72rem]"
-            buttonClassName="border-[rgba(0,0,0,0.44)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#102d42] shadow-[0_1px_2px_rgba(15,23,42,0.024),0_6px_14px_rgba(15,23,42,0.032),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.47)] hover:text-[#0d2435]"
+            className="gap-[0.62rem] sm:gap-[0.8rem]"
+            buttonClassName="border-[rgba(0,0,0,0.46)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#0d2a3e] shadow-[0_1px_2px_rgba(15,23,42,0.026),0_7px_16px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.5)] hover:text-[#091b28]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -99,8 +99,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: "文",
-      position: "left-[57.7%] top-[12.7%] sm:left-[57.7%] sm:top-[12.7%]",
-      lineClass: "left-[50.14%] top-[29.05%] h-[2.18px] w-[7.78%] origin-left rotate-[184deg]",
+      position: "left-[59.6%] top-[12.7%] sm:left-[59.6%] sm:top-[12.7%]",
+      lineClass: "left-[50.18%] top-[29.05%] h-[2.18px] w-[8.52%] origin-left rotate-[184deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
       labelClass: "max-w-[124px] text-[#315266] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
@@ -110,8 +110,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "data-mining",
       label: "Data Mining",
       icon: "数",
-      position: "left-[58.5%] top-[36.55%] sm:left-[58.5%] sm:top-[36.55%]",
-      lineClass: "left-[50.12%] top-[37.72%] h-[2.18px] w-[7.92%] origin-left rotate-[160deg]",
+      position: "left-[60.2%] top-[36.55%] sm:left-[60.2%] sm:top-[36.55%]",
+      lineClass: "left-[50.16%] top-[37.72%] h-[2.18px] w-[8.58%] origin-left rotate-[160deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
       labelClass: "max-w-[124px] text-[#315266] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
@@ -121,8 +121,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "outcome-present",
       label: "Outcome Present",
       icon: "果",
-      position: "right-[17.1%] top-[12.62%] sm:right-[17.1%] sm:top-[12.62%]",
-      lineClass: "left-[50.02%] top-[29.04%] h-[2.18px] w-[7.72%] origin-left rotate-[25deg]",
+      position: "right-[15.5%] top-[12.62%] sm:right-[15.5%] sm:top-[12.62%]",
+      lineClass: "left-[50.06%] top-[29.04%] h-[2.18px] w-[8.44%] origin-left rotate-[25deg]",
       ringClass: "h-[4.88rem] w-[4.88rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_14px_22px_rgba(15,23,42,0.104)]",
       activeRingClass: "h-[4.98rem] w-[4.98rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.066),0_17px_29px_rgba(232,124,55,0.108)]",
       labelClass: "max-w-[124px] text-[#315266] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
@@ -298,7 +298,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[3.18rem] grid grid-cols-4 gap-[2.86rem] pt-[4.3rem] sm:gap-[2.98rem]">
+                <div className="mt-[3.18rem] grid grid-cols-4 gap-[3.04rem] pt-[4.3rem] sm:gap-[3.18rem]">
                   {bars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.42rem] text-center sm:gap-[1.5rem]">
                       <div className="flex h-[164px] w-full items-end gap-[0.52rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.84rem] pb-[1.04rem] pt-4">
@@ -307,8 +307,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[7.34rem] w-full min-w-0 items-start justify-center px-[0.72rem] pb-[0.46rem] text-center text-[14.92px] font-medium uppercase leading-[1.18] tracking-[0.004em] text-[#29485d] sm:min-h-[7.4rem] sm:text-[15.04px] sm:tracking-[0.006em]">
-                        <span className="block max-w-[8.68rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[7.48rem] w-full min-w-0 items-start justify-center px-[0.82rem] pb-[0.46rem] text-center text-[14.72px] font-medium uppercase leading-[1.22] tracking-[0.012em] text-[#29485d] sm:min-h-[7.56rem] sm:text-[14.84px] sm:tracking-[0.014em]">
+                        <span className="block max-w-[8.94rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
