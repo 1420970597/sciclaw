@@ -329,11 +329,11 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   },
   {
     eyebrow: "Checkpoint rail",
-    title: "Checkpoints fold into Tasks and Foundry.",
-    description: "Keep the center bridge on one summary rail.",
+    title: "Fold checkpoints into Foundry",
+    description: "Keep the bridge on one calmer rail.",
     meta: "Folded",
     pills: [{ label: "Foundry sync", tone: "neutral" }],
-    ctaLabel: "View checkpoints",
+    ctaLabel: "Open rail",
     ctaHref: "/help/foundry",
   },
 ];

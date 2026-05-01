@@ -24,7 +24,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
     expect(screen.getByText(/hold live hypothesis/i)).toBeInTheDocument();
     expect(screen.getByText(/assign blocker/i)).toBeInTheDocument();
-    expect(screen.getByText(/checkpoints fold into tasks and foundry/i)).toBeInTheDocument();
+    expect(screen.getByText(/fold checkpoints into foundry/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -86,7 +86,7 @@ describe("Chat app shell placeholder", () => {
 
     expect(screen.getByRole("link", { name: /open thread/i })).toHaveAttribute("href", "/chat");
     expect(screen.getByRole("link", { name: /review tasks/i })).toHaveAttribute("href", "/help/tasks");
-    expect(screen.getByRole("link", { name: /view checkpoints/i })).toHaveAttribute("href", "/help/foundry");
+    expect(screen.getByRole("link", { name: /open rail/i })).toHaveAttribute("href", "/help/foundry");
   });
 
   it("keeps the lower center strip as a calmer three-card checkpoint rail after the density pass", () => {
@@ -105,13 +105,11 @@ describe("Chat app shell placeholder", () => {
     );
     expect(sessionFlowScope.getByRole("heading", { name: /hold live hypothesis/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /assign blocker/i })).toBeInTheDocument();
-    expect(
-      sessionFlowScope.getByRole("heading", { name: /checkpoints fold into tasks and foundry/i }),
-    ).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /fold checkpoints into foundry/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByText(/foundry sync/i)).toBeInTheDocument();
-    expect(sessionFlowScope.getByText(/keep the center bridge on one summary rail/i)).toBeInTheDocument();
+    expect(sessionFlowScope.getByText(/keep the bridge on one calmer rail/i)).toBeInTheDocument();
     expect(sessionFlowScope.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("link", { name: /view checkpoints/i })).toHaveAttribute(
+    expect(sessionFlowScope.getByRole("link", { name: /open rail/i })).toHaveAttribute(
       "href",
       "/help/foundry",
     );
@@ -171,7 +169,7 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     expect(screen.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/keep the center bridge on one summary rail/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /view checkpoints/i })).toHaveAttribute("href", "/help/foundry");
+    expect(screen.getByText(/keep the bridge on one calmer rail/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /open rail/i })).toHaveAttribute("href", "/help/foundry");
   });
 });
