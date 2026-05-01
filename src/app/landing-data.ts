@@ -414,17 +414,17 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
       {
         label: "Evidence chain",
         summary: "Citations pinned",
-        description: "Keep citations attached to the draft.",
+        description: "Sources locked.",
       },
       {
         label: "Open risk",
         summary: "1 call pending",
-        description: "Hold one unresolved call before review leaves.",
+        description: "One risk held.",
       },
       {
         label: "Handoff route",
         summary: "Return to source",
-        description: "Jump back to memory, tasks, or the thread.",
+        description: "Back to memory or tasks.",
       },
     ],
   },
@@ -434,34 +434,26 @@ export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Regulatory memo · current answer",
   meta: "Session 07",
-  description: "Keep the current answer, evidence posture, and export lane visible in one bridge card.",
+  description: "Keep the current answer and export lane visible in one bridge card.",
 };
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   badge: "Ready",
   title: "Foundry reviewer packet",
-  description: "Bundle project memory, sessions, and verified charts into one Foundry export packet.",
+  description: "Bundle project memory, sessions, and verified charts into one export packet.",
 };
 
 export const appShellExportStats = [
   "3 live sessions",
   "5 open tasks",
-  "12 Foundry exports",
+  "3 exports ready",
 ];
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
-    label: "Brief outline",
-    description: "Narrative frame.",
-  },
-  {
-    label: "Evidence appendix",
-    description: "Linked figures.",
-  },
-  {
-    label: "Slides handoff",
-    description: "Foundry talking points.",
+    label: "Export summary",
+    description: "Brief, appendix, and slides staged together.",
   },
 ];
 

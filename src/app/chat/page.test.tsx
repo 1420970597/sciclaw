@@ -171,11 +171,33 @@ describe("Chat app shell placeholder", () => {
     expect(within(thirdSession).getByText(/^Packet$/i)).toBeInTheDocument();
   });
 
-  it("keeps the lower checkpoint rail embedded inside the three-card center strip after the density pass", () => {
+  it("keeps the right rail flatter and less nested after the density pass", () => {
     render(<ChatPage />);
 
-    expect(screen.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/keep the bridge rail calm/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /open rail/i })).toHaveAttribute("href", "/help/foundry");
+    const sessionOutputHeading = screen.getByRole("heading", {
+      name: /shape a concise workspace brief before you leave the public docs shell/i,
+    });
+    const sessionOutputSection = sessionOutputHeading.closest("section");
+    expect(sessionOutputSection).not.toBeNull();
+    const rightRailScope = within(sessionOutputSection as HTMLElement);
+
+    expect(rightRailScope.getByText(/status board/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/3 signals/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/evidence chain/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/open risk/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/handoff route/i)).toBeInTheDocument();
+    expect(rightRailScope.queryByText(/keep citations attached to the draft/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/hold one unresolved call before review leaves/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/jump back to memory, tasks, or the thread/i)).not.toBeInTheDocument();
+    expect(rightRailScope.getByText(/citations pinned/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/1 call pending/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/return to source/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/foundry reviewer packet/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/3 exports ready/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/export summary/i)).toBeInTheDocument();
+    expect(rightRailScope.queryByText(/brief outline/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/slides handoff/i)).not.toBeInTheDocument();
+    expect(rightRailScope.getAllByText(/^export$/i).length).toBeGreaterThan(0);
   });
 });
