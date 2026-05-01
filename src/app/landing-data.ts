@@ -295,7 +295,7 @@ export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Threads",
     title: "Switch live threads.",
-    description: "Live state stays surfaced.",
+    description: "Live state surfaced.",
     meta: "3 live",
     detail: "Checkpoint recall",
   },
@@ -330,7 +330,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Checkpoint rail",
     title: "Fold into Foundry",
-    description: "Keep the bridge summary calmer.",
+    description: "Keep the bridge rail calm.",
     meta: "Folded",
     pills: [{ label: "Foundry sync", tone: "neutral" }],
     ctaLabel: "Open rail",

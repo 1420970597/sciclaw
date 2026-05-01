@@ -20,7 +20,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
     expect(screen.getByText(/one lane per thread/i)).toBeInTheDocument();
-    expect(screen.getByText(/live state stays surfaced/i)).toBeInTheDocument();
+    expect(screen.getByText(/live state surfaced/i)).toBeInTheDocument();
     expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
     expect(screen.getByText(/hold live hypothesis/i)).toBeInTheDocument();
     expect(screen.getByText(/assign blocker/i)).toBeInTheDocument();
@@ -107,7 +107,7 @@ describe("Chat app shell placeholder", () => {
     expect(sessionFlowScope.getByRole("heading", { name: /assign blocker/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /fold into foundry/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByText(/foundry sync/i)).toBeInTheDocument();
-    expect(sessionFlowScope.getByText(/keep the bridge summary calmer/i)).toBeInTheDocument();
+    expect(sessionFlowScope.getByText(/keep the bridge rail calm/i)).toBeInTheDocument();
     expect(sessionFlowScope.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
     expect(sessionFlowScope.getByRole("link", { name: /open rail/i })).toHaveAttribute(
       "href",
@@ -169,7 +169,7 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     expect(screen.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/keep the bridge summary calmer/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the bridge rail calm/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /open rail/i })).toHaveAttribute("href", "/help/foundry");
   });
 });
