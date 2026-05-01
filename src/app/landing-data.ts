@@ -280,22 +280,22 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
-    title: "One lane per session.",
-    description: "Memory pinned · open context.",
+    title: "One project lane.",
+    description: "Memory pinned · source context.",
     meta: "128 assets · 6 skills",
     detail: "Memory pinned",
   },
   {
     eyebrow: "Session selector",
-    title: "Switch live threads.",
-    description: "Checkpoint recall · resume fast.",
+    title: "Resume live threads.",
+    description: "Checkpoint recall · branch fast.",
     meta: "3 live threads",
     detail: "Checkpoint recall",
   },
   {
     eyebrow: "Foundry handoff",
-    title: "Promote the locked answer.",
-    description: "Export queue live · review bundle.",
+    title: "Stage the review bundle.",
+    description: "Export queue live · packet staged.",
     meta: "12 export-ready assets",
     detail: "Export queue live",
   },
@@ -305,7 +305,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
     title: "Comparative pathway scan",
-    description: "Pin the live hypothesis.",
+    description: "Pin the open claim.",
     meta: "12 min ago",
     pills: [
       { label: "Memo live", tone: "accent" },
@@ -317,7 +317,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Resolve one judgment call",
-    description: "Assign the blocker.",
+    description: "Clear the blocker.",
     meta: "Reviewer handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
@@ -329,7 +329,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Lock outline and appendix.",
+    description: "Ready the export packet.",
     meta: "Export rail",
     pills: [
       { label: "12 ready", tone: "accent" },
@@ -425,14 +425,14 @@ export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Regulatory memo · current answer",
   meta: "Session 07",
-  description: "Keep the live answer, evidence posture, and export lane visible in one bridge card.",
+  description: "Keep the active answer, evidence posture, and export lane readable in one bridge card.",
 };
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   badge: "Ready",
   title: "High-visibility export rail",
-  description: "Bundle project memory, sessions, and verified charts into one export lane.",
+  description: "Bundle project memory, sessions, and verified charts into one reviewer packet.",
 };
 
 export const appShellExportStats = [

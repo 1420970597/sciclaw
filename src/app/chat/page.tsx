@@ -114,11 +114,11 @@ function ShellHeader() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b2aa9d]">SciClaw · User Guide · Session Preview</p>
-          <h1 className="mt-2 max-w-[20ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
+          <h1 className="mt-2 max-w-[19ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
             Coordinate project context, sessions, tasks, and outputs from one app shell.
           </h1>
-          <p className="mt-2 max-w-[28rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
-            Keep navigation, memory, tasks, and handoff visible while the public docs shell narrows into a lighter workspace preview.
+          <p className="mt-2 max-w-[27rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
+            Keep navigation, memory, tasks, and handoff visible while the public docs shell narrows into a quieter workspace preview.
           </p>
         </div>
 
@@ -180,7 +180,7 @@ function SessionTimeline() {
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[14ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
+                <p className="mt-3 max-w-[13ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
               </article>
             ))}
           </div>
@@ -278,7 +278,7 @@ function SessionTimeline() {
               <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-4">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
-                  <h3 className="mt-2 max-w-[18ch] text-lg font-semibold text-[#1f1f1f]">Shape a tighter workspace brief before you leave the public docs shell.</h3>
+                  <h3 className="mt-2 max-w-[18ch] text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
                 </div>
                 <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">{appShellOutputSummary.eyebrow}</span>
               </div>
