@@ -349,22 +349,22 @@ export const appShellFlowCards: AppShellFlowCard[] = [
 
 export const appShellTimeline: AppShellTimelineItem[] = [
   {
-    title: "Patent landscaping · comparative thread",
-    description: "Prior-art overlap staged.",
+    title: "Patent landscape · compare",
+    description: "Overlap staged.",
     summary: "Cluster map",
     summaryTone: "neutral",
     meta: "12m",
   },
   {
-    title: "Clinical diligence · session replay",
-    description: "Competitor notes queued for replay.",
+    title: "Clinical diligence · replay",
+    description: "Competitor notes queued.",
     summary: "Replay queue",
     summaryTone: "warn",
     meta: "1 blocker",
   },
   {
-    title: "Regulatory memo · final synthesis",
-    description: "Packet aligned to export.",
+    title: "Regulatory memo · final",
+    description: "Packet export aligned.",
     summary: "Outline locked",
     summaryTone: "accent",
     meta: "Ready packet",
