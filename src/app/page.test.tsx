@@ -37,9 +37,9 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
-    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,306px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("lg:gap-[0.48rem]");
-    expect(featureRotator).toHaveClass("xl:gap-[0.64rem]");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:gap-[0.22rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[0.34rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
@@ -178,7 +178,7 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveAttribute("aria-expanded", "false");
   });
 
-  it("keeps the utility triggers subtle, preserves the settings menu contract, and keeps the hero micro-label set readable after the cluster reposition", () => {
+  it("keeps the utility triggers subtle, preserves the settings menu contract, and improves hero cluster/label readability after the cohesion pass", () => {
     render(<Home />);
 
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
@@ -194,8 +194,8 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveClass("h-[2.75rem]");
     expect(settingsTrigger).toHaveClass("w-[2.75rem]");
     expect(triggerRow).not.toBeNull();
-    expect(triggerRow).toHaveClass("gap-[0.86rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[1.12rem]");
+    expect(triggerRow).toHaveClass("gap-[0.82rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[1.08rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
 
     fireEvent.click(settingsTrigger);
@@ -210,15 +210,15 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
-    expect(literatureNode.className).toContain("left-[51.95%]");
-    expect(dataMiningNode.className).toContain("left-[52.55%]");
-    expect(outcomeNode.className).toContain("right-[19.8%]");
-    expect(literatureNode.parentElement?.querySelector("span[class*='w-[9.44%]']")).not.toBeNull();
-    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[9.5%]']")).not.toBeNull();
-    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[9.22%]']")).not.toBeNull();
-    expect(literatureNode).toHaveClass("gap-[0.84rem]");
-    expect(dataMiningNode).toHaveClass("gap-[0.84rem]");
-    expect(outcomeNode).toHaveClass("gap-[0.84rem]");
+    expect(literatureNode.className).toContain("left-[50.45%]");
+    expect(dataMiningNode.className).toContain("left-[51.2%]");
+    expect(outcomeNode.className).toContain("right-[18.55%]");
+    expect(literatureNode.parentElement?.querySelector("span[class*='w-[10.12%]']")).not.toBeNull();
+    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[10.18%]']")).not.toBeNull();
+    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[9.92%]']")).not.toBeNull();
+    expect(literatureNode).toHaveClass("gap-[0.92rem]");
+    expect(dataMiningNode).toHaveClass("gap-[0.92rem]");
+    expect(outcomeNode).toHaveClass("gap-[0.92rem]");
     expect(literatureNode).toHaveTextContent(/literature analysis/i);
     expect(dataMiningNode).toHaveTextContent(/data mining/i);
     expect(outcomeNode).toHaveTextContent(/outcome present/i);
@@ -238,9 +238,9 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[8.12rem]");
-      expect(labelWrapper).toHaveClass("leading-[1.18]");
-      expect(label).toHaveClass("max-w-[9.56rem]");
+      expect(labelWrapper).toHaveClass("min-h-[8.68rem]");
+      expect(labelWrapper).toHaveClass("leading-[1.22]");
+      expect(label).toHaveClass("max-w-[10.2rem]");
       expect(label).toHaveClass("text-balance");
     });
 
@@ -250,9 +250,9 @@ describe("Home landing page", () => {
     expect(literatureNodeLabel).toHaveClass("text-[11.3px]");
     expect(literatureNodeLabel).toHaveClass("leading-[2.22]");
     expect(literatureNodeLabel).toHaveClass("tracking-[0.056em]");
-    expect(literatureNodeLabel).toHaveClass("max-w-[150px]");
-    expect(dataMiningNodeLabel).toHaveClass("max-w-[176px]");
-    expect(outcomeNodeLabel).toHaveClass("max-w-[176px]");
+    expect(literatureNodeLabel).toHaveClass("max-w-[156px]");
+    expect(dataMiningNodeLabel).toHaveClass("max-w-[186px]");
+    expect(outcomeNodeLabel).toHaveClass("max-w-[186px]");
 
     const description = within(landingHero).getByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
