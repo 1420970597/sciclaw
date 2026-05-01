@@ -349,21 +349,21 @@ export const appShellFlowCards: AppShellFlowCard[] = [
 
 export const appShellTimeline: AppShellTimelineItem[] = [
   {
-    title: "Patent landscape · compare",
+    title: "Patent compare",
     description: "Overlap staged.",
     summary: "Cluster map",
     summaryTone: "neutral",
     meta: "12m",
   },
   {
-    title: "Clinical diligence · replay",
+    title: "Clinical replay",
     description: "Competitor notes queued.",
     summary: "Replay queue",
     summaryTone: "warn",
     meta: "1 blocker",
   },
   {
-    title: "Regulatory memo · final",
+    title: "Reg memo final",
     description: "Packet export aligned.",
     summary: "Outline locked",
     summaryTone: "accent",
@@ -379,13 +379,13 @@ export const appShellTodos: AppShellTodo[] = [
     state: "done",
   },
   {
-    label: "Generate a comparative-analysis session",
+    label: "Generate the compare session",
     note: "Keep this workstream separate.",
     meta: "Owner · Research lead",
     state: "active",
   },
   {
-    label: "Push the verified outline to Foundry",
+    label: "Push the verified outline",
     note: "Promote the winning narrative.",
     meta: "Export lane",
     state: "pending",

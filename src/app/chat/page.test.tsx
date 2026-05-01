@@ -64,20 +64,18 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/^128 assets$/i)).toBeInTheDocument();
     expect(within(sessionsLink).getByText(/^3$/i)).toBeInTheDocument();
     expect(within(foundryCard as HTMLElement).getByText(/12 ready/i)).toBeInTheDocument();
-    expect(screen.getByText(/patent landscape · compare/i)).toBeInTheDocument();
-    expect(screen.getByText(/clinical diligence · replay/i)).toBeInTheDocument();
-    expect(screen.getByText(/regulatory memo · final/i)).toBeInTheDocument();
-    expect(
-      screen.getByText(/one card per live thread, with timing and the next action grouped on the edge/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
+    expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
+    expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();
+    expect(screen.getByText(/signal and next action stay on one quieter edge lane/i)).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
     expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/12 pdfs queued/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/generate a comparative-analysis session/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/generate the compare session/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/owner · research lead/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline to foundry/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/export lane/i)).toBeInTheDocument();
   });
 
@@ -130,14 +128,10 @@ describe("Chat app shell placeholder", () => {
     const activeSessionsScope = within(activeSessionsCard as HTMLElement);
 
     expect(
-      activeSessionsScope.getByText(/one card per live thread, with timing and the next action grouped on the edge/i),
+      activeSessionsScope.getByText(/signal and next action stay on one quieter edge lane/i),
     ).toBeInTheDocument();
 
-    const activeSessionTitles = [
-      /patent landscape · compare/i,
-      /clinical diligence · replay/i,
-      /regulatory memo · final/i,
-    ];
+    const activeSessionTitles = [/patent compare/i, /clinical replay/i, /reg memo final/i];
     for (const titlePattern of activeSessionTitles) {
       expect(activeSessionsScope.getByText(titlePattern)).toBeInTheDocument();
     }
@@ -151,19 +145,19 @@ describe("Chat app shell placeholder", () => {
     );
 
     const firstSession = activeSessionsRows[0];
-    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(7.2rem,auto)]");
-    expect(within(firstSession).getByText(/Patent landscape · compare/i)).toBeInTheDocument();
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(6.4rem,auto)]");
+    expect(within(firstSession).getByText(/Patent compare/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Overlap staged\./i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Cluster map/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/^12m$/i)).toBeInTheDocument();
 
     const secondSession = activeSessionsRows[1] as HTMLElement;
-    expect(within(secondSession).getByText(/Clinical diligence · replay/i)).toBeInTheDocument();
+    expect(within(secondSession).getByText(/Clinical replay/i)).toBeInTheDocument();
     expect(within(secondSession).getByText(/Replay queue/i)).toBeInTheDocument();
     expect(within(secondSession).getByText(/^1 blocker$/i)).toBeInTheDocument();
 
     const thirdSession = activeSessionsRows[2] as HTMLElement;
-    expect(within(thirdSession).getByText(/Regulatory memo · final/i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/Reg memo final/i)).toBeInTheDocument();
     expect(within(thirdSession).getByText(/Outline locked/i)).toBeInTheDocument();
     expect(within(thirdSession).getByText(/^Ready packet$/i)).toBeInTheDocument();
   });
