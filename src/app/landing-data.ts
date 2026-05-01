@@ -432,28 +432,28 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
 
 export const appShellOutputSummary = {
   eyebrow: "Live draft",
-  title: "Regulatory memo · current answer",
+  title: "Regulatory memo · answer lane",
   meta: "Session 07",
-  description: "Keep the answer and export lane visible in one bridge card.",
+  description: "Keep the answer and export lane in one calmer summary card.",
 };
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   badge: "Ready",
   title: "Foundry packet",
-  description: "Bundle memory, sessions, and verified charts into one review packet.",
+  description: "Bundle memory, sessions, and verified charts into one ready packet.",
 };
 
 export const appShellExportStats = [
   "3 live sessions",
   "5 open tasks",
-  "3 exports ready",
+  "Packet ready",
 ];
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
     label: "Packet export",
-    description: "Brief and slides staged together.",
+    description: "Brief + slides staged.",
   },
 ];
 

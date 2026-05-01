@@ -81,7 +81,7 @@ describe("Chat app shell placeholder", () => {
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/export lane/i)).toBeInTheDocument();
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
-      "xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)]",
+      "xl:grid-cols-[minmax(0,1fr)_minmax(0,0.98fr)]",
     );
   });
 
@@ -118,7 +118,7 @@ describe("Chat app shell placeholder", () => {
       "/help/foundry",
     );
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
-      "xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)]",
+      "xl:grid-cols-[minmax(0,1fr)_minmax(0,0.98fr)]",
     );
   });
 
@@ -191,10 +191,10 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.getByText(/1 call pending/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/return to source/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/foundry packet/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/3 exports ready/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/packet ready/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/packet export/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/keep the answer and export lane visible in one bridge card/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/brief and slides staged together/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/keep the answer and export lane in one calmer summary card/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/brief \+ slides staged/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/brief outline/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/slides handoff/i)).not.toBeInTheDocument();

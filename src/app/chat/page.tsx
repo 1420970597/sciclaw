@@ -274,7 +274,7 @@ function SessionTimeline() {
 
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] 2xl:grid-cols-[minmax(0,0.96fr)_minmax(296px,0.9fr)]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.98fr)] 2xl:grid-cols-[minmax(0,1fr)_minmax(288px,0.88fr)]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
