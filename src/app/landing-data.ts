@@ -281,21 +281,21 @@ export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
     title: "Ground every active session in one durable project workspace.",
-    description: "Keep uploads, memory, skills, and outputs pinned to the same research track.",
+    description: "Keep uploads, memory, skills, and outputs on the same track.",
     meta: "128 assets · 6 skills",
     detail: "Grounded start · memory pinned",
   },
   {
     eyebrow: "Session selector",
     title: "Move between active threads without dropping prior reasoning.",
-    description: "Reopen checkpoints or branch a new lane without losing the active answer.",
+    description: "Reopen checkpoints or branch a fresh lane without losing the active answer.",
     meta: "3 live threads",
     detail: "Checkpoint recall · branch cleanly",
   },
   {
     eyebrow: "Foundry handoff",
     title: "Promote one validated answer into a reviewer-ready export lane.",
-    description: "Keep the active memo and asset queue visible before the packet leaves the shell.",
+    description: "Keep the active memo and asset queue visible before handoff.",
     meta: "12 export-ready assets",
     detail: "Answer live · export queue visible",
   },
@@ -305,7 +305,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
     title: "Comparative pathway scan",
-    description: "Pin one live hypothesis and its evidence lane for the active thread.",
+    description: "Pin one live hypothesis and its evidence lane.",
     meta: "12 min ago",
     pills: [
       { label: "Memo live", tone: "accent" },
@@ -317,7 +317,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Resolve one open judgment call",
-    description: "Assign the blocker and return a single narrowed question for review.",
+    description: "Assign the blocker and return one narrowed review question.",
     meta: "Reviewer handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
@@ -329,7 +329,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Promote the locked outline, appendix, and slide cues into one packet.",
+    description: "Promote the locked outline, appendix, and slide cues in one packet.",
     meta: "Export rail",
     pills: [
       { label: "12 assets ready", tone: "accent" },
@@ -355,7 +355,7 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   },
   {
     title: "Regulatory memo · final synthesis",
-    description: "Reviewer-ready answer bundle now aligned with the export lane.",
+    description: "Reviewer-ready answer bundle aligned with the export lane.",
     summary: "Ready · outline locked",
     meta: "Ready for review",
   },
@@ -417,7 +417,7 @@ export const appShellOutputSignals: AppShellOutputSignal[] = [
   {
     label: "Handoff route",
     summary: "Return to source",
-    description: "Jump back to memory, tasks, or the source thread without losing context.",
+    description: "Jump back to memory, tasks, or the source thread.",
   },
 ];
 
