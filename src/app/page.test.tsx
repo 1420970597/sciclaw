@@ -210,9 +210,9 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
-    expect(literatureNode.className).toContain("left-[60.9%]");
-    expect(dataMiningNode.className).toContain("left-[61.55%]");
-    expect(outcomeNode.className).toContain("right-[14.2%]");
+    expect(literatureNode.className).toContain("left-[58.8%]");
+    expect(dataMiningNode.className).toContain("left-[59.55%]");
+    expect(outcomeNode.className).toContain("right-[16.05%]");
     expect(literatureNode.firstElementChild).toHaveClass("h-[4.98rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.88rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[4.88rem]");
