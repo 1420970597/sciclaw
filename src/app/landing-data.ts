@@ -79,11 +79,13 @@ export type AppShellCard = {
   title: string;
   description: string;
   meta: string;
+  detail?: string;
 };
 
 export type AppShellOutputSignal = {
   label: string;
   description: string;
+  summary?: string;
 };
 
 export type AppShellExportAsset = {
@@ -279,23 +281,23 @@ export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
     title: "Ground every active session in one durable project workspace.",
-    description:
-      "Keep uploads, memory, enabled skills, and downstream outputs attached to the same research track so each thread starts with the right evidence.",
+    description: "Keep uploads, memory, skills, and outputs tied to the same research track.",
     meta: "128 assets · 6 skills",
+    detail: "Grounded start · memory pinned",
   },
   {
     eyebrow: "Session selector",
     title: "Move between active threads without dropping prior reasoning.",
-    description:
-      "Search previous runs, reopen a session checkpoint, or launch a new analysis lane while the rest of the workspace stays intact.",
+    description: "Search prior runs, reopen checkpoints, or spin up a fresh lane without losing context.",
     meta: "3 live threads",
+    detail: "Checkpoint recall · branch cleanly",
   },
   {
     eyebrow: "Foundry handoff",
     title: "Ship validated work into reviewer-ready outputs with one clear handoff.",
-    description:
-      "Surface the active answer, open risk, and export bundle so the transition from session work to stakeholder deliverables is explicit.",
+    description: "Keep the active answer, open risk, and export lane visible before the package leaves the workspace.",
     meta: "12 export-ready assets",
+    detail: "Answer live · export queue visible",
   },
 ];
 
@@ -303,7 +305,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
     title: "Comparative pathway scan",
-    description: "Pin the live hypothesis and evidence lane so the current thread reads like an active workspace, not a docs explainer.",
+    description: "Pin the live hypothesis and evidence lane for the active thread.",
     meta: "12 min ago",
     pills: [
       { label: "Memo live", tone: "accent" },
@@ -315,7 +317,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Resolve one open judgment call",
-    description: "Assign the blocker, pin the citations, and return a narrowed question to the active session.",
+    description: "Assign the blocker, pin the citations, and send back one narrowed question.",
     meta: "Reviewer handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
@@ -327,7 +329,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Promote the locked outline, evidence appendix, and slide cues into one concise handoff package.",
+    description: "Promote the locked outline, appendix, and slide cues into one handoff packet.",
     meta: "Export rail",
     pills: [
       { label: "12 assets ready", tone: "accent" },
@@ -386,14 +388,17 @@ export const appShellWorkspaceMetrics: AppShellWorkspaceMetric[] = [
 export const appShellOutputSignals: AppShellOutputSignal[] = [
   {
     label: "Evidence chain",
+    summary: "Citations pinned",
     description: "Keep citations and checkpoints attached to the answer draft.",
   },
   {
     label: "Open risk",
+    summary: "1 call pending",
     description: "Hold one unresolved call before review leaves the workspace.",
   },
   {
     label: "Handoff route",
+    summary: "Return to source",
     description: "Jump back to memory, tasks, or the source thread without losing context.",
   },
 ];
@@ -405,7 +410,7 @@ export const appShellExportAssets: AppShellExportAsset[] = [
   },
   {
     label: "Evidence appendix",
-    description: "Linked citations, figures, and extracted notes bundled for review.",
+    description: "Linked citations and figures bundled for review.",
   },
   {
     label: "Slides handoff",
