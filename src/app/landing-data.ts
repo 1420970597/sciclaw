@@ -294,8 +294,8 @@ export const appShellCards: AppShellCard[] = [
   },
   {
     eyebrow: "Foundry handoff",
-    title: "Ship validated work into reviewer-ready outputs with one clear handoff.",
-    description: "Keep the active answer and export lane visible before the package leaves the workspace.",
+    title: "Promote one validated answer into a reviewer-ready export lane.",
+    description: "Keep the active memo and asset queue visible before the packet leaves the shell.",
     meta: "12 export-ready assets",
     detail: "Answer live · export queue visible",
   },

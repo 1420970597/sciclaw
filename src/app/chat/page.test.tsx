@@ -21,10 +21,10 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/shape a tighter workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
     expect(screen.getByText(/ground every active session in one durable project workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/move between active threads without dropping prior reasoning/i)).toBeInTheDocument();
-    expect(screen.getByText(/ship validated work into reviewer-ready outputs with one clear handoff/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote one validated answer into a reviewer-ready export lane/i)).toBeInTheDocument();
     expect(screen.getByText(/keep uploads, memory, skills, and outputs pinned to the same research track/i)).toBeInTheDocument();
     expect(screen.getByText(/reopen checkpoints or branch a new lane without losing the active answer/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the active answer and export lane visible before the package leaves the workspace/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the active memo and asset queue visible before the packet leaves the shell/i)).toBeInTheDocument();
     expect(screen.getByText(/grounded start · memory pinned/i)).toBeInTheDocument();
     expect(screen.getByText(/checkpoint recall · branch cleanly/i)).toBeInTheDocument();
     expect(screen.getByText(/answer live · export queue visible/i)).toBeInTheDocument();
@@ -105,7 +105,7 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
     expect(sessionFlowScope.getByRole("heading", { name: /ground every active session in one durable project workspace/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /move between active threads without dropping prior reasoning/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /ship validated work into reviewer-ready outputs with one clear handoff/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /promote one validated answer into a reviewer-ready export lane/i })).toBeInTheDocument();
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
     expect(outputPanel).not.toBeNull();

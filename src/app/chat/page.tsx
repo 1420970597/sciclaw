@@ -112,10 +112,10 @@ function ShellHeader() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b2aa9d]">SciClaw · User Guide · Session Preview</p>
-          <h1 className="mt-2 max-w-[24ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
+          <h1 className="mt-2 max-w-[22ch] text-2xl font-semibold tracking-[-0.025em] text-[#202020] sm:text-[2rem]">
             Coordinate project context, sessions, tasks, and outputs from one app shell.
           </h1>
-          <p className="mt-2 max-w-[34rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
+          <p className="mt-2 max-w-[31rem] text-sm leading-6 text-[#7a7267] sm:text-[0.95rem]">
             Keep navigation, memory, tasks, and handoff visible while the public docs shell narrows into a lighter workspace preview.
           </p>
         </div>
@@ -164,7 +164,7 @@ function SessionTimeline() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(360px,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(390px,0.92fr)]">
+      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.12fr)_minmax(384px,0.88fr)] 2xl:grid-cols-[minmax(0,1.05fr)_minmax(410px,0.95fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
           <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,1fr))] 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
