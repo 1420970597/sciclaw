@@ -285,24 +285,24 @@ export const appShellSections: AppShellSection[] = [
 
 export const appShellCards: AppShellCard[] = [
   {
-    eyebrow: "Project context",
+    eyebrow: "Context",
     title: "One lane per session.",
-    description: "Memory pinned. Sources ready.",
+    description: "Memory pinned.",
     meta: "128 assets · 6 skills",
     detail: "Memory pinned",
   },
   {
-    eyebrow: "Session selector",
+    eyebrow: "Threads",
     title: "Switch live threads.",
-    description: "Checkpoint recall. Branch clean.",
-    meta: "3 live threads",
+    description: "Branch clean.",
+    meta: "3 live",
     detail: "Checkpoint recall",
   },
   {
-    eyebrow: "Foundry handoff",
+    eyebrow: "Foundry",
     title: "Promote the locked answer.",
-    description: "Export lane open. Packet staged.",
-    meta: "12 export-ready assets",
+    description: "Packet staged.",
+    meta: "12 exports ready",
     detail: "Export lane open",
   },
 ];

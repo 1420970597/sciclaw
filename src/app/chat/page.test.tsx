@@ -32,6 +32,8 @@ describe("Chat app shell placeholder", () => {
 
     const projectsLink = screen.getByRole("link", { name: /projects shared workspace overview/i });
     const sessionsLink = screen.getByRole("link", { name: /sessions active investigation threads 3/i });
+    const foundryCard = screen.getByRole("heading", { name: /promote the locked answer\./i }).closest("article");
+    expect(foundryCard).not.toBeNull();
     const libraryLink = screen.getByRole("link", { name: /library grounded papers & notes rag/i });
     const tasksLink = screen.getByRole("link", { name: /tasks queued autonomous work today/i });
     const foundryLink = screen.getByRole("link", { name: /foundry polished output layer/i });
@@ -52,12 +54,16 @@ describe("Chat app shell placeholder", () => {
   it("shows durable project memory, focused flow cards, and session cards that reflect the public docs concepts", () => {
     render(<ChatPage />);
 
+    const sessionsLink = screen.getByRole("link", { name: /sessions active investigation threads 3/i });
+    const foundryCard = screen.getByRole("heading", { name: /promote the locked answer\./i }).closest("article");
+    expect(foundryCard).not.toBeNull();
+
     expect(screen.getByText(/library · 128 assets/i)).toBeInTheDocument();
     expect(screen.getByText(/activity · 14 day streak/i)).toBeInTheDocument();
     expect(screen.getByText(/skills · 6 enabled/i)).toBeInTheDocument();
     expect(screen.getByText(/128 assets · 6 skills/i)).toBeInTheDocument();
-    expect(screen.getByText(/3 live threads/i)).toBeInTheDocument();
-    expect(screen.getByText(/12 export-ready assets/i)).toBeInTheDocument();
+    expect(within(sessionsLink).getByText(/^3$/i)).toBeInTheDocument();
+    expect(within(foundryCard as HTMLElement).getByText(/12 exports ready/i)).toBeInTheDocument();
     expect(screen.getByText(/patent landscaping · comparative thread/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical diligence · session replay/i)).toBeInTheDocument();
     expect(screen.getByText(/regulatory memo · final synthesis/i)).toBeInTheDocument();
@@ -72,7 +78,9 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
     expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
     expect(screen.getByRole("link", { name: /view all flow checkpoints/i })).toHaveAttribute("href", "/help/foundry");
-    expect(screen.getByText(/three live threads stay grouped under the same project/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/three live threads stay grouped under the same project while timing, summaries, and export hints stay readable at one glance/i),
+    ).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
@@ -120,5 +128,38 @@ describe("Chat app shell placeholder", () => {
     expect(statusScope.getByText(/citations pinned/i)).toBeInTheDocument();
     expect(statusScope.getByText(/1 call pending/i)).toBeInTheDocument();
     expect(statusScope.getByText(/return to source/i)).toBeInTheDocument();
+  });
+
+  it("keeps the center session lane and right rail more breathable after the density pass", () => {
+    render(<ChatPage />);
+
+    const sessionFlowHeading = screen.getByRole("heading", {
+      name: /project & session flow staged between docs and the future workspace/i,
+    });
+    const sessionFlowSection = sessionFlowHeading.closest("section");
+    expect(sessionFlowSection).not.toBeNull();
+    const sessionFlowScope = within(sessionFlowSection as HTMLElement);
+
+    const timelineShell = screen.getByText(/^active sessions$/i).closest("div");
+    expect(timelineShell).not.toBeNull();
+    expect(timelineShell).toHaveTextContent(/three live threads stay grouped under the same project/i);
+
+    const timelineRows = sessionFlowScope.getAllByText(/patent landscaping · comparative thread|clinical diligence · session replay|regulatory memo · final synthesis/i);
+    expect(timelineRows).toHaveLength(3);
+
+    const patentTitle = screen.getByText(/patent landscaping · comparative thread/i);
+    const patentSummary = screen.getByText(/3 source clusters · 2 claim deltas/i);
+    expect(patentTitle).toBeInTheDocument();
+    expect(patentSummary).toBeInTheDocument();
+
+    const rightRail = screen.getByTestId("chat-right-rail-grid");
+    const statusPanel = screen.getByText(/^status board$/i).closest("article");
+    const outputCard = screen.getByText(/^session output$/i).closest("section");
+    expect(rightRail).toContainElement(statusPanel);
+
+    expect(statusPanel).not.toBeNull();
+    expect(outputCard).not.toBeNull();
+    expect(within(outputCard as HTMLElement).getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
+    expect(within(outputCard as HTMLElement).getByText(/keep the current answer, evidence posture, and export lane visible in one bridge card/i)).toBeInTheDocument();
   });
 });

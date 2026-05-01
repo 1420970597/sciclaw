@@ -166,7 +166,7 @@ function SessionTimeline() {
         </p>
       </div>
 
-        <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.04fr)_minmax(500px,0.96fr)] 2xl:grid-cols-[minmax(0,1fr)_minmax(528px,1fr)]">
+      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,1.02fr)_minmax(528px,0.98fr)] 2xl:grid-cols-[minmax(0,1fr)_minmax(556px,1fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
           <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,11.2rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
@@ -186,17 +186,22 @@ function SessionTimeline() {
           </div>
 
           <div className="mt-5 rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.03)]">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#f3eee7] pb-3">
+            <div className="flex flex-col gap-2 border-b border-[#f3eee7] pb-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-[#222]">Active sessions</p>
-                <p className="mt-1 text-xs text-[#9b9183]">Three live threads stay grouped under the same project.</p>
+                <p className="mt-1 max-w-[22rem] text-xs leading-5 text-[#9b9183]">
+                  Three live threads stay grouped under the same project while timing, summaries, and export hints stay readable at one glance.
+                </p>
               </div>
-              <span className="rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
+              <span className="shrink-0 rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
             </div>
 
             <div className="mt-4 space-y-3">
               {appShellTimeline.map((item) => (
-                <div key={item.title} className="grid gap-2 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-4">
+                <div
+                  key={item.title}
+                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-5"
+                >
                   <div className="flex min-w-0 gap-3">
                     <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
                     <div className="min-w-0">
@@ -204,7 +209,7 @@ function SessionTimeline() {
                       <p className="mt-1 text-sm leading-6 text-[#6e665b]">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap items-center gap-2 sm:justify-end">
+                  <div className="flex flex-wrap items-center gap-2 sm:max-w-[10rem] sm:flex-col sm:items-end sm:justify-start">
                     <span className="text-[11px] uppercase tracking-[0.18em] text-[#a89d8f]">{item.meta}</span>
                     {item.summary ? (
                       <span className="rounded-full border border-[#efe4d7] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
@@ -260,7 +265,7 @@ function SessionTimeline() {
           </div>
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[1fr] 2xl:grid-cols-[minmax(0,1.02fr)_minmax(292px,0.98fr)]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[1fr] 2xl:grid-cols-[minmax(0,1fr)_minmax(308px,0.92fr)]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -304,7 +309,7 @@ function SessionTimeline() {
               <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-5">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
-                  <h3 className="mt-2 max-w-[17ch] text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
+                  <h3 className="mt-2 max-w-[16ch] text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
                 </div>
                 <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">{appShellOutputSummary.eyebrow}</span>
               </div>
