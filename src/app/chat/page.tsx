@@ -157,16 +157,16 @@ function SessionTimeline() {
       <div className="flex flex-col gap-3 border-b border-[#f2ece3] pb-5 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session timeline</p>
-          <h2 className="mt-2 text-xl font-semibold text-[#212121]">Project & Session flow mirrored from the public docs IA.</h2>
+          <h2 className="mt-2 text-xl font-semibold text-[#212121]">Project &amp; Session flow staged between public docs and the future workspace.</h2>
         </div>
         <p className="max-w-xl text-sm leading-6 text-[#7a7267]">
           Each session captures one investigation thread, keeps tool traces visible, and rolls polished outputs into Foundry without losing project memory.
         </p>
       </div>
 
-      <div className="mt-6 grid gap-4 xl:grid-cols-[1.07fr_0.93fr]">
+      <div className="mt-6 grid gap-4 xl:grid-cols-[minmax(0,1.12fr)_minmax(320px,0.88fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 xl:grid-cols-3">
             {appShellCards.map((card) => (
               <article key={card.title} className="rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
                 <div className="flex items-start justify-between gap-3">
@@ -209,7 +209,7 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-3 lg:grid-cols-3">
+          <div className="mt-5 grid gap-3 xl:grid-cols-3">
             {appShellFlowCards.map((card) => (
               <article key={card.title} className="rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)]">
                 <div className="flex items-start justify-between gap-3">
@@ -276,7 +276,7 @@ function SessionTimeline() {
               <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-4">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
-                  <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Shape a product-like narrative before the Foundry export starts.</h3>
+                  <h3 className="mt-2 text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
                 </div>
                 <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">Live draft</span>
               </div>
@@ -289,7 +289,7 @@ function SessionTimeline() {
                     </span>
                   </div>
                   <p className="mt-3 max-w-[34rem] text-sm leading-6 text-[#686154]">
-                    The center workspace now surfaces the live answer, evidence posture, and export path in one tighter review card.
+                    The center workspace now surfaces the live answer, evidence posture, and export path in one tighter bridge card between docs and the future app shell.
                   </p>
                   <div className="mt-4 grid gap-2 sm:grid-cols-3">
                     {appShellWorkspaceMetrics.map((metric) => (

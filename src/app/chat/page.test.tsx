@@ -16,11 +16,12 @@ describe("Chat app shell placeholder", () => {
         /mirror the public docs shell with a product-facing workspace preview that keeps navigation, memory, tasks, and foundry handoff visible at a glance/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByText(/project & session flow mirrored from the public docs ia/i)).toBeInTheDocument();
+    expect(screen.getByText(/project & session flow staged between public docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
-    expect(screen.getByText(/shape a product-like narrative before the foundry export starts/i)).toBeInTheDocument();
+    expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
     expect(screen.getByText(/ground every active session in one durable project workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/ship validated work into reviewer-ready outputs with one clear handoff/i)).toBeInTheDocument();
+    expect(screen.getByText(/move between active threads without dropping prior reasoning/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -76,20 +77,35 @@ describe("Chat app shell placeholder", () => {
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline to foundry/i)).toBeInTheDocument();
   });
 
+  it("keeps the docs-to-workspace bridge actions navigable from the preview shell", () => {
+    render(<ChatPage />);
+
+    expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
+    expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
+    expect(screen.getByRole("link", { name: /inspect foundry assets/i })).toHaveAttribute("href", "/help/foundry");
+  });
+
   it("elevates the center panel into a session-output preview and gives the right rail stronger product weight", () => {
     render(<ChatPage />);
 
-    const rightRailGrid = screen.getByTestId("chat-right-rail-grid");
-    expect(rightRailGrid).toHaveClass("xl:grid-cols-[1.1fr_0.9fr]");
+    const sessionFlowHeading = screen.getByRole("heading", {
+      name: /project & session flow staged between public docs and the future workspace/i,
+    });
+    const sessionFlowSection = sessionFlowHeading.closest("section");
+    expect(sessionFlowSection).not.toBeNull();
+    const sessionFlowScope = within(sessionFlowSection as HTMLElement);
+    expect(sessionFlowScope.getByRole("heading", { name: /ground every active session in one durable project workspace/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /move between active threads without dropping prior reasoning/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /ship validated work into reviewer-ready outputs with one clear handoff/i })).toBeInTheDocument();
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
     expect(outputPanel).not.toBeNull();
     const outputScope = within(outputPanel as HTMLElement);
 
-    expect(outputScope.getByRole("heading", { name: /shape a product-like narrative before the foundry export starts/i })).toBeInTheDocument();
+    expect(outputScope.getByRole("heading", { name: /shape a concise workspace brief before you leave the public docs shell/i })).toBeInTheDocument();
     expect(outputScope.getByText(/regulatory memo · current answer/i)).toBeInTheDocument();
     expect(outputScope.getByText(/session 07/i)).toBeInTheDocument();
-    expect(outputScope.getByText(/the center workspace now surfaces the live answer, evidence posture, and export path in one tighter review card/i)).toBeInTheDocument();
+    expect(outputScope.getByText(/the center workspace now surfaces the live answer, evidence posture, and export path in one tighter bridge card between docs and the future app shell/i)).toBeInTheDocument();
     expect(outputScope.getByText(/live sessions/i)).toBeInTheDocument();
     expect(outputScope.getByText(/^3$/i)).toBeInTheDocument();
     expect(outputScope.getByText(/open tasks/i)).toBeInTheDocument();
