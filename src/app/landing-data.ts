@@ -311,36 +311,29 @@ export const appShellCards: AppShellCard[] = [
 export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
-    title: "Hold the live hypothesis",
+    title: "Hold live hypothesis",
     description: "Pin the open claim.",
     meta: "12m",
-    pills: [
-      { label: "Memo live", tone: "accent" },
-    ],
+    pills: [{ label: "Memo live", tone: "accent" }],
     ctaLabel: "Open thread",
     ctaHref: "/chat",
   },
   {
     eyebrow: "Task lane",
-    title: "Assign the blocker",
+    title: "Assign blocker",
     description: "Clear the blocker.",
     meta: "Handoff",
-    pills: [
-      { label: "1 blocker", tone: "warn" },
-    ],
+    pills: [{ label: "1 blocker", tone: "warn" }],
     ctaLabel: "Review tasks",
     ctaHref: "/help/tasks",
   },
   {
-    eyebrow: "Foundry prep",
-    title: "Lock outline and appendix",
-    description: "Ready the export packet.",
-    meta: "Export rail",
-    pills: [
-      { label: "12 ready", tone: "accent" },
-      { label: "Outline synced", tone: "neutral" },
-    ],
-    ctaLabel: "Inspect Foundry assets",
+    eyebrow: "Checkpoint rail",
+    title: "Checkpoints fold into Tasks and Foundry.",
+    description: "Keep the center bridge on one calmer summary rail.",
+    meta: "Folded",
+    pills: [{ label: "Foundry sync", tone: "neutral" }],
+    ctaLabel: "View checkpoints",
     ctaHref: "/help/foundry",
   },
 ];

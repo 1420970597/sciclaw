@@ -232,19 +232,28 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(2,minmax(0,13.8rem))] xl:justify-between 2xl:grid-cols-[repeat(2,minmax(0,14.2rem))]" data-testid="chat-flow-card-grid">
-            {appShellFlowCards.slice(0, 2).map((card) => (
-              <article key={card.title} className="rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)]">
+          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,14.1rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,14.5rem))]" data-testid="chat-flow-card-grid">
+            {appShellFlowCards.map((card, index) => (
+              <article
+                key={card.title}
+                className={`rounded-[1.45rem] border border-[#f2e8dc] bg-white px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.035)] ${
+                  index === 2 ? "xl:px-4 xl:py-3.5" : ""
+                }`}
+              >
                 <div className="flex items-start justify-between gap-2.5">
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 max-w-[16ch] text-sm font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className={`mt-2 font-semibold leading-6 text-[#1f1f1f] ${index === 2 ? "max-w-[17ch] text-[0.95rem]" : "max-w-[16ch] text-sm"}`}>
+                      {card.title}
+                    </h3>
                   </div>
                   <span className="shrink-0 self-start rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[18ch] text-sm leading-6 text-[#6b6257]">{card.description}</p>
+                <p className={`mt-3 text-sm leading-6 text-[#6b6257] ${index === 2 ? "max-w-[19ch] text-[0.86rem] leading-[1.55]" : "max-w-[18ch]"}`}>
+                  {card.description}
+                </p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {card.pills.map((pill) => (
                     <StatusPill key={pill.label} pill={pill} />
@@ -261,18 +270,6 @@ function SessionTimeline() {
             ))}
           </div>
 
-          <div className="mt-4 grid gap-3 rounded-[1.35rem] border border-dashed border-[#ecdcc9] bg-[#fffaf4] px-4 py-3 text-sm text-[#756b60] xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center xl:gap-4">
-            <div>
-              <p className="font-medium text-[#2b2b2b]">All flow checkpoints stay folded into Tasks and Foundry.</p>
-              <p className="mt-1 max-w-[13rem] text-xs leading-5 text-[#978b7d]">Keep the center bridge on one calmer summary rail.</p>
-            </div>
-            <Link
-              href="/help/foundry"
-              className="inline-flex w-fit items-center justify-center rounded-full border border-[#ead8c4] bg-white px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#b07f53] transition hover:border-[#ddb991] hover:text-[#de7d30]"
-            >
-              View checkpoints
-            </Link>
-          </div>
         </div>
 
         <div className="grid gap-5 xl:grid-cols-[1fr] 2xl:grid-cols-[minmax(0,1fr)_minmax(308px,0.92fr)]" data-testid="chat-right-rail-grid">

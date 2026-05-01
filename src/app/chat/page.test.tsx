@@ -24,7 +24,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
     expect(screen.getByText(/pin the open claim/i)).toBeInTheDocument();
     expect(screen.getByText(/clear the blocker/i)).toBeInTheDocument();
-    expect(screen.getByText(/all flow checkpoints stay folded into tasks and foundry/i)).toBeInTheDocument();
+    expect(screen.getByText(/checkpoints fold into tasks and foundry/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -87,7 +87,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByRole("link", { name: /view checkpoints/i })).toHaveAttribute("href", "/help/foundry");
   });
 
-  it("tightens the chat density by collapsing lower flow cards and grouping the right-rail status signals", () => {
+  it("keeps the lower center strip as a calmer three-card checkpoint rail after the density pass", () => {
     render(<ChatPage />);
 
     const sessionFlowHeading = screen.getByRole("heading", {
@@ -98,23 +98,23 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
 
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
-      "xl:grid-cols-[repeat(2,minmax(0,13.8rem))]",
+      "xl:grid-cols-[repeat(3,minmax(0,14.1rem))]",
     );
-    expect(sessionFlowScope.queryByRole("heading", { name: /lock outline and appendix/i })).not.toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /hold live hypothesis/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /assign blocker/i })).toBeInTheDocument();
+    expect(
+      sessionFlowScope.getByRole("heading", { name: /checkpoints fold into tasks and foundry/i }),
+    ).toBeInTheDocument();
+    expect(sessionFlowScope.getByText(/foundry sync/i)).toBeInTheDocument();
+    expect(sessionFlowScope.getAllByText(/^folded$/i)).toHaveLength(1);
+    expect(
+      sessionFlowScope.getByText(/keep the center bridge on one calmer summary rail/i),
+    ).toBeInTheDocument();
+    expect(sessionFlowScope.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
     expect(sessionFlowScope.getByRole("link", { name: /view checkpoints/i })).toHaveAttribute(
       "href",
       "/help/foundry",
     );
-
-    const rightRail = screen.getByTestId("chat-right-rail-grid");
-    expect(rightRail).toHaveClass("xl:grid-cols-[1fr]");
-
-    const statusPanel = screen.getByText(/^status board$/i).closest("article");
-    expect(statusPanel).not.toBeNull();
-    const statusScope = within(statusPanel as HTMLElement);
-    expect(statusScope.getByText(/citations pinned/i)).toBeInTheDocument();
-    expect(statusScope.getByText(/1 call pending/i)).toBeInTheDocument();
-    expect(statusScope.getByText(/return to source/i)).toBeInTheDocument();
   });
 
   it("keeps the Active sessions rows denser in meaning but calmer in layout after the session-lane pass", () => {
@@ -162,10 +162,10 @@ describe("Chat app shell placeholder", () => {
     expect(within(thirdSession).getByText(/^Ready packet$/i)).toBeInTheDocument();
   });
 
-  it("keeps the lower flow-checkpoint CTA lighter and more footer-like after the density pass", () => {
+  it("keeps the lower checkpoint rail embedded inside the three-card center strip after the density pass", () => {
     render(<ChatPage />);
 
-    expect(screen.getByText(/all flow checkpoints stay folded into tasks and foundry/i)).toBeInTheDocument();
+    expect(screen.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
     expect(screen.getByText(/keep the center bridge on one calmer summary rail/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /view checkpoints/i })).toHaveAttribute("href", "/help/foundry");
   });
