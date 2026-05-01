@@ -72,12 +72,13 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
     expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
     expect(screen.getByRole("link", { name: /view all flow checkpoints/i })).toHaveAttribute("href", "/help/foundry");
+    expect(screen.getByText(/three live threads stay grouped under the same project/i)).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
-    expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch into the project library/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/12 pdfs queued/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/generate a fresh comparative-analysis session/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/generate a comparative-analysis session/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/owner · research lead/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline to foundry/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/export lane/i)).toBeInTheDocument();

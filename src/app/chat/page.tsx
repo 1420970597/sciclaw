@@ -189,22 +189,28 @@ function SessionTimeline() {
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#f3eee7] pb-3">
               <div>
                 <p className="text-sm font-semibold text-[#222]">Active sessions</p>
-                <p className="mt-1 text-xs text-[#9b9183]">Session threads stay grouped under the project and searchable from the top bar.</p>
+                <p className="mt-1 text-xs text-[#9b9183]">Three live threads stay grouped under the same project.</p>
               </div>
               <span className="rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
             </div>
 
             <div className="mt-4 space-y-3">
               {appShellTimeline.map((item) => (
-                <div key={item.title} className="flex gap-4 rounded-[1.35rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3">
-                  <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
+                <div key={item.title} className="grid gap-2 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-4">
+                  <div className="flex min-w-0 gap-3">
+                    <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
+                    <div className="min-w-0">
                       <p className="text-sm font-medium text-[#222]">{item.title}</p>
-                      <span className="text-[11px] uppercase tracking-[0.18em] text-[#a89d8f]">{item.meta}</span>
+                      <p className="mt-1 text-sm leading-6 text-[#6e665b]">{item.description}</p>
                     </div>
-                    <p className="mt-1 text-sm leading-6 text-[#6e665b]">{item.description}</p>
-                    {item.summary ? <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#b08a68]">{item.summary}</p> : null}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 sm:justify-end">
+                    <span className="text-[11px] uppercase tracking-[0.18em] text-[#a89d8f]">{item.meta}</span>
+                    {item.summary ? (
+                      <span className="rounded-full border border-[#efe4d7] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
+                        {item.summary}
+                      </span>
+                    ) : null}
                   </div>
                 </div>
               ))}
@@ -263,9 +269,9 @@ function SessionTimeline() {
               </div>
               <span className="rounded-full border border-[#f0e2d2] bg-[#fff7ef] px-3 py-1 text-[11px] text-[#de7d30]">Heatmap-ready</span>
             </div>
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 space-y-2.5">
               {appShellTodos.map((todo) => (
-                <div key={todo.label} className="flex items-start gap-3 rounded-[1.25rem] border border-[#f4eee5] bg-[#fcfaf7] px-4 py-3.5">
+                <div key={todo.label} className="flex items-start gap-3 rounded-[1.15rem] border border-[#f4eee5] bg-[#fcfaf7] px-4 py-3">
                   <span
                     className={`mt-0.5 flex h-5 w-5 items-center justify-center rounded-full text-[11px] font-semibold ${
                       todo.state === "done"
@@ -281,7 +287,7 @@ function SessionTimeline() {
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="text-sm font-medium text-[#232323]">{todo.label}</p>
                       {todo.meta ? (
-                        <span className="rounded-full border border-[#efe3d6] bg-white px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#ab9175]">
+                        <span className="rounded-full border border-[#efe3d6] bg-white px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#ab9175]">
                           {todo.meta}
                         </span>
                       ) : null}
@@ -298,24 +304,24 @@ function SessionTimeline() {
               <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-5">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
-                  <h3 className="mt-2 max-w-[18ch] text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
+                  <h3 className="mt-2 max-w-[17ch] text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
                 </div>
                 <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">{appShellOutputSummary.eyebrow}</span>
               </div>
-              <div className="mt-5 space-y-5">
-                <article className="rounded-[1.45rem] border border-[#f3e8dc] bg-white px-4 py-4 shadow-[0_10px_22px_rgba(15,23,42,0.03)]">
+              <div className="mt-5 space-y-4">
+                <article className="rounded-[1.35rem] border border-[#f3e8dc] bg-white px-4 py-4 shadow-[0_10px_22px_rgba(15,23,42,0.03)]">
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-sm font-semibold text-[#242424]">{appShellOutputSummary.title}</p>
                     <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-[#9c8e7d]">
                       {appShellOutputSummary.meta}
                     </span>
                   </div>
-                  <p className="mt-3 max-w-[22rem] text-sm leading-6 text-[#686154]">{appShellOutputSummary.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <p className="mt-3 max-w-[20rem] text-sm leading-6 text-[#686154]">{appShellOutputSummary.description}</p>
+                  <div className="mt-4 grid gap-2 sm:grid-cols-3">
                     {appShellExportStats.map((stat) => (
                       <span
                         key={stat}
-                        className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9f8f7d]"
+                        className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]"
                       >
                         {stat}
                       </span>
@@ -324,44 +330,44 @@ function SessionTimeline() {
                 </article>
 
                 {appShellStatusGroups.map((group) => (
-                  <article key={group.heading} className="rounded-[1.3rem] border border-[#f1e8dc] bg-[#fcfaf7] px-4 py-4 shadow-[0_8px_18px_rgba(15,23,42,0.025)]">
+                  <article key={group.heading} className="rounded-[1.22rem] border border-[#f1e8dc] bg-[#fcfaf7] px-4 py-4 shadow-[0_8px_18px_rgba(15,23,42,0.025)]">
                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#efe4d8] pb-3">
                       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9f8f7d]">{group.heading}</p>
                       <span className="rounded-full border border-[#ebddce] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b18a68]">
                         {group.items.length} signals
                       </span>
                     </div>
-                    <div className="mt-3 space-y-3">
+                    <div className="mt-3 space-y-2.5">
                       {group.items.map((signal) => (
-                        <div key={signal.label} className="rounded-[1.05rem] border border-[#efe4d7] bg-white px-3 py-3">
-                          <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div key={signal.label} className="grid gap-2 rounded-[0.98rem] border border-[#efe4d7] bg-white px-3 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-3">
+                          <div className="min-w-0">
                             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8f806f]">{signal.label}</p>
-                            {signal.summary ? (
-                              <span className="rounded-full border border-[#efe1d2] bg-[#fcf8f2] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
-                                {signal.summary}
-                              </span>
-                            ) : null}
+                            <p className="mt-1.5 max-w-[28ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
                           </div>
-                          <p className="mt-1.5 max-w-[32ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
+                          {signal.summary ? (
+                            <span className="rounded-full border border-[#efe1d2] bg-[#fcf8f2] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68] sm:justify-self-end">
+                              {signal.summary}
+                            </span>
+                          ) : null}
                         </div>
                       ))}
                     </div>
                   </article>
                 ))}
 
-                <article className="rounded-[1.45rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
+                <article className="rounded-[1.35rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
                   <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="max-w-[15rem]">
+                    <div className="max-w-[14rem]">
                       <p className="text-sm font-semibold text-[#242424]">{appShellExportSummary.eyebrow}</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#c08d62]">{appShellExportSummary.title}</p>
                     </div>
                     <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">{appShellExportSummary.badge}</span>
                   </div>
-                  <div className="mt-4 space-y-4 text-sm text-[#6c6459]">
-                    <p className="max-w-[19rem]">{appShellExportSummary.description}</p>
+                  <div className="mt-4 space-y-3.5 text-sm text-[#6c6459]">
+                    <p className="max-w-[18rem]">{appShellExportSummary.description}</p>
                     <div className="space-y-2.5 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
-                        <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.1rem] border border-[#f0dfcf] bg-white px-3 py-3">
+                        <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-3">
                           <div className="min-w-0">
                             <p className="font-medium text-[#5e564c]">{asset.label}</p>
                             <p className="mt-1 text-[11px] leading-5 text-[#8f8578]">{asset.description}</p>

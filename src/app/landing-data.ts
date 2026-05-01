@@ -349,19 +349,19 @@ export const appShellFlowCards: AppShellFlowCard[] = [
 export const appShellTimeline: AppShellTimelineItem[] = [
   {
     title: "Patent landscaping · comparative thread",
-    description: "Prior-art overlap staged for the current filings set.",
+    description: "Prior-art overlap staged.",
     summary: "3 source clusters · 2 claim deltas",
     meta: "12 min ago",
   },
   {
     title: "Clinical diligence · session replay",
-    description: "Endpoint notes and competitor claims queued for one replay.",
+    description: "Competitor notes queued for replay.",
     summary: "1 blocker · 4 exhibits linked",
     meta: "Yesterday",
   },
   {
     title: "Regulatory memo · final synthesis",
-    description: "Reviewer packet aligned with the export lane.",
+    description: "Packet aligned to export.",
     summary: "Ready · outline locked",
     meta: "Ready for review",
   },
@@ -369,20 +369,20 @@ export const appShellTimeline: AppShellTimelineItem[] = [
 
 export const appShellTodos: AppShellTodo[] = [
   {
-    label: "Import the next PDF batch into the project library",
-    note: "Ground retrieval before the next autonomous session starts.",
+    label: "Import the next PDF batch",
+    note: "Ground retrieval before the next session.",
     meta: "12 PDFs queued",
     state: "done",
   },
   {
-    label: "Generate a fresh comparative-analysis session",
-    note: "Keep the current workstream isolated from the diligence thread.",
+    label: "Generate a comparative-analysis session",
+    note: "Keep this workstream separate.",
     meta: "Owner · Research lead",
     state: "active",
   },
   {
     label: "Push the verified outline to Foundry",
-    note: "Promote the winning narrative after review closes.",
+    note: "Promote the winning narrative.",
     meta: "Export lane",
     state: "pending",
   },
