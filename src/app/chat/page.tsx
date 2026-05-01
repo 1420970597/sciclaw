@@ -161,8 +161,8 @@ function SessionTimeline() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session timeline</p>
           <h2 className="mt-2 text-xl font-semibold text-[#212121]">Project &amp; session flow staged between docs and the future workspace.</h2>
         </div>
-        <p className="max-w-xl text-sm leading-6 text-[#7a7267]">
-          Each session keeps one investigation thread, tool trace, and Foundry handoff tied to the same project memory.
+        <p className="max-w-[22rem] text-sm leading-6 text-[#7a7267]">
+          Keep one thread, tool trace, and handoff tied to the same project memory.
         </p>
       </div>
 

@@ -19,9 +19,9 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/project & session flow staged between docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
-    expect(screen.getByText(/one project lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/resume live threads/i)).toBeInTheDocument();
-    expect(screen.getByText(/stage the review bundle/i)).toBeInTheDocument();
+    expect(screen.getByText(/one lane per session/i)).toBeInTheDocument();
+    expect(screen.getByText(/switch live threads/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
     expect(screen.getByText(/pin the open claim/i)).toBeInTheDocument();
     expect(screen.getByText(/clear the blocker/i)).toBeInTheDocument();
     expect(screen.getByText(/ready the export packet/i)).toBeInTheDocument();
@@ -64,9 +64,9 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/3 source clusters · 2 claim deltas/i)).toBeInTheDocument();
     expect(screen.getByText(/1 blocker · 4 exhibits linked/i)).toBeInTheDocument();
     expect(screen.getByText(/ready · outline locked/i)).toBeInTheDocument();
-    expect(screen.getByText(/comparative pathway scan/i)).toBeInTheDocument();
-    expect(screen.getByText(/resolve one judgment call/i)).toBeInTheDocument();
-    expect(screen.getByText(/package the export bundle/i)).toBeInTheDocument();
+    expect(screen.getByText(/hold the live hypothesis/i)).toBeInTheDocument();
+    expect(screen.getByText(/assign the blocker/i)).toBeInTheDocument();
+    expect(screen.getByText(/lock outline and appendix/i)).toBeInTheDocument();
     expect(screen.getByText(/memo live/i)).toBeInTheDocument();
     expect(screen.getByText(/2 pending/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
@@ -97,9 +97,9 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowSection = sessionFlowHeading.closest("section");
     expect(sessionFlowSection).not.toBeNull();
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
-    expect(sessionFlowScope.getByRole("heading", { name: /one project lane/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /resume live threads/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /stage the review bundle/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /one lane per session/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /switch live threads/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /promote the locked answer/i })).toBeInTheDocument();
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
     expect(outputPanel).not.toBeNull();

@@ -280,31 +280,31 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
-    title: "One project lane.",
-    description: "Memory pinned · source context.",
+    title: "One lane per session.",
+    description: "Memory pinned. Sources ready.",
     meta: "128 assets · 6 skills",
     detail: "Memory pinned",
   },
   {
     eyebrow: "Session selector",
-    title: "Resume live threads.",
-    description: "Checkpoint recall · branch fast.",
+    title: "Switch live threads.",
+    description: "Checkpoint recall. Branch clean.",
     meta: "3 live threads",
     detail: "Checkpoint recall",
   },
   {
     eyebrow: "Foundry handoff",
-    title: "Stage the review bundle.",
-    description: "Export queue live · packet staged.",
+    title: "Promote the locked answer.",
+    description: "Export lane open. Packet staged.",
     meta: "12 export-ready assets",
-    detail: "Export queue live",
+    detail: "Export lane open",
   },
 ];
 
 export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
-    title: "Comparative pathway scan",
+    title: "Hold the live hypothesis",
     description: "Pin the open claim.",
     meta: "12 min ago",
     pills: [
@@ -316,7 +316,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   },
   {
     eyebrow: "Task lane",
-    title: "Resolve one judgment call",
+    title: "Assign the blocker",
     description: "Clear the blocker.",
     meta: "Reviewer handoff",
     pills: [
@@ -328,7 +328,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   },
   {
     eyebrow: "Foundry prep",
-    title: "Package the export bundle",
+    title: "Lock outline and appendix",
     description: "Ready the export packet.",
     meta: "Export rail",
     pills: [
@@ -343,7 +343,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
 export const appShellTimeline: AppShellTimelineItem[] = [
   {
     title: "Patent landscaping · comparative thread",
-    description: "Prior-art overlap scan staged for the current filings set.",
+    description: "Prior-art overlap staged for the current filings set.",
     summary: "3 source clusters · 2 claim deltas",
     meta: "12 min ago",
   },
@@ -355,7 +355,7 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   },
   {
     title: "Regulatory memo · final synthesis",
-    description: "Reviewer-ready answer bundle aligned with the export lane.",
+    description: "Reviewer packet aligned with the export lane.",
     summary: "Ready · outline locked",
     meta: "Ready for review",
   },
