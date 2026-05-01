@@ -81,8 +81,8 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.68rem] pr-[0.03rem] sm:gap-[0.8rem] sm:pr-[0.04rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            className="gap-[0.5rem] sm:gap-[0.64rem]"
-            buttonClassName="border-[rgba(0,0,0,0.356)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#163043] shadow-[0_1px_2px_rgba(15,23,42,0.024),0_4px_10px_rgba(15,23,42,0.025),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.39)] hover:text-[#102638]"
+            className="gap-[0.44rem] sm:gap-[0.56rem]"
+            buttonClassName="border-[rgba(0,0,0,0.372)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#143147] shadow-[0_1px_2px_rgba(15,23,42,0.022),0_4px_10px_rgba(15,23,42,0.024),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.405)] hover:text-[#0f2639]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -99,34 +99,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: "文",
-      position: "left-[63.4%] top-[12.9%] sm:left-[63.4%] sm:top-[12.9%]",
-      lineClass: "left-[50.08%] top-[29.35%] h-[2.18px] w-[10.7%] origin-left rotate-[184deg]",
-      ringClass: "h-[4.82rem] w-[4.82rem] border-[#496477] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_15px_24px_rgba(15,23,42,0.108)]",
-      activeRingClass: "h-[4.94rem] w-[4.94rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.067),0_18px_31px_rgba(232,124,55,0.112)]",
-      labelClass: "max-w-[122px] text-[#294457] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[110px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
+      position: "left-[62.6%] top-[12.9%] sm:left-[62.6%] sm:top-[12.9%]",
+      lineClass: "left-[50.02%] top-[29.35%] h-[2.24px] w-[11.3%] origin-left rotate-[184deg]",
+      ringClass: "h-[4.84rem] w-[4.84rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_15px_24px_rgba(15,23,42,0.11)]",
+      activeRingClass: "h-[4.96rem] w-[4.96rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.068),0_18px_31px_rgba(232,124,55,0.114)]",
+      labelClass: "max-w-[126px] text-[#27465a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[112px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.036)]",
     },
     {
       id: "data-mining",
       label: "Data Mining",
       icon: "数",
-      position: "left-[63.85%] top-[38.1%] sm:left-[63.85%] sm:top-[38.1%]",
-      lineClass: "left-[50.1%] top-[38.62%] h-[2.18px] w-[10.95%] origin-left rotate-[160deg]",
-      ringClass: "h-[4.82rem] w-[4.82rem] border-[#496477] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_15px_24px_rgba(15,23,42,0.108)]",
-      activeRingClass: "h-[4.94rem] w-[4.94rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.067),0_18px_31px_rgba(232,124,55,0.112)]",
-      labelClass: "max-w-[122px] text-[#294457] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[110px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
+      position: "left-[62.95%] top-[37.9%] sm:left-[62.95%] sm:top-[37.9%]",
+      lineClass: "left-[50.02%] top-[38.5%] h-[2.24px] w-[11.55%] origin-left rotate-[160deg]",
+      ringClass: "h-[4.84rem] w-[4.84rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_15px_24px_rgba(15,23,42,0.11)]",
+      activeRingClass: "h-[4.96rem] w-[4.96rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.068),0_18px_31px_rgba(232,124,55,0.114)]",
+      labelClass: "max-w-[126px] text-[#27465a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[112px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.036)]",
     },
     {
       id: "outcome-present",
       label: "Outcome Present",
       icon: "果",
-      position: "right-[16.4%] top-[12.9%] sm:right-[16.4%] sm:top-[12.9%]",
-      lineClass: "left-[49.8%] top-[29.36%] h-[2.18px] w-[10.9%] origin-left rotate-[25deg]",
-      ringClass: "h-[4.82rem] w-[4.82rem] border-[#496477] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_15px_24px_rgba(15,23,42,0.108)]",
-      activeRingClass: "h-[4.94rem] w-[4.94rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.067),0_18px_31px_rgba(232,124,55,0.112)]",
-      labelClass: "max-w-[122px] text-[#294457] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[110px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
+      position: "right-[15.75%] top-[12.75%] sm:right-[15.75%] sm:top-[12.75%]",
+      lineClass: "left-[49.78%] top-[29.26%] h-[2.24px] w-[11.25%] origin-left rotate-[25deg]",
+      ringClass: "h-[4.84rem] w-[4.84rem] border-[#486476] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_15px_24px_rgba(15,23,42,0.11)]",
+      activeRingClass: "h-[4.96rem] w-[4.96rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.068),0_18px_31px_rgba(232,124,55,0.114)]",
+      labelClass: "max-w-[126px] text-[#27465a] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[112px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.036)]",
     },
     ],
     [],
@@ -298,7 +298,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[3.32rem] grid grid-cols-4 gap-[3.28rem] pt-[4.44rem] sm:gap-[3.38rem]">
+                <div className="mt-[3.42rem] grid grid-cols-4 gap-[3.42rem] pt-[4.6rem] sm:gap-[3.54rem]">
                   {bars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.64rem] text-center sm:gap-[1.72rem]">
                       <div className="flex h-[168px] w-full items-end gap-[0.46rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[0.68rem] pb-[1.06rem] pt-4">
@@ -307,8 +307,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[5.86rem] w-full min-w-0 items-start justify-center px-[0.34rem] pb-[0.22rem] text-center text-[15.3px] font-medium uppercase leading-[1.44] tracking-[0.016em] text-[#2d4a5f] sm:min-h-[6.02rem] sm:text-[15.42px] sm:tracking-[0.018em]">
-                        <span className="block max-w-[7.28rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[6.02rem] w-full min-w-0 items-start justify-center px-[0.38rem] pb-[0.28rem] text-center text-[15.44px] font-medium uppercase leading-[1.46] tracking-[0.02em] text-[#29485d] sm:min-h-[6.16rem] sm:text-[15.58px] sm:tracking-[0.022em]">
+                        <span className="block max-w-[7.44rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
