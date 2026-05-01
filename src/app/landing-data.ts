@@ -295,7 +295,7 @@ export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Threads",
     title: "Switch live threads.",
-    description: "Branch clean.",
+    description: "Live state stays surfaced.",
     meta: "3 live",
     detail: "Checkpoint recall",
   },
@@ -349,16 +349,16 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   {
     title: "Clinical replay",
     description: "Replay queued.",
-    summary: "1 blocker",
+    summary: "Queue",
     summaryTone: "warn",
-    meta: "Queue",
+    meta: "1 blocker",
   },
   {
     title: "Reg memo final",
-    description: "Packet aligned.",
+    description: "Outline locked.",
     summary: "Ready",
     summaryTone: "accent",
-    meta: "Outline",
+    meta: "Packet",
   },
 ];
 

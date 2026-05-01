@@ -20,7 +20,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
     expect(screen.getByText(/one lane per thread/i)).toBeInTheDocument();
-    expect(screen.getByText(/switch live threads/i)).toBeInTheDocument();
+    expect(screen.getByText(/live state stays surfaced/i)).toBeInTheDocument();
     expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
     expect(screen.getByText(/hold live hypothesis/i)).toBeInTheDocument();
     expect(screen.getByText(/assign blocker/i)).toBeInTheDocument();
@@ -67,7 +67,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
     expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();
-    expect(screen.getByText(/signal and next move stay on one calmer edge lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
@@ -126,7 +126,7 @@ describe("Chat app shell placeholder", () => {
     const activeSessionsScope = within(activeSessionsCard as HTMLElement);
 
     expect(
-      activeSessionsScope.getByText(/signal and next move stay on one calmer edge lane/i),
+      activeSessionsScope.getByText(/signal and next move stay on one tighter edge lane/i),
     ).toBeInTheDocument();
 
     const activeSessionTitles = [/patent compare/i, /clinical replay/i, /reg memo final/i];
@@ -143,10 +143,10 @@ describe("Chat app shell placeholder", () => {
     );
 
     const firstSession = activeSessionsRows[0];
-    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(5.1rem,auto)]");
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.8rem,auto)]");
     expect(
       screen.getByText(/project & session flow staged between docs and the future workspace/i).closest("section"),
-    ).toHaveTextContent(/signal and next move stay on one calmer edge lane/i);
+    ).toHaveTextContent(/signal and next move stay on one tighter edge lane/i);
     expect(within(firstSession).getByText(/Patent compare/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Overlap staged\./i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Cluster map/i)).toBeInTheDocument();
@@ -155,14 +155,14 @@ describe("Chat app shell placeholder", () => {
     const secondSession = activeSessionsRows[1] as HTMLElement;
     expect(within(secondSession).getByText(/Clinical replay/i)).toBeInTheDocument();
     expect(within(secondSession).getByText(/Replay queued\./i)).toBeInTheDocument();
-    expect(within(secondSession).getByText(/^1 blocker$/i)).toBeInTheDocument();
     expect(within(secondSession).getByText(/^Queue$/i)).toBeInTheDocument();
+    expect(within(secondSession).getByText(/^1 blocker$/i)).toBeInTheDocument();
 
     const thirdSession = activeSessionsRows[2] as HTMLElement;
     expect(within(thirdSession).getByText(/Reg memo final/i)).toBeInTheDocument();
-    expect(within(thirdSession).getByText(/Packet aligned\./i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/Outline locked\./i)).toBeInTheDocument();
     expect(within(thirdSession).getByText(/^Ready$/i)).toBeInTheDocument();
-    expect(within(thirdSession).getByText(/^Outline$/i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/^Packet$/i)).toBeInTheDocument();
   });
 
   it("keeps the lower checkpoint rail embedded inside the three-card center strip after the density pass", () => {
