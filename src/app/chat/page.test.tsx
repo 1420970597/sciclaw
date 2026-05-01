@@ -67,20 +67,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/patent landscaping · comparative thread/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical diligence · session replay/i)).toBeInTheDocument();
     expect(screen.getByText(/regulatory memo · final synthesis/i)).toBeInTheDocument();
-    expect(screen.getByText(/3 source clusters · 2 claim deltas/i)).toBeInTheDocument();
-    expect(screen.getByText(/1 blocker · 4 exhibits linked/i)).toBeInTheDocument();
-    expect(screen.getByText(/ready · outline locked/i)).toBeInTheDocument();
-    expect(screen.getByText(/hold the live hypothesis/i)).toBeInTheDocument();
-    expect(screen.getByText(/assign the blocker/i)).toBeInTheDocument();
-    expect(screen.getByText(/more flow checkpoints stay inside tasks and foundry/i)).toBeInTheDocument();
-    expect(screen.getByText(/memo live/i)).toBeInTheDocument();
-    expect(screen.getByText(/2 pending/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
-    expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
-    expect(screen.getByRole("link", { name: /view all flow checkpoints/i })).toHaveAttribute("href", "/help/foundry");
-    expect(
-      screen.getByText(/three live threads stay grouped so timing, summaries, and export hints scan faster/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/signal, timing, and export hints stay in one tighter lane/i)).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
@@ -130,40 +117,51 @@ describe("Chat app shell placeholder", () => {
     expect(statusScope.getByText(/return to source/i)).toBeInTheDocument();
   });
 
-  it("keeps the center session lane and right rail more breathable after the density pass", () => {
+  it("keeps the Active sessions rows denser in meaning but calmer in layout after the session-lane pass", () => {
     render(<ChatPage />);
 
-    const sessionFlowHeading = screen.getByRole("heading", {
-      name: /project & session flow staged between docs and the future workspace/i,
-    });
-    const sessionFlowSection = sessionFlowHeading.closest("section");
-    expect(sessionFlowSection).not.toBeNull();
-    const sessionFlowScope = within(sessionFlowSection as HTMLElement);
+    const activeSessionsLabel = screen.getByText(/^active sessions$/i);
+    const activeSessionsHeader = activeSessionsLabel.parentElement?.parentElement;
+    const activeSessionsCard = activeSessionsHeader?.parentElement;
+    expect(activeSessionsHeader).not.toBeNull();
+    expect(activeSessionsCard).not.toBeNull();
+    const activeSessionsScope = within(activeSessionsCard as HTMLElement);
 
-    const timelineShell = screen.getByText(/^active sessions$/i).closest("div");
-    expect(timelineShell).not.toBeNull();
-    expect(timelineShell).toHaveTextContent(/three live threads stay grouped so timing, summaries, and export hints scan faster/i);
+    expect(
+      activeSessionsScope.getByText(/signal, timing, and export hints stay in one tighter lane/i),
+    ).toBeInTheDocument();
 
-    const sessionGrid = sessionFlowSection?.querySelector('[data-testid="chat-flow-card-grid"]')?.parentElement?.parentElement;
-    expect(sessionGrid).not.toBeNull();
-    expect(sessionGrid).toHaveClass("xl:grid-cols-[minmax(0,0.98fr)_minmax(548px,1.02fr)]");
+    const activeSessionTitles = [
+      /patent landscaping · comparative thread/i,
+      /clinical diligence · session replay/i,
+      /regulatory memo · final synthesis/i,
+    ];
+    for (const titlePattern of activeSessionTitles) {
+      expect(activeSessionsScope.getByText(titlePattern)).toBeInTheDocument();
+    }
 
-    const timelineRows = sessionFlowScope.getAllByText(/patent landscaping · comparative thread|clinical diligence · session replay|regulatory memo · final synthesis/i);
-    expect(timelineRows).toHaveLength(3);
+    const activeSessionsRows = Array.from(
+      activeSessionTitles.map((titlePattern) => {
+        const row = activeSessionsScope.getByText(titlePattern).closest("div.grid");
+        expect(row).not.toBeNull();
+        return row as HTMLElement;
+      }),
+    );
 
-    const patentTitle = screen.getByText(/patent landscaping · comparative thread/i);
-    const patentSummary = screen.getByText(/3 source clusters · 2 claim deltas/i);
-    expect(patentTitle).toBeInTheDocument();
-    expect(patentSummary).toBeInTheDocument();
+    const firstSession = activeSessionsRows[0];
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(8.2rem,auto)]");
+    expect(within(firstSession).getByText(/Patent landscaping · comparative thread/i)).toBeInTheDocument();
+    expect(within(firstSession).getByText(/Cluster map/i)).toBeInTheDocument();
+    expect(within(firstSession).getByText(/^12m$/i)).toBeInTheDocument();
 
-    const rightRail = screen.getByTestId("chat-right-rail-grid");
-    const statusPanel = screen.getByText(/^status board$/i).closest("article");
-    const outputCard = screen.getByText(/^session output$/i).closest("section");
-    expect(rightRail).toContainElement(statusPanel);
+    const secondSession = activeSessionsRows[1] as HTMLElement;
+    expect(within(secondSession).getByText(/Clinical diligence · session replay/i)).toBeInTheDocument();
+    expect(within(secondSession).getByText(/Replay queue/i)).toBeInTheDocument();
+    expect(within(secondSession).getByText(/^1 blocker$/i)).toBeInTheDocument();
 
-    expect(statusPanel).not.toBeNull();
-    expect(outputCard).not.toBeNull();
-    expect(within(outputCard as HTMLElement).getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
-    expect(within(outputCard as HTMLElement).getByText(/keep the current answer, evidence posture, and export lane visible in one bridge card/i)).toBeInTheDocument();
+    const thirdSession = activeSessionsRows[2] as HTMLElement;
+    expect(within(thirdSession).getByText(/Regulatory memo · final synthesis/i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/Outline locked/i)).toBeInTheDocument();
+    expect(within(thirdSession).getByText(/^Ready packet$/i)).toBeInTheDocument();
   });
 });

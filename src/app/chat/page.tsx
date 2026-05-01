@@ -189,8 +189,8 @@ function SessionTimeline() {
             <div className="flex flex-col gap-2 border-b border-[#f3eee7] pb-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-[#222]">Active sessions</p>
-                <p className="mt-1 max-w-[18rem] text-xs leading-5 text-[#9b9183]">
-                  Three live threads stay grouped so timing, summaries, and export hints scan faster.
+                <p className="mt-1 max-w-[16rem] text-xs leading-5 text-[#9b9183]">
+                  Signal, timing, and export hints stay in one tighter lane.
                 </p>
               </div>
               <span className="shrink-0 rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
@@ -200,7 +200,7 @@ function SessionTimeline() {
               {appShellTimeline.map((item) => (
                 <div
                   key={item.title}
-                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(9.4rem,auto)] sm:items-start sm:gap-4"
+                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(8.2rem,auto)] sm:items-start sm:gap-4"
                 >
                   <div className="flex min-w-0 gap-3">
                     <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
@@ -209,10 +209,20 @@ function SessionTimeline() {
                       <p className="mt-1 text-sm leading-6 text-[#6e665b]">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap items-center gap-2 sm:max-w-[9.4rem] sm:flex-col sm:items-end sm:justify-start">
-                    <span className="text-[11px] uppercase tracking-[0.18em] text-[#a89d8f]">{item.meta}</span>
+                  <div className="flex flex-wrap items-start justify-start gap-2 sm:max-w-[8.2rem] sm:flex-col sm:items-end sm:justify-start">
+                    <span className="rounded-full border border-[#f0dfcf] bg-[#fff6ef] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#d07b3d]">
+                      {item.meta}
+                    </span>
                     {item.summary ? (
-                      <span className="rounded-full border border-[#efe4d7] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68]">
+                      <span
+                        className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${
+                          item.summaryTone === "accent"
+                            ? "border-[#f3d8bf] bg-[#fff3e8] text-[#d87631]"
+                            : item.summaryTone === "warn"
+                              ? "border-[#f1decb] bg-[#fffaf3] text-[#9c6f46]"
+                              : "border-[#efe4d7] bg-white text-[#b08a68]"
+                        }`}
+                      >
                         {item.summary}
                       </span>
                     ) : null}

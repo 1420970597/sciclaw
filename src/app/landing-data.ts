@@ -103,6 +103,7 @@ export type AppShellTimelineItem = {
   description: string;
   meta: string;
   summary?: string;
+  summaryTone?: "neutral" | "warn" | "accent";
 };
 
 export type AppShellTodo = {
@@ -350,20 +351,23 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   {
     title: "Patent landscaping · comparative thread",
     description: "Prior-art overlap staged.",
-    summary: "3 source clusters · 2 claim deltas",
-    meta: "12 min ago",
+    summary: "Cluster map",
+    summaryTone: "neutral",
+    meta: "12m",
   },
   {
     title: "Clinical diligence · session replay",
     description: "Competitor notes queued for replay.",
-    summary: "1 blocker · 4 exhibits linked",
-    meta: "Yesterday",
+    summary: "Replay queue",
+    summaryTone: "warn",
+    meta: "1 blocker",
   },
   {
     title: "Regulatory memo · final synthesis",
     description: "Packet aligned to export.",
-    summary: "Ready · outline locked",
-    meta: "Ready for review",
+    summary: "Outline locked",
+    summaryTone: "accent",
+    meta: "Ready packet",
   },
 ];
 
