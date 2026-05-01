@@ -99,34 +99,34 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: "文",
-      position: "left-[59.45%] top-[12.1%] sm:left-[59.45%] sm:top-[12.1%]",
-      lineClass: "left-[50.12%] top-[28.7%] h-[2.05px] w-[10.6%] origin-left rotate-[186deg]",
-      ringClass: "h-[4.72rem] w-[4.72rem] border-[#486276] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_16px_26px_rgba(15,23,42,0.11)]",
-      activeRingClass: "h-[4.84rem] w-[4.84rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.065),0_18px_31px_rgba(232,124,55,0.108)]",
-      labelClass: "max-w-[116px] text-[#2f495d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[108px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
+      position: "left-[61.2%] top-[12.5%] sm:left-[61.2%] sm:top-[12.5%]",
+      lineClass: "left-[50.18%] top-[29.05%] h-[2.05px] w-[9.45%] origin-left rotate-[186deg]",
+      ringClass: "h-[4.78rem] w-[4.78rem] border-[#4a6479] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_16px_26px_rgba(15,23,42,0.116)]",
+      activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.067),0_18px_31px_rgba(232,124,55,0.112)]",
+      labelClass: "max-w-[120px] text-[#2b4559] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[110px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
     },
     {
       id: "data-mining",
       label: "Data Mining",
       icon: "数",
-      position: "left-[59.9%] top-[37.2%] sm:left-[59.9%] sm:top-[37.2%]",
-      lineClass: "left-[50.14%] top-[38.08%] h-[2.05px] w-[10.92%] origin-left rotate-[162deg]",
-      ringClass: "h-[4.72rem] w-[4.72rem] border-[#486276] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_16px_26px_rgba(15,23,42,0.11)]",
-      activeRingClass: "h-[4.84rem] w-[4.84rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.065),0_18px_31px_rgba(232,124,55,0.108)]",
-      labelClass: "max-w-[116px] text-[#2f495d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[108px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
+      position: "left-[61.7%] top-[37.4%] sm:left-[61.7%] sm:top-[37.4%]",
+      lineClass: "left-[50.2%] top-[38.22%] h-[2.05px] w-[9.7%] origin-left rotate-[162deg]",
+      ringClass: "h-[4.78rem] w-[4.78rem] border-[#4a6479] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_16px_26px_rgba(15,23,42,0.116)]",
+      activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.067),0_18px_31px_rgba(232,124,55,0.112)]",
+      labelClass: "max-w-[120px] text-[#2b4559] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[110px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
     },
     {
       id: "outcome-present",
       label: "Outcome Present",
       icon: "果",
-      position: "right-[17.05%] top-[12.15%] sm:right-[17.05%] sm:top-[12.15%]",
-      lineClass: "left-[49.88%] top-[28.72%] h-[2.05px] w-[10.72%] origin-left rotate-[24deg]",
-      ringClass: "h-[4.72rem] w-[4.72rem] border-[#486276] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_16px_26px_rgba(15,23,42,0.11)]",
-      activeRingClass: "h-[4.84rem] w-[4.84rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.065),0_18px_31px_rgba(232,124,55,0.108)]",
-      labelClass: "max-w-[116px] text-[#2f495d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[108px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
+      position: "right-[18.15%] top-[12.5%] sm:right-[18.15%] sm:top-[12.5%]",
+      lineClass: "left-[49.88%] top-[29.04%] h-[2.05px] w-[9.5%] origin-left rotate-[24deg]",
+      ringClass: "h-[4.78rem] w-[4.78rem] border-[#4a6479] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#183246] shadow-[0_16px_26px_rgba(15,23,42,0.116)]",
+      activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dd8f53] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.067),0_18px_31px_rgba(232,124,55,0.112)]",
+      labelClass: "max-w-[120px] text-[#2b4559] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[110px] text-[#844015] drop-shadow-[0_2px_4px_rgba(240,142,79,0.034)]",
     },
     ],
     [],
@@ -307,8 +307,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[4.8rem] w-full min-w-0 items-start justify-center px-[0.26rem] text-center text-[14.2px] font-medium uppercase leading-[1.5] tracking-[0.016em] text-[#355166] sm:min-h-[4.92rem] sm:text-[14.34px] sm:tracking-[0.018em]">
-                        <span className="block max-w-[6.28rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[5.42rem] w-full min-w-0 items-start justify-center px-[0.26rem] text-center text-[14.9px] font-medium uppercase leading-[1.4] tracking-[0.012em] text-[#314d62] sm:min-h-[5.58rem] sm:text-[15.02px] sm:tracking-[0.014em]">
+                        <span className="block max-w-[6.92rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
