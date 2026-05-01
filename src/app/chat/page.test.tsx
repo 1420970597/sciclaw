@@ -19,18 +19,18 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/project & session flow staged between docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a tighter workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
-    expect(screen.getByText(/ground every session in one project lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/move between live threads without losing the trail/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote one validated answer into one export lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep uploads, memory, skills, and outputs aligned/i)).toBeInTheDocument();
-    expect(screen.getByText(/reopen checkpoints or branch a fresh lane from the current answer/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the active memo and export queue visible before handoff/i)).toBeInTheDocument();
-    expect(screen.getByText(/grounded start · memory pinned/i)).toBeInTheDocument();
-    expect(screen.getByText(/checkpoint recall · branch cleanly/i)).toBeInTheDocument();
-    expect(screen.getByText(/answer live · export queue visible/i)).toBeInTheDocument();
+    expect(screen.getByText(/ground each session in one lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/move between live threads cleanly/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote one validated answer/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep uploads, memory, and outputs aligned/i)).toBeInTheDocument();
+    expect(screen.getByText(/reopen one checkpoint or branch from the current answer/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the memo and export queue visible before handoff/i)).toBeInTheDocument();
+    expect(screen.getByText(/memory pinned/i)).toBeInTheDocument();
+    expect(screen.getByText(/checkpoint recall/i)).toBeInTheDocument();
+    expect(screen.getByText(/export queue live/i)).toBeInTheDocument();
     expect(screen.getByText(/pin one live hypothesis and its evidence lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/assign the blocker and return one narrowed review question/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote the locked outline and appendix in one packet/i)).toBeInTheDocument();
+    expect(screen.getByText(/assign the blocker and return one review question/i)).toBeInTheDocument();
+    expect(screen.getByText(/promote the locked outline and appendix together/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -71,10 +71,10 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/1 blocker · 4 exhibits linked/i)).toBeInTheDocument();
     expect(screen.getByText(/ready · outline locked/i)).toBeInTheDocument();
     expect(screen.getByText(/comparative pathway scan/i)).toBeInTheDocument();
-    expect(screen.getByText(/resolve one open judgment call/i)).toBeInTheDocument();
+    expect(screen.getByText(/resolve one judgment call/i)).toBeInTheDocument();
     expect(screen.getByText(/package the export bundle/i)).toBeInTheDocument();
     expect(screen.getByText(/memo live/i)).toBeInTheDocument();
-    expect(screen.getByText(/2 sources pending/i)).toBeInTheDocument();
+    expect(screen.getByText(/2 pending/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /open session thread/i })).toHaveAttribute("href", "/chat");
     expect(screen.getByRole("link", { name: /review active tasks/i })).toHaveAttribute("href", "/help/tasks");
     expect(screen.getByRole("link", { name: /inspect foundry assets/i })).toHaveAttribute("href", "/help/foundry");
@@ -103,9 +103,9 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowSection = sessionFlowHeading.closest("section");
     expect(sessionFlowSection).not.toBeNull();
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
-    expect(sessionFlowScope.getByRole("heading", { name: /ground every session in one project lane/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /move between live threads without losing the trail/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /promote one validated answer into one export lane/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /ground each session in one lane/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /move between live threads cleanly/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /promote one validated answer/i })).toBeInTheDocument();
 
     const outputPanel = screen.getByText(/session output/i).closest("section");
     expect(outputPanel).not.toBeNull();

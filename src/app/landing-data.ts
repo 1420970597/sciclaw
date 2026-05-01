@@ -280,24 +280,24 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Project context",
-    title: "Ground every session in one project lane.",
-    description: "Keep uploads, memory, skills, and outputs aligned.",
+    title: "Ground each session in one lane.",
+    description: "Keep uploads, memory, and outputs aligned.",
     meta: "128 assets · 6 skills",
-    detail: "Grounded start · memory pinned",
+    detail: "Memory pinned",
   },
   {
     eyebrow: "Session selector",
-    title: "Move between live threads without losing the trail.",
-    description: "Reopen checkpoints or branch a fresh lane from the current answer.",
+    title: "Move between live threads cleanly.",
+    description: "Reopen one checkpoint or branch from the current answer.",
     meta: "3 live threads",
-    detail: "Checkpoint recall · branch cleanly",
+    detail: "Checkpoint recall",
   },
   {
     eyebrow: "Foundry handoff",
-    title: "Promote one validated answer into one export lane.",
-    description: "Keep the active memo and export queue visible before handoff.",
+    title: "Promote one validated answer.",
+    description: "Keep the memo and export queue visible before handoff.",
     meta: "12 export-ready assets",
-    detail: "Answer live · export queue visible",
+    detail: "Export queue live",
   },
 ];
 
@@ -309,19 +309,19 @@ export const appShellFlowCards: AppShellFlowCard[] = [
     meta: "12 min ago",
     pills: [
       { label: "Memo live", tone: "accent" },
-      { label: "2 sources pending", tone: "warn" },
+      { label: "2 pending", tone: "warn" },
     ],
     ctaLabel: "Open session thread",
     ctaHref: "/chat",
   },
   {
     eyebrow: "Task lane",
-    title: "Resolve one open judgment call",
-    description: "Assign the blocker and return one narrowed review question.",
+    title: "Resolve one judgment call",
+    description: "Assign the blocker and return one review question.",
     meta: "Reviewer handoff",
     pills: [
       { label: "1 blocker", tone: "warn" },
-      { label: "Task owner set", tone: "neutral" },
+      { label: "Owner set", tone: "neutral" },
     ],
     ctaLabel: "Review active tasks",
     ctaHref: "/help/tasks",
@@ -329,10 +329,10 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Foundry prep",
     title: "Package the export bundle",
-    description: "Promote the locked outline and appendix in one packet.",
+    description: "Promote the locked outline and appendix together.",
     meta: "Export rail",
     pills: [
-      { label: "12 assets ready", tone: "accent" },
+      { label: "12 ready", tone: "accent" },
       { label: "Outline synced", tone: "neutral" },
     ],
     ctaLabel: "Inspect Foundry assets",
