@@ -194,8 +194,8 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveClass("h-[2.75rem]");
     expect(settingsTrigger).toHaveClass("w-[2.75rem]");
     expect(triggerRow).not.toBeNull();
-    expect(triggerRow).toHaveClass("gap-[0.5rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.62rem]");
+    expect(triggerRow).toHaveClass("gap-[0.58rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.72rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
 
     fireEvent.click(settingsTrigger);
@@ -216,6 +216,9 @@ describe("Home landing page", () => {
     expect(literatureNode.parentElement?.querySelector("span[class*='w-[7.78%]']")).not.toBeNull();
     expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[7.92%]']")).not.toBeNull();
     expect(outcomeNode.parentElement?.querySelector("span[class*='w-[7.72%]']")).not.toBeNull();
+    expect(literatureNode).toHaveTextContent(/literature analysis/i);
+    expect(dataMiningNode).toHaveTextContent(/data mining/i);
+    expect(outcomeNode).toHaveTextContent(/outcome present/i);
     expect(literatureNode.firstElementChild).toHaveClass("h-[4.98rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.88rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[4.88rem]");
@@ -232,8 +235,8 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[7.16rem]");
-      expect(labelWrapper).toHaveClass("leading-[1.22]");
+      expect(labelWrapper).toHaveClass("min-h-[7.34rem]");
+      expect(labelWrapper).toHaveClass("leading-[1.18]");
       expect(label).toHaveClass("max-w-[8.68rem]");
       expect(label).toHaveClass("text-balance");
     });
