@@ -412,13 +412,13 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
     heading: "Status board",
     items: [
       {
-        label: "Evidence chain",
-        summary: "Sources locked",
+        label: "Sources",
+        summary: "Locked",
         description: "Citations pinned.",
       },
       {
-        label: "Open risk",
-        summary: "1 call held",
+        label: "Risk",
+        summary: "1 held",
         description: "One review call waits.",
       },
     ],
@@ -428,7 +428,7 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
 export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Session output lane",
-  description: "Keep the answer, risks, and export handoff on one quieter rail.",
+  description: "Keep answer, risks, and export handoff on one quieter rail.",
   meta: "Session 07 · 3 live",
 };
 
@@ -436,15 +436,15 @@ export const appShellExportStats = ["Packet ready"];
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
-  badge: "Ready",
   title: "Foundry packet",
+  badge: "Ready",
   description: "Bundle memory, sessions, and verified charts into one ready packet.",
 };
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
     label: "Packet",
-    description: "Brief and slides together.",
+    description: "Brief + slides staged.",
   },
 ];
 

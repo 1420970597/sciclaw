@@ -27,7 +27,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
     expect(screen.getByText(/session 07 · 3 live/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -183,26 +183,23 @@ describe("Chat app shell placeholder", () => {
 
     expect(rightRailScope.getByText(/status board/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/2 signals/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/evidence chain/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/open risk/i)).toBeInTheDocument();
-    expect(rightRailScope.queryByText(/handoff route/i)).not.toBeInTheDocument();
-    expect(rightRailScope.queryByText(/back to memory or tasks/i)).not.toBeInTheDocument();
-    expect(rightRailScope.queryByText(/return to source/i)).not.toBeInTheDocument();
-    expect(rightRailScope.queryByText(/3 signals/i)).not.toBeInTheDocument();
-    expect(rightRailScope.queryByText(/keep citations attached to the draft/i)).not.toBeInTheDocument();
-    expect(rightRailScope.queryByText(/hold one unresolved call before review leaves/i)).not.toBeInTheDocument();
-    expect(rightRailScope.queryByText(/jump back to memory, tasks, or the thread/i)).not.toBeInTheDocument();
-    expect(rightRailScope.getByText(/sources locked/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/1 call held/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/^sources$/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/^risk$/i)).toBeInTheDocument();
+    expect(rightRailScope.queryByText(/evidence chain/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/open risk/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/sources locked/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/1 call held/i)).not.toBeInTheDocument();
+    expect(rightRailScope.getByText(/^locked$/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/^1 held$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/foundry packet/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^ready$/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/^packet export$/i)).not.toBeInTheDocument();
     expect(rightRailScope.getByText(/session output lane/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/keep the answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/keep answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/session 07 · 3 live/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^packet$/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/brief and slides together/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/brief \+ slides staged\./i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/packet export/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/^3 live$/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/^5 open$/i)).not.toBeInTheDocument();
