@@ -194,8 +194,8 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveClass("h-[2.75rem]");
     expect(settingsTrigger).toHaveClass("w-[2.75rem]");
     expect(triggerRow).not.toBeNull();
-    expect(triggerRow).toHaveClass("gap-[0.62rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.82rem]");
+    expect(triggerRow).toHaveClass("gap-[0.66rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.88rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
 
     fireEvent.click(settingsTrigger);
@@ -210,21 +210,21 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
-    expect(literatureNode.className).toContain("left-[47.85%]");
-    expect(dataMiningNode.className).toContain("left-[48.25%]");
-    expect(outcomeNode.className).toContain("right-[15.9%]");
-    expect(literatureNode.parentElement?.querySelector("span[class*='w-[11.42%]']")).not.toBeNull();
-    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[11.5%]']")).not.toBeNull();
-    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[11.24%]']")).not.toBeNull();
+    expect(literatureNode.className).toContain("left-[46.9%]");
+    expect(dataMiningNode.className).toContain("left-[47.35%]");
+    expect(outcomeNode.className).toContain("right-[16.8%]");
+    expect(literatureNode.parentElement?.querySelector("span[class*='w-[10.94%]']")).not.toBeNull();
+    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[11.02%]']")).not.toBeNull();
+    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[10.76%]']")).not.toBeNull();
     expect(literatureNode).toHaveClass("gap-[1.08rem]");
     expect(dataMiningNode).toHaveClass("gap-[1.08rem]");
     expect(outcomeNode).toHaveClass("gap-[1.08rem]");
     expect(literatureNode).toHaveTextContent(/literature analysis/i);
     expect(dataMiningNode).toHaveTextContent(/data mining/i);
     expect(outcomeNode).toHaveTextContent(/outcome present/i);
-    expect(literatureNode.firstElementChild).toHaveClass("h-[4.96rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.86rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[4.86rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[4.94rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.82rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[4.82rem]");
 
     fireEvent.click(dataMiningNode);
     expect(within(landingHero).getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
@@ -252,12 +252,12 @@ describe("Home landing page", () => {
     const literatureNodeLabel = within(literatureNode).getByText(/literature analysis/i);
     const dataMiningNodeLabel = within(dataMiningNode).getByText(/data mining/i);
     const outcomeNodeLabel = within(outcomeNode).getByText(/outcome present/i);
-    expect(literatureNodeLabel).toHaveClass("text-[11.2px]");
-    expect(literatureNodeLabel).toHaveClass("leading-[2.16]");
-    expect(literatureNodeLabel).toHaveClass("tracking-[0.048em]");
-    expect(literatureNodeLabel).toHaveClass("max-w-[152px]");
-    expect(dataMiningNodeLabel).toHaveClass("max-w-[180px]");
-    expect(outcomeNodeLabel).toHaveClass("max-w-[180px]");
+    expect(literatureNodeLabel).toHaveClass("text-[10.9px]");
+    expect(literatureNodeLabel).toHaveClass("leading-[2.12]");
+    expect(literatureNodeLabel).toHaveClass("tracking-[0.038em]");
+    expect(literatureNodeLabel).toHaveClass("max-w-[144px]");
+    expect(dataMiningNodeLabel).toHaveClass("max-w-[170px]");
+    expect(outcomeNodeLabel).toHaveClass("max-w-[170px]");
 
     const description = within(landingHero).getByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
