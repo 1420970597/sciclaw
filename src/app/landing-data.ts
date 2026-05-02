@@ -443,13 +443,13 @@ export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   badge: "Ready",
   title: "Foundry packet",
-  description: "Bundle memory and verified charts into one ready packet.",
+  description: "Bundle memory, sessions, and verified charts into one ready packet.",
 };
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
     label: "Packet export",
-    description: "Brief + slides staged.",
+    description: "Brief and slides staged together.",
   },
 ];
 

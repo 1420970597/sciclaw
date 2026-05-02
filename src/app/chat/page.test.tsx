@@ -198,8 +198,8 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.getByText(/^3 live$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^5 open$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/packet ready/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/bundle memory and verified charts into one ready packet/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/brief \+ slides staged/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/bundle memory, sessions, and verified charts into one ready packet/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/brief and slides staged together/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/brief outline/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/slides handoff/i)).not.toBeInTheDocument();
