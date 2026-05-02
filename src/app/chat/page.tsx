@@ -166,7 +166,7 @@ function SessionTimeline() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] 2xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+      <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] 2xl:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
           <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,10.95rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
@@ -189,8 +189,8 @@ function SessionTimeline() {
             <div className="flex flex-col gap-2 border-b border-[#f3eee7] pb-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-[#222]">Active sessions</p>
-                <p className="mt-1 max-w-[10rem] text-xs leading-5 text-[#9b9183]">
-                  Signal and next move stay on one tighter edge lane.
+                <p className="mt-1 max-w-[9rem] text-xs leading-5 text-[#9b9183]">
+                  Next move stays on one quieter edge lane.
                 </p>
               </div>
               <span className="shrink-0 rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
@@ -200,16 +200,16 @@ function SessionTimeline() {
               {appShellTimeline.map((item) => (
                 <div
                   key={item.title}
-                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(4.8rem,auto)] sm:items-start sm:gap-2.5"
+                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(4.4rem,auto)] sm:items-start sm:gap-2"
                 >
                   <div className="flex min-w-0 gap-3">
                     <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
                     <div className="min-w-0">
                       <p className="text-sm font-medium text-[#222]">{item.title}</p>
-                      <p className="mt-1 max-w-[21ch] text-sm leading-6 text-[#6e665b]">{item.description}</p>
+                      <p className="mt-1 max-w-[19ch] text-sm leading-6 text-[#6e665b]">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap items-start justify-start gap-1.5 sm:max-w-[4.8rem] sm:flex-col sm:items-end sm:justify-start">
+                  <div className="flex flex-wrap items-start justify-start gap-1.5 sm:max-w-[4.4rem] sm:flex-col sm:items-end sm:justify-start">
                     <span className="rounded-full border border-[#f0dfcf] bg-[#fff6ef] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#d07b3d]">
                       {item.meta}
                     </span>

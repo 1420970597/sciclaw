@@ -24,7 +24,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
     expect(screen.getByText(/3 live lanes/i)).toBeInTheDocument();
     expect(screen.getByText(/answer handoff/i)).toBeInTheDocument();
-    expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/next move stays on one quieter edge lane/i)).toBeInTheDocument();
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
     expect(screen.getByText(/session 07 · 3 live/i)).toBeInTheDocument();
     expect(screen.getByText(/keep answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
@@ -70,7 +70,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
     expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();
-    expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/next move stays on one quieter edge lane/i)).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
@@ -85,6 +85,8 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
       "xl:grid-cols-[minmax(0,1fr)_minmax(0,0.98fr)]",
     );
+    expect(screen.getByText(/hold live claim/i)).toBeInTheDocument();
+    expect(screen.getByText(/route blocker/i)).toBeInTheDocument();
   });
 
   it("keeps the docs-to-workspace bridge actions navigable from the preview shell", () => {
@@ -109,8 +111,8 @@ describe("Chat app shell placeholder", () => {
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
       "xl:grid-cols-[repeat(3,minmax(0,14rem))]",
     );
-    expect(sessionFlowScope.getByRole("heading", { name: /hold live hypothesis/i })).toBeInTheDocument();
-    expect(sessionFlowScope.getByRole("heading", { name: /assign blocker/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /hold live claim/i })).toBeInTheDocument();
+    expect(sessionFlowScope.getByRole("heading", { name: /route blocker/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /foundry fold/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByText(/foundry sync/i)).toBeInTheDocument();
     expect(sessionFlowScope.getByText(/keep bridge notes calm/i)).toBeInTheDocument();
@@ -135,7 +137,7 @@ describe("Chat app shell placeholder", () => {
     const activeSessionsScope = within(activeSessionsCard as HTMLElement);
 
     expect(
-      activeSessionsScope.getByText(/signal and next move stay on one tighter edge lane/i),
+      activeSessionsScope.getByText(/next move stays on one quieter edge lane/i),
     ).toBeInTheDocument();
 
     const activeSessionTitles = [/patent compare/i, /clinical replay/i, /reg memo final/i];
@@ -152,10 +154,10 @@ describe("Chat app shell placeholder", () => {
     );
 
     const firstSession = activeSessionsRows[0];
-    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.8rem,auto)]");
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.4rem,auto)]");
     expect(within(firstSession).getByText(/Patent compare/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Overlap staged\./i)).toBeInTheDocument();
-    expect(within(firstSession).getByText(/Cluster map/i)).toBeInTheDocument();
+    expect(within(firstSession).getByText(/^Map$/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/^12m$/i)).toBeInTheDocument();
 
     const secondSession = activeSessionsRows[1] as HTMLElement;

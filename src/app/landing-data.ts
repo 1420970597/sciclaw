@@ -311,7 +311,7 @@ export const appShellCards: AppShellCard[] = [
 export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Session focus",
-    title: "Hold live hypothesis",
+    title: "Hold live claim",
     description: "Pin the live claim.",
     meta: "12m",
     pills: [{ label: "Memo live", tone: "accent" }],
@@ -320,7 +320,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   },
   {
     eyebrow: "Task lane",
-    title: "Assign blocker",
+    title: "Route blocker",
     description: "Route the blocker.",
     meta: "Handoff",
     pills: [{ label: "1 blocker", tone: "warn" }],
@@ -342,7 +342,7 @@ export const appShellTimeline: AppShellTimelineItem[] = [
   {
     title: "Patent compare",
     description: "Overlap staged.",
-    summary: "Cluster map",
+    summary: "Map",
     summaryTone: "neutral",
     meta: "12m",
   },
