@@ -433,7 +433,7 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
 export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Session output lane",
-  description: "Keep the answer lane visible in one calmer summary card.",
+  description: "Keep the answer lane in one calmer summary card.",
   meta: "Session 07",
 };
 
@@ -448,8 +448,8 @@ export const appShellExportSummary = {
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
-    label: "Packet export",
-    description: "Brief and slides staged together.",
+    label: "Packet",
+    description: "Brief and slides together.",
   },
 ];
 
