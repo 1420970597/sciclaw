@@ -25,7 +25,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
     expect(screen.getByText(/switch live threads/i)).toBeInTheDocument();
     expect(screen.getByText(/session output lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the answer lane visible in one quieter row/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the answer lane visible in one calmer summary card/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -194,8 +194,10 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.getByText(/^ready$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/packet export/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/session output lane/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/keep the answer lane visible in one quieter row/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/3 live · 5 open · ready/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/keep the answer lane visible in one calmer summary card/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/^3 live$/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/^5 open$/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/packet ready/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/bundle memory and verified charts into one ready packet/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/brief \+ slides staged/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/brief outline/i)).not.toBeInTheDocument();
