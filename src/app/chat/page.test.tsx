@@ -26,8 +26,8 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/answer handoff/i)).toBeInTheDocument();
     expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
-    expect(screen.getByText(/session 07 · 3 live · 5 open/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep the answer lane in one calmer summary card/i)).toBeInTheDocument();
+    expect(screen.getByText(/session 07 · 3 live/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep the answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -192,14 +192,14 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.queryByText(/keep citations attached to the draft/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/hold one unresolved call before review leaves/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/jump back to memory, tasks, or the thread/i)).not.toBeInTheDocument();
-    expect(rightRailScope.getByText(/citations pinned/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/1 call pending/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/sources locked/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/1 call held/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/foundry packet/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^ready$/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/^packet export$/i)).not.toBeInTheDocument();
     expect(rightRailScope.getByText(/session output lane/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/keep the answer lane in one calmer summary card/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/session 07 · 3 live · 5 open/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/keep the answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/session 07 · 3 live/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^packet$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/brief and slides together/i)).toBeInTheDocument();

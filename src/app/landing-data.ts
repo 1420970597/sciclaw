@@ -413,13 +413,13 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
     items: [
       {
         label: "Evidence chain",
-        summary: "Citations pinned",
-        description: "Sources locked.",
+        summary: "Sources locked",
+        description: "Citations pinned.",
       },
       {
         label: "Open risk",
-        summary: "1 call pending",
-        description: "One risk held.",
+        summary: "1 call held",
+        description: "One review call waits.",
       },
     ],
   },
@@ -428,8 +428,8 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
 export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Session output lane",
-  description: "Keep the answer lane in one calmer summary card.",
-  meta: "Session 07 · 3 live · 5 open",
+  description: "Keep the answer, risks, and export handoff on one quieter rail.",
+  meta: "Session 07 · 3 live",
 };
 
 export const appShellExportStats = ["Packet ready"];
