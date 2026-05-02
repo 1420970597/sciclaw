@@ -168,19 +168,19 @@ function SessionTimeline() {
 
       <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] 2xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
-          <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,10.7rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
+          <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,10.95rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
               <article key={card.title} className="rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b5ab9c]">{card.eyebrow}</p>
-                    <h3 className="mt-2 max-w-[11ch] text-base font-semibold leading-6 text-[#1f1f1f]">{card.title}</h3>
+                    <h3 className="mt-2 max-w-[12ch] text-[0.98rem] font-semibold leading-[1.45] text-[#1f1f1f]">{card.title}</h3>
                   </div>
                   <span className="shrink-0 self-start rounded-full border border-[#f1e4d4] bg-[#fcf7f0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#b18b6a]">
                     {card.meta}
                   </span>
                 </div>
-                <p className="mt-3 max-w-[11ch] text-sm leading-6 text-[#6c6459]">{card.description}</p>
+                <p className="mt-3 max-w-[14ch] text-sm leading-5 text-[#6c6459]">{card.description}</p>
               </article>
             ))}
           </div>
@@ -326,19 +326,19 @@ function SessionTimeline() {
               </div>
               <div className="mt-4 space-y-3.5">
                 <article className="rounded-[1.25rem] border border-[#f3e8dc] bg-white px-4 py-3.5 shadow-[0_8px_18px_rgba(15,23,42,0.025)]">
-                  <div className="flex flex-wrap items-center justify-between gap-2.5">
+                  <div className="flex flex-wrap items-start justify-between gap-2.5">
                     <div>
                       <p className="text-sm font-semibold text-[#242424]">{appShellOutputSummary.title}</p>
-                      <p className="mt-1 text-xs leading-5 text-[#7f776c]">{appShellOutputSummary.description}</p>
+                      <p className="mt-1 max-w-[21ch] text-xs leading-5 text-[#7f776c]">{appShellOutputSummary.description}</p>
                     </div>
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-[#9c8e7d]">
+                      <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.12em] text-[#9c8e7d]">
                         {appShellOutputSummary.meta}
                       </span>
                       {appShellExportStats.map((stat) => (
                         <span
                           key={stat}
-                          className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]"
+                          className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-[#9f8f7d]"
                         >
                           {stat}
                         </span>
@@ -355,9 +355,9 @@ function SessionTimeline() {
                         {group.items.length} signals
                       </span>
                     </div>
-                    <div className="mt-3 space-y-2.5">
+                    <div className="mt-3 space-y-2">
                       {group.items.map((signal) => (
-                        <div key={signal.label} className="grid gap-2 rounded-[0.98rem] border border-[#efe4d7] bg-white px-3 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-3">
+                        <div key={signal.label} className="grid gap-2 rounded-[0.98rem] border-t border-[#efe4d7] px-1 py-2.5 first:border-t-0 first:pt-0 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-3">
                           <div className="min-w-0">
                             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8f806f]">{signal.label}</p>
                             <p className="mt-1.5 max-w-[28ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
@@ -381,8 +381,8 @@ function SessionTimeline() {
                     </div>
                     <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">{appShellExportSummary.badge}</span>
                   </div>
-                  <div className="mt-4 space-y-3.5 text-sm text-[#6c6459]">
-                    <p className="max-w-[18rem]">{appShellExportSummary.description}</p>
+                  <div className="mt-4 space-y-3 text-sm text-[#6c6459]">
+                    <p className="max-w-[16rem]">{appShellExportSummary.description}</p>
                     <div className="space-y-2.5 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
                         <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-2.5">

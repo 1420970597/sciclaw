@@ -19,12 +19,14 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/project & session flow staged between docs and the future workspace/i)).toBeInTheDocument();
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
-    expect(screen.getByText(/one lane per thread/i)).toBeInTheDocument();
-    expect(screen.getByText(/live state surfaced/i)).toBeInTheDocument();
-    expect(screen.getByText(/promote the locked answer/i)).toBeInTheDocument();
+    expect(screen.getByText(/thread anchor/i)).toBeInTheDocument();
+    expect(screen.getByText(/memory pinned/i)).toBeInTheDocument();
+    expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
+    expect(screen.getByText(/3 live lanes/i)).toBeInTheDocument();
+    expect(screen.getByText(/answer handoff/i)).toBeInTheDocument();
     expect(screen.getByText(/signal and next move stay on one tighter edge lane/i)).toBeInTheDocument();
-    expect(screen.getByText(/switch live threads/i)).toBeInTheDocument();
-    expect(screen.getByText(/session output lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
+    expect(screen.getByText(/session 07 · 3 live · 5 open/i)).toBeInTheDocument();
     expect(screen.getByText(/keep the answer lane in one calmer summary card/i)).toBeInTheDocument();
   });
 
@@ -33,7 +35,7 @@ describe("Chat app shell placeholder", () => {
 
     const projectsLink = screen.getByRole("link", { name: /projects shared workspace overview/i });
     const sessionsLink = screen.getByRole("link", { name: /sessions active investigation threads 3/i });
-    const foundryCard = screen.getByRole("heading", { name: /promote the locked answer\./i }).closest("article");
+    const foundryCard = screen.getByRole("heading", { name: /answer handoff/i }).closest("article");
     expect(foundryCard).not.toBeNull();
     const libraryLink = screen.getByRole("link", { name: /library grounded papers & notes rag/i });
     const tasksLink = screen.getByRole("link", { name: /tasks queued autonomous work today/i });
@@ -56,7 +58,7 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     const sessionsLink = screen.getByRole("link", { name: /sessions active investigation threads 3/i });
-    const foundryCard = screen.getByRole("heading", { name: /promote the locked answer\./i }).closest("article");
+    const foundryCard = screen.getByRole("heading", { name: /answer handoff/i }).closest("article");
     expect(foundryCard).not.toBeNull();
 
     expect(screen.getByText(/library · 128 assets/i)).toBeInTheDocument();
@@ -195,9 +197,13 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.queryByText(/^packet export$/i)).not.toBeInTheDocument();
     expect(rightRailScope.getByText(/session output lane/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/keep the answer lane in one calmer summary card/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/session 07 · 3 live · 5 open/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^packet$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/brief and slides together/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/packet export/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/^3 live$/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/^5 open$/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/brief and slides staged together/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/slides handoff/i)).not.toBeInTheDocument();

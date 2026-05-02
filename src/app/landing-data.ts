@@ -287,21 +287,21 @@ export const appShellSections: AppShellSection[] = [
 export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Context",
-    title: "One lane per thread.",
+    title: "Thread anchor",
     description: "Memory pinned.",
     meta: "128 assets",
     detail: "Memory pinned",
   },
   {
     eyebrow: "Threads",
-    title: "Switch live threads.",
-    description: "Live state surfaced.",
+    title: "Live switchboard",
+    description: "3 live lanes.",
     meta: "3 live",
     detail: "Checkpoint recall",
   },
   {
     eyebrow: "Foundry",
-    title: "Promote the locked answer.",
+    title: "Answer handoff",
     description: "Packet staged.",
     meta: "12 ready",
     detail: "Export lane open",
@@ -434,10 +434,10 @@ export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Session output lane",
   description: "Keep the answer lane in one calmer summary card.",
-  meta: "Session 07",
+  meta: "Session 07 · 3 live · 5 open",
 };
 
-export const appShellExportStats = ["3 live", "5 open", "Packet ready"];
+export const appShellExportStats = ["Packet ready"];
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
