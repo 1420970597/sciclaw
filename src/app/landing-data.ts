@@ -330,7 +330,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Checkpoint rail",
     title: "Foundry fold",
-    description: "Keep bridge notes calm.",
+    description: "Bridge notes stay calm.",
     meta: "Folded",
     pills: [{ label: "Foundry sync", tone: "neutral" }],
     ctaLabel: "Open rail",
