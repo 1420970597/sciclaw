@@ -327,18 +327,18 @@ function SessionTimeline() {
               <div className="mt-4 space-y-3.5">
                 <article className="rounded-[1.25rem] border border-[#f3e8dc] bg-white px-4 py-3.5 shadow-[0_8px_18px_rgba(15,23,42,0.025)]">
                   <div className="flex flex-wrap items-start justify-between gap-2.5">
-                    <div>
+                    <div className="max-w-[18ch]">
                       <p className="text-sm font-semibold text-[#242424]">{appShellOutputSummary.title}</p>
-                      <p className="mt-1 max-w-[21ch] text-xs leading-5 text-[#7f776c]">{appShellOutputSummary.description}</p>
+                      <p className="mt-1 max-w-[18ch] text-[11px] leading-[1.55] text-[#7f776c]">{appShellOutputSummary.description}</p>
                     </div>
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-1.5">
                       <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.12em] text-[#9c8e7d]">
                         {appShellOutputSummary.meta}
                       </span>
                       {appShellExportStats.map((stat) => (
                         <span
                           key={stat}
-                          className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-[#9f8f7d]"
+                          className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-2.5 py-1 text-center text-[10px] font-semibold uppercase tracking-[0.12em] text-[#9f8f7d]"
                         >
                           {stat}
                         </span>
@@ -355,15 +355,15 @@ function SessionTimeline() {
                         {group.items.length} signals
                       </span>
                     </div>
-                    <div className="mt-3 space-y-2">
+                    <div className="mt-3 space-y-1.5">
                       {group.items.map((signal) => (
-                        <div key={signal.label} className="grid gap-2 rounded-[0.98rem] border-t border-[#efe4d7] px-1 py-2.5 first:border-t-0 first:pt-0 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-3">
+                        <div key={signal.label} className="grid gap-1.5 rounded-[0.98rem] border-t border-[#efe4d7] px-1 py-2 first:border-t-0 first:pt-0 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-2.5">
                           <div className="min-w-0">
                             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8f806f]">{signal.label}</p>
-                            <p className="mt-1.5 max-w-[26ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
+                            <p className="mt-1 max-w-[22ch] text-[11px] leading-[1.5] text-[#7f776c]">{signal.description}</p>
                           </div>
                           {signal.summary ? (
-                            <span className="rounded-full border border-[#efe1d2] bg-[#fcf8f2] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68] sm:justify-self-end">
+                            <span className="rounded-full border border-[#efe1d2] bg-[#fcf8f2] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#b08a68] sm:justify-self-end">
                               {signal.summary}
                             </span>
                           ) : null}
@@ -382,13 +382,13 @@ function SessionTimeline() {
                     <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">{appShellExportSummary.badge}</span>
                   </div>
                   <div className="mt-3 space-y-3 text-sm text-[#6c6459]">
-                    <p className="max-w-[14rem] text-[0.84rem] leading-5">{appShellExportSummary.description}</p>
+                    <p className="max-w-[13rem] text-[0.8rem] leading-[1.45]">{appShellExportSummary.description}</p>
                     <div className="space-y-2 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
-                        <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-2">
+                        <div key={asset.label} className="flex items-center justify-between gap-2.5 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-2">
                           <div className="min-w-0">
                             <p className="font-medium text-[#5e564c]">{asset.label}</p>
-                            <p className="mt-1 text-[11px] leading-5 text-[#8f8578]">{asset.description}</p>
+                            <p className="mt-1 text-[11px] leading-[1.45] text-[#8f8578]">{asset.description}</p>
                           </div>
                           <span className="shrink-0 rounded-full bg-[#fcf1e4] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#c27d3f]">
                             Export

@@ -428,7 +428,7 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
 export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Session output lane",
-  description: "Keep answer, risks, and export handoff on one quieter rail.",
+  description: "Keep answer, risk, and export handoff on one calm rail.",
   meta: "Session 07 · 3 live",
 };
 
@@ -438,13 +438,13 @@ export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   title: "Foundry packet",
   badge: "Ready",
-  description: "Bundle memory, sessions, and verified charts into one ready packet.",
+  description: "Bundle memory, sessions, and verified charts into one export packet.",
 };
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
     label: "Packet",
-    description: "Brief + slides staged.",
+    description: "Brief + slides ready.",
   },
 ];
 

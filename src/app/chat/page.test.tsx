@@ -27,7 +27,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/next move stays on one quieter edge lane/i)).toBeInTheDocument();
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
     expect(screen.getByText(/session 07 · 3 live/i)).toBeInTheDocument();
-    expect(screen.getByText(/keep answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep answer, risk, and export handoff on one calm rail/i)).toBeInTheDocument();
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -197,15 +197,16 @@ describe("Chat app shell placeholder", () => {
     expect(rightRailScope.getByText(/^ready$/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/^packet export$/i)).not.toBeInTheDocument();
     expect(rightRailScope.getByText(/session output lane/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/keep answer, risks, and export handoff on one quieter rail/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/keep answer, risk, and export handoff on one calm rail/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/session 07 · 3 live/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^packet$/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/brief \+ slides staged\./i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/brief \+ slides ready\./i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/packet export/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/^3 live$/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/^5 open$/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/brief and slides staged together/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/brief \+ slides staged\./i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/slides handoff/i)).not.toBeInTheDocument();
     expect(rightRailScope.getAllByText(/^export$/i).length).toBeGreaterThan(0);
