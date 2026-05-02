@@ -321,7 +321,7 @@ export const appShellFlowCards: AppShellFlowCard[] = [
   {
     eyebrow: "Task lane",
     title: "Route blocker",
-    description: "Route the blocker.",
+    description: "Route one blocker.",
     meta: "Handoff",
     pills: [{ label: "1 blocker", tone: "warn" }],
     ctaLabel: "Review tasks",

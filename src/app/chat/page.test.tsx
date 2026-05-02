@@ -85,6 +85,7 @@ describe("Chat app shell placeholder", () => {
       "xl:grid-cols-[minmax(0,1fr)_minmax(0,0.98fr)]",
     );
     expect(screen.getByText(/hold live claim/i)).toBeInTheDocument();
+    expect(screen.getByText(/route one blocker/i)).toBeInTheDocument();
     expect(screen.getByText(/route blocker/i)).toBeInTheDocument();
   });
 
