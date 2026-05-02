@@ -332,9 +332,6 @@ function SessionTimeline() {
                       <p className="mt-1 max-w-[18ch] text-[11px] leading-[1.55] text-[#7f776c]">{appShellOutputSummary.description}</p>
                     </div>
                     <div className="flex flex-wrap items-center gap-1.5">
-                      <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.12em] text-[#9c8e7d]">
-                        {appShellOutputSummary.meta}
-                      </span>
                       {appShellExportStats.map((stat) => (
                         <span
                           key={stat}

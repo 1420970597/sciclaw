@@ -419,7 +419,7 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
       {
         label: "Risk",
         summary: "1 held",
-        description: "One review call waits.",
+        description: "One review wait.",
       },
     ],
   },
@@ -428,17 +428,17 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
 export const appShellOutputSummary = {
   eyebrow: "Live draft",
   title: "Session output lane",
-  description: "Keep answer, risk, and export handoff on one calm rail.",
-  meta: "Session 07 · 3 live",
+  description: "Keep answer, risk, and export on one calm rail.",
+  meta: "Session 07",
 };
 
-export const appShellExportStats = ["Packet ready"];
+export const appShellExportStats = ["3 live", "Packet ready"];
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
   title: "Foundry packet",
   badge: "Ready",
-  description: "Bundle memory, sessions, and verified charts into one export packet.",
+  description: "Bundle memory, sessions, and charts into one export packet.",
 };
 
 export const appShellExportAssets: AppShellExportAsset[] = [
