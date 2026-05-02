@@ -315,31 +315,35 @@ function SessionTimeline() {
 
           <div className="space-y-5">
             <section className="rounded-[1.85rem] border border-[#efe6da] bg-[#fffdfa] p-5 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
-              <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-5">
+              <div className="flex items-start justify-between gap-3 border-b border-[#f3e7da] pb-4">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Session output</p>
-                  <h3 className="mt-2 max-w-[16ch] text-lg font-semibold text-[#1f1f1f]">Shape a concise workspace brief before you leave the public docs shell.</h3>
+                  <h3 className="mt-2 max-w-[13ch] text-[1.02rem] font-semibold leading-[1.45] text-[#1f1f1f]">
+                    Shape a concise workspace brief before you leave the public docs shell.
+                  </h3>
                 </div>
                 <span className="rounded-full border border-[#f0dfcf] bg-[#fff4ea] px-3 py-1 text-[11px] text-[#de7d30]">{appShellOutputSummary.eyebrow}</span>
               </div>
-              <div className="mt-5 space-y-4">
-                <article className="rounded-[1.35rem] border border-[#f3e8dc] bg-white px-4 py-4 shadow-[0_10px_22px_rgba(15,23,42,0.03)]">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-sm font-semibold text-[#242424]">{appShellOutputSummary.title}</p>
-                    <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-[#9c8e7d]">
-                      {appShellOutputSummary.meta}
-                    </span>
-                  </div>
-                  <p className="mt-3 max-w-[20rem] text-sm leading-6 text-[#686154]">{appShellOutputSummary.description}</p>
-                  <div className="mt-4 grid gap-2 sm:grid-cols-3 xl:gap-2.5">
-                    {appShellExportStats.map((stat) => (
-                      <span
-                        key={stat}
-                        className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]"
-                      >
-                        {stat}
+              <div className="mt-4 space-y-3.5">
+                <article className="rounded-[1.25rem] border border-[#f3e8dc] bg-white px-4 py-3.5 shadow-[0_8px_18px_rgba(15,23,42,0.025)]">
+                  <div className="flex flex-wrap items-center justify-between gap-2.5">
+                    <div>
+                      <p className="text-sm font-semibold text-[#242424]">{appShellOutputSummary.title}</p>
+                      <p className="mt-1 text-xs leading-5 text-[#7f776c]">{appShellOutputSummary.description}</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full bg-[#f6f1e9] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-[#9c8e7d]">
+                        {appShellOutputSummary.meta}
                       </span>
-                    ))}
+                      {appShellExportStats.map((stat) => (
+                        <span
+                          key={stat}
+                          className="rounded-full border border-[#f0e2d4] bg-[#fcfaf7] px-3 py-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9f8f7d]"
+                        >
+                          {stat}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </article>
 
