@@ -421,11 +421,6 @@ export const appShellStatusGroups: AppShellStatusGroup[] = [
         summary: "1 call pending",
         description: "One risk held.",
       },
-      {
-        label: "Handoff route",
-        summary: "Return to source",
-        description: "Back to memory or tasks.",
-      },
     ],
   },
 ];

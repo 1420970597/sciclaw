@@ -360,7 +360,7 @@ function SessionTimeline() {
                         <div key={signal.label} className="grid gap-2 rounded-[0.98rem] border-t border-[#efe4d7] px-1 py-2.5 first:border-t-0 first:pt-0 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start sm:gap-3">
                           <div className="min-w-0">
                             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8f806f]">{signal.label}</p>
-                            <p className="mt-1.5 max-w-[28ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
+                            <p className="mt-1.5 max-w-[26ch] text-xs leading-5 text-[#7f776c]">{signal.description}</p>
                           </div>
                           {signal.summary ? (
                             <span className="rounded-full border border-[#efe1d2] bg-[#fcf8f2] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#b08a68] sm:justify-self-end">
@@ -375,17 +375,17 @@ function SessionTimeline() {
 
                 <article className="rounded-[1.35rem] border border-[#f3e7d9] bg-[linear-gradient(180deg,#fff7ef_0%,#fffdf9_100%)] px-4 py-4 shadow-[0_14px_26px_rgba(235,139,59,0.08)]">
                   <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="max-w-[14rem]">
+                    <div className="max-w-[12.5rem]">
                       <p className="text-sm font-semibold text-[#242424]">{appShellExportSummary.eyebrow}</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#c08d62]">{appShellExportSummary.title}</p>
                     </div>
                     <span className="rounded-full border border-[#ecd8c6] bg-white/90 px-2.5 py-1 text-[11px] text-[#d37632]">{appShellExportSummary.badge}</span>
                   </div>
-                  <div className="mt-4 space-y-3 text-sm text-[#6c6459]">
-                    <p className="max-w-[16rem]">{appShellExportSummary.description}</p>
-                    <div className="space-y-2.5 text-xs text-[#8f8578]">
+                  <div className="mt-3 space-y-3 text-sm text-[#6c6459]">
+                    <p className="max-w-[14rem] text-[0.84rem] leading-5">{appShellExportSummary.description}</p>
+                    <div className="space-y-2 text-xs text-[#8f8578]">
                       {appShellExportAssets.map((asset) => (
-                        <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-2.5">
+                        <div key={asset.label} className="flex items-center justify-between gap-3 rounded-[1.05rem] border border-[#f0dfcf] bg-white px-3 py-2">
                           <div className="min-w-0">
                             <p className="font-medium text-[#5e564c]">{asset.label}</p>
                             <p className="mt-1 text-[11px] leading-5 text-[#8f8578]">{asset.description}</p>

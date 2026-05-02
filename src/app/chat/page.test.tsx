@@ -182,16 +182,18 @@ describe("Chat app shell placeholder", () => {
     const rightRailScope = within(sessionOutputSection as HTMLElement);
 
     expect(rightRailScope.getByText(/status board/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/3 signals/i)).toBeInTheDocument();
+    expect(rightRailScope.getByText(/2 signals/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/evidence chain/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/open risk/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/handoff route/i)).toBeInTheDocument();
+    expect(rightRailScope.queryByText(/handoff route/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/back to memory or tasks/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/return to source/i)).not.toBeInTheDocument();
+    expect(rightRailScope.queryByText(/3 signals/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/keep citations attached to the draft/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/hold one unresolved call before review leaves/i)).not.toBeInTheDocument();
     expect(rightRailScope.queryByText(/jump back to memory, tasks, or the thread/i)).not.toBeInTheDocument();
     expect(rightRailScope.getByText(/citations pinned/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/1 call pending/i)).toBeInTheDocument();
-    expect(rightRailScope.getByText(/return to source/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/foundry packet/i)).toBeInTheDocument();
     expect(rightRailScope.getByText(/^ready$/i)).toBeInTheDocument();
     expect(rightRailScope.queryByText(/^packet export$/i)).not.toBeInTheDocument();
