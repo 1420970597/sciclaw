@@ -157,8 +157,15 @@ describe("Chat app shell placeholder", () => {
       }),
     );
 
+    expect(within(activeSessionsRows[0] as HTMLElement).getByText(/^12m$/i)).toBeInTheDocument();
+    expect(within(activeSessionsRows[0] as HTMLElement).getByText(/^Map$/i)).toBeInTheDocument();
+    expect(within(activeSessionsRows[1] as HTMLElement).getByText(/^1 blocker$/i)).toBeInTheDocument();
+    expect(within(activeSessionsRows[1] as HTMLElement).getByText(/^Queue$/i)).toBeInTheDocument();
+    expect(within(activeSessionsRows[2] as HTMLElement).getByText(/^Ready$/i)).toBeInTheDocument();
+    expect(within(activeSessionsRows[2] as HTMLElement).getByText(/^Packet$/i)).toBeInTheDocument();
+
     const firstSession = activeSessionsRows[0];
-    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.2rem,auto)]");
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.6rem,auto)]");
     expect(within(firstSession).getByText(/Patent compare/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Overlap staged\./i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/^Map$/i)).toBeInTheDocument();
