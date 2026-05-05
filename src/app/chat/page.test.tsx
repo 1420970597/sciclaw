@@ -24,7 +24,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
     expect(screen.getByText(/3 live lanes/i)).toBeInTheDocument();
     expect(screen.getByText(/answer handoff/i)).toBeInTheDocument();
-    expect(screen.getByText(/next move stays on one edge lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/next move stays on one quieter edge lane/i)).toBeInTheDocument();
     expect(screen.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(screen.getByText(/keep answer, risk, and export on one calm rail/i)).toBeInTheDocument();
   });
@@ -69,7 +69,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
     expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();
-    expect(screen.getByText(/next move stays on one edge lane/i)).toBeInTheDocument();
+    expect(screen.getByText(/next move stays on one quieter edge lane/i)).toBeInTheDocument();
 
     const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
@@ -137,7 +137,7 @@ describe("Chat app shell placeholder", () => {
     const activeSessionsScope = within(activeSessionsCard as HTMLElement);
 
     expect(
-      activeSessionsScope.getByText(/next move stays on one edge lane/i),
+      activeSessionsScope.getByText(/next move stays on one quieter edge lane/i),
     ).toBeInTheDocument();
 
     const activeSessionTitles = [/patent compare/i, /clinical replay/i, /reg memo final/i];
@@ -154,7 +154,7 @@ describe("Chat app shell placeholder", () => {
     );
 
     const firstSession = activeSessionsRows[0];
-    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4rem,auto)]");
+    expect(firstSession).toHaveClass("sm:grid-cols-[minmax(0,1fr)_minmax(4.2rem,auto)]");
     expect(within(firstSession).getByText(/Patent compare/i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/Overlap staged\./i)).toBeInTheDocument();
     expect(within(firstSession).getByText(/^Map$/i)).toBeInTheDocument();

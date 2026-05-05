@@ -189,8 +189,8 @@ function SessionTimeline() {
             <div className="flex flex-col gap-2 border-b border-[#f3eee7] pb-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-[#222]">Active sessions</p>
-                <p className="mt-1 max-w-[8.5rem] text-xs leading-5 text-[#9b9183]">
-                  Next move stays on one edge lane.
+                <p className="mt-1 max-w-[9.25rem] text-xs leading-5 text-[#9b9183]">
+                  Next move stays on one quieter edge lane.
                 </p>
               </div>
               <span className="shrink-0 rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
@@ -200,7 +200,7 @@ function SessionTimeline() {
               {appShellTimeline.map((item) => (
                 <div
                   key={item.title}
-                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(4rem,auto)] sm:items-start sm:gap-2"
+                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(4.2rem,auto)] sm:items-start sm:gap-2"
                 >
                   <div className="flex min-w-0 gap-3">
                     <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
