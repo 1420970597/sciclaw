@@ -436,15 +436,15 @@ export const appShellExportStats = ["3 live", "Packet ready"];
 
 export const appShellExportSummary = {
   eyebrow: "Foundry handoff",
-  title: "Foundry packet",
+  title: "Foundry handoff",
   badge: "Ready",
-  description: "Bundle memory, sessions, and charts into one export packet.",
+  description: "Bundle memory, sessions, and verified charts into one ready packet.",
 };
 
 export const appShellExportAssets: AppShellExportAsset[] = [
   {
-    label: "Packet",
-    description: "Brief + slides ready.",
+    label: "Export",
+    description: "Brief and slides staged together.",
   },
 ];
 export const helpArticles: HelpArticle[] = [
