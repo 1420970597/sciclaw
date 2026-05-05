@@ -366,19 +366,19 @@ export const appShellTodos: AppShellTodo[] = [
   {
     label: "Import the next PDF batch",
     note: "Ground retrieval first.",
-    meta: "12 PDFs queued",
+    meta: "12 PDFs",
     state: "done",
   },
   {
-    label: "Generate the compare session",
+    label: "Generate compare session",
     note: "Keep this lane isolated.",
-    meta: "Owner · Research lead",
+    meta: "Research lead",
     state: "active",
   },
   {
-    label: "Push the verified outline",
+    label: "Push verified outline",
     note: "Promote the winning brief.",
-    meta: "Export lane",
+    meta: "Export",
     state: "pending",
   },
 ];
