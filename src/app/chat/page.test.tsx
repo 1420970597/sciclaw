@@ -23,8 +23,8 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/memory pinned/i)).toBeInTheDocument();
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
     expect(screen.getByText(/3 live lanes/i)).toBeInTheDocument();
-    expect(screen.getByText(/answer handoff/i)).toBeInTheDocument();
-    expect(screen.getByText(/next move stays on one quieter edge lane/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /quieter edge lane/i })).toBeInTheDocument();
+    expect(screen.getByText(/one blocker routed/i)).toBeInTheDocument();
     expect(screen.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(screen.getByText(/keep answer, risk, and export on one calm rail/i)).toBeInTheDocument();
   });
@@ -34,8 +34,6 @@ describe("Chat app shell placeholder", () => {
 
     const projectsLink = screen.getByRole("link", { name: /projects shared workspace overview/i });
     const sessionsLink = screen.getByRole("link", { name: /sessions active investigation threads 3/i });
-    const foundryCard = screen.getByRole("heading", { name: /answer handoff/i }).closest("article");
-    expect(foundryCard).not.toBeNull();
     const libraryLink = screen.getByRole("link", { name: /library grounded papers & notes rag/i });
     const tasksLink = screen.getByRole("link", { name: /tasks queued autonomous work today/i });
     const foundryLink = screen.getByRole("link", { name: /foundry polished output layer/i });
@@ -57,15 +55,20 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     const sessionsLink = screen.getByRole("link", { name: /sessions active investigation threads 3/i });
-    const foundryCard = screen.getByRole("heading", { name: /answer handoff/i }).closest("article");
-    expect(foundryCard).not.toBeNull();
+    const taskLaneCard = screen.getByRole("heading", { name: /quieter edge lane/i }).closest("article");
+    expect(taskLaneCard).not.toBeNull();
+    const utilityBand = screen.getByRole("heading", { name: /thread anchor/i }).closest("div.grid");
+    expect(utilityBand).not.toBeNull();
 
     expect(screen.getByText(/library · 128 assets/i)).toBeInTheDocument();
     expect(screen.getByText(/activity · 14 day streak/i)).toBeInTheDocument();
     expect(screen.getByText(/skills · 6 enabled/i)).toBeInTheDocument();
     expect(screen.getByText(/^128 assets$/i)).toBeInTheDocument();
     expect(within(sessionsLink).getByText(/^3$/i)).toBeInTheDocument();
-    expect(within(foundryCard as HTMLElement).getByText(/12 ready/i)).toBeInTheDocument();
+    const utilityBandElement = utilityBand as HTMLElement;
+    expect(within(taskLaneCard as HTMLElement).getByText(/1 blocker/i)).toBeInTheDocument();
+    expect(within(utilityBandElement).getByText(/1 blocker/i)).toBeInTheDocument();
+    expect(utilityBandElement).toHaveClass("xl:grid-cols-[repeat(3,minmax(0,11.3rem))]");
     expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
     expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();

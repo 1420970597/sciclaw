@@ -300,11 +300,11 @@ export const appShellCards: AppShellCard[] = [
     detail: "Checkpoint recall",
   },
   {
-    eyebrow: "Foundry",
-    title: "Answer handoff",
-    description: "Packet staged.",
-    meta: "12 ready",
-    detail: "Export lane open",
+    eyebrow: "Tasks",
+    title: "Quieter edge lane",
+    description: "One blocker routed.",
+    meta: "1 blocker",
+    detail: "Task lane live",
   },
 ];
 
