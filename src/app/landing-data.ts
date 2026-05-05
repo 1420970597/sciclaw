@@ -301,8 +301,8 @@ export const appShellCards: AppShellCard[] = [
   },
   {
     eyebrow: "Tasks",
-    title: "Quieter edge lane",
-    description: "One blocker routed.",
+    title: "Edge lane",
+    description: "1 blocker routed.",
     meta: "1 blocker",
     detail: "Task lane live",
   },
@@ -365,7 +365,7 @@ export const appShellTimeline: AppShellTimelineItem[] = [
 export const appShellTodos: AppShellTodo[] = [
   {
     label: "Import the next PDF batch",
-    note: "Ground retrieval before review.",
+    note: "Ground retrieval first.",
     meta: "12 PDFs queued",
     state: "done",
   },
@@ -377,7 +377,7 @@ export const appShellTodos: AppShellTodo[] = [
   },
   {
     label: "Push the verified outline",
-    note: "Promote the winning narrative.",
+    note: "Promote the winning brief.",
     meta: "Export lane",
     state: "pending",
   },

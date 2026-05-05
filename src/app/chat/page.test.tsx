@@ -23,8 +23,8 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/memory pinned/i)).toBeInTheDocument();
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
     expect(screen.getByText(/3 live lanes/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /quieter edge lane/i })).toBeInTheDocument();
-    expect(screen.getByText(/one blocker routed/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /edge lane/i })).toBeInTheDocument();
+    expect(screen.getByText(/1 blocker routed/i)).toBeInTheDocument();
     expect(screen.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(screen.getByText(/keep answer, risk, and export on one calm rail/i)).toBeInTheDocument();
   });
@@ -55,7 +55,7 @@ describe("Chat app shell placeholder", () => {
     render(<ChatPage />);
 
     const sessionsLink = screen.getByRole("link", { name: /sessions active investigation threads 3/i });
-    const taskLaneCard = screen.getByRole("heading", { name: /quieter edge lane/i }).closest("article");
+    const taskLaneCard = screen.getByRole("heading", { name: /edge lane/i }).closest("article");
     expect(taskLaneCard).not.toBeNull();
     const utilityBand = screen.getByRole("heading", { name: /thread anchor/i }).closest("div.grid");
     expect(utilityBand).not.toBeNull();
@@ -66,8 +66,8 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/^128 assets$/i)).toBeInTheDocument();
     expect(within(sessionsLink).getByText(/^3$/i)).toBeInTheDocument();
     const utilityBandElement = utilityBand as HTMLElement;
-    expect(within(taskLaneCard as HTMLElement).getByText(/1 blocker/i)).toBeInTheDocument();
-    expect(within(utilityBandElement).getByText(/1 blocker/i)).toBeInTheDocument();
+    expect(within(taskLaneCard as HTMLElement).getByText(/^1 blocker$/i)).toBeInTheDocument();
+    expect(within(utilityBandElement).getByText(/^1 blocker$/i)).toBeInTheDocument();
     expect(utilityBandElement).toHaveClass("xl:grid-cols-[repeat(3,minmax(0,11.3rem))]");
     expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
@@ -78,12 +78,13 @@ describe("Chat app shell placeholder", () => {
     expect(tasksPanel).not.toBeNull();
     expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/12 pdfs queued/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/ground retrieval before review/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/ground retrieval first/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/generate the compare session/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/owner · research lead/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/keep this lane isolated/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/push the verified outline/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/export lane/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/promote the winning brief/i)).toBeInTheDocument();
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
       "xl:grid-cols-[minmax(0,1.06fr)_minmax(272px,0.92fr)]",
     );
