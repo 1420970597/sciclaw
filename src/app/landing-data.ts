@@ -447,7 +447,6 @@ export const appShellExportAssets: AppShellExportAsset[] = [
     description: "Brief + slides ready.",
   },
 ];
-
 export const helpArticles: HelpArticle[] = [
   {
     slug: "getting-started",
