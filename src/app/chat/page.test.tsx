@@ -84,7 +84,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
       "xl:grid-cols-[minmax(0,1fr)_minmax(0,0.98fr)]",
     );
-    expect(screen.getByText(/hold live claim/i)).toBeInTheDocument();
+    expect(screen.getByText(/pin live claim\./i)).toBeInTheDocument();
     expect(screen.getByText(/route one block/i)).toBeInTheDocument();
     expect(screen.getByText(/route blocker/i)).toBeInTheDocument();
   });
@@ -109,13 +109,13 @@ describe("Chat app shell placeholder", () => {
 
     expect(sessionFlowSection).toHaveTextContent(/project & session flow staged between docs and the future workspace/i);
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
-      "xl:grid-cols-[repeat(3,minmax(0,14rem))]",
+      "xl:grid-cols-[repeat(3,minmax(0,14.6rem))]",
     );
     expect(sessionFlowScope.getByRole("heading", { name: /hold live claim/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /route blocker/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByRole("heading", { name: /foundry fold/i })).toBeInTheDocument();
     expect(sessionFlowScope.getByText(/foundry sync/i)).toBeInTheDocument();
-    expect(sessionFlowScope.getByText(/bridge notes stay calm/i)).toBeInTheDocument();
+    expect(sessionFlowScope.getByText(/bridge notes calm\./i)).toBeInTheDocument();
     expect(sessionFlowScope.queryByText(/all flow checkpoints stay folded into tasks and foundry/i)).not.toBeInTheDocument();
     expect(sessionFlowScope.getByRole("link", { name: /open rail/i })).toHaveAttribute(
       "href",

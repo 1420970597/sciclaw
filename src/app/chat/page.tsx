@@ -232,7 +232,7 @@ function SessionTimeline() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,14rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,14.2rem))]" data-testid="chat-flow-card-grid">
+          <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,14.6rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,14.8rem))]" data-testid="chat-flow-card-grid">
             {appShellFlowCards.map((card, index) => (
               <article
                 key={card.title}
