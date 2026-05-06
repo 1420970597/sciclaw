@@ -218,7 +218,7 @@ export const bestCases: BestCase[] = [
       "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
     tags: ["PDF analysis", "Methods", "Data extraction"],
     statLabel: "Core insight",
-    statValue: "Autonomous",
+    statValue: "Mapped",
   },
 ];
 
@@ -351,7 +351,7 @@ export const appShellTimeline: AppShellTimelineItem[] = [
     description: "Replay queued.",
     summary: "Queue",
     summaryTone: "warn",
-    meta: "1 blocker",
+    meta: "1 hold",
   },
   {
     title: "Reg memo final",
@@ -447,7 +447,9 @@ export const appShellExportAssets: AppShellExportAsset[] = [
     description: "Brief and slides staged together.",
   },
 ];
+
 export const helpArticles: HelpArticle[] = [
+
   {
     slug: "getting-started",
     index: "01",
@@ -456,46 +458,52 @@ export const helpArticles: HelpArticle[] = [
       "SciClaw is an AI-powered scientific co-worker that links inspiration generation, experimental execution, and iterative optimization in one workspace.",
     icon: "rocket",
     heroParagraphs: [
-      "SciClaw is an AI-powered scientific co-worker that links inspiration generation, experimental execution, and iterative optimization in one workspace.",
-      "The platform combines autonomous analysis, experiment assistance, and output packaging so every research thread can move from first question to polished result without losing context.",
+      "Use SciClaw to move from a rough research question to a validated working plan without losing the source trail. The public docs shell doubles as the first layer of the product narrative: orientation, examples, and a guided path into the future app workspace.",
+      "This high-fidelity reconstruction keeps the same marketing-to-workspace bridge feeling visible on sciclaw.ai today — concise hero copy, calm control surfaces, and explicit next routes into projects, chat, tasks, and output packaging.",
     ],
     sections: [
       { id: "what-is-sciclaw", title: "What is SciClaw" },
-      { id: "key-capabilities", title: "Key capabilities" },
-      { id: "core-workflow", title: "Core workflow" },
+      { id: "why-the-shell-looks-like-this", title: "Why the shell looks like this" },
+      { id: "where-to-go-next", title: "Where to go next" },
     ],
     nextHref: "/help/projects",
-    nextLabel: "Projects",
+    nextLabel: "Projects overview",
     body: [
       {
         type: "paragraph",
         sectionId: "what-is-sciclaw",
         content:
-          "SciClaw acts as an AI co-worker for scientific research, helping teams coordinate literature digestion, experiment planning, data mining, and report generation from one connected environment.",
+          "SciClaw presents itself as an AI co-worker for scientific research: a system that keeps project context, literature, live sessions, tasks, and polished output connected in one visible flow.",
+      },
+      {
+        type: "list",
+        sectionId: "what-is-sciclaw",
+        items: [
+          "Ground literature and uploaded evidence in a reusable project memory rail.",
+          "Run and compare active research sessions without losing the current hypothesis lane.",
+          "Promote verified findings into handoff-ready briefs, slides, and export packets.",
+        ],
       },
       {
         type: "paragraph",
-        sectionId: "what-is-sciclaw",
+        sectionId: "why-the-shell-looks-like-this",
         content:
-          "It is designed to keep evidence, task history, and generated outputs traceable, so researchers can move quickly without losing the chain between source material and final conclusions.",
+          "The reconstructed shell intentionally feels halfway between documentation and application. It mirrors the live public site, where the route is still public-facing marketing, while suggesting how project memory, timeline, tasks, and Foundry outputs will eventually converge into the product workspace.",
       },
       {
         type: "list",
-        sectionId: "key-capabilities",
+        sectionId: "why-the-shell-looks-like-this",
         items: [
-          "Review papers, notes, and project materials in one grounded context.",
-          "Support iterative workflows spanning ideation, execution, analysis, and presentation.",
-          "Package validated findings into briefs, decks, and other stakeholder-ready outputs.",
+          "A sticky header keeps search, appearance, and session creation visible.",
+          "The left rail preserves clear navigation into projects, sessions, tasks, output, and settings.",
+          "The center and right lanes preview how a live session becomes a concise export packet.",
         ],
       },
       {
-        type: "list",
-        sectionId: "core-workflow",
-        items: [
-          "Start from the Projects area to organize context and materials.",
-          "Use Chat to run a focused research thread while keeping memory and tasks connected.",
-          "Send polished deliverables through Foundry when the answer is ready to share.",
-        ],
+        type: "paragraph",
+        sectionId: "where-to-go-next",
+        content:
+          "Continue through Projects, Chat, Tasks, and Foundry to see the same bridge narrative unfold across more detailed public help routes.",
       },
     ],
   },
@@ -504,39 +512,46 @@ export const helpArticles: HelpArticle[] = [
     index: "02",
     title: "Projects",
     description:
-      "Projects provide the shared container for assets, sessions, and deliverables so SciClaw can keep a research thread grounded over time.",
+      "Project hubs tie together uploaded sources, hypothesis lanes, and handoff targets so every session can stay grounded in the same working context.",
     icon: "folder",
-    sections: [
-      { id: "workspace-foundation", title: "Workspace foundation" },
-      { id: "what-projects-store", title: "What projects store" },
-      { id: "collaboration-flow", title: "Collaboration flow" },
+    heroParagraphs: [
+      "Projects are the stable memory layer of the SciClaw shell. They collect papers, datasets, and operating notes so later session work can reuse the same context without restarting from scratch.",
+      "On the public route, the project story is represented through cards, metrics, and preview rails rather than editable forms. The goal is to preserve the live site's calm app-shell feeling while still reading as a marketing-facing preview.",
     ],
-    nextHref: "/help/chat",
-    nextLabel: "Chat",
+    sections: [
+      { id: "project-memory", title: "Project memory" },
+      { id: "session-attachment", title: "Session attachment" },
+      { id: "handoff-path", title: "Handoff path" },
+    ],
+    nextHref: "/chat",
+    nextLabel: "Chat workspace preview",
     body: [
       {
         type: "paragraph",
-        sectionId: "workspace-foundation",
+        sectionId: "project-memory",
         content:
-          "Every project in SciClaw acts as the durable container for a line of research, collecting the assets, session memory, and output history that the agent relies on when answering new questions.",
+          "A project preserves the reusable context behind the public preview: uploaded assets, activity history, enabled skills, and the working labels that make later chat or Foundry steps legible.",
       },
       {
         type: "list",
-        sectionId: "what-projects-store",
+        sectionId: "project-memory",
         items: [
-          "Uploaded PDFs, notes, figures, and experiment files.",
-          "Session history, checkpoints, and intermediate task results.",
-          "Generated outputs such as outlines, reports, and presentation assets.",
+          "Asset counts and memory badges make the context tangible without exposing private data flows.",
+          "Activity and skills cards suggest live operational depth while staying appropriate for a public page.",
+          "The sidebar keeps Projects framed as the shell's anchor rather than a detached docs section.",
         ],
       },
       {
-        type: "list",
-        sectionId: "collaboration-flow",
-        items: [
-          "Start a new project when you need a clean research track.",
-          "Run multiple sessions under the same project without losing shared context.",
-          "Use Foundry outputs to capture the final deliverables tied back to that project.",
-        ],
+        type: "paragraph",
+        sectionId: "session-attachment",
+        content:
+          "Every session lane in the reconstructed chat preview assumes a project is already holding the relevant literature, evidence, and operating brief. That dependency is visible even when the route remains public-facing.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "handoff-path",
+        content:
+          "Projects also define the destination for finished output: session summaries, review packets, and Foundry exports all read more clearly when they are anchored to a persistent project hub.",
       },
     ],
   },
@@ -545,39 +560,46 @@ export const helpArticles: HelpArticle[] = [
     index: "03",
     title: "Chat",
     description:
-      "Chat is the active workspace for running an investigation thread, combining memory, tools, tasks, and answer drafting in one place.",
+      "The chat route is the clearest public bridge into the future app shell: active sessions, queued work, and an export-ready handoff stay visible at once.",
     icon: "chat",
-    sections: [
-      { id: "session-workspace", title: "Session workspace" },
-      { id: "tool-and-memory-loop", title: "Tool and memory loop" },
-      { id: "handoff-to-output", title: "Handoff to output" },
+    heroParagraphs: [
+      "This route intentionally feels more product-like than the surrounding docs pages. It is where the public marketing shell narrows into a credible workspace preview without claiming that the live site is already a private app.",
+      "The current reconstruction keeps the same major pieces visible: active session lanes, project memory, queued tasks, and the right-rail handoff into Foundry output.",
     ],
-    nextHref: "/help/skills",
-    nextLabel: "Skills",
+    sections: [
+      { id: "active-lanes", title: "Active lanes" },
+      { id: "task-queue", title: "Task queue" },
+      { id: "output-handoff", title: "Output handoff" },
+    ],
+    nextHref: "/help/tasks",
+    nextLabel: "Tasks guide",
     body: [
       {
         type: "paragraph",
-        sectionId: "session-workspace",
+        sectionId: "active-lanes",
         content:
-          "Chat is where a single research thread becomes actionable: a prompt, the relevant context, and the running chain of evidence all stay visible while SciClaw works through the problem.",
+          "The center timeline emphasizes three simultaneous research threads, each with a compact title, one-line state, and a pair of lightweight status tokens. This keeps the app-shell preview believable while staying calmer than a true operations dashboard.",
       },
       {
         type: "list",
-        sectionId: "tool-and-memory-loop",
+        sectionId: "active-lanes",
         items: [
-          "Bring in project memory, prior sessions, and uploaded assets without leaving the thread.",
-          "Run tools, gather evidence, and refine the answer while keeping the output grounded.",
-          "Turn promising sub-results into tasks or export-ready material when the line of reasoning stabilizes.",
+          "Top summary cards orient the viewer before the denser session rows begin.",
+          "The Active sessions block now carries the highest information density and is tuned carefully to remain scannable.",
+          "Lower checkpoint cards translate session work into review and Foundry handoff actions.",
         ],
       },
       {
-        type: "list",
-        sectionId: "handoff-to-output",
-        items: [
-          "Keep the live answer draft and unresolved risks visible during the session.",
-          "Escalate structured outputs to Foundry once the thread is ready for review or presentation.",
-          "Return to the same session later without losing context or citations.",
-        ],
+        type: "paragraph",
+        sectionId: "task-queue",
+        content:
+          "The Tasks lane previews how the product could queue ingestion, comparison, and export work without pretending those operations are already interactive on the public site.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "output-handoff",
+        content:
+          "The right rail closes the story: session output, status review, and Foundry handoff stay visible together so the route reads as one continuous bridge from evidence to packetized output.",
       },
     ],
   },
@@ -586,38 +608,30 @@ export const helpArticles: HelpArticle[] = [
     index: "04",
     title: "Skills",
     description:
-      "Skills package reusable workflows so SciClaw can apply consistent methods across repeated research tasks.",
+      "Skills frame the reusable workflows that let SciClaw move from orientation into repeatable scientific and legal work patterns.",
     icon: "bolt",
+    heroParagraphs: [
+      "In the public shell, Skills act as the narrative explanation for why the app preview can speak about retrieval, execution, and packet handoff with confidence.",
+    ],
     sections: [
-      { id: "why-skills-matter", title: "Why skills matter" },
-      { id: "how-skills-are-used", title: "How skills are used" },
-      { id: "examples", title: "Examples" },
+      { id: "workflow-reuse", title: "Workflow reuse" },
+      { id: "scoped-tools", title: "Scoped tools" },
     ],
     nextHref: "/help/library",
-    nextLabel: "Library",
+    nextLabel: "Library guide",
     body: [
       {
         type: "paragraph",
-        sectionId: "why-skills-matter",
+        sectionId: "workflow-reuse",
         content:
-          "Skills let SciClaw apply stable procedures instead of improvising every time, which is especially useful when the same analysis pattern or delivery flow needs to be repeated reliably.",
+          "Reusable skills turn repeated investigation patterns into stable operating lanes: ingest evidence, compare sources, queue the next action, and package the verified result.",
       },
       {
         type: "list",
-        sectionId: "how-skills-are-used",
+        sectionId: "scoped-tools",
         items: [
-          "Activate a known workflow when a task matches a saved pattern.",
-          "Keep repeated operations consistent across different sessions and projects.",
-          "Reduce setup time for complex tool chains and output packaging steps.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "examples",
-        items: [
-          "Literature review workflows.",
-          "Experiment or data-analysis routines.",
-          "Output handoff sequences for report or slide generation.",
+          "Public copy references enabled skills instead of internal agent implementation details.",
+          "Sidebar and resource cards hint at scoped tool access without overclaiming hidden infrastructure.",
         ],
       },
     ],
@@ -627,39 +641,29 @@ export const helpArticles: HelpArticle[] = [
     index: "05",
     title: "Library",
     description:
-      "Library keeps the uploaded papers, notes, and evidence tables that ground each project and session.",
+      "The library route explains how assets, notes, and evidence tables stay grounded and reusable across sessions.",
     icon: "book",
+    heroParagraphs: [
+      "SciClaw's library is the source-of-truth layer behind the visible session and task previews. The public route keeps that story concrete with asset counts, retrieval language, and evidence-forward copy.",
+    ],
     sections: [
       { id: "grounded-assets", title: "Grounded assets" },
-      { id: "retrieval-usage", title: "Retrieval usage" },
-      { id: "maintaining-signal", title: "Maintaining signal" },
+      { id: "retrieval-lane", title: "Retrieval lane" },
     ],
     nextHref: "/help/tasks",
-    nextLabel: "Tasks",
+    nextLabel: "Tasks guide",
     body: [
       {
         type: "paragraph",
         sectionId: "grounded-assets",
         content:
-          "The Library stores the source material that SciClaw can pull into a session, such as PDFs, notes, figures, and structured evidence tables tied to a project.",
+          "Library copy keeps the product grounded in uploaded papers, notes, transcripts, and structured tables so the rest of the shell can credibly speak about evidence-backed work.",
       },
       {
-        type: "list",
-        sectionId: "retrieval-usage",
-        items: [
-          "Use uploaded assets to ground citations and summaries.",
-          "Search across prior material without re-uploading context each time.",
-          "Keep source material connected to downstream reports and outputs.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "maintaining-signal",
-        items: [
-          "Group assets by project so retrieval stays focused.",
-          "Add notes or metadata when a source needs special handling.",
-          "Keep the library current so later sessions inherit the right evidence base.",
-        ],
+        type: "paragraph",
+        sectionId: "retrieval-lane",
+        content:
+          "The public route emphasizes retrieval readiness and traceability rather than raw database operations. That preserves fidelity to the live site's tone while still explaining the product model.",
       },
     ],
   },
@@ -668,39 +672,29 @@ export const helpArticles: HelpArticle[] = [
     index: "06",
     title: "Tasks",
     description:
-      "Tasks turn multi-step work into trackable units, making it easier to queue autonomous slices and review progress over time.",
+      "Tasks keep the next action visible: queued imports, comparison sessions, and outline promotion all stay adjacent to the live thread.",
     icon: "clock",
+    heroParagraphs: [
+      "The public task narrative is intentionally compact. It should feel like a credible operational queue without becoming a dense admin board.",
+    ],
     sections: [
-      { id: "task-planning", title: "Task planning" },
-      { id: "autonomous-execution", title: "Autonomous execution" },
-      { id: "review-rhythm", title: "Review rhythm" },
+      { id: "queue-shape", title: "Queue shape" },
+      { id: "promotion-path", title: "Promotion path" },
     ],
     nextHref: "/help/foundry",
-    nextLabel: "Foundry",
+    nextLabel: "Foundry guide",
     body: [
       {
         type: "paragraph",
-        sectionId: "task-planning",
+        sectionId: "queue-shape",
         content:
-          "Tasks break larger goals into manageable steps so SciClaw can make progress without losing track of what still needs verification, refinement, or export.",
+          "Task rows in the chat preview show a concise label, a short note, and one meta token so the queue feels active but not overloaded.",
       },
       {
-        type: "list",
-        sectionId: "autonomous-execution",
-        items: [
-          "Queue a focused slice of work instead of overloading a single session.",
-          "Track what is pending, in progress, and completed.",
-          "Keep operational work visible to the project and session that depend on it.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "review-rhythm",
-        items: [
-          "Use tasks to mark validation checkpoints.",
-          "Re-open or branch work when a session exposes a blocker.",
-          "Promote verified outputs once the task is complete.",
-        ],
+        type: "paragraph",
+        sectionId: "promotion-path",
+        content:
+          "The queue ultimately promotes work toward brief-ready output and Foundry handoff, keeping the product story continuous from ingestion to presentation.",
       },
     ],
   },
@@ -709,38 +703,30 @@ export const helpArticles: HelpArticle[] = [
     index: "07",
     title: "Foundry",
     description:
-      "Foundry is the output layer for turning validated research threads into polished deliverables.",
+      "Foundry is the public name for the polished output layer: briefs, slides, and review packets shaped from live session work.",
     icon: "hammer",
+    heroParagraphs: [
+      "Foundry closes the bridge from documentation into workspace preview. It is where memory, sessions, citations, and verified charts condense into stakeholder-ready output.",
+    ],
     sections: [
-      { id: "output-layer", title: "Output layer" },
-      { id: "asset-types", title: "Asset types" },
-      { id: "handoff-pattern", title: "Handoff pattern" },
+      { id: "packet-shape", title: "Packet shape" },
+      { id: "review-safety", title: "Review safety" },
     ],
     nextHref: "/help/persona",
-    nextLabel: "Persona",
+    nextLabel: "Persona guide",
     body: [
       {
         type: "paragraph",
-        sectionId: "output-layer",
+        sectionId: "packet-shape",
         content:
-          "Foundry gathers the validated pieces of a research thread—notes, citations, charts, and conclusions—into a cleaner handoff surface for reports, slides, and other review-ready assets.",
+          "The right rail in /chat previews Foundry as a ready packet rather than a finished private feature. The goal is fidelity to the public shell, not overclaiming unseen functionality.",
       },
       {
         type: "list",
-        sectionId: "asset-types",
+        sectionId: "review-safety",
         items: [
-          "Brief outlines and narrative summaries.",
-          "Evidence appendices and supporting figures.",
-          "Presentation-ready talking points and slide inputs.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "handoff-pattern",
-        items: [
-          "Promote the active answer when a session reaches a stable draft.",
-          "Bundle supporting evidence before sharing the output.",
-          "Use Foundry as the final stop before external review or presentation.",
+          "Bundle memory, session state, and verified charts into one export lane.",
+          "Keep brief and slides visibly paired so the public route still reads as one product story.",
         ],
       },
     ],
@@ -750,39 +736,29 @@ export const helpArticles: HelpArticle[] = [
     index: "08",
     title: "Persona",
     description:
-      "Persona controls adjust how SciClaw approaches reasoning, analysis tone, and task behavior for a given project or session.",
+      "Persona settings describe how the assistant can be steered for different scientific workflows without breaking the calm app-shell narrative.",
     icon: "persona",
+    heroParagraphs: [
+      "Persona controls are shown as a public-facing explanation layer rather than a deep preferences console. The route should read as guidance, not a fully authenticated settings tool.",
+    ],
     sections: [
-      { id: "behavior-controls", title: "Behavior controls" },
+      { id: "behavior-shaping", title: "Behavior shaping" },
       { id: "session-fit", title: "Session fit" },
-      { id: "keeping-consistency", title: "Keeping consistency" },
     ],
     nextHref: "/help/im",
-    nextLabel: "IM",
+    nextLabel: "IM guide",
     body: [
       {
         type: "paragraph",
-        sectionId: "behavior-controls",
+        sectionId: "behavior-shaping",
         content:
-          "Personas help tune how SciClaw works—whether the focus is conservative evidence review, exploratory analysis, delivery-oriented packaging, or another workflow style.",
+          "Persona copy explains how SciClaw can adapt to review, synthesis, and output-shaping tasks while keeping the overall public shell lightweight.",
       },
       {
-        type: "list",
+        type: "paragraph",
         sectionId: "session-fit",
-        items: [
-          "Match the reasoning style to the kind of research being done.",
-          "Keep answers aligned with the expectations of a project or stakeholder.",
-          "Reduce repeated steering when a certain tone or process should persist.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "keeping-consistency",
-        items: [
-          "Apply stable behavior across related sessions.",
-          "Document the intended mode for future reuse.",
-          "Keep persona settings visible when the project context changes.",
-        ],
+        content:
+          "This route stays adjacent to chat and tasks because persona choices are meaningful only in the context of live session work.",
       },
     ],
   },
@@ -791,39 +767,29 @@ export const helpArticles: HelpArticle[] = [
     index: "09",
     title: "IM",
     description:
-      "IM connects SciClaw outputs to external messaging or workflow channels for delivery and coordination.",
+      "External workflow delivery explains how results leave the shell: notifications, routing, and lightweight collaboration handoff.",
     icon: "send",
+    heroParagraphs: [
+      "The IM route keeps delivery visible without turning the public shell into a full communications product. It stays in the bridge narrative: session → review → handoff.",
+    ],
     sections: [
-      { id: "delivery-surface", title: "Delivery surface" },
-      { id: "workflow-connection", title: "Workflow connection" },
-      { id: "handoff-discipline", title: "Handoff discipline" },
+      { id: "delivery-lane", title: "Delivery lane" },
+      { id: "handoff-context", title: "Handoff context" },
     ],
     nextHref: "/help/settings",
-    nextLabel: "Settings",
+    nextLabel: "Settings guide",
     body: [
       {
         type: "paragraph",
-        sectionId: "delivery-surface",
+        sectionId: "delivery-lane",
         content:
-          "IM provides a delivery layer for moving outputs, notifications, or handoff updates into the external channels where collaborators actually see them.",
+          "IM copy explains where a verified packet might go next: a teammate, a reporting channel, or a review checkpoint outside the shell.",
       },
       {
-        type: "list",
-        sectionId: "workflow-connection",
-        items: [
-          "Send updates into team communication surfaces.",
-          "Mirror the state of validated outputs outside the core workspace.",
-          "Support coordination without breaking the chain back to the source session.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "handoff-discipline",
-        items: [
-          "Deliver only after the output is review-ready.",
-          "Keep references back to the originating project and session.",
-          "Use IM as a bridge, not a replacement for the core workspace record.",
-        ],
+        type: "paragraph",
+        sectionId: "handoff-context",
+        content:
+          "Keeping this route public-facing preserves the live site's information architecture while hinting at the downstream workflow layer.",
       },
     ],
   },
@@ -832,46 +798,32 @@ export const helpArticles: HelpArticle[] = [
     index: "10",
     title: "Settings",
     description:
-      "Settings covers appearance, language, and workspace-level controls that shape how SciClaw is presented and used.",
+      "Appearance, language, and shell-level preferences complete the public preview without pretending private account configuration is already exposed.",
     icon: "sliders",
+    heroParagraphs: [
+      "Settings stays intentionally light: appearance, language, and shell controls echo the public header while preserving the app-like continuity of the route family.",
+    ],
     sections: [
-      { id: "theme", title: "Theme" },
-      { id: "language", title: "Language" },
-      { id: "usage", title: "Usage" },
+      { id: "shell-preferences", title: "Shell preferences" },
+      { id: "public-contract", title: "Public contract" },
     ],
     body: [
       {
         type: "paragraph",
-        sectionId: "theme",
+        sectionId: "shell-preferences",
         content:
-          "Settings centralize workspace appearance, language, account preferences, usage controls, and other product-level configuration.",
+          "Appearance and language controls are represented consistently across the shell so the public routes feel cohesive, even without authenticated personalization.",
       },
       {
-        type: "list",
-        sectionId: "theme",
-        items: [
-          "Adjust visual presentation such as light or dark appearance.",
-          "Keep contrast and shell clarity aligned across public docs and workspace previews.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "language",
-        items: [
-          "Keep language and basic workspace defaults visible in one place.",
-          "Use translation and wording controls without losing the public-docs information architecture.",
-        ],
-      },
-      {
-        type: "list",
-        sectionId: "usage",
-        items: [
-          "Use settings as the stable reference point for UI-level preferences.",
-          "Preserve a clean transition between public guidance and the working interface.",
-        ],
+        type: "paragraph",
+        sectionId: "public-contract",
+        content:
+          "The route deliberately avoids overclaiming account management depth. It mirrors the live marketing shell's level of visible control while still supporting the broader docs-to-workspace bridge.",
       },
     ],
   },
 ];
 
-export const helpArticleMap = Object.fromEntries(helpArticles.map((article) => [article.slug, article]));
+export const helpArticleMap = Object.fromEntries(
+  helpArticles.map((article) => [article.slug, article]),
+) as Record<string, HelpArticle>;

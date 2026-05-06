@@ -35,7 +35,7 @@ describe("Help article page", () => {
       "/help/projects",
     );
     expect(within(docsNav).getByRole("link", { name: /08 persona/i })).toBeInTheDocument();
-    expect(screen.getByText(/ai-powered scientific co-worker/i)).toBeInTheDocument();
+    expect(screen.getByText(/use sciclaw to move from a rough research question to a validated working plan without losing the source trail/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^what is sciclaw$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /what is sciclaw/i })).toHaveAttribute("href", "#what-is-sciclaw");
   });
@@ -48,10 +48,10 @@ describe("Help article page", () => {
     render(page);
 
     expect(screen.getByRole("heading", { name: /^chat$/i })).toBeInTheDocument();
-    expect(screen.getByText(/chat is where a single research thread becomes actionable/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /session workspace/i })).toBeInTheDocument();
-    expect(screen.getByText(/bring in project memory, prior sessions, and uploaded assets without leaving the thread/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/handoff to output/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/this route intentionally feels more product-like than the surrounding docs pages/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^active lanes$/i })).toBeInTheDocument();
+    expect(screen.getByText(/the center timeline emphasizes three simultaneous research threads/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/output handoff/i).length).toBeGreaterThan(0);
   });
 
   it("matches the public settings page title and toc labels", async () => {
@@ -62,13 +62,13 @@ describe("Help article page", () => {
     render(page);
 
     expect(screen.getAllByText(/^10$/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/settings centralize workspace appearance/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /^theme$/i })).toBeInTheDocument();
+    expect(screen.getByText(/settings stays intentionally light: appearance, language, and shell controls echo the public header while preserving the app-like continuity of the route family/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^shell preferences$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /09 im/i })).toHaveAttribute(
       "href",
       "/help/im",
     );
-    expect(screen.getByRole("link", { name: /^theme$/i })).toHaveAttribute("href", "#theme");
+    expect(screen.getByRole("link", { name: /^shell preferences$/i })).toHaveAttribute("href", "#shell-preferences");
   });
 
   it("opens the docs appearance menu with theme and language entries", async () => {

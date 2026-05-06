@@ -189,33 +189,33 @@ function SessionTimeline() {
             <div className="flex flex-col gap-2 border-b border-[#f3eee7] pb-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-[#222]">Active sessions</p>
-                <p className="mt-1 max-w-[9.25rem] text-xs leading-5 text-[#9b9183]">
+                <p className="mt-1 max-w-[8.1rem] text-xs leading-5 text-[#9b9183]">
                   Next move stays on one quieter edge lane.
                 </p>
               </div>
               <span className="shrink-0 rounded-full border border-[#f0dfcf] bg-[#fff5ec] px-3 py-1 text-[11px] text-[#de7d30]">3 live</span>
             </div>
 
-            <div className="mt-4 space-y-3">
-              {appShellTimeline.map((item) => (
+          <div className="mt-4 space-y-3">
+            {appShellTimeline.map((item) => (
                 <div
                   key={item.title}
-                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3 sm:grid-cols-[minmax(0,1fr)_minmax(4.6rem,auto)] sm:items-start sm:gap-2.5"
+                  className="grid gap-3 rounded-[1.2rem] border border-[#f5efe6] bg-[#fffdfa] px-4 py-3.5 sm:grid-cols-[minmax(0,1fr)_minmax(5rem,auto)] sm:items-start sm:gap-3"
                 >
                   <div className="flex min-w-0 gap-3">
                     <div className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#eb8b3b] shadow-[0_0_18px_rgba(235,139,59,0.35)]" />
                     <div className="min-w-0">
                       <p className="text-sm font-medium text-[#222]">{item.title}</p>
-                      <p className="mt-1 max-w-[19ch] text-sm leading-6 text-[#6e665b]">{item.description}</p>
+                      <p className="mt-1 max-w-[20ch] text-sm leading-6 text-[#6e665b]">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap items-start justify-start gap-1.5 sm:max-w-[4.9rem] sm:flex-col sm:items-end sm:justify-start">
-                    <span className="rounded-full border border-[#f0dfcf] bg-[#fff6ef] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#d07b3d]">
+                  <div className="flex flex-wrap items-start justify-start gap-2 sm:max-w-[5rem] sm:flex-col sm:items-end sm:justify-start">
+                    <span className="rounded-full border border-[#f0dfcf] bg-[#fff6ef] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#d07b3d]">
                       {item.meta}
                     </span>
                     {item.summary ? (
                       <span
-                        className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${
+                        className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] ${
                           item.summaryTone === "accent"
                             ? "border-[#f3d8bf] bg-[#fff3e8] text-[#d87631]"
                             : item.summaryTone === "warn"
@@ -228,8 +228,8 @@ function SessionTimeline() {
                     ) : null}
                   </div>
                 </div>
-              ))}
-            </div>
+            ))}
+          </div>
           </div>
 
           <div className="mt-5 grid gap-4 xl:grid-cols-[repeat(3,minmax(0,14.6rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,14.8rem))]" data-testid="chat-flow-card-grid">
