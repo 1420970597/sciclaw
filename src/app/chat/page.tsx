@@ -327,11 +327,11 @@ function SessionTimeline() {
               <div className="mt-4 space-y-3.5">
                 <article className="rounded-[1.25rem] border border-[#f3e8dc] bg-white px-4 py-3 shadow-[0_8px_18px_rgba(15,23,42,0.025)]">
                   <div className="flex flex-wrap items-start justify-between gap-2">
-                    <div className="max-w-[16ch]">
+                    <div className="max-w-[14.5ch]">
                       <p className="text-sm font-semibold text-[#242424]">{appShellOutputSummary.title}</p>
-                      <p className="mt-1 max-w-[16ch] text-[11px] leading-[1.5] text-[#7f776c]">{appShellOutputSummary.description}</p>
+                      <p className="mt-1 max-w-[14.5ch] text-[11px] leading-[1.45] text-[#7f776c]">{appShellOutputSummary.description}</p>
                     </div>
-                    <div className="flex flex-wrap items-center gap-1.5">
+                    <div className="flex flex-wrap items-center gap-2">
                       {appShellExportStats.map((stat) => (
                         <span
                           key={stat}
