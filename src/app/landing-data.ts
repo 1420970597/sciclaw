@@ -295,14 +295,14 @@ export const appShellCards: AppShellCard[] = [
   {
     eyebrow: "Threads",
     title: "Live switchboard",
-    description: "3 live lanes.",
+    description: "3 live.",
     meta: "3 live",
     detail: "Checkpoint recall",
   },
   {
     eyebrow: "Tasks",
     title: "Edge lane",
-    description: "1 blocker routed.",
+    description: "1 blocker.",
     meta: "1 blocker",
     detail: "Task lane live",
   },

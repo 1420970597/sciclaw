@@ -20,11 +20,11 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
     expect(screen.getByText(/thread anchor/i)).toBeInTheDocument();
-    expect(screen.getByText(/memory pinned/i)).toBeInTheDocument();
+    expect(screen.getByText(/memory pinned\./i)).toBeInTheDocument();
     expect(screen.getByText(/live switchboard/i)).toBeInTheDocument();
-    expect(screen.getByText(/3 live lanes/i)).toBeInTheDocument();
+    expect(screen.getByText(/^3 live\.$/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /edge lane/i })).toBeInTheDocument();
-    expect(screen.getByText(/1 blocker routed/i)).toBeInTheDocument();
+    expect(screen.getByText(/^1 blocker\.$/i)).toBeInTheDocument();
     expect(screen.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(screen.getByText(/keep answer, risk, and export aligned\./i)).toBeInTheDocument();
   });
