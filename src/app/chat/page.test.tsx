@@ -68,7 +68,7 @@ describe("Chat app shell placeholder", () => {
     const utilityBandElement = utilityBand as HTMLElement;
     expect(within(taskLaneCard as HTMLElement).getByText(/^1 blocker$/i)).toBeInTheDocument();
     expect(within(utilityBandElement).getByText(/^1 blocker$/i)).toBeInTheDocument();
-    expect(utilityBandElement).toHaveClass("xl:grid-cols-[repeat(3,minmax(0,11.3rem))]");
+    expect(utilityBandElement).toHaveClass("xl:grid-cols-[repeat(3,minmax(0,12rem))]");
     expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
     expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();
