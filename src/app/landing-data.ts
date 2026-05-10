@@ -364,19 +364,19 @@ export const appShellTimeline: AppShellTimelineItem[] = [
 
 export const appShellTodos: AppShellTodo[] = [
   {
-    label: "Import next PDF batch",
+    label: "Import PDF batch",
     note: "Ground retrieval.",
     meta: "Heatmap",
     state: "done",
   },
   {
-    label: "Generate compare lane",
+    label: "Compare lane",
     note: "Keep lane isolated.",
     meta: "Research lead",
     state: "active",
   },
   {
-    label: "Push verified brief",
+    label: "Ship verified brief",
     note: "Promote brief.",
     meta: "Export",
     state: "pending",
