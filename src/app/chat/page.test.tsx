@@ -28,6 +28,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/^1 blocker\.$/i)).toBeInTheDocument();
     expect(screen.getByText(/^packet ready$/i)).toBeInTheDocument();
     expect(screen.getByText(/keep answer, risk, and export aligned\./i)).toBeInTheDocument();
+    expect(screen.getAllByText(/^map$/i).length).toBeGreaterThan(0);
   });
 
   it("links the sidebar IA to implemented help and shell routes", () => {
@@ -80,16 +81,16 @@ describe("Chat app shell placeholder", () => {
     expect(tasksPanel).not.toBeNull();
     const importTaskRow = within(tasksPanel as HTMLElement).getByText(/^import pdfs$/i).closest("div.flex.items-start");
     expect(importTaskRow).not.toBeNull();
-    expect(within(importTaskRow as HTMLElement).getByText(/^heatmap$/i)).toBeInTheDocument();
-    expect(within(importTaskRow as HTMLElement).getByText(/^ground sources\.$/i)).toBeInTheDocument();
+    expect(within(importTaskRow as HTMLElement).getByText(/^map$/i)).toBeInTheDocument();
+    expect(within(importTaskRow as HTMLElement).getByText(/^ground\.$/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^compare$/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/^research lead$/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/^keep queue quiet\.$/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/^lead$/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/^keep quiet\.$/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^ship brief$/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/^export$/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/^export brief\.$/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/^ship$/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/^stage brief\.$/i)).toBeInTheDocument();
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
-      "xl:grid-cols-[minmax(224px,1.2fr)_minmax(228px,0.8fr)]",
+      "xl:grid-cols-[minmax(232px,1.22fr)_minmax(220px,0.78fr)]",
     );
     expect(screen.getByText(/pin live claim\./i)).toBeInTheDocument();
     expect(screen.getByText(/route one block/i)).toBeInTheDocument();
@@ -129,7 +130,7 @@ describe("Chat app shell placeholder", () => {
       "/help/foundry",
     );
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
-      "xl:grid-cols-[minmax(224px,1.2fr)_minmax(228px,0.8fr)]",
+      "xl:grid-cols-[minmax(232px,1.22fr)_minmax(220px,0.78fr)]",
     );
   });
 
