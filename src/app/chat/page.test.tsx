@@ -76,13 +76,13 @@ describe("Chat app shell placeholder", () => {
 
     const tasksPanel = screen.getByText(/queue next lane/i).closest("section");
     expect(tasksPanel).not.toBeNull();
-    expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/import next pdf batch/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^heatmap$/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/ground retrieval\./i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/generate compare session/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/generate compare lane/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^research lead$/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/keep lane isolated\./i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/push verified outline/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/push verified brief/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^export$/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/promote brief\./i)).toBeInTheDocument();
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
