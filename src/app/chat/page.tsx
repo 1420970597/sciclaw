@@ -168,7 +168,7 @@ function SessionTimeline() {
 
       <div className="mt-6 grid gap-5 xl:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] 2xl:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)]">
         <div className="rounded-[1.75rem] border border-[#f2e8dc] bg-[#fbf8f3] p-4 sm:p-5">
-          <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,12rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
+          <div className="grid gap-4 xl:grid-cols-[repeat(3,minmax(0,12.4rem))] xl:justify-between 2xl:grid-cols-[repeat(3,minmax(0,1fr))]">
             {appShellCards.map((card) => (
               <article key={card.title} className="rounded-[1.5rem] border border-white bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.04)]">
                 <div className="flex items-start justify-between gap-3">
@@ -279,7 +279,7 @@ function SessionTimeline() {
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Tasks</p>
-                <h3 className="mt-2 max-w-[11ch] text-lg font-semibold leading-[1.34] text-[#1f1f1f]">Queue lane</h3>
+                <h3 className="mt-2 max-w-[9ch] text-lg font-semibold leading-[1.34] text-[#1f1f1f]">Queue</h3>
               </div>
               <span className="rounded-full border border-[#f0e2d2] bg-[#fff7ef] px-3 py-1 text-[11px] text-[#de7d30]">Heatmap</span>
             </div>
