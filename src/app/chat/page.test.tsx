@@ -77,14 +77,14 @@ describe("Chat app shell placeholder", () => {
     const tasksPanel = screen.getByText(/queue next lane/i).closest("section");
     expect(tasksPanel).not.toBeNull();
     expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/^12 pdfs$/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/ground retrieval first/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/^heatmap$/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/ground retrieval\./i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/generate compare session/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^research lead$/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/keep this lane isolated/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/keep lane isolated\./i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/push verified outline/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^export$/i)).toBeInTheDocument();
-    expect(within(tasksPanel as HTMLElement).getByText(/promote the winning brief/i)).toBeInTheDocument();
+    expect(within(tasksPanel as HTMLElement).getByText(/promote brief\./i)).toBeInTheDocument();
     expect(screen.getByTestId("chat-right-rail-grid")).toHaveClass(
       "xl:grid-cols-[minmax(212px,1.18fr)_minmax(236px,0.82fr)]",
     );
