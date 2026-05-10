@@ -274,14 +274,14 @@ function SessionTimeline() {
 
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-[minmax(212px,1.18fr)_minmax(236px,0.82fr)] 2xl:grid-cols-[minmax(224px,1.16fr)_minmax(252px,0.84fr)]" data-testid="chat-right-rail-grid">
+        <div className="grid gap-5 xl:grid-cols-[minmax(224px,1.2fr)_minmax(228px,0.8fr)] 2xl:grid-cols-[minmax(236px,1.18fr)_minmax(244px,0.82fr)]" data-testid="chat-right-rail-grid">
           <section className="rounded-[1.85rem] border border-[#efe6da] bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Tasks</p>
-                <h3 className="mt-2 max-w-[14ch] text-lg font-semibold leading-[1.34] text-[#1f1f1f]">Queue next lane</h3>
+                <h3 className="mt-2 max-w-[11ch] text-lg font-semibold leading-[1.34] text-[#1f1f1f]">Queue lane</h3>
               </div>
-              <span className="rounded-full border border-[#f0e2d2] bg-[#fff7ef] px-3 py-1 text-[11px] text-[#de7d30]">Heatmap-ready</span>
+              <span className="rounded-full border border-[#f0e2d2] bg-[#fff7ef] px-3 py-1 text-[11px] text-[#de7d30]">Heatmap</span>
             </div>
             <div className="mt-4 space-y-2.5">
               {appShellTodos.map((todo) => (
@@ -306,7 +306,7 @@ function SessionTimeline() {
                         </span>
                       ) : null}
                     </div>
-                    <p className="mt-1 max-w-[18ch] text-xs leading-5 text-[#8a8175]">{todo.note}</p>
+                    <p className="mt-1 max-w-[16ch] text-xs leading-5 text-[#8a8175]">{todo.note}</p>
                   </div>
                 </div>
               ))}
