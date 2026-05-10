@@ -17,7 +17,7 @@ describe("Chat app shell placeholder", () => {
       ),
     ).toBeInTheDocument();
     expect(screen.getByText(/project & session flow staged between docs and the future workspace/i)).toBeInTheDocument();
-    expect(screen.getByText(/queue the next research slice/i)).toBeInTheDocument();
+    expect(screen.getByText(/queue next research slice/i)).toBeInTheDocument();
     expect(screen.getByText(/shape a concise workspace brief before you leave the public docs shell/i)).toBeInTheDocument();
     expect(screen.getByText(/thread anchor/i)).toBeInTheDocument();
     expect(screen.getByText(/memory pinned\./i)).toBeInTheDocument();
@@ -74,7 +74,7 @@ describe("Chat app shell placeholder", () => {
     expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();
     expect(screen.getByText(/next move stays on one quieter edge lane/i)).toBeInTheDocument();
 
-    const tasksPanel = screen.getByText(/queue the next research slice/i).closest("section");
+    const tasksPanel = screen.getByText(/queue next research slice/i).closest("section");
     expect(tasksPanel).not.toBeNull();
     expect(within(tasksPanel as HTMLElement).getByText(/import the next pdf batch/i)).toBeInTheDocument();
     expect(within(tasksPanel as HTMLElement).getByText(/^12 pdfs$/i)).toBeInTheDocument();

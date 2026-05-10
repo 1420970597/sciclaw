@@ -279,7 +279,7 @@ function SessionTimeline() {
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b6ab9e]">Tasks</p>
-                <h3 className="mt-2 max-w-[17ch] text-lg font-semibold leading-[1.38] text-[#1f1f1f]">Queue the next research slice</h3>
+                <h3 className="mt-2 max-w-[16ch] text-lg font-semibold leading-[1.38] text-[#1f1f1f]">Queue next research slice</h3>
               </div>
               <span className="rounded-full border border-[#f0e2d2] bg-[#fff7ef] px-3 py-1 text-[11px] text-[#de7d30]">Heatmap-ready</span>
             </div>
@@ -306,7 +306,7 @@ function SessionTimeline() {
                         </span>
                       ) : null}
                     </div>
-                    <p className="mt-1 max-w-[22ch] text-xs leading-5 text-[#8a8175]">{todo.note}</p>
+                    <p className="mt-1 max-w-[20ch] text-xs leading-5 text-[#8a8175]">{todo.note}</p>
                   </div>
                 </div>
               ))}
