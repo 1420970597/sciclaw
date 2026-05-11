@@ -290,6 +290,7 @@ describe("Home landing page", () => {
     expect(screen.queryByText(/foundry preview/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/stakeholder-ready synthesis/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/draft 01/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/slides handoff/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
 

@@ -576,8 +576,11 @@ function BestCases() {
                   <p className="text-sm font-semibold text-white">{activeFrame.summaryTitle}</p>
                   <span className="mt-2 block h-[1.5px] w-24 rounded-full bg-[#8e95a2]/55" aria-hidden />
                 </div>
-                <span className="rounded-full border border-[#f0a467]/25 bg-[#f0a467]/12 px-3 py-1 text-[11px] text-[#f4b17b]">
-                  {activeFrame.tag}
+                <span
+                  className="rounded-full border border-[#f0a467]/16 bg-[#f0a467]/8 px-3 py-1"
+                  aria-hidden
+                >
+                  <span className="block h-[1.5px] w-12 rounded-full bg-[#f3b07e]/65" />
                 </span>
               </div>
               <div className="mt-4 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
