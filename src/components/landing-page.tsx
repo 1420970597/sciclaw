@@ -199,7 +199,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
   const previewMap = {
     "literature-analysis": {
       bodyLabel: "Autonomous Research",
-      chartLabels: ["Meth.", "Find.", "Data", "Evid."],
+      chartLabels: ["方法论", "结论", "数据", "证据"],
       heading: "Deep Literature Analysis",
       description:
         "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
@@ -207,7 +207,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
     },
     "data-mining": {
       bodyLabel: "Autonomous Research",
-      chartLabels: ["Meth.", "Find.", "Data", "Evid."],
+      chartLabels: ["方法论", "结论", "数据", "证据"],
       heading: "Intelligent Data Visualization",
       description:
         "Visualize patterns across uploaded evidence, filings, and datasets with clean, presentation-ready charts that remain connected to the underlying scientific context.",

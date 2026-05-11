@@ -30,10 +30,10 @@ describe("Home landing page", () => {
     expect(heroScope.queryByText(/^summary$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/^evidence$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/^preview$/i)).not.toBeInTheDocument();
-    expect(heroScope.getAllByText(/^meth\.$/i)).toHaveLength(2);
-    expect(heroScope.getAllByText(/^find\.$/i)).toHaveLength(2);
-    expect(heroScope.getByText(/^data$/i)).toBeInTheDocument();
-    expect(heroScope.getByText(/^evid\.$/i)).toBeInTheDocument();
+    expect(heroScope.getAllByText(/^方法论$/i)).toHaveLength(2);
+    expect(heroScope.getAllByText(/^结论$/i)).toHaveLength(2);
+    expect(heroScope.getByText(/^数据$/i)).toBeInTheDocument();
+    expect(heroScope.getByText(/^证据$/i)).toBeInTheDocument();
     expect(heroScope.queryByText(/33%/i)).not.toBeInTheDocument();
     expect(heroScope.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
   });
@@ -55,7 +55,7 @@ describe("Home landing page", () => {
       ),
     ).toBeInTheDocument();
     expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getAllByText(/^find\.$/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/^结论$/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
@@ -100,7 +100,7 @@ describe("Home landing page", () => {
     ).toBeInTheDocument();
     expect(screen.getAllByText(/outcome present/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/^evidence$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^证据$/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/^preview$/i)).not.toBeInTheDocument();
   });
 
@@ -240,7 +240,7 @@ describe("Home landing page", () => {
     fireEvent.click(literatureNode);
     expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
 
-    const chartLabels = within(landingHero).getAllByText(/^(meth\.|find\.|data|evid\.)$/i).slice(-4);
+    const chartLabels = within(landingHero).getAllByText(/^(方法论|结论|数据|证据)$/i).slice(-4);
     expect(chartLabels).toHaveLength(4);
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
