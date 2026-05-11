@@ -33,7 +33,7 @@ describe("Home landing page", () => {
     expect(heroScope.getAllByText(/^方法论$/i)).toHaveLength(2);
     expect(heroScope.getAllByText(/^结论$/i)).toHaveLength(2);
     expect(heroScope.getByText(/^数据$/i)).toBeInTheDocument();
-    expect(heroScope.getByText(/^证据$/i)).toBeInTheDocument();
+    expect(heroScope.queryByText(/^证据$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/33%/i)).not.toBeInTheDocument();
     expect(heroScope.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
   });
@@ -240,8 +240,8 @@ describe("Home landing page", () => {
     fireEvent.click(literatureNode);
     expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
 
-    const chartLabels = within(landingHero).getAllByText(/^(方法论|结论|数据|证据)$/i).slice(-4);
-    expect(chartLabels).toHaveLength(4);
+    const chartLabels = within(landingHero).getAllByText(/^(方法论|结论|数据)$/i).slice(-3);
+    expect(chartLabels).toHaveLength(3);
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
@@ -253,6 +253,8 @@ describe("Home landing page", () => {
 
     const chartRow = chartLabels[0]?.closest("div[class*='grid-cols-4']");
     expect(chartRow).not.toBeNull();
+    expect(chartRow).toHaveClass("grid-cols-4");
+    expect(chartRow?.childElementCount).toBe(3);
     expect(chartRow).toHaveClass("gap-[4.52rem]");
     expect(chartRow).toHaveClass("sm:gap-[4.68rem]");
 

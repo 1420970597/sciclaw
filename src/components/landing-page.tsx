@@ -199,7 +199,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
   const previewMap = {
     "literature-analysis": {
       bodyLabel: "Autonomous Research",
-      chartLabels: ["方法论", "结论", "数据", "证据"],
+      chartLabels: ["方法论", "结论", "数据", ""],
       heading: "Deep Literature Analysis",
       description:
         "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
@@ -237,6 +237,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
       : activeIndex === 1
         ? [74, 112, 146, 126]
         : [52, 76, 96, 118];
+  const visibleChartLabels = previewContent.chartLabels.filter((label) => label.trim().length > 0);
+  const visibleBars = bars.slice(0, visibleChartLabels.length);
 
   return (
     <div className="flex flex-col gap-[1.48rem]">
@@ -300,7 +302,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
                 <div className="mt-[3.82rem] grid grid-cols-4 gap-[4.52rem] px-[0.9rem] pt-[3.88rem] sm:gap-[4.68rem]">
-                  {bars.map((height, index) => (
+                  {visibleBars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.56rem] text-center sm:gap-[1.64rem]">
                       <div className="flex h-[150px] w-full items-end gap-[0.78rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[1.26rem] pb-[1.02rem] pt-4">
                         <span
@@ -309,7 +311,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                         />
                       </div>
                       <span className="flex min-h-[9.46rem] w-full min-w-0 items-start justify-center px-[1.26rem] pb-[0.34rem] text-center text-[14.16px] font-medium uppercase leading-[1.2] tracking-[0.002em] text-[#29485d] sm:min-h-[9.54rem] sm:text-[14.32px] sm:tracking-[0.006em]">
-                        <span className="block max-w-[11.24rem] text-balance break-words">{previewContent.chartLabels[index] ?? `Q${index + 1}`}</span>
+                        <span className="block max-w-[11.24rem] text-balance break-words">{visibleChartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
