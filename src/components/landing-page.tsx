@@ -445,13 +445,13 @@ function AuthCard({
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
                 <p className="text-center text-sm text-[#7a8088]">Enter your access code to begin</p>
-                <label className="block text-sm text-[#5e646d]">
+                <div className="block text-sm text-[#5e646d]">
                   <input
-                    aria-label="Access code"
+                    id="invite-code"
                     placeholder="SC-XXXXXXXX"
                     className="w-full rounded-[1.2rem] border border-[#ebeef3] bg-white px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.28em] text-[#a6acb5] outline-none"
                   />
-                </label>
+                </div>
                 <button
                   type="button"
                   disabled

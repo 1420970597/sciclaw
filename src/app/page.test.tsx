@@ -19,7 +19,7 @@ describe("Home landing page", () => {
       screen.getByRole("button", { name: /^get started$/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
-    const onboardAccessCode = screen.getByRole("textbox", { name: /access code/i });
+    const onboardAccessCode = screen.getByPlaceholderText("SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveValue("");
 
