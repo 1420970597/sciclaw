@@ -23,8 +23,10 @@ describe("Home landing page", () => {
     const heroPreviewCards = heroScope.getAllByText(/^deep literature analysis$/i);
 
     expect(heroPreviewCards).toHaveLength(2);
-    expect(heroScope.getByText(/^summary$/i)).toBeInTheDocument();
     expect(heroScope.getAllByText(/^autonomous research$/i)).toHaveLength(2);
+    expect(heroScope.queryByText(/^summary$/i)).not.toBeInTheDocument();
+    expect(heroScope.queryByText(/^evidence$/i)).not.toBeInTheDocument();
+    expect(heroScope.queryByText(/^preview$/i)).not.toBeInTheDocument();
     expect(heroScope.getAllByText(/^meth\.$/i)).toHaveLength(2);
     expect(heroScope.getAllByText(/^find\.$/i)).toHaveLength(2);
     expect(heroScope.getByText(/^data$/i)).toBeInTheDocument();

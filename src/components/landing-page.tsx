@@ -266,9 +266,8 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
               <div className="rounded-[1.25rem] border border-[#efe4d8] bg-white/92 p-[1.24rem] shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
                 <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#b99577]">
                   <span className="h-2 w-2 rounded-full bg-[#ef9c63]" />
-                  Summary
                 </div>
-                <div className="mt-[1.6rem] space-y-[1.26rem]" aria-hidden>
+                <div className="mt-[1.24rem] space-y-[1.26rem]" aria-hidden>
                   <span className="block h-2 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-11/12 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-10/12 rounded-full bg-[#eceff3]" />
@@ -289,9 +288,9 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
 
             <div className="rounded-[1.35rem] border border-[#f0e4d8] bg-white/80 p-[1.28rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.62)]">
               <div className="space-y-[1.46rem]">
-                <div className="flex items-center justify-between text-[10.7px] uppercase tracking-[0.205em] text-[#687587]">
-                  <span>Evidence</span>
-                  <span>Preview</span>
+                <div className="flex items-center justify-between text-[10.7px] uppercase tracking-[0.205em] text-[#687587]" aria-hidden>
+                  <span className="h-[1.5px] w-12 rounded-full bg-[#d6dee6]" />
+                  <span className="h-[1.5px] w-10 rounded-full bg-[#e2e7ec]" />
                 </div>
                 <div className="space-y-[1.2rem]" aria-hidden>
                   <div className="h-2 rounded-full bg-[#eceff4]" />
