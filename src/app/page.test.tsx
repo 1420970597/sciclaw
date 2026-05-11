@@ -197,6 +197,8 @@ describe("Home landing page", () => {
     expect(triggerRow).toHaveClass("gap-[0.42rem]");
     expect(triggerRow).toHaveClass("sm:gap-[0.53rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
+    expect(primaryNav.parentElement?.parentElement).toHaveClass("pt-[0.46rem]");
+    expect(primaryNav.parentElement?.parentElement).toHaveClass("sm:pt-[0.62rem]");
 
     fireEvent.click(settingsTrigger);
 
