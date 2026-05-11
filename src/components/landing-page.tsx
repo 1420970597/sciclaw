@@ -199,7 +199,9 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute inset-[23px] rounded-full border border-[#efd8c8]/58" />
           <span className="text-[19px] font-semibold sm:text-[21px]">{centerNode.icon}</span>
         </button>
-        <p className="mt-[0.86rem] text-[0.87rem] font-semibold tracking-[0.04em] text-[#cf6820] drop-shadow-[0_2px_4px_rgba(240,142,79,0.068)] sm:text-[0.93rem]">{centerNode.label}</p>
+        <div className="mt-[0.86rem] flex items-center justify-center" aria-hidden>
+          <span className="h-[1.5px] w-[6.2rem] rounded-full bg-[#f1c9ab]/72 shadow-[0_2px_4px_rgba(240,142,79,0.04)]" />
+        </div>
       </div>
     </div>
   );
