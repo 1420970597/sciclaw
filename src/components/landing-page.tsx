@@ -348,7 +348,7 @@ function FeaturePreview({
       </div>
 
       <div className="space-y-[1.02rem] px-1 pt-[0.35rem]">
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</p>
+        <span className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.92rem] md:text-[2.06rem]">
           {previewContent.heading}
         </h3>
