@@ -185,6 +185,19 @@ export const featureItems: FeatureItem[] = [
     ],
     accent: "from-emerald-400/25 via-teal-400/10 to-transparent",
   },
+  {
+    id: "autonomous-execution",
+    eyebrow: "Autonomous Execution",
+    title: "Turn a research goal into an executable plan without leaving the landing flow.",
+    description:
+      "Break down the next experiment, queue the needed tools, and route the first output packet while keeping each stage tied back to the underlying question.",
+    metrics: [
+      "Goal-to-plan routing",
+      "Experiment queue handoff",
+      "Output packet staging",
+    ],
+    accent: "from-amber-400/25 via-orange-400/10 to-transparent",
+  },
 ];
 
 export const bestCases: BestCase[] = [

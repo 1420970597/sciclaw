@@ -131,6 +131,15 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
     ],
     [],
   );
+  const activeFeature = featureItems[activeIndex] ?? featureItems[0];
+  const centerNode =
+    activeFeature.id === "autonomous-execution"
+      ? { icon: "研", label: "Autonomous Execution" }
+      : activeFeature.id === "data-mining"
+        ? { icon: "数", label: "Data Mining" }
+        : activeFeature.id === "outcome-present"
+          ? { icon: "果", label: "Outcome Present" }
+          : { icon: "文", label: "Literature Analysis" };
 
   return (
     <div className="relative min-h-[352px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_50%_49.3%,_rgba(255,255,255,0.87),_rgba(255,255,255,0)_60.5%)] sm:min-h-[404px]">
@@ -180,21 +189,27 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         </span>
         <button
           type="button"
-          onClick={() => onSelect(0)}
+          onClick={() => onSelect(activeIndex)}
           className="group relative flex h-[5.12rem] w-[5.12rem] items-center justify-center rounded-full bg-[linear-gradient(180deg,#ffffff_0%,#fff8f2_100%)] text-[#df7930] shadow-[0_0_0_4px_rgba(249,159,120,0.026),0_0_0_8px_rgba(249,159,120,0.008),0_8px_12px_rgba(232,124,55,0.024)] transition hover:scale-[1.02] sm:h-[5.24rem] sm:w-[5.24rem]"
-          aria-label="Literature Analysis"
+          aria-label={centerNode.label}
         >
           <span className="absolute inset-[12px] rounded-full border border-[#efc8aa]/8" />
           <span className="absolute inset-[23px] rounded-full border border-[#efd8c8]/58" />
-          <span className="text-[19px] font-semibold sm:text-[21px]">文</span>
+          <span className="text-[19px] font-semibold sm:text-[21px]">{centerNode.icon}</span>
         </button>
-        <p className="mt-[0.86rem] text-[0.87rem] font-semibold tracking-[0.04em] text-[#cf6820] drop-shadow-[0_2px_4px_rgba(240,142,79,0.068)] sm:text-[0.93rem]">Literature Analysis</p>
+        <p className="mt-[0.86rem] text-[0.87rem] font-semibold tracking-[0.04em] text-[#cf6820] drop-shadow-[0_2px_4px_rgba(240,142,79,0.068)] sm:text-[0.93rem]">{centerNode.label}</p>
       </div>
     </div>
   );
 }
 
-function FeaturePreview({ activeIndex }: { activeIndex: number }) {
+function FeaturePreview({
+  activeIndex,
+  onGetStarted,
+}: {
+  activeIndex: number;
+  onGetStarted: () => void;
+}) {
   const activeFeature = featureItems[activeIndex];
   const previewMap = {
     "literature-analysis": {
@@ -333,32 +348,39 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
           {previewContent.heading}
         </h2>
         <p className="max-w-[33.2rem] text-base leading-[2.02] text-[#676d77] sm:text-[1.01rem]">{previewContent.description}</p>
-        <Link
-          href="/help/getting-started"
+        <button
+          type="button"
+          onClick={onGetStarted}
           className="inline-flex items-center gap-2 pt-[0.62rem] text-sm font-medium text-[#6d737c] transition hover:text-[#1f232a]"
         >
           {previewContent.ctaLabel}
           <span aria-hidden className="text-base leading-none">
             ↓
           </span>
-        </Link>
+        </button>
       </div>
     </div>
   );
 }
 
-function FeatureRotator() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
+function FeatureRotator({
+  activeIndex,
+  onSelect,
+  onGetStarted,
+}: {
+  activeIndex: number;
+  onSelect: (index: number) => void;
+  onGetStarted: () => void;
+}) {
   return (
     <section
       id="feature-rotator"
       className="grid gap-4 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:items-center lg:gap-[0.22rem] xl:grid-cols-[minmax(0,334px)_minmax(0,1fr)] xl:gap-[0.34rem]"
     >
       <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-[0.78rem] lg:px-0 xl:-mr-[0.92rem] xl:px-1">
-        <FeatureNetwork activeIndex={activeIndex} onSelect={setActiveIndex} />
+        <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
-      <FeaturePreview activeIndex={activeIndex} />
+      <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} />
     </section>
   );
 }
@@ -505,8 +527,13 @@ function AuthCard() {
   );
 }
 
-function BestCases() {
-  const [activeIndex, setActiveIndex] = useState(0);
+function BestCases({
+  activeIndex,
+  onSelect,
+}: {
+  activeIndex: number;
+  onSelect: (index: number) => void;
+}) {
   const activeCase = bestCases[activeIndex];
   const carouselFrames = [
     {
@@ -537,11 +564,11 @@ function BestCases() {
   const activeFrame = carouselFrames[activeIndex] ?? carouselFrames[0];
 
   const nextSlide = () => {
-    setActiveIndex((current) => (current + 1) % bestCases.length);
+    onSelect((activeIndex + 1) % bestCases.length);
   };
 
   const previousSlide = () => {
-    setActiveIndex((current) => (current - 1 + bestCases.length) % bestCases.length);
+    onSelect((activeIndex - 1 + bestCases.length) % bestCases.length);
   };
 
   return (
@@ -646,7 +673,7 @@ function BestCases() {
                       <button
                         key={item.title}
                         type="button"
-                        onClick={() => setActiveIndex(index)}
+                        onClick={() => onSelect(index)}
                         aria-label={`Go to slide ${index + 1}`}
                         className={`h-2 rounded-full transition ${isActive ? "w-10 bg-[#ec8a44]" : "w-6 bg-[#d9dde3] hover:bg-[#c9cfd7]"}`}
                       />
@@ -682,6 +709,15 @@ function Footer() {
 }
 
 export function LandingPage() {
+  const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
+  const [activeCaseIndex, setActiveCaseIndex] = useState(0);
+
+  const handleGetStarted = () => {
+    const autonomousExecutionIndex = featureItems.findIndex((feature) => feature.id === "autonomous-execution");
+    setActiveFeatureIndex(autonomousExecutionIndex >= 0 ? autonomousExecutionIndex : 0);
+    setActiveCaseIndex(1);
+  };
+
   return (
     <main
       id="top"
@@ -704,12 +740,16 @@ export function LandingPage() {
           </div>
 
           <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_318px] lg:items-start lg:gap-[1.96rem] xl:grid-cols-[minmax(0,1.01fr)_318px] xl:gap-[2.18rem]" data-testid="landing-hero">
-            <FeatureRotator />
+            <FeatureRotator
+              activeIndex={activeFeatureIndex}
+              onSelect={setActiveFeatureIndex}
+              onGetStarted={handleGetStarted}
+            />
             <AuthCard />
           </div>
         </div>
 
-        <BestCases />
+        <BestCases activeIndex={activeCaseIndex} onSelect={setActiveCaseIndex} />
       </section>
 
       <Footer />

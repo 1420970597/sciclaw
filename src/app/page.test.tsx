@@ -15,7 +15,9 @@ describe("Home landing page", () => {
         /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /^get started$/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /^get started$/i }),
+    ).toBeInTheDocument();
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
     const onboardAccessCode = screen.getByRole("textbox", { name: /access code/i });
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
@@ -42,6 +44,7 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
+    expect(screen.queryByRole("button", { name: /^研 autonomous execution$/i })).not.toBeInTheDocument();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("lg:gap-[0.22rem]");
     expect(featureRotator).toHaveClass("xl:gap-[0.34rem]");
@@ -57,11 +60,11 @@ describe("Home landing page", () => {
     expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/^结论$/i)).toBeInTheDocument();
     expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
-    expect(screen.getByRole("link", { name: /^get started$/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
-    expect(screen.getAllByRole("link", { name: /get started/i }).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
@@ -271,9 +274,16 @@ describe("Home landing page", () => {
     const description = within(landingHero).getByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
     );
-    const getStartedLink = within(landingHero).getByRole("link", { name: /^get started$/i });
+    const getStartedButton = within(landingHero).getByRole("button", { name: /^get started$/i });
     expect(description).toBeInTheDocument();
-    expect(getStartedLink).toHaveAttribute("href", "/help/getting-started");
+
+    fireEvent.click(getStartedButton);
+
+    expect(within(landingHero).getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
+    expect(within(landingHero).getByText(/enter your research goal, and sciclaw automatically breaks down the research path/i)).toBeInTheDocument();
+    expect(within(landingHero).getByRole("button", { name: /^autonomous execution$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
+    expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
   });
 
   it("renders the footer copy centered to match the public landing page", () => {

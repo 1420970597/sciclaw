@@ -50,25 +50,18 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeDisabled();
   });
 
-  it("keeps the same best-cases carousel defaults and navigation as the landing page", () => {
+  it("keeps the live /chat marketing-landing get-started behavior by advancing the hero feature instead of routing away", () => {
     render(<ChatPage />);
 
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
-    expect(screen.queryByText(/foundry preview/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/stakeholder-ready synthesis/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/research workspace preview/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/draft 01/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/slides handoff/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: /next/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^get started$/i }));
+
+    expect(screen.getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
+    expect(screen.getByText(/enter your research goal, and sciclaw automatically breaks down the research path/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^autonomous execution$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
     expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
-
-    fireEvent.click(screen.getByRole("button", { name: /previous/i }));
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
-    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });
 });
