@@ -118,8 +118,8 @@ describe("Chat app shell placeholder", () => {
     expect(sessionFlowSection).toHaveTextContent(/project & session flow staged between docs and the future workspace/i);
     const primaryTimelineGrid = sessionFlowSection?.querySelector(".mt-6.grid");
     expect(primaryTimelineGrid).not.toBeNull();
-    expect(primaryTimelineGrid).toHaveClass("xl:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)]");
-    expect(primaryTimelineGrid).toHaveClass("2xl:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]");
+    expect(primaryTimelineGrid).toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]");
+    expect(primaryTimelineGrid).toHaveClass("2xl:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)]");
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
       "xl:grid-cols-[repeat(3,minmax(0,14.6rem))]",
     );
