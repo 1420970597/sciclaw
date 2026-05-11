@@ -81,8 +81,8 @@ function Header() {
         <nav aria-label="Primary" className="flex items-center gap-[0.7rem] pr-[0.03rem] sm:gap-[0.9rem] sm:pr-[0.04rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            className="gap-[0.58rem] sm:gap-[0.76rem]"
-            buttonClassName="border-[rgba(7,25,39,0.38)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#1c3d50] shadow-[0_1px_2px_rgba(15,23,42,0.0012),0_2px_3px_rgba(15,23,42,0.0018),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(7,25,39,0.46)] hover:text-[#081925]"
+            className="gap-[0.46rem] sm:gap-[0.62rem]"
+            buttonClassName="border-[rgba(7,25,39,0.34)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#1b3a4c] shadow-[0_1px_2px_rgba(15,23,42,0.001),0_1px_2px_rgba(15,23,42,0.0014),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(7,25,39,0.42)] hover:text-[#081925]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
