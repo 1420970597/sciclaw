@@ -812,29 +812,39 @@ export const helpArticles: HelpArticle[] = [
   {
     slug: "settings",
     index: "10",
-    title: "Settings",
+    title: "System Settings",
+    navTitle: "Settings",
     description:
-      "Appearance, language, and shell-level preferences complete the public preview without pretending private account configuration is already exposed.",
+      "System settings keeps appearance, language, and usage guidance visible in the public shell without pretending private account configuration is already exposed.",
     icon: "sliders",
     heroParagraphs: [
-      "Settings stays intentionally light: appearance, language, and shell controls echo the public header while preserving the app-like continuity of the route family.",
+      "System settings explains the small set of shell-level controls that are already visible on the live public help route: theme, language, and usage visibility.",
     ],
     sections: [
-      { id: "shell-preferences", title: "Shell preferences" },
-      { id: "public-contract", title: "Public contract" },
+      { id: "theme", title: "Theme" },
+      { id: "language", title: "Language" },
+      { id: "usage", title: "Usage" },
     ],
+    nextHref: "/help/im",
+    nextLabel: "IM Connection",
     body: [
       {
         type: "paragraph",
-        sectionId: "shell-preferences",
+        sectionId: "theme",
         content:
-          "Appearance and language controls are represented consistently across the shell so the public routes feel cohesive, even without authenticated personalization.",
+          "To change the appearance of the interface, click your avatar in the upper-right corner and choose Theme. You can switch between Dark, Light, and Follow System.",
       },
       {
         type: "paragraph",
-        sectionId: "public-contract",
+        sectionId: "language",
         content:
-          "The route deliberately avoids overclaiming account management depth. It mirrors the live marketing shell's level of visible control while still supporting the broader docs-to-workspace bridge.",
+          "To change the interface language, click your avatar and choose Language. SciClaw currently supports English and Simplified Chinese. The page refreshes automatically after you switch languages.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "usage",
+        content:
+          "To view account usage details, click your avatar and select Usage. This page shows your current token usage, document credits, and storage consumption.",
       },
     ],
   },

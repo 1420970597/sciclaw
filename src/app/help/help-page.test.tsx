@@ -54,7 +54,7 @@ describe("Help article page", () => {
     expect(screen.getAllByText(/output handoff/i).length).toBeGreaterThan(0);
   });
 
-  it("matches the public settings page title and toc labels", async () => {
+  it("matches the live public settings page title, body, next-link, and toc labels", async () => {
     const page = await HelpArticlePage({
       params: Promise.resolve({ slug: "settings" }),
     });
@@ -62,13 +62,23 @@ describe("Help article page", () => {
     render(page);
 
     expect(screen.getAllByText(/^10$/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/settings stays intentionally light: appearance, language, and shell controls echo the public header while preserving the app-like continuity of the route family/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /^shell preferences$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^system settings$/i })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /system settings explains the small set of shell-level controls that are already visible on the live public help route: theme, language, and usage visibility\./i,
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^theme$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^language$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^usage$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /09 im connection/i })).toHaveAttribute(
       "href",
       "/help/im",
     );
-    expect(screen.getByRole("link", { name: /^shell preferences$/i })).toHaveAttribute("href", "#shell-preferences");
+    expect(screen.getByRole("link", { name: /^im connection$/i })).toHaveAttribute("href", "/help/im");
+    expect(screen.getByRole("link", { name: /^theme$/i })).toHaveAttribute("href", "#theme");
+    expect(screen.getByRole("link", { name: /^language$/i })).toHaveAttribute("href", "#language");
+    expect(screen.getByRole("link", { name: /^usage$/i })).toHaveAttribute("href", "#usage");
   });
 
   it("opens the docs appearance menu with theme and language entries", async () => {
