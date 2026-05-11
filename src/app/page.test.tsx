@@ -15,7 +15,7 @@ describe("Home landing page", () => {
         /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^get started$/i })).toBeInTheDocument();
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
     const onboardAccessCode = screen.getByRole("textbox", { name: /access code/i });
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
@@ -57,7 +57,7 @@ describe("Home landing page", () => {
     expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/^结论$/i)).toBeInTheDocument();
     expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
-    expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^get started$/i })).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
@@ -271,7 +271,7 @@ describe("Home landing page", () => {
     const description = within(landingHero).getByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
     );
-    const getStartedLink = within(landingHero).getByRole("link", { name: /get started preview/i });
+    const getStartedLink = within(landingHero).getByRole("link", { name: /^get started$/i });
     expect(description).toBeInTheDocument();
     expect(getStartedLink).toHaveAttribute("href", "/help/getting-started");
   });

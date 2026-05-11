@@ -336,7 +336,6 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
         <Link
           href="/help/getting-started"
           className="inline-flex items-center gap-2 pt-[0.62rem] text-sm font-medium text-[#6d737c] transition hover:text-[#1f232a]"
-          aria-label="Get started preview"
         >
           {previewContent.ctaLabel}
           <span aria-hidden className="text-base leading-none">
