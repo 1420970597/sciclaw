@@ -251,9 +251,9 @@ describe("Home landing page", () => {
       expect(label).toHaveClass("text-balance");
     });
 
-    const chartRow = chartLabels[0]?.closest("div[class*='grid-cols-4']");
+    const chartRow = chartLabels[0]?.closest("div[class*='grid-cols-3']");
     expect(chartRow).not.toBeNull();
-    expect(chartRow).toHaveClass("grid-cols-4");
+    expect(chartRow).toHaveClass("grid-cols-3");
     expect(chartRow?.childElementCount).toBe(3);
     expect(chartRow).toHaveClass("gap-[4.52rem]");
     expect(chartRow).toHaveClass("sm:gap-[4.68rem]");

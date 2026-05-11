@@ -239,6 +239,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
         : [52, 76, 96, 118];
   const visibleChartLabels = previewContent.chartLabels.filter((label) => label.trim().length > 0);
   const visibleBars = bars.slice(0, visibleChartLabels.length);
+  const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
     <div className="flex flex-col gap-[1.48rem]">
@@ -301,7 +302,7 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
-                <div className="mt-[3.82rem] grid grid-cols-4 gap-[4.52rem] px-[0.9rem] pt-[3.88rem] sm:gap-[4.68rem]">
+                <div className={`mt-[3.82rem] grid ${chartGridClass} gap-[4.52rem] px-[0.9rem] pt-[3.88rem] sm:gap-[4.68rem]`}>
                   {visibleBars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.56rem] text-center sm:gap-[1.64rem]">
                       <div className="flex h-[150px] w-full items-end gap-[0.78rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[1.26rem] pb-[1.02rem] pt-4">
