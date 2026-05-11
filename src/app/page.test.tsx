@@ -191,11 +191,11 @@ describe("Home landing page", () => {
 
     expect(within(primaryNav).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
     expect(within(primaryNav).getByRole("button", { name: /contact us/i })).toBeInTheDocument();
-    expect(settingsTrigger).toHaveClass("h-[2.75rem]");
-    expect(settingsTrigger).toHaveClass("w-[2.75rem]");
+    expect(settingsTrigger).toHaveClass("h-[2.35rem]");
+    expect(settingsTrigger).toHaveClass("w-[2.35rem]");
     expect(triggerRow).not.toBeNull();
-    expect(triggerRow).toHaveClass("gap-[0.46rem]");
-    expect(triggerRow).toHaveClass("sm:gap-[0.62rem]");
+    expect(triggerRow).toHaveClass("gap-[0.42rem]");
+    expect(triggerRow).toHaveClass("sm:gap-[0.53rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
 
     fireEvent.click(settingsTrigger);

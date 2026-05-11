@@ -84,7 +84,7 @@ export function DockMenuBar({
   };
 
   return (
-    <div ref={rootRef} className={mergeClasses("flex items-center gap-[0.46rem] sm:gap-[0.58rem]", className)}>
+    <div ref={rootRef} className={mergeClasses("flex items-center gap-[0.42rem] sm:gap-[0.53rem]", className)}>
       {groups.map((group) => {
         const isOpen = openGroupId === group.id;
         const triggerId = group.triggerId ?? `dock-menu-trigger-${group.id}`;
@@ -111,7 +111,7 @@ export function DockMenuBar({
               onClick={() => setOpenGroupId((current) => (current === group.id ? null : group.id))}
               onKeyDown={handleTriggerKeyDown}
               className={mergeClasses(
-                "inline-flex h-[2.75rem] w-[2.75rem] items-center justify-center rounded-full border transition sm:h-[2.85rem] sm:w-[2.85rem]",
+                "inline-flex h-[2.35rem] w-[2.35rem] items-center justify-center rounded-full border transition sm:h-[2.4rem] sm:w-[2.4rem]",
                 buttonClassName,
                 isOpen && "shadow-[0_10px_24px_rgba(15,23,42,0.08)]",
               )}
