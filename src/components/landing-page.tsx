@@ -254,7 +254,9 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
             <div>
               <p className="text-sm font-semibold text-[#272a30]">{previewContent.heading}</p>
-              <p className="mt-1 text-xs text-[#9da4ad]">Research workspace preview</p>
+              <p className="mt-1 text-xs text-[#9da4ad]" aria-hidden>
+                <span className="block h-[1.5px] w-[7.5rem] rounded-full bg-[#d8dde4]" />
+              </p>
             </div>
             <span className="rounded-full border border-[#f6d9c1] bg-[#fff6ef] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#e18c51]">
               {previewContent.bodyLabel}

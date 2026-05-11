@@ -55,6 +55,7 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
     expect(screen.queryByText(/foundry preview/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/stakeholder-ready synthesis/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/research workspace preview/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/draft 01/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/slides handoff/i)).not.toBeInTheDocument();

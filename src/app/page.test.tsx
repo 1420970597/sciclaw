@@ -19,7 +19,7 @@ describe("Home landing page", () => {
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
 
     const heroScope = within(defaultHeroSection as HTMLElement);
-    expect(heroScope.getByText(/research workspace preview/i)).toBeInTheDocument();
+    expect(heroScope.queryByText(/research workspace preview/i)).not.toBeInTheDocument();
     const heroPreviewCards = heroScope.getAllByText(/^deep literature analysis$/i);
 
     expect(heroPreviewCards).toHaveLength(2);
