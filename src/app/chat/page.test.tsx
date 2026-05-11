@@ -77,15 +77,20 @@ describe("Chat route public landing clone", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /^get started$/i }));
 
-    expect(screen.getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
-    expect(screen.getByText(/enter your research goal, and sciclaw automatically breaks down the research path/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^autonomous execution$/i })).toBeInTheDocument();
-    expect(screen.getByText(/^33%$/i)).toBeInTheDocument();
-    expect(screen.queryByText(/^plan$/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/^tools$/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/^results$/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/^reports$/i)).not.toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
-    expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /upload experimental data in batches, and sciclaw automatically performs statistical testing, trend analysis, and chart generation/i,
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: /^data mining$/i })).toHaveLength(2);
+    expect(screen.getByText(/^Q1$/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Q2$/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Q3$/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Q4$/i)).toBeInTheDocument();
+    expect(screen.queryByText(/^33%$/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });
 });

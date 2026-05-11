@@ -232,10 +232,10 @@ function FeaturePreview({
     },
     "data-mining": {
       bodyLabel: "Autonomous Research",
-      chartLabels: ["方法论", "结论", "数据", "证据"],
+      chartLabels: ["Q1", "Q2", "Q3", "Q4"],
       heading: "Intelligent Data Visualization",
       description:
-        "Visualize patterns across uploaded evidence, filings, and datasets with clean, presentation-ready charts that remain connected to the underlying scientific context.",
+        "Upload experimental data in batches, and SciClaw automatically performs statistical testing, trend analysis, and chart generation to uncover the scientific patterns behind your data.",
       ctaLabel: "Get started",
     },
     "outcome-present": {
@@ -795,9 +795,9 @@ export function LandingPage() {
   const [activeCaseIndex, setActiveCaseIndex] = useState(0);
 
   const handleGetStarted = () => {
-    const autonomousExecutionIndex = featureItems.findIndex((feature) => feature.id === "autonomous-execution");
-    setActiveFeatureIndex(autonomousExecutionIndex >= 0 ? autonomousExecutionIndex : 0);
-    setActiveCaseIndex(1);
+    const dataMiningIndex = featureItems.findIndex((feature) => feature.id === "data-mining");
+    setActiveFeatureIndex(dataMiningIndex >= 0 ? dataMiningIndex : 0);
+    setActiveCaseIndex(0);
   };
 
   const handleApplyNow = () => {
