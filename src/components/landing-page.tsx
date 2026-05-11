@@ -242,7 +242,7 @@ function FeaturePreview({
     },
     "autonomous-execution": {
       bodyLabel: "Autonomous Research",
-      chartLabels: ["Plan", "Tools", "Results", "Reports"],
+      chartLabels: ["33%", "", "", ""],
       heading: "Autonomous Experiment Execution",
       description:
         "Enter your research goal, and SciClaw automatically breaks down the research path, designs computational and simulation experiments, analyzes and iterates on the results, and delivers a reasonable outcome.",

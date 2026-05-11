@@ -78,6 +78,11 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("heading", { name: /autonomous experiment execution/i })).toBeInTheDocument();
     expect(screen.getByText(/enter your research goal, and sciclaw automatically breaks down the research path/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^autonomous execution$/i })).toBeInTheDocument();
+    expect(screen.getByText(/^33%$/i)).toBeInTheDocument();
+    expect(screen.queryByText(/^plan$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^tools$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^results$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^reports$/i)).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
     expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
   });
