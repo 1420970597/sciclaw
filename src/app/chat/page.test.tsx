@@ -116,6 +116,10 @@ describe("Chat app shell placeholder", () => {
     const sessionFlowScope = within(sessionFlowSection as HTMLElement);
 
     expect(sessionFlowSection).toHaveTextContent(/project & session flow staged between docs and the future workspace/i);
+    const primaryTimelineGrid = sessionFlowSection?.querySelector(".mt-6.grid");
+    expect(primaryTimelineGrid).not.toBeNull();
+    expect(primaryTimelineGrid).toHaveClass("xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]");
+    expect(primaryTimelineGrid).toHaveClass("2xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]");
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
       "xl:grid-cols-[repeat(3,minmax(0,14.6rem))]",
     );
