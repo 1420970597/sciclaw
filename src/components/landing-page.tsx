@@ -415,8 +415,8 @@ function AuthCard() {
               <div className="space-y-[1.08rem]">
                 <p className="text-center text-sm text-[#7a8088]">Enter your access code to begin</p>
                 <label className="block text-sm text-[#5e646d]">
-                  <span className="sr-only">Access code</span>
                   <input
+                    aria-label="Access code"
                     placeholder="SC-XXXXXXXX"
                     className="w-full rounded-[1.2rem] border border-[#ebeef3] bg-white px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.28em] text-[#a6acb5] outline-none"
                   />
