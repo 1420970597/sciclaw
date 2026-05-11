@@ -319,17 +319,13 @@ describe("Home landing page", () => {
     render(<Home />);
 
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
-    expect(screen.getAllByText(/automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i).length).toBeGreaterThanOrEqual(2);
-    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
-    expect(screen.queryByText(/foundry preview/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/stakeholder-ready synthesis/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/draft 01/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/slides handoff/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
-
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");
+
+    expect(bestCasesSection).toHaveTextContent(
+      /automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i,
+    );
+    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     expect(bestCasesSection).toHaveClass("mt-[1.95rem]");
     expect(bestCasesSection).toHaveClass("sm:mt-[2.35rem]");

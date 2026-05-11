@@ -662,9 +662,9 @@ function BestCases({
             </div>
             <div className="mx-auto mt-11 max-w-[498px] rounded-[1.72rem] border border-white/10 bg-[#161a22]/92 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-5">
               <div className="flex items-center justify-between border-b border-white/8 pb-3">
-                <div>
-                  <p className="text-sm font-semibold text-white">{activeFrame.summaryTitle}</p>
-                  <span className="mt-2 block h-[1.5px] w-24 rounded-full bg-[#8e95a2]/55" aria-hidden />
+                <div aria-hidden className="space-y-[0.52rem]">
+                  <span className="block h-[1.5px] w-24 rounded-full bg-[#8e95a2]/55" />
+                  <span className="block h-[1.5px] w-16 rounded-full bg-[#6d7481]/55" />
                 </div>
                 <span
                   className="rounded-full border border-[#f0a467]/16 bg-[#f0a467]/8 px-3 py-1"
@@ -675,11 +675,13 @@ function BestCases({
               </div>
               <div className="mt-4 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
                 <div className="space-y-[0.92rem]">
-                  <div className="rounded-[1.25rem] border border-white/6 bg-white/4 p-4">
-                    <span className="block h-[1.5px] w-12 rounded-full bg-[#778090]/75" aria-hidden />
-                    <p className="mt-3 text-sm leading-6 text-[#e5e8ef]">
-                      {activeFrame.summaryText}
-                    </p>
+                  <div className="rounded-[1.25rem] border border-white/6 bg-white/4 p-4" aria-hidden>
+                    <span className="block h-[1.5px] w-12 rounded-full bg-[#778090]/75" />
+                    <div className="mt-3 space-y-2">
+                      <span className="block h-[1.5px] w-full rounded-full bg-[#c7ccd6]/35" />
+                      <span className="block h-[1.5px] w-[92%] rounded-full bg-[#c7ccd6]/28" />
+                      <span className="block h-[1.5px] w-[78%] rounded-full bg-[#c7ccd6]/24" />
+                    </div>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2" aria-hidden>
                     <div className="rounded-[1.1rem] border border-white/6 bg-white/4 p-4">
