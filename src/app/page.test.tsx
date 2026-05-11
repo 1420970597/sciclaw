@@ -96,9 +96,9 @@ describe("Home landing page", () => {
       ),
     ).toBeInTheDocument();
     expect(screen.getAllByText(/outcome present/i).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getAllByText(/preview/i).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getAllByText(/summary/i).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getAllByText(/evidence/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^evidence$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^preview$/i)).not.toBeInTheDocument();
   });
 
   it("keeps landing navigation targets on implemented routes", () => {
@@ -287,6 +287,11 @@ describe("Home landing page", () => {
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getAllByText(/automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(screen.queryByText(/foundry preview/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/stakeholder-ready synthesis/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/slides handoff/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
 
     const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
     const bestCasesSection = bestCasesHeading.closest("section");

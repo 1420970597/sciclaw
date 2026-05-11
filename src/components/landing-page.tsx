@@ -566,15 +566,15 @@ function BestCases() {
       <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(180deg,#f7efe5_0%,#fbf7f1_12%,#ffffff_36%)] shadow-[0_26px_80px_rgba(15,23,42,0.08)]">
         <div className="grid lg:grid-cols-[1.06fr_0.94fr]">
           <div className="relative min-h-[276px] bg-[radial-gradient(circle_at_20%_20%,rgba(244,162,95,0.14),transparent_28%),linear-gradient(180deg,#12161d_0%,#0d1016_100%)] p-5 sm:p-6">
-            <div className="absolute inset-x-7 top-7 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#6a7180]">
-              <span>{activeFrame.eyebrow}</span>
-              <span>Preview</span>
+            <div className="absolute inset-x-7 top-7 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#6a7180]" aria-hidden>
+              <span className="h-[1.5px] w-16 rounded-full bg-[#4e5562]" />
+              <span className="h-[1.5px] w-11 rounded-full bg-[#343945]" />
             </div>
             <div className="mx-auto mt-11 max-w-[498px] rounded-[1.72rem] border border-white/10 bg-[#161a22]/92 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-5">
               <div className="flex items-center justify-between border-b border-white/8 pb-3">
                 <div>
                   <p className="text-sm font-semibold text-white">{activeFrame.summaryTitle}</p>
-                  <p className="mt-1 text-xs text-[#8e95a2]">Stakeholder-ready synthesis</p>
+                  <span className="mt-2 block h-[1.5px] w-24 rounded-full bg-[#8e95a2]/55" aria-hidden />
                 </div>
                 <span className="rounded-full border border-[#f0a467]/25 bg-[#f0a467]/12 px-3 py-1 text-[11px] text-[#f4b17b]">
                   {activeFrame.tag}
@@ -583,14 +583,18 @@ function BestCases() {
               <div className="mt-4 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
                 <div className="space-y-[0.92rem]">
                   <div className="rounded-[1.25rem] border border-white/6 bg-white/4 p-4">
-                    <p className="text-xs uppercase tracking-[0.2em] text-[#778090]">Summary</p>
+                    <span className="block h-[1.5px] w-12 rounded-full bg-[#778090]/75" aria-hidden />
                     <p className="mt-3 text-sm leading-6 text-[#e5e8ef]">
                       {activeFrame.summaryText}
                     </p>
                   </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-[1.1rem] border border-white/6 bg-white/4 p-4 text-xs text-[#c7ccd6]">{activeFrame.chipA}</div>
-                    <div className="rounded-[1.1rem] border border-white/6 bg-white/4 p-4 text-xs text-[#c7ccd6]">{activeFrame.chipB}</div>
+                  <div className="grid gap-3 sm:grid-cols-2" aria-hidden>
+                    <div className="rounded-[1.1rem] border border-white/6 bg-white/4 p-4">
+                      <span className="block h-[1.5px] w-14 rounded-full bg-[#c7ccd6]/65" />
+                    </div>
+                    <div className="rounded-[1.1rem] border border-white/6 bg-white/4 p-4">
+                      <span className="block h-[1.5px] w-16 rounded-full bg-[#c7ccd6]/5" />
+                    </div>
                   </div>
                 </div>
                 <div className="rounded-[1.35rem] border border-white/6 bg-[linear-gradient(180deg,#232935_0%,#1b202a_100%)] p-4">

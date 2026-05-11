@@ -53,6 +53,11 @@ describe("Chat route public landing clone", () => {
 
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(screen.queryByText(/foundry preview/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/stakeholder-ready synthesis/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/slides handoff/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/evidence appendix/i)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
     expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
