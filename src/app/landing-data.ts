@@ -817,9 +817,6 @@ export const helpArticles: HelpArticle[] = [
     description:
       "System settings keeps appearance, language, and usage guidance visible in the public shell without pretending private account configuration is already exposed.",
     icon: "sliders",
-    heroParagraphs: [
-      "System settings explains the small set of shell-level controls that are already visible on the live public help route: theme, language, and usage visibility.",
-    ],
     sections: [
       { id: "theme", title: "Theme" },
       { id: "language", title: "Language" },

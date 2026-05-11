@@ -64,8 +64,13 @@ describe("Help article page", () => {
     expect(screen.getAllByText(/^10$/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { name: /^system settings$/i })).toBeInTheDocument();
     expect(
-      screen.getByText(
+      screen.queryByText(
         /system settings explains the small set of shell-level controls that are already visible on the live public help route: theme, language, and usage visibility\./i,
+      ),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /system settings keeps appearance, language, and usage guidance visible in the public shell without pretending private account configuration is already exposed\./i,
       ),
     ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^theme$/i })).toBeInTheDocument();
