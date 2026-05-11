@@ -25,7 +25,24 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });
 
-  it("keeps live-like top utility menus and marketing auth interactions reachable on /chat", () => {
+  it("opens the inline early-access apply flow on /chat and keeps the live marketing contract", () => {
+    render(<ChatPage />);
+
+    fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
+
+    expect(screen.getByText(/leave your email and intended use case\. we will review it for early access\./i)).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /tell us what you research and how sciclaw would help\./i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^send code$/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
+    expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
+  });
+
+  it("keeps live-like top utility menus and login interactions reachable on /chat", () => {
     render(<ChatPage />);
 
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });

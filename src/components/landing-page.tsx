@@ -9,6 +9,8 @@ import {
   type AuthTab,
 } from "@/app/landing-data";
 
+type AuthMode = AuthTab | "apply";
+
 function GuideIcon({ className = "h-[1.18rem] w-[1.18rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
@@ -385,8 +387,13 @@ function FeatureRotator({
   );
 }
 
-function AuthCard() {
-  const [activeTab, setActiveTab] = useState<AuthTab>("onboard");
+function AuthCard({
+  onApplyNow,
+}: {
+  onApplyNow: () => void;
+}) {
+  const [activeMode, setActiveMode] = useState<AuthMode>("onboard");
+  const [returnMode, setReturnMode] = useState<AuthTab>("onboard");
 
   return (
     <aside
@@ -400,7 +407,7 @@ function AuthCard() {
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
             ].map((tab) => {
-              const selected = activeTab === tab.key;
+              const selected = activeMode === "apply" ? returnMode === tab.key : activeMode === tab.key;
 
               return (
                 <button
@@ -410,7 +417,10 @@ function AuthCard() {
                   id={`auth-tab-${tab.key}`}
                   aria-selected={selected}
                   aria-controls={tab.panelId}
-                  onClick={() => setActiveTab(tab.key as AuthTab)}
+                  onClick={() => {
+                    setActiveMode(tab.key as AuthTab);
+                    setReturnMode(tab.key as AuthTab);
+                  }}
                   className={`rounded-[1rem] px-5 py-2.5 font-medium transition ${
                     selected
                       ? "bg-[#f4cfb2] text-[#654732] shadow-[0_9px_20px_rgba(241,176,126,0.2)]"
@@ -426,13 +436,13 @@ function AuthCard() {
 
         <div className="mt-3.5 space-y-[1.08rem]">
           <div
-            role="tabpanel"
-            id={activeTab === "onboard" ? "auth-panel-onboard" : "auth-panel-login"}
-            aria-labelledby={activeTab === "onboard" ? "auth-tab-onboard" : "auth-tab-login"}
-            aria-label={activeTab === "onboard" ? "Onboard" : "Login"}
+            role={activeMode === "apply" ? undefined : "tabpanel"}
+            id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
+            aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
+            aria-label={activeMode === "onboard" ? "Onboard" : activeMode === "login" ? "Login" : "Apply"}
             className="rounded-[1.46rem] border border-[#eaedf2] bg-[#fcfdff] p-[1rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.84)] sm:p-[1.04rem]"
           >
-            {activeTab === "onboard" ? (
+            {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
                 <p className="text-center text-sm text-[#7a8088]">Enter your access code to begin</p>
                 <label className="block text-sm text-[#5e646d]">
@@ -450,7 +460,7 @@ function AuthCard() {
                   VERIFY ACCESS CODE
                 </button>
               </div>
-            ) : (
+            ) : activeMode === "login" ? (
               <form
                 className="space-y-4"
                 onSubmit={(event) => {
@@ -502,17 +512,78 @@ function AuthCard() {
                   Continue with Google
                 </button>
               </form>
+            ) : (
+              <div className="space-y-[1.08rem]">
+                <p className="text-center text-sm text-[#7a8088]">
+                  Leave your email and intended use case. We will review it for early access.
+                </p>
+                <label className="block space-y-2 text-sm text-[#5f646d]">
+                  <span className="sr-only">Email address</span>
+                  <input
+                    type="email"
+                    aria-label="Email address"
+                    placeholder="Email address"
+                    className="w-full rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm text-[#20242b] outline-none transition placeholder:text-[#b0b6bf] focus:border-[#ebb284]"
+                  />
+                </label>
+                <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+                  <label className="block space-y-2 text-sm text-[#5f646d]">
+                    <span className="sr-only">Verification code</span>
+                    <input
+                      aria-label="Verification code"
+                      placeholder="Verification code"
+                      className="w-full rounded-[1.1rem] border border-[#eceff3] bg-white px-4 py-3 text-sm text-[#20242b] outline-none transition placeholder:text-[#b0b6bf] focus:border-[#ebb284]"
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    disabled
+                    className="self-end rounded-[1.1rem] border border-[#edf0f4] bg-[#f4f6f9] px-4 py-3 text-sm font-medium uppercase tracking-[0.12em] text-[#b4bac3]"
+                  >
+                    SEND CODE
+                  </button>
+                </div>
+                <label className="block space-y-2 text-sm text-[#5f646d]">
+                  <span className="sr-only">Tell us what you research and how SciClaw would help.</span>
+                  <textarea
+                    aria-label="Tell us what you research and how SciClaw would help."
+                    placeholder="Tell us what you research and how SciClaw would help."
+                    className="min-h-[7.75rem] w-full rounded-[1.2rem] border border-[#eceff3] bg-white px-4 py-3 text-sm leading-6 text-[#20242b] outline-none transition placeholder:text-[#b0b6bf] focus:border-[#ebb284]"
+                  />
+                </label>
+                <button
+                  type="button"
+                  disabled
+                  className="w-full rounded-[1.2rem] bg-[#f2a467] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_16px_32px_rgba(242,164,103,0.3)] transition disabled:cursor-not-allowed disabled:bg-[#f2a467] disabled:text-white"
+                >
+                  ENTER YOUR EMAIL FIRST
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveMode(returnMode)}
+                  className="inline-flex w-full items-center justify-center rounded-[1.2rem] border border-[#eceff3] bg-white px-4 py-3 text-sm font-medium lowercase text-[#626973] shadow-[0_12px_24px_rgba(15,23,42,0.04)] transition hover:border-[#dce1e8]"
+                >
+                  back
+                </button>
+              </div>
             )}
           </div>
 
-          <Link
-            href="/privacy"
-            className="inline-flex w-full items-center justify-center rounded-[1.2rem] border border-[#f4d9c3] bg-[#fdf4ec] px-4 py-3 text-sm font-medium text-[#87522e] transition hover:border-[#efcaa9] hover:bg-[#fcedde]"
-          >
-            No account yet? Apply Now →
-          </Link>
+          {activeMode !== "apply" ? (
+            <button
+              type="button"
+              onClick={() => {
+                setActiveMode("apply");
+                setReturnMode(activeMode === "login" ? "login" : "onboard");
+                onApplyNow();
+              }}
+              className="inline-flex w-full items-center justify-center rounded-[1.2rem] border border-[#f4d9c3] bg-[#fdf4ec] px-4 py-3 text-sm font-medium text-[#87522e] transition hover:border-[#efcaa9] hover:bg-[#fcedde]"
+            >
+              No account yet? Apply Now →
+            </button>
+          ) : null}
 
-          {activeTab === "login" ? (
+          {activeMode === "login" ? (
             <p className="text-center text-xs leading-5 text-[#9097a1]">
               By continuing, you agree to SciClaw&apos;s{" "}
               <Link href="/privacy" className="font-medium text-[#626973] underline-offset-4 hover:underline">
@@ -717,6 +788,10 @@ export function LandingPage() {
     setActiveCaseIndex(1);
   };
 
+  const handleApplyNow = () => {
+    setActiveCaseIndex(1);
+  };
+
   return (
     <main
       id="top"
@@ -744,7 +819,7 @@ export function LandingPage() {
               onSelect={setActiveFeatureIndex}
               onGetStarted={handleGetStarted}
             />
-            <AuthCard />
+            <AuthCard onApplyNow={handleApplyNow} />
           </div>
         </div>
 

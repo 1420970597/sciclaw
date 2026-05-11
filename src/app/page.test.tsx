@@ -75,19 +75,36 @@ describe("Home landing page", () => {
     expect(screen.getByRole("complementary")).toHaveClass("max-w-[318px]");
   });
 
-  it("switches auth tabs and updates the visible panel", () => {
+  it("opens the early-access apply flow inline and matches the live apply-now state", () => {
+    render(<Home />);
+
+    fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
+
+    expect(screen.getByText(/leave your email and intended use case\. we will review it for early access\./i)).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /tell us what you research and how sciclaw would help\./i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^send code$/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
+    expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
+  });
+
+  it("preserves the previous auth mode when leaving the apply flow", () => {
     render(<Home />);
 
     fireEvent.click(screen.getByRole("tab", { name: /login/i }));
+    expect(screen.getByRole("tabpanel", { name: /login/i })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
+    expect(screen.getByText(/leave your email and intended use case\. we will review it for early access\./i)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /^back$/i }));
 
     expect(screen.getByRole("tabpanel", { name: /login/i })).toBeInTheDocument();
-    expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
-    expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /send code/i })).toBeDisabled();
     expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeDisabled();
-    expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /privacy policy/i })).toHaveAttribute("href", "/privacy");
-    expect(screen.queryByDisplayValue(/sc-xxxxxxxx/i)).not.toBeInTheDocument();
   });
 
   it("switches feature panels when a network node is selected", () => {
