@@ -272,14 +272,15 @@ function FeaturePreview({
 
         <div className="mt-7 rounded-[1.55rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-[1.08rem] pb-[1.42rem] pt-[1.34rem] sm:px-[1.4rem] sm:pb-[1.58rem]">
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
-            <div>
-              <p className="text-sm font-semibold text-[#272a30]">{previewContent.heading}</p>
-              <p className="mt-1 text-xs text-[#9da4ad]" aria-hidden>
-                <span className="block h-[1.5px] w-[7.5rem] rounded-full bg-[#d8dde4]" />
-              </p>
+            <div aria-hidden className="space-y-[0.42rem]">
+              <span className="block h-[1.5px] w-[8.4rem] rounded-full bg-[#d8dde4]" />
+              <span className="block h-[1.5px] w-[5.2rem] rounded-full bg-[#e7ebf0]" />
             </div>
-            <span className="rounded-full border border-[#f6d9c1] bg-[#fff6ef] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#e18c51]">
-              {previewContent.bodyLabel}
+            <span
+              aria-hidden
+              className="flex h-[1.82rem] w-[7.2rem] items-center justify-center rounded-full border border-[#f6d9c1] bg-[#fff6ef] px-3 py-1"
+            >
+              <span className="block h-[1.5px] w-[4.7rem] rounded-full bg-[#efc39d]" />
             </span>
           </div>
 
