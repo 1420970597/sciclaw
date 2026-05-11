@@ -70,7 +70,7 @@ describe("Chat app shell placeholder", () => {
     const utilityBandElement = utilityBand as HTMLElement;
     expect(within(taskLaneCard as HTMLElement).getByText(/^1 blocker$/i)).toBeInTheDocument();
     expect(within(utilityBandElement).getByText(/^1 blocker$/i)).toBeInTheDocument();
-    expect(utilityBandElement).toHaveClass("xl:grid-cols-[repeat(3,minmax(0,13.2rem))]");
+    expect(utilityBandElement).toHaveClass("xl:grid-cols-[repeat(3,minmax(0,13.6rem))]");
     expect(screen.getByText(/patent compare/i)).toBeInTheDocument();
     expect(screen.getByText(/clinical replay/i)).toBeInTheDocument();
     expect(screen.getByText(/reg memo final/i)).toBeInTheDocument();
@@ -118,8 +118,8 @@ describe("Chat app shell placeholder", () => {
     expect(sessionFlowSection).toHaveTextContent(/project & session flow staged between docs and the future workspace/i);
     const primaryTimelineGrid = sessionFlowSection?.querySelector(".mt-6.grid");
     expect(primaryTimelineGrid).not.toBeNull();
-    expect(primaryTimelineGrid).toHaveClass("xl:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)]");
-    expect(primaryTimelineGrid).toHaveClass("2xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)]");
+    expect(primaryTimelineGrid).toHaveClass("xl:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)]");
+    expect(primaryTimelineGrid).toHaveClass("2xl:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]");
     expect(sessionFlowScope.getByTestId("chat-flow-card-grid")).toHaveClass(
       "xl:grid-cols-[repeat(3,minmax(0,14.6rem))]",
     );
