@@ -17,6 +17,9 @@ describe("Home landing page", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
+    const onboardAccessCode = screen.getByRole("textbox", { name: /access code/i });
+    expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
+    expect(onboardAccessCode).toHaveValue("");
 
     const heroScope = within(defaultHeroSection as HTMLElement);
     expect(heroScope.queryByText(/research workspace preview/i)).not.toBeInTheDocument();

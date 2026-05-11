@@ -18,6 +18,7 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
     const onboardAccessCode = screen.getByRole("textbox", { name: /access code/i });
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
+    expect(onboardAccessCode).toHaveValue("");
     expect(screen.getByRole("button", { name: /verify access code/i })).toBeDisabled();
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
