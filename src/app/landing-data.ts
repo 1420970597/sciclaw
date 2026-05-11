@@ -524,6 +524,7 @@ export const helpArticles: HelpArticle[] = [
     slug: "projects",
     index: "02",
     title: "Projects",
+    navTitle: "Project & Session",
     description:
       "Project hubs tie together uploaded sources, hypothesis lanes, and handoff targets so every session can stay grounded in the same working context.",
     icon: "folder",
@@ -748,6 +749,7 @@ export const helpArticles: HelpArticle[] = [
     slug: "persona",
     index: "08",
     title: "Persona",
+    navTitle: "AI Persona",
     description:
       "Persona settings describe how the assistant can be steered for different scientific workflows without breaking the calm app-shell narrative.",
     icon: "persona",
@@ -779,6 +781,7 @@ export const helpArticles: HelpArticle[] = [
     slug: "im",
     index: "09",
     title: "IM",
+    navTitle: "IM Connection",
     description:
       "External workflow delivery explains how results leave the shell: notifications, routing, and lightweight collaboration handoff.",
     icon: "send",

@@ -30,11 +30,11 @@ describe("Help article page", () => {
     expect(docsNav).toBeInTheDocument();
     expect(screen.getByText(/search…/i)).toBeInTheDocument();
     expect(screen.getByText(/on this page/i)).toBeInTheDocument();
-    expect(within(docsNav).getByRole("link", { name: /02 projects/i })).toHaveAttribute(
+    expect(within(docsNav).getByRole("link", { name: /02 project & session/i })).toHaveAttribute(
       "href",
       "/help/projects",
     );
-    expect(within(docsNav).getByRole("link", { name: /08 persona/i })).toBeInTheDocument();
+    expect(within(docsNav).getByRole("link", { name: /08 ai persona/i })).toBeInTheDocument();
     expect(screen.getByText(/use sciclaw to move from a rough research question to a validated working plan without losing the source trail/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^what is sciclaw$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /what is sciclaw/i })).toHaveAttribute("href", "#what-is-sciclaw");
@@ -64,7 +64,7 @@ describe("Help article page", () => {
     expect(screen.getAllByText(/^10$/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/settings stays intentionally light: appearance, language, and shell controls echo the public header while preserving the app-like continuity of the route family/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^shell preferences$/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /09 im/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /09 im connection/i })).toHaveAttribute(
       "href",
       "/help/im",
     );
