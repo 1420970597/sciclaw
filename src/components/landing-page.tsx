@@ -166,20 +166,26 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           return (
             <div key={node.id}>
               <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#7691a4] via-[#d9e3eb] to-transparent opacity-[0.86]`} aria-hidden />
-              <button
-                type="button"
-                onClick={() => {
-                  if (nextIndex >= 0) {
-                    onSelect(nextIndex);
-                  }
-                }}
-                className={`absolute ${node.position} flex flex-col items-center gap-[1.02rem] text-center transition hover:scale-[1.02]`}
-              >
-                <span className={`flex items-center justify-center rounded-full border text-[0.96rem] font-semibold ${isActive ? node.activeRingClass : node.ringClass}`}>
-                  {node.icon}
+              <div className={`absolute ${node.position} flex flex-col items-center gap-[1.02rem] text-center`}>
+                <button
+                  type="button"
+                  data-testid={`feature-node-${node.id}`}
+                  aria-label={node.label}
+                  onClick={() => {
+                    if (nextIndex >= 0) {
+                      onSelect(nextIndex);
+                    }
+                  }}
+                  className="flex items-center justify-center rounded-full transition hover:scale-[1.02]"
+                >
+                  <span className={`flex items-center justify-center rounded-full border text-[0.96rem] font-semibold ${isActive ? node.activeRingClass : node.ringClass}`}>
+                    {node.icon}
+                  </span>
+                </button>
+                <span className={`text-[10.8px] font-medium leading-[2.06] tracking-[0.03em] sm:text-[0.8rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>
+                  {node.label}
                 </span>
-                <span className={`text-[10.8px] font-medium leading-[2.06] tracking-[0.03em] sm:text-[0.8rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>{node.label}</span>
-              </button>
+              </div>
             </div>
           );
         })}
@@ -380,6 +386,7 @@ function FeatureRotator({
   return (
     <section
       id="feature-rotator"
+      data-testid="feature-rotator"
       className="grid gap-4 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:items-center lg:gap-[0.22rem] xl:grid-cols-[minmax(0,334px)_minmax(0,1fr)] xl:gap-[0.34rem]"
     >
       <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-[0.78rem] lg:px-0 xl:-mr-[0.92rem] xl:px-1">

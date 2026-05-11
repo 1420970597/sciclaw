@@ -45,8 +45,8 @@ describe("Home landing page", () => {
   it("renders the public-inspired landing structure", () => {
     render(<Home />);
 
-    const featureRotator = screen.getByRole("button", { name: /^文 literature analysis$/i }).closest("section");
-    expect(screen.queryByRole("button", { name: /^研 autonomous execution$/i })).not.toBeInTheDocument();
+    const featureRotator = screen.getByTestId("feature-rotator");
+    expect(screen.queryByRole("button", { name: /^autonomous execution$/i })).not.toBeInTheDocument();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("lg:gap-[0.22rem]");
     expect(featureRotator).toHaveClass("xl:gap-[0.34rem]");
@@ -211,9 +211,9 @@ describe("Home landing page", () => {
     const primaryNav = screen.getByRole("navigation", { name: /primary/i });
     const settingsTrigger = within(primaryNav).getByRole("button", { name: /settings/i });
     const triggerRow = settingsTrigger.parentElement?.parentElement;
-    const literatureNode = screen.getByRole("button", { name: /^文 literature analysis$/i });
-    const dataMiningNode = screen.getByRole("button", { name: /^数 data mining$/i });
-    const outcomeNode = screen.getByRole("button", { name: /^果 outcome present$/i });
+    const literatureNode = screen.getByTestId("feature-node-literature-analysis");
+    const dataMiningNode = screen.getByTestId("feature-node-data-mining");
+    const outcomeNode = screen.getByTestId("feature-node-outcome-present");
     const landingHero = screen.getByTestId("landing-hero");
 
     expect(within(primaryNav).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
@@ -239,18 +239,22 @@ describe("Home landing page", () => {
     expect(settingsMenu).toHaveTextContent(/light workspace previews/i);
     expect(settingsMenu).toHaveTextContent(/english-first public shell/i);
 
-    expect(literatureNode.className).toContain("left-[47.65%]");
-    expect(dataMiningNode.className).toContain("left-[48.1%]");
-    expect(outcomeNode.className).toContain("right-[15.95%]");
-    expect(literatureNode.parentElement?.querySelector("span[class*='w-[11.78%]']")).not.toBeNull();
-    expect(dataMiningNode.parentElement?.querySelector("span[class*='w-[11.86%]']")).not.toBeNull();
-    expect(outcomeNode.parentElement?.querySelector("span[class*='w-[11.58%]']")).not.toBeNull();
-    expect(literatureNode).toHaveClass("gap-[1.02rem]");
-    expect(dataMiningNode).toHaveClass("gap-[1.02rem]");
-    expect(outcomeNode).toHaveClass("gap-[1.02rem]");
-    expect(literatureNode).toHaveTextContent(/literature analysis/i);
-    expect(dataMiningNode).toHaveTextContent(/data mining/i);
-    expect(outcomeNode).toHaveTextContent(/outcome present/i);
+    const literatureNodeWrapper = literatureNode.parentElement;
+    const dataMiningNodeWrapper = dataMiningNode.parentElement;
+    const outcomeNodeWrapper = outcomeNode.parentElement;
+
+    expect(literatureNodeWrapper?.className).toContain("left-[47.65%]");
+    expect(dataMiningNodeWrapper?.className).toContain("left-[48.1%]");
+    expect(outcomeNodeWrapper?.className).toContain("right-[15.95%]");
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.78%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.86%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.58%]']")).not.toBeNull();
+    expect(literatureNodeWrapper).toHaveClass("gap-[1.02rem]");
+    expect(dataMiningNodeWrapper).toHaveClass("gap-[1.02rem]");
+    expect(outcomeNodeWrapper).toHaveClass("gap-[1.02rem]");
+    expect(literatureNode).toHaveAttribute("aria-label", "Literature Analysis");
+    expect(dataMiningNode).toHaveAttribute("aria-label", "Data Mining");
+    expect(outcomeNode).toHaveAttribute("aria-label", "Outcome Present");
     expect(literatureNode.firstElementChild).toHaveClass("h-[4.9rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.78rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[4.78rem]");
@@ -280,9 +284,12 @@ describe("Home landing page", () => {
     expect(chartRow).toHaveClass("gap-[4.52rem]");
     expect(chartRow).toHaveClass("sm:gap-[4.68rem]");
 
-    const literatureNodeLabel = within(literatureNode).getByText(/literature analysis/i);
-    const dataMiningNodeLabel = within(dataMiningNode).getByText(/data mining/i);
-    const outcomeNodeLabel = within(outcomeNode).getByText(/outcome present/i);
+    const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
+    const dataMiningNodeLabel = screen.getByText(/^data mining$/i);
+    const outcomeNodeLabel = screen.getByText(/^outcome present$/i);
+    expect(literatureNodeLabel.parentElement).toBe(literatureNodeWrapper);
+    expect(dataMiningNodeLabel.parentElement).toBe(dataMiningNodeWrapper);
+    expect(outcomeNodeLabel.parentElement).toBe(outcomeNodeWrapper);
     expect(literatureNodeLabel).toHaveClass("text-[10.8px]");
     expect(literatureNodeLabel).toHaveClass("leading-[2.06]");
     expect(literatureNodeLabel).toHaveClass("tracking-[0.03em]");
