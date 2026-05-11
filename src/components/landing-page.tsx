@@ -419,7 +419,7 @@ function AuthCard() {
                   disabled
                   className="w-full rounded-[1.2rem] border border-[#eef1f4] bg-[#f3f5f8] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#b7bcc5]"
                 >
-                  Verify access code
+                  VERIFY ACCESS CODE
                 </button>
               </div>
             ) : (
