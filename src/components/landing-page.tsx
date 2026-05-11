@@ -100,7 +100,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
     {
       id: "literature-analysis",
       label: "Literature Analysis",
-      icon: "文",
+      icon: <span className="inline-block h-[0.72rem] w-[0.72rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.16)]" aria-hidden />,
       position: "left-[47.65%] top-[11.9%] sm:left-[47.65%] sm:top-[11.9%]",
       lineClass: "left-[49.08%] top-[27.54%] h-[2.18px] w-[11.78%] origin-left -rotate-[24deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
@@ -111,7 +111,13 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
     {
       id: "data-mining",
       label: "Data Mining",
-      icon: "数",
+      icon: (
+        <span className="relative inline-block h-[0.78rem] w-[0.78rem]" aria-hidden>
+          <span className="absolute left-0 top-[0.34rem] h-[2px] w-full rounded-full bg-current/90" />
+          <span className="absolute left-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
+          <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
+        </span>
+      ),
       position: "left-[48.1%] top-[49.7%] sm:left-[48.1%] sm:top-[49.7%]",
       lineClass: "left-[49.1%] top-[53.02%] h-[2.18px] w-[11.86%] origin-left rotate-[15deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
@@ -122,7 +128,12 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
     {
       id: "outcome-present",
       label: "Outcome Present",
-      icon: "果",
+      icon: (
+        <span className="relative inline-block h-[0.82rem] w-[0.82rem]" aria-hidden>
+          <span className="absolute inset-0 rounded-full border-[1.7px] border-current/90" />
+          <span className="absolute inset-[0.22rem] rounded-full bg-current/90" />
+        </span>
+      ),
       position: "right-[15.95%] top-[11.4%] sm:right-[15.95%] sm:top-[11.4%]",
       lineClass: "left-[49.12%] top-[27.56%] h-[2.18px] w-[11.58%] origin-left rotate-[22deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
@@ -136,12 +147,40 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
   const activeFeature = featureItems[activeIndex] ?? featureItems[0];
   const centerNode =
     activeFeature.id === "autonomous-execution"
-      ? { icon: "研", label: "Autonomous Execution" }
+      ? {
+          icon: (
+            <span className="relative inline-block h-[0.98rem] w-[0.98rem]" aria-hidden>
+              <span className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 rounded-full bg-current/90" />
+              <span className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 rounded-full bg-current/90" />
+            </span>
+          ),
+          label: "Autonomous Execution",
+        }
       : activeFeature.id === "data-mining"
-        ? { icon: "数", label: "Data Mining" }
+        ? {
+            icon: (
+              <span className="relative inline-block h-[0.92rem] w-[0.92rem]" aria-hidden>
+                <span className="absolute bottom-0 left-0 h-[45%] w-[2px] rounded-full bg-current/90" />
+                <span className="absolute bottom-0 left-[0.34rem] h-[70%] w-[2px] rounded-full bg-current/90" />
+                <span className="absolute bottom-0 right-0 h-full w-[2px] rounded-full bg-current/90" />
+              </span>
+            ),
+            label: "Data Mining",
+          }
         : activeFeature.id === "outcome-present"
-          ? { icon: "果", label: "Outcome Present" }
-          : { icon: "文", label: "Literature Analysis" };
+          ? {
+              icon: (
+                <span className="relative inline-block h-[0.92rem] w-[0.92rem]" aria-hidden>
+                  <span className="absolute inset-0 rounded-full border-[1.7px] border-current/90" />
+                  <span className="absolute inset-[0.18rem] rounded-full border-[1.6px] border-current/60" />
+                </span>
+              ),
+              label: "Outcome Present",
+            }
+          : {
+              icon: <span className="inline-block h-[0.82rem] w-[0.82rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.16)]" aria-hidden />,
+              label: "Literature Analysis",
+            };
 
   return (
     <div className="relative min-h-[352px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_50%_49.3%,_rgba(255,255,255,0.87),_rgba(255,255,255,0)_60.5%)] sm:min-h-[404px]">
