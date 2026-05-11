@@ -534,29 +534,28 @@ function BestCases({
   activeIndex: number;
   onSelect: (index: number) => void;
 }) {
-  const activeCase = bestCases[activeIndex];
   const carouselFrames = [
     {
-      summaryTitle: "Automated Report Generation",
-      summaryText:
+      summaryTitle: bestCases[0]?.title ?? "Automated Report Generation",
+      summaryText: bestCases[0]?.description ??
         "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
       bars: [48, 70, 98],
     },
     {
-      summaryTitle: "Peer Review Response Support",
-      summaryText:
+      summaryTitle: bestCases[1]?.title ?? "Peer Review Response Support",
+      summaryText: bestCases[1]?.description ??
         "Automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments, helping researchers quickly draft evidence-based replies.",
       bars: [64, 96, 118],
     },
     {
-      summaryTitle: "Accelerated Paper Reproduction",
-      summaryText:
+      summaryTitle: bestCases[2]?.title ?? "Accelerated Paper Reproduction",
+      summaryText: bestCases[2]?.description ??
         "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
       bars: [72, 106, 82],
     },
     {
-      summaryTitle: "Deep Literature Analysis",
-      summaryText:
+      summaryTitle: bestCases[3]?.title ?? "Deep Literature Analysis",
+      summaryText: bestCases[3]?.description ??
         "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
       bars: [58, 78, 108],
     },
@@ -653,8 +652,8 @@ function BestCases({
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ec8a44]" aria-label={`Slide ${String(activeIndex + 1).padStart(2, "0")} of ${String(bestCases.length).padStart(2, "0")}`}>
                   {String(activeIndex + 1).padStart(2, "0")} / {String(bestCases.length).padStart(2, "0")}
                 </p>
-                <h3 className="mt-4 text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.1rem]">{activeCase.title}</h3>
-                <p className="mt-4 max-w-[390px] text-[0.98rem] leading-7 text-[#6c727b] sm:text-[1.02rem]">{activeCase.description}</p>
+                <h3 className="mt-4 text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.1rem]">{activeFrame.summaryTitle}</h3>
+                <p className="mt-4 max-w-[390px] text-[0.98rem] leading-7 text-[#6c727b] sm:text-[1.02rem]">{activeFrame.summaryText}</p>
               </div>
 
               <div className="flex flex-wrap items-center gap-3">

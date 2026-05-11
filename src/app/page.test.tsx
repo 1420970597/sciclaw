@@ -318,11 +318,9 @@ describe("Home landing page", () => {
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
     expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        /automatically retrieves relevant data, prior task records, and manuscript context to speed up evidence-backed reviewer responses/i,
-      ),
-    ).toBeInTheDocument();
+    expect(bestCasesSection).toHaveTextContent(
+      /automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments, helping researchers quickly draft evidence-based replies/i,
+    );
     expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /previous/i }));

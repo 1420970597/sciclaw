@@ -212,7 +212,7 @@ export const bestCases: BestCase[] = [
   {
     title: "Peer Review Response Support",
     description:
-      "Automatically retrieves relevant data, prior task records, and manuscript context to speed up evidence-backed reviewer responses.",
+      "Automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments, helping researchers quickly draft evidence-based replies.",
     tags: ["Peer review", "Task records", "Evidence-backed response"],
     statLabel: "Response turnaround",
     statValue: "Faster",
