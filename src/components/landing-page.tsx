@@ -279,13 +279,17 @@ function FeaturePreview({ activeIndex }: { activeIndex: number }) {
                   <span className="block h-2 w-7/12 rounded-full bg-[#f4d3bb]" />
                 </div>
               </div>
-              <div className="grid gap-[1.18rem] sm:grid-cols-2">
+              <div className="grid gap-[1.18rem] sm:grid-cols-2" aria-hidden>
                 {previewContent.chartLabels.slice(0, 2).map((label) => (
                   <div
                     key={`${activeFeature.id}-${label}`}
-                    className="rounded-[1.18rem] border border-[#efe3d7] bg-white/86 px-4 py-[1.06rem] text-[11.4px] font-medium uppercase tracking-[0.218em] text-[#64584b] shadow-[0_8px_16px_rgba(15,23,42,0.026)]"
+                    className="rounded-[1.18rem] border border-[#efe3d7] bg-white/86 px-4 py-[1.06rem] shadow-[0_8px_16px_rgba(15,23,42,0.026)]"
                   >
-                    {label}
+                    <div className="space-y-[0.92rem]">
+                      <span className="block h-[1.5px] w-[4.8rem] rounded-full bg-[#eadccf]" />
+                      <span className="block h-[1.5px] w-full rounded-full bg-[#eceff3]" />
+                      <span className="block h-[1.5px] w-10/12 rounded-full bg-[#eceff3]" />
+                    </div>
                   </div>
                 ))}
               </div>

@@ -30,8 +30,8 @@ describe("Home landing page", () => {
     expect(heroScope.queryByText(/^summary$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/^evidence$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/^preview$/i)).not.toBeInTheDocument();
-    expect(heroScope.getAllByText(/^方法论$/i)).toHaveLength(2);
-    expect(heroScope.getAllByText(/^结论$/i)).toHaveLength(2);
+    expect(heroScope.getByText(/^方法论$/i)).toBeInTheDocument();
+    expect(heroScope.getByText(/^结论$/i)).toBeInTheDocument();
     expect(heroScope.getByText(/^数据$/i)).toBeInTheDocument();
     expect(heroScope.queryByText(/^证据$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/33%/i)).not.toBeInTheDocument();
@@ -55,7 +55,7 @@ describe("Home landing page", () => {
       ),
     ).toBeInTheDocument();
     expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
-    expect(screen.getAllByText(/^结论$/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText(/^结论$/i)).toBeInTheDocument();
     expect(screen.getAllByText(/autonomous research/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("link", { name: /get started preview/i })).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
