@@ -504,43 +504,27 @@ function BestCases() {
   const activeCase = bestCases[activeIndex];
   const carouselFrames = [
     {
-      eyebrow: "Foundry",
-      tag: "Draft 01",
       summaryTitle: "Automated Report Generation",
       summaryText:
         "Automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials, significantly improving the efficiency of research reporting.",
-      chipA: "Slides handoff",
-      chipB: "Evidence appendix",
       bars: [48, 70, 98],
     },
     {
-      eyebrow: "Peer Review",
-      tag: "Live review",
       summaryTitle: "Peer Review Response Support",
       summaryText:
         "Automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments, helping researchers quickly draft evidence-based replies.",
-      chipA: "Reviewer tasks",
-      chipB: "Evidence retrieval",
       bars: [64, 96, 118],
     },
     {
-      eyebrow: "Reproduction",
-      tag: "Live workflow",
       summaryTitle: "Accelerated Paper Reproduction",
       summaryText:
         "Provides end-to-end support for environment setup, workflow construction, and error handling in paper reproduction, enabling faster validation of methods and results.",
-      chipA: "Environment setup",
-      chipB: "Workflow construction",
       bars: [72, 106, 82],
     },
     {
-      eyebrow: "Literature",
-      tag: "Autonomous",
       summaryTitle: "Deep Literature Analysis",
       summaryText:
         "Upload a PDF, and SciClaw automatically extracts the core arguments, research methods, and key data, then independently designs plans to reproduce and extend the published results.",
-      chipA: "Core arguments",
-      chipB: "Key data",
       bars: [58, 78, 108],
     },
   ] as const;
