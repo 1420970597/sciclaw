@@ -464,11 +464,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[278px] rounded-[1.88rem] border border-[#f1f4f7] bg-[#fdfdff] px-[0.76rem] py-[0.82rem] shadow-[0_6px_14px_rgba(15,23,42,0.022),0_2px_7px_rgba(241,180,135,0.014)] sm:px-[0.8rem] sm:py-[0.86rem] lg:mt-[2.42rem] xl:mt-[2.64rem]"
+      className="mx-auto w-full max-w-[272px] rounded-[1.84rem] border border-[#f3f5f8] bg-[#fcfdff] px-[0.72rem] py-[0.78rem] shadow-[0_5px_12px_rgba(15,23,42,0.019),0_2px_6px_rgba(241,180,135,0.012)] sm:px-[0.76rem] sm:py-[0.82rem] lg:mt-[2.5rem] xl:mt-[2.72rem]"
     >
       <div className="mx-auto w-full max-w-[294px]">
-        <div className="rounded-[1.3rem] border border-[#f2f5f8] bg-white/95 p-[0.72rem] shadow-[0_5px_12px_rgba(15,23,42,0.026)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.96rem] bg-[#f4f6f9] p-[0.62rem] text-sm text-[#6b7480]">
+        <div className="rounded-[1.24rem] border border-[#f4f6f8] bg-white/94 p-[0.66rem] shadow-[0_4px_10px_rgba(15,23,42,0.021)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.9rem] bg-[#f4f6f9] p-[0.56rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -487,7 +487,7 @@ function AuthCard({
                     setActiveMode(tab.key as AuthTab);
                     setReturnMode(tab.key as AuthTab);
                   }}
-                  className={`rounded-[0.9rem] px-4 py-2.2 font-medium transition ${
+                  className={`rounded-[0.84rem] px-4 py-[0.5rem] font-medium transition ${
                     selected
                       ? "bg-[#efc095] text-[#573928] shadow-[0_7px_14px_rgba(241,176,126,0.16)]"
                       : "text-[#6e7682] hover:text-[#222933]"
@@ -505,7 +505,7 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.34rem] border border-[#f0f3f6] bg-[#fdfefe] p-[0.84rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_5px_13px_rgba(15,23,42,0.018)] sm:p-[0.88rem]"
+            className="rounded-[1.28rem] border border-[#f1f4f7] bg-[#fdfefe] p-[0.8rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_4px_11px_rgba(15,23,42,0.015)] sm:p-[0.84rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_288px] lg:items-start lg:gap-[0.26rem] xl:grid-cols-[minmax(0,1.075fr)_288px] xl:gap-[0.38rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_284px] lg:items-start lg:gap-[0.2rem] xl:grid-cols-[minmax(0,1.085fr)_284px] xl:gap-[0.32rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
