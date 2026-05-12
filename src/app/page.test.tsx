@@ -344,11 +344,18 @@ describe("Home landing page", () => {
     expect(outcomeNodeLabel).toHaveClass("left-[4.96rem]");
     expect(outcomeNodeLabel).toHaveClass("text-left");
 
-    const description = within(landingHero).getByText(
-      /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
-    );
     const getStartedButton = within(landingHero).getByRole("button", { name: /^get started$/i });
-    expect(description).toBeInTheDocument();
+    expect(
+      within(landingHero).getByText(
+        /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
+      ),
+    ).toBeInTheDocument();
+    expect(getStartedButton).toBeInTheDocument();
+    const getStartedIcon = getStartedButton.querySelector("svg");
+    expect(getStartedIcon).not.toBeNull();
+    expect(getStartedIcon).toHaveClass("h-[0.86rem]");
+    expect(getStartedIcon).toHaveClass("w-[0.86rem]");
+    expect(getStartedButton).toHaveClass("gap-2");
 
     fireEvent.click(getStartedButton);
 
