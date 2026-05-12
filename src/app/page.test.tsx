@@ -226,6 +226,16 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
     expect(primaryNav.parentElement?.parentElement).toHaveClass("pt-[0.46rem]");
     expect(primaryNav.parentElement?.parentElement).toHaveClass("sm:pt-[0.62rem]");
+    [
+      within(primaryNav).getByRole("button", { name: /user guide/i }),
+      within(primaryNav).getByRole("button", { name: /contact us/i }),
+      settingsTrigger,
+    ].forEach((trigger) => {
+      const icon = trigger.querySelector("svg");
+      expect(icon).not.toBeNull();
+      expect(icon).toHaveClass("h-[1.06rem]");
+      expect(icon).toHaveClass("w-[1.06rem]");
+    });
 
     fireEvent.click(settingsTrigger);
 

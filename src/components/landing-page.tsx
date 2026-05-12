@@ -11,7 +11,7 @@ import {
 
 type AuthMode = AuthTab | "apply";
 
-function GuideIcon({ className = "h-[1.18rem] w-[1.18rem]" }: { className?: string }) {
+function GuideIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
       <path d="M5.5 6.5A2.5 2.5 0 0 1 8 4h9v14H8a2.5 2.5 0 0 0-2.5 2.5V6.5Z" />
@@ -21,7 +21,7 @@ function GuideIcon({ className = "h-[1.18rem] w-[1.18rem]" }: { className?: stri
   );
 }
 
-function ContactIcon({ className = "h-[1.18rem] w-[1.18rem]" }: { className?: string }) {
+function ContactIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
       <path d="M6.75 11.75a4.75 4.75 0 0 1 9.5 0" />
@@ -33,7 +33,7 @@ function ContactIcon({ className = "h-[1.18rem] w-[1.18rem]" }: { className?: st
   );
 }
 
-function SettingsIcon({ className = "h-[1.18rem] w-[1.18rem]" }: { className?: string }) {
+function SettingsIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
       <circle cx="12" cy="12" r="3" />
