@@ -82,16 +82,16 @@ describe("Home landing page", () => {
 
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_314px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_308px]");
     expect(hero).toHaveClass("lg:items-start");
-    expect(hero).toHaveClass("lg:gap-[1.06rem]");
-    expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.03fr)_314px]");
-    expect(hero).toHaveClass("xl:gap-[1.28rem]");
-    expect(authCard).toHaveClass("max-w-[314px]");
-    expect(authCard).toHaveClass("bg-white");
-    expect(authCard).toHaveClass("border-[#e6ebf1]");
-    expect(authCard).toHaveClass("lg:mt-[0.86rem]");
-    expect(authCard).toHaveClass("xl:mt-[1rem]");
+    expect(hero).toHaveClass("lg:gap-[0.84rem]");
+    expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.04fr)_308px]");
+    expect(hero).toHaveClass("xl:gap-[1.02rem]");
+    expect(authCard).toHaveClass("max-w-[308px]");
+    expect(authCard).toHaveClass("bg-[#fcfdff]");
+    expect(authCard).toHaveClass("border-[#edf1f5]");
+    expect(authCard).toHaveClass("lg:mt-[1.18rem]");
+    expect(authCard).toHaveClass("xl:mt-[1.34rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
