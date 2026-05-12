@@ -8,6 +8,9 @@ describe("Chat route public landing clone", () => {
     const centerNode = screen.getByTestId("feature-node-center");
 
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
+    const headerWordmark = screen.getAllByText(/^Sci$/)[0]?.parentElement;
+    expect(headerWordmark).not.toBeNull();
+    expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
     expect(screen.getAllByText(/ai co-worker for scientific research\./i).length).toBeGreaterThanOrEqual(1);
     expect(
       screen.getByText(

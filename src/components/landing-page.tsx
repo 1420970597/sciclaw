@@ -87,7 +87,10 @@ function Header() {
 
   return (
     <header className="pt-[0.46rem] sm:pt-[0.62rem]">
-      <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-[1.95rem] xl:px-[2.18rem]">
+      <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between px-5 sm:px-7 lg:px-[1.95rem] xl:px-[2.18rem]">
+        <div className="pr-4 text-[1.02rem] font-semibold tracking-[-0.05em] text-[#1f232a] sm:text-[1.08rem]">
+          Sci<span className="text-[#eb8a3c]">Claw</span>
+        </div>
         <div data-testid="landing-utility-row" className="flex items-center gap-[0.62rem] pr-[1.72rem] sm:gap-[0.78rem] sm:pr-[1.72rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}

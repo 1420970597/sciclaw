@@ -59,6 +59,9 @@ describe("Home landing page", () => {
     expect(networkShell).toHaveClass("lg:-mr-[0.18rem]");
     expect(networkShell).toHaveClass("xl:-mr-[0.28rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
+    const headerWordmark = screen.getAllByText(/^Sci$/)[0]?.parentElement;
+    expect(headerWordmark).not.toBeNull();
+    expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
     ).toBeGreaterThanOrEqual(1);
