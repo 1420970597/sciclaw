@@ -392,7 +392,7 @@ function FeaturePreview({
       </div>
 
       <div className="space-y-[1.02rem] px-1 pt-[0.35rem]">
-        <span className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
+        <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.92rem] md:text-[2.06rem]">
           {previewContent.heading}
         </h3>
@@ -855,7 +855,7 @@ export function LandingPage() {
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
             </h1>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.34em] text-[#8c919a] sm:text-xs">
+            <p className="text-[11px] font-semibold tracking-[0.34em] text-[#8c919a] sm:text-xs">
               AI co-worker for scientific research.
             </p>
             <p className="mx-auto max-w-[920px] text-base leading-8 tracking-[0.005em] text-[#60656f] sm:text-[1.22rem] sm:leading-9 lg:max-w-[980px]">
