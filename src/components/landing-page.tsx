@@ -464,7 +464,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[304px] rounded-[1.95rem] border border-[#eff3f7] bg-[#fdfefe] px-[0.94rem] py-[0.98rem] shadow-[0_8px_18px_rgba(15,23,42,0.018),0_3px_8px_rgba(241,180,135,0.026)] sm:px-[0.98rem] sm:py-[1rem] lg:mt-[1.82rem] xl:mt-[2.04rem]"
+      className="mx-auto w-full max-w-[300px] rounded-[1.95rem] border border-[#f1f4f8] bg-[#fefeff] px-[0.94rem] py-[0.98rem] shadow-[0_6px_14px_rgba(15,23,42,0.014),0_2px_6px_rgba(241,180,135,0.02)] sm:px-[0.98rem] sm:py-[1rem] lg:mt-[2.08rem] xl:mt-[2.32rem]"
     >
       <div className="mx-auto w-full max-w-[320px]">
         <div className="rounded-[1.42rem] border border-[#e9eef3] bg-white p-1 shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_304px] lg:items-start lg:gap-[0.7rem] xl:grid-cols-[minmax(0,1.055fr)_304px] xl:gap-[0.9rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-[0.62rem] xl:grid-cols-[minmax(0,1.065fr)_300px] xl:gap-[0.82rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
