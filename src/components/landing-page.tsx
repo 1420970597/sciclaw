@@ -444,8 +444,9 @@ function AuthCard({
   const [returnMode, setReturnMode] = useState<AuthTab>("onboard");
 
   return (
-    <aside
+    <div
       id="auth-card"
+      data-testid="landing-auth-card"
       className="mx-auto w-full max-w-[318px] rounded-[1.95rem] border border-[#e7ecf1] bg-white px-[0.98rem] py-[1.02rem] shadow-[0_16px_34px_rgba(15,23,42,0.048),0_10px_24px_rgba(241,180,135,0.07)] sm:px-[1.02rem] sm:py-[1.04rem]"
     >
       <div className="mx-auto w-full max-w-[320px]">
@@ -642,7 +643,7 @@ function AuthCard({
           ) : null}
         </div>
       </div>
-    </aside>
+    </div>
   );
 }
 

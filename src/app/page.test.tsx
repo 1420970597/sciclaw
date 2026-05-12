@@ -75,9 +75,10 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
+    const authCard = screen.getByTestId("landing-auth-card");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_318px]");
     expect(hero).toHaveClass("lg:gap-[1.96rem]");
-    expect(screen.getByRole("complementary")).toHaveClass("max-w-[318px]");
+    expect(authCard).toHaveClass("max-w-[318px]");
   });
 
   it("opens the early-access apply flow inline and matches the live apply-now state", () => {
