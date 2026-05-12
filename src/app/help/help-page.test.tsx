@@ -26,7 +26,7 @@ describe("Help article page", () => {
 
     const docsNav = screen.getByRole("navigation", { name: /user guide navigation/i });
 
-    expect(screen.getByRole("heading", { name: /getting started/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /getting started/i, level: 1 })).toBeInTheDocument();
     expect(docsNav).toBeInTheDocument();
     expect(screen.getByText(/^USER GUIDE$/)).toBeInTheDocument();
     expect(screen.getByText(/^SciClaw · USER GUIDE$/)).toBeInTheDocument();
