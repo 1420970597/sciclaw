@@ -464,11 +464,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[268px] rounded-[1.8rem] border border-[#f4f6f8] bg-[#fcfdff] px-[0.7rem] py-[0.76rem] shadow-[0_4px_10px_rgba(15,23,42,0.017),0_2px_5px_rgba(241,180,135,0.01)] sm:px-[0.74rem] sm:py-[0.8rem] lg:mt-[2.44rem] xl:mt-[2.64rem]"
+      className="mx-auto w-full max-w-[260px] rounded-[1.72rem] border border-[#f5f7f9] bg-[#fcfdff] px-[0.66rem] py-[0.72rem] shadow-[0_3px_8px_rgba(15,23,42,0.014),0_2px_4px_rgba(241,180,135,0.008)] sm:px-[0.7rem] sm:py-[0.76rem] lg:mt-[2.56rem] xl:mt-[2.76rem]"
     >
-      <div className="mx-auto w-full max-w-[290px]">
-        <div className="rounded-[1.2rem] border border-[#f5f7f9] bg-white/93 p-[0.62rem] shadow-[0_3px_8px_rgba(15,23,42,0.018)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.9rem] bg-[#f4f6f9] p-[0.56rem] text-sm text-[#6b7480]">
+      <div className="mx-auto w-full max-w-[282px]">
+        <div className="rounded-[1.16rem] border border-[#f7f8fa] bg-white/93 p-[0.56rem] shadow-[0_2px_6px_rgba(15,23,42,0.014)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.86rem] bg-[#f5f7fa] p-[0.52rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -505,7 +505,7 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.28rem] border border-[#f1f4f7] bg-[#fdfefe] p-[0.8rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_4px_11px_rgba(15,23,42,0.015)] sm:p-[0.84rem]"
+            className="rounded-[1.22rem] border border-[#f3f5f8] bg-[#fdfefe] p-[0.74rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_3px_8px_rgba(15,23,42,0.013)] sm:p-[0.78rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-[0.16rem] xl:grid-cols-[minmax(0,1.095fr)_280px] xl:gap-[0.26rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_272px] lg:items-start lg:gap-[0.1rem] xl:grid-cols-[minmax(0,1.11fr)_272px] xl:gap-[0.18rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
