@@ -93,12 +93,12 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("lg:gap-[0.62rem]");
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.065fr)_300px]");
     expect(hero).toHaveClass("xl:gap-[0.82rem]");
-    expect(authCard).toHaveClass("max-w-[300px]");
-    expect(authCard).toHaveClass("bg-[#fefeff]");
-    expect(authCard).toHaveClass("border-[#f1f4f8]");
-    expect(authCard).toHaveClass("shadow-[0_6px_14px_rgba(15,23,42,0.014),0_2px_6px_rgba(241,180,135,0.02)]");
-    expect(authCard).toHaveClass("lg:mt-[2.08rem]");
-    expect(authCard).toHaveClass("xl:mt-[2.32rem]");
+    expect(authCard).toHaveClass("max-w-[296px]");
+    expect(authCard).toHaveClass("bg-[#fcfdff]");
+    expect(authCard).toHaveClass("border-[#e9edf3]");
+    expect(authCard).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.03),0_3px_10px_rgba(241,180,135,0.03)]");
+    expect(authCard).toHaveClass("lg:mt-[2rem]");
+    expect(authCard).toHaveClass("xl:mt-[2.22rem]");
     expect(previewCard).toHaveClass("border-white/80");
     expect(previewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
   });
