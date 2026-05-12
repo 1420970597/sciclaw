@@ -24,19 +24,18 @@ describe("Help article page", () => {
 
     render(page);
 
-    const docsNav = screen.getByRole("navigation", { name: /user guide navigation/i });
-
     expect(screen.getByRole("heading", { name: /getting started/i, level: 2 })).toBeInTheDocument();
-    expect(docsNav).toBeInTheDocument();
+    expect(screen.queryByRole("navigation", { name: /user guide navigation/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /01 getting started/i })).toHaveAttribute("href", "/help/getting-started");
     expect(screen.getByText(/^USER GUIDE$/)).toBeInTheDocument();
     expect(screen.getByText(/^SciClaw · USER GUIDE$/)).toBeInTheDocument();
     expect(screen.getByText(/search…/i)).toBeInTheDocument();
     expect(screen.getByText(/on this page/i)).toBeInTheDocument();
-    expect(within(docsNav).getByRole("link", { name: /02 project & session/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /02 project & session/i })).toHaveAttribute(
       "href",
       "/help/projects",
     );
-    expect(within(docsNav).getByRole("link", { name: /08 ai persona/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /08 ai persona/i })).toBeInTheDocument();
     expect(
       screen.getByText(
         /sciclaw is an ai co-worker built for scientific research\. it helps researchers continuously manage the full research cycle around a project, including knowledge capture, task execution, output generation, and workflow improvement, so research can operate as a true closed loop\./i,

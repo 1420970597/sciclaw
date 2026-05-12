@@ -82,7 +82,7 @@ function HelpGlyph({ icon, className = "h-4 w-4" }: { icon: HelpIcon; className?
 
 function DocsSidebar({ currentSlug }: { currentSlug: string }) {
   return (
-    <nav aria-label="User Guide navigation" className="space-y-4">
+    <nav className="space-y-4">
       <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b9b9b9]">
         Contents
       </p>
