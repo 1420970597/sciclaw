@@ -81,7 +81,7 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("max-w-[318px]");
   });
 
-  it("opens the early-access apply flow inline and matches the live apply-now state", () => {
+  it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
     render(<Home />);
 
     fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
@@ -94,8 +94,13 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
     expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
-    expect(screen.getByText(/^02 \/ 04$/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
+    expect(screen.getByText(/^Q1$/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Q2$/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Q3$/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Q4$/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });
 
   it("preserves the previous auth mode when leaving the apply flow", () => {
