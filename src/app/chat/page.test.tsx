@@ -85,7 +85,7 @@ describe("Chat route public landing clone", () => {
         /upload experimental data in batches, and sciclaw automatically performs statistical testing, trend analysis, and chart generation/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getAllByRole("button", { name: /^data mining$/i })).toHaveLength(2);
+    expect(screen.getByTestId("feature-node-data-mining")).toBeInTheDocument();
     expect(screen.getByText(/^Q1$/i)).toBeInTheDocument();
     expect(screen.getByText(/^Q2$/i)).toBeInTheDocument();
     expect(screen.getByText(/^Q3$/i)).toBeInTheDocument();

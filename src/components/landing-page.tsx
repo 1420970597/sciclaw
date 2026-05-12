@@ -209,7 +209,6 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
                 <button
                   type="button"
                   data-testid={`feature-node-${node.id}`}
-                  aria-label={node.label}
                   onClick={() => {
                     if (nextIndex >= 0) {
                       onSelect(nextIndex);

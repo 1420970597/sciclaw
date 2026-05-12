@@ -115,7 +115,7 @@ describe("Home landing page", () => {
   it("switches feature panels when a network node is selected", () => {
     render(<Home />);
 
-    fireEvent.click(screen.getAllByRole("button", { name: /outcome present/i })[0]);
+    fireEvent.click(screen.getByTestId("feature-node-outcome-present"));
 
     expect(screen.getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
     expect(
@@ -267,9 +267,9 @@ describe("Home landing page", () => {
     expect(literatureNodeWrapper).toHaveClass("gap-[1.02rem]");
     expect(dataMiningNodeWrapper).toHaveClass("gap-[1.02rem]");
     expect(outcomeNodeWrapper).toHaveClass("gap-[1.02rem]");
-    expect(literatureNode).toHaveAttribute("aria-label", "Literature Analysis");
-    expect(dataMiningNode).toHaveAttribute("aria-label", "Data Mining");
-    expect(outcomeNode).toHaveAttribute("aria-label", "Outcome Present");
+    expect(literatureNode).not.toHaveAttribute("aria-label");
+    expect(dataMiningNode).not.toHaveAttribute("aria-label");
+    expect(outcomeNode).not.toHaveAttribute("aria-label");
     expect(literatureNode.firstElementChild).toHaveClass("h-[4.9rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.78rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[4.78rem]");
@@ -326,7 +326,7 @@ describe("Home landing page", () => {
         /upload experimental data in batches, and sciclaw automatically performs statistical testing, trend analysis, and chart generation/i,
       ),
     ).toBeInTheDocument();
-    expect(within(landingHero).getAllByRole("button", { name: /^data mining$/i })).toHaveLength(2);
+    expect(within(landingHero).getByTestId("feature-node-data-mining")).toBeInTheDocument();
     expect(within(landingHero).getByText(/^Q1$/i)).toBeInTheDocument();
     expect(within(landingHero).getByText(/^Q2$/i)).toBeInTheDocument();
     expect(within(landingHero).getByText(/^Q3$/i)).toBeInTheDocument();
