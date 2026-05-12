@@ -47,12 +47,13 @@ describe("Chat route public landing clone", () => {
   it("keeps live-like top utility menus and login interactions reachable on /chat", () => {
     render(<ChatPage />);
 
-    const primaryNav = screen.getByRole("navigation", { name: /primary/i });
+    const utilityRow = screen.getByTestId("landing-utility-row");
+    expect(screen.queryByRole("navigation", { name: /primary/i })).not.toBeInTheDocument();
 
-    fireEvent.click(within(primaryNav).getByRole("button", { name: /user guide/i }));
+    fireEvent.click(within(utilityRow).getByRole("button", { name: /user guide/i }));
     expect(screen.getByRole("menu", { name: /user guide/i })).toBeInTheDocument();
 
-    fireEvent.click(within(primaryNav).getByRole("button", { name: /contact us/i }));
+    fireEvent.click(within(utilityRow).getByRole("button", { name: /contact us/i }));
     const contactMenu = screen.getByRole("menu", { name: /contact us/i });
     expect(within(contactMenu).getByRole("menuitem", { name: /discord/i })).toHaveAttribute(
       "href",

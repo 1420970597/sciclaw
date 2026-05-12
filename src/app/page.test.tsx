@@ -63,10 +63,12 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^结论$/i)).toBeInTheDocument();
     expect(screen.getAllByText(/autonomous research/i)).toHaveLength(1);
     expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
-    expect(screen.getByRole("navigation", { name: /primary/i })).toBeInTheDocument();
+    const utilityRow = screen.getByTestId("landing-utility-row");
+    expect(screen.queryByRole("navigation", { name: /primary/i })).not.toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
     expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
+    expect(utilityRow).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
@@ -126,25 +128,27 @@ describe("Home landing page", () => {
     expect(screen.queryByText(/^preview$/i)).not.toBeInTheDocument();
   });
 
-  it("keeps landing navigation targets on implemented routes", () => {
+  it("keeps landing utility-menu targets on implemented routes without exposing a primary nav landmark", () => {
     render(<Home />);
 
-    const primaryNav = screen.getByRole("navigation", { name: /primary/i });
+    const utilityRow = screen.getByTestId("landing-utility-row");
+    const primaryNav = screen.queryByRole("navigation", { name: /primary/i });
     const footer = screen.getByRole("contentinfo");
-    const headerButtons = within(primaryNav).getAllByRole("button");
+    const headerButtons = within(utilityRow).getAllByRole("button");
 
-    expect(within(primaryNav).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
-    expect(within(primaryNav).getByRole("button", { name: /contact us/i })).toBeInTheDocument();
-    expect(within(primaryNav).getByRole("button", { name: /settings/i })).toBeInTheDocument();
+    expect(within(utilityRow).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
+    expect(within(utilityRow).getByRole("button", { name: /contact us/i })).toBeInTheDocument();
+    expect(within(utilityRow).getByRole("button", { name: /settings/i })).toBeInTheDocument();
+    expect(primaryNav).toBeNull();
 
-    fireEvent.click(within(primaryNav).getByRole("button", { name: /user guide/i }));
+    fireEvent.click(within(utilityRow).getByRole("button", { name: /user guide/i }));
     const guideMenu = screen.getByRole("menu", { name: /user guide/i });
     expect(within(guideMenu).getByRole("menuitem", { name: /workspace basics/i })).toHaveAttribute(
       "href",
       "/help/getting-started",
     );
 
-    fireEvent.click(within(primaryNav).getByRole("button", { name: /contact us/i }));
+    fireEvent.click(within(utilityRow).getByRole("button", { name: /contact us/i }));
     const contactMenu = screen.getByRole("menu", { name: /contact us/i });
     expect(within(contactMenu).getByRole("menuitem", { name: /discord/i })).toHaveAttribute(
       "href",
@@ -155,7 +159,7 @@ describe("Home landing page", () => {
       "mailto:service@sciclaw.ai",
     );
 
-    fireEvent.click(within(primaryNav).getByRole("button", { name: /settings/i }));
+    fireEvent.click(within(utilityRow).getByRole("button", { name: /settings/i }));
     const settingsMenu = screen.getByRole("menu", { name: /settings/i });
     expect(within(settingsMenu).getByRole("menuitem", { name: /theme/i })).toHaveAttribute(
       "href",
@@ -169,8 +173,8 @@ describe("Home landing page", () => {
   it("renders the contact icon menu as a support-style control without changing route reachability", () => {
     render(<Home />);
 
-    const primaryNav = screen.getByRole("navigation", { name: /primary/i });
-    const contactTrigger = within(primaryNav).getByRole("button", { name: /contact us/i });
+    const utilityRow = screen.getByTestId("landing-utility-row");
+    const contactTrigger = within(utilityRow).getByRole("button", { name: /contact us/i });
 
     fireEvent.click(contactTrigger);
 
@@ -189,7 +193,7 @@ describe("Home landing page", () => {
   it("opens the landing settings dock menu with first-level theme and language entries", () => {
     render(<Home />);
 
-    const settingsTrigger = screen.getByRole("button", { name: /settings/i });
+    const settingsTrigger = within(screen.getByTestId("landing-utility-row")).getByRole("button", { name: /settings/i });
     settingsTrigger.focus();
     fireEvent.keyDown(settingsTrigger, { key: "ArrowDown" });
 
@@ -208,27 +212,27 @@ describe("Home landing page", () => {
   it("keeps the utility triggers subtle, preserves the settings menu contract, and improves hero cluster/label readability after the cohesion pass", () => {
     render(<Home />);
 
-    const primaryNav = screen.getByRole("navigation", { name: /primary/i });
-    const settingsTrigger = within(primaryNav).getByRole("button", { name: /settings/i });
+    const utilityRow = screen.getByTestId("landing-utility-row");
+    const settingsTrigger = within(utilityRow).getByRole("button", { name: /settings/i });
     const triggerRow = settingsTrigger.parentElement?.parentElement;
     const literatureNode = screen.getByTestId("feature-node-literature-analysis");
     const dataMiningNode = screen.getByTestId("feature-node-data-mining");
     const outcomeNode = screen.getByTestId("feature-node-outcome-present");
     const landingHero = screen.getByTestId("landing-hero");
 
-    expect(within(primaryNav).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
-    expect(within(primaryNav).getByRole("button", { name: /contact us/i })).toBeInTheDocument();
+    expect(within(utilityRow).getByRole("button", { name: /user guide/i })).toBeInTheDocument();
+    expect(within(utilityRow).getByRole("button", { name: /contact us/i })).toBeInTheDocument();
     expect(settingsTrigger).toHaveClass("h-[2.35rem]");
     expect(settingsTrigger).toHaveClass("w-[2.35rem]");
     expect(triggerRow).not.toBeNull();
     expect(triggerRow).toHaveClass("gap-[0.42rem]");
     expect(triggerRow).toHaveClass("sm:gap-[0.53rem]");
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
-    expect(primaryNav.parentElement?.parentElement).toHaveClass("pt-[0.46rem]");
-    expect(primaryNav.parentElement?.parentElement).toHaveClass("sm:pt-[0.62rem]");
+    expect(utilityRow.parentElement?.parentElement).toHaveClass("pt-[0.46rem]");
+    expect(utilityRow.parentElement?.parentElement).toHaveClass("sm:pt-[0.62rem]");
     [
-      within(primaryNav).getByRole("button", { name: /user guide/i }),
-      within(primaryNav).getByRole("button", { name: /contact us/i }),
+      within(utilityRow).getByRole("button", { name: /user guide/i }),
+      within(utilityRow).getByRole("button", { name: /contact us/i }),
       settingsTrigger,
     ].forEach((trigger) => {
       const icon = trigger.querySelector("svg");
