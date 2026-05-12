@@ -464,10 +464,10 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[292px] rounded-[1.92rem] border border-[#e6ebf2] bg-[#fcfdff] px-[0.86rem] py-[0.9rem] shadow-[0_12px_28px_rgba(15,23,42,0.04),0_4px_12px_rgba(241,180,135,0.03)] sm:px-[0.9rem] sm:py-[0.94rem] lg:mt-[2.08rem] xl:mt-[2.34rem]"
+      className="mx-auto w-full max-w-[286px] rounded-[1.92rem] border border-[#ebeff4] bg-white px-[0.82rem] py-[0.88rem] shadow-[0_10px_24px_rgba(15,23,42,0.032),0_3px_10px_rgba(241,180,135,0.022)] sm:px-[0.86rem] sm:py-[0.92rem] lg:mt-[2.42rem] xl:mt-[2.68rem]"
     >
-      <div className="mx-auto w-full max-w-[304px]">
-        <div className="rounded-[1.38rem] border border-[#e6ebf1] bg-white/96 p-[0.84rem] shadow-[0_10px_22px_rgba(15,23,42,0.05)]">
+      <div className="mx-auto w-full max-w-[298px]">
+        <div className="rounded-[1.38rem] border border-[#edf1f5] bg-white/95 p-[0.8rem] shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[1.05rem] bg-[#f1f4f8] p-[0.76rem] text-sm text-[#68717d]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
@@ -505,7 +505,7 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.4rem] border border-[#e7ecf2] bg-[#fcfdff] p-[0.92rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_8px_18px_rgba(15,23,42,0.025)] sm:p-[0.96rem]"
+            className="rounded-[1.4rem] border border-[#edf1f5] bg-[#fdfefe] p-[0.88rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_6px_16px_rgba(15,23,42,0.02)] sm:p-[0.92rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-[0.62rem] xl:grid-cols-[minmax(0,1.065fr)_300px] xl:gap-[0.82rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_296px] lg:items-start lg:gap-[0.5rem] xl:grid-cols-[minmax(0,1.07fr)_296px] xl:gap-[0.68rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
