@@ -80,7 +80,7 @@ function Header() {
   return (
     <header className="pt-[0.46rem] sm:pt-[0.62rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-[1.95rem] xl:px-[2.18rem]">
-        <div data-testid="landing-utility-row" className="flex items-center gap-[0.62rem] pr-[0.02rem] sm:gap-[0.78rem] sm:pr-[0.03rem]">
+        <div data-testid="landing-utility-row" className="flex items-center gap-[0.62rem] pr-[1.72rem] sm:gap-[0.78rem] sm:pr-[1.72rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             className="gap-[0.34rem] sm:gap-[0.42rem]"

@@ -247,6 +247,8 @@ describe("Home landing page", () => {
     expect(settingsTrigger).toHaveAttribute("aria-haspopup", "menu");
     expect(utilityRow.parentElement?.parentElement).toHaveClass("pt-[0.46rem]");
     expect(utilityRow.parentElement?.parentElement).toHaveClass("sm:pt-[0.62rem]");
+    expect(utilityRow).toHaveClass("pr-[1.72rem]");
+    expect(utilityRow).toHaveClass("sm:pr-[1.72rem]");
     [
       within(utilityRow).getByRole("button", { name: /user guide/i }),
       within(utilityRow).getByRole("button", { name: /contact us/i }),
