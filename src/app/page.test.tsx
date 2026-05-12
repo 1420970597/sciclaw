@@ -353,9 +353,12 @@ describe("Home landing page", () => {
     expect(getStartedButton).toBeInTheDocument();
     const getStartedIcon = getStartedButton.querySelector("svg");
     expect(getStartedIcon).not.toBeNull();
-    expect(getStartedIcon).toHaveClass("h-[0.86rem]");
-    expect(getStartedIcon).toHaveClass("w-[0.86rem]");
-    expect(getStartedButton).toHaveClass("gap-2");
+    expect(getStartedIcon).toHaveClass("h-3.5");
+    expect(getStartedIcon).toHaveClass("w-3.5");
+    expect(getStartedButton).toHaveClass("flex-col");
+    expect(getStartedButton).toHaveClass("gap-1");
+    expect(getStartedButton).toHaveClass("font-mono");
+    expect(getStartedButton).toHaveClass("tracking-[0.12em]");
 
     fireEvent.click(getStartedButton);
 

@@ -27,10 +27,13 @@ describe("Chat route public landing clone", () => {
     const chatGetStartedIcon = chatGetStartedButton.querySelector("svg");
     expect(bodyLabel.tagName).toBe("SPAN");
     expect(bodyLabel.compareDocumentPosition(methodLabel) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(chatGetStartedButton).toHaveClass("gap-2");
+    expect(chatGetStartedButton).toHaveClass("flex-col");
+    expect(chatGetStartedButton).toHaveClass("gap-1");
+    expect(chatGetStartedButton).toHaveClass("font-mono");
+    expect(chatGetStartedButton).toHaveClass("tracking-[0.12em]");
     expect(chatGetStartedIcon).not.toBeNull();
-    expect(chatGetStartedIcon).toHaveClass("h-[0.86rem]");
-    expect(chatGetStartedIcon).toHaveClass("w-[0.86rem]");
+    expect(chatGetStartedIcon).toHaveClass("h-3.5");
+    expect(chatGetStartedIcon).toHaveClass("w-3.5");
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();

@@ -21,7 +21,7 @@ function GuideIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: stri
   );
 }
 
-function DownChevronIcon({ className = "h-[0.88rem] w-[0.88rem]" }: { className?: string }) {
+function DownChevronIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
       <path d="m6 9 6 6 6-6" />
@@ -331,10 +331,10 @@ function FeaturePreview({
         <button
           type="button"
           onClick={onGetStarted}
-          className="inline-flex items-center gap-2 pt-[0.62rem] text-sm font-medium text-[#6d737c] transition hover:text-[#1f232a]"
+          className="inline-flex flex-col items-center gap-1 pt-[0.62rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
         >
           {previewContent.ctaLabel}
-          <DownChevronIcon className="h-[0.86rem] w-[0.86rem]" />
+          <DownChevronIcon className="h-3.5 w-3.5" />
         </button>
       </div>
 
