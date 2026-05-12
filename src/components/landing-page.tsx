@@ -451,7 +451,7 @@ function AuthCard({
     >
       <div className="mx-auto w-full max-w-[320px]">
         <div className="rounded-[1.42rem] border border-[#e9eef3] bg-white p-1 shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
-          <div role="tablist" aria-label="Authentication mode" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f5f7fa] p-[0.98rem] text-sm text-[#828893]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f5f7fa] p-[0.98rem] text-sm text-[#828893]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
