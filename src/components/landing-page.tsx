@@ -464,10 +464,10 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[272px] rounded-[1.84rem] border border-[#f3f5f8] bg-[#fcfdff] px-[0.72rem] py-[0.78rem] shadow-[0_5px_12px_rgba(15,23,42,0.019),0_2px_6px_rgba(241,180,135,0.012)] sm:px-[0.76rem] sm:py-[0.82rem] lg:mt-[2.5rem] xl:mt-[2.72rem]"
+      className="mx-auto w-full max-w-[268px] rounded-[1.8rem] border border-[#f4f6f8] bg-[#fcfdff] px-[0.7rem] py-[0.76rem] shadow-[0_4px_10px_rgba(15,23,42,0.017),0_2px_5px_rgba(241,180,135,0.01)] sm:px-[0.74rem] sm:py-[0.8rem] lg:mt-[2.44rem] xl:mt-[2.64rem]"
     >
-      <div className="mx-auto w-full max-w-[294px]">
-        <div className="rounded-[1.24rem] border border-[#f4f6f8] bg-white/94 p-[0.66rem] shadow-[0_4px_10px_rgba(15,23,42,0.021)]">
+      <div className="mx-auto w-full max-w-[290px]">
+        <div className="rounded-[1.2rem] border border-[#f5f7f9] bg-white/93 p-[0.62rem] shadow-[0_3px_8px_rgba(15,23,42,0.018)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.9rem] bg-[#f4f6f9] p-[0.56rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_284px] lg:items-start lg:gap-[0.2rem] xl:grid-cols-[minmax(0,1.085fr)_284px] xl:gap-[0.32rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-[0.16rem] xl:grid-cols-[minmax(0,1.095fr)_280px] xl:gap-[0.26rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
