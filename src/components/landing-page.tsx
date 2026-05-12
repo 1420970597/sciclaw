@@ -101,8 +101,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: <span className="inline-block h-[0.72rem] w-[0.72rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.16)]" aria-hidden />,
-      position: "left-[41.9%] top-[11%] sm:left-[41.9%] sm:top-[11%]",
-      lineClass: "left-[44.6%] top-[27%] h-[2.18px] w-[16.6%] origin-left -rotate-[22deg]",
+      position: "left-[43.4%] top-[11.4%] sm:left-[43.4%] sm:top-[11.4%]",
+      lineClass: "left-[45.1%] top-[27.4%] h-[2.18px] w-[15.7%] origin-left -rotate-[21deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
       activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
       wrapperClass: "items-center",
@@ -120,8 +120,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[42.35%] top-[52.55%] sm:left-[42.35%] sm:top-[52.55%]",
-      lineClass: "left-[44.95%] top-[54.35%] h-[2.18px] w-[16.5%] origin-left rotate-[17deg]",
+      position: "left-[43.9%] top-[52.2%] sm:left-[43.9%] sm:top-[52.2%]",
+      lineClass: "left-[45.55%] top-[54.2%] h-[2.18px] w-[15.65%] origin-left rotate-[16deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
       activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
       wrapperClass: "items-center",
@@ -138,8 +138,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute inset-[0.22rem] rounded-full bg-current/90" />
         </span>
       ),
-      position: "right-[8.8%] top-[10.85%] sm:right-[8.8%] sm:top-[10.85%]",
-      lineClass: "left-[46.6%] top-[27.15%] h-[2.18px] w-[16.35%] origin-left rotate-[24deg]",
+      position: "right-[10.2%] top-[11.2%] sm:right-[10.2%] sm:top-[11.2%]",
+      lineClass: "left-[47.05%] top-[27.45%] h-[2.18px] w-[15.45%] origin-left rotate-[23deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
       activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
       wrapperClass: "items-center",

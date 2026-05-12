@@ -276,12 +276,12 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNodeWrapper?.className).toContain("left-[41.9%]");
-    expect(dataMiningNodeWrapper?.className).toContain("left-[42.35%]");
-    expect(outcomeNodeWrapper?.className).toContain("right-[8.8%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.6%]']")).not.toBeNull();
-    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.5%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.35%]']")).not.toBeNull();
+    expect(literatureNodeWrapper?.className).toContain("left-[43.4%]");
+    expect(dataMiningNodeWrapper?.className).toContain("left-[43.9%]");
+    expect(outcomeNodeWrapper?.className).toContain("right-[10.2%]");
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[15.7%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[15.65%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[15.45%]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
