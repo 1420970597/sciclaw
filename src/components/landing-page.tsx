@@ -464,11 +464,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[286px] rounded-[1.92rem] border border-[#ebeff4] bg-white px-[0.82rem] py-[0.88rem] shadow-[0_10px_24px_rgba(15,23,42,0.032),0_3px_10px_rgba(241,180,135,0.022)] sm:px-[0.86rem] sm:py-[0.92rem] lg:mt-[2.42rem] xl:mt-[2.68rem]"
+      className="mx-auto w-full max-w-[282px] rounded-[1.92rem] border border-[#eef2f6] bg-[#fcfdff] px-[0.8rem] py-[0.86rem] shadow-[0_8px_18px_rgba(15,23,42,0.026),0_2px_8px_rgba(241,180,135,0.018)] sm:px-[0.84rem] sm:py-[0.9rem] lg:mt-[2.56rem] xl:mt-[2.82rem]"
     >
-      <div className="mx-auto w-full max-w-[298px]">
-        <div className="rounded-[1.38rem] border border-[#edf1f5] bg-white/95 p-[0.8rem] shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[1.05rem] bg-[#f1f4f8] p-[0.76rem] text-sm text-[#68717d]">
+      <div className="mx-auto w-full max-w-[294px]">
+        <div className="rounded-[1.34rem] border border-[#eff3f7] bg-white/94 p-[0.76rem] shadow-[0_6px_14px_rgba(15,23,42,0.03)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[1rem] bg-[#f3f5f8] p-[0.68rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_296px] lg:items-start lg:gap-[0.5rem] xl:grid-cols-[minmax(0,1.07fr)_296px] xl:gap-[0.68rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_292px] lg:items-start lg:gap-[0.42rem] xl:grid-cols-[minmax(0,1.075fr)_292px] xl:gap-[0.58rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
