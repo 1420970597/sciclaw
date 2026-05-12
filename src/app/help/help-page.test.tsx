@@ -28,6 +28,8 @@ describe("Help article page", () => {
 
     expect(screen.getByRole("heading", { name: /getting started/i })).toBeInTheDocument();
     expect(docsNav).toBeInTheDocument();
+    expect(screen.getByText(/^USER GUIDE$/)).toBeInTheDocument();
+    expect(screen.getByText(/^SciClaw · USER GUIDE$/)).toBeInTheDocument();
     expect(screen.getByText(/search…/i)).toBeInTheDocument();
     expect(screen.getByText(/on this page/i)).toBeInTheDocument();
     expect(within(docsNav).getByRole("link", { name: /02 project & session/i })).toHaveAttribute(

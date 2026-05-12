@@ -158,7 +158,7 @@ function DocsTopBar() {
           <span>
             Sci<span className="text-[#eb8b3b]">Claw</span>
           </span>
-          <span className="text-[11px] uppercase tracking-[0.24em] text-[#b0b0b0]">User Guide</span>
+          <span className="text-[11px] uppercase tracking-[0.24em] text-[#b0b0b0]">USER GUIDE</span>
         </div>
 
         <div className="flex items-center gap-3 self-end lg:self-auto">
@@ -255,7 +255,7 @@ function ArticleBody({ article }: { article: HelpArticle }) {
         </div>
       ) : null}
 
-      <p className="mt-10 text-[11px] uppercase tracking-[0.24em] text-[#b4b4b4]">SciClaw · User Guide</p>
+      <p className="mt-10 text-[11px] uppercase tracking-[0.24em] text-[#b4b4b4]">SciClaw · USER GUIDE</p>
     </article>
   );
 }
