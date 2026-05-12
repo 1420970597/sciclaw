@@ -40,6 +40,10 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    const previousButton = screen.getByRole("button", { name: /^previous$/i });
+    const nextButton = screen.getByRole("button", { name: /^next$/i });
+    expect(previousButton.querySelector("svg")).not.toBeNull();
+    expect(nextButton.querySelector("svg")).not.toBeNull();
   });
 
   it("opens the inline early-access apply flow on /chat and keeps the live marketing contract", () => {

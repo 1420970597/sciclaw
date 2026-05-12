@@ -798,7 +798,9 @@ function BestCases({
                   aria-label="Previous"
                   className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-[#42474f] shadow-[0_10px_25px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5 hover:text-[#1f232a]"
                 >
-                  ←
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden>
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
                 </button>
                 <div className="flex items-center gap-2">
                   {bestCases.map((item, index) => {
@@ -820,7 +822,9 @@ function BestCases({
                   aria-label="Next"
                   className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/8 bg-white text-[#42474f] shadow-[0_10px_25px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5 hover:text-[#1f232a]"
                 >
-                  →
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden>
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
                 </button>
               </div>
             </div>
