@@ -88,6 +88,10 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.02fr)_318px]");
     expect(hero).toHaveClass("xl:gap-[1.42rem]");
     expect(authCard).toHaveClass("max-w-[318px]");
+    expect(authCard).toHaveClass("bg-[#fcfdff]");
+    expect(authCard).toHaveClass("border-[#edf1f5]");
+    expect(authCard).toHaveClass("lg:mt-[0.58rem]");
+    expect(authCard).toHaveClass("xl:mt-[0.7rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
