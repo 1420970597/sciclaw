@@ -80,11 +80,11 @@ function Header() {
   return (
     <header className="pt-[0.46rem] sm:pt-[0.62rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-end px-5 sm:px-7 lg:px-[1.95rem] xl:px-[2.18rem]">
-        <div data-testid="landing-utility-row" className="flex items-center gap-[0.7rem] pr-[0.03rem] sm:gap-[0.9rem] sm:pr-[0.04rem]">
+        <div data-testid="landing-utility-row" className="flex items-center gap-[0.62rem] pr-[0.02rem] sm:gap-[0.78rem] sm:pr-[0.03rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            className="gap-[0.42rem] sm:gap-[0.53rem]"
-            buttonClassName="border-[rgba(7,25,39,0.34)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(250,247,243,0.996)_100%)] text-[#1b3a4c] shadow-[0_1px_2px_rgba(15,23,42,0.001),0_1px_2px_rgba(15,23,42,0.0014),inset_0_1px_0_rgba(255,255,255,0.998)] hover:-translate-y-0.5 hover:border-[rgba(7,25,39,0.42)] hover:text-[#081925]"
+            className="gap-[0.34rem] sm:gap-[0.42rem]"
+            buttonClassName="border-[rgba(15,23,42,0.14)] bg-transparent text-[#555d66] shadow-none hover:-translate-y-0.5 hover:border-[rgba(15,23,42,0.24)] hover:bg-white/72 hover:text-[#1f2933]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
@@ -105,8 +105,10 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       lineClass: "left-[49.08%] top-[27.54%] h-[2.18px] w-[11.78%] origin-left -rotate-[24deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
       activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
-      labelClass: "max-w-[178px] text-[#647d8d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[148px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
+      wrapperClass: "items-center",
+      labelClass: "max-w-[116px] text-left text-[#6a7783] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[112px] text-left text-[#8a4619] drop-shadow-[0_2px_4px_rgba(240,142,79,0.024)]",
+      labelPositionClass: "absolute left-[-4.6rem] top-[0.36rem] sm:left-[-4.85rem]",
     },
     {
       id: "data-mining",
@@ -122,8 +124,10 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       lineClass: "left-[49.1%] top-[53.02%] h-[2.18px] w-[11.86%] origin-left rotate-[15deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
       activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
-      labelClass: "max-w-[178px] text-[#647d8d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[148px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
+      wrapperClass: "items-center",
+      labelClass: "max-w-[116px] text-center text-[#6a7783] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[112px] text-center text-[#8a4619] drop-shadow-[0_2px_4px_rgba(240,142,79,0.024)]",
+      labelPositionClass: "absolute left-1/2 top-[calc(100%+0.9rem)] -translate-x-1/2",
     },
     {
       id: "outcome-present",
@@ -138,8 +142,10 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       lineClass: "left-[49.12%] top-[27.56%] h-[2.18px] w-[11.58%] origin-left rotate-[22deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
       activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
-      labelClass: "max-w-[178px] text-[#647d8d] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[148px] text-[#7f3c13] drop-shadow-[0_2px_4px_rgba(240,142,79,0.028)]",
+      wrapperClass: "items-center",
+      labelClass: "max-w-[116px] text-left text-[#6a7783] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
+      activeLabelClass: "max-w-[112px] text-left text-[#8a4619] drop-shadow-[0_2px_4px_rgba(240,142,79,0.024)]",
+      labelPositionClass: "absolute left-[4.72rem] top-[0.32rem] sm:left-[4.95rem]",
     },
     ],
     [],
@@ -205,7 +211,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           return (
             <div key={node.id}>
               <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#7691a4] via-[#d9e3eb] to-transparent opacity-[0.86]`} aria-hidden />
-              <div className={`absolute ${node.position} flex flex-col items-center gap-[1.02rem] text-center`}>
+              <div className={`absolute ${node.position} relative flex ${node.wrapperClass ?? "items-center"} flex-col gap-[1.02rem] text-center`}>
                 <button
                   type="button"
                   data-testid={`feature-node-${node.id}`}
@@ -220,7 +226,9 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
                     {node.icon}
                   </span>
                 </button>
-                <span className={`text-[10.8px] font-medium leading-[2.06] tracking-[0.03em] sm:text-[0.8rem] ${isActive ? node.activeLabelClass : node.labelClass}`}>
+                <span
+                  className={`${node.labelPositionClass ?? ""} text-[10.8px] font-medium leading-[2.06] tracking-[0.03em] sm:text-[0.8rem] ${isActive ? node.activeLabelClass : node.labelClass}`.trim()}
+                >
                   {node.label}
                 </span>
               </div>
