@@ -468,55 +468,35 @@ export const helpArticles: HelpArticle[] = [
     index: "01",
     title: "Getting Started",
     description:
-      "SciClaw is an AI-powered scientific co-worker that links inspiration generation, experimental execution, and iterative optimization in one workspace.",
+      "SciClaw is an AI co-worker built for scientific research. It helps researchers continuously manage the full research cycle around a project.",
     icon: "rocket",
     heroParagraphs: [
-      "Use SciClaw to move from a rough research question to a validated working plan without losing the source trail. The public docs shell doubles as the first layer of the product narrative: orientation, examples, and a guided path into the future app workspace.",
-      "This high-fidelity reconstruction keeps the same marketing-to-workspace bridge feeling visible on sciclaw.ai today — concise hero copy, calm control surfaces, and explicit next routes into projects, chat, tasks, and output packaging.",
+      "SciClaw is an AI co-worker built for scientific research. It helps researchers continuously manage the full research cycle around a project, including knowledge capture, task execution, output generation, and workflow improvement, so research can operate as a true closed loop. Powered by a proactive agent framework, SciClaw continuously connects literature search, data analysis, deep research, long-running computation, result organization, and experimental execution. This allows research workflows to move beyond manually advancing one step at a time and toward a system that can actively coordinate and push work forward.",
+      "Scientific discovery is not a discipline that can be run well by stacking conversations alone with AI, nor is it a field where breakthroughs reliably come from pure model reasoning. Serious research demands project-based orchestration of stage-appropriate tasks, scientific computing and simulation engines that yield high-precision, trustworthy data, and long-horizon cycles of reflection and iteration to refine methods and workflows. These are capabilities that today's large language models, and general-purpose frameworks such as OpenClaw by themselves, do not provide end-to-end.",
     ],
     sections: [
-      { id: "what-is-sciclaw", title: "What is SciClaw" },
-      { id: "why-the-shell-looks-like-this", title: "Why the shell looks like this" },
-      { id: "where-to-go-next", title: "Where to go next" },
+      { id: "onboarding", title: "Onboarding" },
+      { id: "how-sciclaw-works", title: "How SciClaw works" },
     ],
     nextHref: "/help/projects",
-    nextLabel: "Projects overview",
+    nextLabel: "Project & Session",
     body: [
       {
         type: "paragraph",
-        sectionId: "what-is-sciclaw",
+        sectionId: "onboarding",
         content:
-          "SciClaw presents itself as an AI co-worker for scientific research: a system that keeps project context, literature, live sessions, tasks, and polished output connected in one visible flow.",
+          "When you log in for the first time, SciClaw will guide you through a brief setup conversation. It asks a few questions about your research focus and working style, so it can provide more relevant, personalized support. The process usually takes around 2–3 minutes.",
       },
       {
         type: "list",
-        sectionId: "what-is-sciclaw",
+        sectionId: "how-sciclaw-works",
         items: [
-          "Ground literature and uploaded evidence in a reusable project memory rail.",
-          "Run and compare active research sessions without losing the current hypothesis lane.",
-          "Promote verified findings into handoff-ready briefs, slides, and export packets.",
+          "1 Create a project and upload your research files",
+          "2 Enable the right skills for the task",
+          "3 Ask questions or request analysis in chat",
+          "4 Review live outputs, tool activity, and generated files",
+          "5 Export reports and documents in Foundry",
         ],
-      },
-      {
-        type: "paragraph",
-        sectionId: "why-the-shell-looks-like-this",
-        content:
-          "The reconstructed shell intentionally feels halfway between documentation and application. It mirrors the live public site, where the route is still public-facing marketing, while suggesting how project memory, timeline, tasks, and Foundry outputs will eventually converge into the product workspace.",
-      },
-      {
-        type: "list",
-        sectionId: "why-the-shell-looks-like-this",
-        items: [
-          "A sticky header keeps search, appearance, and session creation visible.",
-          "The left rail preserves clear navigation into projects, sessions, tasks, output, and settings.",
-          "The center and right lanes preview how a live session becomes a concise export packet.",
-        ],
-      },
-      {
-        type: "paragraph",
-        sectionId: "where-to-go-next",
-        content:
-          "Continue through Projects, Chat, Tasks, and Foundry to see the same bridge narrative unfold across more detailed public help routes.",
       },
     ],
   },

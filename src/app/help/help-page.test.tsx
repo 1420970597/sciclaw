@@ -35,9 +35,16 @@ describe("Help article page", () => {
       "/help/projects",
     );
     expect(within(docsNav).getByRole("link", { name: /08 ai persona/i })).toBeInTheDocument();
-    expect(screen.getByText(/use sciclaw to move from a rough research question to a validated working plan without losing the source trail/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /^what is sciclaw$/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /what is sciclaw/i })).toHaveAttribute("href", "#what-is-sciclaw");
+    expect(
+      screen.getByText(
+        /sciclaw is an ai co-worker built for scientific research\. it helps researchers continuously manage the full research cycle around a project, including knowledge capture, task execution, output generation, and workflow improvement, so research can operate as a true closed loop\./i,
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^onboarding$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^how sciclaw works$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^onboarding$/i })).toHaveAttribute("href", "#onboarding");
+    expect(screen.getByRole("link", { name: /^how sciclaw works$/i })).toHaveAttribute("href", "#how-sciclaw-works");
+    expect(screen.getByRole("link", { name: /^project & session$/i })).toHaveAttribute("href", "/help/projects");
   });
 
   it("matches the public chat documentation sections more closely", async () => {
