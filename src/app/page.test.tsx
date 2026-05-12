@@ -53,6 +53,10 @@ describe("Home landing page", () => {
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("lg:gap-[0.22rem]");
     expect(featureRotator).toHaveClass("xl:gap-[0.34rem]");
+    const networkShell = featureRotator.firstElementChild;
+    expect(networkShell).not.toBeNull();
+    expect(networkShell).toHaveClass("lg:-mr-[0.34rem]");
+    expect(networkShell).toHaveClass("xl:-mr-[0.48rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
