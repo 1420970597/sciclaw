@@ -197,9 +197,9 @@ function ArticleBody({ article }: { article: HelpArticle }) {
         <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b8b8b8]">
           <span>{article.index}</span>
         </div>
-        <h1 className="mt-3 text-[2rem] font-semibold tracking-[-0.035em] text-[#222] sm:text-[2.25rem]">
+        <h2 className="mt-3 text-[2rem] font-semibold tracking-[-0.035em] text-[#222] sm:text-[2.25rem]">
           {article.title}
-        </h1>
+        </h2>
       </div>
 
       <div className="mt-7 space-y-4 text-[16px] leading-8 text-[#4a4a4a]">
@@ -216,7 +216,7 @@ function ArticleBody({ article }: { article: HelpArticle }) {
             <section key={section.id} id={section.id} className="scroll-mt-24">
               <div className="flex items-center gap-3">
                 <span className="h-5 w-0.5 rounded-full bg-[#ef9b52]" aria-hidden />
-                <h2 className="text-[1.15rem] font-semibold text-[#1f1f1f]">{section.title}</h2>
+                <h3 className="text-[1.15rem] font-semibold text-[#1f1f1f]">{section.title}</h3>
               </div>
               <div className="mt-4 space-y-4">
                 {sectionBlocks.length > 0 ? (
