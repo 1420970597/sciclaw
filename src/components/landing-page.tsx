@@ -314,7 +314,25 @@ function FeaturePreview({
 
   return (
     <div className="flex flex-col gap-[1.48rem]">
-      <div className="rounded-[2rem] border border-white/72 bg-white p-[1.2rem] shadow-[0_22px_58px_rgba(15,23,42,0.068)] sm:p-[1.34rem]">
+      <div className="order-2 space-y-[1.02rem] px-1 pt-[0.35rem]">
+        <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
+        <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.92rem] md:text-[2.06rem]">
+          {previewContent.heading}
+        </h3>
+        <p className="max-w-[33.2rem] text-base leading-[2.02] text-[#676d77] sm:text-[1.01rem]">{previewContent.description}</p>
+        <button
+          type="button"
+          onClick={onGetStarted}
+          className="inline-flex items-center gap-2 pt-[0.62rem] text-sm font-medium text-[#6d737c] transition hover:text-[#1f232a]"
+        >
+          {previewContent.ctaLabel}
+          <span aria-hidden className="text-base leading-none">
+            ↓
+          </span>
+        </button>
+      </div>
+
+      <div className="order-1 rounded-[2rem] border border-white/72 bg-white p-[1.2rem] shadow-[0_22px_58px_rgba(15,23,42,0.068)] sm:p-[1.34rem]">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-16 rounded-full bg-[#e3e6eb]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -397,24 +415,6 @@ function FeaturePreview({
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="space-y-[1.02rem] px-1 pt-[0.35rem]">
-        <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
-        <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.92rem] md:text-[2.06rem]">
-          {previewContent.heading}
-        </h3>
-        <p className="max-w-[33.2rem] text-base leading-[2.02] text-[#676d77] sm:text-[1.01rem]">{previewContent.description}</p>
-        <button
-          type="button"
-          onClick={onGetStarted}
-          className="inline-flex items-center gap-2 pt-[0.62rem] text-sm font-medium text-[#6d737c] transition hover:text-[#1f232a]"
-        >
-          {previewContent.ctaLabel}
-          <span aria-hidden className="text-base leading-none">
-            ↓
-          </span>
-        </button>
       </div>
     </div>
   );

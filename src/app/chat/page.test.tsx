@@ -22,7 +22,9 @@ describe("Chat route public landing clone", () => {
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveValue("");
     const bodyLabel = screen.getByText(/^autonomous research$/i);
+    const methodLabel = screen.getByText(/^方法论$/i);
     expect(bodyLabel.tagName).toBe("SPAN");
+    expect(bodyLabel.compareDocumentPosition(methodLabel) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();

@@ -25,17 +25,19 @@ describe("Home landing page", () => {
     expect(onboardAccessCode).toHaveValue("");
 
     const heroScope = within(defaultHeroSection as HTMLElement);
+    const methodLabel = heroScope.getByText(/^方法论$/i);
     expect(heroScope.queryByText(/research workspace preview/i)).not.toBeInTheDocument();
     const heroPreviewCards = heroScope.getAllByText(/^deep literature analysis$/i);
 
     expect(heroPreviewCards).toHaveLength(1);
     const bodyLabel = heroScope.getByText(/^autonomous research$/i);
     expect(bodyLabel.tagName).toBe("SPAN");
+    expect(bodyLabel.compareDocumentPosition(methodLabel) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(heroScope.getAllByText(/^autonomous research$/i)).toHaveLength(1);
     expect(heroScope.queryByText(/^summary$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/^evidence$/i)).not.toBeInTheDocument();
     expect(heroScope.queryByText(/^preview$/i)).not.toBeInTheDocument();
-    expect(heroScope.getByText(/^方法论$/i)).toBeInTheDocument();
+    expect(methodLabel).toBeInTheDocument();
     expect(heroScope.getByText(/^结论$/i)).toBeInTheDocument();
     expect(heroScope.getByText(/^数据$/i)).toBeInTheDocument();
     expect(heroScope.queryByText(/^证据$/i)).not.toBeInTheDocument();
