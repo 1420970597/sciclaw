@@ -439,9 +439,9 @@ function FeatureRotator({
     <section
       id="feature-rotator"
       data-testid="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:items-center lg:gap-[0.22rem] xl:grid-cols-[minmax(0,334px)_minmax(0,1fr)] xl:gap-[0.34rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-center lg:gap-[0.14rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.24rem]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-[0.34rem] lg:px-0 xl:-mr-[0.48rem] xl:px-1">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-[0.18rem] lg:px-0 xl:-mr-[0.28rem] xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
       <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} />
@@ -461,7 +461,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[308px] rounded-[1.95rem] border border-[#edf1f5] bg-[#fcfdff] px-[0.96rem] py-[1rem] shadow-[0_12px_24px_rgba(15,23,42,0.03),0_6px_14px_rgba(241,180,135,0.048)] sm:px-[1rem] sm:py-[1.02rem] lg:mt-[1.18rem] xl:mt-[1.34rem]"
+      className="mx-auto w-full max-w-[304px] rounded-[1.95rem] border border-[#eef2f6] bg-[#fdfeff] px-[0.94rem] py-[0.98rem] shadow-[0_10px_20px_rgba(15,23,42,0.024),0_4px_10px_rgba(241,180,135,0.038)] sm:px-[0.98rem] sm:py-[1rem] lg:mt-[1.48rem] xl:mt-[1.68rem]"
     >
       <div className="mx-auto w-full max-w-[320px]">
         <div className="rounded-[1.42rem] border border-[#e9eef3] bg-white p-1 shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
@@ -883,7 +883,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_308px] lg:items-start lg:gap-[0.84rem] xl:grid-cols-[minmax(0,1.04fr)_308px] xl:gap-[1.02rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_304px] lg:items-start lg:gap-[0.7rem] xl:grid-cols-[minmax(0,1.055fr)_304px] xl:gap-[0.9rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}

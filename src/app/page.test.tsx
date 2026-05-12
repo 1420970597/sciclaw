@@ -50,13 +50,14 @@ describe("Home landing page", () => {
 
     const featureRotator = screen.getByTestId("feature-rotator");
     expect(screen.queryByRole("button", { name: /^autonomous execution$/i })).not.toBeInTheDocument();
-    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("lg:gap-[0.22rem]");
-    expect(featureRotator).toHaveClass("xl:gap-[0.34rem]");
+    expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:gap-[0.14rem]");
+    expect(featureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("xl:gap-[0.24rem]");
     const networkShell = featureRotator.firstElementChild;
     expect(networkShell).not.toBeNull();
-    expect(networkShell).toHaveClass("lg:-mr-[0.34rem]");
-    expect(networkShell).toHaveClass("xl:-mr-[0.48rem]");
+    expect(networkShell).toHaveClass("lg:-mr-[0.18rem]");
+    expect(networkShell).toHaveClass("xl:-mr-[0.28rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
@@ -82,16 +83,16 @@ describe("Home landing page", () => {
 
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_308px]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_304px]");
     expect(hero).toHaveClass("lg:items-start");
-    expect(hero).toHaveClass("lg:gap-[0.84rem]");
-    expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.04fr)_308px]");
-    expect(hero).toHaveClass("xl:gap-[1.02rem]");
-    expect(authCard).toHaveClass("max-w-[308px]");
-    expect(authCard).toHaveClass("bg-[#fcfdff]");
-    expect(authCard).toHaveClass("border-[#edf1f5]");
-    expect(authCard).toHaveClass("lg:mt-[1.18rem]");
-    expect(authCard).toHaveClass("xl:mt-[1.34rem]");
+    expect(hero).toHaveClass("lg:gap-[0.7rem]");
+    expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.055fr)_304px]");
+    expect(hero).toHaveClass("xl:gap-[0.9rem]");
+    expect(authCard).toHaveClass("max-w-[304px]");
+    expect(authCard).toHaveClass("bg-[#fdfeff]");
+    expect(authCard).toHaveClass("border-[#eef2f6]");
+    expect(authCard).toHaveClass("lg:mt-[1.48rem]");
+    expect(authCard).toHaveClass("xl:mt-[1.68rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
