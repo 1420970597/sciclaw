@@ -15,6 +15,7 @@ describe("Home landing page", () => {
         /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
       ),
     ).toBeInTheDocument();
+    expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: /^get started$/i }),
     ).toBeInTheDocument();

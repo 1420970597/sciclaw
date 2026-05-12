@@ -231,8 +231,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       </div>
 
       <div className="absolute left-1/2 top-1/2 flex -translate-x-[39.2%] -translate-y-[26.8%] flex-col items-center">
-        <span className="mb-[0.82rem] flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-[11px] font-semibold text-white shadow-[0_8px_16px_rgba(232,124,55,0.2)]">
-          AI
+        <span className="mb-[0.82rem] flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#ef8f4d] text-white shadow-[0_8px_16px_rgba(232,124,55,0.2)]" aria-hidden>
+          <span className="h-[0.38rem] w-[0.38rem] rounded-full bg-white/96 shadow-[0_0_0_1px_rgba(255,255,255,0.22)]" />
         </span>
         <button
           type="button"

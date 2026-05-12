@@ -21,6 +21,7 @@ describe("Chat route public landing clone", () => {
     expect(onboardAccessCode).toHaveValue("");
     const bodyLabel = screen.getByText(/^autonomous research$/i);
     expect(bodyLabel.tagName).toBe("SPAN");
+    expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
