@@ -341,7 +341,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-1 rounded-[2rem] border border-white/72 bg-white p-[1.2rem] shadow-[0_22px_58px_rgba(15,23,42,0.068)] sm:p-[1.34rem]">
+      <div className="order-1 rounded-[2rem] border border-white/80 bg-white p-[1.2rem] shadow-[0_28px_72px_rgba(15,23,42,0.092)] sm:p-[1.34rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-16 rounded-full bg-[#e3e6eb]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -351,7 +351,7 @@ function FeaturePreview({
           </div>
         </div>
 
-        <div className="mt-7 rounded-[1.55rem] bg-[linear-gradient(180deg,#fffdf9_0%,#fff8f1_100%)] px-[1.08rem] pb-[1.42rem] pt-[1.34rem] sm:px-[1.4rem] sm:pb-[1.58rem]">
+        <div className="mt-7 rounded-[1.55rem] bg-[linear-gradient(180deg,#fffaf4_0%,#fff4e9_100%)] px-[1.08rem] pb-[1.42rem] pt-[1.34rem] sm:px-[1.4rem] sm:pb-[1.58rem]">
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
             <div aria-hidden className="space-y-[0.42rem]">
               <span className="block h-[1.5px] w-[8.4rem] rounded-full bg-[#d8dde4]" />
@@ -394,7 +394,7 @@ function FeaturePreview({
               </div>
             </div>
 
-            <div className="rounded-[1.35rem] border border-[#f0e4d8] bg-white/80 p-[1.28rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.62)]">
+            <div className="rounded-[1.35rem] border border-[#ead7c6] bg-white/88 p-[1.28rem] shadow-[0_12px_28px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,0.7)]">
               <div className="space-y-[1.46rem]">
                 <div className="flex items-center justify-between text-[10.7px] uppercase tracking-[0.205em] text-[#687587]" aria-hidden>
                   <span className="h-[1.5px] w-12 rounded-full bg-[#d6dee6]" />
@@ -464,7 +464,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[304px] rounded-[1.95rem] border border-[#eef2f6] bg-[#fdfeff] px-[0.94rem] py-[0.98rem] shadow-[0_10px_20px_rgba(15,23,42,0.024),0_4px_10px_rgba(241,180,135,0.038)] sm:px-[0.98rem] sm:py-[1rem] lg:mt-[1.72rem] xl:mt-[1.94rem]"
+      className="mx-auto w-full max-w-[304px] rounded-[1.95rem] border border-[#eff3f7] bg-[#fdfefe] px-[0.94rem] py-[0.98rem] shadow-[0_8px_18px_rgba(15,23,42,0.018),0_3px_8px_rgba(241,180,135,0.026)] sm:px-[0.98rem] sm:py-[1rem] lg:mt-[1.82rem] xl:mt-[2.04rem]"
     >
       <div className="mx-auto w-full max-w-[320px]">
         <div className="rounded-[1.42rem] border border-[#e9eef3] bg-white p-1 shadow-[0_8px_18px_rgba(15,23,42,0.034)]">

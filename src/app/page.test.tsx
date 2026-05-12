@@ -87,16 +87,19 @@ describe("Home landing page", () => {
 
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
+    const previewCard = screen.getByTestId("feature-preview-card");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_304px]");
     expect(hero).toHaveClass("lg:items-start");
     expect(hero).toHaveClass("lg:gap-[0.7rem]");
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.055fr)_304px]");
     expect(hero).toHaveClass("xl:gap-[0.9rem]");
     expect(authCard).toHaveClass("max-w-[304px]");
-    expect(authCard).toHaveClass("bg-[#fdfeff]");
-    expect(authCard).toHaveClass("border-[#eef2f6]");
-    expect(authCard).toHaveClass("lg:mt-[1.72rem]");
-    expect(authCard).toHaveClass("xl:mt-[1.94rem]");
+    expect(authCard).toHaveClass("bg-[#fdfefe]");
+    expect(authCard).toHaveClass("border-[#eff3f7]");
+    expect(authCard).toHaveClass("lg:mt-[1.82rem]");
+    expect(authCard).toHaveClass("xl:mt-[2.04rem]");
+    expect(previewCard).toHaveClass("border-white/80");
+    expect(previewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
