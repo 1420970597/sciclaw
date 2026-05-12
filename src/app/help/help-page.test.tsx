@@ -57,9 +57,19 @@ describe("Help article page", () => {
 
     expect(screen.getByRole("heading", { name: /^chat$/i })).toBeInTheDocument();
     expect(screen.getByText(/this route intentionally feels more product-like than the surrounding docs pages/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /^active lanes$/i })).toBeInTheDocument();
-    expect(screen.getByText(/the center timeline emphasizes three simultaneous research threads/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/output handoff/i).length).toBeGreaterThan(0);
+
+    const workspacePreview = screen.getByTestId("chat-workspace-preview");
+    expect(within(workspacePreview).getByRole("heading", { name: /^active lanes$/i })).toBeInTheDocument();
+    expect(within(workspacePreview).getByText(/the center timeline emphasizes three simultaneous research threads while keeping the surrounding task queue and output handoff visible/i)).toBeInTheDocument();
+    expect(within(workspacePreview).getByRole("heading", { name: /^active sessions$/i })).toBeInTheDocument();
+    expect(within(workspacePreview).getByRole("heading", { name: /^queued work$/i })).toBeInTheDocument();
+    expect(within(workspacePreview).getByText(/^output handoff$/i)).toBeInTheDocument();
+    expect(within(workspacePreview).getByText(/^patent compare$/i)).toBeInTheDocument();
+    expect(within(workspacePreview).getByText(/^clinical replay$/i)).toBeInTheDocument();
+    expect(within(workspacePreview).getByText(/^reg memo final$/i)).toBeInTheDocument();
+    expect(within(workspacePreview).getByText(/^import pdfs$/i)).toBeInTheDocument();
+    expect(within(workspacePreview).getByRole("link", { name: /review tasks/i })).toHaveAttribute("href", "/help/tasks");
+    expect(within(workspacePreview).getByRole("link", { name: /open rail/i })).toHaveAttribute("href", "/help/foundry");
   });
 
   it("matches the live public settings page title, body, next-link, and toc labels", async () => {
