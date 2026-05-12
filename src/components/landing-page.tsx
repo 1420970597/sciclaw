@@ -442,7 +442,7 @@ function FeatureRotator({
     <section
       id="feature-rotator"
       data-testid="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-center lg:gap-[0.14rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.24rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-center lg:gap-[0.14rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.2rem]"
     >
       <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mr-[0.18rem] lg:px-0 xl:-mr-[0.28rem] xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
@@ -464,7 +464,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[282px] rounded-[1.92rem] border border-[#eef2f6] bg-[#fcfdff] px-[0.8rem] py-[0.86rem] shadow-[0_8px_18px_rgba(15,23,42,0.026),0_2px_8px_rgba(241,180,135,0.018)] sm:px-[0.84rem] sm:py-[0.9rem] lg:mt-[2.56rem] xl:mt-[2.82rem]"
+      className="mx-auto w-full max-w-[282px] rounded-[1.92rem] border border-[#eef2f6] bg-[#fcfdff] px-[0.8rem] py-[0.86rem] shadow-[0_8px_18px_rgba(15,23,42,0.026),0_2px_8px_rgba(241,180,135,0.018)] sm:px-[0.84rem] sm:py-[0.9rem] lg:mt-[2.5rem] xl:mt-[2.74rem]"
     >
       <div className="mx-auto w-full max-w-[294px]">
         <div className="rounded-[1.34rem] border border-[#eff3f7] bg-white/94 p-[0.76rem] shadow-[0_6px_14px_rgba(15,23,42,0.03)]">
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_292px] lg:items-start lg:gap-[0.42rem] xl:grid-cols-[minmax(0,1.075fr)_292px] xl:gap-[0.58rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_292px] lg:items-start lg:gap-[0.32rem] xl:grid-cols-[minmax(0,1.075fr)_292px] xl:gap-[0.46rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}

@@ -53,7 +53,7 @@ describe("Home landing page", () => {
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("lg:gap-[0.14rem]");
     expect(featureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("xl:gap-[0.24rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[0.2rem]");
     const networkShell = featureRotator.firstElementChild;
     expect(networkShell).not.toBeNull();
     expect(networkShell).toHaveClass("lg:-mr-[0.18rem]");
@@ -93,15 +93,15 @@ describe("Home landing page", () => {
     const previewCard = screen.getByTestId("feature-preview-card");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_292px]");
     expect(hero).toHaveClass("lg:items-start");
-    expect(hero).toHaveClass("lg:gap-[0.42rem]");
+    expect(hero).toHaveClass("lg:gap-[0.32rem]");
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.075fr)_292px]");
-    expect(hero).toHaveClass("xl:gap-[0.58rem]");
+    expect(hero).toHaveClass("xl:gap-[0.46rem]");
     expect(authCard).toHaveClass("max-w-[282px]");
     expect(authCard).toHaveClass("bg-[#fcfdff]");
     expect(authCard).toHaveClass("border-[#eef2f6]");
     expect(authCard).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.026),0_2px_8px_rgba(241,180,135,0.018)]");
-    expect(authCard).toHaveClass("lg:mt-[2.56rem]");
-    expect(authCard).toHaveClass("xl:mt-[2.82rem]");
+    expect(authCard).toHaveClass("lg:mt-[2.5rem]");
+    expect(authCard).toHaveClass("xl:mt-[2.74rem]");
     expect(previewCard).toHaveClass("border-white/80");
     expect(previewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
   });
