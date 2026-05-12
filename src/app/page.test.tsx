@@ -16,9 +16,7 @@ describe("Home landing page", () => {
       ),
     ).toBeInTheDocument();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /^get started$/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
     const onboardAccessCode = screen.getByPlaceholderText("SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
@@ -86,6 +84,10 @@ describe("Home landing page", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
 
+    const landingHero = screen.getByTestId("landing-hero");
+    const bestCasesSection = screen.getByRole("heading", { name: /best cases/i }).closest("section");
+
+    expect(bestCasesSection).not.toBeNull();
     expect(screen.getByText(/leave your email and intended use case\. we will review it for early access\./i)).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
@@ -94,13 +96,15 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
     expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
-    expect(screen.getByText(/^Q1$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Q2$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Q3$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Q4$/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
-    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^Q1$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^Q2$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^Q3$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^Q4$/i)).toBeInTheDocument();
+    expect(within(landingHero).queryByRole("heading", { name: /peer review response support/i })).not.toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).queryByText(/^02 \/ 04$/i)).not.toBeInTheDocument();
   });
 
   it("preserves the previous auth mode when leaving the apply flow", () => {

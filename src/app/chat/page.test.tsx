@@ -33,6 +33,9 @@ describe("Chat route public landing clone", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
 
+    const bestCasesSection = screen.getByRole("heading", { name: /best cases/i }).closest("section");
+
+    expect(bestCasesSection).not.toBeNull();
     expect(screen.getByText(/leave your email and intended use case\. we will review it for early access\./i)).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
@@ -46,8 +49,10 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByText(/^Q2$/i)).toBeInTheDocument();
     expect(screen.getByText(/^Q3$/i)).toBeInTheDocument();
     expect(screen.getByText(/^Q4$/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
-    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /peer review response support/i })).not.toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).queryByText(/^02 \/ 04$/i)).not.toBeInTheDocument();
   });
 
   it("keeps live-like top utility menus and login interactions reachable on /chat", () => {
