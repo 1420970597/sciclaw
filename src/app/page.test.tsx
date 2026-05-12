@@ -19,7 +19,7 @@ describe("Home landing page", () => {
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
     expect(centerNode).not.toHaveAccessibleName();
-    expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
+    expect(screen.getByText(/enter your access code to begin/i)).toBeInTheDocument();
     const onboardAccessCode = screen.getByPlaceholderText("SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveValue("");
@@ -117,14 +117,14 @@ describe("Home landing page", () => {
     render(<Home />);
 
     fireEvent.click(screen.getByRole("tab", { name: /login/i }));
-    expect(screen.getByRole("tabpanel", { name: /login/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
     expect(screen.getByText(/leave your email and intended use case\. we will review it for early access\./i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /^back$/i }));
 
-    expect(screen.getByRole("tabpanel", { name: /login/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeDisabled();
   });
 

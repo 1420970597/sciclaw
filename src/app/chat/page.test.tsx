@@ -17,7 +17,7 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("button", { name: /user guide/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /contact us/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /settings/i })).toBeInTheDocument();
-    expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
+    expect(screen.getByText(/enter your access code to begin/i)).toBeInTheDocument();
     const onboardAccessCode = screen.getByPlaceholderText("SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveValue("");
@@ -81,7 +81,6 @@ describe("Chat route public landing clone", () => {
     );
 
     fireEvent.click(screen.getByRole("tab", { name: /login/i }));
-    expect(screen.getByRole("tabpanel", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeDisabled();
   });

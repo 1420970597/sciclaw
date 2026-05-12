@@ -493,7 +493,6 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            aria-label={activeMode === "onboard" ? "Onboard" : activeMode === "login" ? "Login" : "Apply"}
             className="rounded-[1.46rem] border border-[#eaedf2] bg-[#fcfdff] p-[1rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.84)] sm:p-[1.04rem]"
           >
             {activeMode === "onboard" ? (
