@@ -464,11 +464,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[296px] rounded-[1.95rem] border border-[#e9edf3] bg-[#fcfdff] px-[0.9rem] py-[0.94rem] shadow-[0_10px_22px_rgba(15,23,42,0.03),0_3px_10px_rgba(241,180,135,0.03)] sm:px-[0.94rem] sm:py-[0.98rem] lg:mt-[2rem] xl:mt-[2.22rem]"
+      className="mx-auto w-full max-w-[296px] rounded-[1.95rem] border border-[#dfe7ef] bg-[#fbfdff] px-[0.9rem] py-[0.94rem] shadow-[0_16px_34px_rgba(15,23,42,0.05),0_6px_18px_rgba(241,180,135,0.05)] sm:px-[0.94rem] sm:py-[0.98rem] lg:mt-[2rem] xl:mt-[2.22rem]"
     >
       <div className="mx-auto w-full max-w-[312px]">
-        <div className="rounded-[1.42rem] border border-[#e5eaf0] bg-white p-[0.92rem] shadow-[0_10px_22px_rgba(15,23,42,0.045)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[1.15rem] bg-[#f2f4f7] p-[0.88rem] text-sm text-[#757d88]">
+        <div className="rounded-[1.42rem] border border-[#dde5ee] bg-white p-[0.92rem] shadow-[0_14px_30px_rgba(15,23,42,0.07)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[1.15rem] bg-[#eef2f6] p-[0.88rem] text-sm text-[#68717d]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -489,8 +489,8 @@ function AuthCard({
                   }}
                   className={`rounded-[1rem] px-5 py-2.5 font-medium transition ${
                     selected
-                      ? "bg-[#f4cfb2] text-[#654732] shadow-[0_9px_20px_rgba(241,176,126,0.2)]"
-                      : "text-[#7f8691] hover:text-[#2a2e35]"
+                      ? "bg-[#f2c59e] text-[#573928] shadow-[0_12px_24px_rgba(241,176,126,0.24)]"
+                      : "text-[#6e7682] hover:text-[#222933]"
                   }`}
                 >
                   {tab.label}
@@ -505,22 +505,22 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.46rem] border border-[#eaedf2] bg-[#fcfdff] p-[1rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.84)] sm:p-[1.04rem]"
+            className="rounded-[1.46rem] border border-[#e3e9f0] bg-[#fbfdff] p-[1rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_10px_24px_rgba(15,23,42,0.03)] sm:p-[1.04rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
-                <p className="text-center text-sm text-[#7a8088]">Enter your access code to begin</p>
-                <div className="block text-sm text-[#5e646d]">
+                <p className="text-center text-sm text-[#68707c]">Enter your access code to begin</p>
+                <div className="block text-sm text-[#4f5661]">
                   <input
                     id="invite-code"
                     placeholder="SC-XXXXXXXX"
-                    className="w-full rounded-[1.2rem] border border-[#ebeef3] bg-white px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.28em] text-[#a6acb5] outline-none"
+                    className="w-full rounded-[1.2rem] border border-[#dbe4ec] bg-white px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.28em] text-[#5f6773] outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] transition placeholder:text-[#b2bac5] focus:border-[#e3a675]"
                   />
                 </div>
                 <button
                   type="button"
                   disabled
-                  className="w-full rounded-[1.2rem] border border-[#eef1f4] bg-[#f3f5f8] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#b7bcc5]"
+                  className="w-full rounded-[1.2rem] border border-[#dde5ee] bg-[#e7edf3] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[#5f6773] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition disabled:cursor-not-allowed disabled:border-[#dde5ee] disabled:bg-[#e7edf3] disabled:text-[#5f6773] disabled:opacity-100"
                 >
                   VERIFY ACCESS CODE
                 </button>

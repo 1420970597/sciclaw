@@ -79,6 +79,9 @@ describe("Home landing page", () => {
     expect(screen.queryByRole("navigation", { name: /primary/i })).not.toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[#e7edf3]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#5f6773]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[#dde5ee]");
     expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
     expect(utilityRow).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
@@ -94,9 +97,9 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.065fr)_300px]");
     expect(hero).toHaveClass("xl:gap-[0.82rem]");
     expect(authCard).toHaveClass("max-w-[296px]");
-    expect(authCard).toHaveClass("bg-[#fcfdff]");
-    expect(authCard).toHaveClass("border-[#e9edf3]");
-    expect(authCard).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.03),0_3px_10px_rgba(241,180,135,0.03)]");
+    expect(authCard).toHaveClass("bg-[#fbfdff]");
+    expect(authCard).toHaveClass("border-[#dfe7ef]");
+    expect(authCard).toHaveClass("shadow-[0_16px_34px_rgba(15,23,42,0.05),0_6px_18px_rgba(241,180,135,0.05)]");
     expect(authCard).toHaveClass("lg:mt-[2rem]");
     expect(authCard).toHaveClass("xl:mt-[2.22rem]");
     expect(previewCard).toHaveClass("border-white/80");

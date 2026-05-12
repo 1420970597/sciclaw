@@ -43,9 +43,9 @@ describe("Chat route public landing clone", () => {
     expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.065fr)_300px]");
     expect(chatHero).toHaveClass("xl:gap-[0.82rem]");
     expect(chatAuthCard).toHaveClass("max-w-[296px]");
-    expect(chatAuthCard).toHaveClass("bg-[#fcfdff]");
-    expect(chatAuthCard).toHaveClass("border-[#e9edf3]");
-    expect(chatAuthCard).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.03),0_3px_10px_rgba(241,180,135,0.03)]");
+    expect(chatAuthCard).toHaveClass("bg-[#fbfdff]");
+    expect(chatAuthCard).toHaveClass("border-[#dfe7ef]");
+    expect(chatAuthCard).toHaveClass("shadow-[0_16px_34px_rgba(15,23,42,0.05),0_6px_18px_rgba(241,180,135,0.05)]");
     expect(chatAuthCard).toHaveClass("lg:mt-[2rem]");
     expect(chatAuthCard).toHaveClass("xl:mt-[2.22rem]");
     expect(chatPreviewCard).toHaveClass("border-white/80");
@@ -56,6 +56,9 @@ describe("Chat route public landing clone", () => {
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[#e7edf3]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#5f6773]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[#dde5ee]");
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
