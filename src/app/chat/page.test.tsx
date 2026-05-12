@@ -5,6 +5,8 @@ describe("Chat route public landing clone", () => {
   it("renders the same marketing landing shell as the public live /chat route on fresh load", () => {
     render(<ChatPage />);
 
+    const centerNode = screen.getByTestId("feature-node-center");
+
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     expect(screen.getAllByText(/ai co-worker for scientific research\./i).length).toBeGreaterThanOrEqual(1);
     expect(
@@ -21,6 +23,7 @@ describe("Chat route public landing clone", () => {
     expect(onboardAccessCode).toHaveValue("");
     const bodyLabel = screen.getByText(/^autonomous research$/i);
     expect(bodyLabel.tagName).toBe("SPAN");
+    expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();

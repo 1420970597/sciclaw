@@ -7,6 +7,7 @@ describe("Home landing page", () => {
 
     const landingHero = screen.getByTestId("landing-hero");
     const defaultHeroSection = within(landingHero).getByRole("heading", { name: /deep literature analysis/i }).closest("section");
+    const centerNode = screen.getByTestId("feature-node-center");
 
     expect(defaultHeroSection).not.toBeNull();
     expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
@@ -17,6 +18,7 @@ describe("Home landing page", () => {
     ).toBeInTheDocument();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
+    expect(centerNode).not.toHaveAccessibleName();
     expect(screen.getByRole("tabpanel", { name: /onboard/i })).toBeInTheDocument();
     const onboardAccessCode = screen.getByPlaceholderText("SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");

@@ -235,9 +235,9 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
         </span>
         <button
           type="button"
+          data-testid="feature-node-center"
           onClick={() => onSelect(activeIndex)}
           className="group relative flex h-[5.12rem] w-[5.12rem] items-center justify-center rounded-full bg-[linear-gradient(180deg,#ffffff_0%,#fff8f2_100%)] text-[#df7930] shadow-[0_0_0_4px_rgba(249,159,120,0.026),0_0_0_8px_rgba(249,159,120,0.008),0_8px_12px_rgba(232,124,55,0.024)] transition hover:scale-[1.02] sm:h-[5.24rem] sm:w-[5.24rem]"
-          aria-label={centerNode.label}
         >
           <span className="absolute inset-[12px] rounded-full border border-[#efc8aa]/8" />
           <span className="absolute inset-[23px] rounded-full border border-[#efd8c8]/58" />
