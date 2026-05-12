@@ -59,9 +59,10 @@ describe("Home landing page", () => {
     expect(networkShell).toHaveClass("lg:-mr-[0.18rem]");
     expect(networkShell).toHaveClass("xl:-mr-[0.28rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
-    const headerWordmark = screen.getAllByText(/^Sci$/)[0]?.parentElement;
-    expect(headerWordmark).not.toBeNull();
+    const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
+    expect(headerWordmark).toHaveClass("text-[1.08rem]");
+    expect(headerWordmark).toHaveClass("sm:text-[1.14rem]");
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
     ).toBeGreaterThanOrEqual(1);
@@ -94,8 +95,8 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("max-w-[304px]");
     expect(authCard).toHaveClass("bg-[#fdfeff]");
     expect(authCard).toHaveClass("border-[#eef2f6]");
-    expect(authCard).toHaveClass("lg:mt-[1.48rem]");
-    expect(authCard).toHaveClass("xl:mt-[1.68rem]");
+    expect(authCard).toHaveClass("lg:mt-[1.72rem]");
+    expect(authCard).toHaveClass("xl:mt-[1.94rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {

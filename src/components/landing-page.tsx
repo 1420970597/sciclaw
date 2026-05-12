@@ -88,7 +88,7 @@ function Header() {
   return (
     <header className="pt-[0.46rem] sm:pt-[0.62rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between px-5 sm:px-7 lg:px-[1.95rem] xl:px-[2.18rem]">
-        <div className="pr-4 text-[1.02rem] font-semibold tracking-[-0.05em] text-[#1f232a] sm:text-[1.08rem]">
+        <div data-testid="landing-header-wordmark" className="pr-4 text-[1.08rem] font-semibold tracking-[-0.045em] text-[#1b2027] sm:text-[1.14rem]">
           Sci<span className="text-[#eb8a3c]">Claw</span>
         </div>
         <div data-testid="landing-utility-row" className="flex items-center gap-[0.62rem] pr-[1.72rem] sm:gap-[0.78rem] sm:pr-[1.72rem]">
@@ -464,7 +464,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[304px] rounded-[1.95rem] border border-[#eef2f6] bg-[#fdfeff] px-[0.94rem] py-[0.98rem] shadow-[0_10px_20px_rgba(15,23,42,0.024),0_4px_10px_rgba(241,180,135,0.038)] sm:px-[0.98rem] sm:py-[1rem] lg:mt-[1.48rem] xl:mt-[1.68rem]"
+      className="mx-auto w-full max-w-[304px] rounded-[1.95rem] border border-[#eef2f6] bg-[#fdfeff] px-[0.94rem] py-[0.98rem] shadow-[0_10px_20px_rgba(15,23,42,0.024),0_4px_10px_rgba(241,180,135,0.038)] sm:px-[0.98rem] sm:py-[1rem] lg:mt-[1.72rem] xl:mt-[1.94rem]"
     >
       <div className="mx-auto w-full max-w-[320px]">
         <div className="rounded-[1.42rem] border border-[#e9eef3] bg-white p-1 shadow-[0_8px_18px_rgba(15,23,42,0.034)]">

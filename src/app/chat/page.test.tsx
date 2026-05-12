@@ -8,9 +8,10 @@ describe("Chat route public landing clone", () => {
     const centerNode = screen.getByTestId("feature-node-center");
 
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
-    const headerWordmark = screen.getAllByText(/^Sci$/)[0]?.parentElement;
-    expect(headerWordmark).not.toBeNull();
+    const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
+    expect(headerWordmark).toHaveClass("text-[1.08rem]");
+    expect(headerWordmark).toHaveClass("sm:text-[1.14rem]");
     expect(screen.getAllByText(/ai co-worker for scientific research\./i).length).toBeGreaterThanOrEqual(1);
     expect(
       screen.getByText(
@@ -43,8 +44,8 @@ describe("Chat route public landing clone", () => {
     expect(chatAuthCard).toHaveClass("max-w-[304px]");
     expect(chatAuthCard).toHaveClass("bg-[#fdfeff]");
     expect(chatAuthCard).toHaveClass("border-[#eef2f6]");
-    expect(chatAuthCard).toHaveClass("lg:mt-[1.48rem]");
-    expect(chatAuthCard).toHaveClass("xl:mt-[1.68rem]");
+    expect(chatAuthCard).toHaveClass("lg:mt-[1.72rem]");
+    expect(chatAuthCard).toHaveClass("xl:mt-[1.94rem]");
     expect(chatGetStartedIcon).not.toBeNull();
     expect(chatGetStartedIcon).toHaveClass("h-3.5");
     expect(chatGetStartedIcon).toHaveClass("w-3.5");
