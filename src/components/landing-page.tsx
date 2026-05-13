@@ -458,7 +458,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[238px] rounded-[1.52rem] border border-[#f4f7fb] bg-[#fdfdff] px-[0.5rem] py-[0.58rem] shadow-[0_1px_2px_rgba(15,23,42,0.006),0_1px_2px_rgba(241,180,135,0.003)] sm:px-[0.54rem] sm:py-[0.62rem] lg:mt-[2.02rem] xl:mt-[2.18rem]"
+      className="mx-auto w-full max-w-[238px] rounded-[1.52rem] border border-[#f4f7fb] bg-[#fdfdff] px-[0.5rem] py-[0.58rem] shadow-[0_1px_2px_rgba(15,23,42,0.006),0_1px_2px_rgba(241,180,135,0.003)] sm:px-[0.54rem] sm:py-[0.62rem] lg:mt-[2.18rem] xl:mt-[2.34rem]"
     >
       <div className="mx-auto w-full max-w-[278px]">
         <div className="rounded-[0.98rem] border border-[#fafbfc] bg-white/88 p-[0.42rem] shadow-[0_1px_2px_rgba(15,23,42,0.008)]">

@@ -113,8 +113,8 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("bg-[#fdfdff]");
     expect(authCard).toHaveClass("border-[#f4f7fb]");
     expect(authCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.006),0_1px_2px_rgba(241,180,135,0.003)]");
-    expect(authCard).toHaveClass("lg:mt-[2.02rem]");
-    expect(authCard).toHaveClass("xl:mt-[2.18rem]");
+    expect(authCard).toHaveClass("lg:mt-[2.18rem]");
+    expect(authCard).toHaveClass("xl:mt-[2.34rem]");
     expect(previewCard).toHaveClass("border-white/92");
     expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)]");
     expect(previewCard).toHaveClass("shadow-[0_18px_42px_rgba(15,23,42,0.06)]");
