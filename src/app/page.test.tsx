@@ -95,9 +95,11 @@ describe("Home landing page", () => {
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
     const previewCard = screen.getByTestId("feature-preview-card");
+    expect(hero).toHaveClass("lg:-mt-[2.1rem]");
     expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_280px]");
     expect(hero).toHaveClass("lg:items-start");
     expect(hero).toHaveClass("lg:gap-[0.04rem]");
+    expect(hero).toHaveClass("xl:-mt-[2.35rem]");
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_280px]");
     expect(hero).toHaveClass("xl:gap-[0.08rem]");
     expect(authCard).toHaveClass("max-w-[276px]");
