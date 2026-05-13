@@ -83,10 +83,10 @@ function Header() {
         <div data-testid="landing-header-wordmark" className="pr-4 text-[1.08rem] font-semibold tracking-[-0.045em] text-[#1b2027] sm:text-[1.14rem]">
           Sci<span className="text-[#eb8a3c]">Claw</span>
         </div>
-        <div data-testid="landing-utility-row" className="flex items-center gap-[0.62rem] pr-[1.72rem] sm:gap-[0.78rem] sm:pr-[1.72rem]">
+        <div data-testid="landing-utility-row" className="flex items-center gap-[0.56rem] pr-[1.38rem] sm:gap-[0.72rem] sm:pr-[1.42rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
-            className="gap-[0.34rem] sm:gap-[0.42rem]"
+            className="gap-[0.3rem] sm:gap-[0.38rem]"
             buttonClassName="border-[rgba(15,23,42,0.18)] bg-white/42 text-[#4a525c] shadow-[0_8px_18px_rgba(15,23,42,0.04)] hover:-translate-y-0.5 hover:border-[rgba(15,23,42,0.26)] hover:bg-white/78 hover:text-[#1f2933]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
@@ -458,7 +458,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[242px] rounded-[1.52rem] border border-[#f4f7fb] bg-[#fdfdff] px-[0.5rem] py-[0.58rem] shadow-[0_1px_2px_rgba(15,23,42,0.006),0_1px_2px_rgba(241,180,135,0.003)] sm:px-[0.54rem] sm:py-[0.62rem] lg:mt-[1.74rem] xl:mt-[1.9rem]"
+      className="mx-auto w-full max-w-[238px] rounded-[1.52rem] border border-[#f4f7fb] bg-[#fdfdff] px-[0.5rem] py-[0.58rem] shadow-[0_1px_2px_rgba(15,23,42,0.006),0_1px_2px_rgba(241,180,135,0.003)] sm:px-[0.54rem] sm:py-[0.62rem] lg:mt-[2.02rem] xl:mt-[2.18rem]"
     >
       <div className="mx-auto w-full max-w-[278px]">
         <div className="rounded-[0.98rem] border border-[#fafbfc] bg-white/88 p-[0.42rem] shadow-[0_1px_2px_rgba(15,23,42,0.008)]">
@@ -880,7 +880,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.92rem] lg:grid-cols-[minmax(0,1fr)_242px] lg:items-start lg:gap-[0.28rem] xl:-mt-[3.16rem] xl:grid-cols-[minmax(0,1.12fr)_242px] xl:gap-[0.36rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:-mt-[2.92rem] lg:grid-cols-[minmax(0,1fr)_238px] lg:items-start lg:gap-[0.18rem] xl:-mt-[3.16rem] xl:grid-cols-[minmax(0,1.12fr)_238px] xl:gap-[0.24rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
