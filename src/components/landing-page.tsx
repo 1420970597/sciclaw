@@ -467,11 +467,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[280px] rounded-[1.72rem] border border-[#f2f5f8] bg-[#fcfdff] px-[0.68rem] py-[0.74rem] shadow-[0_3px_8px_rgba(15,23,42,0.013),0_2px_4px_rgba(241,180,135,0.007)] sm:px-[0.72rem] sm:py-[0.78rem] lg:mt-[2.52rem] xl:mt-[2.72rem]"
+      className="mx-auto w-full max-w-[276px] rounded-[1.68rem] border border-[#f4f7fa] bg-[#fdfdff] px-[0.64rem] py-[0.7rem] shadow-[0_2px_6px_rgba(15,23,42,0.011),0_1px_3px_rgba(241,180,135,0.006)] sm:px-[0.68rem] sm:py-[0.74rem] lg:mt-[2.64rem] xl:mt-[2.84rem]"
     >
       <div className="mx-auto w-full max-w-[292px]">
-        <div className="rounded-[1.16rem] border border-[#f7f8fa] bg-white/93 p-[0.56rem] shadow-[0_2px_6px_rgba(15,23,42,0.014)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.86rem] bg-[#f5f7fa] p-[0.52rem] text-sm text-[#6b7480]">
+        <div className="rounded-[1.1rem] border border-[#f8f9fb] bg-white/92 p-[0.52rem] shadow-[0_1px_4px_rgba(15,23,42,0.012)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.82rem] bg-[#f6f8fa] p-[0.44rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
