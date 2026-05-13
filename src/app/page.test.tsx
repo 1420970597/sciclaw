@@ -307,12 +307,12 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNodeWrapper?.className).toContain("left-[42.8%]");
-    expect(dataMiningNodeWrapper?.className).toContain("left-[43.25%]");
-    expect(outcomeNodeWrapper?.className).toContain("right-[9.45%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.4%]']")).not.toBeNull();
-    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.35%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.2%]']")).not.toBeNull();
+    expect(literatureNodeWrapper?.className).toContain("left-[44.15%]");
+    expect(dataMiningNodeWrapper?.className).toContain("left-[44.55%]");
+    expect(outcomeNodeWrapper?.className).toContain("right-[11.7%]");
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.9%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.8%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.55%]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
@@ -364,18 +364,18 @@ describe("Home landing page", () => {
     expect(literatureNodeLabel).toHaveClass("text-[10.8px]");
     expect(literatureNodeLabel).toHaveClass("leading-[2.06]");
     expect(literatureNodeLabel).toHaveClass("tracking-[0.03em]");
-    expect(literatureNodeLabel).toHaveClass("max-w-[77px]");
-    expect(literatureNodeLabel).toHaveClass("left-[-4.55rem]");
-    expect(literatureNodeLabel).toHaveClass("top-[0.18rem]");
+    expect(literatureNodeLabel).toHaveClass("max-w-[84px]");
+    expect(literatureNodeLabel).toHaveClass("left-[-4.18rem]");
+    expect(literatureNodeLabel).toHaveClass("top-[0.12rem]");
     expect(literatureNodeLabel).toHaveClass("text-left");
-    expect(dataMiningNodeLabel).toHaveClass("max-w-[82px]");
+    expect(dataMiningNodeLabel).toHaveClass("max-w-[88px]");
     expect(dataMiningNodeLabel).toHaveClass("left-1/2");
     expect(dataMiningNodeLabel).toHaveClass("-translate-x-1/2");
     expect(dataMiningNodeLabel).toHaveClass("text-center");
-    expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%+0.88rem)]");
-    expect(outcomeNodeLabel).toHaveClass("max-w-[84px]");
-    expect(outcomeNodeLabel).toHaveClass("left-[4.3rem]");
-    expect(outcomeNodeLabel).toHaveClass("top-[0.18rem]");
+    expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%+0.72rem)]");
+    expect(outcomeNodeLabel).toHaveClass("max-w-[88px]");
+    expect(outcomeNodeLabel).toHaveClass("left-[4.12rem]");
+    expect(outcomeNodeLabel).toHaveClass("top-[0.12rem]");
     expect(outcomeNodeLabel).toHaveClass("text-left");
 
     const getStartedButton = within(landingHero).getByRole("button", { name: /^get started$/i });
