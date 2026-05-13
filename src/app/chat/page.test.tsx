@@ -38,7 +38,7 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:-mt-[2.72rem]");
+    expect(chatHero).toHaveClass("lg:-mt-[2.9rem]");
     expect(chatHero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_272px]");
     expect(chatHero).toHaveClass("lg:gap-0");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
@@ -56,15 +56,15 @@ describe("Chat route public landing clone", () => {
     expect(chatHero.querySelector("span[class*='w-[14.9%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='w-[14.8%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='w-[14.55%]']")).not.toBeNull();
-    expect(chatHero).toHaveClass("xl:-mt-[2.96rem]");
+    expect(chatHero).toHaveClass("xl:-mt-[3.16rem]");
     expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.12fr)_272px]");
     expect(chatHero).toHaveClass("xl:gap-[0.02rem]");
     expect(chatAuthCard).toHaveClass("max-w-[268px]");
     expect(chatAuthCard).toHaveClass("bg-[#fdfdff]");
     expect(chatAuthCard).toHaveClass("border-[#f5f8fb]");
     expect(chatAuthCard).toHaveClass("shadow-[0_1px_4px_rgba(15,23,42,0.009),0_1px_2px_rgba(241,180,135,0.005)]");
-    expect(chatAuthCard).toHaveClass("lg:mt-[2.86rem]");
-    expect(chatAuthCard).toHaveClass("xl:mt-[3.06rem]");
+    expect(chatAuthCard).toHaveClass("lg:mt-[2.6rem]");
+    expect(chatAuthCard).toHaveClass("xl:mt-[2.8rem]");
     expect(chatPreviewCard).toHaveClass("border-white/88");
     expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#fbfcfe_100%)]");
     expect(chatPreviewCard).toHaveClass("shadow-[0_24px_60px_rgba(15,23,42,0.068)]");
