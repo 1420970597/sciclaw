@@ -108,9 +108,9 @@ describe("Home landing page", () => {
     expect(previewCard).toHaveClass("border-white/80");
     expect(previewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(previewLabelRow).toHaveClass("mt-[3.26rem]");
+    expect(previewLabelRow).toHaveClass("mt-[3.08rem]");
     expect(previewLabelRow).toHaveClass("gap-[3.46rem]");
-    expect(previewLabelRow).toHaveClass("pt-[3.28rem]");
+    expect(previewLabelRow).toHaveClass("pt-[3.06rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
@@ -322,7 +322,7 @@ describe("Home landing page", () => {
     expect(literatureNode).not.toHaveAttribute("aria-label");
     expect(dataMiningNode).not.toHaveAttribute("aria-label");
     expect(outcomeNode).not.toHaveAttribute("aria-label");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[4.9rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[4.82rem]");
     expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.78rem]");
     expect(outcomeNode.firstElementChild).toHaveClass("h-[4.78rem]");
 
@@ -349,6 +349,8 @@ describe("Home landing page", () => {
     expect(chartRow.childElementCount).toBe(3);
     expect(chartRow).toHaveClass("gap-[3.46rem]");
     expect(chartRow).toHaveClass("sm:gap-[3.62rem]");
+    expect(chartRow).toHaveClass("mt-[3.08rem]");
+    expect(chartRow).toHaveClass("pt-[3.06rem]");
 
     const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
     const dataMiningNodeLabel = screen.getByText(/^data mining$/i);

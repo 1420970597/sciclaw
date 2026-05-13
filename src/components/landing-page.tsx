@@ -115,10 +115,10 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       position: "left-[43.4%] top-[11.4%] sm:left-[43.4%] sm:top-[11.4%]",
       lineClass: "left-[45.1%] top-[27.4%] h-[2.18px] w-[15.7%] origin-left -rotate-[21deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
-      activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
+      activeRingClass: "h-[4.82rem] w-[4.82rem] border-[#d59562] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe3cc_100%)] text-[#a85a29] shadow-[0_0_0_2px_rgba(240,142,79,0.032),0_10px_18px_rgba(232,124,55,0.058)]",
       wrapperClass: "items-center",
       labelClass: "max-w-[77px] text-left text-[#4f6372] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[77px] text-left text-[#8a4619] drop-shadow-[0_2px_4px_rgba(240,142,79,0.024)]",
+      activeLabelClass: "max-w-[77px] text-left text-[#7c532f] drop-shadow-[0_2px_3px_rgba(240,142,79,0.016)]",
       labelPositionClass: "absolute left-[-4.55rem] top-[0.18rem] sm:left-[-4.7rem]",
     },
     {
@@ -134,10 +134,10 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       position: "left-[43.9%] top-[52.2%] sm:left-[43.9%] sm:top-[52.2%]",
       lineClass: "left-[45.55%] top-[54.2%] h-[2.18px] w-[15.65%] origin-left rotate-[16deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
-      activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
+      activeRingClass: "h-[4.82rem] w-[4.82rem] border-[#d59562] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe3cc_100%)] text-[#a85a29] shadow-[0_0_0_2px_rgba(240,142,79,0.032),0_10px_18px_rgba(232,124,55,0.058)]",
       wrapperClass: "items-center",
       labelClass: "max-w-[82px] text-center text-[#4f6372] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[82px] text-center text-[#8a4619] drop-shadow-[0_2px_4px_rgba(240,142,79,0.024)]",
+      activeLabelClass: "max-w-[82px] text-center text-[#7c532f] drop-shadow-[0_2px_3px_rgba(240,142,79,0.016)]",
       labelPositionClass: "absolute left-1/2 top-[calc(100%+0.88rem)] -translate-x-1/2",
     },
     {
@@ -152,10 +152,10 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       position: "right-[10.2%] top-[11.2%] sm:right-[10.2%] sm:top-[11.2%]",
       lineClass: "left-[47.05%] top-[27.45%] h-[2.18px] w-[15.45%] origin-left rotate-[23deg]",
       ringClass: "h-[4.78rem] w-[4.78rem] border-[#476373] bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] text-[#173245] shadow-[0_11px_18px_rgba(15,23,42,0.076)]",
-      activeRingClass: "h-[4.9rem] w-[4.9rem] border-[#dc8d51] bg-[linear-gradient(180deg,#fffdf9_0%,#ffd9bf_100%)] text-[#ab5018] shadow-[0_0_0_3px_rgba(240,142,79,0.05),0_13px_21px_rgba(232,124,55,0.086)]",
+      activeRingClass: "h-[4.82rem] w-[4.82rem] border-[#d59562] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe3cc_100%)] text-[#a85a29] shadow-[0_0_0_2px_rgba(240,142,79,0.032),0_10px_18px_rgba(232,124,55,0.058)]",
       wrapperClass: "items-center",
       labelClass: "max-w-[84px] text-left text-[#4f6372] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[84px] text-left text-[#8a4619] drop-shadow-[0_2px_4px_rgba(240,142,79,0.024)]",
+      activeLabelClass: "max-w-[84px] text-left text-[#7c532f] drop-shadow-[0_2px_3px_rgba(240,142,79,0.016)]",
       labelPositionClass: "absolute left-[4.3rem] top-[0.18rem] sm:left-[4.46rem]",
     },
     ],
@@ -407,7 +407,7 @@ function FeaturePreview({
                 </div>
                 <div
                   data-testid="feature-preview-chart-label-row"
-                  className={`mt-[3.26rem] grid ${chartGridClass} gap-[3.46rem] px-[0.9rem] pt-[3.28rem] sm:gap-[3.62rem]`}
+                  className={`mt-[3.08rem] grid ${chartGridClass} gap-[3.46rem] px-[0.9rem] pt-[3.06rem] sm:gap-[3.62rem]`}
                 >
                   {visibleBars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.18rem] text-center sm:gap-[1.28rem]">
