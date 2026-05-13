@@ -880,7 +880,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.92rem] lg:grid-cols-[minmax(0,1fr)_238px] lg:items-start lg:gap-[0.18rem] xl:-mt-[3.16rem] xl:grid-cols-[minmax(0,1.12fr)_238px] xl:gap-[0.24rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:-mt-[2.66rem] lg:grid-cols-[minmax(0,1fr)_238px] lg:items-start lg:gap-[0.18rem] xl:-mt-[2.9rem] xl:grid-cols-[minmax(0,1.12fr)_238px] xl:gap-[0.24rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}

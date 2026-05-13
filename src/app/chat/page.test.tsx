@@ -43,7 +43,7 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:-mt-[2.92rem]");
+    expect(chatHero).toHaveClass("lg:-mt-[2.66rem]");
     expect(chatHero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_238px]");
     expect(chatHero).toHaveClass("lg:gap-[0.18rem]");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
@@ -61,7 +61,7 @@ describe("Chat route public landing clone", () => {
     expect(chatHero.querySelector("span[class*='w-[14.9%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='w-[14.8%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='w-[14.55%]']")).not.toBeNull();
-    expect(chatHero).toHaveClass("xl:-mt-[3.16rem]");
+    expect(chatHero).toHaveClass("xl:-mt-[2.9rem]");
     expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.12fr)_238px]");
     expect(chatHero).toHaveClass("xl:gap-[0.24rem]");
     expect(chatAuthCard).toHaveClass("max-w-[238px]");
