@@ -56,20 +56,19 @@ describe("Help article page", () => {
     render(page);
 
     expect(screen.getByRole("heading", { name: /^chat$/i })).toBeInTheDocument();
-    expect(screen.getByText(/this route intentionally feels more product-like than the surrounding docs pages/i)).toBeInTheDocument();
-
-    const workspacePreview = screen.getByTestId("chat-workspace-preview");
-    expect(within(workspacePreview).getByRole("heading", { name: /^active lanes$/i })).toBeInTheDocument();
-    expect(within(workspacePreview).getByText(/the center timeline emphasizes three simultaneous research threads while keeping the surrounding task queue and output handoff visible/i)).toBeInTheDocument();
-    expect(within(workspacePreview).getByRole("heading", { name: /^active sessions$/i })).toBeInTheDocument();
-    expect(within(workspacePreview).getByRole("heading", { name: /^queued work$/i })).toBeInTheDocument();
-    expect(within(workspacePreview).getByText(/^output handoff$/i)).toBeInTheDocument();
-    expect(within(workspacePreview).getByText(/^patent compare$/i)).toBeInTheDocument();
-    expect(within(workspacePreview).getByText(/^clinical replay$/i)).toBeInTheDocument();
-    expect(within(workspacePreview).getByText(/^reg memo final$/i)).toBeInTheDocument();
-    expect(within(workspacePreview).getByText(/^import pdfs$/i)).toBeInTheDocument();
-    expect(within(workspacePreview).getByRole("link", { name: /review tasks/i })).toHaveAttribute("href", "/help/tasks");
-    expect(within(workspacePreview).getByRole("link", { name: /open rail/i })).toHaveAttribute("href", "/help/foundry");
+    expect(screen.getByText(/the chat panel is the main workspace for interacting with sciclaw/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^command bar$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^sending messages$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^attaching files$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^library$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^guiding the agent mid-task$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^interactive prompts$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^inline skill invocation$/i })).toBeInTheDocument();
+    expect(screen.getByText(/new chat — start a new conversation session/i)).toBeInTheDocument();
+    expect(screen.getByText(/type your message in the input box and press enter to send/i)).toBeInTheDocument();
+    expect(screen.getByText(/uploaded files are automatically added to the current project/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^project & session$/i })).toHaveAttribute("href", "/help/projects");
+    expect(screen.getByRole("link", { name: /^skills$/i })).toHaveAttribute("href", "/help/skills");
   });
 
   it("matches the live public settings page title, body, next-link, and toc labels", async () => {

@@ -554,46 +554,72 @@ export const helpArticles: HelpArticle[] = [
     index: "03",
     title: "Chat",
     description:
-      "The chat route is the clearest public bridge into the future app shell: active sessions, queued work, and an export-ready handoff stay visible at once.",
+      "The chat panel is the main workspace for interacting with SciClaw. Here, you can ask questions, attach files, enable knowledge base search, or use the command bar to access specific features.",
     icon: "chat",
     heroParagraphs: [
-      "This route intentionally feels more product-like than the surrounding docs pages. It is where the public marketing shell narrows into a credible workspace preview without claiming that the live site is already a private app.",
-      "The current reconstruction keeps the same major pieces visible: active session lanes, project memory, queued tasks, and the right-rail handoff into Foundry output.",
+      "The chat panel is the main workspace for interacting with SciClaw. Here, you can ask questions, attach files, enable knowledge base search, or use the command bar to access specific features.",
     ],
     sections: [
-      { id: "active-lanes", title: "Active lanes" },
-      { id: "task-queue", title: "Task queue" },
-      { id: "output-handoff", title: "Output handoff" },
+      { id: "command-bar", title: "Command bar" },
+      { id: "sending-messages", title: "Sending messages" },
+      { id: "attaching-files", title: "Attaching files" },
+      { id: "library", title: "Library" },
+      { id: "guiding-the-agent-mid-task", title: "Guiding the agent mid-task" },
+      { id: "interactive-prompts", title: "Interactive prompts" },
+      { id: "inline-skill-invocation", title: "Inline skill invocation" },
     ],
-    nextHref: "/help/tasks",
-    nextLabel: "Tasks guide",
     body: [
       {
         type: "paragraph",
-        sectionId: "active-lanes",
+        sectionId: "command-bar",
         content:
-          "The center timeline emphasizes three simultaneous research threads, each with a compact title, one-line state, and a pair of lightweight status tokens. This keeps the app-shell preview believable while staying calmer than a true operations dashboard.",
+          "The command bar above the input box provides four quick actions:",
       },
       {
         type: "list",
-        sectionId: "active-lanes",
+        sectionId: "command-bar",
         items: [
-          "Top summary cards orient the viewer before the denser session rows begin.",
-          "The Active sessions block now carries the highest information density and is tuned carefully to remain scannable.",
-          "Lower checkpoint cards translate session work into review and Foundry handoff actions.",
+          "➕ New Chat — Start a new conversation session",
+          "⏹ Stop — Interrupt the current response or background task",
+          "⚡ Skills — Open the Skills list and select the skills you want to use in the current chat",
+          "🔨 Foundry — Open the document generation workspace",
         ],
       },
       {
         type: "paragraph",
-        sectionId: "task-queue",
+        sectionId: "sending-messages",
         content:
-          "The Tasks lane previews how the product could queue ingestion, comparison, and export work without pretending those operations are already interactive on the public site.",
+          "Type your message in the input box and press Enter to send. Press Shift + Enter to start a new line. SciClaw's responses are streamed in real time, so you can follow its reasoning, tool usage, and results as they appear.",
       },
       {
         type: "paragraph",
-        sectionId: "output-handoff",
+        sectionId: "attaching-files",
         content:
-          "The right rail closes the story: session output, status review, and Foundry handoff stay visible together so the route reads as one continuous bridge from evidence to packetized output.",
+          "To upload a file, click the 📎 paperclip icon in the lower-right corner of the input box, or simply drag and drop a file into the chat area. Uploaded files are automatically added to the current project, and their paths are passed to SciClaw for use in the conversation.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "library",
+        content:
+          "Click the Library toggle in the lower-right corner of the input box to enable RAG mode. When enabled, SciClaw searches the current project's knowledge base before answering and retrieves relevant documents.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "guiding-the-agent-mid-task",
+        content:
+          "While SciClaw is generating a response, you can type a new message in the input box and press Enter to inject it directly into the active agent workflow. This allows you to guide the next step in real time without interrupting the current task.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "interactive-prompts",
+        content:
+          "When SciClaw needs confirmation, clarification, or a selection from you during task execution, it displays an interactive prompt above the input box. Click an option or type a reply to continue.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "inline-skill-invocation",
+        content:
+          "Type / in the input box to open the skill list. Press Enter or click a skill to select it. The selected skill name is automatically inserted as a prefix to your message.",
       },
     ],
   },
