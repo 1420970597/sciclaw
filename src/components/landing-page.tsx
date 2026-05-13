@@ -464,9 +464,9 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[268px] rounded-[1.72rem] border border-[#f2f5f8] bg-[#fcfdff] px-[0.68rem] py-[0.74rem] shadow-[0_3px_8px_rgba(15,23,42,0.013),0_2px_4px_rgba(241,180,135,0.007)] sm:px-[0.72rem] sm:py-[0.78rem] lg:mt-[2.52rem] xl:mt-[2.72rem]"
+      className="mx-auto w-full max-w-[272px] rounded-[1.72rem] border border-[#f2f5f8] bg-[#fcfdff] px-[0.68rem] py-[0.74rem] shadow-[0_3px_8px_rgba(15,23,42,0.013),0_2px_4px_rgba(241,180,135,0.007)] sm:px-[0.72rem] sm:py-[0.78rem] lg:mt-[2.52rem] xl:mt-[2.72rem]"
     >
-      <div className="mx-auto w-full max-w-[282px]">
+      <div className="mx-auto w-full max-w-[286px]">
         <div className="rounded-[1.16rem] border border-[#f7f8fa] bg-white/93 p-[0.56rem] shadow-[0_2px_6px_rgba(15,23,42,0.014)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.86rem] bg-[#f5f7fa] p-[0.52rem] text-sm text-[#6b7480]">
             {[
@@ -520,7 +520,7 @@ function AuthCard({
                 <button
                   type="button"
                   disabled
-                  className="w-full rounded-[1.2rem] border border-[#dde5ee] bg-[#e7edf3] px-3.5 py-3 text-[0.82rem] font-semibold uppercase tracking-[0.1em] text-[#5f6773] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition disabled:cursor-not-allowed disabled:border-[#dde5ee] disabled:bg-[#e7edf3] disabled:text-[#5f6773] disabled:opacity-100"
+                  className="w-full rounded-[1.2rem] border border-[#dde5ee] bg-[#e7edf3] px-3 py-3 text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-[#5f6773] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition disabled:cursor-not-allowed disabled:border-[#dde5ee] disabled:bg-[#e7edf3] disabled:text-[#5f6773] disabled:opacity-100"
                 >
                   VERIFY ACCESS CODE
                 </button>
@@ -886,7 +886,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-[0.08rem] xl:grid-cols-[minmax(0,1.1fr)_280px] xl:gap-[0.14rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_284px] lg:items-start lg:gap-[0.06rem] xl:grid-cols-[minmax(0,1.1fr)_284px] xl:gap-[0.12rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}

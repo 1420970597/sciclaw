@@ -38,11 +38,11 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_280px]");
-    expect(chatHero).toHaveClass("lg:gap-[0.08rem]");
-    expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_280px]");
-    expect(chatHero).toHaveClass("xl:gap-[0.14rem]");
-    expect(chatAuthCard).toHaveClass("max-w-[268px]");
+    expect(chatHero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_284px]");
+    expect(chatHero).toHaveClass("lg:gap-[0.06rem]");
+    expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_284px]");
+    expect(chatHero).toHaveClass("xl:gap-[0.12rem]");
+    expect(chatAuthCard).toHaveClass("max-w-[272px]");
     expect(chatAuthCard).toHaveClass("bg-[#fcfdff]");
     expect(chatAuthCard).toHaveClass("border-[#f2f5f8]");
     expect(chatAuthCard).toHaveClass("shadow-[0_3px_8px_rgba(15,23,42,0.013),0_2px_4px_rgba(241,180,135,0.007)]");
