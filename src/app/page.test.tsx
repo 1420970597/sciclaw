@@ -52,12 +52,15 @@ describe("Home landing page", () => {
     const featureRotator = screen.getByTestId("feature-rotator");
     expect(screen.queryByRole("button", { name: /^autonomous execution$/i })).not.toBeInTheDocument();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
+    expect(featureRotator).toHaveClass("lg:items-start");
     expect(featureRotator).toHaveClass("lg:gap-[0.14rem]");
     expect(featureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("xl:gap-[0.2rem]");
     const networkShell = featureRotator.firstElementChild;
     expect(networkShell).not.toBeNull();
+    expect(networkShell).toHaveClass("lg:-mt-[1.92rem]");
     expect(networkShell).toHaveClass("lg:-mr-[0.12rem]");
+    expect(networkShell).toHaveClass("xl:-mt-[2.14rem]");
     expect(networkShell).toHaveClass("xl:-mr-[0.18rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
