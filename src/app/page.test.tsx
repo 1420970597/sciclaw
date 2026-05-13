@@ -107,6 +107,10 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("xl:mt-[2.72rem]");
     expect(previewCard).toHaveClass("border-white/80");
     expect(previewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
+    const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
+    expect(previewLabelRow).toHaveClass("mt-[3.26rem]");
+    expect(previewLabelRow).toHaveClass("gap-[3.46rem]");
+    expect(previewLabelRow).toHaveClass("pt-[3.28rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
@@ -334,18 +338,17 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[9.46rem]");
+      expect(labelWrapper).toHaveClass("min-h-[7.22rem]");
       expect(labelWrapper).toHaveClass("leading-[1.2]");
       expect(label).toHaveClass("max-w-[11.24rem]");
       expect(label).toHaveClass("text-balance");
     });
 
-    const chartRow = chartLabels[0]?.closest("div[class*='grid-cols-3']");
-    expect(chartRow).not.toBeNull();
+    const chartRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chartRow).toHaveClass("grid-cols-3");
-    expect(chartRow?.childElementCount).toBe(3);
-    expect(chartRow).toHaveClass("gap-[4.52rem]");
-    expect(chartRow).toHaveClass("sm:gap-[4.68rem]");
+    expect(chartRow.childElementCount).toBe(3);
+    expect(chartRow).toHaveClass("gap-[3.46rem]");
+    expect(chartRow).toHaveClass("sm:gap-[3.62rem]");
 
     const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
     const dataMiningNodeLabel = screen.getByText(/^data mining$/i);
