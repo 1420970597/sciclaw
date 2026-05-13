@@ -458,11 +458,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[276px] rounded-[1.68rem] border border-[#f4f7fa] bg-[#fdfdff] px-[0.64rem] py-[0.7rem] shadow-[0_2px_6px_rgba(15,23,42,0.011),0_1px_3px_rgba(241,180,135,0.006)] sm:px-[0.68rem] sm:py-[0.74rem] lg:mt-[2.64rem] xl:mt-[2.84rem]"
+      className="mx-auto w-full max-w-[268px] rounded-[1.62rem] border border-[#f5f8fb] bg-[#fdfdff] px-[0.58rem] py-[0.66rem] shadow-[0_1px_4px_rgba(15,23,42,0.009),0_1px_2px_rgba(241,180,135,0.005)] sm:px-[0.62rem] sm:py-[0.7rem] lg:mt-[2.86rem] xl:mt-[3.06rem]"
     >
-      <div className="mx-auto w-full max-w-[292px]">
-        <div className="rounded-[1.1rem] border border-[#f8f9fb] bg-white/92 p-[0.52rem] shadow-[0_1px_4px_rgba(15,23,42,0.012)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.82rem] bg-[#f6f8fa] p-[0.44rem] text-sm text-[#6b7480]">
+      <div className="mx-auto w-full max-w-[284px]">
+        <div className="rounded-[1.02rem] border border-[#fafbfc] bg-white/90 p-[0.46rem] shadow-[0_1px_3px_rgba(15,23,42,0.01)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.76rem] bg-[#f7f9fb] p-[0.38rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -880,7 +880,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.1rem] lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-[0.04rem] xl:-mt-[2.35rem] xl:grid-cols-[minmax(0,1.1fr)_280px] xl:gap-[0.08rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:-mt-[2.32rem] lg:grid-cols-[minmax(0,1fr)_272px] lg:items-start lg:gap-0 xl:-mt-[2.58rem] xl:grid-cols-[minmax(0,1.12fr)_272px] xl:gap-[0.02rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
