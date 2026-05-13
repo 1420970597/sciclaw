@@ -57,8 +57,8 @@ describe("Home landing page", () => {
     expect(featureRotator).toHaveClass("xl:gap-[0.2rem]");
     const networkShell = featureRotator.firstElementChild;
     expect(networkShell).not.toBeNull();
-    expect(networkShell).toHaveClass("lg:-mr-[0.18rem]");
-    expect(networkShell).toHaveClass("xl:-mr-[0.28rem]");
+    expect(networkShell).toHaveClass("lg:-mr-[0.12rem]");
+    expect(networkShell).toHaveClass("xl:-mr-[0.18rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
@@ -307,12 +307,12 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNodeWrapper?.className).toContain("left-[43.4%]");
-    expect(dataMiningNodeWrapper?.className).toContain("left-[43.9%]");
-    expect(outcomeNodeWrapper?.className).toContain("right-[10.2%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[15.7%]']")).not.toBeNull();
-    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[15.65%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[15.45%]']")).not.toBeNull();
+    expect(literatureNodeWrapper?.className).toContain("left-[42.8%]");
+    expect(dataMiningNodeWrapper?.className).toContain("left-[43.25%]");
+    expect(outcomeNodeWrapper?.className).toContain("right-[9.45%]");
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.4%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.35%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[16.2%]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
@@ -325,9 +325,9 @@ describe("Home landing page", () => {
     expect(literatureNode).not.toHaveAttribute("aria-label");
     expect(dataMiningNode).not.toHaveAttribute("aria-label");
     expect(outcomeNode).not.toHaveAttribute("aria-label");
-    expect(literatureNode.firstElementChild).toHaveClass("h-[4.82rem]");
-    expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.78rem]");
-    expect(outcomeNode.firstElementChild).toHaveClass("h-[4.78rem]");
+    expect(literatureNode.firstElementChild).toHaveClass("h-[5.02rem]");
+    expect(dataMiningNode.firstElementChild).toHaveClass("h-[4.96rem]");
+    expect(outcomeNode.firstElementChild).toHaveClass("h-[4.96rem]");
 
     fireEvent.click(dataMiningNode);
     expect(within(landingHero).getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
