@@ -18,9 +18,10 @@ describe("Chat route public landing clone", () => {
         /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /user guide/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /contact us/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /settings/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("border-[rgba(15,23,42,0.18)]");
+    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("bg-white/42");
+    expect(screen.getByRole("button", { name: /contact us/i })).toHaveClass("border-[rgba(15,23,42,0.18)]");
+    expect(screen.getByRole("button", { name: /settings/i })).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.04)]");
     expect(screen.getByText(/enter your access code to begin/i)).toBeInTheDocument();
     const onboardAccessCode = screen.getByPlaceholderText("SC-XXXXXXXX");
     expect(onboardAccessCode).toHaveAttribute("placeholder", "SC-XXXXXXXX");

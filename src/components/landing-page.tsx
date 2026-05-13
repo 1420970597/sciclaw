@@ -87,7 +87,7 @@ function Header() {
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             className="gap-[0.34rem] sm:gap-[0.42rem]"
-            buttonClassName="border-[rgba(15,23,42,0.14)] bg-transparent text-[#555d66] shadow-none hover:-translate-y-0.5 hover:border-[rgba(15,23,42,0.24)] hover:bg-white/72 hover:text-[#1f2933]"
+            buttonClassName="border-[rgba(15,23,42,0.18)] bg-white/42 text-[#4a525c] shadow-[0_8px_18px_rgba(15,23,42,0.04)] hover:-translate-y-0.5 hover:border-[rgba(15,23,42,0.26)] hover:bg-white/78 hover:text-[#1f2933]"
             panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
             itemClassName="hover:bg-[#f5f7fa]"
           />

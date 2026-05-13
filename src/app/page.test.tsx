@@ -289,6 +289,10 @@ describe("Home landing page", () => {
       within(utilityRow).getByRole("button", { name: /contact us/i }),
       settingsTrigger,
     ].forEach((trigger) => {
+      expect(trigger).toHaveClass("border-[rgba(15,23,42,0.18)]");
+      expect(trigger).toHaveClass("bg-white/42");
+      expect(trigger).toHaveClass("text-[#4a525c]");
+      expect(trigger).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.04)]");
       const icon = trigger.querySelector("svg");
       expect(icon).not.toBeNull();
       expect(icon).toHaveClass("h-[1.06rem]");
