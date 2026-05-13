@@ -64,12 +64,13 @@ describe("Chat route public landing clone", () => {
     expect(chatAuthCard).toHaveClass("shadow-[0_1px_4px_rgba(15,23,42,0.009),0_1px_2px_rgba(241,180,135,0.005)]");
     expect(chatAuthCard).toHaveClass("lg:mt-[2.86rem]");
     expect(chatAuthCard).toHaveClass("xl:mt-[3.06rem]");
-    expect(chatPreviewCard).toHaveClass("border-white/80");
-    expect(chatPreviewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
+    expect(chatPreviewCard).toHaveClass("border-white/88");
+    expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#fbfcfe_100%)]");
+    expect(chatPreviewCard).toHaveClass("shadow-[0_24px_60px_rgba(15,23,42,0.068)]");
     const chatPreviewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(chatPreviewLabelRow).toHaveClass("mt-[2.66rem]");
-    expect(chatPreviewLabelRow).toHaveClass("gap-[3.46rem]");
-    expect(chatPreviewLabelRow).toHaveClass("pt-[2.6rem]");
+    expect(chatPreviewLabelRow).toHaveClass("mt-[2.82rem]");
+    expect(chatPreviewLabelRow).toHaveClass("gap-[3.7rem]");
+    expect(chatPreviewLabelRow).toHaveClass("pt-[2.72rem]");
     expect(chatGetStartedButton.querySelector("svg")).toBeNull();
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();

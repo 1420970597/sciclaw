@@ -332,50 +332,50 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-1 rounded-[2rem] border border-white/80 bg-white p-[1.2rem] shadow-[0_28px_72px_rgba(15,23,42,0.092)] sm:p-[1.34rem]" data-testid="feature-preview-card">
+      <div className="order-1 rounded-[2.12rem] border border-white/88 bg-[linear-gradient(180deg,#ffffff_0%,#fbfcfe_100%)] p-[1.28rem] shadow-[0_24px_60px_rgba(15,23,42,0.068)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
-          <span className="h-1.5 w-16 rounded-full bg-[#e3e6eb]" aria-hidden />
+          <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
-            <span className="h-2.5 w-2.5 rounded-full bg-[#f3bf95]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ef9c63]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ea8543]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#f4c6a4]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#efa873]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#e88c4a]" />
           </div>
         </div>
 
-        <div className="mt-7 rounded-[1.55rem] bg-[linear-gradient(180deg,#fffaf4_0%,#fff4e9_100%)] px-[1.08rem] pb-[1.42rem] pt-[1.34rem] sm:px-[1.4rem] sm:pb-[1.58rem]">
-          <div className="flex items-center justify-between gap-3 border-b border-[#f1e5d8] pb-3">
-            <div aria-hidden className="space-y-[0.42rem]">
-              <span className="block h-[1.5px] w-[8.4rem] rounded-full bg-[#d8dde4]" />
-              <span className="block h-[1.5px] w-[5.2rem] rounded-full bg-[#e7ebf0]" />
+        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fffbf6_0%,#fff6ec_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
+          <div className="flex items-center justify-between gap-3 border-b border-[#f1e7db] pb-[0.92rem]">
+            <div aria-hidden className="space-y-[0.46rem]">
+              <span className="block h-[1.5px] w-[8.8rem] rounded-full bg-[#dbe1e8]" />
+              <span className="block h-[1.5px] w-[5.5rem] rounded-full bg-[#e8edf2]" />
             </div>
             <span
               aria-hidden
-              className="flex h-[1.82rem] w-[7.2rem] items-center justify-center rounded-full border border-[#f6d9c1] bg-[#fff6ef] px-3 py-1"
+              className="flex h-[1.86rem] w-[7.5rem] items-center justify-center rounded-full border border-[#f6dcc6] bg-[#fff8f2] px-3 py-1"
             >
-              <span className="block h-[1.5px] w-[4.7rem] rounded-full bg-[#efc39d]" />
+              <span className="block h-[1.5px] w-[4.9rem] rounded-full bg-[#efc8a6]" />
             </span>
           </div>
 
-          <div className="mt-[1.36rem] grid gap-[1.42rem] lg:grid-cols-[1fr_1.05fr]">
-            <div className="space-y-[1.34rem]">
-              <div className="rounded-[1.25rem] border border-[#efe4d8] bg-white/92 p-[1.24rem] shadow-[0_8px_18px_rgba(15,23,42,0.034)]">
+          <div className="mt-[1.52rem] grid gap-[1.56rem] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.12fr)]">
+            <div className="space-y-[1.4rem]">
+              <div className="rounded-[1.3rem] border border-[#f0e5da] bg-white/94 p-[1.28rem] shadow-[0_8px_18px_rgba(15,23,42,0.028)]">
                 <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#b99577]">
                   <span className="h-2 w-2 rounded-full bg-[#ef9c63]" />
                 </div>
-                <div className="mt-[1.24rem] space-y-[1.26rem]" aria-hidden>
+                <div className="mt-[1.32rem] space-y-[1.3rem]" aria-hidden>
                   <span className="block h-2 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-11/12 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-10/12 rounded-full bg-[#eceff3]" />
                   <span className="block h-2 w-7/12 rounded-full bg-[#f4d3bb]" />
                 </div>
               </div>
-              <div className="grid gap-[1.18rem] sm:grid-cols-2" aria-hidden>
+              <div className="grid gap-[1.24rem] sm:grid-cols-2" aria-hidden>
                 {previewContent.chartLabels.slice(0, 2).map((label) => (
                   <div
                     key={`${activeFeature.id}-${label}`}
-                    className="rounded-[1.18rem] border border-[#efe3d7] bg-white/86 px-4 py-[1.06rem] shadow-[0_8px_16px_rgba(15,23,42,0.026)]"
+                    className="rounded-[1.2rem] border border-[#efe4d8] bg-white/88 px-4 py-[1.08rem] shadow-[0_8px_16px_rgba(15,23,42,0.022)]"
                   >
-                    <div className="space-y-[0.92rem]">
+                    <div className="space-y-[0.96rem]">
                       <span className="block h-[1.5px] w-[4.8rem] rounded-full bg-[#eadccf]" />
                       <span className="block h-[1.5px] w-full rounded-full bg-[#eceff3]" />
                       <span className="block h-[1.5px] w-10/12 rounded-full bg-[#eceff3]" />
@@ -385,30 +385,30 @@ function FeaturePreview({
               </div>
             </div>
 
-            <div className="rounded-[1.35rem] border border-[#ead7c6] bg-white/88 p-[1.28rem] shadow-[0_12px_28px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,0.7)]">
-              <div className="space-y-[1.46rem]">
+            <div className="rounded-[1.44rem] border border-[#eddccd] bg-white/91 p-[1.34rem] shadow-[0_10px_24px_rgba(15,23,42,0.042),inset_0_1px_0_rgba(255,255,255,0.72)]">
+              <div className="space-y-[1.54rem]">
                 <div className="flex items-center justify-between text-[10.7px] uppercase tracking-[0.205em] text-[#687587]" aria-hidden>
-                  <span className="h-[1.5px] w-12 rounded-full bg-[#d6dee6]" />
-                  <span className="h-[1.5px] w-10 rounded-full bg-[#e2e7ec]" />
+                  <span className="h-[1.5px] w-[3.2rem] rounded-full bg-[#d7dfe7]" />
+                  <span className="h-[1.5px] w-[2.7rem] rounded-full bg-[#e3e8ee]" />
                 </div>
-                <div className="space-y-[1.2rem]" aria-hidden>
+                <div className="space-y-[1.24rem]" aria-hidden>
                   <div className="h-2 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-5/6 rounded-full bg-[#eceff4]" />
                   <div className="h-2 w-4/6 rounded-full bg-[#f6d9c2]" />
                 </div>
                 <div
                   data-testid="feature-preview-chart-label-row"
-                  className={`mt-[2.66rem] grid ${chartGridClass} gap-[3.46rem] px-[0.9rem] pt-[2.6rem] sm:gap-[3.62rem]`}
+                  className={`mt-[2.82rem] grid ${chartGridClass} gap-[3.7rem] px-[0.98rem] pt-[2.72rem] sm:gap-[3.86rem]`}
                 >
                   {visibleBars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.18rem] text-center sm:gap-[1.28rem]">
-                      <div className="flex h-[150px] w-full items-end gap-[0.78rem] rounded-[1.25rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[1.26rem] pb-[1.02rem] pt-4">
+                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.26rem] text-center sm:gap-[1.34rem]">
+                      <div className="flex h-[156px] w-full items-end gap-[0.82rem] rounded-[1.3rem] bg-[linear-gradient(180deg,#f8fbfd_0%,#f3f6f9_100%)] px-[1.36rem] pb-[1.08rem] pt-[1.08rem]">
                         <span
-                          className="flex-1 rounded-full bg-[linear-gradient(180deg,#f6bf93_0%,#eb8753_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
+                          className="flex-1 rounded-full bg-[linear-gradient(180deg,#f7c69c_0%,#eb8854_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[7.22rem] w-full min-w-0 items-start justify-center px-[1.16rem] pb-[0.18rem] text-center text-[14.16px] font-medium uppercase leading-[1.2] tracking-[0.002em] text-[#29485d] sm:min-h-[7.3rem] sm:text-[14.32px] sm:tracking-[0.006em]">
+                      <span className="flex min-h-[7.32rem] w-full min-w-0 items-start justify-center px-[1.2rem] pb-[0.12rem] text-center text-[14.08px] font-medium uppercase leading-[1.18] tracking-[0.004em] text-[#29485d] sm:min-h-[7.4rem] sm:text-[14.24px] sm:tracking-[0.008em]">
                         <span className="block max-w-[11.24rem] text-balance break-words">{visibleChartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>

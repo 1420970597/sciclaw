@@ -111,12 +111,13 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("shadow-[0_1px_4px_rgba(15,23,42,0.009),0_1px_2px_rgba(241,180,135,0.005)]");
     expect(authCard).toHaveClass("lg:mt-[2.86rem]");
     expect(authCard).toHaveClass("xl:mt-[3.06rem]");
-    expect(previewCard).toHaveClass("border-white/80");
-    expect(previewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
+    expect(previewCard).toHaveClass("border-white/88");
+    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#fbfcfe_100%)]");
+    expect(previewCard).toHaveClass("shadow-[0_24px_60px_rgba(15,23,42,0.068)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(previewLabelRow).toHaveClass("mt-[2.66rem]");
-    expect(previewLabelRow).toHaveClass("gap-[3.46rem]");
-    expect(previewLabelRow).toHaveClass("pt-[2.6rem]");
+    expect(previewLabelRow).toHaveClass("mt-[2.82rem]");
+    expect(previewLabelRow).toHaveClass("gap-[3.7rem]");
+    expect(previewLabelRow).toHaveClass("pt-[2.72rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
@@ -344,8 +345,8 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[7.22rem]");
-      expect(labelWrapper).toHaveClass("leading-[1.2]");
+      expect(labelWrapper).toHaveClass("min-h-[7.32rem]");
+      expect(labelWrapper).toHaveClass("leading-[1.18]");
       expect(label).toHaveClass("max-w-[11.24rem]");
       expect(label).toHaveClass("text-balance");
     });
@@ -353,10 +354,10 @@ describe("Home landing page", () => {
     const chartRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chartRow).toHaveClass("grid-cols-3");
     expect(chartRow.childElementCount).toBe(3);
-    expect(chartRow).toHaveClass("gap-[3.46rem]");
-    expect(chartRow).toHaveClass("sm:gap-[3.62rem]");
-    expect(chartRow).toHaveClass("mt-[2.66rem]");
-    expect(chartRow).toHaveClass("pt-[2.6rem]");
+    expect(chartRow).toHaveClass("gap-[3.7rem]");
+    expect(chartRow).toHaveClass("sm:gap-[3.86rem]");
+    expect(chartRow).toHaveClass("mt-[2.82rem]");
+    expect(chartRow).toHaveClass("pt-[2.72rem]");
 
     const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
     const dataMiningNodeLabel = screen.getByText(/^data mining$/i);
