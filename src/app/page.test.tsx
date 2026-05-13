@@ -41,6 +41,7 @@ describe("Home landing page", () => {
     expect(heroScope.getByText(/^结论$/i)).toBeInTheDocument();
     expect(heroScope.getByText(/^数据$/i)).toBeInTheDocument();
     expect(heroScope.queryByText(/^证据$/i)).not.toBeInTheDocument();
+    expect(heroScope.queryByRole("img")).not.toBeInTheDocument();
     expect(heroScope.queryByText(/33%/i)).not.toBeInTheDocument();
     expect(heroScope.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
   });
@@ -108,9 +109,9 @@ describe("Home landing page", () => {
     expect(previewCard).toHaveClass("border-white/80");
     expect(previewCard).toHaveClass("shadow-[0_28px_72px_rgba(15,23,42,0.092)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(previewLabelRow).toHaveClass("mt-[3.08rem]");
+    expect(previewLabelRow).toHaveClass("mt-[2.66rem]");
     expect(previewLabelRow).toHaveClass("gap-[3.46rem]");
-    expect(previewLabelRow).toHaveClass("pt-[3.06rem]");
+    expect(previewLabelRow).toHaveClass("pt-[2.6rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
@@ -349,8 +350,8 @@ describe("Home landing page", () => {
     expect(chartRow.childElementCount).toBe(3);
     expect(chartRow).toHaveClass("gap-[3.46rem]");
     expect(chartRow).toHaveClass("sm:gap-[3.62rem]");
-    expect(chartRow).toHaveClass("mt-[3.08rem]");
-    expect(chartRow).toHaveClass("pt-[3.06rem]");
+    expect(chartRow).toHaveClass("mt-[2.66rem]");
+    expect(chartRow).toHaveClass("pt-[2.6rem]");
 
     const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
     const dataMiningNodeLabel = screen.getByText(/^data mining$/i);
@@ -382,12 +383,9 @@ describe("Home landing page", () => {
       ),
     ).toBeInTheDocument();
     expect(getStartedButton).toBeInTheDocument();
-    const getStartedIcon = getStartedButton.querySelector("svg");
-    expect(getStartedIcon).not.toBeNull();
-    expect(getStartedIcon).toHaveClass("h-3.5");
-    expect(getStartedIcon).toHaveClass("w-3.5");
-    expect(getStartedButton).toHaveClass("flex-col");
-    expect(getStartedButton).toHaveClass("gap-1");
+    expect(getStartedButton.querySelector("svg")).toBeNull();
+    expect(getStartedButton).not.toHaveClass("flex-col");
+    expect(getStartedButton).not.toHaveClass("gap-1");
     expect(getStartedButton).toHaveClass("font-mono");
     expect(getStartedButton).toHaveClass("tracking-[0.12em]");
 

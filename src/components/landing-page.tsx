@@ -21,14 +21,6 @@ function GuideIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: stri
   );
 }
 
-function DownChevronIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-  );
-}
-
 function ContactIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden>
@@ -334,10 +326,9 @@ function FeaturePreview({
         <button
           type="button"
           onClick={onGetStarted}
-          className="inline-flex flex-col items-center gap-1 pt-[0.62rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
+          className="inline-flex pt-[0.62rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
         >
           {previewContent.ctaLabel}
-          <DownChevronIcon className="h-3.5 w-3.5" />
         </button>
       </div>
 
@@ -407,7 +398,7 @@ function FeaturePreview({
                 </div>
                 <div
                   data-testid="feature-preview-chart-label-row"
-                  className={`mt-[3.08rem] grid ${chartGridClass} gap-[3.46rem] px-[0.9rem] pt-[3.06rem] sm:gap-[3.62rem]`}
+                  className={`mt-[2.66rem] grid ${chartGridClass} gap-[3.46rem] px-[0.9rem] pt-[2.6rem] sm:gap-[3.62rem]`}
                 >
                   {visibleBars.map((height, index) => (
                     <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[1.18rem] text-center sm:gap-[1.28rem]">
