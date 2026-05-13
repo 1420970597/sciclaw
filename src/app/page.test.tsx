@@ -111,9 +111,9 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("shadow-[0_1px_3px_rgba(15,23,42,0.008),0_1px_2px_rgba(241,180,135,0.004)]");
     expect(authCard).toHaveClass("lg:mt-[2.86rem]");
     expect(authCard).toHaveClass("xl:mt-[3.08rem]");
-    expect(previewCard).toHaveClass("border-white/88");
-    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#fbfcfe_100%)]");
-    expect(previewCard).toHaveClass("shadow-[0_24px_60px_rgba(15,23,42,0.068)]");
+    expect(previewCard).toHaveClass("border-white/92");
+    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)]");
+    expect(previewCard).toHaveClass("shadow-[0_18px_42px_rgba(15,23,42,0.06)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(previewLabelRow).toHaveClass("mt-[2.82rem]");
     expect(previewLabelRow).toHaveClass("gap-[3.7rem]");
