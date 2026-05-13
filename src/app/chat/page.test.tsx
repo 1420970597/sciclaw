@@ -38,11 +38,11 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_284px]");
-    expect(chatHero).toHaveClass("lg:gap-[0.06rem]");
-    expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_284px]");
-    expect(chatHero).toHaveClass("xl:gap-[0.12rem]");
-    expect(chatAuthCard).toHaveClass("max-w-[272px]");
+    expect(chatHero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_280px]");
+    expect(chatHero).toHaveClass("lg:gap-[0.04rem]");
+    expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_280px]");
+    expect(chatHero).toHaveClass("xl:gap-[0.08rem]");
+    expect(chatAuthCard).toHaveClass("max-w-[280px]");
     expect(chatAuthCard).toHaveClass("bg-[#fcfdff]");
     expect(chatAuthCard).toHaveClass("border-[#f2f5f8]");
     expect(chatAuthCard).toHaveClass("shadow-[0_3px_8px_rgba(15,23,42,0.013),0_2px_4px_rgba(241,180,135,0.007)]");
@@ -59,6 +59,9 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[#e7edf3]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#5f6773]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[#dde5ee]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("whitespace-nowrap");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.76rem]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.06em]");
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
