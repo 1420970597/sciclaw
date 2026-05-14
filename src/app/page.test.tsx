@@ -119,9 +119,9 @@ describe("Home landing page", () => {
     expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)]");
     expect(previewCard).toHaveClass("shadow-[0_18px_42px_rgba(15,23,42,0.06)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(previewLabelRow).toHaveClass("mt-[2.82rem]");
-    expect(previewLabelRow).toHaveClass("gap-[3.7rem]");
-    expect(previewLabelRow).toHaveClass("pt-[2.72rem]");
+    expect(previewLabelRow).toHaveClass("mt-[2.98rem]");
+    expect(previewLabelRow).toHaveClass("gap-[3.38rem]");
+    expect(previewLabelRow).toHaveClass("pt-[2.86rem]");
   });
 
   it("opens the inline early-access apply flow and keeps the live apply-now hero state", () => {
@@ -355,19 +355,21 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[7.32rem]");
-      expect(labelWrapper).toHaveClass("leading-[1.18]");
-      expect(label).toHaveClass("max-w-[11.24rem]");
+      expect(labelWrapper).toHaveClass("min-h-[4.92rem]");
+      expect(labelWrapper).toHaveClass("text-[11.2px]");
+      expect(labelWrapper).toHaveClass("leading-[1.08]");
+      expect(labelWrapper).toHaveClass("text-[#6b8191]");
+      expect(label).toHaveClass("max-w-[6.18rem]");
       expect(label).toHaveClass("text-balance");
     });
 
     const chartRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chartRow).toHaveClass("grid-cols-3");
     expect(chartRow.childElementCount).toBe(3);
-    expect(chartRow).toHaveClass("gap-[3.7rem]");
-    expect(chartRow).toHaveClass("sm:gap-[3.86rem]");
-    expect(chartRow).toHaveClass("mt-[2.82rem]");
-    expect(chartRow).toHaveClass("pt-[2.72rem]");
+    expect(chartRow).toHaveClass("gap-[3.38rem]");
+    expect(chartRow).toHaveClass("sm:gap-[3.54rem]");
+    expect(chartRow).toHaveClass("mt-[2.98rem]");
+    expect(chartRow).toHaveClass("pt-[2.86rem]");
 
     const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
     const dataMiningNodeLabel = screen.getByText(/^data mining$/i);

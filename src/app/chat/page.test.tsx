@@ -75,9 +75,9 @@ describe("Chat route public landing clone", () => {
     expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)]");
     expect(chatPreviewCard).toHaveClass("shadow-[0_18px_42px_rgba(15,23,42,0.06)]");
     const chatPreviewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(chatPreviewLabelRow).toHaveClass("mt-[2.82rem]");
-    expect(chatPreviewLabelRow).toHaveClass("gap-[3.7rem]");
-    expect(chatPreviewLabelRow).toHaveClass("pt-[2.72rem]");
+    expect(chatPreviewLabelRow).toHaveClass("mt-[2.98rem]");
+    expect(chatPreviewLabelRow).toHaveClass("gap-[3.38rem]");
+    expect(chatPreviewLabelRow).toHaveClass("pt-[2.86rem]");
     expect(chatGetStartedButton.querySelector("svg")).toBeNull();
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
