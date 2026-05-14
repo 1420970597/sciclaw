@@ -865,9 +865,9 @@ export function LandingPage() {
   };
 
   const handleApplyNow = () => {
-    const dataMiningIndex = featureItems.findIndex((feature) => feature.id === "data-mining");
-    setActiveFeatureIndex(dataMiningIndex >= 0 ? dataMiningIndex : 0);
-    setActiveCaseIndex(0);
+    const outcomePresentIndex = featureItems.findIndex((feature) => feature.id === "outcome-present");
+    setActiveFeatureIndex(outcomePresentIndex >= 0 ? outcomePresentIndex : 0);
+    setActiveCaseIndex(1);
   };
 
   return (

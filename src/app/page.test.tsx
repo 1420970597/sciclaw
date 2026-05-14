@@ -177,15 +177,18 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
     expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
-    expect(within(landingHero).getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q1$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q2$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q3$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q4$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^PPT$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^PDF$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^CSV$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^DOCX$/i)).toBeInTheDocument();
     expect(within(landingHero).queryByRole("heading", { name: /peer review response support/i })).not.toBeInTheDocument();
-    expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
-    expect(within(bestCasesSection as HTMLElement).getByText(/^01 \/ 04$/i)).toBeInTheDocument();
-    expect(within(bestCasesSection as HTMLElement).queryByText(/^02 \/ 04$/i)).not.toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByText(/^02 \/ 04$/i)).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).queryByText(/^01 \/ 04$/i)).not.toBeInTheDocument();
+    expect(bestCasesSection as HTMLElement).toHaveTextContent(
+      /automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments/i,
+    );
   });
 
   it("preserves the previous auth mode when leaving the apply flow", () => {
