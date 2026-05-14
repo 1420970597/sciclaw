@@ -321,8 +321,8 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-    <div className="flex flex-col gap-[1.32rem]">
-      <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem] lg:max-w-[36rem]">
+    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_232px] lg:items-start lg:gap-x-[0.42rem] lg:gap-y-[0.94rem] xl:grid-cols-[minmax(0,1fr)_232px] xl:gap-x-[0.5rem] xl:gap-y-[1.02rem]">
+      <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem] lg:order-1 lg:col-span-2 lg:max-w-[36rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
           {previewContent.heading}
@@ -337,11 +337,11 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 -mt-[0.22rem] lg:-mt-[10.6rem] lg:ml-auto lg:max-w-[15rem] xl:-mt-[11.1rem]">
+      <div className="order-3 -mt-[0.22rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.28rem] lg:max-w-[15rem] xl:mt-[0.44rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
-      <div className="order-1 rounded-[2.08rem] border border-white/82 bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)] p-[1.28rem] shadow-[0_10px_24px_rgba(15,23,42,0.038)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-1 lg:order-3 lg:col-start-1 lg:row-start-2 rounded-[2.08rem] border border-white/82 bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)] p-[1.28rem] shadow-[0_10px_24px_rgba(15,23,42,0.038)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
