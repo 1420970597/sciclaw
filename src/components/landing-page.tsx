@@ -268,9 +268,11 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
 function FeaturePreview({
   activeIndex,
   onGetStarted,
+  onApplyNow,
 }: {
   activeIndex: number;
   onGetStarted: () => void;
+  onApplyNow: () => void;
 }) {
   const activeFeature = featureItems[activeIndex];
   const previewMap = {
@@ -320,7 +322,7 @@ function FeaturePreview({
 
   return (
     <div className="flex flex-col gap-[1.32rem]">
-      <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem]">
+      <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem] lg:max-w-[36rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
           {previewContent.heading}
@@ -333,6 +335,10 @@ function FeaturePreview({
         >
           {previewContent.ctaLabel}
         </button>
+      </div>
+
+      <div className="order-3 lg:max-w-[15rem]">
+        <AuthCard onApplyNow={onApplyNow} />
       </div>
 
       <div className="order-1 rounded-[2.08rem] border border-white/82 bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)] p-[1.28rem] shadow-[0_10px_24px_rgba(15,23,42,0.038)] sm:p-[1.42rem]" data-testid="feature-preview-card">
@@ -430,10 +436,12 @@ function FeatureRotator({
   activeIndex,
   onSelect,
   onGetStarted,
+  onApplyNow,
 }: {
   activeIndex: number;
   onSelect: (index: number) => void;
   onGetStarted: () => void;
+  onApplyNow: () => void;
 }) {
   return (
     <section
@@ -444,7 +452,7 @@ function FeatureRotator({
       <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mt-[2.08rem] lg:-mr-[0.04rem] lg:px-0 xl:-mt-[2.3rem] xl:-mr-[0.1rem] xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
-      <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} />
+      <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} onApplyNow={onApplyNow} />
     </section>
   );
 }
@@ -461,7 +469,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[232px] rounded-[1.38rem] border border-[rgba(248,250,252,0.84)] bg-[linear-gradient(180deg,rgba(255,255,255,0.955)_0%,rgba(252,248,243,0.93)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_8px_18px_rgba(15,23,42,0.022),0_2px_5px_rgba(241,180,135,0.018)] backdrop-blur-[3px] sm:px-[0.46rem] sm:py-[0.54rem] lg:mt-[2.16rem] xl:mt-[2.3rem]"
+      className="mx-auto w-full max-w-[232px] rounded-[1.38rem] border border-[rgba(248,250,252,0.84)] bg-[linear-gradient(180deg,rgba(255,255,255,0.955)_0%,rgba(252,248,243,0.93)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_8px_18px_rgba(15,23,42,0.022),0_2px_5px_rgba(241,180,135,0.018)] backdrop-blur-[3px] sm:px-[0.46rem] sm:py-[0.54rem]"
     >
       <div className="mx-auto w-full max-w-[272px]">
         <div className="rounded-[1.02rem] border border-[rgba(251,252,253,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(250,244,236,0.8)_100%)] p-[0.42rem] shadow-[0_8px_18px_rgba(15,23,42,0.02)]">
@@ -883,13 +891,13 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.08rem] lg:grid-cols-[minmax(0,1fr)_232px] lg:items-start lg:gap-[0.1rem] xl:-mt-[2.28rem] xl:grid-cols-[minmax(0,1.08fr)_232px] xl:gap-[0.14rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:-mt-[2.08rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
               onGetStarted={handleGetStarted}
+              onApplyNow={handleApplyNow}
             />
-            <AuthCard onApplyNow={handleApplyNow} />
           </div>
         </div>
 
