@@ -111,7 +111,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       wrapperClass: "items-center",
       labelClass: "max-w-[108px] text-left text-[#314d61] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
       activeLabelClass: "max-w-[108px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.014)]",
-      labelPositionClass: "absolute left-[-2.72rem] top-[0.18rem] sm:left-[-2.82rem]",
+      labelPositionClass: "absolute left-[-2.5rem] top-[0.32rem] sm:left-[-2.62rem]",
     },
     {
       id: "data-mining",
@@ -130,7 +130,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       wrapperClass: "items-center",
       labelClass: "max-w-[106px] text-center text-[#314d61] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
       activeLabelClass: "max-w-[106px] text-center text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.014)]",
-      labelPositionClass: "absolute left-1/2 top-[calc(100%+0.38rem)] -translate-x-1/2",
+      labelPositionClass: "absolute left-1/2 top-[calc(100%+0.22rem)] -translate-x-1/2",
     },
     {
       id: "outcome-present",
@@ -148,7 +148,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       wrapperClass: "items-center",
       labelClass: "max-w-[108px] text-left text-[#314d61] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
       activeLabelClass: "max-w-[108px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.014)]",
-      labelPositionClass: "absolute left-[3.04rem] top-[0.18rem] sm:left-[3.16rem]",
+      labelPositionClass: "absolute left-[3.32rem] top-[0.32rem] sm:left-[3.44rem]",
     },
     ],
     [],

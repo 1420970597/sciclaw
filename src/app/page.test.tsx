@@ -447,19 +447,19 @@ describe("Home landing page", () => {
     expect(literatureNodeLabel).toHaveClass("leading-[2.06]");
     expect(literatureNodeLabel).toHaveClass("tracking-[0.03em]");
     expect(literatureNodeLabel).toHaveClass("max-w-[108px]");
-    expect(literatureNodeLabel).toHaveClass("left-[-2.72rem]");
-    expect(literatureNodeLabel).toHaveClass("top-[0.18rem]");
+    expect(literatureNodeLabel).toHaveClass("left-[-2.5rem]");
+    expect(literatureNodeLabel).toHaveClass("top-[0.32rem]");
     expect(literatureNodeLabel).toHaveClass("text-left");
     expect(literatureNodeLabel).toHaveClass("text-[#5f381d]");
     expect(dataMiningNodeLabel).toHaveClass("max-w-[106px]");
     expect(dataMiningNodeLabel).toHaveClass("left-1/2");
     expect(dataMiningNodeLabel).toHaveClass("-translate-x-1/2");
     expect(dataMiningNodeLabel).toHaveClass("text-center");
-    expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%+0.38rem)]");
+    expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%+0.22rem)]");
     expect(dataMiningNodeLabel).toHaveClass("text-[#314d61]");
     expect(outcomeNodeLabel).toHaveClass("max-w-[108px]");
-    expect(outcomeNodeLabel).toHaveClass("left-[3.04rem]");
-    expect(outcomeNodeLabel).toHaveClass("top-[0.18rem]");
+    expect(outcomeNodeLabel).toHaveClass("left-[3.32rem]");
+    expect(outcomeNodeLabel).toHaveClass("top-[0.32rem]");
     expect(outcomeNodeLabel).toHaveClass("text-left");
     expect(outcomeNodeLabel).toHaveClass("text-[#314d61]");
 
