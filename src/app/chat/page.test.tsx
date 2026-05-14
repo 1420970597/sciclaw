@@ -49,6 +49,12 @@ describe("Chat route public landing clone", () => {
     expect(chatHero).toHaveClass("gap-4");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
     expect(chatFeatureRotator).toHaveClass("lg:items-start");
+    const authColumn = chatFeatureRotator.lastElementChild?.querySelector('[data-testid="landing-auth-card"]')?.parentElement;
+    expect(authColumn).not.toBeNull();
+    expect(authColumn).toHaveClass("-mt-[0.22rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[10.6rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[11.1rem]");
+    expect(authColumn).toHaveClass("lg:ml-auto");
     const chatNetworkShell = screen.getByTestId("feature-network-shell");
     const chatNetworkShellFrame = chatFeatureRotator.firstElementChild;
     expect(chatNetworkShell).toHaveClass("overflow-visible");
