@@ -60,7 +60,7 @@ describe("Home landing page", () => {
     const networkShellFrame = featureRotator.firstElementChild;
     expect(networkShell).toHaveClass("overflow-visible");
     expect(networkShellFrame).not.toBeNull();
-    expect(networkShellFrame).toHaveClass("overflow-hidden");
+    expect(networkShellFrame).toHaveClass("overflow-visible");
     expect(networkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(networkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(networkShellFrame).toHaveClass("xl:pl-[0.24rem]");
