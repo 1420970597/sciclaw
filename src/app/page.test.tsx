@@ -64,10 +64,10 @@ describe("Home landing page", () => {
     expect(networkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(networkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(networkShellFrame).toHaveClass("xl:pl-[0.24rem]");
-    expect(networkShellFrame).toHaveClass("lg:-mt-[2.08rem]");
-    expect(networkShellFrame).toHaveClass("lg:-mr-[0.04rem]");
-    expect(networkShellFrame).toHaveClass("xl:-mt-[2.3rem]");
-    expect(networkShellFrame).toHaveClass("xl:-mr-[0.1rem]");
+    expect(networkShellFrame).toHaveClass("lg:-mt-[2.18rem]");
+    expect(networkShellFrame).toHaveClass("lg:-mr-[0.02rem]");
+    expect(networkShellFrame).toHaveClass("xl:-mt-[2.42rem]");
+    expect(networkShellFrame).toHaveClass("xl:-mr-[0.08rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);

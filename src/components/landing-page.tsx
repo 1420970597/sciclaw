@@ -449,7 +449,7 @@ function FeatureRotator({
       data-testid="feature-rotator"
       className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-start lg:gap-[0.14rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.2rem]"
     >
-      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.18rem] pr-0 py-1 sm:px-1 lg:-mt-[2.08rem] lg:-mr-[0.04rem] lg:px-0 lg:pl-[0.2rem] xl:-mt-[2.3rem] xl:-mr-[0.1rem] xl:px-1 xl:pl-[0.24rem]">
+      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.18rem] pr-0 py-1 sm:px-1 lg:-mt-[2.18rem] lg:-mr-[0.02rem] lg:px-0 lg:pl-[0.2rem] xl:-mt-[2.42rem] xl:-mr-[0.08rem] xl:px-1 xl:pl-[0.24rem]">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
       <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} onApplyNow={onApplyNow} />
