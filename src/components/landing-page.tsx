@@ -877,8 +877,8 @@ export function LandingPage() {
     >
       <Header />
 
-      <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-7 sm:px-8 sm:pt-8 lg:px-10 lg:pt-10">
-        <div className="space-y-8 text-center sm:space-y-9">
+      <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-5 sm:px-8 sm:pt-6 lg:px-10 lg:pt-7">
+        <div className="space-y-6 text-center sm:space-y-7">
           <div className="space-y-3 sm:space-y-[0.92rem]">
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
@@ -891,7 +891,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:gap-[1.1rem] lg:-mt-[1.86rem]" data-testid="landing-hero">
+          <div className="grid gap-4 sm:gap-[1rem] lg:-mt-[2.1rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
