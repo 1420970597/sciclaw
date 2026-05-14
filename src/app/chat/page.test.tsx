@@ -144,12 +144,12 @@ describe("Chat route public landing clone", () => {
     expect(previousButton.querySelector("svg")).not.toBeNull();
     expect(nextButton.querySelector("svg")).not.toBeNull();
   });
-
-  it("opens the inline early-access apply flow on /chat and keeps the live marketing contract", () => {
+  it("opens the inline early-access apply flow and keeps the current live apply-now hero/case state on /chat", () => {
     render(<ChatPage />);
 
     fireEvent.click(screen.getByRole("button", { name: /no account yet\? apply now/i }));
 
+    const landingHero = screen.getByTestId("landing-hero");
     const bestCasesSection = screen.getByRole("heading", { name: /best cases/i }).closest("section");
 
     expect(bestCasesSection).not.toBeNull();
@@ -161,17 +161,17 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
     expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
-    expect(screen.getByText(/^PPT$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^PDF$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^CSV$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^DOCX$/i)).toBeInTheDocument();
-    expect(screen.queryByRole("heading", { name: /automated report generation/i })).not.toBeInTheDocument();
-    expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /peer review response support/i })).toBeInTheDocument();
-    expect(within(bestCasesSection as HTMLElement).getByText(/^02 \/ 04$/i)).toBeInTheDocument();
-    expect(within(bestCasesSection as HTMLElement).queryByText(/^01 \/ 04$/i)).not.toBeInTheDocument();
+    expect(within(landingHero).getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^PPT$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^PDF$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^CSV$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^DOCX$/i)).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).queryByRole("heading", { name: /peer review response support/i })).not.toBeInTheDocument();
+    expect(within(bestCasesSection as HTMLElement).queryByText(/^02 \/ 04$/i)).not.toBeInTheDocument();
     expect(bestCasesSection as HTMLElement).toHaveTextContent(
-      /automatically retrieves relevant data, manuscript content, and past task records in response to reviewer comments/i,
+      /automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i,
     );
   });
 

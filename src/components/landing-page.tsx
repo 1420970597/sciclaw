@@ -867,7 +867,7 @@ export function LandingPage() {
   const handleApplyNow = () => {
     const outcomePresentIndex = featureItems.findIndex((feature) => feature.id === "outcome-present");
     setActiveFeatureIndex(outcomePresentIndex >= 0 ? outcomePresentIndex : 0);
-    setActiveCaseIndex(1);
+    setActiveCaseIndex(0);
   };
 
   return (
