@@ -192,7 +192,10 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
             };
 
   return (
-    <div className="relative min-h-[352px] overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_50%_49.3%,_rgba(255,255,255,0.87),_rgba(255,255,255,0)_60.5%)] sm:min-h-[404px]">
+    <div
+      data-testid="feature-network-shell"
+      className="relative min-h-[352px] overflow-visible rounded-[2rem] bg-[radial-gradient(circle_at_50%_49.3%,_rgba(255,255,255,0.87),_rgba(255,255,255,0)_60.5%)] sm:min-h-[404px]"
+    >
       <div className="absolute inset-0 opacity-[0.998]">
         <div className="pointer-events-none absolute inset-y-[18%] left-[61.8%] hidden w-[11.2%] rounded-full bg-[radial-gradient(circle,_rgba(235,143,77,0.09)_0%,_rgba(235,143,77,0.028)_48%,_rgba(255,255,255,0)_78%)] blur-[18px] lg:block" />
         <div className="absolute left-[25.3%] top-[13.4%] h-[1.5px] w-[1.5px] rounded-full bg-[#a9b7c5]" />
