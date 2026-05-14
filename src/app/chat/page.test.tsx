@@ -112,9 +112,20 @@ describe("Chat route public landing clone", () => {
     expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f4f6f9_100%)]");
     expect(chatPreviewCard).toHaveClass("shadow-[0_22px_46px_rgba(15,23,42,0.088)]");
     const chatPreviewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(chatPreviewLabelRow).toHaveClass("mt-[2.98rem]");
-    expect(chatPreviewLabelRow).toHaveClass("gap-[3.38rem]");
-    expect(chatPreviewLabelRow).toHaveClass("pt-[2.86rem]");
+    expect(chatPreviewLabelRow).toHaveClass("mt-[2.54rem]");
+    expect(chatPreviewLabelRow).toHaveClass("gap-[3.18rem]");
+    expect(chatPreviewLabelRow).toHaveClass("pt-[2.38rem]");
+    const chatPreviewLabelItems = Array.from(chatPreviewLabelRow.children);
+    expect(chatPreviewLabelItems).toHaveLength(3);
+    chatPreviewLabelItems.forEach((item) => {
+      expect(item).toHaveClass("gap-[0.94rem]");
+      const labelWrapper = item.lastElementChild;
+      expect(labelWrapper).not.toBeNull();
+      expect(labelWrapper).toHaveClass("min-h-[4.36rem]");
+      const labelText = labelWrapper?.firstElementChild;
+      expect(labelText).not.toBeNull();
+      expect(labelText).toHaveClass("max-w-[6.48rem]");
+    });
     expect(chatGetStartedButton.querySelector("svg")).toBeNull();
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
