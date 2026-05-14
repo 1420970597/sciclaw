@@ -321,7 +321,7 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-x-[0.28rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_220px] xl:gap-x-[0.34rem] xl:gap-y-[0.98rem]">
+    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_214px] lg:items-start lg:gap-x-[0.22rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_214px] xl:gap-x-[0.28rem] xl:gap-y-[0.98rem]">
       <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem] lg:order-1 lg:col-span-2 lg:max-w-[36rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 -mt-[0.14rem] lg:-ml-[0.02rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.08rem] lg:max-w-[13.7rem] xl:-ml-[0.06rem] xl:mt-[0.18rem]">
+      <div className="order-3 -mt-[0.14rem] lg:-ml-[0.01rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.04rem] lg:max-w-[13.3rem] xl:-ml-[0.04rem] xl:mt-[0.12rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
@@ -469,11 +469,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[210px] rounded-[1.22rem] border border-[rgba(237,241,245,0.96)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(249,245,240,0.962)_100%)] px-[0.32rem] py-[0.4rem] shadow-[0_6px_14px_rgba(15,23,42,0.04),0_2px_5px_rgba(241,180,135,0.018)] backdrop-blur-[2px] sm:px-[0.36rem] sm:py-[0.44rem]"
+      className="mx-auto w-full max-w-[204px] rounded-[1.18rem] border border-[rgba(240,244,248,0.96)] bg-[linear-gradient(180deg,rgba(255,255,255,0.994)_0%,rgba(250,246,241,0.958)_100%)] px-[0.3rem] py-[0.36rem] shadow-[0_4px_10px_rgba(15,23,42,0.03),0_1px_4px_rgba(241,180,135,0.015)] backdrop-blur-[1.5px] sm:px-[0.34rem] sm:py-[0.4rem]"
     >
-      <div className="mx-auto w-full max-w-[268px]">
-        <div className="rounded-[0.96rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.946)_0%,rgba(250,245,238,0.74)_100%)] p-[0.36rem] shadow-[0_5px_12px_rgba(15,23,42,0.013)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.7rem] bg-[rgba(247,241,234,0.78)] p-[0.28rem] text-sm text-[#6b7480]">
+      <div className="mx-auto w-full max-w-[260px]">
+        <div className="rounded-[0.92rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.946)_0%,rgba(250,245,238,0.74)_100%)] p-[0.32rem] shadow-[0_4px_10px_rgba(15,23,42,0.011)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.66rem] bg-[rgba(247,241,234,0.78)] p-[0.24rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -492,7 +492,7 @@ function AuthCard({
                     setActiveMode(tab.key as AuthTab);
                     setReturnMode(tab.key as AuthTab);
                   }}
-                  className={`rounded-[0.82rem] px-4 py-[0.42rem] font-medium transition ${
+                  className={`rounded-[0.78rem] px-4 py-[0.38rem] font-medium transition ${
                     selected
                       ? "bg-[linear-gradient(180deg,#ead0ba_0%,#e2bfa4_100%)] text-[#65412b] shadow-[0_4px_10px_rgba(241,176,126,0.085)]"
                       : "text-[#6e7682] hover:text-[#222933]"
@@ -510,7 +510,7 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.14rem] border border-[rgba(245,247,250,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.976)_0%,rgba(251,247,241,0.88)_100%)] p-[0.68rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_6px_16px_rgba(15,23,42,0.015)] sm:p-[0.72rem]"
+            className="rounded-[1.08rem] border border-[rgba(245,247,250,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.976)_0%,rgba(251,247,241,0.88)_100%)] p-[0.62rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_5px_12px_rgba(15,23,42,0.013)] sm:p-[0.66rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
