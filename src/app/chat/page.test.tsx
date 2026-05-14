@@ -40,7 +40,7 @@ describe("Chat route public landing clone", () => {
     expect(chatGetStartedButton).not.toHaveClass("gap-1");
     expect(chatGetStartedButton).toHaveClass("font-mono");
     expect(chatGetStartedButton).toHaveClass("tracking-[0.12em]");
-    expect(chatGetStartedButton).toHaveClass("pt-[0.34rem]");
+    expect(chatGetStartedButton).toHaveClass("pt-[0.18rem]");
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
@@ -61,10 +61,10 @@ describe("Chat route public landing clone", () => {
     expect(chatFeaturePreview).toHaveClass("lg:grid-cols-[minmax(0,1fr)_220px]");
     expect(chatFeaturePreview).toHaveClass("lg:items-start");
     expect(chatFeaturePreview).toHaveClass("lg:gap-x-[0.02rem]");
-    expect(chatFeaturePreview).toHaveClass("lg:gap-y-[0.94rem]");
+    expect(chatFeaturePreview).toHaveClass("lg:gap-y-[0.9rem]");
     expect(chatFeaturePreview).toHaveClass("xl:grid-cols-[minmax(0,1fr)_220px]");
     expect(chatFeaturePreview).toHaveClass("xl:gap-x-[0.08rem]");
-    expect(chatFeaturePreview).toHaveClass("xl:gap-y-[1.02rem]");
+    expect(chatFeaturePreview).toHaveClass("xl:gap-y-[0.96rem]");
     const chatPreviewHeadingBlock = chatPreviewCard.parentElement?.firstElementChild;
     expect(chatPreviewHeadingBlock).not.toBeNull();
     expect(chatPreviewHeadingBlock).toHaveClass("lg:order-1");
@@ -81,6 +81,16 @@ describe("Chat route public landing clone", () => {
     expect(authColumn).toHaveClass("xl:-ml-[0.08rem]");
     expect(authColumn).toHaveClass("xl:mt-[0.28rem]");
     expect(authColumn).toHaveClass("lg:ml-auto");
+    expect(chatPreviewHeadingBlock).toHaveClass("space-y-[0.7rem]");
+    expect(chatPreviewHeadingBlock).toHaveClass("pt-[0.12rem]");
+    expect(chatPreviewHeadingBlock).toHaveClass("lg:max-w-[35.4rem]");
+    const chatPreviewDescription = within(chatPreviewHeadingBlock as HTMLElement).getByText(
+      /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
+    );
+    expect(chatPreviewDescription).toHaveClass("max-w-[31.4rem]");
+    expect(chatPreviewDescription).toHaveClass("leading-[1.82]");
+    expect(chatPreviewDescription).toHaveClass("sm:text-[0.99rem]");
+    expect(chatGetStartedButton).toHaveClass("pt-[0.18rem]");
     const chatNetworkShell = screen.getByTestId("feature-network-shell");
     const chatNetworkShellFrame = chatFeatureRotator.firstElementChild;
     expect(chatNetworkShell).toHaveClass("overflow-visible");

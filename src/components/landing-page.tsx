@@ -321,17 +321,17 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-x-[0.02rem] lg:gap-y-[0.94rem] xl:grid-cols-[minmax(0,1fr)_220px] xl:gap-x-[0.08rem] xl:gap-y-[1.02rem]">
-      <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem] lg:order-1 lg:col-span-2 lg:max-w-[36rem]">
+    <div className="flex flex-col gap-[1.2rem] lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start lg:gap-x-[0.02rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_220px] xl:gap-x-[0.08rem] xl:gap-y-[0.96rem]">
+      <div className="order-2 space-y-[0.7rem] px-1 pt-[0.12rem] lg:order-1 lg:col-span-2 lg:max-w-[35.4rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
           {previewContent.heading}
         </h3>
-        <p className="max-w-[32.3rem] text-base leading-[1.9] text-[#676d77] sm:text-[1rem]">{previewContent.description}</p>
+        <p className="max-w-[31.4rem] text-base leading-[1.82] text-[#676d77] sm:text-[0.99rem]">{previewContent.description}</p>
         <button
           type="button"
           onClick={onGetStarted}
-          className="inline-flex pt-[0.34rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
+          className="inline-flex pt-[0.18rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
         >
           {previewContent.ctaLabel}
         </button>

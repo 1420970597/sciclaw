@@ -119,10 +119,10 @@ describe("Home landing page", () => {
     expect(featurePreview).toHaveClass("lg:grid-cols-[minmax(0,1fr)_220px]");
     expect(featurePreview).toHaveClass("lg:items-start");
     expect(featurePreview).toHaveClass("lg:gap-x-[0.02rem]");
-    expect(featurePreview).toHaveClass("lg:gap-y-[0.94rem]");
+    expect(featurePreview).toHaveClass("lg:gap-y-[0.9rem]");
     expect(featurePreview).toHaveClass("xl:grid-cols-[minmax(0,1fr)_220px]");
     expect(featurePreview).toHaveClass("xl:gap-x-[0.08rem]");
-    expect(featurePreview).toHaveClass("xl:gap-y-[1.02rem]");
+    expect(featurePreview).toHaveClass("xl:gap-y-[0.96rem]");
     const previewHeadingBlock = previewCard.parentElement?.firstElementChild;
     expect(previewHeadingBlock).not.toBeNull();
     expect(previewHeadingBlock).toHaveClass("lg:order-1");
@@ -139,6 +139,17 @@ describe("Home landing page", () => {
     expect(authColumn).toHaveClass("xl:-ml-[0.08rem]");
     expect(authColumn).toHaveClass("xl:mt-[0.28rem]");
     expect(authColumn).toHaveClass("lg:ml-auto");
+    const previewHeadingBlockCopy = featurePreview?.firstElementChild;
+    expect(previewHeadingBlockCopy).toHaveClass("space-y-[0.7rem]");
+    expect(previewHeadingBlockCopy).toHaveClass("pt-[0.12rem]");
+    expect(previewHeadingBlockCopy).toHaveClass("lg:max-w-[35.4rem]");
+    const previewDescription = within(previewHeadingBlockCopy as HTMLElement).getByText(
+      /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
+    );
+    expect(previewDescription).toHaveClass("max-w-[31.4rem]");
+    expect(previewDescription).toHaveClass("leading-[1.82]");
+    expect(previewDescription).toHaveClass("sm:text-[0.99rem]");
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("pt-[0.18rem]");
     expect(hero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(hero).toHaveClass("gap-4");
     expect(hero).toHaveClass("grid");
@@ -458,15 +469,15 @@ describe("Home landing page", () => {
     expect(within(landingHero).getByText(/^autonomous research$/i)).toHaveClass("tracking-[0.24em]");
     expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toHaveClass("sm:text-[1.88rem]");
     expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toHaveClass("md:text-[2.02rem]");
-    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("max-w-[32.3rem]");
-    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("leading-[1.9]");
-    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("sm:text-[1rem]");
+    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("max-w-[31.4rem]");
+    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("leading-[1.82]");
+    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("sm:text-[0.99rem]");
     expect(getStartedButton).toBeInTheDocument();
     expect(getStartedButton.querySelector("svg")).toBeNull();
     expect(getStartedButton).not.toHaveClass("flex-col");
     expect(getStartedButton).not.toHaveClass("gap-1");
     expect(getStartedButton).toHaveClass("font-mono");
-    expect(getStartedButton).toHaveClass("pt-[0.34rem]");
+    expect(getStartedButton).toHaveClass("pt-[0.18rem]");
 
     fireEvent.click(getStartedButton);
 
