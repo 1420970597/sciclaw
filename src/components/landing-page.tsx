@@ -332,7 +332,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-1 rounded-[2.08rem] border border-white/88 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-[1.28rem] shadow-[0_14px_32px_rgba(15,23,42,0.048)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-1 rounded-[2.08rem] border border-white/82 bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)] p-[1.28rem] shadow-[0_10px_24px_rgba(15,23,42,0.038)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -342,7 +342,7 @@ function FeaturePreview({
           </div>
         </div>
 
-        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fffcf8_0%,#fff5ea_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
+        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fffaf5_0%,#fff1e4_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e7db] pb-[0.92rem]">
             <div aria-hidden className="space-y-[0.46rem]">
               <span className="block h-[1.5px] w-[8.8rem] rounded-full bg-[#dbe1e8]" />
