@@ -321,7 +321,7 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_200px] lg:items-start lg:gap-x-[0.1rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_200px] xl:gap-x-[0.16rem] xl:gap-y-[0.98rem]">
+    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_196px] lg:items-start lg:gap-x-[0.02rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_196px] xl:gap-x-[0.08rem] xl:gap-y-[0.98rem]">
       <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem] lg:order-1 lg:col-span-2 lg:max-w-[36rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 -mt-[0.14rem] lg:-ml-[0.04rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.06rem] lg:max-w-[12.7rem] xl:-ml-[0.1rem] xl:mt-[0.14rem]">
+      <div className="order-3 -mt-[0.14rem] lg:-ml-[0.16rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[-0.02rem] lg:max-w-[12.35rem] xl:-ml-[0.22rem] xl:mt-[0.06rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
@@ -469,9 +469,9 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[190px] rounded-[1.1rem] border border-[rgba(243,246,249,0.97)] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(251,247,242,0.948)_100%)] px-[0.26rem] py-[0.32rem] shadow-[0_2px_6px_rgba(15,23,42,0.022),0_1px_3px_rgba(241,180,135,0.011)] backdrop-blur-[1px] sm:px-[0.3rem] sm:py-[0.36rem]"
+      className="mx-auto w-full max-w-[186px] rounded-[1.08rem] border border-[rgba(244,247,250,0.97)] bg-[linear-gradient(180deg,rgba(255,255,255,0.994)_0%,rgba(251,247,242,0.94)_100%)] px-[0.24rem] py-[0.3rem] shadow-[0_2px_5px_rgba(15,23,42,0.018),0_1px_2px_rgba(241,180,135,0.009)] backdrop-blur-[0.8px] sm:px-[0.28rem] sm:py-[0.34rem]"
     >
-      <div className="mx-auto w-full max-w-[260px]">
+      <div className="mx-auto w-full max-w-[252px]">
         <div className="rounded-[0.92rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.946)_0%,rgba(250,245,238,0.74)_100%)] p-[0.32rem] shadow-[0_4px_10px_rgba(15,23,42,0.011)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.66rem] bg-[rgba(247,241,234,0.78)] p-[0.24rem] text-sm text-[#6b7480]">
             {[
