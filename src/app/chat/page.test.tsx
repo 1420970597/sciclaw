@@ -18,10 +18,10 @@ describe("Chat route public landing clone", () => {
         /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("border-[rgba(15,23,42,0.18)]");
-    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("bg-white/42");
-    expect(screen.getByRole("button", { name: /contact us/i })).toHaveClass("border-[rgba(15,23,42,0.18)]");
-    expect(screen.getByRole("button", { name: /settings/i })).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.04)]");
+    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("border-[rgba(15,23,42,0.22)]");
+    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("bg-white/72");
+    expect(screen.getByRole("button", { name: /contact us/i })).toHaveClass("border-[rgba(15,23,42,0.22)]");
+    expect(screen.getByRole("button", { name: /settings/i })).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.065)]");
     const utilityRow = screen.getByTestId("landing-utility-row");
     expect(utilityRow).toHaveClass("gap-[0.56rem]");
     expect(utilityRow).toHaveClass("pr-[1.38rem]");
@@ -95,16 +95,16 @@ describe("Chat route public landing clone", () => {
     expect(chatHero).not.toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_232px]");
     expect(chatAuthCard).toHaveClass("max-w-[232px]");
     expect(chatAuthCard).toHaveClass("rounded-[1.38rem]");
-    expect(chatAuthCard).toHaveClass("border-[rgba(248,250,252,0.84)]");
-    expect(chatAuthCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.955)_0%,rgba(252,248,243,0.93)_100%)]");
-    expect(chatAuthCard).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.022),0_2px_5px_rgba(241,180,135,0.018)]");
-    expect(chatAuthCard).toHaveClass("backdrop-blur-[3px]");
+    expect(chatAuthCard).toHaveClass("border-[rgba(232,238,244,0.96)]");
+    expect(chatAuthCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(250,245,239,0.97)_100%)]");
+    expect(chatAuthCard).toHaveClass("shadow-[0_16px_36px_rgba(15,23,42,0.07),0_4px_12px_rgba(241,180,135,0.05)]");
+    expect(chatAuthCard).toHaveClass("backdrop-blur-[4px]");
     expect(chatAuthCard).not.toHaveClass("lg:mt-[2.16rem]");
     expect(chatAuthCard).not.toHaveClass("xl:mt-[2.3rem]");
     expect(chatPreviewCard).toHaveClass("rounded-[2.08rem]");
-    expect(chatPreviewCard).toHaveClass("border-white/82");
-    expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)]");
-    expect(chatPreviewCard).toHaveClass("shadow-[0_10px_24px_rgba(15,23,42,0.038)]");
+    expect(chatPreviewCard).toHaveClass("border-[rgba(255,255,255,0.94)]");
+    expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f5f7fa_100%)]");
+    expect(chatPreviewCard).toHaveClass("shadow-[0_18px_40px_rgba(15,23,42,0.07)]");
     const chatPreviewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chatPreviewLabelRow).toHaveClass("mt-[2.98rem]");
     expect(chatPreviewLabelRow).toHaveClass("gap-[3.38rem]");

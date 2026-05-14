@@ -138,16 +138,16 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("grid");
     expect(authCard).toHaveClass("max-w-[232px]");
     expect(authCard).toHaveClass("rounded-[1.38rem]");
-    expect(authCard).toHaveClass("border-[rgba(248,250,252,0.84)]");
-    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.955)_0%,rgba(252,248,243,0.93)_100%)]");
-    expect(authCard).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.022),0_2px_5px_rgba(241,180,135,0.018)]");
-    expect(authCard).toHaveClass("backdrop-blur-[3px]");
+    expect(authCard).toHaveClass("border-[rgba(232,238,244,0.96)]");
+    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(250,245,239,0.97)_100%)]");
+    expect(authCard).toHaveClass("shadow-[0_16px_36px_rgba(15,23,42,0.07),0_4px_12px_rgba(241,180,135,0.05)]");
+    expect(authCard).toHaveClass("backdrop-blur-[4px]");
     expect(authCard).not.toHaveClass("lg:mt-[2.16rem]");
     expect(authCard).not.toHaveClass("xl:mt-[2.3rem]");
     expect(previewCard).toHaveClass("rounded-[2.08rem]");
-    expect(previewCard).toHaveClass("border-white/82");
-    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)]");
-    expect(previewCard).toHaveClass("shadow-[0_10px_24px_rgba(15,23,42,0.038)]");
+    expect(previewCard).toHaveClass("border-[rgba(255,255,255,0.94)]");
+    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f5f7fa_100%)]");
+    expect(previewCard).toHaveClass("shadow-[0_18px_40px_rgba(15,23,42,0.07)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(previewLabelRow).toHaveClass("mt-[2.98rem]");
     expect(previewLabelRow).toHaveClass("gap-[3.38rem]");
@@ -299,6 +299,8 @@ describe("Home landing page", () => {
     render(<Home />);
 
     const utilityRow = screen.getByTestId("landing-utility-row");
+    const guideTrigger = within(utilityRow).getByRole("button", { name: /user guide/i });
+    const contactTrigger = within(utilityRow).getByRole("button", { name: /contact us/i });
     const settingsTrigger = within(utilityRow).getByRole("button", { name: /settings/i });
     const triggerRow = settingsTrigger.parentElement?.parentElement;
     const literatureNode = screen.getByTestId("feature-node-literature-analysis");
@@ -321,14 +323,14 @@ describe("Home landing page", () => {
     expect(utilityRow).toHaveClass("pr-[1.38rem]");
     expect(utilityRow).toHaveClass("sm:pr-[1.42rem]");
     [
-      within(utilityRow).getByRole("button", { name: /user guide/i }),
-      within(utilityRow).getByRole("button", { name: /contact us/i }),
+      guideTrigger,
+      contactTrigger,
       settingsTrigger,
     ].forEach((trigger) => {
-      expect(trigger).toHaveClass("border-[rgba(15,23,42,0.18)]");
-      expect(trigger).toHaveClass("bg-white/42");
-      expect(trigger).toHaveClass("text-[#4a525c]");
-      expect(trigger).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.04)]");
+      expect(trigger).toHaveClass("border-[rgba(15,23,42,0.22)]");
+      expect(trigger).toHaveClass("bg-white/72");
+      expect(trigger).toHaveClass("text-[#34414d]");
+      expect(trigger).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.065)]");
       const icon = trigger.querySelector("svg");
       expect(icon).not.toBeNull();
       expect(icon).toHaveClass("h-[1.06rem]");

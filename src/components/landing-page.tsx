@@ -87,8 +87,8 @@ function Header() {
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             className="gap-[0.3rem] sm:gap-[0.38rem]"
-            buttonClassName="border-[rgba(15,23,42,0.18)] bg-white/42 text-[#4a525c] shadow-[0_8px_18px_rgba(15,23,42,0.04)] hover:-translate-y-0.5 hover:border-[rgba(15,23,42,0.26)] hover:bg-white/78 hover:text-[#1f2933]"
-            panelClassName="border-black/6 bg-white/98 text-[#3a4048]"
+            buttonClassName="border-[rgba(15,23,42,0.22)] bg-white/72 text-[#34414d] shadow-[0_10px_22px_rgba(15,23,42,0.065)] hover:-translate-y-0.5 hover:border-[rgba(15,23,42,0.3)] hover:bg-white hover:text-[#18222c]"
+            panelClassName="border-black/8 bg-white text-[#313943] shadow-[0_20px_40px_rgba(15,23,42,0.12)]"
             itemClassName="hover:bg-[#f5f7fa]"
           />
         </div>
@@ -341,7 +341,7 @@ function FeaturePreview({
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
-      <div className="order-1 lg:order-3 lg:col-start-1 lg:row-start-2 rounded-[2.08rem] border border-white/82 bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)] p-[1.28rem] shadow-[0_10px_24px_rgba(15,23,42,0.038)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-1 lg:order-3 lg:col-start-1 lg:row-start-2 rounded-[2.08rem] border border-[rgba(255,255,255,0.94)] bg-[linear-gradient(180deg,#ffffff_0%,#f5f7fa_100%)] p-[1.28rem] shadow-[0_18px_40px_rgba(15,23,42,0.07)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -469,7 +469,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[232px] rounded-[1.38rem] border border-[rgba(248,250,252,0.84)] bg-[linear-gradient(180deg,rgba(255,255,255,0.955)_0%,rgba(252,248,243,0.93)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_8px_18px_rgba(15,23,42,0.022),0_2px_5px_rgba(241,180,135,0.018)] backdrop-blur-[3px] sm:px-[0.46rem] sm:py-[0.54rem]"
+      className="mx-auto w-full max-w-[232px] rounded-[1.38rem] border border-[rgba(232,238,244,0.96)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(250,245,239,0.97)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_16px_36px_rgba(15,23,42,0.07),0_4px_12px_rgba(241,180,135,0.05)] backdrop-blur-[4px] sm:px-[0.46rem] sm:py-[0.54rem]"
     >
       <div className="mx-auto w-full max-w-[272px]">
         <div className="rounded-[1.02rem] border border-[rgba(251,252,253,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(250,244,236,0.8)_100%)] p-[0.42rem] shadow-[0_8px_18px_rgba(15,23,42,0.02)]">
