@@ -39,6 +39,13 @@ export type HelpSection = {
   title: string;
 };
 
+export type HelpSidebarEntry = {
+  index: string;
+  slug: string;
+  title: string;
+  icon: HelpIcon;
+};
+
 type HelpBodyBlock =
   | {
       type: "paragraph";
@@ -475,17 +482,24 @@ export const helpArticles: HelpArticle[] = [
       "Scientific discovery is not a discipline that can be run well by stacking conversations alone with AI, nor is it a field where breakthroughs reliably come from pure model reasoning. Serious research demands project-based orchestration of stage-appropriate tasks, scientific computing and simulation engines that yield high-precision, trustworthy data, and long-horizon cycles of reflection and iteration to refine methods and workflows. These are capabilities that today's large language models, and general-purpose frameworks such as OpenClaw by themselves, do not provide end-to-end.",
     ],
     sections: [
-      { id: "onboarding", title: "Onboarding" },
-      { id: "how-sciclaw-works", title: "How SciClaw works" },
+      { id: "what-sciclaw-is", title: "1. What SciClaw Is" },
+      { id: "initial-setup", title: "2. Initial Setup" },
+      { id: "how-sciclaw-works", title: "3. How SciClaw Works" },
     ],
     nextHref: "/help/projects",
     nextLabel: "Project & Session",
     body: [
       {
         type: "paragraph",
-        sectionId: "onboarding",
+        sectionId: "what-sciclaw-is",
         content:
-          "When you log in for the first time, SciClaw will guide you through a brief setup conversation. It asks a few questions about your research focus and working style, so it can provide more relevant, personalized support. The process usually takes around 2–3 minutes.",
+          "SciClaw was designed to address the fragmentation of modern research work: it keeps project context, capability routing, output generation, and downstream experimental execution connected inside one collaborative system.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "initial-setup",
+        content:
+          "When you use SciClaw for the first time, the system starts with a short conversation to understand your research focus, working style, and usage preferences. Based on this, it initializes your AI Persona so later collaboration can stay more relevant and consistent.",
       },
       {
         type: "list",
@@ -851,6 +865,20 @@ export const helpArticles: HelpArticle[] = [
       },
     ],
   },
+];
+
+export const helpSidebarEntries: HelpSidebarEntry[] = [
+  { index: "01", slug: "getting-started", title: "Getting Started", icon: "rocket" },
+  {
+    index: "02",
+    slug: "projects",
+    title: "Projects, Conversations, Tasks & Library",
+    icon: "folder",
+  },
+  { index: "03", slug: "foundry", title: "Foundry", icon: "hammer" },
+  { index: "04", slug: "skills", title: "Skills", icon: "bolt" },
+  { index: "05", slug: "persona", title: "AI Persona", icon: "persona" },
+  { index: "06", slug: "im", title: "Connect Messaging Apps", icon: "send" },
 ];
 
 export const helpArticleMap = Object.fromEntries(

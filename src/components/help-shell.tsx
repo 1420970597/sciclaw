@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { DockMenuBar } from "@/components/dock-menu-bar";
 import { HelpToc } from "@/components/help-toc";
-import { helpArticles, helpArticleMap, type HelpArticle, type HelpIcon } from "@/app/landing-data";
+import { helpSidebarEntries, helpArticleMap, type HelpArticle, type HelpIcon } from "@/app/landing-data";
 
 type HelpShellProps = {
   article: HelpArticle;
@@ -82,14 +82,19 @@ function HelpGlyph({ icon, className = "h-4 w-4" }: { icon: HelpIcon; className?
 }
 
 function DocsSidebar({ currentSlug }: { currentSlug: string }) {
+  const activeSlug =
+    currentSlug === "chat" || currentSlug === "library" || currentSlug === "tasks"
+      ? "projects"
+      : currentSlug;
+
   return (
     <nav className="space-y-4">
       <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b9b9b9]">
         Contents
       </p>
       <ol className="space-y-1.5">
-        {helpArticles.map((entry) => {
-          const isActive = entry.slug === currentSlug;
+        {helpSidebarEntries.map((entry) => {
+          const isActive = entry.slug === activeSlug;
 
           return (
             <li key={entry.slug}>
@@ -111,7 +116,7 @@ function DocsSidebar({ currentSlug }: { currentSlug: string }) {
                 <span className={isActive ? "text-[#e98532]" : "text-[#b2b2b2]"}>
                   <HelpGlyph icon={entry.icon} />
                 </span>
-                <span className="truncate font-medium text-current">{entry.navTitle ?? entry.title}</span>
+                <span className="truncate font-medium text-current">{entry.title}</span>
               </Link>
             </li>
           );
