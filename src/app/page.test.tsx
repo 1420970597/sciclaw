@@ -140,16 +140,16 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("grid");
     expect(authCard).toHaveClass("max-w-[226px]");
     expect(authCard).toHaveClass("rounded-[1.34rem]");
-    expect(authCard).toHaveClass("border-[rgba(236,241,246,0.94)]");
-    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.988)_0%,rgba(250,246,241,0.962)_100%)]");
-    expect(authCard).toHaveClass("shadow-[0_10px_24px_rgba(15,23,42,0.05),0_2px_8px_rgba(241,180,135,0.032)]");
+    expect(authCard).toHaveClass("border-[rgba(226,232,239,0.98)]");
+    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(248,244,238,0.972)_100%)]");
+    expect(authCard).toHaveClass("shadow-[0_14px_30px_rgba(15,23,42,0.072),0_3px_10px_rgba(241,180,135,0.038)]");
     expect(authCard).toHaveClass("backdrop-blur-[3px]");
     expect(authCard).not.toHaveClass("lg:mt-[2.16rem]");
     expect(authCard).not.toHaveClass("xl:mt-[2.3rem]");
     expect(previewCard).toHaveClass("rounded-[2.08rem]");
-    expect(previewCard).toHaveClass("border-[rgba(255,255,255,0.94)]");
-    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f5f7fa_100%)]");
-    expect(previewCard).toHaveClass("shadow-[0_18px_40px_rgba(15,23,42,0.07)]");
+    expect(previewCard).toHaveClass("border-[rgba(231,236,242,0.96)]");
+    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f4f6f9_100%)]");
+    expect(previewCard).toHaveClass("shadow-[0_22px_46px_rgba(15,23,42,0.088)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(previewLabelRow).toHaveClass("mt-[2.98rem]");
     expect(previewLabelRow).toHaveClass("gap-[3.38rem]");
@@ -329,10 +329,10 @@ describe("Home landing page", () => {
       contactTrigger,
       settingsTrigger,
     ].forEach((trigger) => {
-      expect(trigger).toHaveClass("border-[rgba(15,23,42,0.22)]");
-      expect(trigger).toHaveClass("bg-white/72");
-      expect(trigger).toHaveClass("text-[#34414d]");
-      expect(trigger).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.065)]");
+      expect(trigger).toHaveClass("border-[rgba(15,23,42,0.26)]");
+      expect(trigger).toHaveClass("bg-white/82");
+      expect(trigger).toHaveClass("text-[#2f3a46]");
+      expect(trigger).toHaveClass("shadow-[0_12px_26px_rgba(15,23,42,0.08)]");
       const icon = trigger.querySelector("svg");
       expect(icon).not.toBeNull();
       expect(icon).toHaveClass("h-[1.06rem]");
