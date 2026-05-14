@@ -458,7 +458,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[228px] rounded-[1.42rem] border border-[#f8fafc] bg-[#fefeff] px-[0.44rem] py-[0.52rem] shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)] sm:px-[0.48rem] sm:py-[0.56rem] lg:mt-[2.18rem] xl:mt-[2.34rem]"
+      className="mx-auto w-full max-w-[236px] rounded-[1.38rem] border border-[#f8fafc] bg-[#fefeff] px-[0.4rem] py-[0.48rem] shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)] sm:px-[0.44rem] sm:py-[0.52rem] lg:mt-[2.08rem] xl:mt-[2.22rem]"
     >
       <div className="mx-auto w-full max-w-[272px]">
         <div className="rounded-[0.98rem] border border-[#fbfcfd] bg-white/90 p-[0.42rem] shadow-[0_1px_2px_rgba(15,23,42,0.006)]">
@@ -481,9 +481,9 @@ function AuthCard({
                     setActiveMode(tab.key as AuthTab);
                     setReturnMode(tab.key as AuthTab);
                   }}
-                  className={`rounded-[0.8rem] px-4 py-[0.46rem] font-medium transition ${
+                  className={`rounded-[0.78rem] px-4 py-[0.42rem] font-medium transition ${
                     selected
-                      ? "bg-[#e8c6aa] text-[#64432f] shadow-[0_5px_10px_rgba(241,176,126,0.11)]"
+                      ? "bg-[#e6c0a1] text-[#65412b] shadow-[0_4px_8px_rgba(241,176,126,0.09)]"
                       : "text-[#6e7682] hover:text-[#222933]"
                   }`}
                 >
@@ -494,7 +494,7 @@ function AuthCard({
           </div>
         </div>
 
-        <div className="mt-3.5 space-y-[1.08rem]">
+        <div className="mt-3.5 space-y-[1rem]">
           <div
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
@@ -880,7 +880,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.08rem] lg:grid-cols-[minmax(0,1fr)_228px] lg:items-start lg:gap-[0.18rem] xl:-mt-[2.28rem] xl:grid-cols-[minmax(0,1.1fr)_228px] xl:gap-[0.24rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:-mt-[2.08rem] lg:grid-cols-[minmax(0,1fr)_236px] lg:items-start lg:gap-[0.14rem] xl:-mt-[2.28rem] xl:grid-cols-[minmax(0,1.08fr)_236px] xl:gap-[0.18rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
