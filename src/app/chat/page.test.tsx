@@ -83,6 +83,10 @@ describe("Chat route public landing clone", () => {
     const chatNetworkShellFrame = chatFeatureRotator.firstElementChild;
     expect(chatNetworkShell).toHaveClass("overflow-visible");
     expect(chatNetworkShellFrame).not.toBeNull();
+    expect(chatNetworkShellFrame).toHaveClass("overflow-hidden");
+    expect(chatNetworkShellFrame).toHaveClass("pl-[0.18rem]");
+    expect(chatNetworkShellFrame).toHaveClass("lg:pl-[0.2rem]");
+    expect(chatNetworkShellFrame).toHaveClass("xl:pl-[0.24rem]");
     expect(chatNetworkShellFrame).toHaveClass("lg:-mt-[2.08rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[2.3rem]");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[46.45%]");
