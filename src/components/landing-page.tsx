@@ -407,18 +407,18 @@ function FeaturePreview({
                 </div>
                 <div
                   data-testid="feature-preview-chart-label-row"
-                  className={`mt-[2.54rem] grid ${chartGridClass} gap-[3.18rem] px-[1.1rem] pt-[2.38rem] sm:gap-[3.32rem]`}
+                  className={`mt-[2.06rem] grid ${chartGridClass} gap-[2.58rem] px-[1.1rem] pt-[1.82rem] sm:gap-[2.74rem]`}
                 >
                   {visibleBars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.94rem] text-center sm:gap-[1rem]">
+                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.82rem] text-center sm:gap-[0.88rem]">
                       <div className="flex h-[156px] w-full items-end gap-[0.82rem] rounded-[1.3rem] bg-[linear-gradient(180deg,#f7fafc_0%,#f1f5f8_100%)] px-[1.36rem] pb-[1.08rem] pt-[1.08rem]">
                         <span
                           className="flex-1 rounded-full bg-[linear-gradient(180deg,#f7c69c_0%,#eb8854_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[4.36rem] w-full min-w-0 items-start justify-center px-[0.72rem] pb-[0.04rem] text-center text-[11.2px] font-medium uppercase leading-[1.08] tracking-[0.028em] text-[#6b8191] sm:min-h-[4.52rem] sm:text-[11.36px] sm:tracking-[0.034em]">
-                        <span className="block max-w-[6.48rem] text-balance break-words">{visibleChartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[3.54rem] w-full min-w-0 items-start justify-center px-[0.56rem] pb-[0.04rem] text-center text-[11.2px] font-medium uppercase leading-[1.04] tracking-[0.026em] text-[#6b8191] sm:min-h-[3.72rem] sm:text-[11.36px] sm:tracking-[0.03em]">
+                        <span className="block max-w-[5.72rem] text-balance break-words">{visibleChartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}
