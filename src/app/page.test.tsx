@@ -58,10 +58,10 @@ describe("Home landing page", () => {
     expect(featureRotator).toHaveClass("xl:gap-[0.2rem]");
     const networkShell = featureRotator.firstElementChild;
     expect(networkShell).not.toBeNull();
-    expect(networkShell).toHaveClass("lg:-mt-[2.18rem]");
-    expect(networkShell).toHaveClass("lg:-mr-[0.02rem]");
-    expect(networkShell).toHaveClass("xl:-mt-[2.42rem]");
-    expect(networkShell).toHaveClass("xl:-mr-[0.08rem]");
+    expect(networkShell).toHaveClass("lg:-mt-[1.92rem]");
+    expect(networkShell).toHaveClass("lg:-mr-[0.12rem]");
+    expect(networkShell).toHaveClass("xl:-mt-[2.14rem]");
+    expect(networkShell).toHaveClass("xl:-mr-[0.18rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
@@ -102,19 +102,19 @@ describe("Home landing page", () => {
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
     const previewCard = screen.getByTestId("feature-preview-card");
-    expect(hero).toHaveClass("lg:-mt-[2.42rem]");
-    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_238px]");
+    expect(hero).toHaveClass("lg:-mt-[2.08rem]");
+    expect(hero).toHaveClass("lg:grid-cols-[minmax(0,1fr)_234px]");
     expect(hero).toHaveClass("lg:items-start");
-    expect(hero).toHaveClass("lg:gap-[0.18rem]");
-    expect(hero).toHaveClass("xl:-mt-[2.64rem]");
-    expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.12fr)_238px]");
-    expect(hero).toHaveClass("xl:gap-[0.24rem]");
-    expect(authCard).toHaveClass("max-w-[238px]");
+    expect(hero).toHaveClass("lg:gap-[0.1rem]");
+    expect(hero).toHaveClass("xl:-mt-[2.28rem]");
+    expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_234px]");
+    expect(hero).toHaveClass("xl:gap-[0.16rem]");
+    expect(authCard).toHaveClass("max-w-[234px]");
     expect(authCard).toHaveClass("bg-[#fdfdff]");
-    expect(authCard).toHaveClass("border-[#f4f7fb]");
-    expect(authCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.006),0_1px_2px_rgba(241,180,135,0.003)]");
-    expect(authCard).toHaveClass("lg:mt-[2.18rem]");
-    expect(authCard).toHaveClass("xl:mt-[2.34rem]");
+    expect(authCard).toHaveClass("border-[#f5f7fa]");
+    expect(authCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.005),0_1px_2px_rgba(241,180,135,0.002)]");
+    expect(authCard).toHaveClass("lg:mt-[1.78rem]");
+    expect(authCard).toHaveClass("xl:mt-[1.96rem]");
     expect(previewCard).toHaveClass("border-white/92");
     expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)]");
     expect(previewCard).toHaveClass("shadow-[0_18px_42px_rgba(15,23,42,0.06)]");
@@ -321,12 +321,12 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNodeWrapper?.className).toContain("left-[44.15%]");
-    expect(dataMiningNodeWrapper?.className).toContain("left-[44.55%]");
-    expect(outcomeNodeWrapper?.className).toContain("right-[11.7%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.9%]']")).not.toBeNull();
-    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.8%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.55%]']")).not.toBeNull();
+    expect(literatureNodeWrapper?.className).toContain("left-[45.15%]");
+    expect(dataMiningNodeWrapper?.className).toContain("left-[45.35%]");
+    expect(outcomeNodeWrapper?.className).toContain("right-[13.45%]");
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[13.9%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[14%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[13.1%]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
@@ -398,12 +398,18 @@ describe("Home landing page", () => {
         /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
       ),
     ).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^autonomous research$/i)).toHaveClass("tracking-[0.24em]");
+    expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toHaveClass("sm:text-[1.88rem]");
+    expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toHaveClass("md:text-[2.02rem]");
+    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("max-w-[32.3rem]");
+    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("leading-[1.9]");
+    expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("sm:text-[1rem]");
     expect(getStartedButton).toBeInTheDocument();
     expect(getStartedButton.querySelector("svg")).toBeNull();
     expect(getStartedButton).not.toHaveClass("flex-col");
     expect(getStartedButton).not.toHaveClass("gap-1");
     expect(getStartedButton).toHaveClass("font-mono");
-    expect(getStartedButton).toHaveClass("tracking-[0.12em]");
+    expect(getStartedButton).toHaveClass("pt-[0.34rem]");
 
     fireEvent.click(getStartedButton);
 

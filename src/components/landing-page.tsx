@@ -104,8 +104,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: <span className="inline-block h-[0.72rem] w-[0.72rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.16)]" aria-hidden />,
-      position: "left-[44.15%] top-[12.4%] sm:left-[44.15%] sm:top-[12.4%]",
-      lineClass: "left-[45.25%] top-[28.1%] h-[2.18px] w-[14.9%] origin-left -rotate-[19deg]",
+      position: "left-[45.15%] top-[12.4%] sm:left-[45.15%] sm:top-[12.4%]",
+      lineClass: "left-[46.05%] top-[28.1%] h-[2.18px] w-[13.9%] origin-left -rotate-[19deg]",
       ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
       activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
       wrapperClass: "items-center",
@@ -123,8 +123,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[44.55%] top-[49.75%] sm:left-[44.55%] sm:top-[49.75%]",
-      lineClass: "left-[45.5%] top-[53.3%] h-[2.18px] w-[14.8%] origin-left rotate-[13deg]",
+      position: "left-[45.35%] top-[49.75%] sm:left-[45.35%] sm:top-[49.75%]",
+      lineClass: "left-[46.15%] top-[53.3%] h-[2.18px] w-[14%] origin-left rotate-[13deg]",
       ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
       activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
       wrapperClass: "items-center",
@@ -141,8 +141,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute inset-[0.22rem] rounded-full bg-current/90" />
         </span>
       ),
-      position: "right-[11.7%] top-[12.7%] sm:right-[11.7%] sm:top-[12.7%]",
-      lineClass: "left-[47.2%] top-[27.9%] h-[2.18px] w-[14.55%] origin-left rotate-[21deg]",
+      position: "right-[13.45%] top-[12.7%] sm:right-[13.45%] sm:top-[12.7%]",
+      lineClass: "left-[47.95%] top-[27.9%] h-[2.18px] w-[13.1%] origin-left rotate-[21deg]",
       ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
       activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
       wrapperClass: "items-center",
@@ -316,17 +316,17 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-    <div className="flex flex-col gap-[1.48rem]">
-      <div className="order-2 space-y-[1.02rem] px-1 pt-[0.35rem]">
+    <div className="flex flex-col gap-[1.32rem]">
+      <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
-        <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.92rem] md:text-[2.06rem]">
+        <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
           {previewContent.heading}
         </h3>
-        <p className="max-w-[33.2rem] text-base leading-[2.02] text-[#676d77] sm:text-[1.01rem]">{previewContent.description}</p>
+        <p className="max-w-[32.3rem] text-base leading-[1.9] text-[#676d77] sm:text-[1rem]">{previewContent.description}</p>
         <button
           type="button"
           onClick={onGetStarted}
-          className="inline-flex pt-[0.62rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
+          className="inline-flex pt-[0.34rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
         >
           {previewContent.ctaLabel}
         </button>
@@ -438,7 +438,7 @@ function FeatureRotator({
       data-testid="feature-rotator"
       className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-start lg:gap-[0.14rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.2rem]"
     >
-      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mt-[2.18rem] lg:-mr-[0.02rem] lg:px-0 xl:-mt-[2.42rem] xl:-mr-[0.08rem] xl:px-1">
+      <div className="overflow-hidden rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] px-0 py-1 sm:px-1 lg:-mt-[1.92rem] lg:-mr-[0.12rem] lg:px-0 xl:-mt-[2.14rem] xl:-mr-[0.18rem] xl:px-1">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
       <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} />
@@ -458,9 +458,9 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[238px] rounded-[1.52rem] border border-[#f4f7fb] bg-[#fdfdff] px-[0.5rem] py-[0.58rem] shadow-[0_1px_2px_rgba(15,23,42,0.006),0_1px_2px_rgba(241,180,135,0.003)] sm:px-[0.54rem] sm:py-[0.62rem] lg:mt-[2.18rem] xl:mt-[2.34rem]"
+      className="mx-auto w-full max-w-[234px] rounded-[1.46rem] border border-[#f5f7fa] bg-[#fdfdff] px-[0.46rem] py-[0.54rem] shadow-[0_1px_2px_rgba(15,23,42,0.005),0_1px_2px_rgba(241,180,135,0.002)] sm:px-[0.5rem] sm:py-[0.58rem] lg:mt-[1.78rem] xl:mt-[1.96rem]"
     >
-      <div className="mx-auto w-full max-w-[278px]">
+      <div className="mx-auto w-full max-w-[272px]">
         <div className="rounded-[0.98rem] border border-[#fafbfc] bg-white/88 p-[0.42rem] shadow-[0_1px_2px_rgba(15,23,42,0.008)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.72rem] bg-[#f7f9fb] p-[0.34rem] text-sm text-[#6b7480]">
             {[
@@ -880,7 +880,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.42rem] lg:grid-cols-[minmax(0,1fr)_238px] lg:items-start lg:gap-[0.18rem] xl:-mt-[2.64rem] xl:grid-cols-[minmax(0,1.12fr)_238px] xl:gap-[0.24rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:-mt-[2.08rem] lg:grid-cols-[minmax(0,1fr)_234px] lg:items-start lg:gap-[0.1rem] xl:-mt-[2.28rem] xl:grid-cols-[minmax(0,1.1fr)_234px] xl:gap-[0.16rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
