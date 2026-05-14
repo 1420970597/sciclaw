@@ -71,8 +71,8 @@ describe("Home landing page", () => {
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
-    expect(headerWordmark).toHaveClass("text-[1.08rem]");
-    expect(headerWordmark).toHaveClass("sm:text-[1.14rem]");
+    expect(headerWordmark).toHaveClass("text-[0.98rem]");
+    expect(headerWordmark).toHaveClass("sm:text-[1.04rem]");
     expect(
       screen.getAllByText(/ai co-worker for scientific research\./i).length,
     ).toBeGreaterThanOrEqual(1);

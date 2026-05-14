@@ -80,7 +80,7 @@ function Header() {
   return (
     <header className="pt-[0.46rem] sm:pt-[0.62rem]">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between px-5 sm:px-7 lg:px-[1.95rem] xl:px-[2.18rem]">
-        <div data-testid="landing-header-wordmark" className="pr-4 text-[1.08rem] font-semibold tracking-[-0.045em] text-[#1b2027] sm:text-[1.14rem]">
+        <div data-testid="landing-header-wordmark" className="pr-4 text-[0.98rem] font-semibold tracking-[-0.04em] text-[#1b2027] sm:text-[1.04rem]">
           Sci<span className="text-[#eb8a3c]">Claw</span>
         </div>
         <div data-testid="landing-utility-row" className="flex items-center gap-[0.56rem] pr-[1.38rem] sm:gap-[0.72rem] sm:pr-[1.42rem]">
