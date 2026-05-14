@@ -51,8 +51,8 @@ describe("Chat route public landing clone", () => {
     expect(chatFeatureRotator).toHaveClass("lg:items-start");
     const chatNetworkShell = chatFeatureRotator.firstElementChild;
     expect(chatNetworkShell).not.toBeNull();
-    expect(chatNetworkShell).toHaveClass("lg:-mt-[1.92rem]");
-    expect(chatNetworkShell).toHaveClass("xl:-mt-[2.14rem]");
+    expect(chatNetworkShell).toHaveClass("lg:-mt-[2.08rem]");
+    expect(chatNetworkShell).toHaveClass("xl:-mt-[2.3rem]");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[46.1%]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[46.05%]");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[15.4%]");
