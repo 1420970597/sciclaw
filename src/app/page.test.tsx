@@ -108,7 +108,7 @@ describe("Home landing page", () => {
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
     const previewCard = screen.getByTestId("feature-preview-card");
-    expect(hero).toHaveClass("lg:-mt-[2.1rem]");
+    expect(hero).toHaveClass("lg:-mt-[2.38rem]");
     const authColumn = featureRotator.lastElementChild?.querySelector('[data-testid="landing-auth-card"]')?.parentElement;
     expect(authColumn).not.toBeNull();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
@@ -119,10 +119,10 @@ describe("Home landing page", () => {
     expect(featurePreview).toHaveClass("lg:grid-cols-[minmax(0,1fr)_236px]");
     expect(featurePreview).toHaveClass("lg:items-start");
     expect(featurePreview).toHaveClass("lg:gap-x-[0rem]");
-    expect(featurePreview).toHaveClass("lg:gap-y-[0.9rem]");
+    expect(featurePreview).toHaveClass("lg:gap-y-[0.72rem]");
     expect(featurePreview).toHaveClass("xl:grid-cols-[minmax(0,1fr)_236px]");
     expect(featurePreview).toHaveClass("xl:gap-x-[0.04rem]");
-    expect(featurePreview).toHaveClass("xl:gap-y-[0.96rem]");
+    expect(featurePreview).toHaveClass("xl:gap-y-[0.8rem]");
     const previewHeadingBlock = previewCard.parentElement?.firstElementChild;
     expect(previewHeadingBlock).not.toBeNull();
     expect(previewHeadingBlock).toHaveClass("lg:order-1");
@@ -140,8 +140,8 @@ describe("Home landing page", () => {
     expect(authColumn).toHaveClass("xl:mt-[0.42rem]");
     expect(authColumn).toHaveClass("lg:ml-auto");
     const previewHeadingBlockCopy = featurePreview?.firstElementChild;
-    expect(previewHeadingBlockCopy).toHaveClass("space-y-[0.7rem]");
-    expect(previewHeadingBlockCopy).toHaveClass("pt-[0.12rem]");
+    expect(previewHeadingBlockCopy).toHaveClass("space-y-[0.62rem]");
+    expect(previewHeadingBlockCopy).toHaveClass("pt-[0.08rem]");
     expect(previewHeadingBlockCopy).toHaveClass("lg:max-w-[35.4rem]");
     const previewDescription = within(previewHeadingBlockCopy as HTMLElement).getByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,

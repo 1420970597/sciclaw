@@ -321,8 +321,8 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-    <div className="flex flex-col gap-[1.2rem] lg:grid lg:grid-cols-[minmax(0,1fr)_236px] lg:items-start lg:gap-x-[0rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_236px] xl:gap-x-[0.04rem] xl:gap-y-[0.96rem]">
-      <div className="order-2 space-y-[0.7rem] px-1 pt-[0.12rem] lg:order-1 lg:col-span-2 lg:max-w-[35.4rem]">
+      <div className="flex flex-col gap-[1.08rem] lg:grid lg:grid-cols-[minmax(0,1fr)_236px] lg:items-start lg:gap-x-[0rem] lg:gap-y-[0.72rem] xl:grid-cols-[minmax(0,1fr)_236px] xl:gap-x-[0.04rem] xl:gap-y-[0.8rem]">
+      <div className="order-2 space-y-[0.62rem] px-1 pt-[0.08rem] lg:order-1 lg:col-span-2 lg:max-w-[35.4rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
           {previewContent.heading}
@@ -878,8 +878,8 @@ export function LandingPage() {
       <Header />
 
       <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-5 sm:px-8 sm:pt-6 lg:px-10 lg:pt-7">
-        <div className="space-y-6 text-center sm:space-y-7">
-          <div className="space-y-3 sm:space-y-[0.92rem]">
+        <div className="space-y-5 text-center sm:space-y-6">
+          <div className="space-y-3 sm:space-y-[0.82rem]">
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
             </h1>
@@ -891,7 +891,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:gap-[1rem] lg:-mt-[2.1rem]" data-testid="landing-hero">
+          <div className="grid gap-4 sm:gap-[1rem] lg:-mt-[2.38rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}

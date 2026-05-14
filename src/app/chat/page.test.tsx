@@ -44,7 +44,7 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:-mt-[2.1rem]");
+    expect(chatHero).toHaveClass("lg:-mt-[2.38rem]");
     expect(chatHero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(chatHero).toHaveClass("gap-4");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
@@ -61,10 +61,10 @@ describe("Chat route public landing clone", () => {
     expect(chatFeaturePreview).toHaveClass("lg:grid-cols-[minmax(0,1fr)_236px]");
     expect(chatFeaturePreview).toHaveClass("lg:items-start");
     expect(chatFeaturePreview).toHaveClass("lg:gap-x-[0rem]");
-    expect(chatFeaturePreview).toHaveClass("lg:gap-y-[0.9rem]");
+    expect(chatFeaturePreview).toHaveClass("lg:gap-y-[0.72rem]");
     expect(chatFeaturePreview).toHaveClass("xl:grid-cols-[minmax(0,1fr)_236px]");
     expect(chatFeaturePreview).toHaveClass("xl:gap-x-[0.04rem]");
-    expect(chatFeaturePreview).toHaveClass("xl:gap-y-[0.96rem]");
+    expect(chatFeaturePreview).toHaveClass("xl:gap-y-[0.8rem]");
     const chatPreviewHeadingBlock = chatPreviewCard.parentElement?.firstElementChild;
     expect(chatPreviewHeadingBlock).not.toBeNull();
     expect(chatPreviewHeadingBlock).toHaveClass("lg:order-1");
@@ -81,8 +81,8 @@ describe("Chat route public landing clone", () => {
     expect(authColumn).toHaveClass("xl:-ml-[0.1rem]");
     expect(authColumn).toHaveClass("xl:mt-[0.42rem]");
     expect(authColumn).toHaveClass("lg:ml-auto");
-    expect(chatPreviewHeadingBlock).toHaveClass("space-y-[0.7rem]");
-    expect(chatPreviewHeadingBlock).toHaveClass("pt-[0.12rem]");
+    expect(chatPreviewHeadingBlock).toHaveClass("space-y-[0.62rem]");
+    expect(chatPreviewHeadingBlock).toHaveClass("pt-[0.08rem]");
     expect(chatPreviewHeadingBlock).toHaveClass("lg:max-w-[35.4rem]");
     const chatPreviewDescription = within(chatPreviewHeadingBlock as HTMLElement).getByText(
       /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
