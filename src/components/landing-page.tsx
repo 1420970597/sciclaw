@@ -332,7 +332,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-1 rounded-[2.12rem] border border-white/92 bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] p-[1.28rem] shadow-[0_18px_42px_rgba(15,23,42,0.06)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-1 rounded-[2.08rem] border border-white/88 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-[1.28rem] shadow-[0_14px_32px_rgba(15,23,42,0.048)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
