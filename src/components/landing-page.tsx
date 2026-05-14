@@ -879,19 +879,19 @@ export function LandingPage() {
 
       <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-7 sm:px-8 sm:pt-8 lg:px-10 lg:pt-10">
         <div className="space-y-8 text-center sm:space-y-9">
-          <div className="space-y-4 sm:space-y-[1.125rem]">
+          <div className="space-y-3 sm:space-y-[0.92rem]">
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
             </h1>
-            <p className="text-[11px] font-semibold tracking-[0.34em] text-[#8c919a] sm:text-xs">
+            <p className="text-[11.5px] font-semibold tracking-[0.28em] text-[#767d87] sm:text-[12.5px]">
               AI co-worker for scientific research.
             </p>
-            <p className="mx-auto max-w-[920px] text-base leading-8 tracking-[0.005em] text-[#60656f] sm:text-[1.22rem] sm:leading-9 lg:max-w-[980px]">
+            <p className="mx-auto max-w-[860px] text-base leading-[1.95] tracking-[0.003em] text-[#5c626c] sm:text-[1.18rem] sm:leading-[2.1] lg:max-w-[920px]">
               SciClaw connects inspiration generation, experimental execution, and iterative optimization, ushering in a new paradigm of scientific discovery
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.08rem]" data-testid="landing-hero">
+          <div className="grid gap-4 sm:gap-[1.1rem] lg:-mt-[1.86rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
