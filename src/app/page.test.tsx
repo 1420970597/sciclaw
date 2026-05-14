@@ -116,12 +116,12 @@ describe("Home landing page", () => {
     const featurePreview = previewCard.parentElement;
     expect(featurePreview).not.toBeNull();
     expect(featurePreview).toHaveClass("lg:grid");
-    expect(featurePreview).toHaveClass("lg:grid-cols-[minmax(0,1fr)_208px]");
+    expect(featurePreview).toHaveClass("lg:grid-cols-[minmax(0,1fr)_204px]");
     expect(featurePreview).toHaveClass("lg:items-start");
-    expect(featurePreview).toHaveClass("lg:gap-x-[0.18rem]");
+    expect(featurePreview).toHaveClass("lg:gap-x-[0.14rem]");
     expect(featurePreview).toHaveClass("lg:gap-y-[0.9rem]");
-    expect(featurePreview).toHaveClass("xl:grid-cols-[minmax(0,1fr)_208px]");
-    expect(featurePreview).toHaveClass("xl:gap-x-[0.24rem]");
+    expect(featurePreview).toHaveClass("xl:grid-cols-[minmax(0,1fr)_204px]");
+    expect(featurePreview).toHaveClass("xl:gap-x-[0.2rem]");
     expect(featurePreview).toHaveClass("xl:gap-y-[0.98rem]");
     const previewHeadingBlock = previewCard.parentElement?.firstElementChild;
     expect(previewHeadingBlock).not.toBeNull();
@@ -142,7 +142,7 @@ describe("Home landing page", () => {
     expect(hero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(hero).toHaveClass("gap-4");
     expect(hero).toHaveClass("grid");
-    expect(authCard).toHaveClass("max-w-[198px]");
+    expect(authCard).toHaveClass("max-w-[194px]");
     expect(authCard).toHaveClass("rounded-[1.14rem]");
     expect(authCard).toHaveClass("border-[rgba(241,245,248,0.97)]");
     expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.994)_0%,rgba(250,246,241,0.952)_100%)]");

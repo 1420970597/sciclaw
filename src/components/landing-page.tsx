@@ -321,7 +321,7 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_208px] lg:items-start lg:gap-x-[0.18rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_208px] xl:gap-x-[0.24rem] xl:gap-y-[0.98rem]">
+    <div className="flex flex-col gap-[1.32rem] lg:grid lg:grid-cols-[minmax(0,1fr)_204px] lg:items-start lg:gap-x-[0.14rem] lg:gap-y-[0.9rem] xl:grid-cols-[minmax(0,1fr)_204px] xl:gap-x-[0.2rem] xl:gap-y-[0.98rem]">
       <div className="order-2 space-y-[0.82rem] px-1 pt-[0.18rem] lg:order-1 lg:col-span-2 lg:max-w-[36rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
@@ -469,7 +469,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[198px] rounded-[1.14rem] border border-[rgba(241,245,248,0.97)] bg-[linear-gradient(180deg,rgba(255,255,255,0.994)_0%,rgba(250,246,241,0.952)_100%)] px-[0.28rem] py-[0.34rem] shadow-[0_3px_8px_rgba(15,23,42,0.026),0_1px_3px_rgba(241,180,135,0.013)] backdrop-blur-[1.25px] sm:px-[0.32rem] sm:py-[0.38rem]"
+      className="mx-auto w-full max-w-[194px] rounded-[1.14rem] border border-[rgba(241,245,248,0.97)] bg-[linear-gradient(180deg,rgba(255,255,255,0.994)_0%,rgba(250,246,241,0.952)_100%)] px-[0.28rem] py-[0.34rem] shadow-[0_3px_8px_rgba(15,23,42,0.026),0_1px_3px_rgba(241,180,135,0.013)] backdrop-blur-[1.25px] sm:px-[0.32rem] sm:py-[0.38rem]"
     >
       <div className="mx-auto w-full max-w-[260px]">
         <div className="rounded-[0.92rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.946)_0%,rgba(250,245,238,0.74)_100%)] p-[0.32rem] shadow-[0_4px_10px_rgba(15,23,42,0.011)]">
