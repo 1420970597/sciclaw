@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DockMenuBar } from "@/components/dock-menu-bar";
+import { HelpToc } from "@/components/help-toc";
 import { helpArticles, helpArticleMap, type HelpArticle, type HelpIcon } from "@/app/landing-data";
 
 type HelpShellProps = {
@@ -271,39 +272,6 @@ function ArticleBody({ article }: { article: HelpArticle }) {
   );
 }
 
-function Toc({ article }: { article: HelpArticle }) {
-  const activeId = article.sections[0]?.id;
-
-  return (
-    <aside className="lg:sticky lg:top-8 lg:self-start">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b9b9b9]">
-        On this page
-      </p>
-      <ol className="mt-4 space-y-2 text-sm">
-        {article.sections.map((section) => {
-          const isActive = section.id === activeId;
-
-          return (
-            <li key={section.id}>
-              <a
-                href={`#${section.id}`}
-                className={`relative block pl-4 transition ${
-                  isActive ? "text-[#e98532]" : "text-[#949494] hover:text-[#343434]"
-                }`}
-              >
-                {isActive ? (
-                  <span className="absolute inset-y-1 left-0 w-0.5 rounded-full bg-[#ed8a3a]" aria-hidden />
-                ) : null}
-                {section.title}
-              </a>
-            </li>
-          );
-        })}
-      </ol>
-    </aside>
-  );
-}
-
 export function HelpShell({ article }: HelpShellProps) {
   return (
     <main className="min-h-screen bg-[#fcfcfb] text-[#1f1f1f]">
@@ -313,7 +281,7 @@ export function HelpShell({ article }: HelpShellProps) {
         <div className="grid gap-10 pt-8 xl:grid-cols-[260px_minmax(0,720px)_200px] xl:gap-12">
           <DocsSidebar currentSlug={article.slug} />
           <ArticleBody article={article} />
-          <Toc article={article} />
+          <HelpToc sections={article.sections} />
         </div>
       </div>
     </main>
