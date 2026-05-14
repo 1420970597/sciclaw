@@ -53,9 +53,9 @@ describe("Home landing page", () => {
     expect(screen.queryByRole("button", { name: /^autonomous execution$/i })).not.toBeInTheDocument();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("lg:items-start");
-    expect(featureRotator).toHaveClass("lg:gap-[0.12rem]");
+    expect(featureRotator).toHaveClass("lg:gap-[0.08rem]");
     expect(featureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("xl:gap-[0.18rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[0.12rem]");
     const networkShell = screen.getByTestId("feature-network-shell");
     const networkShellFrame = featureRotator.firstElementChild;
     expect(networkShell).toHaveClass("overflow-visible");
@@ -64,10 +64,10 @@ describe("Home landing page", () => {
     expect(networkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(networkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(networkShellFrame).toHaveClass("xl:pl-[0.24rem]");
-    expect(networkShellFrame).toHaveClass("lg:-mt-[2.24rem]");
+    expect(networkShellFrame).toHaveClass("lg:-mt-[2.32rem]");
     expect(networkShellFrame).toHaveClass("lg:mr-0");
-    expect(networkShellFrame).toHaveClass("xl:-mt-[2.48rem]");
-    expect(networkShellFrame).toHaveClass("xl:-mr-[0.04rem]");
+    expect(networkShellFrame).toHaveClass("xl:-mt-[2.56rem]");
+    expect(networkShellFrame).toHaveClass("xl:-mr-[0.02rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
@@ -373,12 +373,12 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNode.parentElement?.className).toContain("left-[46.45%]");
-    expect(dataMiningNode.parentElement?.className).toContain("left-[46.55%]");
-    expect(outcomeNode.parentElement?.className).toContain("right-[18.2%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[12.05%]']")).not.toBeNull();
-    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.85%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.3%]']")).not.toBeNull();
+    expect(literatureNode.parentElement?.className).toContain("left-[47.1%]");
+    expect(dataMiningNode.parentElement?.className).toContain("left-[47%]");
+    expect(outcomeNode.parentElement?.className).toContain("right-[19.7%]");
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.55%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.35%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[10.6%]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");

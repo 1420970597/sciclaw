@@ -104,8 +104,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: <span className="inline-block h-[0.72rem] w-[0.72rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.16)]" aria-hidden />,
-      position: "left-[46.45%] top-[14.2%] sm:left-[46.45%] sm:top-[14.2%]",
-      lineClass: "left-[46.82%] top-[28.9%] h-[2.18px] w-[12.05%] origin-left -rotate-[16deg]",
+      position: "left-[47.1%] top-[14.2%] sm:left-[47.1%] sm:top-[14.2%]",
+      lineClass: "left-[47.18%] top-[28.9%] h-[2.18px] w-[11.55%] origin-left -rotate-[15deg]",
       ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
       activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
       wrapperClass: "items-center",
@@ -123,8 +123,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[46.55%] top-[47.7%] sm:left-[46.55%] sm:top-[47.7%]",
-      lineClass: "left-[46.9%] top-[51.2%] h-[2.18px] w-[11.85%] origin-left rotate-[9deg]",
+      position: "left-[47%] top-[47.2%] sm:left-[47%] sm:top-[47.2%]",
+      lineClass: "left-[47.18%] top-[50.95%] h-[2.18px] w-[11.35%] origin-left rotate-[8deg]",
       ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
       activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
       wrapperClass: "items-center",
@@ -141,8 +141,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute inset-[0.22rem] rounded-full bg-current/90" />
         </span>
       ),
-      position: "right-[18.2%] top-[14.55%] sm:right-[18.2%] sm:top-[14.55%]",
-      lineClass: "left-[47.84%] top-[29.55%] h-[2.18px] w-[11.3%] origin-left rotate-[17deg]",
+      position: "right-[19.7%] top-[14.35%] sm:right-[19.7%] sm:top-[14.35%]",
+      lineClass: "left-[47.96%] top-[29.2%] h-[2.18px] w-[10.6%] origin-left rotate-[15deg]",
       ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
       activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
       wrapperClass: "items-center",
@@ -447,9 +447,9 @@ function FeatureRotator({
     <section
       id="feature-rotator"
       data-testid="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-start lg:gap-[0.12rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.18rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-start lg:gap-[0.08rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.12rem]"
     >
-      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.18rem] pr-0 py-1 sm:px-1 lg:-mt-[2.24rem] lg:mr-0 lg:px-0 lg:pl-[0.2rem] xl:-mt-[2.48rem] xl:-mr-[0.04rem] xl:px-1 xl:pl-[0.24rem]">
+      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.18rem] pr-0 py-1 sm:px-1 lg:-mt-[2.32rem] lg:mr-0 lg:px-0 lg:pl-[0.2rem] xl:-mt-[2.56rem] xl:-mr-[0.02rem] xl:px-1 xl:pl-[0.24rem]">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
       <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} onApplyNow={onApplyNow} />
