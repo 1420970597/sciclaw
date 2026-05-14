@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 -mt-[0.22rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.28rem] lg:max-w-[15rem] xl:mt-[0.44rem]">
+      <div className="order-3 -mt-[0.22rem] lg:-ml-[0.18rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.22rem] lg:max-w-[14.5rem] xl:-ml-[0.24rem] xl:mt-[0.36rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
@@ -469,11 +469,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[232px] rounded-[1.38rem] border border-[rgba(232,238,244,0.96)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(250,245,239,0.97)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_16px_36px_rgba(15,23,42,0.07),0_4px_12px_rgba(241,180,135,0.05)] backdrop-blur-[4px] sm:px-[0.46rem] sm:py-[0.54rem]"
+      className="mx-auto w-full max-w-[226px] rounded-[1.34rem] border border-[rgba(236,241,246,0.94)] bg-[linear-gradient(180deg,rgba(255,255,255,0.988)_0%,rgba(250,246,241,0.962)_100%)] px-[0.4rem] py-[0.48rem] shadow-[0_10px_24px_rgba(15,23,42,0.05),0_2px_8px_rgba(241,180,135,0.032)] backdrop-blur-[3px] sm:px-[0.44rem] sm:py-[0.52rem]"
     >
       <div className="mx-auto w-full max-w-[272px]">
-        <div className="rounded-[1.02rem] border border-[rgba(251,252,253,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(250,244,236,0.8)_100%)] p-[0.42rem] shadow-[0_8px_18px_rgba(15,23,42,0.02)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.76rem] bg-[rgba(247,241,234,0.9)] p-[0.34rem] text-sm text-[#6b7480]">
+        <div className="rounded-[0.98rem] border border-[rgba(252,252,253,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(250,245,238,0.76)_100%)] p-[0.38rem] shadow-[0_6px_14px_rgba(15,23,42,0.016)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.72rem] bg-[rgba(247,241,234,0.82)] p-[0.3rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -494,7 +494,7 @@ function AuthCard({
                   }}
                   className={`rounded-[0.82rem] px-4 py-[0.42rem] font-medium transition ${
                     selected
-                      ? "bg-[linear-gradient(180deg,#e9c7ab_0%,#e0b796_100%)] text-[#65412b] shadow-[0_6px_14px_rgba(241,176,126,0.12)]"
+                      ? "bg-[linear-gradient(180deg,#ead0ba_0%,#e2bfa4_100%)] text-[#65412b] shadow-[0_4px_10px_rgba(241,176,126,0.085)]"
                       : "text-[#6e7682] hover:text-[#222933]"
                   }`}
                 >
@@ -510,7 +510,7 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.2rem] border border-[rgba(245,247,250,0.95)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(251,247,241,0.9)_100%)] p-[0.72rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.92),0_8px_20px_rgba(15,23,42,0.018)] sm:p-[0.76rem]"
+            className="rounded-[1.14rem] border border-[rgba(245,247,250,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.976)_0%,rgba(251,247,241,0.88)_100%)] p-[0.68rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_6px_16px_rgba(15,23,42,0.015)] sm:p-[0.72rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
