@@ -217,7 +217,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           return (
             <div key={node.id}>
               <span className={`absolute ${node.lineClass} bg-gradient-to-r from-[#7691a4] via-[#d9e3eb] to-transparent opacity-[0.86]`} aria-hidden />
-              <div className={`absolute ${node.position} relative flex ${node.wrapperClass ?? "items-center"} flex-col gap-[1.02rem] text-center`}>
+              <div className={`absolute ${node.position} relative inline-flex ${node.wrapperClass ?? "items-center"} flex-col gap-[1.02rem] text-center`}>
                 <button
                   type="button"
                   data-testid={`feature-node-${node.id}`}

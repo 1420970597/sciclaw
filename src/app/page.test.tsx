@@ -393,6 +393,9 @@ describe("Home landing page", () => {
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
+    expect(literatureNodeWrapper).toHaveClass("inline-flex");
+    expect(dataMiningNodeWrapper).toHaveClass("inline-flex");
+    expect(outcomeNodeWrapper).toHaveClass("inline-flex");
     expect(literatureNodeWrapper).toHaveClass("items-center");
     expect(dataMiningNodeWrapper).toHaveClass("items-center");
     expect(outcomeNodeWrapper).toHaveClass("items-center");
