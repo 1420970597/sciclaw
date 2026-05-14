@@ -461,7 +461,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[236px] rounded-[1.42rem] border border-[rgba(248,250,252,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(253,249,244,0.94)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_10px_22px_rgba(15,23,42,0.028),0_2px_5px_rgba(241,180,135,0.025)] backdrop-blur-[3px] sm:px-[0.46rem] sm:py-[0.54rem] lg:mt-[2.08rem] xl:mt-[2.22rem]"
+      className="mx-auto w-full max-w-[232px] rounded-[1.38rem] border border-[rgba(248,250,252,0.84)] bg-[linear-gradient(180deg,rgba(255,255,255,0.955)_0%,rgba(252,248,243,0.93)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_8px_18px_rgba(15,23,42,0.022),0_2px_5px_rgba(241,180,135,0.018)] backdrop-blur-[3px] sm:px-[0.46rem] sm:py-[0.54rem] lg:mt-[2.16rem] xl:mt-[2.3rem]"
     >
       <div className="mx-auto w-full max-w-[272px]">
         <div className="rounded-[1.02rem] border border-[rgba(251,252,253,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(250,244,236,0.8)_100%)] p-[0.42rem] shadow-[0_8px_18px_rgba(15,23,42,0.02)]">
@@ -883,7 +883,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:-mt-[2.08rem] lg:grid-cols-[minmax(0,1fr)_236px] lg:items-start lg:gap-[0.14rem] xl:-mt-[2.28rem] xl:grid-cols-[minmax(0,1.08fr)_236px] xl:gap-[0.18rem]" data-testid="landing-hero">
+          <div className="grid gap-5 lg:-mt-[2.08rem] lg:grid-cols-[minmax(0,1fr)_232px] lg:items-start lg:gap-[0.1rem] xl:-mt-[2.28rem] xl:grid-cols-[minmax(0,1.08fr)_232px] xl:gap-[0.14rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
