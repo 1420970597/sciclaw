@@ -53,9 +53,9 @@ describe("Home landing page", () => {
     expect(screen.queryByRole("button", { name: /^autonomous execution$/i })).not.toBeInTheDocument();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("lg:items-start");
-    expect(featureRotator).toHaveClass("lg:gap-[0.14rem]");
+    expect(featureRotator).toHaveClass("lg:gap-[0.12rem]");
     expect(featureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("xl:gap-[0.2rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[0.18rem]");
     const networkShell = screen.getByTestId("feature-network-shell");
     const networkShellFrame = featureRotator.firstElementChild;
     expect(networkShell).toHaveClass("overflow-visible");
@@ -64,10 +64,10 @@ describe("Home landing page", () => {
     expect(networkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(networkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(networkShellFrame).toHaveClass("xl:pl-[0.24rem]");
-    expect(networkShellFrame).toHaveClass("lg:-mt-[2.18rem]");
-    expect(networkShellFrame).toHaveClass("lg:-mr-[0.02rem]");
-    expect(networkShellFrame).toHaveClass("xl:-mt-[2.42rem]");
-    expect(networkShellFrame).toHaveClass("xl:-mr-[0.08rem]");
+    expect(networkShellFrame).toHaveClass("lg:-mt-[2.24rem]");
+    expect(networkShellFrame).toHaveClass("lg:mr-0");
+    expect(networkShellFrame).toHaveClass("xl:-mt-[2.48rem]");
+    expect(networkShellFrame).toHaveClass("xl:-mr-[0.04rem]");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
     expect(headerWordmark).toHaveTextContent(/^SciClaw$/);
