@@ -66,9 +66,11 @@ describe("Chat route public landing clone", () => {
     expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_236px]");
     expect(chatHero).toHaveClass("xl:gap-[0.18rem]");
     expect(chatAuthCard).toHaveClass("max-w-[236px]");
-    expect(chatAuthCard).toHaveClass("bg-[#fefeff]");
-    expect(chatAuthCard).toHaveClass("border-[#f8fafc]");
-    expect(chatAuthCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)]");
+    expect(chatAuthCard).toHaveClass("rounded-[1.42rem]");
+    expect(chatAuthCard).toHaveClass("border-[rgba(248,250,252,0.9)]");
+    expect(chatAuthCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(253,249,244,0.94)_100%)]");
+    expect(chatAuthCard).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.028),0_2px_5px_rgba(241,180,135,0.025)]");
+    expect(chatAuthCard).toHaveClass("backdrop-blur-[3px]");
     expect(chatAuthCard).toHaveClass("lg:mt-[2.08rem]");
     expect(chatAuthCard).toHaveClass("xl:mt-[2.22rem]");
     expect(chatPreviewCard).toHaveClass("rounded-[2.08rem]");
@@ -83,9 +85,9 @@ describe("Chat route public landing clone", () => {
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[#e7edf3]");
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#5f6773]");
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[#dde5ee]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#6b5d52]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[rgba(233,212,194,0.98)]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("whitespace-nowrap");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.76rem]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.06em]");

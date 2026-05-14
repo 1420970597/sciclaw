@@ -83,9 +83,9 @@ describe("Home landing page", () => {
     expect(screen.queryByRole("navigation", { name: /primary/i })).not.toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[#e7edf3]");
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#5f6773]");
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[#dde5ee]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#6b5d52]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[rgba(233,212,194,0.98)]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("whitespace-nowrap");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.76rem]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.06em]");
@@ -110,9 +110,11 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_236px]");
     expect(hero).toHaveClass("xl:gap-[0.18rem]");
     expect(authCard).toHaveClass("max-w-[236px]");
-    expect(authCard).toHaveClass("bg-[#fefeff]");
-    expect(authCard).toHaveClass("border-[#f8fafc]");
-    expect(authCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)]");
+    expect(authCard).toHaveClass("rounded-[1.42rem]");
+    expect(authCard).toHaveClass("border-[rgba(248,250,252,0.9)]");
+    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(253,249,244,0.94)_100%)]");
+    expect(authCard).toHaveClass("shadow-[0_10px_22px_rgba(15,23,42,0.028),0_2px_5px_rgba(241,180,135,0.025)]");
+    expect(authCard).toHaveClass("backdrop-blur-[3px]");
     expect(authCard).toHaveClass("lg:mt-[2.08rem]");
     expect(authCard).toHaveClass("xl:mt-[2.22rem]");
     expect(previewCard).toHaveClass("rounded-[2.08rem]");

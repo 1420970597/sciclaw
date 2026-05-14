@@ -458,11 +458,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[236px] rounded-[1.38rem] border border-[#f8fafc] bg-[#fefeff] px-[0.4rem] py-[0.48rem] shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)] sm:px-[0.44rem] sm:py-[0.52rem] lg:mt-[2.08rem] xl:mt-[2.22rem]"
+      className="mx-auto w-full max-w-[236px] rounded-[1.42rem] border border-[rgba(248,250,252,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(253,249,244,0.94)_100%)] px-[0.42rem] py-[0.5rem] shadow-[0_10px_22px_rgba(15,23,42,0.028),0_2px_5px_rgba(241,180,135,0.025)] backdrop-blur-[3px] sm:px-[0.46rem] sm:py-[0.54rem] lg:mt-[2.08rem] xl:mt-[2.22rem]"
     >
       <div className="mx-auto w-full max-w-[272px]">
-        <div className="rounded-[0.98rem] border border-[#fbfcfd] bg-white/90 p-[0.42rem] shadow-[0_1px_2px_rgba(15,23,42,0.006)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.72rem] bg-[#f8fafc] p-[0.34rem] text-sm text-[#6b7480]">
+        <div className="rounded-[1.02rem] border border-[rgba(251,252,253,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(250,244,236,0.8)_100%)] p-[0.42rem] shadow-[0_8px_18px_rgba(15,23,42,0.02)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.76rem] bg-[rgba(247,241,234,0.9)] p-[0.34rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -481,9 +481,9 @@ function AuthCard({
                     setActiveMode(tab.key as AuthTab);
                     setReturnMode(tab.key as AuthTab);
                   }}
-                  className={`rounded-[0.78rem] px-4 py-[0.42rem] font-medium transition ${
+                  className={`rounded-[0.82rem] px-4 py-[0.42rem] font-medium transition ${
                     selected
-                      ? "bg-[#e6c0a1] text-[#65412b] shadow-[0_4px_8px_rgba(241,176,126,0.09)]"
+                      ? "bg-[linear-gradient(180deg,#e9c7ab_0%,#e0b796_100%)] text-[#65412b] shadow-[0_6px_14px_rgba(241,176,126,0.12)]"
                       : "text-[#6e7682] hover:text-[#222933]"
                   }`}
                 >
@@ -499,7 +499,7 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.16rem] border border-[#f5f7fa] bg-[#fefeff] p-[0.68rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_2px_6px_rgba(15,23,42,0.01)] sm:p-[0.72rem]"
+            className="rounded-[1.2rem] border border-[rgba(245,247,250,0.95)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(251,247,241,0.9)_100%)] p-[0.72rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.92),0_8px_20px_rgba(15,23,42,0.018)] sm:p-[0.76rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
@@ -508,13 +508,13 @@ function AuthCard({
                   <input
                     id="invite-code"
                     placeholder="SC-XXXXXXXX"
-                    className="w-full rounded-[1.2rem] border border-[#dbe4ec] bg-white px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.28em] text-[#5f6773] outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] transition placeholder:text-[#b2bac5] focus:border-[#e3a675]"
+                    className="w-full rounded-[1.2rem] border border-[rgba(225,211,198,0.92)] bg-[linear-gradient(180deg,#ffffff_0%,#fbf7f2_100%)] px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.28em] text-[#5f6773] outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.92),0_4px_10px_rgba(15,23,42,0.012)] transition placeholder:text-[#b2bac5] focus:border-[#e3a675]"
                   />
                 </div>
                 <button
                   type="button"
                   disabled
-                  className="w-full whitespace-nowrap rounded-[1.2rem] border border-[#dde5ee] bg-[#e7edf3] px-3 py-3 text-[0.76rem] font-semibold uppercase tracking-[0.06em] text-[#5f6773] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition disabled:cursor-not-allowed disabled:border-[#dde5ee] disabled:bg-[#e7edf3] disabled:text-[#5f6773] disabled:opacity-100"
+                  className="w-full whitespace-nowrap rounded-[1.2rem] border border-[rgba(233,212,194,0.98)] bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] px-3 py-3 text-[0.76rem] font-semibold uppercase tracking-[0.06em] text-[#6b5d52] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_8px_18px_rgba(15,23,42,0.016)] transition disabled:cursor-not-allowed disabled:border-[rgba(233,212,194,0.98)] disabled:bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] disabled:text-[#6b5d52] disabled:opacity-100"
                 >
                   VERIFY ACCESS CODE
                 </button>
@@ -636,7 +636,7 @@ function AuthCard({
                 setReturnMode(activeMode === "login" ? "login" : "onboard");
                 onApplyNow();
               }}
-              className="inline-flex w-full items-center justify-center rounded-[1.2rem] border border-[#f4d9c3] bg-[#fdf4ec] px-4 py-3 text-sm font-medium text-[#87522e] transition hover:border-[#efcaa9] hover:bg-[#fcedde]"
+              className="inline-flex w-full items-center justify-center rounded-[1.2rem] border border-[rgba(242,216,195,0.98)] bg-[linear-gradient(180deg,#fdf5ee_0%,#f9eadc_100%)] px-4 py-3 text-sm font-medium text-[#87522e] shadow-[0_10px_22px_rgba(241,180,135,0.06)] transition hover:border-[#efcaa9] hover:bg-[linear-gradient(180deg,#fdf0e4_0%,#f8e6d5_100%)]"
             >
               No account yet? Apply Now →
             </button>
