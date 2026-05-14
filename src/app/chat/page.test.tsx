@@ -54,14 +54,14 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShell).toHaveClass("lg:-mt-[2.08rem]");
     expect(chatNetworkShell).toHaveClass("xl:-mt-[2.3rem]");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[46.1%]");
-    expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[46.05%]");
-    expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[15.4%]");
+    expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[46.45%]");
+    expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[15.95%]");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").firstElementChild).toHaveClass("h-[5.02rem]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").firstElementChild).toHaveClass("h-[4.96rem]");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").firstElementChild).toHaveClass("h-[4.96rem]");
     expect(chatHero.querySelector("span[class*='w-[12.8%]']")).not.toBeNull();
-    expect(chatHero.querySelector("span[class*='w-[12.9%]']")).not.toBeNull();
-    expect(chatHero.querySelector("span[class*='w-[12.2%]']")).not.toBeNull();
+    expect(chatHero.querySelector("span[class*='w-[12.45%]']")).not.toBeNull();
+    expect(chatHero.querySelector("span[class*='w-[11.6%]']")).not.toBeNull();
     expect(chatHero).toHaveClass("xl:-mt-[2.28rem]");
     expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_228px]");
     expect(chatHero).toHaveClass("xl:gap-[0.24rem]");
