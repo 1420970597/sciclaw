@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 -mt-[0.22rem] lg:-ml-[0.08rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.12rem] lg:max-w-[14.2rem] xl:-ml-[0.14rem] xl:mt-[0.26rem]">
+      <div className="order-3 -mt-[0.18rem] lg:-ml-[0.06rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:ml-auto lg:mt-[0.18rem] lg:max-w-[14rem] xl:-ml-[0.1rem] xl:mt-[0.32rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
@@ -469,11 +469,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[220px] rounded-[1.28rem] border border-[rgba(230,235,241,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(249,245,240,0.974)_100%)] px-[0.36rem] py-[0.44rem] shadow-[0_10px_22px_rgba(15,23,42,0.058),0_2px_8px_rgba(241,180,135,0.03)] backdrop-blur-[2px] sm:px-[0.4rem] sm:py-[0.48rem]"
+      className="mx-auto w-full max-w-[216px] rounded-[1.26rem] border border-[rgba(233,238,243,0.96)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(249,245,240,0.968)_100%)] px-[0.34rem] py-[0.42rem] shadow-[0_8px_18px_rgba(15,23,42,0.048),0_2px_6px_rgba(241,180,135,0.022)] backdrop-blur-[2px] sm:px-[0.38rem] sm:py-[0.46rem]"
     >
-      <div className="mx-auto w-full max-w-[272px]">
-        <div className="rounded-[0.98rem] border border-[rgba(252,252,253,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(250,245,238,0.76)_100%)] p-[0.38rem] shadow-[0_6px_14px_rgba(15,23,42,0.016)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.72rem] bg-[rgba(247,241,234,0.82)] p-[0.3rem] text-sm text-[#6b7480]">
+      <div className="mx-auto w-full max-w-[268px]">
+        <div className="rounded-[0.96rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.946)_0%,rgba(250,245,238,0.74)_100%)] p-[0.36rem] shadow-[0_5px_12px_rgba(15,23,42,0.013)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.7rem] bg-[rgba(247,241,234,0.78)] p-[0.28rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
