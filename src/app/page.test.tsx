@@ -110,11 +110,11 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_228px]");
     expect(hero).toHaveClass("xl:gap-[0.24rem]");
     expect(authCard).toHaveClass("max-w-[228px]");
-    expect(authCard).toHaveClass("bg-[#fdfdff]");
-    expect(authCard).toHaveClass("border-[#f6f8fb]");
-    expect(authCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.004),0_1px_2px_rgba(241,180,135,0.0015)]");
-    expect(authCard).toHaveClass("lg:mt-[2.08rem]");
-    expect(authCard).toHaveClass("xl:mt-[2.28rem]");
+    expect(authCard).toHaveClass("bg-[#fefeff]");
+    expect(authCard).toHaveClass("border-[#f8fafc]");
+    expect(authCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)]");
+    expect(authCard).toHaveClass("lg:mt-[2.18rem]");
+    expect(authCard).toHaveClass("xl:mt-[2.34rem]");
     expect(previewCard).toHaveClass("border-white/92");
     expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)]");
     expect(previewCard).toHaveClass("shadow-[0_18px_42px_rgba(15,23,42,0.06)]");

@@ -66,11 +66,11 @@ describe("Chat route public landing clone", () => {
     expect(chatHero).toHaveClass("xl:grid-cols-[minmax(0,1.1fr)_228px]");
     expect(chatHero).toHaveClass("xl:gap-[0.24rem]");
     expect(chatAuthCard).toHaveClass("max-w-[228px]");
-    expect(chatAuthCard).toHaveClass("bg-[#fdfdff]");
-    expect(chatAuthCard).toHaveClass("border-[#f6f8fb]");
-    expect(chatAuthCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.004),0_1px_2px_rgba(241,180,135,0.0015)]");
-    expect(chatAuthCard).toHaveClass("lg:mt-[2.08rem]");
-    expect(chatAuthCard).toHaveClass("xl:mt-[2.28rem]");
+    expect(chatAuthCard).toHaveClass("bg-[#fefeff]");
+    expect(chatAuthCard).toHaveClass("border-[#f8fafc]");
+    expect(chatAuthCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)]");
+    expect(chatAuthCard).toHaveClass("lg:mt-[2.18rem]");
+    expect(chatAuthCard).toHaveClass("xl:mt-[2.34rem]");
     expect(chatPreviewCard).toHaveClass("border-white/92");
     expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)]");
     expect(chatPreviewCard).toHaveClass("shadow-[0_18px_42px_rgba(15,23,42,0.06)]");

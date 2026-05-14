@@ -458,11 +458,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[228px] rounded-[1.42rem] border border-[#f6f8fb] bg-[#fdfdff] px-[0.44rem] py-[0.52rem] shadow-[0_1px_2px_rgba(15,23,42,0.004),0_1px_2px_rgba(241,180,135,0.0015)] sm:px-[0.48rem] sm:py-[0.56rem] lg:mt-[2.08rem] xl:mt-[2.28rem]"
+      className="mx-auto w-full max-w-[228px] rounded-[1.42rem] border border-[#f8fafc] bg-[#fefeff] px-[0.44rem] py-[0.52rem] shadow-[0_1px_2px_rgba(15,23,42,0.003),0_1px_2px_rgba(241,180,135,0.001)] sm:px-[0.48rem] sm:py-[0.56rem] lg:mt-[2.18rem] xl:mt-[2.34rem]"
     >
       <div className="mx-auto w-full max-w-[272px]">
-        <div className="rounded-[0.98rem] border border-[#fafbfc] bg-white/88 p-[0.42rem] shadow-[0_1px_2px_rgba(15,23,42,0.008)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.72rem] bg-[#f7f9fb] p-[0.34rem] text-sm text-[#6b7480]">
+        <div className="rounded-[0.98rem] border border-[#fbfcfd] bg-white/90 p-[0.42rem] shadow-[0_1px_2px_rgba(15,23,42,0.006)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.72rem] bg-[#f8fafc] p-[0.34rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
@@ -483,7 +483,7 @@ function AuthCard({
                   }}
                   className={`rounded-[0.8rem] px-4 py-[0.46rem] font-medium transition ${
                     selected
-                      ? "bg-[#efc095] text-[#573928] shadow-[0_7px_14px_rgba(241,176,126,0.16)]"
+                      ? "bg-[#e8c6aa] text-[#64432f] shadow-[0_5px_10px_rgba(241,176,126,0.11)]"
                       : "text-[#6e7682] hover:text-[#222933]"
                   }`}
                 >
@@ -499,7 +499,7 @@ function AuthCard({
             role={activeMode === "apply" ? undefined : "tabpanel"}
             id={activeMode === "onboard" ? "auth-panel-onboard" : activeMode === "login" ? "auth-panel-login" : "auth-panel-apply"}
             aria-labelledby={activeMode === "onboard" ? "auth-tab-onboard" : activeMode === "login" ? "auth-tab-login" : undefined}
-            className="rounded-[1.16rem] border border-[#f3f5f8] bg-[#fdfefe] p-[0.68rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.88),0_2px_6px_rgba(15,23,42,0.012)] sm:p-[0.72rem]"
+            className="rounded-[1.16rem] border border-[#f5f7fa] bg-[#fefeff] p-[0.68rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_2px_6px_rgba(15,23,42,0.01)] sm:p-[0.72rem]"
           >
             {activeMode === "onboard" ? (
               <div className="space-y-[1.08rem]">
