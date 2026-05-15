@@ -167,19 +167,19 @@ describe("Home landing page", () => {
     expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#ffffff_0%,#f4f6f9_100%)]");
     expect(previewCard).toHaveClass("shadow-[0_22px_46px_rgba(15,23,42,0.088)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(previewLabelRow).toHaveClass("mt-[2.06rem]");
-    expect(previewLabelRow).toHaveClass("gap-[2.58rem]");
-    expect(previewLabelRow).toHaveClass("pt-[1.82rem]");
+    expect(previewLabelRow).toHaveClass("mt-[1.54rem]");
+    expect(previewLabelRow).toHaveClass("gap-[2.06rem]");
+    expect(previewLabelRow).toHaveClass("pt-[1.22rem]");
     const previewLabelItems = Array.from(previewLabelRow.children);
     expect(previewLabelItems).toHaveLength(3);
     previewLabelItems.forEach((item) => {
-      expect(item).toHaveClass("gap-[0.82rem]");
+      expect(item).toHaveClass("gap-[0.64rem]");
       const labelWrapper = item.lastElementChild;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[3.54rem]");
+      expect(labelWrapper).toHaveClass("min-h-[2.72rem]");
       const labelText = labelWrapper?.firstElementChild;
       expect(labelText).not.toBeNull();
-      expect(labelText).toHaveClass("max-w-[5.72rem]");
+      expect(labelText).toHaveClass("max-w-[5.2rem]");
     });
   });
 
@@ -422,21 +422,22 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[3.54rem]");
+      expect(labelWrapper).toHaveClass("min-h-[2.72rem]");
       expect(labelWrapper).toHaveClass("text-[11.2px]");
-      expect(labelWrapper).toHaveClass("leading-[1.04]");
+      expect(labelWrapper).toHaveClass("leading-[1.02]");
+      expect(labelWrapper).toHaveClass("tracking-[0.02em]");
       expect(labelWrapper).toHaveClass("text-[#6b8191]");
-      expect(label).toHaveClass("max-w-[5.72rem]");
+      expect(label).toHaveClass("max-w-[5.2rem]");
       expect(label).toHaveClass("text-balance");
     });
 
     const chartRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chartRow).toHaveClass("grid-cols-3");
     expect(chartRow.childElementCount).toBe(3);
-    expect(chartRow).toHaveClass("gap-[2.58rem]");
-    expect(chartRow).toHaveClass("sm:gap-[2.74rem]");
-    expect(chartRow).toHaveClass("mt-[2.06rem]");
-    expect(chartRow).toHaveClass("pt-[1.82rem]");
+    expect(chartRow).toHaveClass("gap-[2.06rem]");
+    expect(chartRow).toHaveClass("sm:gap-[2.22rem]");
+    expect(chartRow).toHaveClass("mt-[1.54rem]");
+    expect(chartRow).toHaveClass("pt-[1.22rem]");
 
     const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
     const dataMiningNodeLabel = screen.getByText(/^data mining$/i);
