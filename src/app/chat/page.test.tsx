@@ -148,9 +148,9 @@ describe("Chat route public landing clone", () => {
     expect(chatAuthCard).not.toHaveClass("lg:mt-[2.16rem]");
     expect(chatAuthCard).not.toHaveClass("xl:mt-[2.3rem]");
     expect(chatPreviewCard).toHaveClass("rounded-[2.08rem]");
-    expect(chatPreviewCard).toHaveClass("border-[rgba(222,228,236,0.98)]");
-    expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#fffefd_0%,#f4f7fb_100%)]");
-    expect(chatPreviewCard).toHaveClass("shadow-[0_18px_38px_rgba(15,23,42,0.088)]");
+    expect(chatPreviewCard).toHaveClass("border-[rgba(216,223,232,0.98)]");
+    expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#fefcf9_0%,#eef3f8_100%)]");
+    expect(chatPreviewCard).toHaveClass("shadow-[0_20px_42px_rgba(15,23,42,0.098)]");
     const chatPreviewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chatPreviewLabelRow).toHaveClass("mt-[1.54rem]");
     expect(chatPreviewLabelRow).toHaveClass("gap-[2.06rem]");
