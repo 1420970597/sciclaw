@@ -49,7 +49,7 @@ describe("Chat route public landing clone", () => {
     expect(chatHero).toHaveClass("gap-3");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
     expect(chatFeatureRotator).toHaveClass("lg:items-start");
-    const authColumn = chatFeatureRotator.lastElementChild?.querySelector('[data-testid="landing-auth-card"]')?.parentElement;
+    const authColumn = screen.getByTestId("feature-auth-wrapper");
     expect(authColumn).not.toBeNull();
     expect(chatFeatureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
     expect(chatFeatureRotator).toHaveClass("lg:gap-[0.04rem]");
@@ -77,13 +77,13 @@ describe("Chat route public landing clone", () => {
     expect(chatPreviewCard).not.toHaveClass("lg:row-start-2");
     expect(authColumn).toHaveClass("order-3");
     expect(authColumn).toHaveClass("mx-auto");
-    expect(authColumn).toHaveClass("-mt-[0.18rem]");
+    expect(authColumn).toHaveClass("-mt-[0.28rem]");
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[340px]");
     expect(authColumn).toHaveClass("sm:max-w-[352px]");
-    expect(authColumn).toHaveClass("lg:-mt-[2.2rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[2.72rem]");
     expect(authColumn).toHaveClass("lg:max-w-[680px]");
-    expect(authColumn).toHaveClass("xl:-mt-[2.34rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[2.88rem]");
     expect(authColumn).toHaveClass("xl:max-w-[696px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
