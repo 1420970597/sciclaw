@@ -66,8 +66,8 @@ describe("Chat route public landing clone", () => {
     expect(chatFeaturePreview).not.toHaveClass("xl:gap-x-[0.04rem]");
     expect(chatFeaturePreview).not.toHaveClass("xl:gap-y-[0.72rem]");
     expect(chatAuthCard.firstElementChild).toHaveClass("max-w-[296px]");
-    expect(chatAuthCard.firstElementChild).toHaveClass("lg:max-w-[468px]");
-    expect(chatAuthCard.firstElementChild).toHaveClass("xl:max-w-[484px]");
+    expect(chatAuthCard.firstElementChild).toHaveClass("lg:max-w-[600px]");
+    expect(chatAuthCard.firstElementChild).toHaveClass("xl:max-w-[616px]");
     const chatPreviewHeadingBlock = chatPreviewCard.parentElement?.firstElementChild;
     expect(chatPreviewHeadingBlock).not.toBeNull();
     expect(chatPreviewHeadingBlock).toHaveClass("order-1");
@@ -81,10 +81,10 @@ describe("Chat route public landing clone", () => {
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[340px]");
     expect(authColumn).toHaveClass("sm:max-w-[352px]");
-    expect(authColumn).toHaveClass("lg:-mt-[2.72rem]");
-    expect(authColumn).toHaveClass("lg:max-w-[680px]");
-    expect(authColumn).toHaveClass("xl:-mt-[2.88rem]");
-    expect(authColumn).toHaveClass("xl:max-w-[696px]");
+    expect(authColumn).toHaveClass("lg:-mt-[2.64rem]");
+    expect(authColumn).toHaveClass("lg:max-w-[612px]");
+    expect(authColumn).toHaveClass("xl:-mt-[2.8rem]");
+    expect(authColumn).toHaveClass("xl:max-w-[628px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
     expect(authColumn).not.toHaveClass("lg:max-w-[14.12rem]");
@@ -137,8 +137,8 @@ describe("Chat route public landing clone", () => {
     expect(chatHero.querySelector("span[class*='top-[28.58%]'][class*='w-[9.92%]'][class*='rotate-[12deg]']")).not.toBeNull();
     expect(chatHero).not.toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_232px]");
     expect(chatAuthCard).toHaveClass("max-w-[262px]");
-    expect(chatAuthCard).toHaveClass("lg:max-w-[468px]");
-    expect(chatAuthCard).toHaveClass("xl:max-w-[484px]");
+    expect(chatAuthCard).toHaveClass("lg:max-w-[600px]");
+    expect(chatAuthCard).toHaveClass("xl:max-w-[616px]");
     expect(chatAuthCard).toHaveClass("rounded-[0.98rem]");
     expect(chatAuthCard).toHaveClass("border-[rgba(236,241,246,0.98)]");
     expect(chatAuthCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(251,246,240,0.92)_100%)]");
