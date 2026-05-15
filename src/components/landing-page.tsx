@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 mx-auto mt-[0.32rem] w-full max-w-[260px] sm:max-w-[272px] lg:mt-[0.42rem]">
+      <div className="order-3 mx-auto mt-[0.08rem] w-full max-w-[272px] sm:max-w-[284px] lg:mt-[0.16rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
