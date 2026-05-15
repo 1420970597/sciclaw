@@ -132,11 +132,11 @@ describe("Home landing page", () => {
     expect(previewCard).not.toHaveClass("lg:row-start-2");
     expect(authColumn).toHaveClass("order-3");
     expect(authColumn).toHaveClass("mx-auto");
-    expect(authColumn).toHaveClass("-mt-[0.08rem]");
+    expect(authColumn).toHaveClass("-mt-[0.12rem]");
     expect(authColumn).toHaveClass("w-full");
-    expect(authColumn).toHaveClass("max-w-[280px]");
-    expect(authColumn).toHaveClass("sm:max-w-[292px]");
-    expect(authColumn).toHaveClass("lg:mt-[0.04rem]");
+    expect(authColumn).toHaveClass("max-w-[320px]");
+    expect(authColumn).toHaveClass("sm:max-w-[332px]");
+    expect(authColumn).toHaveClass("lg:mt-0");
     expect(authColumn).not.toHaveClass("lg:-ml-[0.06rem]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
@@ -158,7 +158,7 @@ describe("Home landing page", () => {
     expect(hero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(hero).toHaveClass("gap-3");
     expect(hero).toHaveClass("grid");
-    expect(authCard).toHaveClass("max-w-[224px]");
+    expect(authCard).toHaveClass("max-w-[244px]");
     expect(authCard).toHaveClass("rounded-[0.98rem]");
     expect(authCard).toHaveClass("border-[rgba(244,247,250,0.98)]");
     expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(252,248,243,0.94)_100%)]");
