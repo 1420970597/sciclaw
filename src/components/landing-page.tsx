@@ -891,7 +891,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:gap-[1rem] lg:-mt-[2.38rem]" data-testid="landing-hero">
+          <div className="grid gap-4 sm:gap-[1rem] lg:-mt-[2.12rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
