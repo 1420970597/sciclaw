@@ -132,13 +132,13 @@ describe("Home landing page", () => {
     expect(previewCard).not.toHaveClass("lg:row-start-2");
     expect(authColumn).toHaveClass("order-3");
     expect(authColumn).toHaveClass("mx-auto");
-    expect(authColumn).toHaveClass("-mt-[0.34rem]");
+    expect(authColumn).toHaveClass("-mt-[0.82rem]");
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[332px]");
     expect(authColumn).toHaveClass("sm:max-w-[344px]");
-    expect(authColumn).toHaveClass("lg:-mt-[4.22rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[5.58rem]");
     expect(authColumn).toHaveClass("lg:max-w-[588px]");
-    expect(authColumn).toHaveClass("xl:-mt-[4.42rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[5.88rem]");
     expect(authColumn).toHaveClass("xl:max-w-[604px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
