@@ -321,8 +321,8 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-      <div className="flex flex-col gap-[1.08rem] lg:grid lg:grid-cols-[minmax(0,1fr)_218px] lg:items-start lg:gap-x-[0.02rem] lg:gap-y-[0.64rem] xl:grid-cols-[minmax(0,1fr)_218px] xl:gap-x-[0.04rem] xl:gap-y-[0.72rem]">
-      <div className="order-2 space-y-[0.62rem] px-1 pt-[0.08rem] lg:order-1 lg:col-span-2 lg:max-w-[35.4rem]">
+      <div className="flex flex-col gap-[1.08rem]">
+      <div className="order-1 space-y-[0.62rem] px-1 pt-[0.08rem] lg:max-w-[35.4rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
           {previewContent.heading}
@@ -337,11 +337,11 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 -mt-[0.02rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:-ml-[0.06rem] lg:ml-auto lg:mt-[0.18rem] lg:max-w-[14.12rem] xl:-ml-[0.03rem] xl:mt-[0.24rem]">
+      <div className="order-3 mx-auto mt-[0.32rem] w-full max-w-[260px] sm:max-w-[272px] lg:mt-[0.42rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
-      <div className="order-1 lg:order-3 lg:col-start-1 lg:row-start-2 rounded-[2.08rem] border border-[rgba(231,236,242,0.96)] bg-[linear-gradient(180deg,#ffffff_0%,#f4f6f9_100%)] p-[1.28rem] shadow-[0_22px_46px_rgba(15,23,42,0.088)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-2 rounded-[2.08rem] border border-[rgba(231,236,242,0.96)] bg-[linear-gradient(180deg,#ffffff_0%,#f4f6f9_100%)] p-[1.28rem] shadow-[0_22px_46px_rgba(15,23,42,0.088)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
