@@ -425,7 +425,7 @@ function FeaturePreview({
         </div>
       </div>
 
-      <div className="order-3 mx-auto mt-[0.08rem] w-full max-w-[272px] sm:max-w-[284px] lg:mt-[0.16rem]">
+      <div className="order-3 mx-auto -mt-[0.08rem] w-full max-w-[280px] sm:max-w-[292px] lg:mt-[0.04rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
     </div>
@@ -469,7 +469,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[218px] rounded-[0.98rem] border border-[rgba(245,248,251,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(252,248,243,0.92)_100%)] px-[0.28rem] py-[0.32rem] shadow-[0_1px_4px_rgba(15,23,42,0.008),0_1px_2px_rgba(241,180,135,0.003)] backdrop-blur-[0.5px] sm:px-[0.32rem] sm:py-[0.36rem]"
+      className="mx-auto w-full max-w-[224px] rounded-[0.98rem] border border-[rgba(244,247,250,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(252,248,243,0.94)_100%)] px-[0.3rem] py-[0.34rem] shadow-[0_2px_5px_rgba(15,23,42,0.007),0_1px_2px_rgba(241,180,135,0.0025)] backdrop-blur-[0.44px] sm:px-[0.34rem] sm:py-[0.38rem]"
     >
       <div className="mx-auto w-full max-w-[260px]">
         <div className="rounded-[0.94rem] border border-[rgba(252,252,253,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(250,245,238,0.74)_100%)] p-[0.3rem] shadow-[0_4px_10px_rgba(15,23,42,0.01)]">
