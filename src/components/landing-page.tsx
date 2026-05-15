@@ -425,7 +425,7 @@ function FeaturePreview({
         </div>
       </div>
 
-      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[0.94rem] w-full max-w-[344px] sm:max-w-[356px] lg:-mt-[5.9rem] lg:max-w-[600px] xl:-mt-[6.18rem] xl:max-w-[616px]">
+      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[0.94rem] w-full max-w-[340px] sm:max-w-[352px] lg:-mt-[5.94rem] lg:max-w-[592px] xl:-mt-[6.22rem] xl:max-w-[608px]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
     </div>
@@ -469,10 +469,10 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[268px] rounded-[0.98rem] border border-[rgba(236,242,247,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.997)_0%,rgba(251,246,240,0.885)_100%)] px-[0.32rem] py-[0.36rem] shadow-[0_4px_10px_rgba(15,23,42,0.018),0_2px_5px_rgba(241,180,135,0.007)] backdrop-blur-[0.44px] sm:px-[0.36rem] sm:py-[0.4rem] lg:max-w-[588px] xl:max-w-[604px]"
+      className="mx-auto w-full max-w-[262px] rounded-[0.98rem] border border-[rgba(239,244,248,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(250,245,239,0.84)_100%)] px-[0.32rem] py-[0.36rem] shadow-[0_3px_8px_rgba(15,23,42,0.014),0_2px_4px_rgba(241,180,135,0.005)] backdrop-blur-[0.4px] sm:px-[0.35rem] sm:py-[0.38rem] lg:max-w-[580px] xl:max-w-[596px]"
     >
-      <div className="mx-auto w-full max-w-[300px] lg:max-w-[588px] xl:max-w-[604px]">
-        <div className="rounded-[0.94rem] border border-[rgba(252,252,253,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(250,245,238,0.74)_100%)] p-[0.3rem] shadow-[0_4px_10px_rgba(15,23,42,0.01)]">
+      <div className="mx-auto w-full max-w-[294px] lg:max-w-[580px] xl:max-w-[596px]">
+        <div className="rounded-[0.94rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.944)_0%,rgba(249,244,237,0.7)_100%)] p-[0.28rem] shadow-[0_3px_8px_rgba(15,23,42,0.008)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.68rem] bg-[rgba(247,241,234,0.76)] p-[0.22rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
