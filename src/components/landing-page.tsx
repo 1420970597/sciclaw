@@ -712,7 +712,7 @@ function BestCases({
   };
 
   return (
-    <section className="mt-[1.95rem] sm:mt-[2.35rem]">
+    <section className="mt-[1.48rem] sm:mt-[1.9rem]">
       <div className="mb-7 flex flex-col items-center gap-2.5 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
@@ -891,7 +891,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:gap-[0.82rem] lg:-mt-[1.42rem]" data-testid="landing-hero">
+          <div className="grid gap-3 sm:gap-[0.82rem] lg:-mt-[1.78rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}

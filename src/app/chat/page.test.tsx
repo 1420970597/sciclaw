@@ -44,7 +44,7 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:-mt-[1.42rem]");
+    expect(chatHero).toHaveClass("lg:-mt-[1.78rem]");
     expect(chatHero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(chatHero).toHaveClass("gap-3");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
