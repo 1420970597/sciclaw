@@ -103,52 +103,52 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
     {
       id: "literature-analysis",
       label: "Literature Analysis",
-      icon: <span className="inline-block h-[0.72rem] w-[0.72rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.16)]" aria-hidden />,
-      position: "left-[48.55%] top-[14.55%] sm:left-[48.55%] sm:top-[14.55%]",
-      lineClass: "left-[48.12%] top-[28.92%] h-[2.18px] w-[9.96%] origin-left -rotate-[12deg]",
-      ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
-      activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
+      icon: <span className="inline-block h-[0.68rem] w-[0.68rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.14)]" aria-hidden />,
+      position: "left-[47.85%] top-[14.05%] sm:left-[47.85%] sm:top-[14.05%]",
+      lineClass: "left-[48.08%] top-[28.82%] h-[2.02px] w-[11.9%] origin-left -rotate-[11deg]",
+      ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
+      activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
-      labelClass: "max-w-[100px] text-left text-[#314d61] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[100px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.014)]",
-      labelPositionClass: "absolute left-[-1.36rem] top-[0.2rem] sm:left-[-1.44rem]",
+      labelClass: "max-w-[112px] text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
+      activeLabelClass: "max-w-[112px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
+      labelPositionClass: "absolute left-[-2.18rem] top-[0.16rem] sm:left-[-2.24rem]",
     },
     {
       id: "data-mining",
       label: "Data Mining",
       icon: (
-        <span className="relative inline-block h-[0.78rem] w-[0.78rem]" aria-hidden>
-          <span className="absolute left-0 top-[0.34rem] h-[2px] w-full rounded-full bg-current/90" />
+        <span className="relative inline-block h-[0.72rem] w-[0.72rem]" aria-hidden>
+          <span className="absolute left-0 top-[0.31rem] h-[2px] w-full rounded-full bg-current/90" />
           <span className="absolute left-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[48.58%] top-[46.18%] sm:left-[48.58%] sm:top-[46.18%]",
-      lineClass: "left-[48.16%] top-[50.18%] h-[2.18px] w-[9.92%] origin-left rotate-[6deg]",
-      ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
-      activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
+      position: "left-[47.8%] top-[47.7%] sm:left-[47.8%] sm:top-[47.7%]",
+      lineClass: "left-[48.1%] top-[50.28%] h-[2.02px] w-[11.7%] origin-left rotate-[7deg]",
+      ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
+      activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
-      labelClass: "max-w-[98px] text-center text-[#314d61] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-[98px] text-center text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.014)]",
-      labelPositionClass: "absolute left-1/2 top-[calc(100%-0.18rem)] -translate-x-1/2",
+      labelClass: "max-w-[112px] text-center text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
+      activeLabelClass: "max-w-[112px] text-center text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
+      labelPositionClass: "absolute left-1/2 top-[calc(100%+0.08rem)] -translate-x-1/2",
     },
     {
       id: "outcome-present",
       label: "Outcome Present",
       icon: (
-        <span className="relative inline-block h-[0.82rem] w-[0.82rem]" aria-hidden>
-          <span className="absolute inset-0 rounded-full border-[1.7px] border-current/90" />
-          <span className="absolute inset-[0.22rem] rounded-full bg-current/90" />
+        <span className="relative inline-block h-[0.76rem] w-[0.76rem]" aria-hidden>
+          <span className="absolute inset-0 rounded-full border-[1.6px] border-current/90" />
+          <span className="absolute inset-[0.2rem] rounded-full bg-current/90" />
         </span>
       ),
-      position: "right-[15.2%] top-[13.55%] sm:right-[15.2%] sm:top-[13.55%]",
-      lineClass: "left-[48.46%] top-[28.18%] h-[2.18px] w-[9.94%] origin-left rotate-[11deg]",
-      ringClass: "h-[4.96rem] w-[4.96rem] border-[#466275] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] text-[#153446] shadow-[0_14px_24px_rgba(15,23,42,0.095)]",
-      activeRingClass: "h-[5.02rem] w-[5.02rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#9f5628] shadow-[0_0_0_2px_rgba(240,142,79,0.035),0_13px_24px_rgba(232,124,55,0.082)]",
+      position: "right-[19.05%] top-[14.2%] sm:right-[19.05%] sm:top-[14.2%]",
+      lineClass: "left-[48.36%] top-[28.4%] h-[2.02px] w-[10.95%] origin-left rotate-[13deg]",
+      ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
+      activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
-      labelClass: "max-w-none whitespace-nowrap text-left text-[#314d61] drop-shadow-[0_1px_0_rgba(255,255,255,0.98)]",
-      activeLabelClass: "max-w-none whitespace-nowrap text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.014)]",
-      labelPositionClass: "absolute left-[2.08rem] top-1/2 -translate-y-1/2 sm:left-[2.18rem]",
+      labelClass: "max-w-none whitespace-nowrap text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
+      activeLabelClass: "max-w-none whitespace-nowrap text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
+      labelPositionClass: "absolute left-[3.1rem] top-[0.14rem] sm:left-[3.18rem]",
     },
     ],
     [],
