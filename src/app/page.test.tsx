@@ -151,7 +151,7 @@ describe("Home landing page", () => {
     expect(previewDescription).toHaveClass("sm:text-[0.99rem]");
     expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("pt-[0.18rem]");
     expect(hero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
-    expect(hero).toHaveClass("gap-4");
+    expect(hero).toHaveClass("gap-3");
     expect(hero).toHaveClass("grid");
     expect(authCard).toHaveClass("max-w-[218px]");
     expect(authCard).toHaveClass("rounded-[1rem]");
