@@ -337,10 +337,6 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 mx-auto mt-[0.08rem] w-full max-w-[272px] sm:max-w-[284px] lg:mt-[0.16rem]">
-        <AuthCard onApplyNow={onApplyNow} />
-      </div>
-
       <div className="order-2 rounded-[2.08rem] border border-[rgba(231,236,242,0.96)] bg-[linear-gradient(180deg,#ffffff_0%,#f4f6f9_100%)] p-[1.28rem] shadow-[0_22px_46px_rgba(15,23,42,0.088)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
@@ -427,6 +423,10 @@ function FeaturePreview({
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="order-3 mx-auto mt-[0.08rem] w-full max-w-[272px] sm:max-w-[284px] lg:mt-[0.16rem]">
+        <AuthCard onApplyNow={onApplyNow} />
       </div>
     </div>
   );
