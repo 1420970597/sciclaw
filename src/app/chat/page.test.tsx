@@ -115,7 +115,7 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShellFrame).toHaveClass("xl:mr-0");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[46.6%]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[49.02%]");
-    expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[19.45%]");
+    expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[17.9%]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("max-w-[114px]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("left-[-1.9rem]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("top-[0.08rem]");
@@ -123,8 +123,8 @@ describe("Chat route public landing clone", () => {
     expect(within(chatHero).getByText(/^data mining$/i)).toHaveClass("top-[calc(100%+0.02rem)]");
     expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("max-w-[110px]");
     expect(within(chatHero).getByText(/^outcome present$/i)).not.toHaveClass("whitespace-nowrap");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("left-[2.72rem]");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("top-[0.06rem]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("left-[2.52rem]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("top-[-0.04rem]");
     expect(within(chatHero).getByText(/^outcome present$/i)).not.toHaveClass("-translate-y-1/2");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement).toHaveClass("inline-flex");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement).toHaveClass("inline-flex");
@@ -134,7 +134,7 @@ describe("Chat route public landing clone", () => {
     expect(within(chatHero).getByTestId("feature-node-outcome-present").firstElementChild).toHaveClass("h-[4.58rem]");
     expect(chatHero.querySelector("span[class*='w-[12.4%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='w-[10.52%]']")).not.toBeNull();
-    expect(chatHero.querySelector("span[class*='top-[28.58%]'][class*='w-[9.92%]'][class*='rotate-[12deg]']")).not.toBeNull();
+    expect(chatHero.querySelector("span[class*='top-[27.92%]'][class*='w-[10.74%]'][class*='rotate-[11deg]']")).not.toBeNull();
     expect(chatHero).not.toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_232px]");
     expect(chatAuthCard).toHaveClass("max-w-[268px]");
     expect(chatAuthCard).toHaveClass("lg:max-w-[588px]");

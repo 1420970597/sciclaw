@@ -141,14 +141,14 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute inset-[0.2rem] rounded-full bg-current/90" />
         </span>
       ),
-      position: "right-[19.45%] top-[14.4%] sm:right-[19.45%] sm:top-[14.4%]",
-      lineClass: "left-[48.28%] top-[28.58%] h-[2.02px] w-[9.92%] origin-left rotate-[12deg]",
+      position: "right-[17.9%] top-[13.55%] sm:right-[17.9%] sm:top-[13.55%]",
+      lineClass: "left-[48.46%] top-[27.92%] h-[2.02px] w-[10.74%] origin-left rotate-[11deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
       labelClass: "max-w-[110px] text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
       activeLabelClass: "max-w-[110px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-[2.72rem] top-[0.06rem] sm:left-[2.78rem]",
+      labelPositionClass: "absolute left-[2.52rem] top-[-0.04rem] sm:left-[2.58rem]",
     },
     ],
     [],
