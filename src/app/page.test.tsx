@@ -108,7 +108,7 @@ describe("Home landing page", () => {
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
     const previewCard = screen.getByTestId("feature-preview-card");
-    expect(hero).toHaveClass("lg:-mt-[1.28rem]");
+    expect(hero).toHaveClass("lg:-mt-[1.42rem]");
     const authColumn = screen.getByTestId("feature-auth-wrapper");
     expect(authColumn).not.toBeNull();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
@@ -132,13 +132,13 @@ describe("Home landing page", () => {
     expect(previewCard).not.toHaveClass("lg:row-start-2");
     expect(authColumn).toHaveClass("order-3");
     expect(authColumn).toHaveClass("mx-auto");
-    expect(authColumn).toHaveClass("-mt-[0.18rem]");
+    expect(authColumn).toHaveClass("-mt-[0.22rem]");
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[340px]");
     expect(authColumn).toHaveClass("sm:max-w-[352px]");
-    expect(authColumn).toHaveClass("lg:-mt-[3.7rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[3.92rem]");
     expect(authColumn).toHaveClass("lg:max-w-[600px]");
-    expect(authColumn).toHaveClass("xl:-mt-[3.88rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[4.1rem]");
     expect(authColumn).toHaveClass("xl:max-w-[616px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");

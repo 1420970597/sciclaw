@@ -425,7 +425,7 @@ function FeaturePreview({
         </div>
       </div>
 
-      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[0.18rem] w-full max-w-[340px] sm:max-w-[352px] lg:-mt-[3.7rem] lg:max-w-[600px] xl:-mt-[3.88rem] xl:max-w-[616px]">
+      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[0.22rem] w-full max-w-[340px] sm:max-w-[352px] lg:-mt-[3.92rem] lg:max-w-[600px] xl:-mt-[4.1rem] xl:max-w-[616px]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
     </div>
@@ -891,7 +891,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:gap-[0.82rem] lg:-mt-[1.28rem]" data-testid="landing-hero">
+          <div className="grid gap-3 sm:gap-[0.82rem] lg:-mt-[1.42rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}
