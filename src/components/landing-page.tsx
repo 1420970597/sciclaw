@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-2 rounded-[2.08rem] border border-[rgba(234,238,243,0.94)] bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)] p-[1.28rem] shadow-[0_16px_34px_rgba(15,23,42,0.072)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-2 rounded-[2.08rem] border border-[rgba(222,228,236,0.98)] bg-[linear-gradient(180deg,#fffefd_0%,#f4f7fb_100%)] p-[1.28rem] shadow-[0_18px_38px_rgba(15,23,42,0.088)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -347,7 +347,7 @@ function FeaturePreview({
           </div>
         </div>
 
-        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fffaf6_0%,#fff2e7_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
+        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fffaf6_0%,#fff0e3_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e7db] pb-[0.92rem]">
             <div aria-hidden className="space-y-[0.46rem]">
               <span className="block h-[1.5px] w-[8.8rem] rounded-full bg-[#dbe1e8]" />
@@ -390,7 +390,7 @@ function FeaturePreview({
               </div>
             </div>
 
-            <div className="rounded-[1.44rem] border border-[#e7d7c8] bg-white/96 p-[1.34rem] shadow-[0_10px_22px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.8)]">
+            <div className="rounded-[1.44rem] border border-[#e1d3c6] bg-white/98 p-[1.34rem] shadow-[0_12px_24px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,0.84)]">
               <div className="space-y-[1.54rem]">
                 <div className="flex items-center justify-between text-[10.7px] uppercase tracking-[0.205em] text-[#687587]" aria-hidden>
                   <span className="h-[1.5px] w-[3.2rem] rounded-full bg-[#d7dfe7]" />
@@ -469,7 +469,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[262px] rounded-[0.98rem] border border-[rgba(244,247,250,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(252,248,243,0.94)_100%)] px-[0.32rem] py-[0.36rem] shadow-[0_2px_5px_rgba(15,23,42,0.007),0_1px_2px_rgba(241,180,135,0.0025)] backdrop-blur-[0.44px] sm:px-[0.36rem] sm:py-[0.4rem] lg:max-w-[468px] xl:max-w-[484px]"
+      className="mx-auto w-full max-w-[262px] rounded-[0.98rem] border border-[rgba(236,241,246,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(251,246,240,0.92)_100%)] px-[0.32rem] py-[0.36rem] shadow-[0_4px_10px_rgba(15,23,42,0.018),0_2px_5px_rgba(241,180,135,0.006)] backdrop-blur-[0.5px] sm:px-[0.36rem] sm:py-[0.4rem] lg:max-w-[468px] xl:max-w-[484px]"
     >
       <div className="mx-auto w-full max-w-[296px] lg:max-w-[468px] xl:max-w-[484px]">
         <div className="rounded-[0.94rem] border border-[rgba(252,252,253,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(250,245,238,0.74)_100%)] p-[0.3rem] shadow-[0_4px_10px_rgba(15,23,42,0.01)]">

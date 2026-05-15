@@ -164,10 +164,10 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("lg:max-w-[468px]");
     expect(authCard).toHaveClass("xl:max-w-[484px]");
     expect(authCard).toHaveClass("rounded-[0.98rem]");
-    expect(authCard).toHaveClass("border-[rgba(244,247,250,0.98)]");
-    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.996)_0%,rgba(252,248,243,0.94)_100%)]");
-    expect(authCard).toHaveClass("shadow-[0_2px_5px_rgba(15,23,42,0.007),0_1px_2px_rgba(241,180,135,0.0025)]");
-    expect(authCard).toHaveClass("backdrop-blur-[0.44px]");
+    expect(authCard).toHaveClass("border-[rgba(236,241,246,0.98)]");
+    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.998)_0%,rgba(251,246,240,0.92)_100%)]");
+    expect(authCard).toHaveClass("shadow-[0_4px_10px_rgba(15,23,42,0.018),0_2px_5px_rgba(241,180,135,0.006)]");
+    expect(authCard).toHaveClass("backdrop-blur-[0.5px]");
     expect(authCard).toHaveClass("mx-auto");
     expect(authCard).not.toHaveClass("lg:mt-[2.16rem]");
     expect(authCard).not.toHaveClass("xl:mt-[2.3rem]");
@@ -175,9 +175,9 @@ describe("Home landing page", () => {
     expect(authCard.firstElementChild).toHaveClass("lg:max-w-[468px]");
     expect(authCard.firstElementChild).toHaveClass("xl:max-w-[484px]");
     expect(previewCard).toHaveClass("rounded-[2.08rem]");
-    expect(previewCard).toHaveClass("border-[rgba(234,238,243,0.94)]");
-    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)]");
-    expect(previewCard).toHaveClass("shadow-[0_16px_34px_rgba(15,23,42,0.072)]");
+    expect(previewCard).toHaveClass("border-[rgba(222,228,236,0.98)]");
+    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#fffefd_0%,#f4f7fb_100%)]");
+    expect(previewCard).toHaveClass("shadow-[0_18px_38px_rgba(15,23,42,0.088)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(previewLabelRow).toHaveClass("mt-[1.54rem]");
     expect(previewLabelRow).toHaveClass("gap-[2.06rem]");
