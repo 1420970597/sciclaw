@@ -397,10 +397,10 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNode.parentElement?.className).toContain("left-[49.1%]");
+    expect(literatureNode.parentElement?.className).toContain("left-[46.6%]");
     expect(dataMiningNode.parentElement?.className).toContain("left-[49.02%]");
     expect(outcomeNode.parentElement?.className).toContain("right-[19.45%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[10.55%]']")).not.toBeNull();
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[12.4%]']")).not.toBeNull();
     expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[10.52%]']")).not.toBeNull();
     expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='top-[28.58%]'][class*='w-[9.92%]'][class*='rotate-[12deg]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");

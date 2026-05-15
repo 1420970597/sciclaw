@@ -113,7 +113,7 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShellFrame).toHaveClass("lg:mr-0");
     expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[2.72rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:mr-0");
-    expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[49.1%]");
+    expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[46.6%]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[49.02%]");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[19.45%]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("max-w-[114px]");
@@ -132,7 +132,7 @@ describe("Chat route public landing clone", () => {
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").firstElementChild).toHaveClass("h-[4.74rem]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").firstElementChild).toHaveClass("h-[4.58rem]");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").firstElementChild).toHaveClass("h-[4.58rem]");
-    expect(chatHero.querySelector("span[class*='w-[10.55%]']")).not.toBeNull();
+    expect(chatHero.querySelector("span[class*='w-[12.4%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='w-[10.52%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='top-[28.58%]'][class*='w-[9.92%]'][class*='rotate-[12deg]']")).not.toBeNull();
     expect(chatHero).not.toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_232px]");
