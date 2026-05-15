@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-2 rounded-[2.08rem] border border-[rgba(205,214,224,0.98)] bg-[linear-gradient(180deg,#fcfaf7_0%,#e6edf5_100%)] p-[1.28rem] shadow-[0_22px_44px_rgba(15,23,42,0.118)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-2 rounded-[2.08rem] border border-[rgba(194,204,215,0.98)] bg-[linear-gradient(180deg,#fbf7f1_0%,#dfe8f1_100%)] p-[1.28rem] shadow-[0_24px_48px_rgba(15,23,42,0.128)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -347,7 +347,7 @@ function FeaturePreview({
           </div>
         </div>
 
-        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fff8f1_0%,#fde7d4_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
+        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fff6ed_0%,#f8dfc8_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e7db] pb-[0.92rem]">
             <div aria-hidden className="space-y-[0.46rem]">
               <span className="block h-[1.5px] w-[8.8rem] rounded-full bg-[#dbe1e8]" />
@@ -390,7 +390,7 @@ function FeaturePreview({
               </div>
             </div>
 
-            <div className="rounded-[1.44rem] border border-[#d7c9bb] bg-white/98 p-[1.34rem] shadow-[0_14px_28px_rgba(15,23,42,0.06),inset_0_1px_0_rgba(255,255,255,0.86)]">
+            <div className="rounded-[1.44rem] border border-[#cfbfaf] bg-white/98 p-[1.34rem] shadow-[0_16px_32px_rgba(15,23,42,0.068),inset_0_1px_0_rgba(255,255,255,0.88)]">
               <div className="space-y-[1.54rem]">
                 <div className="flex items-center justify-between text-[10.7px] uppercase tracking-[0.205em] text-[#687587]" aria-hidden>
                   <span className="h-[1.5px] w-[3.2rem] rounded-full bg-[#d7dfe7]" />
