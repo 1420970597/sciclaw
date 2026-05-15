@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-2 rounded-[2.08rem] border border-[rgba(231,236,242,0.96)] bg-[linear-gradient(180deg,#ffffff_0%,#f4f6f9_100%)] p-[1.28rem] shadow-[0_22px_46px_rgba(15,23,42,0.088)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-2 rounded-[2.08rem] border border-[rgba(234,238,243,0.94)] bg-[linear-gradient(180deg,#fffefd_0%,#f6f8fb_100%)] p-[1.28rem] shadow-[0_16px_34px_rgba(15,23,42,0.072)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -347,7 +347,7 @@ function FeaturePreview({
           </div>
         </div>
 
-        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fffaf5_0%,#fff1e4_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
+        <div className="mt-[1.9rem] rounded-[1.72rem] bg-[linear-gradient(180deg,#fffaf6_0%,#fff2e7_100%)] px-[1.2rem] pb-[1.56rem] pt-[1.44rem] sm:px-[1.54rem] sm:pb-[1.72rem] sm:pt-[1.5rem]">
           <div className="flex items-center justify-between gap-3 border-b border-[#f1e7db] pb-[0.92rem]">
             <div aria-hidden className="space-y-[0.46rem]">
               <span className="block h-[1.5px] w-[8.8rem] rounded-full bg-[#dbe1e8]" />
@@ -363,7 +363,7 @@ function FeaturePreview({
 
           <div className="mt-[1.52rem] grid gap-[1.56rem] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.12fr)]">
             <div className="space-y-[1.4rem]">
-              <div className="rounded-[1.3rem] border border-[#e9ded2] bg-white/96 p-[1.28rem] shadow-[0_6px_14px_rgba(15,23,42,0.022)]">
+              <div className="rounded-[1.3rem] border border-[#e7ddd2] bg-white/97 p-[1.28rem] shadow-[0_7px_16px_rgba(15,23,42,0.026)]">
                 <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#b99577]">
                   <span className="h-2 w-2 rounded-full bg-[#ef9c63]" />
                 </div>
@@ -378,7 +378,7 @@ function FeaturePreview({
                 {previewContent.chartLabels.slice(0, 2).map((label) => (
                   <div
                     key={`${activeFeature.id}-${label}`}
-                    className="rounded-[1.2rem] border border-[#ece1d5] bg-white/92 px-4 py-[1.08rem] shadow-[0_6px_12px_rgba(15,23,42,0.018)]"
+                    className="rounded-[1.2rem] border border-[#ebe0d5] bg-white/94 px-4 py-[1.08rem] shadow-[0_7px_14px_rgba(15,23,42,0.022)]"
                   >
                     <div className="space-y-[0.96rem]">
                       <span className="block h-[1.5px] w-[4.8rem] rounded-full bg-[#eadccf]" />
@@ -390,7 +390,7 @@ function FeaturePreview({
               </div>
             </div>
 
-            <div className="rounded-[1.44rem] border border-[#ead7c5] bg-white/95 p-[1.34rem] shadow-[0_8px_20px_rgba(15,23,42,0.032),inset_0_1px_0_rgba(255,255,255,0.78)]">
+            <div className="rounded-[1.44rem] border border-[#e7d7c8] bg-white/96 p-[1.34rem] shadow-[0_10px_22px_rgba(15,23,42,0.038),inset_0_1px_0_rgba(255,255,255,0.8)]">
               <div className="space-y-[1.54rem]">
                 <div className="flex items-center justify-between text-[10.7px] uppercase tracking-[0.205em] text-[#687587]" aria-hidden>
                   <span className="h-[1.5px] w-[3.2rem] rounded-full bg-[#d7dfe7]" />
