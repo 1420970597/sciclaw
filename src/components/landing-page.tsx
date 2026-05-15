@@ -321,7 +321,7 @@ function FeaturePreview({
   const chartGridClass = visibleChartLabels.length <= 3 ? "grid-cols-3" : "grid-cols-4";
 
   return (
-      <div className="flex flex-col gap-[1.08rem] lg:grid lg:grid-cols-[minmax(0,1fr)_214px] lg:items-start lg:gap-x-[0.02rem] lg:gap-y-[0.72rem] xl:grid-cols-[minmax(0,1fr)_214px] xl:gap-x-[0.06rem] xl:gap-y-[0.8rem]">
+      <div className="flex flex-col gap-[1.08rem] lg:grid lg:grid-cols-[minmax(0,1fr)_218px] lg:items-start lg:gap-x-[0.02rem] lg:gap-y-[0.64rem] xl:grid-cols-[minmax(0,1fr)_218px] xl:gap-x-[0.04rem] xl:gap-y-[0.72rem]">
       <div className="order-2 space-y-[0.62rem] px-1 pt-[0.08rem] lg:order-1 lg:col-span-2 lg:max-w-[35.4rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
@@ -337,7 +337,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-3 -mt-[0.02rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:-ml-[0.1rem] lg:ml-auto lg:mt-[0.28rem] lg:max-w-[13.9rem] xl:-ml-[0.06rem] xl:mt-[0.34rem]">
+      <div className="order-3 -mt-[0.02rem] lg:order-2 lg:col-start-2 lg:row-start-2 lg:-ml-[0.06rem] lg:ml-auto lg:mt-[0.18rem] lg:max-w-[14.12rem] xl:-ml-[0.03rem] xl:mt-[0.24rem]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
 
@@ -469,7 +469,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[214px] rounded-[0.98rem] border border-[rgba(245,248,251,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(252,248,243,0.92)_100%)] px-[0.28rem] py-[0.32rem] shadow-[0_1px_4px_rgba(15,23,42,0.008),0_1px_2px_rgba(241,180,135,0.003)] backdrop-blur-[0.5px] sm:px-[0.32rem] sm:py-[0.36rem]"
+      className="mx-auto w-full max-w-[218px] rounded-[0.98rem] border border-[rgba(245,248,251,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(252,248,243,0.92)_100%)] px-[0.28rem] py-[0.32rem] shadow-[0_1px_4px_rgba(15,23,42,0.008),0_1px_2px_rgba(241,180,135,0.003)] backdrop-blur-[0.5px] sm:px-[0.32rem] sm:py-[0.36rem]"
     >
       <div className="mx-auto w-full max-w-[260px]">
         <div className="rounded-[0.94rem] border border-[rgba(252,252,253,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(250,245,238,0.74)_100%)] p-[0.3rem] shadow-[0_4px_10px_rgba(15,23,42,0.01)]">
