@@ -102,13 +102,15 @@ describe("Home landing page", () => {
     expect(utilityRow).toHaveClass("sm:gap-[0.72rem]");
     expect(utilityRow).toHaveClass("sm:pr-[1.42rem]");
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /best\s*cases/i }).closest("section")).toHaveClass("mt-[1.24rem]");
+    expect(screen.getByRole("heading", { name: /best\s*cases/i }).closest("section")).toHaveClass("sm:mt-[1.64rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
     const previewCard = screen.getByTestId("feature-preview-card");
-    expect(hero).toHaveClass("lg:-mt-[1.78rem]");
+    expect(hero).toHaveClass("lg:-mt-[1.94rem]");
     const authColumn = screen.getByTestId("feature-auth-wrapper");
     expect(authColumn).not.toBeNull();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
@@ -537,8 +539,8 @@ describe("Home landing page", () => {
     );
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
-    expect(bestCasesSection).toHaveClass("mt-[1.48rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[1.9rem]");
+    expect(bestCasesSection).toHaveClass("mt-[1.24rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[1.64rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 

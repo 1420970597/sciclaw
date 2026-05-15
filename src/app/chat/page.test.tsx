@@ -44,7 +44,7 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:-mt-[1.78rem]");
+    expect(chatHero).toHaveClass("lg:-mt-[1.94rem]");
     expect(chatHero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(chatHero).toHaveClass("gap-3");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
@@ -177,6 +177,8 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.74rem]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.06em]");
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /best cases/i }).closest("section")).toHaveClass("mt-[1.24rem]");
+    expect(screen.getByRole("heading", { name: /best cases/i }).closest("section")).toHaveClass("sm:mt-[1.64rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
     const previousButton = screen.getByRole("button", { name: /^previous$/i });
