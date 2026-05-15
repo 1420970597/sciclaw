@@ -386,10 +386,10 @@ describe("Home landing page", () => {
 
     expect(literatureNode.parentElement?.className).toContain("left-[47.85%]");
     expect(dataMiningNode.parentElement?.className).toContain("left-[47.8%]");
-    expect(outcomeNode.parentElement?.className).toContain("right-[19.05%]");
+    expect(outcomeNode.parentElement?.className).toContain("right-[14.9%]");
     expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.9%]']")).not.toBeNull();
     expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.7%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[10.95%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='top-[28.4%]'][class*='w-[11.7%]'][class*='rotate-[13deg]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
@@ -457,9 +457,11 @@ describe("Home landing page", () => {
     expect(dataMiningNodeLabel).toHaveClass("text-center");
     expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%+0.08rem)]");
     expect(dataMiningNodeLabel).toHaveClass("text-[#314d61]");
-    expect(outcomeNodeLabel).toHaveClass("max-w-[112px]");
-    expect(outcomeNodeLabel).toHaveClass("left-[3.1rem]");
-    expect(outcomeNodeLabel).toHaveClass("top-[0.14rem]");
+    expect(outcomeNodeLabel).toHaveClass("max-w-none");
+    expect(outcomeNodeLabel).toHaveClass("whitespace-nowrap");
+    expect(outcomeNodeLabel).toHaveClass("left-[2.9rem]");
+    expect(outcomeNodeLabel).toHaveClass("top-1/2");
+    expect(outcomeNodeLabel).toHaveClass("-translate-y-1/2");
     expect(outcomeNodeLabel).toHaveClass("text-left");
     expect(outcomeNodeLabel).toHaveClass("text-[#314d61]");
 
