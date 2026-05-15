@@ -52,9 +52,9 @@ describe("Chat route public landing clone", () => {
     const authColumn = chatFeatureRotator.lastElementChild?.querySelector('[data-testid="landing-auth-card"]')?.parentElement;
     expect(authColumn).not.toBeNull();
     expect(chatFeatureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
-    expect(chatFeatureRotator).toHaveClass("lg:gap-[0.08rem]");
+    expect(chatFeatureRotator).toHaveClass("lg:gap-[0.04rem]");
     expect(chatFeatureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
-    expect(chatFeatureRotator).toHaveClass("xl:gap-[0.12rem]");
+    expect(chatFeatureRotator).toHaveClass("xl:gap-[0.08rem]");
     const chatFeaturePreview = chatPreviewCard.parentElement;
     expect(chatFeaturePreview).not.toBeNull();
     expect(chatFeaturePreview).not.toHaveClass("lg:grid");
@@ -109,10 +109,10 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(chatNetworkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:pl-[0.24rem]");
-    expect(chatNetworkShellFrame).toHaveClass("lg:-mt-[2.32rem]");
+    expect(chatNetworkShellFrame).toHaveClass("lg:-mt-[2.46rem]");
     expect(chatNetworkShellFrame).toHaveClass("lg:mr-0");
-    expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[2.56rem]");
-    expect(chatNetworkShellFrame).toHaveClass("xl:-mr-[0.02rem]");
+    expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[2.72rem]");
+    expect(chatNetworkShellFrame).toHaveClass("xl:mr-0");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[47.85%]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[47.8%]");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[19.05%]");
