@@ -104,14 +104,14 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: <span className="inline-block h-[0.68rem] w-[0.68rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.14)]" aria-hidden />,
-      position: "left-[48.4%] top-[14.35%] sm:left-[48.4%] sm:top-[14.35%]",
-      lineClass: "left-[48.18%] top-[28.9%] h-[2.02px] w-[11.25%] origin-left -rotate-[10deg]",
+      position: "left-[49.1%] top-[14.35%] sm:left-[49.1%] sm:top-[14.35%]",
+      lineClass: "left-[48.24%] top-[28.9%] h-[2.02px] w-[10.55%] origin-left -rotate-[10deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
-      labelClass: "max-w-[108px] text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
-      activeLabelClass: "max-w-[108px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-[-2.02rem] top-[0.12rem] sm:left-[-2.08rem]",
+      labelClass: "max-w-[114px] text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
+      activeLabelClass: "max-w-[114px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
+      labelPositionClass: "absolute left-[-1.9rem] top-[0.08rem] sm:left-[-1.96rem]",
     },
     {
       id: "data-mining",
@@ -123,14 +123,14 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[48.28%] top-[47.4%] sm:left-[48.28%] sm:top-[47.4%]",
-      lineClass: "left-[48.18%] top-[50.18%] h-[2.02px] w-[11.1%] origin-left rotate-[6deg]",
+      position: "left-[49.02%] top-[47.2%] sm:left-[49.02%] sm:top-[47.2%]",
+      lineClass: "left-[48.22%] top-[50.14%] h-[2.02px] w-[10.52%] origin-left rotate-[6deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
-      labelClass: "max-w-[108px] text-center text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
-      activeLabelClass: "max-w-[108px] text-center text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-1/2 top-[calc(100%+0.04rem)] -translate-x-1/2",
+      labelClass: "max-w-[114px] text-center text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
+      activeLabelClass: "max-w-[114px] text-center text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
+      labelPositionClass: "absolute left-1/2 top-[calc(100%+0.02rem)] -translate-x-1/2",
     },
     {
       id: "outcome-present",
@@ -141,14 +141,14 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute inset-[0.2rem] rounded-full bg-current/90" />
         </span>
       ),
-      position: "right-[20.2%] top-[14.45%] sm:right-[20.2%] sm:top-[14.45%]",
-      lineClass: "left-[48.34%] top-[28.62%] h-[2.02px] w-[10.35%] origin-left rotate-[12deg]",
+      position: "right-[19.45%] top-[14.4%] sm:right-[19.45%] sm:top-[14.4%]",
+      lineClass: "left-[48.28%] top-[28.58%] h-[2.02px] w-[9.92%] origin-left rotate-[12deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
-      labelClass: "max-w-[104px] text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
-      activeLabelClass: "max-w-[104px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-[2.84rem] top-[0.1rem] sm:left-[2.92rem]",
+      labelClass: "max-w-[110px] text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
+      activeLabelClass: "max-w-[110px] text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
+      labelPositionClass: "absolute left-[2.72rem] top-[0.06rem] sm:left-[2.78rem]",
     },
     ],
     [],
@@ -403,18 +403,18 @@ function FeaturePreview({
                 </div>
                 <div
                   data-testid="feature-preview-chart-label-row"
-                  className={`mt-[1.54rem] grid ${chartGridClass} gap-[2.06rem] px-[1.02rem] pt-[1.22rem] sm:gap-[2.22rem]`}
+                  className={`mt-[1.46rem] grid ${chartGridClass} gap-[2.18rem] px-[1.08rem] pt-[1.12rem] sm:gap-[2.34rem]`}
                 >
                   {visibleBars.map((height, index) => (
-                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.64rem] text-center sm:gap-[0.72rem]">
-                      <div className="flex h-[156px] w-full items-end gap-[0.82rem] rounded-[1.3rem] bg-[linear-gradient(180deg,#f7fafc_0%,#f1f5f8_100%)] px-[1.36rem] pb-[1.08rem] pt-[1.08rem]">
+                    <div key={`${activeFeature.id}-${index}`} className="flex min-w-[0] flex-1 flex-col items-center gap-[0.68rem] text-center sm:gap-[0.76rem]">
+                      <div className="flex h-[152px] w-full items-end gap-[0.86rem] rounded-[1.3rem] bg-[linear-gradient(180deg,#f7fafc_0%,#f1f5f8_100%)] px-[1.42rem] pb-[1.04rem] pt-[1.04rem]">
                         <span
                           className="flex-1 rounded-full bg-[linear-gradient(180deg,#f7c69c_0%,#eb8854_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                           style={{ height }}
                         />
                       </div>
-                      <span className="flex min-h-[2.72rem] w-full min-w-0 items-start justify-center px-[0.4rem] pb-[0.04rem] text-center text-[11.2px] font-medium uppercase leading-[1.02] tracking-[0.02em] text-[#6b8191] sm:min-h-[2.88rem] sm:text-[11.3px] sm:tracking-[0.024em]">
-                        <span className="block max-w-[5.2rem] text-balance break-words">{visibleChartLabels[index] ?? `Q${index + 1}`}</span>
+                      <span className="flex min-h-[2.92rem] w-full min-w-0 items-start justify-center px-[0.44rem] pb-[0.04rem] text-center text-[11.1px] font-medium uppercase leading-[1.06] tracking-[0.018em] text-[#6b8191] sm:min-h-[3.04rem] sm:text-[11.2px] sm:tracking-[0.022em]">
+                        <span className="block max-w-[5.5rem] text-balance break-words">{visibleChartLabels[index] ?? `Q${index + 1}`}</span>
                       </span>
                     </div>
                   ))}

@@ -179,19 +179,19 @@ describe("Home landing page", () => {
     expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#fefcf9_0%,#eef3f8_100%)]");
     expect(previewCard).toHaveClass("shadow-[0_20px_42px_rgba(15,23,42,0.098)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
-    expect(previewLabelRow).toHaveClass("mt-[1.54rem]");
-    expect(previewLabelRow).toHaveClass("gap-[2.06rem]");
-    expect(previewLabelRow).toHaveClass("pt-[1.22rem]");
+    expect(previewLabelRow).toHaveClass("mt-[1.46rem]");
+    expect(previewLabelRow).toHaveClass("gap-[2.18rem]");
+    expect(previewLabelRow).toHaveClass("pt-[1.12rem]");
     const previewLabelItems = Array.from(previewLabelRow.children);
     expect(previewLabelItems).toHaveLength(3);
     previewLabelItems.forEach((item) => {
-      expect(item).toHaveClass("gap-[0.64rem]");
+      expect(item).toHaveClass("gap-[0.68rem]");
       const labelWrapper = item.lastElementChild;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[2.72rem]");
+      expect(labelWrapper).toHaveClass("min-h-[2.92rem]");
       const labelText = labelWrapper?.firstElementChild;
       expect(labelText).not.toBeNull();
-      expect(labelText).toHaveClass("max-w-[5.2rem]");
+      expect(labelText).toHaveClass("max-w-[5.5rem]");
     });
   });
 
@@ -397,12 +397,12 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNode.parentElement?.className).toContain("left-[48.4%]");
-    expect(dataMiningNode.parentElement?.className).toContain("left-[48.28%]");
-    expect(outcomeNode.parentElement?.className).toContain("right-[20.2%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.25%]']")).not.toBeNull();
-    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[11.1%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='top-[28.62%]'][class*='w-[10.35%]'][class*='rotate-[12deg]']")).not.toBeNull();
+    expect(literatureNode.parentElement?.className).toContain("left-[49.1%]");
+    expect(dataMiningNode.parentElement?.className).toContain("left-[49.02%]");
+    expect(outcomeNode.parentElement?.className).toContain("right-[19.45%]");
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[10.55%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[10.52%]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='top-[28.58%]'][class*='w-[9.92%]'][class*='rotate-[12deg]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
@@ -434,22 +434,22 @@ describe("Home landing page", () => {
     chartLabels.forEach((label) => {
       const labelWrapper = label.parentElement;
       expect(labelWrapper).not.toBeNull();
-      expect(labelWrapper).toHaveClass("min-h-[2.72rem]");
-      expect(labelWrapper).toHaveClass("text-[11.2px]");
-      expect(labelWrapper).toHaveClass("leading-[1.02]");
-      expect(labelWrapper).toHaveClass("tracking-[0.02em]");
+      expect(labelWrapper).toHaveClass("min-h-[2.92rem]");
+      expect(labelWrapper).toHaveClass("text-[11.1px]");
+      expect(labelWrapper).toHaveClass("leading-[1.06]");
+      expect(labelWrapper).toHaveClass("tracking-[0.018em]");
       expect(labelWrapper).toHaveClass("text-[#6b8191]");
-      expect(label).toHaveClass("max-w-[5.2rem]");
+      expect(label).toHaveClass("max-w-[5.5rem]");
       expect(label).toHaveClass("text-balance");
     });
 
     const chartRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chartRow).toHaveClass("grid-cols-3");
     expect(chartRow.childElementCount).toBe(3);
-    expect(chartRow).toHaveClass("gap-[2.06rem]");
-    expect(chartRow).toHaveClass("sm:gap-[2.22rem]");
-    expect(chartRow).toHaveClass("mt-[1.54rem]");
-    expect(chartRow).toHaveClass("pt-[1.22rem]");
+    expect(chartRow).toHaveClass("gap-[2.18rem]");
+    expect(chartRow).toHaveClass("sm:gap-[2.34rem]");
+    expect(chartRow).toHaveClass("mt-[1.46rem]");
+    expect(chartRow).toHaveClass("pt-[1.12rem]");
 
     const literatureNodeLabel = screen.getByText(/^literature analysis$/i);
     const dataMiningNodeLabel = screen.getByText(/^data mining$/i);
@@ -460,21 +460,21 @@ describe("Home landing page", () => {
     expect(literatureNodeLabel).toHaveClass("text-[10.8px]");
     expect(literatureNodeLabel).toHaveClass("leading-[2.06]");
     expect(literatureNodeLabel).toHaveClass("tracking-[0.03em]");
-    expect(literatureNodeLabel).toHaveClass("max-w-[108px]");
-    expect(literatureNodeLabel).toHaveClass("left-[-2.02rem]");
-    expect(literatureNodeLabel).toHaveClass("top-[0.12rem]");
+    expect(literatureNodeLabel).toHaveClass("max-w-[114px]");
+    expect(literatureNodeLabel).toHaveClass("left-[-1.9rem]");
+    expect(literatureNodeLabel).toHaveClass("top-[0.08rem]");
     expect(literatureNodeLabel).toHaveClass("text-left");
     expect(literatureNodeLabel).toHaveClass("text-[#5f381d]");
-    expect(dataMiningNodeLabel).toHaveClass("max-w-[108px]");
+    expect(dataMiningNodeLabel).toHaveClass("max-w-[114px]");
     expect(dataMiningNodeLabel).toHaveClass("left-1/2");
     expect(dataMiningNodeLabel).toHaveClass("-translate-x-1/2");
     expect(dataMiningNodeLabel).toHaveClass("text-center");
-    expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%+0.04rem)]");
+    expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%+0.02rem)]");
     expect(dataMiningNodeLabel).toHaveClass("text-[#3d5869]");
-    expect(outcomeNodeLabel).toHaveClass("max-w-[104px]");
+    expect(outcomeNodeLabel).toHaveClass("max-w-[110px]");
     expect(outcomeNodeLabel).not.toHaveClass("whitespace-nowrap");
-    expect(outcomeNodeLabel).toHaveClass("left-[2.84rem]");
-    expect(outcomeNodeLabel).toHaveClass("top-[0.1rem]");
+    expect(outcomeNodeLabel).toHaveClass("left-[2.72rem]");
+    expect(outcomeNodeLabel).toHaveClass("top-[0.06rem]");
     expect(outcomeNodeLabel).not.toHaveClass("-translate-y-1/2");
     expect(outcomeNodeLabel).toHaveClass("text-left");
     expect(outcomeNodeLabel).toHaveClass("text-[#3d5869]");
