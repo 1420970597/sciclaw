@@ -77,13 +77,13 @@ describe("Chat route public landing clone", () => {
     expect(chatPreviewCard).not.toHaveClass("lg:row-start-2");
     expect(authColumn).toHaveClass("order-3");
     expect(authColumn).toHaveClass("mx-auto");
-    expect(authColumn).toHaveClass("-mt-[1.18rem]");
+    expect(authColumn).toHaveClass("-mt-[1.42rem]");
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[340px]");
     expect(authColumn).toHaveClass("sm:max-w-[352px]");
-    expect(authColumn).toHaveClass("lg:-mt-[7.04rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[8.22rem]");
     expect(authColumn).toHaveClass("lg:max-w-[592px]");
-    expect(authColumn).toHaveClass("xl:-mt-[7.34rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[8.52rem]");
     expect(authColumn).toHaveClass("xl:max-w-[608px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
