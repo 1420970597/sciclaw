@@ -181,8 +181,8 @@ describe("Chat route public landing clone", () => {
     const bestCasesSection = screen.getByTestId("best-cases-section");
     expect(bestCasesSection).toHaveClass("mt-[2.42rem]");
     expect(bestCasesSection).toHaveClass("sm:mt-[2.84rem]");
-    expect(bestCasesSection).toHaveClass("lg:mt-[6.24rem]");
-    expect(bestCasesSection).toHaveClass("xl:mt-[6.6rem]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[6.9rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[7.28rem]");
     expect(bestCasesSection.firstElementChild).toHaveClass("mb-[1.9rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
