@@ -106,8 +106,8 @@ describe("Home landing page", () => {
     const bestCasesSection = screen.getByTestId("best-cases-section");
     expect(bestCasesSection).toHaveClass("mt-[2.68rem]");
     expect(bestCasesSection).toHaveClass("sm:mt-[3.1rem]");
-    expect(bestCasesSection).toHaveClass("lg:mt-[6.28rem]");
-    expect(bestCasesSection).toHaveClass("xl:mt-[6.72rem]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[7.8rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[8.18rem]");
     expect(bestCasesSection.firstElementChild).toHaveClass("mb-[1.9rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
