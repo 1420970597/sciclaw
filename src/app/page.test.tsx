@@ -138,10 +138,10 @@ describe("Home landing page", () => {
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[324px]");
     expect(authColumn).toHaveClass("sm:max-w-[336px]");
-    expect(authColumn).toHaveClass("lg:-mt-[9.34rem]");
-    expect(authColumn).toHaveClass("lg:max-w-[564px]");
-    expect(authColumn).toHaveClass("xl:-mt-[9.64rem]");
-    expect(authColumn).toHaveClass("xl:max-w-[580px]");
+    expect(authColumn).toHaveClass("lg:-mt-[8.9rem]");
+    expect(authColumn).toHaveClass("lg:max-w-[548px]");
+    expect(authColumn).toHaveClass("xl:-mt-[9.2rem]");
+    expect(authColumn).toHaveClass("xl:max-w-[564px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
     expect(authColumn).not.toHaveClass("lg:max-w-[14.12rem]");
@@ -163,8 +163,8 @@ describe("Home landing page", () => {
     expect(hero).toHaveClass("gap-3");
     expect(hero).toHaveClass("grid");
     expect(authCard).toHaveClass("max-w-[254px]");
-    expect(authCard).toHaveClass("lg:max-w-[568px]");
-    expect(authCard).toHaveClass("xl:max-w-[584px]");
+    expect(authCard).toHaveClass("lg:max-w-[552px]");
+    expect(authCard).toHaveClass("xl:max-w-[568px]");
     expect(authCard).toHaveClass("rounded-[0.96rem]");
     expect(authCard).toHaveClass("border-[rgba(240,244,248,0.98)]");
     expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.995)_0%,rgba(250,245,239,0.82)_100%)]");
@@ -174,8 +174,8 @@ describe("Home landing page", () => {
     expect(authCard).not.toHaveClass("lg:mt-[2.16rem]");
     expect(authCard).not.toHaveClass("xl:mt-[2.3rem]");
     expect(authCard.firstElementChild).toHaveClass("max-w-[286px]");
-    expect(authCard.firstElementChild).toHaveClass("lg:max-w-[568px]");
-    expect(authCard.firstElementChild).toHaveClass("xl:max-w-[584px]");
+    expect(authCard.firstElementChild).toHaveClass("lg:max-w-[552px]");
+    expect(authCard.firstElementChild).toHaveClass("xl:max-w-[568px]");
     expect(previewCard).toHaveClass("rounded-[2.08rem]");
     expect(previewCard).toHaveClass("border-[rgba(194,204,215,0.98)]");
     expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#fbf7f1_0%,#dfe8f1_100%)]");
