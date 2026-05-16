@@ -425,7 +425,7 @@ function FeaturePreview({
         </div>
       </div>
 
-      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[1.42rem] w-full max-w-[340px] sm:max-w-[352px] lg:-mt-[8.22rem] lg:max-w-[592px] xl:-mt-[8.52rem] xl:max-w-[608px]">
+      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[1.62rem] w-full max-w-[332px] sm:max-w-[344px] lg:-mt-[8.9rem] lg:max-w-[576px] xl:-mt-[9.2rem] xl:max-w-[592px]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
     </div>
