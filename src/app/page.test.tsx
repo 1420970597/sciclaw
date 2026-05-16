@@ -102,8 +102,10 @@ describe("Home landing page", () => {
     expect(utilityRow).toHaveClass("sm:gap-[0.72rem]");
     expect(utilityRow).toHaveClass("sm:pr-[1.42rem]");
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
-    expect(screen.getByTestId("best-cases-section")).toHaveClass("mt-[2.02rem]");
-    expect(screen.getByTestId("best-cases-section")).toHaveClass("sm:mt-[2.38rem]");
+    const bestCasesSection = screen.getByTestId("best-cases-section");
+    expect(bestCasesSection).toHaveClass("mt-[1.86rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[2.2rem]");
+    expect(bestCasesSection.firstElementChild).toHaveClass("mb-6.5");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
@@ -134,13 +136,13 @@ describe("Home landing page", () => {
     expect(previewCard).not.toHaveClass("lg:row-start-2");
     expect(authColumn).toHaveClass("order-3");
     expect(authColumn).toHaveClass("mx-auto");
-    expect(authColumn).toHaveClass("-mt-[2.02rem]");
+    expect(authColumn).toHaveClass("-mt-[2.08rem]");
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[316px]");
     expect(authColumn).toHaveClass("sm:max-w-[328px]");
-    expect(authColumn).toHaveClass("lg:-mt-[9.34rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[9.52rem]");
     expect(authColumn).toHaveClass("lg:max-w-[532px]");
-    expect(authColumn).toHaveClass("xl:-mt-[9.64rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[9.84rem]");
     expect(authColumn).toHaveClass("xl:max-w-[548px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
@@ -538,8 +540,8 @@ describe("Home landing page", () => {
     );
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
-    expect(bestCasesSection).toHaveClass("mt-[2.02rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[2.38rem]");
+    expect(bestCasesSection).toHaveClass("mt-[1.86rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[2.2rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
