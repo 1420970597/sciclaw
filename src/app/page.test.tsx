@@ -160,7 +160,9 @@ describe("Home landing page", () => {
     expect(authColumn).not.toHaveClass("xl:-ml-[0.03rem]");
     expect(authColumn).not.toHaveClass("xl:mt-[0.24rem]");
     const previewHeadingBlockCopy = featurePreview?.firstElementChild;
+    expect(previewHeadingBlockCopy).toHaveClass("relative");
     expect(previewHeadingBlockCopy).toHaveClass("space-y-[0.62rem]");
+    expect(previewHeadingBlockCopy).toHaveClass("pb-[2.9rem]");
     expect(previewHeadingBlockCopy).toHaveClass("pt-[0.08rem]");
     expect(previewHeadingBlockCopy).toHaveClass("lg:max-w-[35.4rem]");
     const previewDescription = within(previewHeadingBlockCopy as HTMLElement).getByText(
@@ -169,7 +171,12 @@ describe("Home landing page", () => {
     expect(previewDescription).toHaveClass("max-w-[31.4rem]");
     expect(previewDescription).toHaveClass("leading-[1.82]");
     expect(previewDescription).toHaveClass("sm:text-[0.99rem]");
-    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("pt-[0.18rem]");
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("group");
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("absolute");
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("bottom-3");
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("flex-col");
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("gap-1");
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveClass("text-muted-foreground/50");
     expect(hero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(hero).toHaveClass("gap-3");
     expect(hero).toHaveClass("grid");
@@ -505,11 +512,13 @@ describe("Home landing page", () => {
     expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("leading-[1.82]");
     expect(within(landingHero).getByText(/upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i)).toHaveClass("sm:text-[0.99rem]");
     expect(getStartedButton).toBeInTheDocument();
-    expect(getStartedButton.querySelector("svg")).toBeNull();
-    expect(getStartedButton).not.toHaveClass("flex-col");
-    expect(getStartedButton).not.toHaveClass("gap-1");
-    expect(getStartedButton).toHaveClass("font-mono");
-    expect(getStartedButton).toHaveClass("pt-[0.18rem]");
+    expect(getStartedButton.querySelector("svg")).not.toBeNull();
+    expect(getStartedButton).toHaveClass("group");
+    expect(getStartedButton).toHaveClass("absolute");
+    expect(getStartedButton).toHaveClass("bottom-3");
+    expect(getStartedButton).toHaveClass("flex-col");
+    expect(getStartedButton).toHaveClass("gap-1");
+    expect(getStartedButton).toHaveClass("text-muted-foreground/50");
 
     fireEvent.click(getStartedButton);
 

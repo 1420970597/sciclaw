@@ -36,11 +36,14 @@ describe("Chat route public landing clone", () => {
     const chatGetStartedButton = screen.getByRole("button", { name: /^get started$/i });
     expect(bodyLabel.tagName).toBe("SPAN");
     expect(bodyLabel.compareDocumentPosition(methodLabel) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(chatGetStartedButton).not.toHaveClass("flex-col");
-    expect(chatGetStartedButton).not.toHaveClass("gap-1");
+    expect(chatGetStartedButton).toHaveClass("group");
+    expect(chatGetStartedButton).toHaveClass("absolute");
+    expect(chatGetStartedButton).toHaveClass("bottom-3");
+    expect(chatGetStartedButton).toHaveClass("flex-col");
+    expect(chatGetStartedButton).toHaveClass("gap-1");
     expect(chatGetStartedButton).toHaveClass("font-mono");
     expect(chatGetStartedButton).toHaveClass("tracking-[0.12em]");
-    expect(chatGetStartedButton).toHaveClass("pt-[0.18rem]");
+    expect(chatGetStartedButton).toHaveClass("text-muted-foreground/50");
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
@@ -97,7 +100,9 @@ describe("Chat route public landing clone", () => {
     expect(authColumn).not.toHaveClass("lg:max-w-[14.12rem]");
     expect(authColumn).not.toHaveClass("xl:-ml-[0.03rem]");
     expect(authColumn).not.toHaveClass("xl:mt-[0.24rem]");
+    expect(chatPreviewHeadingBlock).toHaveClass("relative");
     expect(chatPreviewHeadingBlock).toHaveClass("space-y-[0.62rem]");
+    expect(chatPreviewHeadingBlock).toHaveClass("pb-[2.9rem]");
     expect(chatPreviewHeadingBlock).toHaveClass("pt-[0.08rem]");
     expect(chatPreviewHeadingBlock).toHaveClass("lg:max-w-[35.4rem]");
     const chatPreviewDescription = within(chatPreviewHeadingBlock as HTMLElement).getByText(
@@ -106,7 +111,14 @@ describe("Chat route public landing clone", () => {
     expect(chatPreviewDescription).toHaveClass("max-w-[31.4rem]");
     expect(chatPreviewDescription).toHaveClass("leading-[1.82]");
     expect(chatPreviewDescription).toHaveClass("sm:text-[0.99rem]");
-    expect(chatGetStartedButton).toHaveClass("pt-[0.18rem]");
+    expect(chatGetStartedButton).toHaveClass("group");
+    expect(chatGetStartedButton).toHaveClass("absolute");
+    expect(chatGetStartedButton).toHaveClass("bottom-3");
+    expect(chatGetStartedButton).toHaveClass("flex-col");
+    expect(chatGetStartedButton).toHaveClass("gap-1");
+    expect(chatGetStartedButton).toHaveClass("font-mono");
+    expect(chatGetStartedButton).toHaveClass("tracking-[0.12em]");
+    expect(chatGetStartedButton).toHaveClass("text-muted-foreground/50");
     const chatNetworkShell = screen.getByTestId("feature-network-shell");
     const chatNetworkShellFrame = chatFeatureRotator.firstElementChild;
     expect(chatNetworkShell).toHaveClass("overflow-visible");
@@ -172,7 +184,7 @@ describe("Chat route public landing clone", () => {
       expect(labelText).not.toBeNull();
       expect(labelText).toHaveClass("max-w-[5.5rem]");
     });
-    expect(chatGetStartedButton.querySelector("svg")).toBeNull();
+    expect(chatGetStartedButton.querySelector("svg")).not.toBeNull();
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();

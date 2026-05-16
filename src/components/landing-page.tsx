@@ -42,6 +42,14 @@ function SettingsIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: s
   );
 }
 
+function DownChevronIcon({ className = "h-[0.7rem] w-[0.7rem]" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
 function Header() {
   const settingsGroups = [
     {
@@ -322,7 +330,7 @@ function FeaturePreview({
 
   return (
       <div className="flex flex-col gap-[1.08rem]">
-      <div className="order-1 space-y-[0.62rem] px-1 pt-[0.08rem] lg:max-w-[35.4rem]">
+      <div className="order-1 relative space-y-[0.62rem] px-1 pb-[2.9rem] pt-[0.08rem] lg:max-w-[35.4rem]">
         <span className="text-sm font-semibold tracking-[0.24em] text-[#ed8a43]">{previewContent.bodyLabel}</span>
         <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[1.88rem] md:text-[2.02rem]">
           {previewContent.heading}
@@ -331,9 +339,10 @@ function FeaturePreview({
         <button
           type="button"
           onClick={onGetStarted}
-          className="inline-flex pt-[0.18rem] font-mono text-sm tracking-[0.12em] text-[#6d737c] transition hover:text-[#1f232a]"
+          className="group absolute bottom-3 flex flex-col items-center gap-1 font-mono text-sm tracking-[0.12em] text-muted-foreground/50 transition-all duration-500 hover:text-primary/70 sm:text-base"
         >
-          {previewContent.ctaLabel}
+          <span>{previewContent.ctaLabel}</span>
+          <DownChevronIcon className="h-[0.68rem] w-[0.68rem] text-current/90 transition-transform duration-500 group-hover:translate-y-[1px]" />
         </button>
       </div>
 
