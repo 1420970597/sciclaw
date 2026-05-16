@@ -525,7 +525,7 @@ function AuthCard({
                 <button
                   type="button"
                   disabled
-                  className="w-full whitespace-nowrap rounded-[1.12rem] border border-[rgba(233,212,194,0.98)] bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] px-3 py-[0.72rem] text-[0.74rem] font-semibold uppercase tracking-[0.06em] text-[#6b5d52] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_6px_14px_rgba(15,23,42,0.014)] transition disabled:cursor-not-allowed disabled:border-[rgba(233,212,194,0.98)] disabled:bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] disabled:text-[#6b5d52] disabled:opacity-100"
+                  className="w-full whitespace-nowrap rounded-[1.12rem] border border-[rgba(233,212,194,0.98)] bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] px-[0.92rem] py-[0.72rem] text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#6b5d52] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_6px_14px_rgba(15,23,42,0.014)] transition disabled:cursor-not-allowed disabled:border-[rgba(233,212,194,0.98)] disabled:bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] disabled:text-[#6b5d52] disabled:opacity-100"
                 >
                   VERIFY ACCESS CODE
                 </button>

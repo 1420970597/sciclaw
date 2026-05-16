@@ -174,8 +174,9 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#6b5d52]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[rgba(233,212,194,0.98)]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("whitespace-nowrap");
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.74rem]");
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.06em]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("px-[0.92rem]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.72rem]");
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.14em]");
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
     const bestCasesSection = screen.getByTestId("best-cases-section");
     expect(bestCasesSection).toHaveClass("mt-[2.36rem]");
