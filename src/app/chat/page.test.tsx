@@ -44,7 +44,7 @@ describe("Chat route public landing clone", () => {
     const chatHero = screen.getByTestId("landing-hero");
     const chatAuthCard = screen.getByTestId("landing-auth-card");
     const chatPreviewCard = screen.getByTestId("feature-preview-card");
-    expect(chatHero).toHaveClass("lg:-mt-[1.94rem]");
+    expect(chatHero).toHaveClass("lg:-mt-[1.68rem]");
     expect(chatHero).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_232px]");
     expect(chatHero).toHaveClass("gap-3");
     const chatFeatureRotator = screen.getByTestId("feature-rotator");
@@ -52,9 +52,9 @@ describe("Chat route public landing clone", () => {
     const authColumn = screen.getByTestId("feature-auth-wrapper");
     expect(authColumn).not.toBeNull();
     expect(chatFeatureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
-    expect(chatFeatureRotator).toHaveClass("lg:gap-[0.04rem]");
+    expect(chatFeatureRotator).toHaveClass("lg:gap-[0.06rem]");
     expect(chatFeatureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
-    expect(chatFeatureRotator).toHaveClass("xl:gap-[0.08rem]");
+    expect(chatFeatureRotator).toHaveClass("xl:gap-[0.1rem]");
     const chatFeaturePreview = chatPreviewCard.parentElement;
     expect(chatFeaturePreview).not.toBeNull();
     expect(chatFeaturePreview).not.toHaveClass("lg:grid");
@@ -109,9 +109,9 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(chatNetworkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:pl-[0.24rem]");
-    expect(chatNetworkShellFrame).toHaveClass("lg:-mt-[2.46rem]");
+    expect(chatNetworkShellFrame).toHaveClass("lg:-mt-[2.18rem]");
     expect(chatNetworkShellFrame).toHaveClass("lg:mr-0");
-    expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[2.72rem]");
+    expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[2.38rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:mr-0");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[46.6%]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[49.02%]");

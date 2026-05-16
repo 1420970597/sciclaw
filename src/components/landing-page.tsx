@@ -447,9 +447,9 @@ function FeatureRotator({
     <section
       id="feature-rotator"
       data-testid="feature-rotator"
-      className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-start lg:gap-[0.04rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.08rem]"
+      className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-start lg:gap-[0.06rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.1rem]"
     >
-      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.18rem] pr-0 py-1 sm:px-1 lg:-mt-[2.46rem] lg:mr-0 lg:px-0 lg:pl-[0.2rem] xl:-mt-[2.72rem] xl:mr-0 xl:px-1 xl:pl-[0.24rem]">
+      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.18rem] pr-0 py-1 sm:px-1 lg:-mt-[2.18rem] lg:mr-0 lg:px-0 lg:pl-[0.2rem] xl:-mt-[2.38rem] xl:mr-0 xl:px-1 xl:pl-[0.24rem]">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
       <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} onApplyNow={onApplyNow} />
@@ -878,8 +878,8 @@ export function LandingPage() {
       <Header />
 
       <section className="mx-auto max-w-[1240px] px-6 pb-16 pt-4 sm:px-8 sm:pt-5 lg:px-10 lg:pt-6">
-        <div className="space-y-5 text-center sm:space-y-6">
-          <div className="space-y-3 sm:space-y-[0.82rem]">
+        <div className="space-y-[1.35rem] text-center sm:space-y-[1.52rem]">
+          <div className="space-y-[0.78rem] sm:space-y-[0.96rem]">
             <h1 className="text-5xl font-semibold tracking-[-0.055em] text-[#1f232a] sm:text-6xl lg:text-[5.2rem]">
               Sci<span className="text-[#eb8a3c]">Claw</span>
             </h1>
@@ -891,7 +891,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:gap-[0.82rem] lg:-mt-[1.94rem]" data-testid="landing-hero">
+          <div className="grid gap-3 sm:gap-[0.9rem] lg:-mt-[1.68rem]" data-testid="landing-hero">
             <FeatureRotator
               activeIndex={activeFeatureIndex}
               onSelect={setActiveFeatureIndex}

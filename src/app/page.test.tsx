@@ -53,9 +53,9 @@ describe("Home landing page", () => {
     expect(screen.queryByRole("button", { name: /^autonomous execution$/i })).not.toBeInTheDocument();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
     expect(featureRotator).toHaveClass("lg:items-start");
-    expect(featureRotator).toHaveClass("lg:gap-[0.04rem]");
+    expect(featureRotator).toHaveClass("lg:gap-[0.06rem]");
     expect(featureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
-    expect(featureRotator).toHaveClass("xl:gap-[0.08rem]");
+    expect(featureRotator).toHaveClass("xl:gap-[0.1rem]");
     const networkShell = screen.getByTestId("feature-network-shell");
     const networkShellFrame = featureRotator.firstElementChild;
     expect(networkShell).toHaveClass("overflow-visible");
@@ -64,9 +64,9 @@ describe("Home landing page", () => {
     expect(networkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(networkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(networkShellFrame).toHaveClass("xl:pl-[0.24rem]");
-    expect(networkShellFrame).toHaveClass("lg:-mt-[2.46rem]");
+    expect(networkShellFrame).toHaveClass("lg:-mt-[2.18rem]");
     expect(networkShellFrame).toHaveClass("lg:mr-0");
-    expect(networkShellFrame).toHaveClass("xl:-mt-[2.72rem]");
+    expect(networkShellFrame).toHaveClass("xl:-mt-[2.38rem]");
     expect(networkShellFrame).toHaveClass("xl:mr-0");
     expect(screen.getByRole("heading", { name: /sci\s*claw/i })).toBeInTheDocument();
     const headerWordmark = screen.getByTestId("landing-header-wordmark");
@@ -110,7 +110,7 @@ describe("Home landing page", () => {
     const hero = screen.getByTestId("landing-hero");
     const authCard = screen.getByTestId("landing-auth-card");
     const previewCard = screen.getByTestId("feature-preview-card");
-    expect(hero).toHaveClass("lg:-mt-[1.94rem]");
+    expect(hero).toHaveClass("lg:-mt-[1.68rem]");
     const authColumn = screen.getByTestId("feature-auth-wrapper");
     expect(authColumn).not.toBeNull();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
