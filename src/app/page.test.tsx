@@ -143,9 +143,9 @@ describe("Home landing page", () => {
     expect(authColumn).toHaveClass("w-full");
     expect(authColumn).toHaveClass("max-w-[320px]");
     expect(authColumn).toHaveClass("sm:max-w-[332px]");
-    expect(authColumn).toHaveClass("lg:-mt-[10.12rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[9.74rem]");
     expect(authColumn).toHaveClass("lg:max-w-[548px]");
-    expect(authColumn).toHaveClass("xl:-mt-[10.46rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[10.08rem]");
     expect(authColumn).toHaveClass("xl:max-w-[564px]");
     expect(authColumn).not.toHaveClass("lg:col-start-2");
     expect(authColumn).not.toHaveClass("lg:row-start-2");
