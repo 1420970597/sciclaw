@@ -425,7 +425,7 @@ function FeaturePreview({
         </div>
       </div>
 
-      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[1.92rem] w-full max-w-[320px] sm:max-w-[332px] lg:-mt-[9.52rem] lg:max-w-[536px] xl:-mt-[9.84rem] xl:max-w-[552px]">
+      <div data-testid="feature-auth-wrapper" className="order-3 mx-auto -mt-[2.08rem] w-full max-w-[320px] sm:max-w-[332px] lg:-mt-[9.88rem] lg:max-w-[548px] xl:-mt-[10.18rem] xl:max-w-[564px]">
         <AuthCard onApplyNow={onApplyNow} />
       </div>
     </div>
@@ -469,9 +469,9 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[244px] rounded-[0.9rem] border border-[rgba(244,247,250,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(251,246,240,0.76)_100%)] px-[0.26rem] py-[0.3rem] shadow-[0_2px_5px_rgba(15,23,42,0.01),0_1px_2px_rgba(241,180,135,0.003)] backdrop-blur-[0.24px] sm:px-[0.29rem] sm:py-[0.32rem] lg:max-w-[528px] xl:max-w-[544px]"
+      className="mx-auto w-full max-w-[244px] rounded-[0.9rem] border border-[rgba(244,247,250,0.98)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(251,246,240,0.76)_100%)] px-[0.26rem] py-[0.3rem] shadow-[0_2px_5px_rgba(15,23,42,0.01),0_1px_2px_rgba(241,180,135,0.003)] backdrop-blur-[0.24px] sm:px-[0.29rem] sm:py-[0.32rem] lg:max-w-[540px] xl:max-w-[556px]"
     >
-      <div className="mx-auto w-full max-w-[278px] lg:max-w-[536px] xl:max-w-[552px]">
+      <div className="mx-auto w-full max-w-[278px] lg:max-w-[548px] xl:max-w-[564px]">
         <div className="rounded-[0.9rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(249,244,237,0.68)_100%)] p-[0.26rem] shadow-[0_2px_6px_rgba(15,23,42,0.007)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.68rem] bg-[rgba(247,241,234,0.76)] p-[0.22rem] text-sm text-[#6b7480]">
             {[
