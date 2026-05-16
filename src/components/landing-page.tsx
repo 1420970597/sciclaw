@@ -138,7 +138,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       wrapperClass: "items-center",
       labelClass: "max-w-[114px] text-center text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
       activeLabelClass: "max-w-[114px] text-center text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-1/2 top-[calc(100%+0.02rem)] -translate-x-1/2",
+      labelPositionClass: "absolute left-1/2 top-[calc(100%-0.1rem)] -translate-x-1/2",
     },
     {
       id: "outcome-present",
