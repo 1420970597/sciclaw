@@ -102,8 +102,8 @@ describe("Home landing page", () => {
     expect(utilityRow).toHaveClass("sm:gap-[0.72rem]");
     expect(utilityRow).toHaveClass("sm:pr-[1.42rem]");
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /best\s*cases/i }).closest("section")).toHaveClass("mt-[1.72rem]");
-    expect(screen.getByRole("heading", { name: /best\s*cases/i }).closest("section")).toHaveClass("sm:mt-[2.06rem]");
+    expect(screen.getByTestId("best-cases-section")).toHaveClass("mt-[2.28rem]");
+    expect(screen.getByTestId("best-cases-section")).toHaveClass("sm:mt-[2.66rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
@@ -531,16 +531,15 @@ describe("Home landing page", () => {
     render(<Home />);
 
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
-    const bestCasesHeading = screen.getByRole("heading", { name: /best\s*cases/i });
-    const bestCasesSection = bestCasesHeading.closest("section");
+    const bestCasesSection = screen.getByTestId("best-cases-section");
 
     expect(bestCasesSection).toHaveTextContent(
       /automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i,
     );
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
-    expect(bestCasesSection).toHaveClass("mt-[1.72rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[2.06rem]");
+    expect(bestCasesSection).toHaveClass("mt-[2.28rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[2.66rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
