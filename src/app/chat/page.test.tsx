@@ -141,8 +141,8 @@ describe("Chat route public landing clone", () => {
     expect(within(chatHero).getByText(/^data mining$/i)).toHaveClass("top-[calc(100%+0.02rem)]");
     expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("max-w-[122px]");
     expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("whitespace-nowrap");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("left-[2.66rem]");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("top-[-0.02rem]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("left-[2.42rem]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("top-[0.16rem]");
     expect(within(chatHero).getByText(/^outcome present$/i)).not.toHaveClass("-translate-y-1/2");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement).toHaveClass("inline-flex");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement).toHaveClass("inline-flex");
