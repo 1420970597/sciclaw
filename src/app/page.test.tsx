@@ -104,10 +104,10 @@ describe("Home landing page", () => {
     expect(utilityRow).toHaveClass("sm:pr-[1.42rem]");
     expect(screen.getByRole("heading", { name: /best\s*cases/i })).toBeInTheDocument();
     const bestCasesSection = screen.getByTestId("best-cases-section");
-    expect(bestCasesSection).toHaveClass("mt-[2.68rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[3.1rem]");
-    expect(bestCasesSection).toHaveClass("lg:mt-[6.56rem]");
-    expect(bestCasesSection).toHaveClass("xl:mt-[6.92rem]");
+    expect(bestCasesSection).toHaveClass("mt-[2.42rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[2.84rem]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[6.24rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[6.6rem]");
     expect(bestCasesSection.firstElementChild).toHaveClass("mb-[1.9rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
@@ -543,8 +543,8 @@ describe("Home landing page", () => {
     );
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
 
-    expect(bestCasesSection).toHaveClass("mt-[2.68rem]");
-    expect(bestCasesSection).toHaveClass("sm:mt-[3.1rem]");
+    expect(bestCasesSection).toHaveClass("mt-[2.42rem]");
+    expect(bestCasesSection).toHaveClass("sm:mt-[2.84rem]");
 
     fireEvent.click(screen.getByRole("button", { name: /next/i }));
 
