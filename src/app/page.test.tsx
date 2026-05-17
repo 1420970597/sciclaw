@@ -145,12 +145,12 @@ describe("Home landing page", () => {
     expect(authColumn).toHaveClass("max-w-[258px]");
     expect(authColumn).toHaveClass("sm:max-w-[270px]");
     expect(authColumn).toHaveClass("lg:ml-auto");
-    expect(authColumn).toHaveClass("lg:mr-[1.94rem]");
-    expect(authColumn).toHaveClass("lg:-mt-[15.88rem]");
-    expect(authColumn).toHaveClass("lg:max-w-[388px]");
-    expect(authColumn).toHaveClass("xl:mr-[2.18rem]");
-    expect(authColumn).toHaveClass("xl:-mt-[16.26rem]");
-    expect(authColumn).toHaveClass("xl:max-w-[408px]");
+    expect(authColumn).toHaveClass("lg:mr-[1.74rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[16.12rem]");
+    expect(authColumn).toHaveClass("lg:max-w-[380px]");
+    expect(authColumn).toHaveClass("xl:mr-[1.98rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[16.5rem]");
+    expect(authColumn).toHaveClass("xl:max-w-[400px]");
     expect(authColumn).not.toHaveClass("lg:mr-[1.62rem]");
     expect(authColumn).not.toHaveClass("xl:mr-[1.82rem]");
     expect(authColumn).not.toHaveClass("lg:-mt-[15.42rem]");
