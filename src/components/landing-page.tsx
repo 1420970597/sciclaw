@@ -149,14 +149,14 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute inset-[0.2rem] rounded-full bg-current/90" />
         </span>
       ),
-      position: "right-[16.9%] top-[13.35%] sm:right-[16.9%] sm:top-[13.35%]",
-      lineClass: "left-[48.62%] top-[27.66%] h-[2.02px] w-[9.98%] origin-left rotate-[10deg]",
+      position: "right-[15.7%] top-[13.35%] sm:right-[15.7%] sm:top-[13.35%]",
+      lineClass: "left-[48.62%] top-[27.66%] h-[2.02px] w-[9.42%] origin-left rotate-[10deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
-      labelClass: "max-w-[132px] whitespace-nowrap text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
-      activeLabelClass: "max-w-[132px] whitespace-nowrap text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-[1.78rem] top-[0.4rem] sm:left-[1.86rem]",
+      labelClass: "max-w-[126px] whitespace-nowrap text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
+      activeLabelClass: "max-w-[126px] whitespace-nowrap text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
+      labelPositionClass: "absolute left-[1.62rem] top-[0.42rem] sm:left-[1.72rem]",
     },
     ],
     [],
@@ -461,7 +461,7 @@ function FeatureRotator({
       data-testid="feature-rotator"
       className="grid gap-4 lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)] lg:items-start lg:gap-[0.06rem] xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)] xl:gap-[0.1rem]"
     >
-      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.18rem] pr-0 py-1 sm:px-1 lg:-mt-[0.2rem] lg:mr-0 lg:px-0 lg:pl-[0.2rem] xl:-mt-[0.28rem] xl:mr-0 xl:px-1 xl:pl-[0.24rem]">
+      <div className="overflow-visible rounded-[2.05rem] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.46),_rgba(255,255,255,0)_66%)] pl-[0.34rem] pr-0 py-1 sm:px-1 sm:pl-[0.4rem] lg:-mt-[0.2rem] lg:mr-0 lg:px-0 lg:pl-[0.42rem] xl:-mt-[0.28rem] xl:mr-0 xl:px-1 xl:pl-[0.5rem]">
         <FeatureNetwork activeIndex={activeIndex} onSelect={onSelect} />
       </div>
       <FeaturePreview activeIndex={activeIndex} onGetStarted={onGetStarted} onApplyNow={onApplyNow} />

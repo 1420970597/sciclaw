@@ -61,9 +61,10 @@ describe("Home landing page", () => {
     expect(networkShell).toHaveClass("overflow-visible");
     expect(networkShellFrame).not.toBeNull();
     expect(networkShellFrame).toHaveClass("overflow-visible");
-    expect(networkShellFrame).toHaveClass("pl-[0.18rem]");
-    expect(networkShellFrame).toHaveClass("lg:pl-[0.2rem]");
-    expect(networkShellFrame).toHaveClass("xl:pl-[0.24rem]");
+    expect(networkShellFrame).toHaveClass("pl-[0.34rem]");
+    expect(networkShellFrame).toHaveClass("sm:pl-[0.4rem]");
+    expect(networkShellFrame).toHaveClass("lg:pl-[0.42rem]");
+    expect(networkShellFrame).toHaveClass("xl:pl-[0.5rem]");
     expect(networkShellFrame).toHaveClass("lg:-mt-[0.2rem]");
     expect(networkShellFrame).toHaveClass("lg:mr-0");
     expect(networkShellFrame).toHaveClass("xl:-mt-[0.28rem]");
@@ -165,10 +166,10 @@ describe("Home landing page", () => {
     expect(screen.getByText(/^literature analysis$/i)).toHaveClass("sm:left-[-1.82rem]");
     expect(screen.getByText(/^data mining$/i)).toHaveClass("max-w-[130px]");
     expect(screen.getByText(/^data mining$/i)).toHaveClass("top-[calc(100%-0.08rem)]");
-    expect(screen.getByText(/^outcome present$/i)).toHaveClass("max-w-[132px]");
-    expect(screen.getByText(/^outcome present$/i)).toHaveClass("left-[1.78rem]");
-    expect(screen.getByText(/^outcome present$/i)).toHaveClass("top-[0.4rem]");
-    expect(screen.getByText(/^outcome present$/i)).toHaveClass("sm:left-[1.86rem]");
+    expect(screen.getByText(/^outcome present$/i)).toHaveClass("max-w-[126px]");
+    expect(screen.getByText(/^outcome present$/i)).toHaveClass("left-[1.62rem]");
+    expect(screen.getByText(/^outcome present$/i)).toHaveClass("top-[0.42rem]");
+    expect(screen.getByText(/^outcome present$/i)).toHaveClass("sm:left-[1.72rem]");
     const previewHeadingBlockCopy = featurePreview?.firstElementChild;
     expect(previewHeadingBlockCopy).toHaveClass("relative");
     expect(previewHeadingBlockCopy).toHaveClass("space-y-[0.62rem]");
@@ -428,10 +429,10 @@ describe("Home landing page", () => {
 
     expect(literatureNode.parentElement?.className).toContain("left-[49.45%]");
     expect(dataMiningNode.parentElement?.className).toContain("left-[49.34%]");
-    expect(outcomeNode.parentElement?.className).toContain("right-[16.9%]");
+    expect(outcomeNode.parentElement?.className).toContain("right-[15.7%]");
     expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[9.6%]']")).not.toBeNull();
     expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[9.9%]']")).not.toBeNull();
-    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='top-[27.66%]'][class*='w-[9.98%]'][class*='rotate-[10deg]']")).not.toBeNull();
+    expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[9.42%]'][class*='top-[27.66%]'][class*='rotate-[10deg]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
     expect(outcomeNodeWrapper).toHaveClass("relative");
@@ -503,14 +504,14 @@ describe("Home landing page", () => {
     expect(dataMiningNodeLabel).toHaveClass("whitespace-nowrap");
     expect(dataMiningNodeLabel).toHaveClass("top-[calc(100%-0.08rem)]");
     expect(dataMiningNodeLabel).toHaveClass("text-[#3d5869]");
-    expect(outcomeNodeLabel).toHaveClass("max-w-[132px]");
+    expect(outcomeNodeLabel).toHaveClass("max-w-[126px]");
     expect(outcomeNodeLabel).toHaveClass("whitespace-nowrap");
-    expect(outcomeNodeLabel).toHaveClass("left-[1.78rem]");
-    expect(outcomeNodeLabel).toHaveClass("top-[0.4rem]");
+    expect(outcomeNodeLabel).toHaveClass("left-[1.62rem]");
+    expect(outcomeNodeLabel).toHaveClass("top-[0.42rem]");
     expect(outcomeNodeLabel).not.toHaveClass("-translate-y-1/2");
     expect(outcomeNodeLabel).toHaveClass("text-left");
     expect(outcomeNodeLabel).toHaveClass("text-[#3d5869]");
-    expect(outcomeNodeLabel).toHaveClass("sm:left-[1.86rem]");
+    expect(outcomeNodeLabel).toHaveClass("sm:left-[1.72rem]");
 
     const getStartedButton = within(landingHero).getByRole("button", { name: /^get started$/i });
     expect(
