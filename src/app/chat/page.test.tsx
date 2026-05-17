@@ -125,9 +125,9 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShellFrame).toHaveClass("pl-[0.18rem]");
     expect(chatNetworkShellFrame).toHaveClass("lg:pl-[0.2rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:pl-[0.24rem]");
-    expect(chatNetworkShellFrame).toHaveClass("lg:-mt-[2.18rem]");
+    expect(chatNetworkShellFrame).toHaveClass("lg:-mt-[0.2rem]");
     expect(chatNetworkShellFrame).toHaveClass("lg:mr-0");
-    expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[2.38rem]");
+    expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[0.28rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:mr-0");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[49.45%]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[49.34%]");
