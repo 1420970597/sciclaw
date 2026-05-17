@@ -436,7 +436,7 @@ function FeaturePreview({
 
       <div
         data-testid="feature-auth-wrapper"
-        className="order-3 mx-auto -mt-[2rem] w-full max-w-[304px] sm:max-w-[316px] lg:ml-auto lg:mr-[0.22rem] lg:-mt-[10.5rem] lg:max-w-[464px] xl:mr-[0.24rem] xl:-mt-[10.82rem] xl:max-w-[480px]"
+        className="order-3 mx-auto -mt-[1.96rem] w-full max-w-[300px] sm:max-w-[312px] lg:ml-auto lg:mr-[0.24rem] lg:-mt-[10.62rem] lg:max-w-[456px] xl:mr-[0.26rem] xl:-mt-[10.94rem] xl:max-w-[472px]"
       >
         <AuthCard onApplyNow={onApplyNow} />
       </div>
@@ -481,11 +481,11 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[252px] rounded-[0.9rem] border border-[rgba(244,247,250,0.95)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(251,246,240,0.74)_100%)] px-[0.26rem] py-[0.3rem] shadow-[0_1px_3px_rgba(15,23,42,0.008),0_1px_2px_rgba(241,180,135,0.002)] backdrop-blur-[0.18px] sm:px-[0.29rem] sm:py-[0.32rem] lg:max-w-[584px] xl:max-w-[600px]"
+      className="mx-auto w-full max-w-[248px] rounded-[0.88rem] border border-[rgba(246,248,251,0.95)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992)_0%,rgba(251,246,240,0.68)_100%)] px-[0.24rem] py-[0.28rem] shadow-[0_1px_2px_rgba(15,23,42,0.007),0_1px_2px_rgba(241,180,135,0.0018)] backdrop-blur-[0.14px] sm:px-[0.27rem] sm:py-[0.3rem] lg:max-w-[576px] xl:max-w-[592px]"
     >
-      <div className="mx-auto w-full max-w-[286px] lg:max-w-[592px] xl:max-w-[608px]">
-        <div className="rounded-[0.9rem] border border-[rgba(252,252,253,0.88)] bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(249,244,237,0.68)_100%)] p-[0.26rem] shadow-[0_2px_6px_rgba(15,23,42,0.007)]">
-          <div role="tablist" className="grid grid-cols-2 rounded-[0.68rem] bg-[rgba(247,241,234,0.76)] p-[0.22rem] text-sm text-[#6b7480]">
+      <div className="mx-auto w-full max-w-[282px] lg:max-w-[584px] xl:max-w-[600px]">
+        <div className="rounded-[0.88rem] border border-[rgba(252,252,253,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.938)_0%,rgba(249,244,237,0.64)_100%)] p-[0.24rem] shadow-[0_2px_5px_rgba(15,23,42,0.006)]">
+          <div role="tablist" className="grid grid-cols-2 rounded-[0.66rem] bg-[rgba(247,241,234,0.72)] p-[0.2rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
               { key: "login", label: "Login", panelId: "auth-panel-login" },
