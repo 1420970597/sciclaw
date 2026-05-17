@@ -59,6 +59,7 @@ describe("Chat route public landing clone", () => {
     expect(chatFeatureRotator).toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
     expect(chatFeatureRotator).toHaveClass("xl:gap-[0.1rem]");
     const chatFeaturePreview = chatPreviewCard.parentElement;
+    const bestCasesSection = screen.getByTestId("best-cases-section");
     expect(chatFeaturePreview).not.toBeNull();
     expect(chatFeaturePreview).not.toHaveClass("lg:grid");
     expect(chatFeaturePreview).not.toHaveClass("lg:grid-cols-[minmax(0,1fr)_218px]");
@@ -89,6 +90,8 @@ describe("Chat route public landing clone", () => {
     expect(authColumn).toHaveClass("xl:mr-[1.98rem]");
     expect(authColumn).toHaveClass("xl:-mt-[16.5rem]");
     expect(authColumn).toHaveClass("xl:max-w-[400px]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[5.08rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[5.44rem]");
     expect(authColumn).not.toHaveClass("lg:mr-[1.62rem]");
     expect(authColumn).not.toHaveClass("xl:mr-[1.82rem]");
     expect(authColumn).not.toHaveClass("lg:-mt-[15.42rem]");
@@ -199,11 +202,10 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.72rem]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.14em]");
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
-    const bestCasesSection = screen.getByTestId("best-cases-section");
     expect(bestCasesSection).toHaveClass("mt-[2.08rem]");
     expect(bestCasesSection).toHaveClass("sm:mt-[2.48rem]");
-    expect(bestCasesSection).toHaveClass("lg:mt-[5.2rem]");
-    expect(bestCasesSection).toHaveClass("xl:mt-[5.56rem]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[5.08rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[5.44rem]");
     expect(bestCasesSection.firstElementChild).toHaveClass("mb-[1.9rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
