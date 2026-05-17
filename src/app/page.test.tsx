@@ -494,8 +494,8 @@ describe("Home landing page", () => {
     expect(dataMiningNodeLabel).toHaveClass("text-[#3d5869]");
     expect(outcomeNodeLabel).toHaveClass("max-w-[122px]");
     expect(outcomeNodeLabel).toHaveClass("whitespace-nowrap");
-    expect(outcomeNodeLabel).toHaveClass("left-[2.02rem]");
-    expect(outcomeNodeLabel).toHaveClass("top-[0.24rem]");
+    expect(outcomeNodeLabel).toHaveClass("left-[2.16rem]");
+    expect(outcomeNodeLabel).toHaveClass("top-[0.28rem]");
     expect(outcomeNodeLabel).not.toHaveClass("-translate-y-1/2");
     expect(outcomeNodeLabel).toHaveClass("text-left");
     expect(outcomeNodeLabel).toHaveClass("text-[#3d5869]");
