@@ -69,6 +69,7 @@ export type HelpArticle = {
   sections: HelpSection[];
   nextHref?: string;
   nextLabel?: string;
+  relatedLinks?: NavLink[];
   body: HelpBodyBlock[];
 };
 
@@ -768,64 +769,80 @@ export const helpArticles: HelpArticle[] = [
   {
     slug: "persona",
     index: "08",
-    title: "Persona",
-    navTitle: "AI Persona",
+    title: "AI Persona",
     description:
-      "Persona settings describe how the assistant can be steered for different scientific workflows without breaking the calm app-shell narrative.",
+      "SciClaw uses three editable persona files to shape the AI's behavior and tailor it to your work.",
     icon: "persona",
     heroParagraphs: [
-      "Persona controls are shown as a public-facing explanation layer rather than a deep preferences console. The route should read as guidance, not a fully authenticated settings tool.",
+      "SciClaw uses three editable persona files to shape the AI's behavior and tailor it to your work.",
     ],
     sections: [
-      { id: "behavior-shaping", title: "Behavior shaping" },
-      { id: "session-fit", title: "Session fit" },
+      { id: "initial-ai-persona-setting", title: "Initial AI Persona setting" },
+      { id: "editing-persona-settings", title: "Editing persona settings" },
+      { id: "persona-files", title: "Persona files" },
     ],
-    nextHref: "/help/im",
-    nextLabel: "IM guide",
+    relatedLinks: [
+      { label: "Skills", href: "/help/skills" },
+      { label: "Connect Messaging Apps", href: "/help/im" },
+    ],
     body: [
       {
         type: "paragraph",
-        sectionId: "behavior-shaping",
+        sectionId: "initial-ai-persona-setting",
         content:
-          "Persona copy explains how SciClaw can adapt to review, synthesis, and output-shaping tasks while keeping the overall public shell lightweight.",
+          "As part of onboarding, SciClaw starts with a short guided conversation to understand how you work. This is where you can describe your research focus, working style, preferred interaction tone, and any boundaries or expectations you want the AI to follow. After the setup is complete, SciClaw saves this information as your initial AI Persona, which it uses to provide more personalized and aligned support from the start.",
       },
       {
         type: "paragraph",
-        sectionId: "session-fit",
+        sectionId: "editing-persona-settings",
         content:
-          "This route stays adjacent to chat and tasks because persona choices are meaningful only in the context of live session work.",
+          "To access persona settings, click the settings icon (⚙) on the right side of the conversation header and choose Prompts from the dropdown menu. This opens the persona editor, where you can manage SOUL, IDENTITY, and USER.",
+      },
+      {
+        type: "list",
+        sectionId: "persona-files",
+        items: [
+          "SOUL.md — Defines SciClaw's core purpose and mission",
+          "IDENTITY.md — Defines the AI's personality, tone, and interaction style",
+          "USER.md — Stores information about you, such as your research focus, expertise, preferences, and goals",
+          "Tip: Update USER.md regularly to reflect your current research topics and priorities. This helps SciClaw provide responses that are more relevant, personalized, and context-aware.",
+        ],
       },
     ],
   },
   {
     slug: "im",
     index: "09",
-    title: "IM",
-    navTitle: "IM Connection",
+    title: "Connect Messaging Apps",
+    navTitle: "Connect Messaging Apps",
     description:
-      "External workflow delivery explains how results leave the shell: notifications, routing, and lightweight collaboration handoff.",
+      "Connect SciClaw to the messaging apps your team already uses, so you can send tasks directly from chat and have AI-generated results pushed automatically to the team channel.",
     icon: "send",
     heroParagraphs: [
-      "The IM route keeps delivery visible without turning the public shell into a full communications product. It stays in the bridge narrative: session → review → handoff.",
+      "Connect SciClaw to the messaging apps your team already uses, so you can send tasks directly from chat and have AI-generated results pushed automatically to the team channel. Click the settings icon (⚙), choose Connect Messaging Apps, click Add Connection, select a platform, and fill in the required credentials to complete setup.",
     ],
     sections: [
-      { id: "delivery-lane", title: "Delivery lane" },
-      { id: "handoff-context", title: "Handoff context" },
+      { id: "telegram", title: "Telegram" },
+      { id: "discord", title: "Discord" },
     ],
-    nextHref: "/help/settings",
-    nextLabel: "Settings guide",
+    nextHref: "/help/persona",
+    nextLabel: "AI Persona",
     body: [
       {
-        type: "paragraph",
-        sectionId: "delivery-lane",
-        content:
-          "IM copy explains where a verified packet might go next: a teammate, a reporting channel, or a review checkpoint outside the shell.",
+        type: "list",
+        sectionId: "telegram",
+        items: [
+          "For instant messaging via bots in personal or group chats",
+          "Bot Token + Chat ID",
+        ],
       },
       {
-        type: "paragraph",
-        sectionId: "handoff-context",
-        content:
-          "Keeping this route public-facing preserves the live site's information architecture while hinting at the downstream workflow layer.",
+        type: "list",
+        sectionId: "discord",
+        items: [
+          "For server-based community chats with bot integration",
+          "Bot Token + Channel ID",
+        ],
       },
     ],
   },

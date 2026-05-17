@@ -252,7 +252,15 @@ function ArticleBody({ article }: { article: HelpArticle }) {
         })}
       </div>
 
-      {article.slug === "chat" ? (
+      {article.relatedLinks?.length ? (
+        <div className="mt-12 flex flex-wrap gap-4 border-t border-black/8 pt-6 text-sm text-[#6b6b6b]">
+          {article.relatedLinks.map((link) => (
+            <Link key={`${article.slug}-${link.href}`} href={link.href} className="inline-flex items-center gap-2 transition hover:text-[#e98532]">
+              <span>{link.label}</span>
+            </Link>
+          ))}
+        </div>
+      ) : article.slug === "chat" ? (
         <div className="mt-12 flex flex-wrap gap-4 border-t border-black/8 pt-6 text-sm text-[#6b6b6b]">
           <Link href="/help/projects" className="inline-flex items-center gap-2 transition hover:text-[#e98532]">
             <span>Project &amp; Session</span>
@@ -263,7 +271,7 @@ function ArticleBody({ article }: { article: HelpArticle }) {
         </div>
       ) : null}
 
-      {article.nextHref && article.nextLabel && article.slug !== "chat" ? (
+      {article.nextHref && article.nextLabel && !article.relatedLinks?.length && article.slug !== "chat" ? (
         <div className="mt-12 border-t border-black/8 pt-6">
           <Link href={article.nextHref} className="inline-flex items-center gap-2 text-sm text-[#6b6b6b] transition hover:text-[#e98532]">
             <span>{article.nextLabel}</span>

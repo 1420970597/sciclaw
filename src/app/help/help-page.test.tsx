@@ -115,6 +115,44 @@ describe("Help article page", () => {
     expect(screen.queryByRole("link", { name: /^usage$/i })).not.toBeInTheDocument();
   });
 
+  it("matches the live public persona page title, sections, and related links", async () => {
+    const page = await HelpArticlePage({
+      params: Promise.resolve({ slug: "persona" }),
+    });
+
+    render(page);
+
+    expect(screen.getByRole("heading", { name: /^ai persona$/i })).toBeInTheDocument();
+    expect(screen.getByText(/sciclaw uses three editable persona files to shape the ai's behavior and tailor it to your work\./i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^initial ai persona setting$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^editing persona settings$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^persona files$/i })).toBeInTheDocument();
+    expect(screen.getByText(/click the settings icon \(⚙\) on the right side of the conversation header and choose prompts/i)).toBeInTheDocument();
+    expect(screen.getByText(/soUL\.md — defines sciclaw's core purpose and mission/i)).toBeInTheDocument();
+    expect(screen.getByText(/identity\.md — defines the ai's personality, tone, and interaction style/i)).toBeInTheDocument();
+    expect(screen.getByText(/user\.md — stores information about you/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^skills$/i })).toHaveAttribute("href", "/help/skills");
+    expect(screen.getByRole("link", { name: /^connect messaging apps$/i })).toHaveAttribute("href", "/help/im");
+  });
+
+  it("matches the live public connect-messaging-apps page title, sections, and next link", async () => {
+    const page = await HelpArticlePage({
+      params: Promise.resolve({ slug: "im" }),
+    });
+
+    render(page);
+
+    expect(screen.getByRole("heading", { name: /^connect messaging apps$/i })).toBeInTheDocument();
+    expect(screen.getByText(/connect sciclaw to the messaging apps your team already uses/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^telegram$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^discord$/i })).toBeInTheDocument();
+    expect(screen.getByText(/for instant messaging via bots in personal or group chats/i)).toBeInTheDocument();
+    expect(screen.getByText(/^bot token \+ chat id$/i)).toBeInTheDocument();
+    expect(screen.getByText(/for server-based community chats with bot integration/i)).toBeInTheDocument();
+    expect(screen.getByText(/^bot token \+ channel id$/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^ai persona$/i })).toHaveAttribute("href", "/help/persona");
+  });
+
   it("opens the docs appearance menu with theme and language entries", async () => {
     const page = await HelpArticlePage({
       params: Promise.resolve({ slug: "getting-started" }),
