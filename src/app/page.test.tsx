@@ -495,12 +495,12 @@ describe("Home landing page", () => {
     expect(dataMiningNodeLabel).toHaveClass("text-[#3d5869]");
     expect(outcomeNodeLabel).toHaveClass("max-w-[122px]");
     expect(outcomeNodeLabel).toHaveClass("whitespace-nowrap");
-    expect(outcomeNodeLabel).toHaveClass("left-[1.92rem]");
-    expect(outcomeNodeLabel).toHaveClass("top-[0.34rem]");
+    expect(outcomeNodeLabel).toHaveClass("left-[1.78rem]");
+    expect(outcomeNodeLabel).toHaveClass("top-[0.28rem]");
     expect(outcomeNodeLabel).not.toHaveClass("-translate-y-1/2");
     expect(outcomeNodeLabel).toHaveClass("text-left");
     expect(outcomeNodeLabel).toHaveClass("text-[#3d5869]");
-    expect(outcomeNodeLabel).toHaveClass("sm:left-[2rem]");
+    expect(outcomeNodeLabel).toHaveClass("sm:left-[1.86rem]");
 
     const getStartedButton = within(landingHero).getByRole("button", { name: /^get started$/i });
     expect(
