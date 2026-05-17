@@ -127,10 +127,13 @@ describe("Help article page", () => {
     expect(screen.getByRole("heading", { name: /^initial ai persona setting$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^editing persona settings$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^persona files$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^why sciclaw uses file-based persona records$/i })).toBeInTheDocument();
     expect(screen.getByText(/click the settings icon \(⚙\) on the right side of the conversation header and choose prompts/i)).toBeInTheDocument();
     expect(screen.getByText(/soUL\.md — defines sciclaw's core purpose and mission/i)).toBeInTheDocument();
     expect(screen.getByText(/identity\.md — defines the ai's personality, tone, and interaction style/i)).toBeInTheDocument();
     expect(screen.getByText(/user\.md — stores information about you/i)).toBeInTheDocument();
+    expect(screen.getByText(/stores persona settings as editable files so they remain transparent, portable, and easy to revise/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^why sciclaw uses file-based persona records$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^skills$/i })).toHaveAttribute("href", "/help/skills");
     expect(screen.getByRole("link", { name: /^connect messaging apps$/i })).toHaveAttribute("href", "/help/im");
   });

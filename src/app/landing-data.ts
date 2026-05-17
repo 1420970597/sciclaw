@@ -780,6 +780,7 @@ export const helpArticles: HelpArticle[] = [
       { id: "initial-ai-persona-setting", title: "Initial AI Persona setting" },
       { id: "editing-persona-settings", title: "Editing persona settings" },
       { id: "persona-files", title: "Persona files" },
+      { id: "why-sciclaw-uses-file-based-persona-records", title: "Why SciClaw Uses File-Based Persona Records" },
     ],
     relatedLinks: [
       { label: "Skills", href: "/help/skills" },
@@ -807,6 +808,12 @@ export const helpArticles: HelpArticle[] = [
           "USER.md — Stores information about you, such as your research focus, expertise, preferences, and goals",
           "Tip: Update USER.md regularly to reflect your current research topics and priorities. This helps SciClaw provide responses that are more relevant, personalized, and context-aware.",
         ],
+      },
+      {
+        type: "paragraph",
+        sectionId: "why-sciclaw-uses-file-based-persona-records",
+        content:
+          "SciClaw stores persona settings as editable files so they remain transparent, portable, and easy to revise as your research workflow changes. This file-based structure also makes it easier to audit how guidance evolves over time without hiding key behavioral instructions behind opaque UI-only settings.",
       },
     ],
   },
