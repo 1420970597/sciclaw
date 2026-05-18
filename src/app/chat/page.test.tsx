@@ -18,10 +18,10 @@ describe("Chat route public landing clone", () => {
         /sciclaw connects inspiration generation, experimental execution, and iterative optimization/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("border-[rgba(15,23,42,0.26)]");
-    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("bg-white/82");
-    expect(screen.getByRole("button", { name: /contact us/i })).toHaveClass("border-[rgba(15,23,42,0.26)]");
-    expect(screen.getByRole("button", { name: /settings/i })).toHaveClass("shadow-[0_12px_26px_rgba(15,23,42,0.08)]");
+    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("border-[rgba(15,23,42,0.16)]");
+    expect(screen.getByRole("button", { name: /user guide/i })).toHaveClass("bg-white");
+    expect(screen.getByRole("button", { name: /contact us/i })).toHaveClass("border-[rgba(15,23,42,0.16)]");
+    expect(screen.getByRole("button", { name: /settings/i })).not.toHaveClass("shadow-[0_12px_26px_rgba(15,23,42,0.08)]");
     const utilityRow = screen.getByTestId("landing-utility-row");
     expect(utilityRow).toHaveClass("gap-[0.56rem]");
     expect(utilityRow).toHaveClass("pr-[1.38rem]");

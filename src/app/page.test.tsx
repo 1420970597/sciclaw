@@ -408,10 +408,10 @@ describe("Home landing page", () => {
       contactTrigger,
       settingsTrigger,
     ].forEach((trigger) => {
-      expect(trigger).toHaveClass("border-[rgba(15,23,42,0.26)]");
-      expect(trigger).toHaveClass("bg-white/82");
-      expect(trigger).toHaveClass("text-[#2f3a46]");
-      expect(trigger).toHaveClass("shadow-[0_12px_26px_rgba(15,23,42,0.08)]");
+      expect(trigger).toHaveClass("border-[rgba(15,23,42,0.16)]");
+      expect(trigger).toHaveClass("bg-white");
+      expect(trigger).toHaveClass("text-[#3f4751]");
+      expect(trigger).not.toHaveClass("shadow-[0_12px_26px_rgba(15,23,42,0.08)]");
       const icon = trigger.querySelector("svg");
       expect(icon).not.toBeNull();
       expect(icon).toHaveClass("h-[1.06rem]");
