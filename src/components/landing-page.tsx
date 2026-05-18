@@ -119,7 +119,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       wrapperClass: "items-center",
       labelClass: "max-w-[128px] whitespace-nowrap text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
       activeLabelClass: "max-w-[128px] whitespace-nowrap text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-[-1.76rem] top-[0.38rem] sm:left-[-1.82rem]",
+      labelPositionClass: "absolute left-[-1.88rem] top-[0.46rem] sm:left-[-1.94rem]",
     },
     {
       id: "data-mining",
@@ -156,7 +156,7 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       wrapperClass: "items-center",
       labelClass: "max-w-[126px] whitespace-nowrap text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
       activeLabelClass: "max-w-[126px] whitespace-nowrap text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-[1.62rem] top-[0.42rem] sm:left-[1.72rem]",
+      labelPositionClass: "absolute left-[1.78rem] top-[0.36rem] sm:left-[1.88rem]",
     },
     ],
     [],
