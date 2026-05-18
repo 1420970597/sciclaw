@@ -139,7 +139,7 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShellFrame).toHaveClass("xl:-mr-[0.12rem]");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[49.45%]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[49.34%]");
-    expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[15.7%]");
+    expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[15.3%]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("max-w-[128px]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("whitespace-nowrap");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("left-[-1.76rem]");
@@ -147,12 +147,12 @@ describe("Chat route public landing clone", () => {
     expect(within(chatHero).getByText(/^data mining$/i)).toHaveClass("max-w-[130px]");
     expect(within(chatHero).getByText(/^data mining$/i)).toHaveClass("whitespace-nowrap");
     expect(within(chatHero).getByText(/^data mining$/i)).toHaveClass("top-[calc(100%-0.08rem)]");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("max-w-[132px]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("max-w-[136px]");
     expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("whitespace-nowrap");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("left-[1.78rem]");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("top-[0.4rem]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("left-[1.94rem]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("top-[0.48rem]");
     expect(within(chatHero).getByText(/^outcome present$/i)).not.toHaveClass("-translate-y-1/2");
-    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("sm:left-[1.86rem]");
+    expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("sm:left-[2.02rem]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("sm:left-[-1.82rem]");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement).toHaveClass("inline-flex");
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement).toHaveClass("inline-flex");
