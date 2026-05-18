@@ -436,7 +436,7 @@ function FeaturePreview({
 
       <div
         data-testid="feature-auth-wrapper"
-        className="order-3 mx-auto -mt-[2.94rem] w-full max-w-[236px] sm:max-w-[248px] lg:ml-auto lg:mr-[1.32rem] lg:-mt-[17.02rem] lg:max-w-[308px] xl:mr-[1.62rem] xl:-mt-[17.38rem] xl:max-w-[328px]"
+        className="order-3 mx-auto -mt-[2.94rem] w-full max-w-[240px] sm:max-w-[252px] lg:ml-auto lg:mr-[1.08rem] lg:-mt-[17.2rem] lg:max-w-[316px] xl:mr-[1.32rem] xl:-mt-[17.58rem] xl:max-w-[336px]"
       >
         <AuthCard onApplyNow={onApplyNow} />
       </div>
@@ -724,7 +724,7 @@ function BestCases({
   };
 
   return (
-      <section data-testid="best-cases-section" className="mt-[2.28rem] sm:mt-[2.72rem] lg:mt-[5.18rem] xl:mt-[5.46rem]">
+      <section data-testid="best-cases-section" className="mt-[2.52rem] sm:mt-[2.96rem] lg:mt-[5.62rem] xl:mt-[5.92rem]">
         <div className="mb-[2.12rem] flex flex-col items-center gap-2.5 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
