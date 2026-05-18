@@ -138,17 +138,20 @@ describe("Help article page", () => {
     expect(screen.getByRole("link", { name: /^connect messaging apps$/i })).toHaveAttribute("href", "/help/im");
   });
 
-  it("matches the live public connect-messaging-apps page title, sections, and next link", async () => {
+  it("matches the live public connect-messaging-apps page title, cards, and next link", async () => {
     const page = await HelpArticlePage({
       params: Promise.resolve({ slug: "im" }),
     });
 
     render(page);
 
+    expect(screen.getAllByText(/^06$/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { name: /^connect messaging apps$/i })).toBeInTheDocument();
     expect(screen.getByText(/connect sciclaw to the messaging apps your team already uses/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /^telegram$/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /^discord$/i })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /^telegram$/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /^discord$/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /telegram for instant messaging via bots in personal or group chats bot token \+ chat id/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /discord for server-based community chats with bot integration bot token \+ channel id/i })).toBeInTheDocument();
     expect(screen.getByText(/for instant messaging via bots in personal or group chats/i)).toBeInTheDocument();
     expect(screen.getByText(/^bot token \+ chat id$/i)).toBeInTheDocument();
     expect(screen.getByText(/for server-based community chats with bot integration/i)).toBeInTheDocument();

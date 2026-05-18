@@ -3,6 +3,8 @@ import { DockMenuBar } from "@/components/dock-menu-bar";
 import { HelpToc } from "@/components/help-toc";
 import { helpSidebarEntries, helpArticleMap, type HelpArticle, type HelpIcon } from "@/app/landing-data";
 
+const helpSidebarIndexMap = Object.fromEntries(helpSidebarEntries.map((entry) => [entry.slug, entry.index]));
+
 type HelpShellProps = {
   article: HelpArticle;
 };
@@ -196,12 +198,14 @@ function DocsTopBar() {
 
 function ArticleBody({ article }: { article: HelpArticle }) {
   const paragraphs = article.heroParagraphs?.length ? article.heroParagraphs : [article.description];
+  const displayIndex = helpSidebarIndexMap[article.slug] ?? article.index;
+  const isMessagingAppsArticle = article.slug === "im";
 
   return (
     <article className="min-w-0">
       <div className="border-b border-black/8 pb-6">
         <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#b8b8b8]">
-          <span>{article.index}</span>
+          <span>{displayIndex}</span>
         </div>
         <h2 className="mt-3 text-[2rem] font-semibold tracking-[-0.035em] text-[#222] sm:text-[2.25rem]">
           {article.title}
@@ -220,12 +224,36 @@ function ArticleBody({ article }: { article: HelpArticle }) {
 
           return (
             <section key={section.id} id={section.id} className="scroll-mt-24">
-              <div className="flex items-center gap-3">
-                <span className="h-5 w-0.5 rounded-full bg-[#ef9b52]" aria-hidden />
-                <h3 className="text-[1.15rem] font-semibold text-[#1f1f1f]">{section.title}</h3>
-              </div>
-              <div className="mt-4 space-y-4">
-                {sectionBlocks.length > 0 ? (
+              {isMessagingAppsArticle ? null : (
+                <div className="flex items-center gap-3">
+                  <span className="h-5 w-0.5 rounded-full bg-[#ef9b52]" aria-hidden />
+                  <h3 className="text-[1.15rem] font-semibold text-[#1f1f1f]">{section.title}</h3>
+                </div>
+              )}
+              <div className={isMessagingAppsArticle ? "space-y-4" : "mt-4 space-y-4"}>
+                {isMessagingAppsArticle && sectionBlocks.every((block) => block.type === "list") ? (
+                  sectionBlocks.map((block, blockIndex) => {
+                    const [description, credential] = block.items;
+
+                    return (
+                      <button
+                        key={`${section.id}-card-${blockIndex}`}
+                        type="button"
+                        className="group flex w-full items-start justify-between gap-4 rounded-[1.2rem] border border-[rgba(15,23,42,0.08)] bg-[linear-gradient(180deg,#ffffff_0%,#fbfaf8_100%)] px-5 py-4 text-left shadow-[0_14px_28px_rgba(15,23,42,0.05)] transition hover:border-[rgba(233,133,50,0.32)] hover:shadow-[0_18px_36px_rgba(15,23,42,0.08)]"
+                      >
+                        <span className="min-w-0 space-y-1.5">
+                          <span className="block text-[1rem] font-semibold text-[#1f1f1f]">{section.title}</span>
+                          {description ? <span className="block text-[15px] leading-7 text-[#555]">{description}</span> : null}
+                        </span>
+                        {credential ? (
+                          <span className="shrink-0 rounded-full border border-[rgba(15,23,42,0.08)] bg-[#fbf7f2] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8b6a54]">
+                            {credential}
+                          </span>
+                        ) : null}
+                      </button>
+                    );
+                  })
+                ) : sectionBlocks.length > 0 ? (
                   sectionBlocks.map((block, blockIndex) =>
                     block.type === "paragraph" ? (
                       <p key={`${section.id}-paragraph-${blockIndex}`} className="text-[16px] leading-8 text-[#4a4a4a]">
