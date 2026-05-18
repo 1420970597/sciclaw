@@ -90,8 +90,8 @@ describe("Chat route public landing clone", () => {
     expect(authColumn).toHaveClass("xl:mr-[1.78rem]");
     expect(authColumn).toHaveClass("xl:-mt-[17.2rem]");
     expect(authColumn).toHaveClass("xl:max-w-[364px]");
-    expect(bestCasesSection).toHaveClass("lg:mt-[4.72rem]");
-    expect(bestCasesSection).toHaveClass("xl:mt-[5.02rem]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[4.98rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[5.28rem]");
     expect(authColumn).not.toHaveClass("lg:mr-[1.44rem]");
     expect(authColumn).not.toHaveClass("xl:mr-[1.72rem]");
     expect(authColumn).not.toHaveClass("lg:-mt-[16.62rem]");
@@ -207,8 +207,8 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("heading", { name: /best cases/i })).toBeInTheDocument();
     expect(bestCasesSection).toHaveClass("mt-[2.08rem]");
     expect(bestCasesSection).toHaveClass("sm:mt-[2.48rem]");
-    expect(bestCasesSection).toHaveClass("lg:mt-[4.72rem]");
-    expect(bestCasesSection).toHaveClass("xl:mt-[5.02rem]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[4.98rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[5.28rem]");
     expect(bestCasesSection.firstElementChild).toHaveClass("mb-[1.9rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
