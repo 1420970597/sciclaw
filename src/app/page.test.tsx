@@ -117,6 +117,8 @@ describe("Home landing page", () => {
     const authCard = screen.getByTestId("landing-auth-card");
     const previewCard = screen.getByTestId("feature-preview-card");
     expect(hero).toHaveClass("lg:-mt-[1.68rem]");
+    expect(hero).toHaveClass("lg:pb-[0.72rem]");
+    expect(hero).toHaveClass("xl:pb-[0.96rem]");
     const authColumn = screen.getByTestId("feature-auth-wrapper");
     expect(authColumn).not.toBeNull();
     expect(featureRotator).toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
