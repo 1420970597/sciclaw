@@ -112,14 +112,14 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: <span className="inline-block h-[0.68rem] w-[0.68rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.14)]" aria-hidden />,
-      position: "left-[49.45%] top-[13.2%] sm:left-[49.45%] sm:top-[13.2%]",
-      lineClass: "left-[48.7%] top-[27.62%] h-[2.02px] w-[9.6%] origin-left -rotate-[5deg]",
+      position: "left-[42.2%] top-[13.2%] sm:left-[42.2%] sm:top-[13.2%]",
+      lineClass: "left-[41.4%] top-[27.62%] h-[2.02px] w-[16.4%] origin-left -rotate-[5deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
       labelClass: "max-w-[128px] whitespace-nowrap text-left text-[#3d5869] drop-shadow-[0_1px_0_rgba(255,255,255,0.96)]",
       activeLabelClass: "max-w-[128px] whitespace-nowrap text-left text-[#5f381d] drop-shadow-[0_2px_3px_rgba(240,142,79,0.012)]",
-      labelPositionClass: "absolute left-[-1.76rem] top-[0.38rem] sm:left-[-1.82rem]",
+      labelPositionClass: "absolute left-[-2.12rem] top-[0.38rem] sm:left-[-2.2rem]",
     },
     {
       id: "data-mining",
@@ -131,8 +131,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[49.34%] top-[46.8%] sm:left-[49.34%] sm:top-[46.8%]",
-      lineClass: "left-[48.38%] top-[49.84%] h-[2.02px] w-[9.9%] origin-left rotate-[5deg]",
+      position: "left-[41.9%] top-[46.8%] sm:left-[41.9%] sm:top-[46.8%]",
+      lineClass: "left-[40.9%] top-[49.84%] h-[2.02px] w-[17%] origin-left rotate-[5deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
