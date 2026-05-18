@@ -112,8 +112,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: <span className="inline-block h-[0.68rem] w-[0.68rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.14)]" aria-hidden />,
-      position: "left-[44.2%] top-[13.5%] sm:left-[44.2%] sm:top-[13.5%]",
-      lineClass: "left-[43.1%] top-[27.78%] h-[2.02px] w-[14.4%] origin-left -rotate-[5deg]",
+      position: "left-[44.55%] top-[13.5%] sm:left-[44.55%] sm:top-[13.5%]",
+      lineClass: "left-[43.45%] top-[27.78%] h-[2.02px] w-[13.95%] origin-left -rotate-[5deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
@@ -131,8 +131,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[44.05%] top-[46.55%] sm:left-[44.05%] sm:top-[46.55%]",
-      lineClass: "left-[42.95%] top-[49.72%] h-[2.02px] w-[15%] origin-left rotate-[5deg]",
+      position: "left-[44.3%] top-[46.55%] sm:left-[44.3%] sm:top-[46.55%]",
+      lineClass: "left-[43.18%] top-[49.72%] h-[2.02px] w-[14.7%] origin-left rotate-[5deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
