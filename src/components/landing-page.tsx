@@ -724,7 +724,7 @@ function BestCases({
   };
 
   return (
-      <section data-testid="best-cases-section" className="mt-[2.52rem] sm:mt-[2.96rem] lg:mt-[5.62rem] xl:mt-[5.92rem]">
+      <section data-testid="best-cases-section" className="mt-[2.52rem] sm:mt-[2.96rem] lg:mt-[5.9rem] xl:mt-[6.24rem]">
         <div className="mb-[2.12rem] flex flex-col items-center gap-2.5 text-center">
         <h2 className="text-[2rem] font-semibold tracking-[-0.03em] text-[#1f232a] sm:text-[2.4rem]">
           Best <span className="text-[#ec8a44]">Cases</span>
