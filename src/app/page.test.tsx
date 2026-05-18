@@ -107,8 +107,8 @@ describe("Home landing page", () => {
     const bestCasesSection = screen.getByTestId("best-cases-section");
     expect(bestCasesSection).toHaveClass("mt-[2.52rem]");
     expect(bestCasesSection).toHaveClass("sm:mt-[2.96rem]");
-    expect(bestCasesSection).toHaveClass("lg:mt-[5.32rem]");
-    expect(bestCasesSection).toHaveClass("xl:mt-[5.64rem]");
+    expect(bestCasesSection).toHaveClass("lg:mt-[5.4rem]");
+    expect(bestCasesSection).toHaveClass("xl:mt-[5.74rem]");
     expect(bestCasesSection.firstElementChild).toHaveClass("mb-[2.12rem]");
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
@@ -148,10 +148,10 @@ describe("Home landing page", () => {
     expect(authColumn).toHaveClass("sm:max-w-[244px]");
     expect(authColumn).toHaveClass("lg:ml-auto");
     expect(authColumn).toHaveClass("lg:mr-[0.72rem]");
-    expect(authColumn).toHaveClass("lg:-mt-[17.22rem]");
+    expect(authColumn).toHaveClass("lg:-mt-[17.18rem]");
     expect(authColumn).toHaveClass("lg:max-w-[300px]");
     expect(authColumn).toHaveClass("xl:mr-[0.92rem]");
-    expect(authColumn).toHaveClass("xl:-mt-[17.68rem]");
+    expect(authColumn).toHaveClass("xl:-mt-[17.62rem]");
     expect(authColumn).toHaveClass("xl:max-w-[320px]");
     expect(authColumn).not.toHaveClass("max-w-[240px]");
     expect(authColumn).not.toHaveClass("sm:max-w-[252px]");
