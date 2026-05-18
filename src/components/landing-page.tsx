@@ -91,7 +91,7 @@ function Header() {
         <div data-testid="landing-header-wordmark" className="pr-4 text-[0.98rem] font-semibold tracking-[-0.04em] text-[#1b2027] sm:text-[1.04rem]">
           Sci<span className="text-[#eb8a3c]">Claw</span>
         </div>
-        <div data-testid="landing-utility-row" className="flex items-center gap-[0.56rem] pr-[1.38rem] sm:gap-[0.72rem] sm:pr-[1.42rem]">
+        <div data-testid="landing-utility-row" className="flex items-center gap-[0.52rem] pr-[1.26rem] sm:gap-[0.68rem] sm:pr-[1.3rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             className="gap-[0.3rem] sm:gap-[0.38rem]"
@@ -346,7 +346,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-2 rounded-[2.08rem] border border-[rgba(176,190,204,0.98)] bg-[linear-gradient(180deg,#faf4ec_0%,#d4dfe9_100%)] p-[1.28rem] shadow-[0_28px_56px_rgba(15,23,42,0.16)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-2 rounded-[2.08rem] border border-[rgba(176,190,204,0.98)] bg-[linear-gradient(180deg,#f9f2e8_0%,#d5e0ea_100%)] p-[1.28rem] shadow-[0_30px_60px_rgba(15,23,42,0.17)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -436,7 +436,7 @@ function FeaturePreview({
 
       <div
         data-testid="feature-auth-wrapper"
-        className="order-3 mx-auto -mt-[2.94rem] w-full max-w-[240px] sm:max-w-[252px] lg:ml-auto lg:mr-[1.08rem] lg:-mt-[18.08rem] lg:max-w-[312px] xl:mr-[1.32rem] xl:-mt-[18.5rem] xl:max-w-[332px]"
+        className="order-3 mx-auto -mt-[2.18rem] w-full max-w-[232px] sm:max-w-[244px] lg:ml-auto lg:mr-[0.72rem] lg:-mt-[17.22rem] lg:max-w-[300px] xl:mr-[0.92rem] xl:-mt-[17.68rem] xl:max-w-[320px]"
       >
         <AuthCard onApplyNow={onApplyNow} />
       </div>
@@ -481,9 +481,9 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[220px] rounded-[0.74rem] border border-[rgba(233,238,244,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.976)_0%,rgba(249,244,237,0.62)_100%)] px-[0.18rem] py-[0.18rem] shadow-[0_8px_18px_rgba(15,23,42,0.045),0_4px_10px_rgba(241,180,135,0.06)] backdrop-blur-[6px] sm:px-[0.2rem] sm:py-[0.2rem] lg:max-w-[480px] xl:max-w-[496px]"
+      className="mx-auto w-full max-w-[212px] rounded-[0.74rem] border border-[rgba(226,232,239,0.94)] bg-[linear-gradient(180deg,rgba(255,255,255,0.986)_0%,rgba(249,245,239,0.82)_100%)] px-[0.16rem] py-[0.16rem] shadow-[0_10px_22px_rgba(15,23,42,0.04),0_3px_7px_rgba(241,180,135,0.042)] backdrop-blur-[4px] sm:px-[0.18rem] sm:py-[0.18rem] lg:max-w-[468px] xl:max-w-[484px]"
     >
-      <div className="mx-auto w-full max-w-[252px] lg:max-w-[484px] xl:max-w-[500px]">
+      <div className="mx-auto w-full max-w-[244px] lg:max-w-[472px] xl:max-w-[488px]">
         <div className="rounded-[0.78rem] border border-[rgba(250,250,252,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(249,244,237,0.68)_100%)] p-[0.2rem] shadow-[0_6px_16px_rgba(15,23,42,0.035)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.66rem] bg-[rgba(247,241,234,0.72)] p-[0.2rem] text-sm text-[#6b7480]">
             {[
