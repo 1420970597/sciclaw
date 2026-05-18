@@ -168,10 +168,10 @@ describe("Chat route public landing clone", () => {
     expect(chatAuthCard).toHaveClass("lg:max-w-[480px]");
     expect(chatAuthCard).toHaveClass("xl:max-w-[496px]");
     expect(chatAuthCard).toHaveClass("rounded-[0.74rem]");
-    expect(chatAuthCard).toHaveClass("border-[rgba(247,249,252,0.66)]");
-    expect(chatAuthCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.952)_0%,rgba(249,244,237,0.32)_100%)]");
-    expect(chatAuthCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.0014),0_1px_2px_rgba(241,180,135,0.00026)]");
-    expect(chatAuthCard).toHaveClass("backdrop-blur-[0.03px]");
+    expect(chatAuthCard).toHaveClass("border-[rgba(233,238,244,0.9)]");
+    expect(chatAuthCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.976)_0%,rgba(249,244,237,0.62)_100%)]");
+    expect(chatAuthCard).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.045),0_4px_10px_rgba(241,180,135,0.06)]");
+    expect(chatAuthCard).toHaveClass("backdrop-blur-[6px]");
     expect(chatAuthCard).toHaveClass("mx-auto");
     expect(chatAuthCard.firstElementChild).toHaveClass("max-w-[252px]");
     expect(chatAuthCard.firstElementChild).toHaveClass("lg:max-w-[484px]");
@@ -180,9 +180,9 @@ describe("Chat route public landing clone", () => {
     expect(chatAuthCard).not.toHaveClass("max-w-[224px]");
     expect(chatAuthCard).not.toHaveClass("lg:max-w-[492px]");
     expect(chatAuthCard).not.toHaveClass("xl:max-w-[508px]");
-    expect(chatPreviewCard).toHaveClass("border-[rgba(194,204,215,0.98)]");
-    expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#fbf7f1_0%,#dfe8f1_100%)]");
-    expect(chatPreviewCard).toHaveClass("shadow-[0_24px_48px_rgba(15,23,42,0.128)]");
+    expect(chatPreviewCard).toHaveClass("border-[rgba(176,190,204,0.98)]");
+    expect(chatPreviewCard).toHaveClass("bg-[linear-gradient(180deg,#faf4ec_0%,#d4dfe9_100%)]");
+    expect(chatPreviewCard).toHaveClass("shadow-[0_28px_56px_rgba(15,23,42,0.16)]");
     const chatPreviewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(chatPreviewLabelRow).toHaveClass("mt-[1.46rem]");
     expect(chatPreviewLabelRow).toHaveClass("gap-[2.18rem]");

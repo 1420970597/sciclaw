@@ -199,10 +199,10 @@ describe("Home landing page", () => {
     expect(authCard).toHaveClass("lg:max-w-[480px]");
     expect(authCard).toHaveClass("xl:max-w-[496px]");
     expect(authCard).toHaveClass("rounded-[0.74rem]");
-    expect(authCard).toHaveClass("border-[rgba(247,249,252,0.66)]");
-    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.952)_0%,rgba(249,244,237,0.32)_100%)]");
-    expect(authCard).toHaveClass("shadow-[0_1px_2px_rgba(15,23,42,0.0014),0_1px_2px_rgba(241,180,135,0.00026)]");
-    expect(authCard).toHaveClass("backdrop-blur-[0.03px]");
+    expect(authCard).toHaveClass("border-[rgba(233,238,244,0.9)]");
+    expect(authCard).toHaveClass("bg-[linear-gradient(180deg,rgba(255,255,255,0.976)_0%,rgba(249,244,237,0.62)_100%)]");
+    expect(authCard).toHaveClass("shadow-[0_8px_18px_rgba(15,23,42,0.045),0_4px_10px_rgba(241,180,135,0.06)]");
+    expect(authCard).toHaveClass("backdrop-blur-[6px]");
     expect(authCard).toHaveClass("mx-auto");
     expect(authCard.firstElementChild).toHaveClass("max-w-[252px]");
     expect(authCard.firstElementChild).toHaveClass("lg:max-w-[484px]");
@@ -212,9 +212,9 @@ describe("Home landing page", () => {
     expect(authCard).not.toHaveClass("lg:max-w-[492px]");
     expect(authCard).not.toHaveClass("xl:max-w-[508px]");
     expect(previewCard).toHaveClass("rounded-[2.08rem]");
-    expect(previewCard).toHaveClass("border-[rgba(194,204,215,0.98)]");
-    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#fbf7f1_0%,#dfe8f1_100%)]");
-    expect(previewCard).toHaveClass("shadow-[0_24px_48px_rgba(15,23,42,0.128)]");
+    expect(previewCard).toHaveClass("border-[rgba(176,190,204,0.98)]");
+    expect(previewCard).toHaveClass("bg-[linear-gradient(180deg,#faf4ec_0%,#d4dfe9_100%)]");
+    expect(previewCard).toHaveClass("shadow-[0_28px_56px_rgba(15,23,42,0.16)]");
     const previewLabelRow = screen.getByTestId("feature-preview-chart-label-row");
     expect(previewLabelRow).toHaveClass("mt-[1.46rem]");
     expect(previewLabelRow).toHaveClass("gap-[2.18rem]");

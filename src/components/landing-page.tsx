@@ -346,7 +346,7 @@ function FeaturePreview({
         </button>
       </div>
 
-      <div className="order-2 rounded-[2.08rem] border border-[rgba(194,204,215,0.98)] bg-[linear-gradient(180deg,#fbf7f1_0%,#dfe8f1_100%)] p-[1.28rem] shadow-[0_24px_48px_rgba(15,23,42,0.128)] sm:p-[1.42rem]" data-testid="feature-preview-card">
+      <div className="order-2 rounded-[2.08rem] border border-[rgba(176,190,204,0.98)] bg-[linear-gradient(180deg,#faf4ec_0%,#d4dfe9_100%)] p-[1.28rem] shadow-[0_28px_56px_rgba(15,23,42,0.16)] sm:p-[1.42rem]" data-testid="feature-preview-card">
         <div className="flex items-center justify-between">
           <span className="h-1.5 w-[4.3rem] rounded-full bg-[#e3e7ec]" aria-hidden />
           <div className="flex items-center gap-1.5" aria-hidden>
@@ -481,10 +481,10 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[220px] rounded-[0.74rem] border border-[rgba(247,249,252,0.66)] bg-[linear-gradient(180deg,rgba(255,255,255,0.952)_0%,rgba(249,244,237,0.32)_100%)] px-[0.18rem] py-[0.18rem] shadow-[0_1px_2px_rgba(15,23,42,0.0014),0_1px_2px_rgba(241,180,135,0.00026)] backdrop-blur-[0.03px] sm:px-[0.2rem] sm:py-[0.2rem] lg:max-w-[480px] xl:max-w-[496px]"
+      className="mx-auto w-full max-w-[220px] rounded-[0.74rem] border border-[rgba(233,238,244,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.976)_0%,rgba(249,244,237,0.62)_100%)] px-[0.18rem] py-[0.18rem] shadow-[0_8px_18px_rgba(15,23,42,0.045),0_4px_10px_rgba(241,180,135,0.06)] backdrop-blur-[6px] sm:px-[0.2rem] sm:py-[0.2rem] lg:max-w-[480px] xl:max-w-[496px]"
     >
       <div className="mx-auto w-full max-w-[252px] lg:max-w-[484px] xl:max-w-[500px]">
-        <div className="rounded-[0.78rem] border border-[rgba(252,252,253,0.8)] bg-[linear-gradient(180deg,rgba(255,255,255,0.914)_0%,rgba(249,244,237,0.48)_100%)] p-[0.2rem] shadow-[0_1px_3px_rgba(15,23,42,0.0034)]">
+        <div className="rounded-[0.78rem] border border-[rgba(250,250,252,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(249,244,237,0.68)_100%)] p-[0.2rem] shadow-[0_6px_16px_rgba(15,23,42,0.035)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.66rem] bg-[rgba(247,241,234,0.72)] p-[0.2rem] text-sm text-[#6b7480]">
             {[
               { key: "onboard", label: "Onboard", panelId: "auth-panel-onboard" },
