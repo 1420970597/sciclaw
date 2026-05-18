@@ -436,7 +436,7 @@ function FeaturePreview({
 
       <div
         data-testid="feature-auth-wrapper"
-        className="order-3 mx-auto -mt-[2.88rem] w-full max-w-[244px] sm:max-w-[256px] lg:ml-auto lg:mr-[1.48rem] lg:-mt-[16.7rem] lg:max-w-[336px] xl:mr-[1.78rem] xl:-mt-[17.08rem] xl:max-w-[356px]"
+        className="order-3 mx-auto -mt-[2.88rem] w-full max-w-[244px] sm:max-w-[256px] lg:ml-auto lg:mr-[1.36rem] lg:-mt-[16.7rem] lg:max-w-[324px] xl:mr-[1.64rem] xl:-mt-[17.08rem] xl:max-w-[344px]"
       >
         <AuthCard onApplyNow={onApplyNow} />
       </div>
@@ -481,9 +481,9 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[220px] rounded-[0.74rem] border border-[rgba(247,249,252,0.74)] bg-[linear-gradient(180deg,rgba(255,255,255,0.958)_0%,rgba(249,244,237,0.38)_100%)] px-[0.18rem] py-[0.18rem] shadow-[0_1px_2px_rgba(15,23,42,0.0018),0_1px_2px_rgba(241,180,135,0.00038)] backdrop-blur-[0.05px] sm:px-[0.2rem] sm:py-[0.2rem] lg:max-w-[492px] xl:max-w-[508px]"
+      className="mx-auto w-full max-w-[220px] rounded-[0.74rem] border border-[rgba(247,249,252,0.66)] bg-[linear-gradient(180deg,rgba(255,255,255,0.952)_0%,rgba(249,244,237,0.32)_100%)] px-[0.18rem] py-[0.18rem] shadow-[0_1px_2px_rgba(15,23,42,0.0014),0_1px_2px_rgba(241,180,135,0.00026)] backdrop-blur-[0.03px] sm:px-[0.2rem] sm:py-[0.2rem] lg:max-w-[480px] xl:max-w-[496px]"
     >
-      <div className="mx-auto w-full max-w-[252px] lg:max-w-[496px] xl:max-w-[512px]">
+      <div className="mx-auto w-full max-w-[252px] lg:max-w-[484px] xl:max-w-[500px]">
         <div className="rounded-[0.78rem] border border-[rgba(252,252,253,0.8)] bg-[linear-gradient(180deg,rgba(255,255,255,0.914)_0%,rgba(249,244,237,0.48)_100%)] p-[0.2rem] shadow-[0_1px_3px_rgba(15,23,42,0.0034)]">
           <div role="tablist" className="grid grid-cols-2 rounded-[0.66rem] bg-[rgba(247,241,234,0.72)] p-[0.2rem] text-sm text-[#6b7480]">
             {[
