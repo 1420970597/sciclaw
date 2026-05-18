@@ -139,8 +139,8 @@ describe("Chat route public landing clone", () => {
     expect(chatNetworkShellFrame).toHaveClass("lg:-mr-[0.08rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:-mt-[0.38rem]");
     expect(chatNetworkShellFrame).toHaveClass("xl:-mr-[0.12rem]");
-    expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[44.55%]");
-    expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[44.3%]");
+    expect(within(chatHero).getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[44.82%]");
+    expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[44.56%]");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement?.className).toContain("right-[14.2%]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("max-w-[128px]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("whitespace-nowrap");
@@ -156,15 +156,13 @@ describe("Chat route public landing clone", () => {
     expect(within(chatHero).getByText(/^outcome present$/i)).not.toHaveClass("-translate-y-1/2");
     expect(within(chatHero).getByText(/^outcome present$/i)).toHaveClass("sm:left-[1.86rem]");
     expect(within(chatHero).getByText(/^literature analysis$/i)).toHaveClass("sm:left-[-1.82rem]");
-    expect(chatHero.querySelector("span[class*='w-[13.95%]']")).not.toBeNull();
-    expect(chatHero.querySelector("span[class*='w-[14.7%]']")).not.toBeNull();
+    expect(chatHero.querySelector("span[class*='w-[13.55%]']")).not.toBeNull();
+    expect(chatHero.querySelector("span[class*='w-[14.28%]']")).not.toBeNull();
     expect(within(chatHero).getByTestId("feature-node-data-mining").parentElement).toHaveClass("inline-flex");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").parentElement).toHaveClass("inline-flex");
     expect(within(chatHero).getByTestId("feature-node-literature-analysis").firstElementChild).toHaveClass("h-[4.74rem]");
     expect(within(chatHero).getByTestId("feature-node-data-mining").firstElementChild).toHaveClass("h-[4.58rem]");
     expect(within(chatHero).getByTestId("feature-node-outcome-present").firstElementChild).toHaveClass("h-[4.58rem]");
-    expect(chatHero.querySelector("span[class*='w-[13.95%]']")).not.toBeNull();
-    expect(chatHero.querySelector("span[class*='w-[14.7%]']")).not.toBeNull();
     expect(chatHero.querySelector("span[class*='w-[8.9%]'][class*='top-[27.54%]'][class*='rotate-[10deg]']")).not.toBeNull();
     expect(chatHero).not.toHaveClass("xl:grid-cols-[minmax(0,1.08fr)_232px]");
     expect(chatAuthCard).toHaveClass("max-w-[212px]");

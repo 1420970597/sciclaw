@@ -167,10 +167,12 @@ describe("Home landing page", () => {
     expect(authColumn).not.toHaveClass("xl:-ml-[0.03rem]");
     expect(authColumn).not.toHaveClass("xl:mt-[0.24rem]");
     expect(screen.getByText(/^literature analysis$/i)).toHaveClass("max-w-[128px]");
+    expect(screen.getByTestId("feature-node-literature-analysis").parentElement?.className).toContain("left-[44.82%]");
     expect(screen.getByText(/^literature analysis$/i)).toHaveClass("left-[-1.72rem]");
     expect(screen.getByText(/^literature analysis$/i)).toHaveClass("top-[0.34rem]");
     expect(screen.getByText(/^literature analysis$/i)).toHaveClass("sm:left-[-1.82rem]");
     expect(screen.getByText(/^data mining$/i)).toHaveClass("max-w-[130px]");
+    expect(screen.getByTestId("feature-node-data-mining").parentElement?.className).toContain("left-[44.56%]");
     expect(screen.getByText(/^data mining$/i)).toHaveClass("top-[calc(100%+0.02rem)]");
     expect(screen.getByText(/^outcome present$/i)).toHaveClass("max-w-[136px]");
     expect(screen.getByText(/^outcome present$/i)).toHaveClass("left-[1.78rem]");
@@ -436,11 +438,11 @@ describe("Home landing page", () => {
     const dataMiningNodeWrapper = dataMiningNode.parentElement;
     const outcomeNodeWrapper = outcomeNode.parentElement;
 
-    expect(literatureNode.parentElement?.className).toContain("left-[44.55%]");
-    expect(dataMiningNode.parentElement?.className).toContain("left-[44.3%]");
+    expect(literatureNode.parentElement?.className).toContain("left-[44.82%]");
+    expect(dataMiningNode.parentElement?.className).toContain("left-[44.56%]");
     expect(outcomeNode.parentElement?.className).toContain("right-[14.2%]");
-    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[13.95%]']")).not.toBeNull();
-    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.7%]']")).not.toBeNull();
+    expect(literatureNodeWrapper?.parentElement?.querySelector("span[class*='w-[13.55%]']")).not.toBeNull();
+    expect(dataMiningNodeWrapper?.parentElement?.querySelector("span[class*='w-[14.28%]']")).not.toBeNull();
     expect(outcomeNodeWrapper?.parentElement?.querySelector("span[class*='w-[8.9%]'][class*='top-[27.54%]'][class*='rotate-[10deg]']")).not.toBeNull();
     expect(literatureNodeWrapper).toHaveClass("relative");
     expect(dataMiningNodeWrapper).toHaveClass("relative");
