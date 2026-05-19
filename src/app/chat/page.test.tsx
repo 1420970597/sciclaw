@@ -107,6 +107,10 @@ describe("Chat route public landing clone", () => {
     expect(authColumn).not.toHaveClass("lg:max-w-[14.12rem]");
     expect(authColumn).not.toHaveClass("xl:-ml-[0.03rem]");
     expect(authColumn).not.toHaveClass("xl:mt-[0.24rem]");
+    expect(authColumn).not.toHaveClass("lg:grid-cols-[minmax(0,328px)_minmax(0,1fr)]");
+    expect(authColumn).not.toHaveClass("xl:grid-cols-[minmax(0,342px)_minmax(0,1fr)]");
+    expect(authColumn).not.toHaveClass("lg:gap-[0.06rem]");
+    expect(authColumn).not.toHaveClass("xl:gap-[0.1rem]");
     expect(chatPreviewHeadingBlock).toHaveClass("relative");
     expect(chatPreviewHeadingBlock).toHaveClass("space-y-[0.62rem]");
     expect(chatPreviewHeadingBlock).toHaveClass("pb-[2.9rem]");
