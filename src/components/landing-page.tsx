@@ -91,7 +91,7 @@ function Header() {
         <div data-testid="landing-header-wordmark" className="pr-4 text-[0.98rem] font-semibold tracking-[-0.04em] text-[#1b2027] sm:text-[1.04rem]">
           Sci<span className="text-[#eb8a3c]">Claw</span>
         </div>
-        <div data-testid="landing-utility-row" className="flex items-center gap-[0.52rem] pr-[1.26rem] sm:gap-[0.68rem] sm:pr-[1.3rem]">
+        <div data-testid="landing-utility-row" className="flex items-center gap-[0.48rem] pr-[1.18rem] sm:gap-[0.62rem] sm:pr-[1.22rem]">
           <DockMenuBar
             groups={settingsGroups.map((group) => ({ ...group, items: [...group.items] }))}
             className="gap-[0.3rem] sm:gap-[0.38rem]"
@@ -112,8 +112,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
       id: "literature-analysis",
       label: "Literature Analysis",
       icon: <span className="inline-block h-[0.68rem] w-[0.68rem] rounded-full bg-current/90 shadow-[0_0_0_1px_rgba(255,255,255,0.14)]" aria-hidden />,
-      position: "left-[44.82%] top-[13.5%] sm:left-[44.82%] sm:top-[13.5%]",
-      lineClass: "left-[43.78%] top-[27.78%] h-[2.02px] w-[13.55%] origin-left -rotate-[5deg]",
+      position: "left-[45.36%] top-[13.5%] sm:left-[45.36%] sm:top-[13.5%]",
+      lineClass: "left-[44.12%] top-[27.78%] h-[2.02px] w-[12.9%] origin-left -rotate-[5deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
@@ -131,8 +131,8 @@ function FeatureNetwork({ activeIndex, onSelect }: { activeIndex: number; onSele
           <span className="absolute right-[0.08rem] top-0 h-full w-[2px] rounded-full bg-current/90" />
         </span>
       ),
-      position: "left-[44.56%] top-[46.55%] sm:left-[44.56%] sm:top-[46.55%]",
-      lineClass: "left-[43.44%] top-[49.72%] h-[2.02px] w-[14.28%] origin-left rotate-[5deg]",
+      position: "left-[45.04%] top-[46.55%] sm:left-[45.04%] sm:top-[46.55%]",
+      lineClass: "left-[43.86%] top-[49.72%] h-[2.02px] w-[13.62%] origin-left rotate-[5deg]",
       ringClass: "h-[4.58rem] w-[4.58rem] border-[#4f697a] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfd_100%)] text-[#234356] shadow-[0_11px_20px_rgba(15,23,42,0.082)]",
       activeRingClass: "h-[4.74rem] w-[4.74rem] border-[#cf884f] bg-[linear-gradient(180deg,#fffdf9_0%,#ffe7d3_100%)] text-[#a45a2c] shadow-[0_0_0_2px_rgba(240,142,79,0.03),0_11px_20px_rgba(232,124,55,0.075)]",
       wrapperClass: "items-center",
@@ -436,7 +436,7 @@ function FeaturePreview({
 
       <div
         data-testid="feature-auth-wrapper"
-        className="order-3 mx-auto -mt-[2.26rem] w-full max-w-[222px] sm:max-w-[234px] lg:ml-auto lg:mr-[0.42rem] lg:-mt-[16.92rem] lg:max-w-[284px] xl:mr-[0.62rem] xl:-mt-[17.24rem] xl:max-w-[304px]"
+        className="order-3 mx-auto -mt-[2rem] w-full max-w-[206px] sm:max-w-[218px] lg:ml-auto lg:mr-[0.28rem] lg:-mt-[16.08rem] lg:max-w-[262px] xl:mr-[0.44rem] xl:-mt-[16.38rem] xl:max-w-[282px]"
       >
         <AuthCard onApplyNow={onApplyNow} />
       </div>
@@ -481,7 +481,7 @@ function AuthCard({
     <div
       id="auth-card"
       data-testid="landing-auth-card"
-      className="mx-auto w-full max-w-[212px] rounded-[0.74rem] border border-[rgba(226,232,239,0.94)] bg-[linear-gradient(180deg,rgba(255,255,255,0.986)_0%,rgba(249,245,239,0.82)_100%)] px-[0.16rem] py-[0.16rem] shadow-[0_10px_22px_rgba(15,23,42,0.04),0_3px_7px_rgba(241,180,135,0.042)] backdrop-blur-[4px] sm:px-[0.18rem] sm:py-[0.18rem] lg:max-w-[468px] xl:max-w-[484px]"
+      className="mx-auto w-full max-w-[204px] rounded-[0.7rem] border border-[rgba(226,232,239,0.9)] bg-[linear-gradient(180deg,rgba(255,255,255,0.982)_0%,rgba(249,245,239,0.79)_100%)] px-[0.16rem] py-[0.16rem] shadow-[0_8px_18px_rgba(15,23,42,0.032),0_3px_6px_rgba(241,180,135,0.034)] backdrop-blur-[3px] sm:px-[0.18rem] sm:py-[0.18rem] lg:max-w-[452px] xl:max-w-[468px]"
     >
       <div className="mx-auto w-full max-w-[244px] lg:max-w-[472px] xl:max-w-[488px]">
         <div className="rounded-[0.78rem] border border-[rgba(250,250,252,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(249,244,237,0.68)_100%)] p-[0.2rem] shadow-[0_6px_16px_rgba(15,23,42,0.035)]">
