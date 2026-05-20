@@ -1,20 +1,24 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import HelpArticlePage, { generateStaticParams } from "@/app/help/[slug]/page";
 
+const expectedHelpParams = [
+  { slug: "getting-started" },
+  { slug: "projects" },
+  { slug: "chat" },
+  { slug: "skills" },
+  { slug: "library" },
+  { slug: "tasks" },
+  { slug: "foundry" },
+  { slug: "persona" },
+  { slug: "im" },
+  { slug: "settings" },
+  { slug: "billing" },
+  { slug: "faq" },
+];
+
 describe("Help article page", () => {
   it("exposes all known public help routes as static params", () => {
-    expect(generateStaticParams()).toEqual([
-      { slug: "getting-started" },
-      { slug: "projects" },
-      { slug: "chat" },
-      { slug: "skills" },
-      { slug: "library" },
-      { slug: "tasks" },
-      { slug: "foundry" },
-      { slug: "persona" },
-      { slug: "im" },
-      { slug: "settings" },
-    ]);
+    expect(generateStaticParams()).toEqual(expectedHelpParams);
   });
 
   it("renders the docs shell for a known article", async () => {
@@ -31,11 +35,8 @@ describe("Help article page", () => {
     expect(screen.getByText(/^SciClaw · USER GUIDE$/)).toBeInTheDocument();
     expect(screen.getByText(/search…/i)).toBeInTheDocument();
     expect(screen.getByText(/on this page/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /02 projects, conversations, tasks & library/i })).toHaveAttribute(
-      "href",
-      "/help/projects",
-    );
-    expect(screen.getByRole("link", { name: /03 foundry/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /02 projects · chats · tasks/i })).toHaveAttribute("href", "/help/projects");
+    expect(screen.getByRole("link", { name: /03 library & foundry/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /04 skills/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /05 ai persona/i })).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /03 chat/i })).not.toBeInTheDocument();
@@ -60,12 +61,9 @@ describe("Help article page", () => {
 
     expect(screen.getByRole("heading", { name: /^chat$/i })).toBeInTheDocument();
     expect(screen.getByText(/the chat panel is the main workspace for interacting with sciclaw/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /02 projects, conversations, tasks & library/i })).toHaveAttribute(
-      "href",
-      "/help/projects",
-    );
+    expect(screen.getByRole("link", { name: /02 projects · chats · tasks/i })).toHaveAttribute("href", "/help/projects");
     expect(screen.queryByRole("link", { name: /03 chat/i })).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /03 foundry/i })).toHaveAttribute("href", "/help/foundry");
+    expect(screen.getByRole("link", { name: /03 library & foundry/i })).toHaveAttribute("href", "/help/foundry");
     expect(screen.getByRole("heading", { name: /^command bar$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^sending messages$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^attaching files$/i })).toBeInTheDocument();
@@ -77,7 +75,28 @@ describe("Help article page", () => {
     expect(screen.getByText(/type your message in the input box and press enter to send/i)).toBeInTheDocument();
     expect(screen.getByText(/uploaded files are automatically added to the current project/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^project & session$/i })).toHaveAttribute("href", "/help/projects");
-    expect(screen.getByRole("link", { name: /^skills$/i })).toHaveAttribute("href", "/help/skills");
+  });
+
+  it("matches the live public skills page title, sections, and foundry next link", async () => {
+    const page = await HelpArticlePage({
+      params: Promise.resolve({ slug: "skills" }),
+    });
+
+    render(page);
+
+    expect(screen.getByRole("heading", { name: /^skills$/i })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /in sciclaw, skills are one of the main ways an agent can call external capabilities, run domain-specific workflows, and complete more complex tasks/i,
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^1\. what skills are$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^2\. how to trigger skills$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^3\. when skills are most useful$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^4\. skills management$/i })).toBeInTheDocument();
+    expect(screen.getByText(/use \/skill-name directly in chat when you already know the capability you want/i)).toBeInTheDocument();
+    expect(screen.getByText(/upload skills into the current environment so they become callable in chat/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^foundry$/i })).toHaveAttribute("href", "/help/foundry");
   });
 
   it("matches the live public settings page title, body, next-link, and toc labels", async () => {
@@ -102,11 +121,8 @@ describe("Help article page", () => {
     expect(screen.getByRole("heading", { name: /^theme$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^language$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^usage$/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /06 connect messaging apps/i })).toHaveAttribute(
-      "href",
-      "/help/im",
-    );
-    expect(screen.getByRole("link", { name: /^im connection$/i })).toHaveAttribute("href", "/help/im");
+    expect(screen.getByRole("link", { name: /06 messaging apps/i })).toHaveAttribute("href", "/help/im");
+    expect(screen.getByRole("link", { name: /^projects · chats · tasks$/i })).toHaveAttribute("href", "/help/projects");
     expect(screen.getByRole("button", { name: /^theme$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^language$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^usage$/i })).toBeInTheDocument();
@@ -138,7 +154,7 @@ describe("Help article page", () => {
     expect(screen.getByRole("link", { name: /^connect messaging apps$/i })).toHaveAttribute("href", "/help/im");
   });
 
-  it("matches the live public connect-messaging-apps page title, cards, and next link", async () => {
+  it("matches the live public connect-messaging-apps page title, cards, and billing link", async () => {
     const page = await HelpArticlePage({
       params: Promise.resolve({ slug: "im" }),
     });
@@ -157,6 +173,38 @@ describe("Help article page", () => {
     expect(screen.getByText(/for server-based community chats with bot integration/i)).toBeInTheDocument();
     expect(screen.getByText(/^bot token \+ channel id$/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^ai persona$/i })).toHaveAttribute("href", "/help/persona");
+  });
+
+  it("matches the live public billing page hierarchy and the FAQ page accordion shell", async () => {
+    const billingPage = await HelpArticlePage({
+      params: Promise.resolve({ slug: "billing" }),
+    });
+
+    render(billingPage);
+
+    expect(screen.getByRole("heading", { name: /^credits & billing$/i })).toBeInTheDocument();
+    expect(screen.getByText(/this page explains how credits and subscriptions work on sciclaw/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^1\. what are credits\?$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^2\. credit types$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^3\. credit deduction order$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^4\. subscription plans$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^5\. top-up rules$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /^6\. payments, refunds, and invoices$/i })).toBeInTheDocument();
+    expect(screen.getByText(/free \/ trial — \$0 — 10,000 one-time credits/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^faq$/i })).toHaveAttribute("href", "/help/faq");
+
+    const faqPage = await HelpArticlePage({
+      params: Promise.resolve({ slug: "faq" }),
+    });
+
+    render(faqPage);
+
+    expect(screen.getAllByRole("heading", { name: /^faq$/i }).length).toBeGreaterThan(0);
+    expect(screen.getByText(/frequently asked questions about credits, subscriptions, top-ups, and billing on sciclaw/i)).toBeInTheDocument();
+    expect(screen.getByText(/are credits deducted by message count\?/i)).toBeInTheDocument();
+    expect(screen.getByText(/do top-up credits expire\?/i)).toBeInTheDocument();
+    expect(screen.getByText(/where can i see the final price\?/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^credits & billing$/i })).toHaveAttribute("href", "/help/billing");
   });
 
   it("opens the docs appearance menu with theme and language entries", async () => {

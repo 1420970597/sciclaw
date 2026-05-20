@@ -73,6 +73,11 @@ export type HelpArticle = {
   body: HelpBodyBlock[];
 };
 
+export type BillingFaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type AppShellSection = {
   index: string;
   label: string;
@@ -643,30 +648,57 @@ export const helpArticles: HelpArticle[] = [
     index: "04",
     title: "Skills",
     description:
-      "Skills frame the reusable workflows that let SciClaw move from orientation into repeatable scientific and legal work patterns.",
+      "In SciClaw, skills are one of the main ways an agent can call external capabilities, run domain-specific workflows, and complete more complex tasks.",
     icon: "bolt",
     heroParagraphs: [
-      "In the public shell, Skills act as the narrative explanation for why the app preview can speak about retrieval, execution, and packet handoff with confidence.",
+      "In SciClaw, skills are one of the main ways an agent can call external capabilities, run domain-specific workflows, and complete more complex tasks. You can think of a skill as an installable, manageable, reusable capability module.",
     ],
     sections: [
-      { id: "workflow-reuse", title: "Workflow reuse" },
-      { id: "scoped-tools", title: "Scoped tools" },
+      { id: "workflow-reuse", title: "1. What Skills Are" },
+      { id: "triggering-skills", title: "2. How to Trigger Skills" },
+      { id: "scoped-tools", title: "3. When Skills Are Most Useful" },
+      { id: "skills-management", title: "4. Skills Management" },
     ],
-    nextHref: "/help/library",
-    nextLabel: "Library guide",
+    nextHref: "/help/foundry",
+    nextLabel: "Foundry",
     body: [
       {
         type: "paragraph",
         sectionId: "workflow-reuse",
         content:
-          "Reusable skills turn repeated investigation patterns into stable operating lanes: ingest evidence, compare sources, queue the next action, and package the verified result.",
+          "In SciClaw, a skill is a callable task capability. Each one is usually designed around a clear goal, such as information organization, a specific analysis workflow, file processing, research execution, or some other specialized domain workflow.",
+      },
+      {
+        type: "paragraph",
+        sectionId: "workflow-reuse",
+        content:
+          "Compared with ordinary chat, a skill is more like an execution template with a defined method and scope. It helps SciClaw understand your task according to a predefined method, produce outputs in a more stable structure, and reduce ambiguity in more complex work.",
+      },
+      {
+        type: "list",
+        sectionId: "triggering-skills",
+        items: [
+          "Use /skill-name directly in chat when you already know the capability you want.",
+          "Open ⚡ Skills above the input box to browse the skill list and insert one manually.",
+          "Describe the goal naturally and let SciClaw decide whether a skill should be used automatically.",
+        ],
       },
       {
         type: "list",
         sectionId: "scoped-tools",
         items: [
-          "Public copy references enabled skills instead of internal agent implementation details.",
-          "Sidebar and resource cards hint at scoped tool access without overclaiming hidden infrastructure.",
+          "Skills are most helpful when the goal is clearly defined and the output needs to follow a fixed structure or format.",
+          "They are also useful when the task depends on a specialized toolchain or you want to standardize a recurring workflow.",
+          "For casual Q&A or open-ended brainstorming, ordinary chat may still be enough without specifying a skill manually.",
+        ],
+      },
+      {
+        type: "list",
+        sectionId: "skills-management",
+        items: [
+          "Upload skills into the current environment so they become callable in chat.",
+          "Search, preview, export, and delete existing skills from the Skills Management surface.",
+          "Use enable / disable controls to decide which skills stay available for a given workflow.",
         ],
       },
     ],
@@ -859,15 +891,15 @@ export const helpArticles: HelpArticle[] = [
     title: "System Settings",
     navTitle: "Settings",
     description:
-      "System settings keeps appearance, language, and usage guidance visible in the public shell without pretending private account configuration is already exposed.",
+      "System Settings keeps appearance, language, and usage guidance visible in the public shell without pretending private account configuration is already exposed.",
     icon: "sliders",
     sections: [
       { id: "theme", title: "Theme" },
       { id: "language", title: "Language" },
       { id: "usage", title: "Usage" },
     ],
-    nextHref: "/help/im",
-    nextLabel: "IM Connection",
+    nextHref: "/help/projects",
+    nextLabel: "Projects · Chats · Tasks",
     body: [
       {
         type: "paragraph",
@@ -889,6 +921,93 @@ export const helpArticles: HelpArticle[] = [
       },
     ],
   },
+  {
+    slug: "billing",
+    index: "01",
+    title: "Credits & Billing",
+    navTitle: "Credits & Billing",
+    description:
+      "This page explains how credits and subscriptions work on SciClaw, what each plan includes, how top-up credits behave, and how payments, refunds, and invoices are handled.",
+    icon: "sliders",
+    sections: [
+      { id: "what-are-credits", title: "1. What Are Credits?" },
+      { id: "credit-types", title: "2. Credit Types" },
+      { id: "deduction-order", title: "3. Credit Deduction Order" },
+      { id: "subscription-plans", title: "4. Subscription Plans" },
+      { id: "top-up-rules", title: "5. Top-up Rules" },
+      { id: "payments-refunds-and-invoices", title: "6. Payments, Refunds, and Invoices" },
+    ],
+    nextHref: "/help/faq",
+    nextLabel: "FAQ",
+    body: [
+      {
+        type: "paragraph",
+        sectionId: "what-are-credits",
+        content:
+          "Credits are SciClaw's unit for measuring everyday AI usage. Model calls, runtime execution, web research, library retrieval, document processing, and similar tasks draw from the credit pool according to the resources consumed.",
+      },
+      {
+        type: "list",
+        sectionId: "credit-types",
+        items: [
+          "Daily credits refresh on the schedule defined by the active account or plan.",
+          "Plan credits are included with the current subscription tier and follow the billing cycle.",
+          "Top-up credits do not expire by default, but the public page says they require an active paid subscription to remain usable.",
+          "Promotional or reward credits follow the specific campaign rules that issued them.",
+        ],
+      },
+      {
+        type: "paragraph",
+        sectionId: "deduction-order",
+        content:
+          "When multiple credit types are available, the public billing page describes the deduction order as Daily Credits → Plan Credits → Top-up Credits / Promo Credits.",
+      },
+      {
+        type: "list",
+        sectionId: "subscription-plans",
+        items: [
+          "Free / Trial — $0 — 10,000 one-time credits.",
+          "Lite — $19 / month — 200,000 credits / month.",
+          "Plus — $39 / month — 430,000 credits / month.",
+          "Pro — $79 / month — 900,000 credits / month.",
+        ],
+      },
+      {
+        type: "paragraph",
+        sectionId: "top-up-rules",
+        content:
+          "Top-ups are framed as an additional credit reserve instead of a plan upgrade. They can extend paid usage capacity, but they do not replace the need for an active plan and do not act like cash or a transferable balance.",
+      },
+      {
+        type: "list",
+        sectionId: "payments-refunds-and-invoices",
+        items: [
+          "Payment failures can interrupt renewals until the billing issue is resolved.",
+          "Invoices and receipts are tied to the active billing surface rather than a separate finance dashboard.",
+          "Final pricing, taxes, and promotional adjustments are defined by the checkout page at purchase time.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "faq",
+    index: "02",
+    title: "FAQ",
+    navTitle: "FAQ",
+    description:
+      "Frequently asked questions about credits, subscriptions, top-ups, and billing on SciClaw. Tap a question to expand the answer.",
+    icon: "sliders",
+    sections: [{ id: "faq", title: "FAQ" }],
+    relatedLinks: [{ label: "Credits & Billing", href: "/help/billing" }],
+    body: [
+      {
+        type: "paragraph",
+        sectionId: "faq",
+        content:
+          "Frequently asked questions about credits, subscriptions, top-ups, and billing on SciClaw. Tap a question to expand the answer.",
+      },
+    ],
+  },
 ];
 
 export const helpSidebarEntries: HelpSidebarEntry[] = [
@@ -896,15 +1015,73 @@ export const helpSidebarEntries: HelpSidebarEntry[] = [
   {
     index: "02",
     slug: "projects",
-    title: "Projects, Conversations, Tasks & Library",
+    title: "Projects · Chats · Tasks",
     icon: "folder",
   },
-  { index: "03", slug: "foundry", title: "Foundry", icon: "hammer" },
+  { index: "03", slug: "foundry", title: "Library & Foundry", icon: "hammer" },
   { index: "04", slug: "skills", title: "Skills", icon: "bolt" },
   { index: "05", slug: "persona", title: "AI Persona", icon: "persona" },
-  { index: "06", slug: "im", title: "Connect Messaging Apps", icon: "send" },
+  { index: "06", slug: "im", title: "Messaging Apps", icon: "send" },
+];
+
+export const billingSidebarEntries: HelpSidebarEntry[] = [
+  { index: "01", slug: "billing", title: "Credits & Billing", icon: "sliders" },
+  { index: "02", slug: "faq", title: "FAQ", icon: "sliders" },
 ];
 
 export const helpArticleMap = Object.fromEntries(
   helpArticles.map((article) => [article.slug, article]),
 ) as Record<string, HelpArticle>;
+
+export const billingFaqItems: BillingFaqItem[] = [
+  {
+    question: "Are credits deducted by message count?",
+    answer:
+      "No. The public FAQ says credits are deducted according to the actual resources consumed by the task, not by a fixed number of messages.",
+  },
+  {
+    question: "Are credits the same as tokens?",
+    answer:
+      "No. Credits are a product-level usage unit that can cover model calls, runtime work, retrieval, document processing, and external tools. They are not a raw token counter.",
+  },
+  {
+    question: "Do unused plan credits roll over?",
+    answer:
+      "The billing page frames plan credits around the billing cycle and does not promise unlimited rollover. The checkout or active plan page is the source of truth for the current rule.",
+  },
+  {
+    question: "Do top-up credits expire?",
+    answer:
+      "Top-up credits do not expire by default on the public billing page, but they still require an active paid subscription to remain usable.",
+  },
+  {
+    question: "Does buying a credit pack upgrade my plan?",
+    answer:
+      "No. A top-up extends the available credit reserve, but it does not change the active subscription tier by itself.",
+  },
+  {
+    question: "Which plan should I choose?",
+    answer:
+      "The public guidance positions Free / Trial for evaluation, Lite for lighter recurring workloads, Plus for heavier routine use, and Pro for larger ongoing research volume.",
+  },
+  {
+    question: "What happens if my payment fails?",
+    answer:
+      "Renewal can be interrupted until the billing issue is resolved. The billing surface and checkout flow remain the public source of truth for the exact recovery steps.",
+  },
+  {
+    question: "Can I change my payment method?",
+    answer:
+      "The public billing guidance indicates payment details are managed through the billing flow rather than a separate finance console.",
+  },
+  {
+    question: "Can I get an invoice or receipt?",
+    answer:
+      "Yes. The public billing page says invoices or receipts are handled through the billing and payment flow for completed purchases.",
+  },
+  {
+    question: "Where can I see the final price?",
+    answer:
+      "The checkout page is the final source of truth for price, taxes, discounts, and promotional adjustments at the moment of purchase.",
+  },
+];

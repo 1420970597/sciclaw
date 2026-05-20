@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation";
-import { getHelpArticle, HelpShell } from "@/components/help-shell";
+import { BillingHelpShell } from "@/components/billing-help-shell";
+import { HelpShell, getHelpArticle } from "@/components/help-shell";
+
+const billingSlugs = new Set(["billing", "faq"]);
 
 export function generateStaticParams() {
   return [
@@ -13,6 +16,8 @@ export function generateStaticParams() {
     { slug: "persona" },
     { slug: "im" },
     { slug: "settings" },
+    { slug: "billing" },
+    { slug: "faq" },
   ];
 }
 
@@ -28,5 +33,5 @@ export default async function HelpArticlePage({
     notFound();
   }
 
-  return <HelpShell article={article} />;
+  return billingSlugs.has(slug) ? <BillingHelpShell article={article} /> : <HelpShell article={article} />;
 }
