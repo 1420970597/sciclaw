@@ -183,14 +183,21 @@ describe("Help article page", () => {
     render(billingPage);
 
     expect(screen.getByRole("heading", { name: /^credits & billing$/i })).toBeInTheDocument();
-    expect(screen.getByText(/this page explains how credits and subscriptions work on sciclaw/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /sciclaw's billing page explains how credits, plans, and top-up balances work\. it treats billing as an operational product surface rather than a hidden admin-only finance console\./i,
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^1\. what are credits\?$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^2\. credit types$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^3\. credit deduction order$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^4\. subscription plans$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^5\. top-up rules$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^6\. payments, refunds, and invoices$/i })).toBeInTheDocument();
-    expect(screen.getByText(/free \/ trial — \$0 — 10,000 one-time credits/i)).toBeInTheDocument();
+    expect(screen.getByText(/credits are sciclaw's way of measuring daily ai usage/i)).toBeInTheDocument();
+    expect(screen.getByText(/daily credits, plan credits, top-up credits, and promotional or reward credits/i)).toBeInTheDocument();
+    expect(screen.getByText(/free \/ trial/i)).toBeInTheDocument();
+    expect(screen.getByText(/payments, refunds, and invoices are all handled through the billing flow at checkout/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^faq$/i })).toHaveAttribute("href", "/help/faq");
 
     const faqPage = await HelpArticlePage({
@@ -200,7 +207,7 @@ describe("Help article page", () => {
     render(faqPage);
 
     expect(screen.getAllByRole("heading", { name: /^faq$/i }).length).toBeGreaterThan(0);
-    expect(screen.getByText(/frequently asked questions about credits, subscriptions, top-ups, and billing on sciclaw/i)).toBeInTheDocument();
+    expect(screen.getByText(/sciclaw's faq collects the billing questions users ask most often, including deductions, rollover, top-ups, plan changes, and invoice handling\./i)).toBeInTheDocument();
     expect(screen.getByText(/are credits deducted by message count\?/i)).toBeInTheDocument();
     expect(screen.getByText(/do top-up credits expire\?/i)).toBeInTheDocument();
     expect(screen.getByText(/where can i see the final price\?/i)).toBeInTheDocument();

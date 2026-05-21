@@ -1,4 +1,18 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+
+const pushMock = vi.fn();
+
+beforeEach(() => {
+  pushMock.mockReset();
+});
+
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({
+    push: pushMock,
+  }),
+}));
+
 import Home from "@/app/page";
 
 describe("Home landing page", () => {
@@ -17,7 +31,7 @@ describe("Home landing page", () => {
       ),
     ).toBeInTheDocument();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveAttribute("type", "button");
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.getByText(/enter your access code to begin/i)).toBeInTheDocument();
     const onboardAccessCode = screen.getByPlaceholderText("SC-XXXXXXXX");
@@ -85,11 +99,11 @@ describe("Home landing page", () => {
     expect(screen.getAllByRole("heading", { name: /deep literature analysis/i }).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/^结论$/i)).toBeInTheDocument();
     expect(screen.getAllByText(/autonomous research/i)).toHaveLength(1);
-    expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveAttribute("type", "button");
     const utilityRow = screen.getByTestId("landing-utility-row");
     expect(screen.queryByRole("navigation", { name: /primary/i })).not.toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /login/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeEnabled();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#6b5d52]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[rgba(233,212,194,0.98)]");
@@ -97,7 +111,7 @@ describe("Home landing page", () => {
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("px-[0.92rem]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[0.72rem]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("tracking-[0.14em]");
-    expect(screen.getByRole("button", { name: /^get started$/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^get started$/i })).toHaveAttribute("type", "button");
     expect(utilityRow).toBeInTheDocument();
     expect(utilityRow).toHaveClass("gap-[0.48rem]");
     expect(utilityRow).toHaveClass("pr-[1.18rem]");
@@ -263,14 +277,17 @@ describe("Home landing page", () => {
     expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: /tell us what you research and how sciclaw would help\./i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^send code$/i })).toBeDisabled();
-    expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeEnabled();
     expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
-    expect(within(landingHero).getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^PPT$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^PDF$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^CSV$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^DOCX$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^autonomous research$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
+    expect(
+      within(landingHero).getByText(
+        /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
+      ),
+    ).toBeInTheDocument();
+    expect(within(landingHero).queryByRole("heading", { name: /multi-format research output/i })).not.toBeInTheDocument();
     expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(within(bestCasesSection as HTMLElement).getByText(/^01 \/ 04$/i)).toBeInTheDocument();
     expect(within(bestCasesSection as HTMLElement).queryByRole("heading", { name: /peer review response support/i })).not.toBeInTheDocument();
@@ -278,6 +295,7 @@ describe("Home landing page", () => {
     expect(bestCasesSection as HTMLElement).toHaveTextContent(
       /automatically integrates historical tasks, literature, and experimental data into clear, presentation-ready materials/i,
     );
+    expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeEnabled();
   });
 
   it("preserves the previous auth mode when leaving the apply flow", () => {
@@ -292,7 +310,7 @@ describe("Home landing page", () => {
     fireEvent.click(screen.getByRole("button", { name: /^back$/i }));
 
     expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeEnabled();
   });
 
   it("switches feature panels when a network node is selected", () => {
@@ -306,7 +324,7 @@ describe("Home landing page", () => {
         /automatically consolidate your research process and conclusions into professional, content-rich outputs/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getAllByText(/outcome present/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/outcome present/i)).toHaveLength(1);
     expect(screen.queryByText(/^summary$/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/^证据$/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/^preview$/i)).not.toBeInTheDocument();
@@ -560,17 +578,19 @@ describe("Home landing page", () => {
 
     fireEvent.click(getStartedButton);
 
-    expect(within(landingHero).getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
+    expect(pushMock).toHaveBeenCalledWith("/login");
+    expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
     expect(
       within(landingHero).getByText(
-        /upload experimental data in batches, and sciclaw automatically performs statistical testing, trend analysis, and chart generation/i,
+        /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
       ),
     ).toBeInTheDocument();
-    expect(within(landingHero).getByTestId("feature-node-data-mining")).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q1$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q2$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q3$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^Q4$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^autonomous research$/i)).toBeInTheDocument();
+    expect(within(landingHero).queryByRole("heading", { name: /intelligent data visualization/i })).not.toBeInTheDocument();
+    expect(within(landingHero).queryByText(/^q1$/i)).not.toBeInTheDocument();
+    expect(within(landingHero).queryByText(/^q2$/i)).not.toBeInTheDocument();
+    expect(within(landingHero).queryByText(/^q3$/i)).not.toBeInTheDocument();
+    expect(within(landingHero).queryByText(/^q4$/i)).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
   });

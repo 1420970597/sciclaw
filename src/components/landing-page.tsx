@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useActionState, useMemo, useState } from "react";
+import { accessCodeAction, type AuthActionState } from "@/app/auth-actions";
 import { DockMenuBar } from "@/components/dock-menu-bar";
 import {
   bestCases,
@@ -10,6 +12,8 @@ import {
 } from "@/app/landing-data";
 
 type AuthMode = AuthTab | "apply";
+
+const initialAuthActionState: AuthActionState = {};
 
 function GuideIcon({ className = "h-[1.06rem] w-[1.06rem]" }: { className?: string }) {
   return (
@@ -476,6 +480,8 @@ function AuthCard({
 }) {
   const [activeMode, setActiveMode] = useState<AuthMode>("onboard");
   const [returnMode, setReturnMode] = useState<AuthTab>("onboard");
+  const [accessCodeState, accessCodeFormAction] = useActionState(accessCodeAction, initialAuthActionState);
+  const router = useRouter();
 
   return (
     <div
@@ -527,28 +533,31 @@ function AuthCard({
             {activeMode === "onboard" ? (
               <div className="space-y-[0.96rem]">
                 <p className="text-center text-sm text-[#68707c]">Enter your access code to begin</p>
-                <div className="block text-sm text-[#4f5661]">
-                  <input
-                    id="invite-code"
-                    placeholder="SC-XXXXXXXX"
-                    className="w-full rounded-[1.12rem] border border-[rgba(225,211,198,0.92)] bg-[linear-gradient(180deg,#ffffff_0%,#fbf7f2_100%)] px-3.5 py-[0.72rem] text-center text-sm font-medium uppercase tracking-[0.26em] text-[#5f6773] outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.92),0_3px_8px_rgba(15,23,42,0.01)] transition placeholder:text-[#b2bac5] focus:border-[#e3a675]"
-                  />
-                </div>
-                <button
-                  type="button"
-                  disabled
-                  className="w-full whitespace-nowrap rounded-[1.12rem] border border-[rgba(233,212,194,0.98)] bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] px-[0.92rem] py-[0.72rem] text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#6b5d52] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_6px_14px_rgba(15,23,42,0.014)] transition disabled:cursor-not-allowed disabled:border-[rgba(233,212,194,0.98)] disabled:bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] disabled:text-[#6b5d52] disabled:opacity-100"
-                >
-                  VERIFY ACCESS CODE
-                </button>
+                <form action={accessCodeFormAction} className="space-y-[0.96rem]" data-testid="landing-access-code-form">
+                  <div className="block text-sm text-[#4f5661]">
+                    <input
+                      id="invite-code"
+                      name="accessCode"
+                      placeholder="SC-XXXXXXXX"
+                      required
+                      className="w-full rounded-[1.12rem] border border-[rgba(225,211,198,0.92)] bg-[linear-gradient(180deg,#ffffff_0%,#fbf7f2_100%)] px-3.5 py-[0.72rem] text-center text-sm font-medium uppercase tracking-[0.26em] text-[#5f6773] outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.92),0_3px_8px_rgba(15,23,42,0.01)] transition placeholder:text-[#b2bac5] focus:border-[#e3a675]"
+                    />
+                  </div>
+                  {accessCodeState.error ? (
+                    <p className="rounded-[0.9rem] border border-[#fecaca] bg-[#fef2f2] px-3 py-2 text-center text-xs text-[#b91c1c]" role="alert">
+                      {accessCodeState.error}
+                    </p>
+                  ) : null}
+                  <button
+                    type="submit"
+                    className="w-full whitespace-nowrap rounded-[1.12rem] border border-[rgba(233,212,194,0.98)] bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)] px-[0.92rem] py-[0.72rem] text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#6b5d52] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_6px_14px_rgba(15,23,42,0.014)] transition hover:brightness-[1.01]"
+                  >
+                    VERIFY ACCESS CODE
+                  </button>
+                </form>
               </div>
             ) : activeMode === "login" ? (
-              <form
-                className="space-y-4"
-                onSubmit={(event) => {
-                  event.preventDefault();
-                }}
-              >
+              <form className="space-y-4" onSubmit={(event) => event.preventDefault()}>
                 <label className="block space-y-2 text-sm text-[#5f646d]">
                   <span className="sr-only">Email address</span>
                   <input
@@ -576,9 +585,9 @@ function AuthCard({
                   </button>
                 </div>
                 <button
-                  type="submit"
-                  disabled
-                  className="w-full rounded-[1.12rem] bg-[#f2a467] px-4 py-[0.74rem] text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_14px_28px_rgba(242,164,103,0.26)] transition disabled:cursor-not-allowed disabled:bg-[#f2a467] disabled:text-white"
+                  type="button"
+                  onClick={() => router.push("/login")}
+                  className="w-full rounded-[1.12rem] bg-[#f2a467] px-4 py-[0.74rem] text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_14px_28px_rgba(242,164,103,0.26)] transition hover:brightness-[1.02]"
                 >
                   Enter laboratory
                 </button>
@@ -635,8 +644,8 @@ function AuthCard({
                 </label>
                 <button
                   type="button"
-                  disabled
-                  className="w-full rounded-[1.2rem] bg-[#f2a467] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_16px_32px_rgba(242,164,103,0.3)] transition disabled:cursor-not-allowed disabled:bg-[#f2a467] disabled:text-white"
+                  onClick={() => router.push("/register")}
+                  className="w-full rounded-[1.2rem] bg-[#f2a467] px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_16px_32px_rgba(242,164,103,0.3)] transition hover:brightness-[1.02]"
                 >
                   ENTER YOUR EMAIL FIRST
                 </button>
@@ -869,17 +878,14 @@ function Footer() {
 export function LandingPage() {
   const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
   const [activeCaseIndex, setActiveCaseIndex] = useState(0);
+  const router = useRouter();
 
   const handleGetStarted = () => {
-    const dataMiningIndex = featureItems.findIndex((feature) => feature.id === "data-mining");
-    setActiveFeatureIndex(dataMiningIndex >= 0 ? dataMiningIndex : 0);
-    setActiveCaseIndex(0);
+    router.push("/login");
   };
 
   const handleApplyNow = () => {
-    const outcomePresentIndex = featureItems.findIndex((feature) => feature.id === "outcome-present");
-    setActiveFeatureIndex(outcomePresentIndex >= 0 ? outcomePresentIndex : 0);
-    setActiveCaseIndex(0);
+    router.push("/register");
   };
 
   return (

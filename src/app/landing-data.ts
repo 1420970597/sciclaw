@@ -929,6 +929,9 @@ export const helpArticles: HelpArticle[] = [
     description:
       "This page explains how credits and subscriptions work on SciClaw, what each plan includes, how top-up credits behave, and how payments, refunds, and invoices are handled.",
     icon: "sliders",
+    heroParagraphs: [
+      "SciClaw's billing page explains how credits, plans, and top-up balances work. It treats billing as an operational product surface rather than a hidden admin-only finance console.",
+    ],
     sections: [
       { id: "what-are-credits", title: "1. What Are Credits?" },
       { id: "credit-types", title: "2. Credit Types" },
@@ -944,48 +947,37 @@ export const helpArticles: HelpArticle[] = [
         type: "paragraph",
         sectionId: "what-are-credits",
         content:
-          "Credits are SciClaw's unit for measuring everyday AI usage. Model calls, runtime execution, web research, library retrieval, document processing, and similar tasks draw from the credit pool according to the resources consumed.",
+          "Credits are SciClaw's way of measuring daily AI usage. Whenever you use capabilities such as research Q&A, web research, Library Q&A, or document processing, the system automatically deducts credits based on the actual resources consumed by the task.",
       },
       {
-        type: "list",
+        type: "paragraph",
         sectionId: "credit-types",
-        items: [
-          "Daily credits refresh on the schedule defined by the active account or plan.",
-          "Plan credits are included with the current subscription tier and follow the billing cycle.",
-          "Top-up credits do not expire by default, but the public page says they require an active paid subscription to remain usable.",
-          "Promotional or reward credits follow the specific campaign rules that issued them.",
-        ],
+        content:
+          "Your SciClaw account may include daily credits, plan credits, top-up credits, and promotional or reward credits, each with a different origin and lifetime rule.",
       },
       {
         type: "paragraph",
         sectionId: "deduction-order",
         content:
-          "When multiple credit types are available, the public billing page describes the deduction order as Daily Credits → Plan Credits → Top-up Credits / Promo Credits.",
+          "When your account has multiple types of credits, SciClaw will automatically deduct them in the following order: Daily Credits → Plan Credits → Top-up Credits / Promo Credits.",
       },
       {
-        type: "list",
+        type: "paragraph",
         sectionId: "subscription-plans",
-        items: [
-          "Free / Trial — $0 — 10,000 one-time credits.",
-          "Lite — $19 / month — 200,000 credits / month.",
-          "Plus — $39 / month — 430,000 credits / month.",
-          "Pro — $79 / month — 900,000 credits / month.",
-        ],
+        content:
+          "SciClaw currently offers Free / Trial, Lite, Plus, and Pro plans. The public billing page frames these as subscription tiers with increasing monthly credit pools.",
       },
       {
         type: "paragraph",
         sectionId: "top-up-rules",
         content:
-          "Top-ups are framed as an additional credit reserve instead of a plan upgrade. They can extend paid usage capacity, but they do not replace the need for an active plan and do not act like cash or a transferable balance.",
+          "Top-up credits are an additional reserve, not a plan upgrade. They can extend paid usage capacity, but they do not replace the need for an active plan and do not act like cash or a transferable balance.",
       },
       {
-        type: "list",
+        type: "paragraph",
         sectionId: "payments-refunds-and-invoices",
-        items: [
-          "Payment failures can interrupt renewals until the billing issue is resolved.",
-          "Invoices and receipts are tied to the active billing surface rather than a separate finance dashboard.",
-          "Final pricing, taxes, and promotional adjustments are defined by the checkout page at purchase time.",
-        ],
+        content:
+          "Payments, refunds, and invoices are all handled through the billing flow at checkout. The page keeps the public contract simple and points the user back to the latest billing surface when pricing or payment rules change.",
       },
     ],
   },
@@ -997,6 +989,9 @@ export const helpArticles: HelpArticle[] = [
     description:
       "Frequently asked questions about credits, subscriptions, top-ups, and billing on SciClaw. Tap a question to expand the answer.",
     icon: "sliders",
+    heroParagraphs: [
+      "SciClaw's FAQ collects the billing questions users ask most often, including deductions, rollover, top-ups, plan changes, and invoice handling.",
+    ],
     sections: [{ id: "faq", title: "FAQ" }],
     relatedLinks: [{ label: "Credits & Billing", href: "/help/billing" }],
     body: [
@@ -1004,7 +999,7 @@ export const helpArticles: HelpArticle[] = [
         type: "paragraph",
         sectionId: "faq",
         content:
-          "Frequently asked questions about credits, subscriptions, top-ups, and billing on SciClaw. Tap a question to expand the answer.",
+          "The FAQ surface keeps the billing contract accessible without exposing a separate finance console. It answers the most common questions about credits, subscriptions, and pricing.",
       },
     ],
   },

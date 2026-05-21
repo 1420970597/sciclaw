@@ -1,4 +1,18 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+
+const pushMock = vi.fn();
+
+beforeEach(() => {
+  pushMock.mockReset();
+});
+
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({
+    push: pushMock,
+  }),
+}));
+
 import ChatPage from "@/app/chat/page";
 
 describe("Chat route public landing clone", () => {
@@ -208,7 +222,8 @@ describe("Chat route public landing clone", () => {
     expect(chatGetStartedButton.querySelector("svg")).not.toBeNull();
     expect(centerNode).not.toHaveAccessibleName();
     expect(screen.queryByText(/^AI$/)).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeDisabled();
+    expect(pushMock).not.toHaveBeenCalled();
+    expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toBeEnabled();
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("bg-[linear-gradient(180deg,#f6ebe0_0%,#efe0d2_100%)]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("text-[#6b5d52]");
     expect(screen.getByRole("button", { name: /^VERIFY ACCESS CODE$/ })).toHaveClass("border-[rgba(233,212,194,0.98)]");
@@ -243,14 +258,17 @@ describe("Chat route public landing clone", () => {
     expect(screen.getByRole("textbox", { name: /verification code/i })).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: /tell us what you research and how sciclaw would help\./i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^send code$/i })).toBeDisabled();
-    expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /^enter your email first$/i })).toBeEnabled();
     expect(screen.getByRole("button", { name: /^back$/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /no account yet\? apply now/i })).not.toBeInTheDocument();
-    expect(within(landingHero).getByRole("heading", { name: /multi-format research output/i })).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^PPT$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^PDF$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^CSV$/i)).toBeInTheDocument();
-    expect(within(landingHero).getByText(/^DOCX$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByText(/^autonomous research$/i)).toBeInTheDocument();
+    expect(within(landingHero).getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
+    expect(
+      within(landingHero).getByText(
+        /upload a pdf, and sciclaw automatically extracts the core arguments, research methods, and key data/i,
+      ),
+    ).toBeInTheDocument();
+    expect(within(landingHero).queryByRole("heading", { name: /multi-format research output/i })).not.toBeInTheDocument();
     expect(within(bestCasesSection as HTMLElement).getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
     expect(within(bestCasesSection as HTMLElement).getByText(/^01 \/ 04$/i)).toBeInTheDocument();
     expect(within(bestCasesSection as HTMLElement).queryByRole("heading", { name: /peer review response support/i })).not.toBeInTheDocument();
@@ -282,28 +300,19 @@ describe("Chat route public landing clone", () => {
 
     fireEvent.click(screen.getByRole("tab", { name: /login/i }));
     expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeDisabled();
-  });
-
-  it("keeps the live /chat marketing-landing get-started behavior by advancing the hero feature instead of routing away", () => {
-    render(<ChatPage />);
-
-    expect(screen.getByRole("heading", { name: /deep literature analysis/i })).toBeInTheDocument();
-    expect(screen.getByText(/^01 \/ 04$/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeEnabled();
 
     fireEvent.click(screen.getByRole("button", { name: /^get started$/i }));
 
-    expect(screen.getByRole("heading", { name: /intelligent data visualization/i })).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        /upload experimental data in batches, and sciclaw automatically performs statistical testing, trend analysis, and chart generation/i,
-      ),
-    ).toBeInTheDocument();
-    expect(screen.getByTestId("feature-node-data-mining")).toBeInTheDocument();
-    expect(screen.getByText(/^Q1$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Q2$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Q3$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Q4$/i)).toBeInTheDocument();
+    expect(pushMock).toHaveBeenCalledWith("/login");
+    expect(screen.getByRole("tab", { name: /login/i })).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("textbox", { name: /email address/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /enter laboratory/i })).toBeEnabled();
+    expect(screen.queryByRole("heading", { name: /multi-format research output/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/^PPT$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^PDF$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^CSV$/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^DOCX$/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/^33%$/i)).not.toBeInTheDocument();
     expect(screen.queryByRole("heading", { name: /autonomous experiment execution/i })).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /automated report generation/i })).toBeInTheDocument();
