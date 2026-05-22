@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { SESSION_COOKIE } from "@/lib/auth";
-import { findSession, findUserById, listProjects } from "@/lib/data-store";
+import { findSession, findUserById, listProjects, listTasks } from "@/lib/data-store";
 
 export async function GET() {
   const cookieStore = await cookies();
@@ -20,7 +20,7 @@ export async function GET() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const projects = await listProjects();
+  const [projects, tasks] = await Promise.all([listProjects(), listTasks()]);
 
   return Response.json({
     user: {
@@ -31,5 +31,6 @@ export async function GET() {
       intent: user.intent,
     },
     projects,
+    tasks,
   });
 }

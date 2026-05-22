@@ -1,8 +1,9 @@
 import { promises as fs } from "node:fs";
-import path from "node:path";
-import crypto from "node:crypto";
+import * as path from "node:path";
+import * as crypto from "node:crypto";
 
 export type UserRole = "researcher" | "admin";
+export type TaskStatus = "queued" | "in-progress" | "done";
 
 export type StoredUser = {
   id: string;
@@ -31,10 +32,28 @@ export type WorkspaceProject = {
   tasksOpen: number;
 };
 
+export type WorkspaceTask = {
+  id: string;
+  projectId: string;
+  title: string;
+  summary: string;
+  owner: string;
+  status: TaskStatus;
+  updatedAt: string;
+};
+
+export class DataStoreValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "DataStoreValidationError";
+  }
+}
+
 type DataStore = {
   users: StoredUser[];
   sessions: StoredSession[];
   projects: WorkspaceProject[];
+  tasks: WorkspaceTask[];
 };
 
 const DATA_DIR = path.join(process.cwd(), ".data");
@@ -70,6 +89,36 @@ const defaultProjects: WorkspaceProject[] = [
   },
 ];
 
+const defaultTasks: WorkspaceTask[] = [
+  {
+    id: "task-claim-chart",
+    projectId: "proj-patent-overlap",
+    title: "Draft claim chart skeleton",
+    summary: "Pull the first comparison table into the workspace so reviewers can verify the overlap call.",
+    owner: "SciClaw Admin",
+    status: "in-progress",
+    updatedAt: "Updated 8m ago",
+  },
+  {
+    id: "task-review-notes",
+    projectId: "proj-trial-replay",
+    title: "Assemble reviewer notes",
+    summary: "Package the latest statistical checks and note the next replay steps.",
+    owner: "SciClaw Admin",
+    status: "queued",
+    updatedAt: "Updated 26m ago",
+  },
+  {
+    id: "task-evidence-brief",
+    projectId: "proj-reg-memo",
+    title: "Package evidence brief",
+    summary: "Move source extracts and risk notes into the foundry handoff packet.",
+    owner: "SciClaw Admin",
+    status: "done",
+    updatedAt: "Updated 1h ago",
+  },
+];
+
 function sha256(input: string) {
   return crypto.createHash("sha256").update(input).digest("hex");
 }
@@ -99,6 +148,7 @@ async function seedStore(): Promise<DataStore> {
     ],
     sessions: [],
     projects: defaultProjects,
+    tasks: defaultTasks,
   };
 }
 
@@ -111,6 +161,7 @@ export async function readStore(): Promise<DataStore> {
       users: parsed.users ?? [],
       sessions: parsed.sessions ?? [],
       projects: parsed.projects?.length ? parsed.projects : defaultProjects,
+      tasks: parsed.tasks?.length ? parsed.tasks : defaultTasks,
     };
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
@@ -130,6 +181,74 @@ export async function writeStore(store: DataStore) {
 export async function listProjects() {
   const store = await readStore();
   return store.projects;
+}
+
+export async function findProjectById(projectId: string) {
+  const store = await readStore();
+  return store.projects.find((project) => project.id === projectId) ?? null;
+}
+
+export async function listTasks() {
+  const store = await readStore();
+  return store.tasks;
+}
+
+export async function findTaskById(taskId: string) {
+  const store = await readStore();
+  return store.tasks.find((task) => task.id === taskId) ?? null;
+}
+
+export async function createTask(input: {
+  projectId: string;
+  title: string;
+  summary: string;
+  owner: string;
+}) {
+  const store = await readStore();
+  const project = store.projects.find((item) => item.id === input.projectId);
+  if (!project) {
+    throw new DataStoreValidationError("PROJECT_NOT_FOUND");
+  }
+
+  const title = input.title.trim();
+  const summary = input.summary.trim();
+  const owner = input.owner.trim();
+  if (!title || !summary || !owner) {
+    throw new DataStoreValidationError("TASK_FIELDS_REQUIRED");
+  }
+
+  const task: WorkspaceTask = {
+    id: makeId("task"),
+    projectId: input.projectId,
+    title,
+    summary,
+    owner,
+    status: "queued",
+    updatedAt: new Date().toISOString(),
+  };
+
+  store.tasks = [task, ...store.tasks];
+  await writeStore(store);
+  return task;
+}
+
+export async function setTaskStatus(taskId: string, status: TaskStatus) {
+  const store = await readStore();
+  const index = store.tasks.findIndex((task) => task.id === taskId);
+  if (index === -1) {
+    return null;
+  }
+
+  const current = store.tasks[index];
+  const updated: WorkspaceTask = {
+    ...current,
+    status,
+    updatedAt: new Date().toISOString(),
+  };
+  store.tasks.splice(index, 1);
+  store.tasks.unshift(updated);
+  await writeStore(store);
+  return updated;
 }
 
 export async function findUserByEmail(email: string) {

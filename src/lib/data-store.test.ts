@@ -4,13 +4,16 @@ import path from "node:path";
 
 import {
   createSession,
+  createTask,
   createUser,
   deleteSession,
   findSession,
   findUserByAccessCode,
   findUserByEmail,
   listProjects,
+  listTasks,
   readStore,
+  setTaskStatus,
   verifyUserPassword,
   writeStore,
 } from "@/lib/data-store";
@@ -104,5 +107,38 @@ describe("data-store", () => {
       id: "user_admin_seed",
     });
     await expect(listProjects()).resolves.toHaveLength(4);
+  });
+
+  it("creates tasks, validates project ownership, and updates task status", async () => {
+    const task = await createTask({
+      projectId: "proj-patent-overlap",
+      title: "  Queue evidence memo  ",
+      summary: "  Package the next evidence lane for reviewer handoff.  ",
+      owner: "  SciClaw Admin  ",
+    });
+
+    expect(task).toMatchObject({
+      projectId: "proj-patent-overlap",
+      title: "Queue evidence memo",
+      summary: "Package the next evidence lane for reviewer handoff.",
+      owner: "SciClaw Admin",
+      status: "queued",
+    });
+    await expect(listTasks()).resolves.toEqual(expect.arrayContaining([expect.objectContaining({ id: task.id })]));
+
+    const updated = await setTaskStatus(task.id, "done");
+    expect(updated).toMatchObject({ id: task.id, status: "done" });
+    await expect(listTasks()).resolves.toEqual(
+      expect.arrayContaining([expect.objectContaining({ id: task.id, status: "done" })]),
+    );
+
+    await expect(
+      createTask({
+        projectId: "project_missing",
+        title: "Broken task",
+        summary: "Should fail",
+        owner: "SciClaw Admin",
+      }),
+    ).rejects.toThrow("PROJECT_NOT_FOUND");
   });
 });

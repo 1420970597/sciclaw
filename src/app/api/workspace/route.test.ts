@@ -4,6 +4,7 @@ const cookiesMock = vi.fn();
 const findSessionMock = vi.fn();
 const findUserByIdMock = vi.fn();
 const listProjectsMock = vi.fn();
+const listTasksMock = vi.fn();
 
 vi.mock("next/headers", () => ({
   cookies: (...args: unknown[]) => cookiesMock(...args),
@@ -17,6 +18,7 @@ vi.mock("@/lib/data-store", () => ({
   findSession: (...args: unknown[]) => findSessionMock(...args),
   findUserById: (...args: unknown[]) => findUserByIdMock(...args),
   listProjects: (...args: unknown[]) => listProjectsMock(...args),
+  listTasks: (...args: unknown[]) => listTasksMock(...args),
 }));
 
 import { GET } from "@/app/api/workspace/route";
@@ -27,6 +29,7 @@ describe("GET /api/workspace", () => {
     findSessionMock.mockReset();
     findUserByIdMock.mockReset();
     listProjectsMock.mockReset();
+    listTasksMock.mockReset();
   });
 
   it("returns 401 when the session cookie is missing", async () => {
@@ -75,6 +78,17 @@ describe("GET /api/workspace", () => {
         tasksOpen: 2,
       },
     ]);
+    listTasksMock.mockResolvedValue([
+      {
+        id: "task-1",
+        projectId: "proj-1",
+        title: "Draft claim chart skeleton",
+        summary: "Pull the first comparison table into the workspace so reviewers can verify the overlap call.",
+        owner: "SciClaw Admin",
+        status: "in-progress",
+        updatedAt: "Updated 8m ago",
+      },
+    ]);
 
     const response = await GET();
 
@@ -96,6 +110,17 @@ describe("GET /api/workspace", () => {
           updatedAt: "Updated 12m ago",
           sources: 18,
           tasksOpen: 2,
+        },
+      ],
+      tasks: [
+        {
+          id: "task-1",
+          projectId: "proj-1",
+          title: "Draft claim chart skeleton",
+          summary: "Pull the first comparison table into the workspace so reviewers can verify the overlap call.",
+          owner: "SciClaw Admin",
+          status: "in-progress",
+          updatedAt: "Updated 8m ago",
         },
       ],
     });

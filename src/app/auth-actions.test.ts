@@ -2,8 +2,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const startUserSessionMock = vi.fn();
 const endUserSessionMock = vi.fn();
+const getCurrentUserMock = vi.fn();
 const verifyUserPasswordMock = vi.fn();
 const createUserMock = vi.fn();
+const createTaskMock = vi.fn();
+const findProjectByIdMock = vi.fn();
+const setTaskStatusMock = vi.fn();
 const findUserByAccessCodeMock = vi.fn();
 const redirectMock = vi.fn();
 
@@ -14,27 +18,38 @@ vi.mock("next/navigation", () => ({
 vi.mock("@/lib/auth", () => ({
   startUserSession: (...args: unknown[]) => startUserSessionMock(...args),
   endUserSession: (...args: unknown[]) => endUserSessionMock(...args),
+  getCurrentUser: (...args: unknown[]) => getCurrentUserMock(...args),
 }));
 
 vi.mock("@/lib/data-store", () => ({
   verifyUserPassword: (...args: unknown[]) => verifyUserPasswordMock(...args),
   createUser: (...args: unknown[]) => createUserMock(...args),
+  createTask: (...args: unknown[]) => createTaskMock(...args),
+  findProjectById: (...args: unknown[]) => findProjectByIdMock(...args),
+  setTaskStatus: (...args: unknown[]) => setTaskStatusMock(...args),
   findUserByAccessCode: (...args: unknown[]) => findUserByAccessCodeMock(...args),
+  DataStoreValidationError: class DataStoreValidationError extends Error {},
 }));
 
 import {
   accessCodeAction,
+  createWorkspaceTaskAction,
   loginAction,
   logoutAction,
   registerAction,
+  updateWorkspaceTaskStatusAction,
 } from "@/app/auth-actions";
 
 describe("auth-actions", () => {
   beforeEach(() => {
     startUserSessionMock.mockReset();
     endUserSessionMock.mockReset();
+    getCurrentUserMock.mockReset();
     verifyUserPasswordMock.mockReset();
     createUserMock.mockReset();
+    createTaskMock.mockReset();
+    findProjectByIdMock.mockReset();
+    setTaskStatusMock.mockReset();
     findUserByAccessCodeMock.mockReset();
     redirectMock.mockReset();
   });
@@ -144,5 +159,50 @@ describe("auth-actions", () => {
 
     expect(endUserSessionMock).toHaveBeenCalled();
     expect(redirectMock).toHaveBeenCalledWith("/");
+  });
+
+  it("creates protected workspace tasks for authenticated users", async () => {
+    const formData = new FormData();
+    formData.set("projectId", "proj-patent-overlap");
+    formData.set("title", "Queue evidence memo");
+    formData.set("summary", "Package the next evidence lane for reviewer handoff.");
+
+    getCurrentUserMock.mockResolvedValue({ name: "SciClaw Admin" });
+    findProjectByIdMock.mockResolvedValue({ id: "proj-patent-overlap" });
+    createTaskMock.mockResolvedValue({ id: "task_1" });
+
+    await expect(createWorkspaceTaskAction({}, formData)).resolves.toEqual({
+      success: "Task queued in the protected workspace.",
+    });
+    expect(createTaskMock).toHaveBeenCalledWith({
+      projectId: "proj-patent-overlap",
+      title: "Queue evidence memo",
+      summary: "Package the next evidence lane for reviewer handoff.",
+      owner: "SciClaw Admin",
+    });
+  });
+
+  it("returns a validation error when a workspace task is missing fields", async () => {
+    const formData = new FormData();
+    formData.set("projectId", "proj-patent-overlap");
+
+    getCurrentUserMock.mockResolvedValue({ name: "SciClaw Admin" });
+
+    await expect(createWorkspaceTaskAction({}, formData)).resolves.toEqual({
+      error: "Project, title, and summary are required.",
+    });
+    expect(createTaskMock).not.toHaveBeenCalled();
+  });
+
+  it("updates task status for authenticated users", async () => {
+    const formData = new FormData();
+    formData.set("status", "done");
+
+    getCurrentUserMock.mockResolvedValue({ id: "user_admin_seed" });
+    setTaskStatusMock.mockResolvedValue({ id: "task_1", status: "done" });
+
+    await updateWorkspaceTaskStatusAction("task_1", formData);
+
+    expect(setTaskStatusMock).toHaveBeenCalledWith("task_1", "done");
   });
 });
