@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { listProjects, listTasks } from "@/lib/data-store";
+import { listChatMessages, listChatThreads, listProjects, listTasks } from "@/lib/data-store";
 import { logoutAction, updateWorkspaceTaskStatusAction } from "@/app/auth-actions";
+import { WorkspaceChatPanel } from "@/components/workspace-chat-panel";
 import { WorkspaceTaskForm } from "@/components/workspace-task-form";
 
 export default async function WorkspacePage() {
@@ -12,7 +13,13 @@ export default async function WorkspacePage() {
     return null;
   }
 
-  const [projects, tasks] = await Promise.all([listProjects(), listTasks()]);
+  const [projects, tasks, threads] = await Promise.all([
+    listProjects(),
+    listTasks(),
+    listChatThreads(user.id),
+  ]);
+  const activeThread = threads[0] ?? null;
+  const activeMessages = activeThread ? await listChatMessages(activeThread.id) : [];
 
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#eef2f7_0%,#f8fafc_100%)] px-6 py-6 text-[#17202a] sm:px-8 lg:px-10">
@@ -30,8 +37,10 @@ export default async function WorkspacePage() {
                 This private shell turns the public replica into a runnable product slice: authenticated users can enter a persistent workspace, keep a session cookie, and review the same project lanes that were previously exposed only as marketing or help previews.
               </p>
             </div>
-            <div className="flex flex-col items-start gap-3 rounded-[1.2rem] border border-[rgba(226,232,240,0.9)] bg-[#f8fafc] px-4 py-4 sm:min-w-[19rem]">
-              <p className="text-sm font-semibold text-[#1f2937]">{user.name}</p>
+            <div
+              className="flex flex-col items-start gap-3 rounded-[1.2rem] border border-[rgba(226,232,240,0.9)] bg-[#f8fafc] px-4 py-4 sm:min-w-[19rem]"
+              data-testid="workspace-profile-card"
+            >
               <p className="text-sm text-[#64748b]">{user.email}</p>
               <p className="text-xs uppercase tracking-[0.2em] text-[#94a3b8]">{user.role}</p>
               <p className="text-sm leading-6 text-[#475569]">{user.intent}</p>
@@ -48,44 +57,53 @@ export default async function WorkspacePage() {
         </header>
 
         <section className="grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
-          <div className="rounded-[1.6rem] border border-[rgba(148,163,184,0.16)] bg-white/92 p-6 shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
-            <div className="flex items-center justify-between gap-3">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#eb8a3c]">
-                  Projects
-                </p>
-                <h2 className="mt-2 text-[1.45rem] font-semibold tracking-[-0.03em] text-[#1f2937]">
-                  Active research lanes
-                </h2>
-              </div>
-              <Link
-                href="/help/projects"
-                className="rounded-full border border-[rgba(15,23,42,0.1)] bg-[#f8fafc] px-4 py-2 text-sm font-medium text-[#475569] transition hover:border-[rgba(15,23,42,0.22)] hover:text-[#0f172a]"
-              >
-                View public guide
-              </Link>
-            </div>
-            <div className="mt-5 grid gap-4">
-              {projects.map((project) => (
-                <article
-                  key={project.id}
-                  className="rounded-[1.35rem] border border-[rgba(226,232,240,0.92)] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-5 shadow-[0_14px_32px_rgba(15,23,42,0.04)]"
+          <div className="grid gap-4">
+            <div className="rounded-[1.6rem] border border-[rgba(148,163,184,0.16)] bg-white/92 p-6 shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#eb8a3c]">
+                    Projects
+                  </p>
+                  <h2 className="mt-2 text-[1.45rem] font-semibold tracking-[-0.03em] text-[#1f2937]">
+                    Active research lanes
+                  </h2>
+                </div>
+                <Link
+                  href="/help/projects"
+                  className="rounded-full border border-[rgba(15,23,42,0.1)] bg-[#f8fafc] px-4 py-2 text-sm font-medium text-[#475569] transition hover:border-[rgba(15,23,42,0.22)] hover:text-[#0f172a]"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <div>
-                      <h3 className="text-[1.05rem] font-semibold text-[#1f2937]">{project.title}</h3>
-                      <p className="mt-1 text-sm text-[#64748b]">{project.stage}</p>
+                  View public guide
+                </Link>
+              </div>
+              <div className="mt-5 grid gap-4">
+                {projects.map((project) => (
+                  <article
+                    key={project.id}
+                    className="rounded-[1.35rem] border border-[rgba(226,232,240,0.92)] bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-5 shadow-[0_14px_32px_rgba(15,23,42,0.04)]"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <h3 className="text-[1.05rem] font-semibold text-[#1f2937]">{project.title}</h3>
+                        <p className="mt-1 text-sm text-[#64748b]">{project.stage}</p>
+                      </div>
+                      <p className="text-xs uppercase tracking-[0.18em] text-[#94a3b8]">{project.updatedAt}</p>
                     </div>
-                    <p className="text-xs uppercase tracking-[0.18em] text-[#94a3b8]">{project.updatedAt}</p>
-                  </div>
-                  <p className="mt-4 max-w-[48rem] text-sm leading-7 text-[#475569]">{project.summary}</p>
-                  <div className="mt-4 flex flex-wrap gap-3 text-sm text-[#334155]">
-                    <span className="rounded-full bg-[#eef2ff] px-3 py-1">{project.sources} sources</span>
-                    <span className="rounded-full bg-[#fff7ed] px-3 py-1">{project.tasksOpen} tasks open</span>
-                  </div>
-                </article>
-              ))}
+                    <p className="mt-4 max-w-[48rem] text-sm leading-7 text-[#475569]">{project.summary}</p>
+                    <div className="mt-4 flex flex-wrap gap-3 text-sm text-[#334155]">
+                      <span className="rounded-full bg-[#eef2ff] px-3 py-1">{project.sources} sources</span>
+                      <span className="rounded-full bg-[#fff7ed] px-3 py-1">{project.tasksOpen} tasks open</span>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
+
+            <WorkspaceChatPanel
+              currentUserName={user.name}
+              threads={threads}
+              messages={activeMessages}
+              activeThreadId={activeThread?.id ?? null}
+            />
           </div>
 
           <aside className="grid gap-4">

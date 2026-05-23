@@ -34,7 +34,7 @@ describe("data-store", () => {
     await resetStore();
   });
 
-  it("seeds the repo-local store with an admin user and default projects", async () => {
+  it("seeds the repo-local store with an admin user, workspace defaults, and chat defaults", async () => {
     const store = await readStore();
 
     expect(store.users).toHaveLength(1);
@@ -45,6 +45,19 @@ describe("data-store", () => {
       accessCode: "SC-ADMIN-2026",
     });
     expect(store.projects).toHaveLength(3);
+    expect(store.tasks).toHaveLength(3);
+    expect(store.chatThreads).toHaveLength(1);
+    expect(store.chatThreads[0]).toMatchObject({
+      id: "thread_admin_seed",
+      userId: "user_admin_seed",
+      title: "Claim chart review thread",
+    });
+    expect(store.chatMessages).toHaveLength(2);
+    expect(store.chatMessages[0]).toMatchObject({
+      threadId: "thread_admin_seed",
+      role: "system",
+      author: "SciClaw",
+    });
     expect(await fs.readFile(storePath, "utf8")).toContain("Patent overlap review");
   });
 

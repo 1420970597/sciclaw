@@ -1,6 +1,13 @@
 import { cookies } from "next/headers";
 import { SESSION_COOKIE } from "@/lib/auth";
-import { findSession, findUserById, listProjects, listTasks } from "@/lib/data-store";
+import {
+  findSession,
+  findUserById,
+  listChatMessages,
+  listChatThreads,
+  listProjects,
+  listTasks,
+} from "@/lib/data-store";
 
 export async function GET() {
   const cookieStore = await cookies();
@@ -20,7 +27,13 @@ export async function GET() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const [projects, tasks] = await Promise.all([listProjects(), listTasks()]);
+  const [projects, tasks, threads] = await Promise.all([
+    listProjects(),
+    listTasks(),
+    listChatThreads(user.id),
+  ]);
+  const activeThread = threads[0] ?? null;
+  const activeMessages = activeThread ? await listChatMessages(activeThread.id) : [];
 
   return Response.json({
     user: {
@@ -32,5 +45,8 @@ export async function GET() {
     },
     projects,
     tasks,
+    threads,
+    activeThreadId: activeThread?.id ?? null,
+    messages: activeMessages,
   });
 }

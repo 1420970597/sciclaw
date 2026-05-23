@@ -6,6 +6,9 @@ const getCurrentUserMock = vi.fn();
 const verifyUserPasswordMock = vi.fn();
 const createUserMock = vi.fn();
 const createTaskMock = vi.fn();
+const createChatThreadMock = vi.fn();
+const createChatMessageMock = vi.fn();
+const findChatThreadByIdMock = vi.fn();
 const findProjectByIdMock = vi.fn();
 const setTaskStatusMock = vi.fn();
 const findUserByAccessCodeMock = vi.fn();
@@ -25,6 +28,9 @@ vi.mock("@/lib/data-store", () => ({
   verifyUserPassword: (...args: unknown[]) => verifyUserPasswordMock(...args),
   createUser: (...args: unknown[]) => createUserMock(...args),
   createTask: (...args: unknown[]) => createTaskMock(...args),
+  createChatThread: (...args: unknown[]) => createChatThreadMock(...args),
+  createChatMessage: (...args: unknown[]) => createChatMessageMock(...args),
+  findChatThreadById: (...args: unknown[]) => findChatThreadByIdMock(...args),
   findProjectById: (...args: unknown[]) => findProjectByIdMock(...args),
   setTaskStatus: (...args: unknown[]) => setTaskStatusMock(...args),
   findUserByAccessCode: (...args: unknown[]) => findUserByAccessCodeMock(...args),
@@ -33,7 +39,9 @@ vi.mock("@/lib/data-store", () => ({
 
 import {
   accessCodeAction,
+  createWorkspaceMessageAction,
   createWorkspaceTaskAction,
+  createWorkspaceThreadAction,
   loginAction,
   logoutAction,
   registerAction,
@@ -48,6 +56,9 @@ describe("auth-actions", () => {
     verifyUserPasswordMock.mockReset();
     createUserMock.mockReset();
     createTaskMock.mockReset();
+    createChatThreadMock.mockReset();
+    createChatMessageMock.mockReset();
+    findChatThreadByIdMock.mockReset();
     findProjectByIdMock.mockReset();
     setTaskStatusMock.mockReset();
     findUserByAccessCodeMock.mockReset();
@@ -167,7 +178,7 @@ describe("auth-actions", () => {
     formData.set("title", "Queue evidence memo");
     formData.set("summary", "Package the next evidence lane for reviewer handoff.");
 
-    getCurrentUserMock.mockResolvedValue({ name: "SciClaw Admin" });
+    getCurrentUserMock.mockResolvedValue({ id: "user_admin_seed", name: "SciClaw Admin" });
     findProjectByIdMock.mockResolvedValue({ id: "proj-patent-overlap" });
     createTaskMock.mockResolvedValue({ id: "task_1" });
 
@@ -192,6 +203,83 @@ describe("auth-actions", () => {
       error: "Project, title, and summary are required.",
     });
     expect(createTaskMock).not.toHaveBeenCalled();
+  });
+
+  it("creates protected workspace threads for authenticated users", async () => {
+    const formData = new FormData();
+    formData.set("title", "Evidence rebuttal lane");
+
+    getCurrentUserMock.mockResolvedValue({ id: "user_admin_seed", name: "SciClaw Admin" });
+    createChatThreadMock.mockResolvedValue({ id: "thread_1" });
+
+    await expect(createWorkspaceThreadAction({}, formData)).resolves.toEqual({
+      success: "Thread added to the protected workspace.",
+    });
+    expect(createChatThreadMock).toHaveBeenCalledWith({
+      userId: "user_admin_seed",
+      title: "Evidence rebuttal lane",
+    });
+  });
+
+  it("returns a validation error when a workspace thread title is missing", async () => {
+    const formData = new FormData();
+
+    getCurrentUserMock.mockResolvedValue({ id: "user_admin_seed", name: "SciClaw Admin" });
+
+    await expect(createWorkspaceThreadAction({}, formData)).resolves.toEqual({
+      error: "Thread title is required.",
+    });
+    expect(createChatThreadMock).not.toHaveBeenCalled();
+  });
+
+  it("persists protected workspace messages for the active thread", async () => {
+    const formData = new FormData();
+    formData.set("threadId", "thread_1");
+    formData.set("content", "Need the next claim-chart rebuttal summary.");
+
+    getCurrentUserMock.mockResolvedValue({ id: "user_admin_seed", name: "SciClaw Admin" });
+    findChatThreadByIdMock.mockResolvedValue({ id: "thread_1", userId: "user_admin_seed" });
+    createChatMessageMock.mockResolvedValue({
+      userMessage: { id: "message_user_1" },
+      assistantMessage: { id: "message_assistant_1" },
+      thread: { id: "thread_1" },
+    });
+
+    await expect(createWorkspaceMessageAction({}, formData)).resolves.toEqual({
+      success: "Message persisted in the protected workspace thread.",
+    });
+    expect(createChatMessageMock).toHaveBeenCalledWith({
+      threadId: "thread_1",
+      userId: "user_admin_seed",
+      author: "SciClaw Admin",
+      content: "Need the next claim-chart rebuttal summary.",
+    });
+  });
+
+  it("returns a validation error when a workspace message is missing fields", async () => {
+    const formData = new FormData();
+    formData.set("threadId", "thread_1");
+
+    getCurrentUserMock.mockResolvedValue({ id: "user_admin_seed", name: "SciClaw Admin" });
+
+    await expect(createWorkspaceMessageAction({}, formData)).resolves.toEqual({
+      error: "Thread and message content are required.",
+    });
+    expect(createChatMessageMock).not.toHaveBeenCalled();
+  });
+
+  it("returns a validation error when the selected thread is no longer available", async () => {
+    const formData = new FormData();
+    formData.set("threadId", "thread_1");
+    formData.set("content", "Follow up with the reviewer packet.");
+
+    getCurrentUserMock.mockResolvedValue({ id: "user_admin_seed", name: "SciClaw Admin" });
+    findChatThreadByIdMock.mockResolvedValue(null);
+
+    await expect(createWorkspaceMessageAction({}, formData)).resolves.toEqual({
+      error: "Selected thread is no longer available.",
+    });
+    expect(createChatMessageMock).not.toHaveBeenCalled();
   });
 
   it("updates task status for authenticated users", async () => {

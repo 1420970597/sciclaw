@@ -2,9 +2,12 @@
 
 import { redirect } from "next/navigation";
 import {
+  createChatMessage,
+  createChatThread,
   createUser,
   createTask,
   DataStoreValidationError,
+  findChatThreadById,
   findProjectById,
   findUserByAccessCode,
   setTaskStatus,
@@ -128,6 +131,87 @@ export async function createWorkspaceTaskAction(
   }
 
   return { success: "Task queued in the protected workspace." };
+}
+
+export async function createWorkspaceThreadAction(
+  _prevState: AuthActionState,
+  formData: FormData,
+): Promise<AuthActionState> {
+  const user = await getCurrentUser();
+  if (!user) {
+    return { error: "You must be signed in to start a workspace thread." };
+  }
+
+  const title = value(formData, "title");
+  if (!title) {
+    return { error: "Thread title is required." };
+  }
+
+  try {
+    await createChatThread({
+      userId: user.id,
+      title,
+    });
+  } catch (error) {
+    if (error instanceof DataStoreValidationError) {
+      if (error.message === "THREAD_TITLE_REQUIRED") {
+        return { error: "Thread title is required." };
+      }
+
+      if (error.message === "USER_NOT_FOUND") {
+        return { error: "Your workspace session is no longer valid." };
+      }
+    }
+
+    throw error;
+  }
+
+  return { success: "Thread added to the protected workspace." };
+}
+
+export async function createWorkspaceMessageAction(
+  _prevState: AuthActionState,
+  formData: FormData,
+): Promise<AuthActionState> {
+  const user = await getCurrentUser();
+  if (!user) {
+    return { error: "You must be signed in to send workspace messages." };
+  }
+
+  const threadId = value(formData, "threadId");
+  const content = value(formData, "content");
+
+  if (!threadId || !content) {
+    return { error: "Thread and message content are required." };
+  }
+
+  const thread = await findChatThreadById(threadId);
+  if (!thread || thread.userId !== user.id) {
+    return { error: "Selected thread is no longer available." };
+  }
+
+  try {
+    await createChatMessage({
+      threadId,
+      userId: user.id,
+      author: user.name,
+      content,
+    });
+  } catch (error) {
+    if (error instanceof DataStoreValidationError) {
+      if (error.message === "THREAD_NOT_FOUND" || error.message === "THREAD_FORBIDDEN") {
+        return { error: "Selected thread is no longer available." };
+      }
+
+      if (error.message === "MESSAGE_CONTENT_REQUIRED") {
+        return { error: "Message content is required." };
+      }
+    }
+
+    throw error;
+  }
+
+  return { success: "Message persisted in the protected workspace thread." };
 }
 
 export async function updateWorkspaceTaskStatusAction(taskId: string, formData: FormData): Promise<void> {

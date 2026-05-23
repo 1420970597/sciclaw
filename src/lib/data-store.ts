@@ -22,6 +22,22 @@ export type StoredSession = {
   createdAt: string;
 };
 
+export type StoredChatThread = {
+  id: string;
+  userId: string;
+  title: string;
+  updatedAt: string;
+};
+
+export type StoredChatMessage = {
+  id: string;
+  threadId: string;
+  role: "user" | "assistant" | "system";
+  author: string;
+  content: string;
+  createdAt: string;
+};
+
 export type WorkspaceProject = {
   id: string;
   title: string;
@@ -52,6 +68,8 @@ export class DataStoreValidationError extends Error {
 type DataStore = {
   users: StoredUser[];
   sessions: StoredSession[];
+  chatThreads: StoredChatThread[];
+  chatMessages: StoredChatMessage[];
   projects: WorkspaceProject[];
   tasks: WorkspaceTask[];
 };
@@ -89,7 +107,37 @@ const defaultProjects: WorkspaceProject[] = [
   },
 ];
 
-const defaultTasks: WorkspaceTask[] = [
+const defaultChatThreads: StoredChatThread[] = [
+  {
+    id: "thread_admin_seed",
+    userId: "user_admin_seed",
+    title: "Claim chart review thread",
+    updatedAt: new Date().toISOString(),
+  },
+];
+
+const defaultChatMessages: StoredChatMessage[] = [
+  {
+    id: "message_admin_seed_system",
+    threadId: "thread_admin_seed",
+    role: "system",
+    author: "SciClaw",
+    content:
+      "This protected workspace thread keeps messages, session context, and follow-up prompts persisted locally.",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "message_admin_seed_assistant",
+    threadId: "thread_admin_seed",
+    role: "assistant",
+    author: "SciClaw",
+    content:
+      "Open a project lane, send a question, and the conversation will stay attached to the current authenticated workspace.",
+    createdAt: new Date().toISOString(),
+  },
+];
+
+const defaultWorkspaceTasks: WorkspaceTask[] = [
   {
     id: "task-claim-chart",
     projectId: "proj-patent-overlap",
@@ -147,8 +195,10 @@ async function seedStore(): Promise<DataStore> {
       },
     ],
     sessions: [],
+    chatThreads: defaultChatThreads,
+    chatMessages: defaultChatMessages,
     projects: defaultProjects,
-    tasks: defaultTasks,
+    tasks: defaultWorkspaceTasks,
   };
 }
 
@@ -160,8 +210,10 @@ export async function readStore(): Promise<DataStore> {
     return {
       users: parsed.users ?? [],
       sessions: parsed.sessions ?? [],
+      chatThreads: parsed.chatThreads ?? defaultChatThreads,
+      chatMessages: parsed.chatMessages ?? defaultChatMessages,
       projects: parsed.projects?.length ? parsed.projects : defaultProjects,
-      tasks: parsed.tasks?.length ? parsed.tasks : defaultTasks,
+      tasks: parsed.tasks?.length ? parsed.tasks : defaultWorkspaceTasks,
     };
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
@@ -249,6 +301,115 @@ export async function setTaskStatus(taskId: string, status: TaskStatus) {
   store.tasks.unshift(updated);
   await writeStore(store);
   return updated;
+}
+
+export async function listChatThreads(userId: string) {
+  const store = await readStore();
+  return store.chatThreads.filter((thread) => thread.userId === userId);
+}
+
+export async function findChatThreadById(threadId: string) {
+  const store = await readStore();
+  return store.chatThreads.find((thread) => thread.id === threadId) ?? null;
+}
+
+export async function listChatMessages(threadId: string) {
+  const store = await readStore();
+  return store.chatMessages.filter((message) => message.threadId === threadId);
+}
+
+export async function createChatThread(input: { userId: string; title: string }) {
+  const store = await readStore();
+  const title = input.title.trim();
+  if (!title) {
+    throw new DataStoreValidationError("THREAD_TITLE_REQUIRED");
+  }
+
+  const user = store.users.find((item) => item.id === input.userId);
+  if (!user) {
+    throw new DataStoreValidationError("USER_NOT_FOUND");
+  }
+
+  const now = new Date().toISOString();
+  const thread: StoredChatThread = {
+    id: makeId("thread"),
+    userId: input.userId,
+    title,
+    updatedAt: now,
+  };
+
+  const welcomeMessage: StoredChatMessage = {
+    id: makeId("message"),
+    threadId: thread.id,
+    role: "assistant",
+    author: "SciClaw",
+    content: `Thread created for ${title}. Capture the next scientific question, supporting evidence, or reviewer request to keep this workspace lane moving.`,
+    createdAt: now,
+  };
+
+  store.chatThreads = [thread, ...store.chatThreads.filter((item) => item.userId !== input.userId || item.id !== thread.id)];
+  store.chatMessages = [...store.chatMessages, welcomeMessage];
+  await writeStore(store);
+  return thread;
+}
+
+export async function createChatMessage(input: {
+  threadId: string;
+  userId: string;
+  author: string;
+  content: string;
+}) {
+  const store = await readStore();
+  const threadIndex = store.chatThreads.findIndex((thread) => thread.id === input.threadId);
+  if (threadIndex === -1) {
+    throw new DataStoreValidationError("THREAD_NOT_FOUND");
+  }
+
+  const thread = store.chatThreads[threadIndex];
+  if (thread.userId !== input.userId) {
+    throw new DataStoreValidationError("THREAD_FORBIDDEN");
+  }
+
+  const content = input.content.trim();
+  const author = input.author.trim();
+  if (!content) {
+    throw new DataStoreValidationError("MESSAGE_CONTENT_REQUIRED");
+  }
+
+  const now = new Date().toISOString();
+  const userMessage: StoredChatMessage = {
+    id: makeId("message"),
+    threadId: thread.id,
+    role: "user",
+    author,
+    content,
+    createdAt: now,
+  };
+
+  const assistantMessage: StoredChatMessage = {
+    id: makeId("message"),
+    threadId: thread.id,
+    role: "assistant",
+    author: "SciClaw",
+    content: `Captured for ${thread.title}: ${content}. This conservative clone persists the prompt and returns a grounded follow-up packet while richer model execution remains a future backend milestone.`,
+    createdAt: now,
+  };
+
+  const updatedThread: StoredChatThread = {
+    ...thread,
+    updatedAt: now,
+  };
+
+  store.chatThreads.splice(threadIndex, 1);
+  store.chatThreads.unshift(updatedThread);
+  store.chatMessages = [...store.chatMessages, userMessage, assistantMessage];
+  await writeStore(store);
+
+  return {
+    userMessage,
+    assistantMessage,
+    thread: updatedThread,
+  };
 }
 
 export async function findUserByEmail(email: string) {

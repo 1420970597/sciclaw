@@ -5,6 +5,8 @@ const findSessionMock = vi.fn();
 const findUserByIdMock = vi.fn();
 const listProjectsMock = vi.fn();
 const listTasksMock = vi.fn();
+const listChatThreadsMock = vi.fn();
+const listChatMessagesMock = vi.fn();
 
 vi.mock("next/headers", () => ({
   cookies: (...args: unknown[]) => cookiesMock(...args),
@@ -19,6 +21,8 @@ vi.mock("@/lib/data-store", () => ({
   findUserById: (...args: unknown[]) => findUserByIdMock(...args),
   listProjects: (...args: unknown[]) => listProjectsMock(...args),
   listTasks: (...args: unknown[]) => listTasksMock(...args),
+  listChatThreads: (...args: unknown[]) => listChatThreadsMock(...args),
+  listChatMessages: (...args: unknown[]) => listChatMessagesMock(...args),
 }));
 
 import { GET } from "@/app/api/workspace/route";
@@ -30,6 +34,8 @@ describe("GET /api/workspace", () => {
     findUserByIdMock.mockReset();
     listProjectsMock.mockReset();
     listTasksMock.mockReset();
+    listChatThreadsMock.mockReset();
+    listChatMessagesMock.mockReset();
   });
 
   it("returns 401 when the session cookie is missing", async () => {
@@ -89,6 +95,24 @@ describe("GET /api/workspace", () => {
         updatedAt: "Updated 8m ago",
       },
     ]);
+    listChatThreadsMock.mockResolvedValue([
+      {
+        id: "thread-1",
+        userId: "user_1",
+        title: "Claim chart review thread",
+        updatedAt: "2026-05-22T11:00:00.000Z",
+      },
+    ]);
+    listChatMessagesMock.mockResolvedValue([
+      {
+        id: "message-1",
+        threadId: "thread-1",
+        role: "assistant",
+        author: "SciClaw",
+        content: "Open a project lane and keep the next reviewer prompt persisted here.",
+        createdAt: "2026-05-22T11:01:00.000Z",
+      },
+    ]);
 
     const response = await GET();
 
@@ -121,6 +145,25 @@ describe("GET /api/workspace", () => {
           owner: "SciClaw Admin",
           status: "in-progress",
           updatedAt: "Updated 8m ago",
+        },
+      ],
+      threads: [
+        {
+          id: "thread-1",
+          userId: "user_1",
+          title: "Claim chart review thread",
+          updatedAt: "2026-05-22T11:00:00.000Z",
+        },
+      ],
+      activeThreadId: "thread-1",
+      messages: [
+        {
+          id: "message-1",
+          threadId: "thread-1",
+          role: "assistant",
+          author: "SciClaw",
+          content: "Open a project lane and keep the next reviewer prompt persisted here.",
+          createdAt: "2026-05-22T11:01:00.000Z",
         },
       ],
     });
